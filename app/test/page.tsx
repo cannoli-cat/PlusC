@@ -43,14 +43,22 @@ function TestContent() {
     const saCount = Number(searchParams.get('sa'))
     const frCount = Number(searchParams.get('fr'))
     const attempts = Number(searchParams.get('a'))
+    const isRandom = searchParams.get('random') === 'true'
+    const randomCount = Number(searchParams.get('count'))
 
     const allQuestions = useMemo(() => {
         const filtered = questions.filter((q) => sections.includes(q.section))
+
+        if (isRandom) {
+            return shuffle(filtered).slice(0, randomCount)
+        }
+
         const mc = shuffle(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice')).slice(0, mcCount)
         const sa = shuffle(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all')).slice(0, saCount)
         const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
+
         return shuffle([...mc, ...sa, ...fr])
-    }, [sections, mcCount, saCount, frCount])
+    }, [sections, mcCount, saCount, frCount, isRandom, randomCount])
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answered, setAnswered] = useState<Map<number, AnswerRecord>>(new Map())

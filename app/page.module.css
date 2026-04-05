@@ -130,3 +130,37 @@
     width: 100%;
     box-sizing: border-box;
 }
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--surface);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s, background 0.15s;
+    flex-shrink: 0;
+}
+
+.checkbox:hover {
+    border-color: var(--border-light);
+}
+
+.checkboxChecked {
+    border-color: var(--accent);
+    background: var(--accent);
+}
+
+.checkmark {
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.checkmarkVisible {
+    opacity: 1;
+}

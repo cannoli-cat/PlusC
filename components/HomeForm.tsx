@@ -13,6 +13,9 @@ export default function HomeForm() {
   const [selectedSections, setSelectedSections] = useState<string[]>(() => {
     try { const s = localStorage.getItem('byparts-sections'); return s ? JSON.parse(s) : sections } catch { return sections }
   })
+  const [randomTest, setRandomTest] = useState(() => {
+    const v = localStorage.getItem('byparts-random'); return v === 'true'
+  })
   const [timeLimit, setTimeLimit] = useState(() => {
     const v = localStorage.getItem('byparts-time'); return v ? Math.max(1, Number(v)) : 60
   })
@@ -28,6 +31,9 @@ export default function HomeForm() {
   const [attempts, setAttempts] = useState(() => {
     const v = localStorage.getItem('byparts-attempts'); return v ? Math.max(1, Number(v)) : 2
   })
+  const [randomCount, setRandomCount] = useState(() => {
+    const v = localStorage.getItem('byparts-randomcount'); return v ? Math.max(1, Number(v)) : 10
+  })
 
   const [sectionSearch, setSectionSearch] = useState('')
 
@@ -35,12 +41,31 @@ export default function HomeForm() {
   useEffect(() => {
     if (skipFirstSave.current) { skipFirstSave.current = false; return }
     localStorage.setItem('byparts-sections', JSON.stringify(selectedSections))
+    localStorage.setItem('byparts-random', String(randomTest))
     localStorage.setItem('byparts-time', String(timeLimit))
     localStorage.setItem('byparts-mc', String(mcCount))
     localStorage.setItem('byparts-sa', String(saCount))
     localStorage.setItem('byparts-fr', String(frCount))
     localStorage.setItem('byparts-attempts', String(attempts))
-  }, [selectedSections, timeLimit, mcCount, saCount, frCount, attempts])
+    localStorage.setItem('byparts-randomcount', String(randomCount))
+  }, [selectedSections, randomTest, timeLimit, mcCount, saCount, frCount, attempts, randomCount])
+
+  const handleStart = () => {
+    const params = new URLSearchParams({
+      sections: selectedSections.join(','),
+      time: String(timeLimit * 60),
+      a: String(attempts),
+      random: String(randomTest),
+    })
+    if (randomTest) {
+      params.set('count', String(randomCount))
+    } else {
+      params.set('mc', String(mcCount))
+      params.set('sa', String(saCount))
+      params.set('fr', String(frCount))
+    }
+    router.push(`/test?${params.toString()}`)
+  }
 
   return (
     <div className={styles.config}>
@@ -90,18 +115,58 @@ export default function HomeForm() {
           </div>
         </div>
       </div>
-      <div className={styles.configRow}>
-        <span className={styles.label}>Multiple Choice Questions</span>
-        <input className={styles.input} type="number" min="0" value={mcCount} onChange={(e) => setMcCount(Math.max(0, Number(e.target.value)))} />
+
+      <div className={styles.configRow} style={{ flexDirection: 'row', alignItems: 'center', gap: '12px' }}>
+        <span className={styles.label}>Randomize Question Type Amounts</span>
+        <div
+          className={`${styles.checkbox} ${randomTest ? styles.checkboxChecked : ''}`}
+          onClick={() => setRandomTest(!randomTest)}
+        >
+          <svg
+            className={`${styles.checkmark} ${randomTest ? styles.checkmarkVisible : ''}`}
+            viewBox="0 0 10 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="1.5,5 4,7.5 8.5,2"
+              stroke="var(--bg)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
       </div>
-      <div className={styles.configRow}>
-        <span className={styles.label}>Select All That Apply Questions</span>
-        <input className={styles.input} type="number" min="0" value={saCount} onChange={(e) => setSaCount(Math.max(0, Number(e.target.value)))} />
-      </div>
-      <div className={styles.configRow}>
-        <span className={styles.label}>Free Response Questions</span>
-        <input className={styles.input} type="number" min="0" value={frCount} onChange={(e) => setFrCount(Math.max(0, Number(e.target.value)))} />
-      </div>
+
+      {randomTest ? (
+        <div className={styles.configRow}>
+          <span className={styles.label}>Number of Questions</span>
+          <input
+            className={styles.input}
+            type="number"
+            min="1"
+            value={randomCount}
+            onChange={(e) => setRandomCount(Math.max(1, Number(e.target.value)))}
+          />
+        </div>
+      ) : (
+        <>
+          <div className={styles.configRow}>
+            <span className={styles.label}>Multiple Choice Questions</span>
+            <input className={styles.input} type="number" min="0" value={mcCount} onChange={(e) => setMcCount(Math.max(0, Number(e.target.value)))} />
+          </div>
+          <div className={styles.configRow}>
+            <span className={styles.label}>Select All That Apply Questions</span>
+            <input className={styles.input} type="number" min="0" value={saCount} onChange={(e) => setSaCount(Math.max(0, Number(e.target.value)))} />
+          </div>
+          <div className={styles.configRow}>
+            <span className={styles.label}>Free Response Questions</span>
+            <input className={styles.input} type="number" min="0" value={frCount} onChange={(e) => setFrCount(Math.max(0, Number(e.target.value)))} />
+          </div>
+        </>
+      )}
+
       <div className={styles.configRow}>
         <span className={styles.label}>Attempts per question</span>
         <input className={styles.input} type="number" min="1" value={attempts} onChange={(e) => setAttempts(Math.max(1, Number(e.target.value)))} />
@@ -110,7 +175,8 @@ export default function HomeForm() {
         <span className={styles.label}>Time Limit (minutes)</span>
         <input className={styles.input} type="number" min="1" value={timeLimit} onChange={(e) => setTimeLimit(Math.max(1, Number(e.target.value)))} />
       </div>
-      <button className={styles.startBtn} onClick={() => router.push(`/test?sections=${selectedSections.join(',')}&time=${timeLimit * 60}&mc=${mcCount}&sa=${saCount}&fr=${frCount}&a=${attempts}`)}>
+
+      <button className={styles.startBtn} onClick={handleStart}>
         Start Test →
       </button>
     </div>
