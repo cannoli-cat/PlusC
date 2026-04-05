@@ -10,6 +10,11 @@ import { useRouter } from 'next/navigation'
 import { useState, useMemo } from 'react'
 import styles from './page.module.css'
 
+interface AnswerRecord {
+    correct: boolean
+    selected?: string
+}
+
 export default function TestPage() {
     const router = useRouter()
     const searchParams = useSearchParams()
@@ -30,13 +35,76 @@ export default function TestPage() {
     }, [sections, mcCount, frCount])
 
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [answered, setAnswered] = useState<Map<number, boolean>>(new Map<number, boolean>)
+    const [answered, setAnswered] = useState<Map<number, AnswerRecord>>(new Map())
     const [submitted, setSubmitted] = useState(false)
 
     const current = allQuestions[currentIndex]
 
-    const markAnswered = (index: number, correct: boolean) => {
-        setAnswered(prev => new Map(prev).set(index, correct))
+    const markAnswered = (index: number, correct: boolean, selected?: string) => {
+        setAnswered(prev => new Map(prev).set(index, { correct, selected }))
+    }
+
+    if (submitted) {
+        const correct = [...answered.values()].filter(v => v.correct).length
+        const total = allQuestions.length
+        const score = Math.round((correct / total) * 100)
+        const currentQ = allQuestions[currentIndex]
+
+        return (
+            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
+                <header style={{ borderBottom: '1px solid var(--border)', paddingBottom: '28px', marginBottom: '40px' }}>
+                    <p style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.15em', color: 'var(--text-faint)', textTransform: 'uppercase', marginBottom: '8px' }}>
+                        by Tyler Wolfe
+                    </p>
+                    <h1 style={{ fontSize: '32px', fontWeight: 500, letterSpacing: '-0.01em' }}>By Parts</h1>
+                    <p style={{ fontSize: '16px', color: 'var(--text-dim)', fontStyle: 'italic', marginTop: '4px' }}>
+                        A calculus study tool
+                    </p>
+                </header>
+                <div style={{ marginBottom: '32px' }}>
+                    <h2 style={{ marginBottom: '8px' }}>Results</h2>
+                    <p style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '28px', color: score >= 70 ? 'var(--green)' : 'var(--red)' }}>
+                        {score}%
+                    </p>
+                    <p style={{ color: 'var(--text-dim)', marginTop: '4px' }}>
+                        {correct} correct, {total - correct} incorrect out of {total} questions
+                    </p>
+                </div>
+                <div className={styles.grid} style={{ marginBottom: '28px' }}>
+                    {allQuestions.map((_, i) => {
+                        const record = answered.get(i)
+                        return (
+                            <button
+                                key={i}
+                                className={`${styles.gridBtn} ${!record ? '' : record.correct ? styles.gridBtnCorrect : styles.gridBtnWrong} ${i === currentIndex ? styles.gridBtnCurrent : ''}`}
+                                onClick={() => setCurrentIndex(i)}
+                            >
+                                {i + 1}
+                            </button>
+                        )
+                    })}
+                </div>
+                {currentQ.type === 'multiple-choice' ? (
+                    <MultipleChoiceQuestion
+                        question={currentQ}
+                        number={currentIndex + 1}
+                        onAnswered={() => { }}
+                        reviewMode
+                        selectedAnswer={answered.get(currentIndex)?.selected}
+                    />
+                ) : (
+                    <FreeResponseQuestion
+                        question={currentQ}
+                        number={currentIndex + 1}
+                        onAnswered={() => { }}
+                        reviewMode
+                    />
+                )}
+                <button className={styles.btn} onClick={() => router.push('/')}>
+                    ← Back to Home
+                </button>
+            </div>
+        )
     }
 
     return (
@@ -69,7 +137,7 @@ export default function TestPage() {
                 )}
             </div>
             {current.type === 'multiple-choice' ? (
-                <MultipleChoiceQuestion question={current} number={currentIndex + 1} onAnswered={(correct) => markAnswered(currentIndex, correct)} />
+                <MultipleChoiceQuestion question={current} number={currentIndex + 1} onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)} />
             ) : (
                 <FreeResponseQuestion question={current} number={currentIndex + 1} onAnswered={(correct) => markAnswered(currentIndex, correct)} />
             )}

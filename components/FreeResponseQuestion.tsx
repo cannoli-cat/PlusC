@@ -9,27 +9,31 @@ interface FreeResponseQuestionProps {
     question: FreeResponseQuestionType
     number: number
     onAnswered: (correct: boolean) => void
+    reviewMode?: boolean
 }
 
-export default function FreeResponseQuestion({ question, number, onAnswered }: FreeResponseQuestionProps) {
-    const [revealed, setRevealed] = useState(false)
+export default function FreeResponseQuestion({ question, number, onAnswered, reviewMode }: FreeResponseQuestionProps) {
+    const [revealed, setRevealed] = useState(reviewMode ?? false)
 
     return (
         <div className={styles.question}>
             <div className={styles.header}>
                 <span className={styles.number}>{number}</span>
                 <MathText text={question.text} />
-                <button className={styles.revealBtn} onClick={() => {
-                    setRevealed(!revealed)
-                    onAnswered(true)
-                }}>
-                    {revealed ? 'Hide Solution' : 'Show Solution'}
-                </button>
+                {!reviewMode && (
+                    <button className={styles.revealBtn} onClick={() => {
+                        setRevealed(!revealed)
+                        onAnswered(true)
+                    }}>
+                        {revealed ? 'Hide Solution' : 'Show Solution'}
+                    </button>
+                )}
             </div>
-            {revealed && (
-                <p style={{ marginTop: '16px', padding: '16px', backgroundColor: 'var(--bg-secondary)', borderRadius: '8px' }}>
+            {(revealed || reviewMode) && (
+                <div style={{ padding: '16px 20px', borderTop: '1px solid var(--border)' }}>
+                    <p>Solution:</p>
                     <MathText text={question.solution} />
-                </p>
+                </div>
             )}
         </div>
     )

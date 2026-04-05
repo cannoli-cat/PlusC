@@ -8,10 +8,12 @@ import styles from './MultipleChoiceQuestion.module.css'
 interface MultipleChoiceQuestionProps {
     question: MultipleChoiceQuestionType
     number: number
-    onAnswered: (correct: boolean) => void
+    onAnswered: (correct: boolean, selected: string) => void
+    reviewMode?: boolean
+    selectedAnswer?: string
 }
 
-export default function MultipleChoiceQuestion({ question, number, onAnswered }: MultipleChoiceQuestionProps) {
+export default function MultipleChoiceQuestion({ question, number, onAnswered, reviewMode, selectedAnswer }: MultipleChoiceQuestionProps) {
     const [selected, setSelected] = useState<string | null>(null)
 
     return (
@@ -21,23 +23,37 @@ export default function MultipleChoiceQuestion({ question, number, onAnswered }:
                 <MathText text={question.text} />
             </div>
             <div className={styles.choices}>
-                {question.choices.map((choice) => (
-                    <button
-                        key={choice.label}
-                        className={`${styles.choice} ${selected === choice.label ? styles.selected : ''}`}
-                        onClick={() => {
-                            setSelected(choice.label)
-                            onAnswered(choice.label === question.answer)
-                        }}>
-                        {choice.label}. <MathText text={choice.text} />
-                    </button>
-                ))}
+                {question.choices.map((choice) => {
+                    let choiceClass = styles.choice
+
+                    if (reviewMode) {
+                        if (choice.label === question.answer) {
+                            choiceClass += ` ${styles.correct}`
+                        } else if (choice.label === selectedAnswer) {
+                            choiceClass += ` ${styles.wrong}`
+                        }
+                    } else {
+                        if (selected === choice.label) {
+                            choiceClass += ` ${styles.selected}`
+                        }
+                    }
+
+                    return (
+                        <button
+                            key={choice.label}
+                            className={choiceClass}
+                            disabled={reviewMode}
+                            onClick={() => {
+                                if (reviewMode) return
+                                setSelected(choice.label)
+                                onAnswered(choice.label === question.answer, choice.label)
+                            }}
+                        >
+                            {choice.label}. <MathText text={choice.text} />
+                        </button>
+                    )
+                })}
             </div>
-            {selected && (
-                <p className={`${styles.feedback} ${selected === question.answer ? styles.feedbackCorrect : styles.feedbackWrong}`}>
-                    {selected === question.answer ? 'Correct!' : `Wrong. Answer is ${question.answer}`}
-                </p>
-            )}
         </div>
     )
 }
