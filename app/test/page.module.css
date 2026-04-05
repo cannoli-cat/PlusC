@@ -90,3 +90,13 @@
     background: var(--accent);
     color: var(--bg);
 }
+
+.gridBtn.gridBtnCorrect:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.gridBtn.gridBtnWrong:hover {
+    border-color: var(--red);
+    color: var(--red);
+}

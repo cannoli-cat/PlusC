@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { questions } from '@/data/questions'
 import styles from './page.module.css'
@@ -8,10 +8,40 @@ import styles from './page.module.css'
 export default function Home() {
   const router = useRouter()
 
-  const [selectedSections, setSelectedSections] = useState<string[]>([...new Set(questions.map((q) => q.section))])
-  const [timeLimit, setTimeLimit] = useState(60)
-  const [mcCount, setMcCount] = useState(5)
-  const [frCount, setFrCount] = useState(3)
+  const [selectedSections, setSelectedSections] = useState<string[]>(() => {
+    if (typeof window === 'undefined') return [...new Set(questions.map((q) => q.section))]
+    const saved = localStorage.getItem('byparts-sections')
+    return saved ? JSON.parse(saved) : [...new Set(questions.map((q) => q.section))]
+  })
+  const [timeLimit, setTimeLimit] = useState(() => {
+    if (typeof window === 'undefined') return 60
+    return Math.max(0, Number(localStorage.getItem('byparts-time') ?? 60))
+  })
+  const [mcCount, setMcCount] = useState(() => {
+    if (typeof window === 'undefined') return 5
+    return Math.max(0, Number(localStorage.getItem('byparts-mc') ?? 5))
+  })
+  const [saCount, setSaCount] = useState(() => {
+    if (typeof window === 'undefined') return 3
+    return Math.max(0, Number(localStorage.getItem('byparts-sa') ?? 3))
+  })
+  const [frCount, setFrCount] = useState(() => {
+    if (typeof window === 'undefined') return 3
+    return Math.max(0, Number(localStorage.getItem('byparts-fr') ?? 3))
+  })
+  const [attempts, setAttempts] = useState(() => {
+    if (typeof window === 'undefined') return 2
+    return Math.max(1, Number(localStorage.getItem('byparts-attempts') ?? 2))
+  })
+
+  useEffect(() => {
+    localStorage.setItem('byparts-sections', JSON.stringify(selectedSections))
+    localStorage.setItem('byparts-time', String(timeLimit))
+    localStorage.setItem('byparts-mc', String(mcCount))
+    localStorage.setItem('byparts-sa', String(saCount))
+    localStorage.setItem('byparts-fr', String(frCount))
+    localStorage.setItem('byparts-attempts', String(attempts))
+  }, [selectedSections, timeLimit, mcCount, saCount, frCount, attempts])
 
   const sections = [...new Set(questions.map((q) => q.section))]
 
@@ -49,17 +79,25 @@ export default function Home() {
         </div>
         <div className={styles.configRow}>
           <span className={styles.label}>Multiple Choice Questions</span>
-          <input className={styles.input} type="number" value={mcCount} onChange={(e) => setMcCount(Number(e.target.value))} />
+          <input className={styles.input} type="number" min="0" value={mcCount} onChange={(e) => setMcCount(Math.max(0, Number(e.target.value)))} />
+        </div>
+        <div className={styles.configRow}>
+          <span className={styles.label}>Select All That Apply Questions</span>
+          <input className={styles.input} type="number" min="0" value={saCount} onChange={(e) => setSaCount(Math.max(0, Number(e.target.value)))} />
         </div>
         <div className={styles.configRow}>
           <span className={styles.label}>Free Response Questions</span>
-          <input className={styles.input} type="number" value={frCount} onChange={(e) => setFrCount(Number(e.target.value))} />
+          <input className={styles.input} type="number" min="0" value={frCount} onChange={(e) => setFrCount(Math.max(0, Number(e.target.value)))} />
+        </div>
+        <div className={styles.configRow}>
+          <span className={styles.label}>Attempts per question</span>
+          <input className={styles.input} type="number" min="1" value={attempts} onChange={(e) => setAttempts(Math.max(1, Number(e.target.value)))} />
         </div>
         <div className={styles.configRow}>
           <span className={styles.label}>Time Limit (minutes)</span>
-          <input className={styles.input} type="number" value={timeLimit} onChange={(e) => setTimeLimit(Number(e.target.value))} />
+          <input className={styles.input} type="number" min="1" value={timeLimit} onChange={(e) => setTimeLimit(Math.max(1, Number(e.target.value)))} />
         </div>
-        <button className={styles.startBtn} onClick={() => router.push(`/test?sections=${selectedSections.join(',')}&time=${timeLimit * 60}&mc=${mcCount}&fr=${frCount}`)}>
+        <button className={styles.startBtn} onClick={() => router.push(`/test?sections=${selectedSections.join(',')}&time=${timeLimit * 60}&mc=${mcCount}&sa=${saCount}&fr=${frCount}&a=${attempts}`)}>
           Start Test →
         </button>
       </div>

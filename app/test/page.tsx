@@ -1,21 +1,35 @@
 'use client'
 
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-import type { MultipleChoiceQuestion as MultipleChoiceQuestionType, FreeResponseQuestion as FreeResponseQuestionType } from '@/data/questions'
+import type { MultipleChoiceQuestion as MultipleChoiceQuestionType, FreeResponseQuestion as FreeResponseQuestionType, SelectAllQuestion as SelectAllQuestionType } from '@/data/questions'
 import { questions } from '@/data/questions'
 import MultipleChoiceQuestion from "@/components/MultipleChoiceQuestion"
-import FreeResponseQuestion from "@/components/FreeResponseQuestion"
+import SelectAllQuestion from "@/components/SelectAllQuestion"
+import FreeResponseQuestion, { checkAnswer } from "@/components/FreeResponseQuestion"
 import Timer from "@/components/Timer"
 import { useRouter } from 'next/navigation'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import styles from './page.module.css'
 
 interface AnswerRecord {
     correct: boolean
-    selected?: string
+    selected?: string | string[]
 }
 
 export default function TestPage() {
+    return (
+        <Suspense fallback={
+            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px', color: 'var(--text-dim)' }}>
+                Loading test...
+            </div>
+        }>
+            <TestContent />
+        </Suspense>
+    )
+}
+
+function TestContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
 
@@ -25,23 +39,81 @@ export default function TestPage() {
 
     const time = Number(searchParams.get('time'))
     const mcCount = Number(searchParams.get('mc'))
+    const saCount = Number(searchParams.get('sa'))
     const frCount = Number(searchParams.get('fr'))
+    const attempts = Number(searchParams.get('a'))
 
     const allQuestions = useMemo(() => {
         const filtered = questions.filter((q) => sections.includes(q.section))
         const mc = shuffle(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice')).slice(0, mcCount)
+        const sa = shuffle(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all')).slice(0, saCount)
         const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
-        return shuffle([...mc, ...fr])
-    }, [sections, mcCount, frCount])
+        return shuffle([...mc, ...sa, ...fr])
+    }, [sections, mcCount, saCount, frCount])
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answered, setAnswered] = useState<Map<number, AnswerRecord>>(new Map())
     const [submitted, setSubmitted] = useState(false)
+    const [attemptCount, setAttemptCount] = useState(attempts)
+    const [timeLeft, setTimeLeft] = useState(time)
+    const [paused, setPaused] = useState(false)
+    const [lockedQuestions, setLockedQuestions] = useState<Set<number>>(new Set())
+    const [frInputs, setFrInputs] = useState<Map<number, string>>(new Map())
+    const isLocked = lockedQuestions.has(currentIndex)
 
     const current = allQuestions[currentIndex]
 
-    const markAnswered = (index: number, correct: boolean, selected?: string) => {
+    const markAnswered = (index: number, correct: boolean, selected?: string | string[]) => {
         setAnswered(prev => new Map(prev).set(index, { correct, selected }))
+    }
+
+    const gradeFrAndSubmit = useCallback(() => {
+        setAnswered(prev => {
+            const next = new Map(prev)
+            for (const [i, input] of frInputs) {
+                if (lockedQuestions.has(i)) continue
+                const q = allQuestions[i]
+                if (q.type !== 'free-response') continue
+                const correct = input.trim() ? checkAnswer(input, q.answer, q.variables ?? ['x', 'C']) : false
+                next.set(i, { correct, selected: input })
+            }
+            return next
+        })
+        setAttemptCount(c => c - 1)
+        setSubmitted(true)
+    }, [frInputs, lockedQuestions, allQuestions])
+
+    const gradeFrAndSubmitRef = useRef(gradeFrAndSubmit)
+    useEffect(() => {
+        gradeFrAndSubmitRef.current = gradeFrAndSubmit
+    }, [gradeFrAndSubmit])
+
+    useEffect(() => {
+        if (paused || submitted || timeLeft <= 0) return
+        const interval = setInterval(() => {
+            setTimeLeft(t => {
+                const next = t - 1
+                if (next <= 0) {
+                    setTimeout(() => {
+                        alert('Time is up! Your test will be submitted.')
+                        gradeFrAndSubmitRef.current()
+                    }, 0)
+                }
+                return Math.max(0, next)
+            })
+        }, 1000)
+        return () => clearInterval(interval)
+    }, [timeLeft, paused, submitted])
+
+    if (allQuestions.length === 0) {
+        return (
+            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
+                <p style={{ color: 'var(--text-dim)' }}>No questions found for the selected sections.</p>
+                <button className={styles.btn} onClick={() => router.push('/')}>
+                    ← Back to Home
+                </button>
+            </div>
+        )
     }
 
     if (submitted) {
@@ -49,6 +121,7 @@ export default function TestPage() {
         const total = allQuestions.length
         const score = Math.round((correct / total) * 100)
         const currentQ = allQuestions[currentIndex]
+        const isFullReview = attemptCount <= 0 || score === 100
 
         return (
             <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
@@ -76,7 +149,7 @@ export default function TestPage() {
                         return (
                             <button
                                 key={i}
-                                className={`${styles.gridBtn} ${!record ? '' : record.correct ? styles.gridBtnCorrect : styles.gridBtnWrong} ${i === currentIndex ? styles.gridBtnCurrent : ''}`}
+                                className={`${styles.gridBtn} ${record?.correct ? styles.gridBtnCorrect : styles.gridBtnWrong} ${i === currentIndex ? styles.gridBtnCurrent : ''}`}
                                 onClick={() => setCurrentIndex(i)}
                             >
                                 {i + 1}
@@ -88,21 +161,55 @@ export default function TestPage() {
                     <MultipleChoiceQuestion
                         question={currentQ}
                         number={currentIndex + 1}
-                        onAnswered={() => { }}
-                        reviewMode
-                        selectedAnswer={answered.get(currentIndex)?.selected}
+                        onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
+                        reviewMode={true}
+                        showCorrect={isFullReview}
+                        selectedAnswer={answered.get(currentIndex)?.selected as string | undefined}
+                        wasCorrect={answered.get(currentIndex)?.correct ?? false}
+                    />
+                ) : currentQ.type === 'select-all' ? (
+                    <SelectAllQuestion
+                        question={currentQ}
+                        number={currentIndex + 1}
+                        onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
+                        reviewMode={true}
+                        showCorrect={isFullReview}
+                        selectedAnswers={answered.get(currentIndex)?.selected as string[] | undefined}
+                        wasCorrect={answered.get(currentIndex)?.correct ?? false}
                     />
                 ) : (
                     <FreeResponseQuestion
                         question={currentQ}
                         number={currentIndex + 1}
-                        onAnswered={() => { }}
-                        reviewMode
+                        onInput={() => { }}
+                        reviewMode={true}
+                        showSolution={isFullReview}
+                        savedInput={answered.get(currentIndex)?.selected as string | undefined}
+                        wasCorrect={answered.get(currentIndex)?.correct ?? false}
                     />
                 )}
-                <button className={styles.btn} onClick={() => router.push('/')}>
-                    ← Back to Home
-                </button>
+                {!isFullReview ? (
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '24px' }}>
+                        <button className={styles.btn} onClick={() => router.push('/')}>
+                            ← Back to Home
+                        </button>
+                        <button className={styles.btn} onClick={() => {
+                            const newLocked = new Set(lockedQuestions)
+                            for (const [i, record] of answered) {
+                                if (record.correct) newLocked.add(i)
+                            }
+                            setLockedQuestions(newLocked)
+                            setSubmitted(false)
+                            setCurrentIndex(0)
+                        }}>
+                            Retry -- {attemptCount} attempt{attemptCount === 1 ? '' : 's'} remaining
+                        </button>
+                    </div>
+                ) : (
+                    <button className={styles.btn} onClick={() => router.push('/')}>
+                        ← Back to Home
+                    </button>
+                )}
             </div>
         )
     }
@@ -120,7 +227,12 @@ export default function TestPage() {
             </header>
             <h2>Practice Test</h2>
             <div>Sections: {sections.join(', ')}</div>
-            <Timer totalSeconds={time} onTimeUp={() => console.log('time up')} onStop={() => router.push('/')} />
+            <Timer
+                timeLeft={timeLeft}
+                paused={paused}
+                onPause={() => setPaused(p => !p)}
+                onStop={() => router.push('/')}
+            />
             <div className={styles.grid}>
                 {getPageNumbers(currentIndex, allQuestions.length).map((page, i) =>
                     page === '...' ? (
@@ -128,7 +240,7 @@ export default function TestPage() {
                     ) : (
                         <button
                             key={page}
-                            className={`${styles.gridBtn} ${answered.has(page) ? styles.gridBtnAnswered : ''} ${page === currentIndex ? styles.gridBtnCurrent : ''}`}
+                            className={`${styles.gridBtn} ${lockedQuestions.has(page) ? styles.gridBtnCorrect : (answered.has(page) || (frInputs.get(page)?.trim())) ? styles.gridBtnAnswered : ''} ${page === currentIndex ? styles.gridBtnCurrent : ''}`}
                             onClick={() => setCurrentIndex(page)}
                         >
                             {page + 1}
@@ -137,9 +249,38 @@ export default function TestPage() {
                 )}
             </div>
             {current.type === 'multiple-choice' ? (
-                <MultipleChoiceQuestion question={current} number={currentIndex + 1} onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)} />
+                <MultipleChoiceQuestion
+                    key={current.id}
+                    question={current}
+                    number={currentIndex + 1}
+                    onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
+                    selectedAnswer={answered.get(currentIndex)?.selected as string | undefined}
+                    showCorrect={isLocked}
+                    reviewMode={isLocked}
+                    wasCorrect={isLocked ? true : undefined}
+                />
+            ) : current.type === 'select-all' ? (
+                <SelectAllQuestion
+                    key={current.id}
+                    question={current}
+                    number={currentIndex + 1}
+                    onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
+                    selectedAnswers={answered.get(currentIndex)?.selected as string[] | undefined}
+                    showCorrect={isLocked}
+                    reviewMode={isLocked}
+                    wasCorrect={isLocked ? true : undefined}
+                />
             ) : (
-                <FreeResponseQuestion question={current} number={currentIndex + 1} onAnswered={(correct) => markAnswered(currentIndex, correct)} />
+                <FreeResponseQuestion
+                    key={current.id}
+                    question={current}
+                    number={currentIndex + 1}
+                    onInput={(input) => setFrInputs(prev => new Map(prev).set(currentIndex, input))}
+                    savedInput={frInputs.get(currentIndex)}
+                    reviewMode={isLocked}
+                    showSolution={isLocked}
+                    wasCorrect={isLocked ? true : undefined}
+                />
             )}
             <div className={styles.nav}>
                 <button className={styles.btn} onClick={() => setCurrentIndex(i => Math.max(0, i - 1))}>
@@ -149,7 +290,7 @@ export default function TestPage() {
                     <button className={styles.btn} onClick={() => setCurrentIndex(i => Math.min(allQuestions.length - 1, i + 1))}>
                         Next →
                     </button>
-                    <button className={`${styles.btn} ${styles.btnSubmit}`} onClick={() => setSubmitted(true)}>
+                    <button className={`${styles.btn} ${styles.btnSubmit}`} onClick={gradeFrAndSubmit}>
                         Submit
                     </button>
                 </div>

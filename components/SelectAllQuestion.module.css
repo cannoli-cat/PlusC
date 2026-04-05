@@ -27,6 +27,16 @@
     min-width: 28px;
 }
 
+.hint {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0 20px 8px 64px;
+    background: var(--surface);
+}
+
 .choices {
     padding: 8px 20px 16px 64px;
     background: var(--surface);
@@ -64,22 +74,6 @@
 
 .wrong {
     border-color: var(--red);
-    color: var(--red);
-}
-
-.feedback {
-    padding: 12px 20px;
-    font-family: var(--font-mono), monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.feedbackCorrect {
-    color: var(--green);
-}
-
-.feedbackWrong {
     color: var(--red);
 }
 

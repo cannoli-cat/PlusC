@@ -11,13 +11,18 @@ interface MultipleChoiceQuestionProps {
     onAnswered: (correct: boolean, selected: string) => void
     reviewMode?: boolean
     selectedAnswer?: string
+    showCorrect?: boolean
+    wasCorrect?: boolean
 }
 
-export default function MultipleChoiceQuestion({ question, number, onAnswered, reviewMode, selectedAnswer }: MultipleChoiceQuestionProps) {
-    const [selected, setSelected] = useState<string | null>(null)
+export default function MultipleChoiceQuestion({ question, number, onAnswered, reviewMode, selectedAnswer, showCorrect, wasCorrect }: MultipleChoiceQuestionProps) {
+    const [selected, setSelected] = useState<string | null>(selectedAnswer ?? null)
+    const cardClass = wasCorrect === true ? styles.questionCorrect
+        : wasCorrect === false ? styles.questionWrong
+        : ''
 
     return (
-        <div className={styles.question}>
+        <div className={`${styles.question} ${cardClass}`}>
             <div className={styles.header}>
                 <span className={styles.number}>{number}</span>
                 <MathText text={question.text} />
@@ -26,14 +31,12 @@ export default function MultipleChoiceQuestion({ question, number, onAnswered, r
                 {question.choices.map((choice) => {
                     let choiceClass = styles.choice
 
-                    if (reviewMode) {
-                        if (choice.label === question.answer) {
-                            choiceClass += ` ${styles.correct}`
-                        } else if (choice.label === selectedAnswer) {
-                            choiceClass += ` ${styles.wrong}`
-                        }
+                    if (showCorrect) {
+                        if (choice.label === question.answer) choiceClass += ` ${styles.correct}`
+                        else if (choice.label === selectedAnswer && selectedAnswer !== question.answer) choiceClass += ` ${styles.wrong}`
                     } else {
-                        if (selected === choice.label) {
+                        const effectiveSelected = selected ?? selectedAnswer
+                        if (choice.label === effectiveSelected) {
                             choiceClass += ` ${styles.selected}`
                         }
                     }
