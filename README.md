@@ -17,3 +17,5 @@ Generate timed practice tests from a question bank covering integration techniqu
 - Next.js / TypeScript
 - KaTeX for math rendering
 - math.js for symbolic answer evaluation
+
+[Try it out!](https://plusc.vercel.app/)
