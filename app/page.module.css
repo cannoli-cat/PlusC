@@ -91,3 +91,42 @@
 .startBtn:hover {
     opacity: 0.85;
 }
+
+.sectionList {
+    max-height: 180px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sectionList::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+.sectionList::-webkit-scrollbar-thumb {
+    background: var(--border-light);
+    border-radius: 3px;
+}
+
+.sectionList::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+.searchInput {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-mono), monospace;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 2px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}

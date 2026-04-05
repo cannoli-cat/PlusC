@@ -15,7 +15,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "By Parts",
+  title: "Plus C",
   description: "A calculus study tool by Tyler Wolfe",
 };
 

@@ -16,10 +16,55 @@ interface FreeResponseQuestionProps {
     savedInput?: string
 }
 
+function normalizeMath(expr: string): string {
+    let s = expr
+
+    s = s.replace(/\bln\b/g, 'log')
+
+    s = s.replace(/\barcsin\b/g, 'asin')
+    s = s.replace(/\barccos\b/g, 'acos')
+    s = s.replace(/\barctan\b/g, 'atan')
+
+    let result = ''
+    let i = 0
+    while (i < s.length) {
+        if (s[i] === '|') {
+            let j = i + 1
+            while (j < s.length && s[j] !== '|') j++
+            if (j < s.length) {
+                result += `abs(${normalizeMath(s.slice(i + 1, j))})`
+                i = j + 1
+            } else {
+                result += s[i]
+                i++
+            }
+        } else {
+            result += s[i]
+            i++
+        }
+    }
+    s = result
+
+    s = s.replace(/\b(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\s*(abs\([^)]*\))/g, '$1($2)')
+
+    s = s.replace(/(\d)(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\b/g, '$1*$2')
+
+    s = s.replace(/\btan\^\(?-1\)?\(([^)]*)\)/g, 'atan($1)')
+    s = s.replace(/\bsin\^\(?-1\)?\(([^)]*)\)/g, 'asin($1)')
+    s = s.replace(/\bcos\^\(?-1\)?\(([^)]*)\)/g, 'acos($1)')
+
+    s = s.replace(/\b(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\^(\([^)]+\)|-?\d+)\(([^)]*)\)/g, '($1($3))^$2')
+
+    // Split variable names glued to 'e^' — e.g. xe^x -> x*e^x, 2xe^x -> 2x*e^x
+    s = s.replace(/([a-dA-Df-zF-Z0-9])e\^/g, '$1*e^')
+
+    return s
+}
+
 export function checkAnswer(input: string, expected: string, variables: string[]): boolean {
     try {
-        const parsedInput = parse(input)
-        const parsedExpected = parse(expected)
+        const parsedInput = parse(normalizeMath(input))
+        const parsedExpected = parse(normalizeMath(expected))
 
         const testPoints: Record<string, number>[] = []
         for (let i = 0; i < 20; i++) {
@@ -49,7 +94,7 @@ export default function FreeResponseQuestion({ question, number, onInput, review
     const [input, setInput] = useState(savedInput ?? '')
     const cardClass = wasCorrect === true ? styles.questionCorrect
         : wasCorrect === false ? styles.questionWrong
-        : ''
+            : ''
 
     const handleChange = (value: string) => {
         setInput(value)

@@ -8,6 +8,7 @@ import MultipleChoiceQuestion from "@/components/MultipleChoiceQuestion"
 import SelectAllQuestion from "@/components/SelectAllQuestion"
 import FreeResponseQuestion, { checkAnswer } from "@/components/FreeResponseQuestion"
 import Timer from "@/components/Timer"
+import Header from "@/components/Header"
 import { useRouter } from 'next/navigation'
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import styles from './page.module.css'
@@ -125,15 +126,7 @@ function TestContent() {
 
         return (
             <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
-                <header style={{ borderBottom: '1px solid var(--border)', paddingBottom: '28px', marginBottom: '40px' }}>
-                    <p style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.15em', color: 'var(--text-faint)', textTransform: 'uppercase', marginBottom: '8px' }}>
-                        by Tyler Wolfe
-                    </p>
-                    <h1 style={{ fontSize: '32px', fontWeight: 500, letterSpacing: '-0.01em' }}>By Parts</h1>
-                    <p style={{ fontSize: '16px', color: 'var(--text-dim)', fontStyle: 'italic', marginTop: '4px' }}>
-                        A calculus study tool
-                    </p>
-                </header>
+                <Header />
                 <div style={{ marginBottom: '32px' }}>
                     <h2 style={{ marginBottom: '8px' }}>Results</h2>
                     <p style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '28px', color: score >= 70 ? 'var(--green)' : 'var(--red)' }}>
@@ -216,17 +209,9 @@ function TestContent() {
 
     return (
         <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
-            <header style={{ borderBottom: '1px solid var(--border)', paddingBottom: '28px', marginBottom: '40px' }}>
-                <p style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '11px', letterSpacing: '0.15em', color: 'var(--text-faint)', textTransform: 'uppercase', marginBottom: '8px' }}>
-                    by Tyler Wolfe
-                </p>
-                <h1 style={{ fontSize: '32px', fontWeight: 500, letterSpacing: '-0.01em' }}>By Parts</h1>
-                <p style={{ fontSize: '16px', color: 'var(--text-dim)', fontStyle: 'italic', marginTop: '4px' }}>
-                    A calculus study tool
-                </p>
-            </header>
+            <Header />
             <h2>Practice Test</h2>
-            <div>Sections: {sections.join(', ')}</div>
+            <div>Sections: {[...sections].sort((a, b) => parseFloat(a.replace(/[^0-9.]/g, '')) - parseFloat(b.replace(/[^0-9.]/g, ''))).map(s => s.match(/§[\d.]+/)?.[0] ?? s).join(', ')}</div>
             <Timer
                 timeLeft={timeLeft}
                 paused={paused}

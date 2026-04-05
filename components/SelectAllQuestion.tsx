@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import MathText from './MathText'
 import type { SelectAllQuestion as SelectAllQuestionType } from '@/data/questions'
 import styles from './SelectAllQuestion.module.css'
@@ -17,6 +17,7 @@ interface SelectAllQuestionProps {
 
 export default function SelectAllQuestion({ question, number, onAnswered, reviewMode, selectedAnswers, showCorrect, wasCorrect }: SelectAllQuestionProps) {
     const [selected, setSelected] = useState<Set<string>>(new Set(selectedAnswers ?? []))
+    const sortedAnswers = useMemo(() => [...question.answers].sort(), [question.answers])
     const cardClass = wasCorrect === true ? styles.questionCorrect
         : wasCorrect === false ? styles.questionWrong
         : ''
@@ -28,7 +29,7 @@ export default function SelectAllQuestion({ question, number, onAnswered, review
         else next.add(label)
         setSelected(next)
         const arr = [...next].sort()
-        const correct = arr.length === question.answers.length && arr.every((v, i) => v === [...question.answers].sort()[i])
+        const correct = arr.length === sortedAnswers.length && arr.every((v, i) => v === sortedAnswers[i])
         onAnswered(correct, arr)
     }
 

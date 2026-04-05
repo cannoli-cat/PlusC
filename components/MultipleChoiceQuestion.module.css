@@ -67,22 +67,6 @@
     color: var(--red);
 }
 
-.feedback {
-    padding: 12px 20px;
-    font-family: var(--font-mono), monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.feedbackCorrect {
-    color: var(--green);
-}
-
-.feedbackWrong {
-    color: var(--red);
-}
-
 .questionCorrect {
     border-color: var(--green);
 }
