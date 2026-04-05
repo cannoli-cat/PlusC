@@ -8,9 +8,10 @@ import styles from './MultipleChoiceQuestion.module.css'
 interface MultipleChoiceQuestionProps {
     question: MultipleChoiceQuestionType
     number: number
+    onAnswered: (correct: boolean) => void
 }
 
-export default function MultipleChoiceQuestion({ question, number }: MultipleChoiceQuestionProps) {
+export default function MultipleChoiceQuestion({ question, number, onAnswered }: MultipleChoiceQuestionProps) {
     const [selected, setSelected] = useState<string | null>(null)
 
     return (
@@ -24,8 +25,10 @@ export default function MultipleChoiceQuestion({ question, number }: MultipleCho
                     <button
                         key={choice.label}
                         className={`${styles.choice} ${selected === choice.label ? styles.selected : ''}`}
-                        onClick={() => setSelected(choice.label)}
-                    >
+                        onClick={() => {
+                            setSelected(choice.label)
+                            onAnswered(choice.label === question.answer)
+                        }}>
                         {choice.label}. <MathText text={choice.text} />
                     </button>
                 ))}

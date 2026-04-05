@@ -21,3 +21,50 @@
     justify-content: space-between;
     margin-top: 24px;
 }
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 28px;
+}
+
+.gridBtn {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.15s;
+}
+
+.gridBtn:hover {
+    border-color: var(--border-light);
+    color: var(--text);
+}
+
+.gridBtnCurrent {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.gridBtnAnswered {
+    background: var(--surface2);
+    color: var(--text);
+    border-color: var(--border-light);
+}
+
+.ellipsis {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

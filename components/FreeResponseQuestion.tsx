@@ -8,9 +8,10 @@ import styles from './FreeResponseQuestion.module.css'
 interface FreeResponseQuestionProps {
     question: FreeResponseQuestionType
     number: number
+    onAnswered: (correct: boolean) => void
 }
 
-export default function FreeResponseQuestion({ question, number }: FreeResponseQuestionProps) {
+export default function FreeResponseQuestion({ question, number, onAnswered }: FreeResponseQuestionProps) {
     const [revealed, setRevealed] = useState(false)
 
     return (
@@ -18,7 +19,10 @@ export default function FreeResponseQuestion({ question, number }: FreeResponseQ
             <div className={styles.header}>
                 <span className={styles.number}>{number}</span>
                 <MathText text={question.text} />
-                <button className={styles.revealBtn} onClick={() => setRevealed(!revealed)}>
+                <button className={styles.revealBtn} onClick={() => {
+                    setRevealed(!revealed)
+                    onAnswered(true)
+                }}>
                     {revealed ? 'Hide Solution' : 'Show Solution'}
                 </button>
             </div>

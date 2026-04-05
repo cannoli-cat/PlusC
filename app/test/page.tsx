@@ -30,8 +30,14 @@ export default function TestPage() {
     }, [sections, mcCount, frCount])
 
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [answered, setAnswered] = useState<Map<number, boolean>>(new Map<number, boolean>)
+    const [submitted, setSubmitted] = useState(false)
 
     const current = allQuestions[currentIndex]
+
+    const markAnswered = (index: number, correct: boolean) => {
+        setAnswered(prev => new Map(prev).set(index, correct))
+    }
 
     return (
         <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
@@ -47,18 +53,38 @@ export default function TestPage() {
             <h2>Practice Test</h2>
             <div>Sections: {sections.join(', ')}</div>
             <Timer totalSeconds={time} onTimeUp={() => console.log('time up')} onStop={() => router.push('/')} />
+            <div className={styles.grid}>
+                {getPageNumbers(currentIndex, allQuestions.length).map((page, i) =>
+                    page === '...' ? (
+                        <span key={`ellipsis-${i}`} className={styles.ellipsis}>...</span>
+                    ) : (
+                        <button
+                            key={page}
+                            className={`${styles.gridBtn} ${answered.has(page) ? styles.gridBtnAnswered : ''} ${page === currentIndex ? styles.gridBtnCurrent : ''}`}
+                            onClick={() => setCurrentIndex(page)}
+                        >
+                            {page + 1}
+                        </button>
+                    )
+                )}
+            </div>
             {current.type === 'multiple-choice' ? (
-                <MultipleChoiceQuestion question={current} number={currentIndex + 1} />
+                <MultipleChoiceQuestion question={current} number={currentIndex + 1} onAnswered={(correct) => markAnswered(currentIndex, correct)} />
             ) : (
-                <FreeResponseQuestion question={current} number={currentIndex + 1} />
+                <FreeResponseQuestion question={current} number={currentIndex + 1} onAnswered={(correct) => markAnswered(currentIndex, correct)} />
             )}
             <div className={styles.nav}>
                 <button className={styles.btn} onClick={() => setCurrentIndex(i => Math.max(0, i - 1))}>
                     ← Previous
                 </button>
-                <button className={styles.btn} onClick={() => setCurrentIndex(i => Math.min(allQuestions.length - 1, i + 1))}>
-                    Next →
-                </button>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                    <button className={styles.btn} onClick={() => setCurrentIndex(i => Math.min(allQuestions.length - 1, i + 1))}>
+                        Next →
+                    </button>
+                    <button className={`${styles.btn} ${styles.btnSubmit}`} onClick={() => setSubmitted(true)}>
+                        Submit
+                    </button>
+                </div>
             </div>
         </div>
     )
@@ -71,4 +97,24 @@ function shuffle<T>(array: T[]): T[] {
         [arr[i], arr[j]] = [arr[j], arr[i]]
     }
     return arr
+}
+
+function getPageNumbers(current: number, total: number): (number | '...')[] {
+    if (total <= 20) return Array.from({ length: total }, (_, i) => i)
+
+    const pages: (number | '...')[] = []
+
+    pages.push(0)
+
+    if (current > 8) pages.push('...')
+
+    for (let i = Math.max(1, current - 7); i <= Math.min(total - 2, current + 7); i++) {
+        pages.push(i)
+    }
+
+    if (current < total - 9) pages.push('...')
+
+    pages.push(total - 1)
+
+    return pages
 }
