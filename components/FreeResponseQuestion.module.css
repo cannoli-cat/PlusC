@@ -74,36 +74,6 @@
     flex-shrink: 0;
 }
 
-.submitBtn {
-    align-self: flex-start;
-    font-family: var(--font-mono), monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    padding: 6px 14px;
-    border-radius: 2px;
-    border: 1px solid var(--accent);
-    background: transparent;
-    color: var(--accent);
-    cursor: pointer;
-    transition: all 0.15s;
-}
-
-.submitBtn:hover {
-    background: var(--accent);
-    color: var(--bg);
-}
-
-.submitBtn:disabled {
-    opacity: 0.4;
-    cursor: default;
-}
-
-.feedback {
-    font-family: var(--font-mono), monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-}
-
 .savedAnswer {
     display: flex;
     align-items: center;
