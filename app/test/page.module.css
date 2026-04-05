@@ -1,0 +1,23 @@
+.btn {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn:hover {
+    border-color: var(--border-light);
+    color: var(--text);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}

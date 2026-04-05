@@ -1,0 +1,93 @@
+.config {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.configTitle {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+}
+
+.configRow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.label {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sectionBtn {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.sectionBtn:hover {
+    border-color: var(--border-light);
+    color: var(--text);
+}
+
+.sectionBtnActive {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.input {
+    font-family: var(--font-mono), monospace;
+    font-size: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 2px;
+    width: 120px;
+    transition: border-color 0.15s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--border-light);
+}
+
+.startBtn {
+    font-family: var(--font-mono), monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 12px 28px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: opacity 0.15s;
+    align-self: flex-start;
+}
+
+.startBtn:hover {
+    opacity: 0.85;
+}
