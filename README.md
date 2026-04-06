@@ -1,6 +1,6 @@
 # Plus C
 
-A Calculus practice tool mainly built for MAT266 at ASU. May eventually be extended to support Calculus 1 (MAT265) and Calculus 3 (MAT267)
+A Calculus practice tool mainly built for Calculus 1 (MAT265) and Calculus 2 (MAT266) at ASU. May eventually be extended to support Calculus 3 (MAT267)
 
 Generate timed practice tests from a question bank covering integration techniques, applications, sequences, and series. Questions include multiple choice, select-all, and free response with symbolic answer checking.
 
