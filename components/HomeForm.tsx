@@ -13,7 +13,9 @@ export default function HomeForm() {
   })
 
   const activeBank = course === '266' ? questions266 : questions265
-  const sections = [...new Set(activeBank.map((q) => q.section))]
+  const sections = [...new Set(activeBank.map((q) => q.section))].sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true })
+  )
 
   const [selectedSections, setSelectedSections] = useState<string[]>(() => {
     try { const s = localStorage.getItem('byparts-sections'); return s ? JSON.parse(s) : sections } catch { return sections }
@@ -60,8 +62,13 @@ export default function HomeForm() {
   const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newCourse = e.target.value
     setCourse(newCourse)
+
     const newBank = newCourse === '266' ? questions266 : questions265
-    setSelectedSections([...new Set(newBank.map(q => q.section))])
+    const newSections = [...new Set(newBank.map(q => q.section))].sort((a, b) =>
+      a.localeCompare(b, undefined, { numeric: true })
+    )
+
+    setSelectedSections(newSections)
     setSectionSearch('')
   }
 
