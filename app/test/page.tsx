@@ -3,7 +3,7 @@
 import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import type { MultipleChoiceQuestion as MultipleChoiceQuestionType, FreeResponseQuestion as FreeResponseQuestionType, SelectAllQuestion as SelectAllQuestionType } from '@/data/questions'
-import { questions } from '@/data/questions'
+import { questions265, questions266 } from '@/data/questions'
 import MultipleChoiceQuestion from "@/components/MultipleChoiceQuestion"
 import SelectAllQuestion from "@/components/SelectAllQuestion"
 import FreeResponseQuestion, { checkAnswer } from "@/components/FreeResponseQuestion"
@@ -34,6 +34,9 @@ function TestContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
 
+    const course = searchParams.get('course') ?? '265'
+    const questionBank = course === '266' ? questions266 : questions265
+
     const sections = useMemo(() =>
         searchParams.get('sections')?.split(',').filter(Boolean) ?? []
         , [searchParams])
@@ -47,7 +50,7 @@ function TestContent() {
     const randomCount = Number(searchParams.get('count'))
 
     const allQuestions = useMemo(() => {
-        const filtered = questions.filter((q) => sections.includes(q.section))
+        const filtered = questionBank.filter((q) => sections.includes(q.section))
 
         if (isRandom) {
             return shuffle(filtered).slice(0, randomCount)
@@ -58,7 +61,7 @@ function TestContent() {
         const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
 
         return shuffle([...mc, ...sa, ...fr])
-    }, [sections, mcCount, saCount, frCount, isRandom, randomCount])
+    }, [sections, mcCount, saCount, frCount, isRandom, randomCount, questionBank])
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answered, setAnswered] = useState<Map<number, AnswerRecord>>(new Map())

@@ -1,4 +1,5 @@
-import rawQuestions from './questions.json'
+import rawQuestions265 from './questions-265.json'
+import rawQuestions266 from './questions-266.json'
 
 export type QuestionType = 'multiple-choice' | 'free-response' | 'select-all'
 
@@ -39,4 +40,5 @@ export interface FreeResponseQuestion {
 
 export type Question = MultipleChoiceQuestion | SelectAllQuestion | FreeResponseQuestion
 
-export const questions: Question[] = rawQuestions as Question[]
+export const questions265: Question[] = rawQuestions265 as Question[]
+export const questions266: Question[] = rawQuestions266 as Question[]

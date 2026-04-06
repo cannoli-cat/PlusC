@@ -2,17 +2,23 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { questions } from '@/data/questions'
+import { questions265, questions266 } from '@/data/questions'
 import styles from '../app/page.module.css'
 
 export default function HomeForm() {
   const router = useRouter()
 
-  const sections = [...new Set(questions.map((q) => q.section))]
+  const [course, setCourse] = useState(() => {
+    const v = localStorage.getItem('byparts-course'); return v ? v : '265'
+  })
+
+  const activeBank = course === '266' ? questions266 : questions265
+  const sections = [...new Set(activeBank.map((q) => q.section))]
 
   const [selectedSections, setSelectedSections] = useState<string[]>(() => {
     try { const s = localStorage.getItem('byparts-sections'); return s ? JSON.parse(s) : sections } catch { return sections }
   })
+
   const [randomTest, setRandomTest] = useState(() => {
     const v = localStorage.getItem('byparts-random'); return v === 'true'
   })
@@ -40,6 +46,7 @@ export default function HomeForm() {
   const skipFirstSave = useRef(true)
   useEffect(() => {
     if (skipFirstSave.current) { skipFirstSave.current = false; return }
+    localStorage.setItem('byparts-course', course)
     localStorage.setItem('byparts-sections', JSON.stringify(selectedSections))
     localStorage.setItem('byparts-random', String(randomTest))
     localStorage.setItem('byparts-time', String(timeLimit))
@@ -48,10 +55,19 @@ export default function HomeForm() {
     localStorage.setItem('byparts-fr', String(frCount))
     localStorage.setItem('byparts-attempts', String(attempts))
     localStorage.setItem('byparts-randomcount', String(randomCount))
-  }, [selectedSections, randomTest, timeLimit, mcCount, saCount, frCount, attempts, randomCount])
+  }, [course, selectedSections, randomTest, timeLimit, mcCount, saCount, frCount, attempts, randomCount])
+
+  const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCourse = e.target.value
+    setCourse(newCourse)
+    const newBank = newCourse === '266' ? questions266 : questions265
+    setSelectedSections([...new Set(newBank.map(q => q.section))])
+    setSectionSearch('')
+  }
 
   const handleStart = () => {
     const params = new URLSearchParams({
+      course: course,
       sections: selectedSections.join(','),
       time: String(timeLimit * 60),
       a: String(attempts),
@@ -69,6 +85,19 @@ export default function HomeForm() {
 
   return (
     <div className={styles.config}>
+      <div className={styles.configRow}>
+        <span className={styles.label}>Course</span>
+        <select
+          className={styles.input}
+          value={course}
+          onChange={handleCourseChange}
+          style={{ width: '100%', cursor: 'pointer' }}
+        >
+          <option value="265">MAT 265 (Calculus for Engineers I)</option>
+          <option value="266">MAT 266 (Calculus for Engineers II)</option>
+        </select>
+      </div>
+
       <div className={styles.configRow}>
         <span className={styles.label}>Sections</span>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>

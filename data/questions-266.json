@@ -738,7 +738,7 @@
     "type": "free-response",
     "section": "§6.3. Partial Fraction Decomposition",
     "text": "Evaluate $\\displaystyle \\int \\frac{6x + 2}{(x-1)(x+1)(x+3)} \\, dx$.",
-    "answer": "ln|x-1| - 2*ln|x+1| + ln|x+3| + C",
+    "answer": "ln|x-1| + ln|x+1| - 2*ln|x+3| + C",
     "solution": "**Step 1: Partial fraction decomposition**\n\n$$\\frac{6x + 2}{(x-1)(x+1)(x+3)} = \\frac{A}{x-1} + \\frac{B}{x+1} + \\frac{C}{x+3}$$\n\nMultiply by $(x-1)(x+1)(x+3)$:\n$$6x + 2 = A(x+1)(x+3) + B(x-1)(x+3) + C(x-1)(x+1)$$\n\n**Substitute $x = 1$:**\n$$6(1) + 2 = A(2)(4) = 8A$$\n$$8 = 8A \\implies A = 1$$\n\n**Substitute $x = -1$:**\n$$6(-1) + 2 = B(-2)(2) = -4B$$\n$$-4 = -4B \\implies B = 1$$\n\nWait, let me recalculate: $6(-1) + 2 = -6 + 2 = -4$, and $B(-2)(2) = -4B$\nSo $-4 = -4B \\implies B = 1$... but let me verify.\n\nActually: $x = -1$: $B(-1-1)(-1+3) = B(-2)(2) = -4B$\n$-4 = -4B \\implies B = 1$\n\nHmm, let me recheck with $x = -3$:\n$$6(-3) + 2 = C(-3-1)(-3+1) = C(-4)(-2) = 8C$$\n$$-16 = 8C \\implies C = -2$$\n\nVerify: Let $x = 0$:\n$$2 = A(1)(3) + B(-1)(3) + C(-1)(1) = 3A - 3B - C = 3(1) - 3(1) - (-2) = 3 - 3 + 2 = 2$$ \n\nWait that doesn't check. Let me redo.\n\n$x = -1$: $-4 = B(-2)(2) = -4B \\implies B = 1$... \n\nBut verification failed. Let me be more careful.\n\n$x=0$: $2 = A(1)(3) + B(-1)(3) + C(-1)(1) = 3A - 3B - C$\n\nWith $A=1, B=1, C=-2$: $3(1) - 3(1) - (-2) = 3 - 3 + 2 = 2$ ✓\n\nSo $A=1, B=1, C=-2$... but let me recompute at $x=-1$:\n$6(-1)+2 = -4$. And $B(-2)(2) = -4B$. So $-4 = -4B$, giving $B=1$.\n\nActually I need to recheck $x=-3$: $6(-3)+2 = -16$\n$C(-4)(-2) = 8C$\n$-16 = 8C \\implies C = -2$... that seems wrong too.\n\nLet me verify the full expansion:\n$A(x+1)(x+3) + B(x-1)(x+3) + C(x-1)(x+1)$\n$= A(x^2+4x+3) + B(x^2+2x-3) + C(x^2-1)$\n$= (A+B+C)x^2 + (4A+2B)x + (3A-3B-C)$\n\nComparing to $6x + 2 = 0x^2 + 6x + 2$:\n- $x^2$: $A + B + C = 0$\n- $x^1$: $4A + 2B = 6$\n- $x^0$: $3A - 3B - C = 2$\n\nFrom substitution: $A = 1$, so $4(1) + 2B = 6 \\implies B = 1$\nThen $A + B + C = 0 \\implies 1 + 1 + C = 0 \\implies C = -2$\n\nCheck $x^0$: $3(1) - 3(1) - (-2) = 3 - 3 + 2 = 2$ ✓\n\nSo $A = 1, B = 1, C = -2$... but wait, let me recheck at $x = -1$:\n$B(-1-1)(-1+3) = B(-2)(2) = -4B$\nAnd $6(-1)+2 = -4$\nSo $-4 = -4B \\implies B = 1$. Hmm, that's what I had.\n\nOK wait I think I made an arithmetic error. Let me redo $x=-1$ more carefully:\n$6x+2$ at $x=-1$: $6(-1) + 2 = -6 + 2 = -4$. ✓\n$(x+1)$ at $x=-1$: $0$, so $A$ term vanishes. ✓\n$(x+3)$ at $x=-1$: $2$. $(x-1)$ at $x=-1$: $-2$. So $B(-2)(2) = -4B$. ✓\n$(x-1)(x+1)$ at $x=-1$: $(-2)(0) = 0$, so $C$ term vanishes. ✓\n\nSo $-4 = -4B \\implies B = 1$.\n\nBut wait—I want to double-check with different approach. Actually I realize I should double-check with full numerical verification.\n\nWith $A=1, B=1, C=-2$:\n$\\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}$\n\nAt $x=0$: $\\frac{1}{-1} + \\frac{1}{1} - \\frac{2}{3} = -1 + 1 - \\frac{2}{3} = -\\frac{2}{3}$\n\nOriginal at $x=0$: $\\frac{2}{(-1)(1)(3)} = \\frac{2}{-3} = -\\frac{2}{3}$ ✓\n\nGreat, so $A=1, B=1, C=-2$.\n\nWait, but actually I think I made an error somewhere because I got $B=1$ but then later questioned it. Let me just accept $A=1, B=1, C=-2$ since the verification works.\n\nActually, wait: going back to $x=-1$:\n$-4 = -4B \\implies B = 1$. That's inconsistent with what I need to get.\n\nHmm, but the numerical check works. Let me just accept $B=1$ then.\n\nActually no wait—I think I see my error. At $x = -1$, I should get:\n$-4 = -4B$, so $B = 1$.\n\nBut I want to double-check: is $B=1$ correct? The numerical verification says yes. OK.\n\nSo the decomposition is:\n$$\\frac{6x + 2}{(x-1)(x+1)(x+3)} = \\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}$$\n\n**Step 2: Integrate**\n$$\\int \\left(\\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}\\right) dx$$\n$$= \\ln|x-1| + \\ln|x+1| - 2\\ln|x+3| + C$$\n\nHmm wait, but my answer field says $\\ln|x-1| - 2\\ln|x+1| + \\ln|x+3| + C$. Let me recompute.\n\nActually I think I need to redo this problem from scratch to make sure.\n\n**REDO:**\n$$\\frac{6x + 2}{(x-1)(x+1)(x+3)} = \\frac{A}{x-1} + \\frac{B}{x+1} + \\frac{C}{x+3}$$\n\n$x = 1$: $8 = A(2)(4) = 8A \\implies A = 1$\n$x = -1$: $-4 = B(-2)(2) = -4B \\implies B = 1$\n$x = -3$: $-16 = C(-4)(-2) = 8C \\implies C = -2$\n\nSo decomposition: $\\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}$\n\nIntegral: $\\ln|x-1| + \\ln|x+1| - 2\\ln|x+3| + C$\n\nSo the correct answer is $\\ln|x-1| + \\ln|x+1| - 2\\ln|x+3| + C$."
   },
   {
@@ -1025,10 +1025,28 @@
   },
   {
     "id": "s66_gen_4",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§6.6. Improper Integrals",
     "text": "Evaluate $\\displaystyle\\int_1^{\\infty} \\frac{1}{x}\\,dx$, or state that it diverges.",
-    "answer": "diverges",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diverges"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $0$"
+      },
+      {
+        "label": "C",
+        "text": "Converges to $1$"
+      },
+      {
+        "label": "D",
+        "text": "Converges to $e$"
+      }
+    ],
+    "answer": "A",
     "solution": "This is a Type 1 improper integral.\n\n$$\\int_1^{\\infty} \\frac{1}{x}\\,dx = \\lim_{b \\to \\infty} \\int_1^{b} \\frac{1}{x}\\,dx$$\n\nCompute the antiderivative:\n$$\\int \\frac{1}{x}\\,dx = \\ln|x|$$\n\nEvaluate:\n$$\\lim_{b \\to \\infty} \\left[\\ln|x|\\right]_1^{b} = \\lim_{b \\to \\infty} (\\ln b - \\ln 1)$$\n$$= \\lim_{b \\to \\infty} (\\ln b - 0) = \\lim_{b \\to \\infty} \\ln b = \\infty$$\n\nSince the limit is infinite, the integral **diverges**.\n\nThis is the critical case $p = 1$ for the p-integral $\\int_1^{\\infty} \\frac{1}{x^p}\\,dx$."
   },
   {
@@ -1284,7 +1302,7 @@
     "type": "free-response",
     "section": "§7.1. Areas Between Curves",
     "text": "Find the area of the region enclosed by $y = e^x$, $y = e^{-x}$, and $x = \\ln 3$.",
-    "answer": "8/3",
+    "answer": "4/3",
     "solution": "The curves $y = e^x$ and $y = e^{-x}$ intersect when $e^x = e^{-x}$, so $e^{2x} = 1$, giving $x = 0$.\n\nOn $[0, \\ln 3]$, since $e^x > e^{-x}$ for $x > 0$:\n\nArea $= \\int_0^{\\ln 3}(e^x - e^{-x})\\,dx$\n\n$= \\left[e^x + e^{-x}\\right]_0^{\\ln 3}$\n\n$= (e^{\\ln 3} + e^{-\\ln 3}) - (e^0 + e^0)$\n\n$= (3 + \\frac{1}{3}) - 2$\n\n$= \\frac{10}{3} - 2 = \\frac{10 - 6}{3} = \\frac{4}{3}$\n\nWait, let me recalculate: $[e^x + e^{-x}]$ should be $[e^x - (-e^{-x})] = [e^x + e^{-x}]$.\n\nActually the antiderivative of $e^x - e^{-x}$ is $e^x + e^{-x}$.\n\nAt $x = \\ln 3$: $3 + \\frac{1}{3} = \\frac{10}{3}$\nAt $x = 0$: $1 + 1 = 2$\n\nArea $= \\frac{10}{3} - 2 = \\frac{4}{3}$\n\nHmm, let me recheck. The answer is $\\frac{4}{3}$... Actually I need to reconsider the bounds.\n\nThe region is bounded by both curves from $x=0$ (intersection) to $x = \\ln 3$.\n\nArea $= \\int_0^{\\ln 3}(e^x - e^{-x})dx = [e^x + e^{-x}]_0^{\\ln 3} = (3 + 1/3) - (1+1) = 10/3 - 2 = 4/3$"
   },
   {
@@ -1960,11 +1978,29 @@
   },
   {
     "id": "s76_gen_2",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§7.6. Work (Physics Applications)",
-    "text": "A conical tank (vertex down) has height 6 m and top radius 2 m. It is filled with water ($\\rho = 1000$ kg/m³, $g = 9.8$ m/s²). Set up, but do not evaluate, the integral for the work required to pump all the water to the top of the tank. Express your answer in the form $W = \\int_a^b f(y) \\, dy$.",
-    "answer": "W = ∫_0^6 9800 * π * (y^2/9) * (6 - y) dy",
-    "solution": "Place the origin at the vertex (bottom) of the cone with $y$ measured upward.\n\n**Step 1:** Find the radius at height $y$ using similar triangles.\n- At $y = 6$, radius $= 2$\n- At height $y$: $\\frac{r}{y} = \\frac{2}{6} = \\frac{1}{3}$\n- So $r(y) = \\frac{y}{3}$\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A(y) = \\pi r^2 = \\pi \\left(\\frac{y}{3}\\right)^2 = \\frac{\\pi y^2}{9}$\n- Volume: $dV = \\frac{\\pi y^2}{9} \\, dy$\n- Weight: $dF = 1000 \\cdot 9.8 \\cdot \\frac{\\pi y^2}{9} \\, dy = \\frac{9800 \\pi y^2}{9} \\, dy$\n\n**Step 3:** Distance to pump to the top ($y = 6$):\n$$d(y) = 6 - y$$\n\n**Step 4:** The integral is:\n$$W = \\int_0^6 9800 \\cdot \\frac{\\pi y^2}{9} (6 - y) \\, dy$$\n\nOr equivalently: $W = \\int_0^6 9800 \\cdot \\pi \\cdot \\frac{y^2}{9} \\cdot (6 - y) \\, dy$"
+    "text": "A conical tank (vertex down) has height 6 m and top radius 2 m. It is filled with water ($\\rho = 1000$ kg/m³, $g = 9.8$ m/s²). Select the integral for the work required to pump all the water to the top of the tank.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^6 9800 \\cdot \\pi \\cdot \\dfrac{y^2}{9} \\cdot (6 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^6 9800 \\cdot \\pi \\cdot \\dfrac{y^2}{3} \\cdot (6 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^6 9800 \\cdot \\pi \\cdot \\dfrac{y^2}{9} \\cdot y \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^6 9800 \\cdot 2\\pi \\cdot \\dfrac{y}{3} \\cdot (6 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the vertex (bottom) of the cone with $y$ measured upward.\n\n**Step 1:** Find the radius at height $y$ using similar triangles.\n- At $y = 6$, radius $= 2$\n- At height $y$: $\\frac{r}{y} = \\frac{2}{6} = \\frac{1}{3}$\n- So $r(y) = \\frac{y}{3}$\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A(y) = \\pi r^2 = \\pi \\left(\\frac{y}{3}\\right)^2 = \\frac{\\pi y^2}{9}$\n- Volume: $dV = \\frac{\\pi y^2}{9} \\, dy$\n- Weight: $dF = 1000 \\cdot 9.8 \\cdot \\frac{\\pi y^2}{9} \\, dy = \\frac{9800 \\pi y^2}{9} \\, dy$\n\n**Step 3:** Distance to pump to the top ($y = 6$):\n$$d(y) = 6 - y$$\n\n**Step 4:** The integral is:\n$$W = \\int_0^6 9800 \\cdot \\frac{\\pi y^2}{9} (6 - y) \\, dy$$"
   },
   {
     "id": "s76_gen_3",
@@ -1994,11 +2030,29 @@
   },
   {
     "id": "s76_gen_4",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§7.6. Work (Physics Applications)",
-    "text": "A rectangular tank has length 8 m, width 4 m, and height 3 m. It is half-filled with saltwater ($\\rho = 1030$ kg/m³, $g = 9.8$ m/s²). Set up the integral for the work required to pump all the saltwater to the top of the tank.",
-    "answer": "W = ∫_0^(3/2) 1030 * 9.8 * 32 * (3 - y) dy",
-    "solution": "Place the origin at the bottom of the tank with $y$ measured upward.\n\n**Step 1:** The tank is half-filled, so water goes from $y = 0$ to $y = 1.5$ m (half of 3 m).\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A = 8 \\times 4 = 32$ m² (constant)\n- Volume: $dV = 32 \\, dy$\n- Mass: $dm = 1030 \\cdot 32 \\, dy$\n- Weight: $dF = 1030 \\cdot 9.8 \\cdot 32 \\, dy$\n\n**Step 3:** Distance to pump to the top at $y = 3$:\n$$d(y) = 3 - y$$\n\n**Step 4:** Work integral (integrating over the water, from 0 to 1.5):\n$$W = \\int_0^{3/2} 1030 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$$\n\nOr equivalently: $W = \\int_0^{1.5} 322784 (3 - y) \\, dy$"
+    "text": "A rectangular tank has length 8 m, width 4 m, and height 3 m. It is half-filled with saltwater ($\\rho = 1030$ kg/m³, $g = 9.8$ m/s²). Select the integral for the work required to pump all the saltwater to the top of the tank.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^{1.5} 1030 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^3 1030 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^{1.5} 1030 \\cdot 9.8 \\cdot 32 \\cdot y \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^{1.5} 1000 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the bottom of the tank with $y$ measured upward.\n\n**Step 1:** The tank is half-filled, so water goes from $y = 0$ to $y = 1.5$ m (half of 3 m).\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A = 8 \\times 4 = 32$ m² (constant)\n- Volume: $dV = 32 \\, dy$\n- Mass: $dm = 1030 \\cdot 32 \\, dy$\n- Weight: $dF = 1030 \\cdot 9.8 \\cdot 32 \\, dy$\n\n**Step 3:** Distance to pump to the top at $y = 3$:\n$$d(y) = 3 - y$$\n\n**Step 4:** Work integral (integrating over the water, from 0 to 1.5):\n$$W = \\int_0^{1.5} 1030 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$$"
   },
   {
     "id": "s76_gen_5",
@@ -2058,11 +2112,29 @@
   },
   {
     "id": "s76_gen_7",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§7.6. Work (Physics Applications)",
-    "text": "A trough is 10 m long with triangular cross-sections. Each cross-section is an isoceles triangle with vertex down, base width 3 m at the top, and depth 2 m. The trough is full of water. Set up the integral for the work to pump all water to the top of the trough.",
-    "answer": "W = ∫_0^2 9800 * 10 * (3y/2) * (2 - y) dy",
-    "solution": "Place the origin at the bottom (vertex) of the triangular cross-section, $y$ measured upward.\n\n**Step 1:** Find the width $w(y)$ at height $y$ using similar triangles.\n- At $y = 2$: width $= 3$ m\n- At $y = 0$: width $= 0$ m\n- $\\frac{w(y)}{y} = \\frac{3}{2}$, so $w(y) = \\frac{3y}{2}$\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A(y) = \\text{length} \\times \\text{width} = 10 \\cdot \\frac{3y}{2} = 15y$\n- Volume: $dV = 15y \\, dy$\n- Weight: $dF = 9800 \\cdot 15y \\, dy$\n\n**Step 3:** Distance to pump to the top at $y = 2$:\n$$d(y) = 2 - y$$\n\n**Step 4:** Work integral:\n$$W = \\int_0^2 9800 \\cdot 10 \\cdot \\frac{3y}{2} \\cdot (2 - y) \\, dy$$\n\nOr simplified: $W = \\int_0^2 147000y(2-y) \\, dy$"
+    "text": "A trough is 10 m long with triangular cross-sections. Each cross-section is an isoceles triangle with vertex down, base width 3 m at the top, and depth 2 m. The trough is full of water. Select the integral for the work to pump all water to the top of the trough.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^2 9800 \\cdot 10 \\cdot \\dfrac{3y}{2} \\cdot (2 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^2 9800 \\cdot 10 \\cdot 3y \\cdot (2 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^2 9800 \\cdot 10 \\cdot \\dfrac{3y}{2} \\cdot y \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^3 9800 \\cdot 10 \\cdot \\dfrac{2y}{3} \\cdot (2 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the bottom (vertex) of the triangular cross-section, $y$ measured upward.\n\n**Step 1:** Find the width $w(y)$ at height $y$ using similar triangles.\n- At $y = 2$: width $= 3$ m\n- At $y = 0$: width $= 0$ m\n- $\\frac{w(y)}{y} = \\frac{3}{2}$, so $w(y) = \\frac{3y}{2}$\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A(y) = \\text{length} \\times \\text{width} = 10 \\cdot \\frac{3y}{2} = 15y$\n- Volume: $dV = 15y \\, dy$\n- Weight: $dF = 9800 \\cdot 15y \\, dy$\n\n**Step 3:** Distance to pump to the top at $y = 2$:\n$$d(y) = 2 - y$$\n\n**Step 4:** Work integral:\n$$W = \\int_0^2 9800 \\cdot 10 \\cdot \\frac{3y}{2} \\cdot (2 - y) \\, dy$$"
   },
   {
     "id": "s76_gen_8",
@@ -2092,11 +2164,29 @@
   },
   {
     "id": "s76_gen_9",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§7.6. Work (Physics Applications)",
-    "text": "A cylindrical tank of radius 3 m and height 6 m stands vertically, filled with water to a depth of 4 m. Water is pumped through a pipe that exits 1 m above the top of the tank. Set up the integral for the work required to empty the tank. (Use $\\rho = 1000$ kg/m³, $g = 9.8$ m/s².)",
-    "answer": "W = ∫_0^4 9800 * 9π * (7 - y) dy",
-    "solution": "Place the origin at the bottom of the tank, $y$ measured upward.\n\n**Step 1:** Identify key heights:\n- Water fills from $y = 0$ to $y = 4$ (depth of 4 m)\n- Top of tank: $y = 6$\n- Exit point of pipe: $y = 6 + 1 = 7$ m\n\n**Step 2:** At height $y$:\n- Cross-sectional area: $A = \\pi(3)^2 = 9\\pi$ m²\n- Volume: $dV = 9\\pi \\, dy$\n- Weight: $dF = 1000 \\cdot 9.8 \\cdot 9\\pi \\, dy = 9800 \\cdot 9\\pi \\, dy$\n\n**Step 3:** Distance to pump to exit at $y = 7$:\n$$d(y) = 7 - y$$\n\n**Step 4:** Limits: from $y = 0$ to $y = 4$ (where the water is)\n\n**Step 5:** Work integral:\n$$W = \\int_0^4 9800 \\cdot 9\\pi (7 - y) \\, dy$$\n\nOr equivalently: $W = \\int_0^4 88200\\pi (7 - y) \\, dy$"
+    "text": "A cylindrical tank of radius 3 m and height 6 m stands vertically, filled with water to a depth of 4 m. Water is pumped through a pipe that exits 1 m above the top of the tank. Select the integral for the work required to empty the tank. (Use $\\rho = 1000$ kg/m³, $g = 9.8$ m/s².)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^4 9800 \\cdot 9\\pi \\cdot (7 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^6 9800 \\cdot 9\\pi \\cdot (7 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^4 9800 \\cdot 3\\pi \\cdot (6 - y) \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^4 9800 \\cdot 9\\pi \\cdot (6 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the bottom of the tank, $y$ measured upward.\n\n**Step 1:** Identify key heights:\n- Water fills from $y = 0$ to $y = 4$ (depth of 4 m)\n- Top of tank: $y = 6$\n- Exit point of pipe: $y = 6 + 1 = 7$ m\n\n**Step 2:** At height $y$:\n- Cross-sectional area: $A = \\pi(3)^2 = 9\\pi$ m²\n- Volume: $dV = 9\\pi \\, dy$\n- Weight: $dF = 1000 \\cdot 9.8 \\cdot 9\\pi \\, dy = 9800 \\cdot 9\\pi \\, dy$\n\n**Step 3:** Distance to pump to exit at $y = 7$:\n$$d(y) = 7 - y$$\n\n**Step 4:** Limits: from $y = 0$ to $y = 4$ (where the water is)\n\n**Step 5:** Work integral:\n$$W = \\int_0^4 9800 \\cdot 9\\pi (7 - y) \\, dy$$"
   },
   {
     "id": "s76_gen_10",
@@ -2156,10 +2246,28 @@
   },
   {
     "id": "s81_gen_2",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§8.1. Sequences",
     "text": "Determine whether the sequence $a_n = \\dfrac{n!}{3^n}$ converges or diverges. If it converges, find the limit.",
-    "answer": "diverges",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diverges"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $0$"
+      },
+      {
+        "label": "C",
+        "text": "Converges to $\\dfrac{1}{3}$"
+      },
+      {
+        "label": "D",
+        "text": "Converges to $1$"
+      }
+    ],
+    "answer": "A",
     "solution": "We analyze the ratio of consecutive terms:\n\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{3^{n+1}} \\cdot \\frac{3^n}{n!} = \\frac{(n+1)!}{n!} \\cdot \\frac{3^n}{3^{n+1}} = \\frac{n+1}{3}$$\n\nAs $n \\to \\infty$, we have $\\frac{n+1}{3} \\to \\infty$.\n\nSince $\\frac{a_{n+1}}{a_n} > 1$ for all $n \\geq 3$, the sequence is eventually increasing without bound.\n\nAlternatively, for $n \\geq 6$:\n$$a_n = \\frac{n!}{3^n} = \\frac{1 \\cdot 2 \\cdot 3 \\cdot 4 \\cdot 5 \\cdot 6 \\cdots n}{3 \\cdot 3 \\cdot 3 \\cdot 3 \\cdot 3 \\cdot 3 \\cdots 3}$$\n\nEach factor $\\frac{k}{3} > 1$ for $k \\geq 4$, so the product grows without bound.\n\nThe sequence **diverges** (to $+\\infty$)."
   },
   {
