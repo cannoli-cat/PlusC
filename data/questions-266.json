@@ -1456,11 +1456,11 @@
       },
       {
         "label": "D",
-        "text": "$\\dfrac{256\\pi}{5}$"
+        "text": "$\\dfrac{832\\pi}{15}$"
       }
     ],
-    "answer": "C",
-    "solution": "**Rotation about $y = -1$, integrating in $x$.**\n\nThe curve $y = 4 - x^2$ intersects $y = 0$ when $x = \\pm 2$.\n\nThe outer radius (from $y = -1$ to the curve): $R(x) = (4 - x^2) - (-1) = 5 - x^2$\n\nThe inner radius (from $y = -1$ to $y = 0$): $r(x) = 0 - (-1) = 1$\n\nUsing the washer method:\n$$V = \\pi \\int_{-2}^{2} \\left[(5-x^2)^2 - 1^2\\right]\\,dx$$\n\nExpanding: $(5-x^2)^2 = 25 - 10x^2 + x^4$\n\n$$V = \\pi \\int_{-2}^{2} \\left(25 - 10x^2 + x^4 - 1\\right)\\,dx = \\pi \\int_{-2}^{2} \\left(24 - 10x^2 + x^4\\right)\\,dx$$\n\nUsing symmetry:\n$$V = 2\\pi \\int_0^2 \\left(24 - 10x^2 + x^4\\right)\\,dx = 2\\pi \\left[24x - \\frac{10x^3}{3} + \\frac{x^5}{5}\\right]_0^2$$\n\n$$V = 2\\pi \\left(48 - \\frac{80}{3} + \\frac{32}{5}\\right) = 2\\pi \\cdot \\frac{720 - 400 + 96}{15} = 2\\pi \\cdot \\frac{352}{15} = \\frac{704\\pi}{15}$$\n\n**Distractor analysis:**\n- (A): Forgot the inner washer hole\n- (B): Computed with wrong limits\n- (D): Arithmetic error in combining fractions\n\nThe answer is $\\boxed{\\frac{704\\pi}{15}}$."
+    "answer": "D",
+    "solution": "**Rotation about $y = -1$, integrating in $x$.**\n\nThe curve $y = 4 - x^2$ intersects $y = 0$ when $x = \\pm 2$.\n\nThe outer radius (from $y = -1$ to the curve): $R(x) = (4 - x^2) - (-1) = 5 - x^2$\n\nThe inner radius (from $y = -1$ to $y = 0$): $r(x) = 0 - (-1) = 1$\n\nUsing the washer method:\n$$V = \\pi \\int_{-2}^{2} \\left[(5-x^2)^2 - 1^2\\right]\\,dx$$\n\nExpanding: $(5-x^2)^2 = 25 - 10x^2 + x^4$\n\n$$V = \\pi \\int_{-2}^{2} \\left(24 - 10x^2 + x^4\\right)\\,dx$$\n\nUsing symmetry:\n$$V = 2\\pi \\int_0^2 \\left(24 - 10x^2 + x^4\\right)\\,dx = 2\\pi \\left[24x - \\frac{10x^3}{3} + \\frac{x^5}{5}\\right]_0^2$$\n\n$$V = 2\\pi \\left(48 - \\frac{80}{3} + \\frac{32}{5}\\right) = 2\\pi \\cdot \\frac{720 - 400 + 96}{15} = 2\\pi \\cdot \\frac{416}{15} = \\frac{832\\pi}{15}$$\n\nThe answer is $\\boxed{\\dfrac{832\\pi}{15}}$."
   },
   {
     "id": "s72_gen_6",
