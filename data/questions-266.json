@@ -2100,7 +2100,7 @@
       },
       {
         "label": "C",
-        "text": "$r(y) = \\dfrac{8 - y}{2}$"
+        "text": "$r(y) = 4 - 2y$"
       },
       {
         "label": "D",
@@ -2108,7 +2108,7 @@
       }
     ],
     "answer": "B",
-    "solution": "**Setting up the geometry:**\n- Vertex up means the cone is widest at the bottom and narrows to a point at the top.\n- At $y = 0$ (ground): radius $= 4$ m\n- At $y = 8$ (top): radius $= 0$ m\n\n**Using similar triangles:**\nThe radius decreases linearly from 4 to 0 as $y$ goes from 0 to 8.\n\n$$r(y) = 4 - \\frac{4}{8}y = 4 - \\frac{y}{2}$$\n\n**Verification:**\n- At $y = 0$: $r(0) = 4 - 0 = 4$ ✓\n- At $y = 8$: $r(8) = 4 - 4 = 0$ ✓\n\nNote: Choice C gives $r(y) = \\frac{8-y}{2}$, which also equals $4 - \\frac{y}{2}$, so **both B and C are equivalent**. However, the standard form matching our derivation is **B**.\n\nActually, let's verify C: $\\frac{8-y}{2} = 4 - \\frac{y}{2}$. These are identical!\n\nThe answer is **B** (or equivalently C, but B is listed first in standard form)."
+    "solution": "**Setting up the geometry:**\n- Vertex up means the cone is widest at the bottom and narrows to a point at the top.\n- At $y = 0$ (ground): radius $= 4$ m\n- At $y = 8$ (top): radius $= 0$ m\n\n**Using similar triangles:**\nThe radius decreases linearly from 4 to 0 as $y$ goes from 0 to 8. The rate of decrease is $\\frac{4}{8} = \\frac{1}{2}$ per meter, giving:\n\n$$r(y) = 4 - \\frac{1}{2}y$$\n\n**Verification:**\n- At $y = 0$: $r(0) = 4$ ✓\n- At $y = 8$: $r(8) = 4 - 4 = 0$ ✓\n\n**Why the others are wrong:**\n- **A:** $r(y) = \\frac{y}{2}$ increases with height — that describes a vertex-down cone.\n- **C:** $r(y) = 4 - 2y$ uses an inverted ratio (2 instead of $\\frac{1}{2}$), giving a negative radius before $y = 8$.\n- **D:** $r(y) = 2y$ increases with height and has the wrong slope entirely."
   },
   {
     "id": "s76_gen_7",
