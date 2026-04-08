@@ -2430,5 +2430,363 @@
       "C"
     ],
     "solution": "**A:** $a_n = \\dfrac{5^n}{n^{100}}$. Exponential growth beats polynomial growth. Check the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{5^{n+1}}{(n+1)^{100}} \\cdot \\frac{n^{100}}{5^n} = 5 \\cdot \\left(\\frac{n}{n+1}\\right)^{100} \\to 5 \\cdot 1 = 5 > 1$$\nSince the ratio exceeds 1, the sequence grows without bound.\n✓ **Diverges** (to $+\\infty$)\n\n**B:** $b_n = \\dfrac{(-1)^n}{\\sqrt{n}}$. Apply the Squeeze Theorem:\n$$-\\frac{1}{\\sqrt{n}} \\leq \\frac{(-1)^n}{\\sqrt{n}} \\leq \\frac{1}{\\sqrt{n}}$$\nBoth bounds approach 0, so $b_n \\to 0$.\n✗ **Converges to 0**\n\n**C:** $c_n = (-1)^n + \\dfrac{1}{n}$. The term $\\frac{1}{n} \\to 0$, but $(-1)^n$ oscillates between $-1$ and $+1$ forever.\n- Odd terms: $-1 + \\frac{1}{n} \\to -1$\n- Even terms: $1 + \\frac{1}{n} \\to 1$\nDifferent subsequences have different limits.\n✓ **Diverges** (oscillates)\n\n**D:** $d_n = \\dfrac{n^2 - 3n + 1}{n^2 + 2n + 5}$. Same degree, so:\n$$\\lim_{n \\to \\infty} d_n = \\frac{1}{1} = 1$$\n✗ **Converges to 1**"
+  },
+  {
+    "id": "s66_concept_1",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "If $f(x)$ has a vertical asymptote at $x = 0$ and $a > 0$, then $\\displaystyle \\int_{-a}^{a} f(x)\\,dx$ converges. This statement is:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "false for all functions $f(x)$."
+      },
+      {
+        "label": "B",
+        "text": "None of these."
+      },
+      {
+        "label": "C",
+        "text": "true for all functions $f(x)$."
+      },
+      {
+        "label": "D",
+        "text": "true for all even functions $f(x)$."
+      },
+      {
+        "label": "E",
+        "text": "true for some functions $f(x)$."
+      }
+    ],
+    "answer": "E",
+    "solution": "The integral is improper because of the vertical asymptote at $x = 0$ inside the interval. It must be split: $\\int_{-a}^{0} f(x)\\,dx + \\int_{0}^{a} f(x)\\,dx$, and both parts must converge independently.\n\n**Counter to 'all':** $f(x) = x^{-2}$ is even, but $\\int_0^a x^{-2}\\,dx = \\left[-x^{-1}\\right]_0^a$ diverges. So it fails for some even functions.\n\n**Evidence for 'some':** $f(x) = |x|^{-1/2}$ has a vertical asymptote at 0, and $\\int_0^a x^{-1/2}\\,dx = 2\\sqrt{a}$ converges. So the statement is true for some functions.\n\nThe answer is $\\boxed{E}$."
+  },
+  {
+    "id": "s66_concept_2",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "If $f(x)$ is an odd function, then $\\displaystyle \\int_{-\\infty}^{\\infty} f(x)\\,dx = 0$. This statement is:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "false for all odd functions $f(x)$."
+      },
+      {
+        "label": "B",
+        "text": "true for some odd functions $f(x)$."
+      },
+      {
+        "label": "C",
+        "text": "None of these."
+      },
+      {
+        "label": "D",
+        "text": "true for all odd functions $f(x)$."
+      }
+    ],
+    "answer": "B",
+    "solution": "The integral $\\int_{-\\infty}^{\\infty} f(x)\\,dx$ is defined as $\\lim_{a\\to\\infty}\\int_{-a}^{0} f(x)\\,dx + \\lim_{b\\to\\infty}\\int_{0}^{b} f(x)\\,dx$. Both limits must exist independently.\n\n**True for some:** $f(x) = xe^{-x^2}$ is odd. Each half converges: $\\int_0^\\infty xe^{-x^2}\\,dx = \\frac{1}{2}$, and by symmetry the total is $0$. ✓\n\n**Not true for all:** $f(x) = x$ is odd, but $\\int_0^\\infty x\\,dx$ diverges. The integral is undefined, not $0$.\n\nThe answer is $\\boxed{B}$."
+  },
+  {
+    "id": "s66_concept_3",
+    "type": "select-all",
+    "section": "§6.6. Improper Integrals",
+    "text": "Select ALL true statements about $\\displaystyle \\int_1^{\\infty} \\frac{1}{x^p}\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "It converges for all $p > 1$."
+      },
+      {
+        "label": "B",
+        "text": "It converges for $p = 1$."
+      },
+      {
+        "label": "C",
+        "text": "It diverges for all $p \\leq 1$."
+      },
+      {
+        "label": "D",
+        "text": "When it converges, its value is $\\dfrac{1}{p-1}$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A:** For $p > 1$: $\\int_1^\\infty x^{-p}\\,dx = \\left[\\frac{x^{-p+1}}{-p+1}\\right]_1^\\infty = \\frac{1}{p-1}$. Since $-p+1 < 0$, the upper limit goes to 0. ✓ Converges.\n\n**B:** For $p = 1$: $\\int_1^\\infty \\frac{1}{x}\\,dx = [\\ln x]_1^\\infty = \\infty$. ✗ Diverges.\n\n**C:** For $p \\leq 1$: $-p+1 \\geq 0$, so $x^{-p+1}$ grows or stays constant as $x \\to \\infty$. The integral diverges. ✓\n\n**D:** When $p > 1$: the value is $\\frac{0 - (-\\frac{1}{p-1} \\cdot 1)}{1} = \\frac{1}{p-1}$. ✓\n\nThe answers are $\\boxed{A, C, D}$."
+  },
+  {
+    "id": "s71_concept_1",
+    "type": "multiple-choice",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Region $R_1$ is bounded by $y = f(x)$ and $y = g(x)$. Region $R_2$ is bounded by $y = f(x)+1$ and $y = g(x)+1$. Then:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The area of $R_1$ is greater than the area of $R_2$."
+      },
+      {
+        "label": "B",
+        "text": "The area of $R_1$ is less than the area of $R_2$."
+      },
+      {
+        "label": "C",
+        "text": "The area of $R_1$ equals the area of $R_2$."
+      }
+    ],
+    "answer": "C",
+    "solution": "Area = $\\int_a^b [\\text{top} - \\text{bottom}]\\,dx$.\n\nFor $R_2$: top $-$ bottom $= [f(x)+1] - [g(x)+1] = f(x) - g(x)$.\n\nThe $+1$ cancels. The vertical gap between the curves is identical in both regions — $R_2$ is just $R_1$ shifted up by 1 unit. Shifting does not change area.\n\nThe answer is $\\boxed{C}$."
+  },
+  {
+    "id": "s72_concept_1",
+    "type": "multiple-choice",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "Region $R_1$ is bounded by $y = f(x)$ and $y = g(x)$ in the first quadrant. Region $R_2$ is bounded by $y = f(x)+1$ and $y = g(x)+1$. Let $V_1$ and $V_2$ be the volumes obtained by rotating $R_1$ and $R_2$ about the $x$-axis. Then:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$V_1 < V_2$"
+      },
+      {
+        "label": "B",
+        "text": "$V_1 > V_2$"
+      },
+      {
+        "label": "C",
+        "text": "$V_1 = V_2$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Using the washer method:\n$$V_1 = \\pi\\int [f^2 - g^2]\\,dx$$\n$$V_2 = \\pi\\int [(f+1)^2 - (g+1)^2]\\,dx = \\pi\\int [f^2 - g^2 + 2f - 2g]\\,dx$$\n\nSo $V_2 = V_1 + 2\\pi\\int[f-g]\\,dx$.\n\nIn the first quadrant with $f(x) > g(x)$, the extra term is positive, so $V_2 > V_1$.\n\n**Key insight:** Unlike area, volume of revolution depends on *where* the region sits relative to the axis. Shifting curves up increases the radius of rotation, increasing volume.\n\nThe answer is $\\boxed{A}$."
+  },
+  {
+    "id": "s72_concept_2",
+    "type": "multiple-choice",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "Region $R_1$ is bounded by $y = f(x)$ and the $x$-axis on $[a,b]$. Region $R_2$ is bounded by $y = k \\cdot f(x)$ and the $x$-axis on $[a,b]$, where $k > 0$. Let $V_1$ and $V_2$ be the volumes obtained by rotating each region about the $x$-axis. Which relationship is correct?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$V_2 = k \\cdot V_1$"
+      },
+      {
+        "label": "B",
+        "text": "$V_2 = k^2 \\cdot V_1$"
+      },
+      {
+        "label": "C",
+        "text": "$V_1 = k^2 \\cdot V_2$"
+      },
+      {
+        "label": "D",
+        "text": "$V_1 = V_2$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Using the disk method:\n$$V_1 = \\pi\\int_a^b [f(x)]^2\\,dx$$\n$$V_2 = \\pi\\int_a^b [kf(x)]^2\\,dx = \\pi\\int_a^b k^2[f(x)]^2\\,dx = k^2 \\cdot V_1$$\n\nThe radius is squared in the volume formula, so scaling $f$ by $k$ scales the volume by $k^2$, not $k$.\n\nThe answer is $\\boxed{B}$."
+  },
+  {
+    "id": "s73_concept_1",
+    "type": "select-all",
+    "section": "§7.3. Volumes: Cylindrical Shells",
+    "text": "Consider a solid of revolution obtained by rotating region $R$ around the $x$-axis. Select ALL true statements.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The thickness of slices is $dx$ for both the disk and shell methods."
+      },
+      {
+        "label": "B",
+        "text": "When using the shell method, we cut the region into slices parallel to the $x$-axis."
+      },
+      {
+        "label": "C",
+        "text": "When using the disk method, we cut the region into slices perpendicular to the $x$-axis."
+      },
+      {
+        "label": "D",
+        "text": "The volume can be interpreted as the limit of Riemann sums."
+      },
+      {
+        "label": "E",
+        "text": "The shell method always results in a less complicated integral."
+      }
+    ],
+    "answers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "**A:** False. When rotating around the $x$-axis, the shell method uses horizontal strips with thickness $dy$, not $dx$. ✗\n\n**B:** True. Shell strips are horizontal (parallel to the axis of rotation), each becoming a cylindrical shell. ✓\n\n**C:** True. Disk slices are vertical, perpendicular to the $x$-axis, and each becomes a circular disk or washer. ✓\n\n**D:** True. The integral definition of volume is the limit of a Riemann sum — this is fundamental to integral calculus. ✓\n\n**E:** False. Neither method is always simpler. The best choice depends on the region and axis. ✗\n\nThe answers are $\\boxed{B, C, D}$."
+  },
+  {
+    "id": "s74_concept_1",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "Find the arc length integral (do not evaluate) for $e^x = \\cos(y)$ on $0 \\leq y \\leq \\pi/3$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sqrt{(\\ln(\\cos y))^2 + 1}\\,dy$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sqrt{1 - \\left(\\tfrac{1}{\\cos y}\\right)^2}\\,dy$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sqrt{\\left(\\tfrac{-1}{\\cos y}\\right)^2 + 1}\\,dy$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sec(y)\\,dy$"
+      }
+    ],
+    "answer": "D",
+    "solution": "Since the interval is in $y$, use arc length in terms of $y$: $L = \\int_0^{\\pi/3}\\sqrt{1 + \\left(\\frac{dx}{dy}\\right)^2}\\,dy$.\n\nSolve for $x$: $e^x = \\cos y \\Rightarrow x = \\ln(\\cos y)$.\n\nDifferentiate: $\\frac{dx}{dy} = \\frac{-\\sin y}{\\cos y} = -\\tan y$.\n\nSo: $\\sqrt{1 + \\tan^2 y} = \\sqrt{\\sec^2 y} = \\sec y$ (using the Pythagorean identity $1 + \\tan^2\\theta = \\sec^2\\theta$).\n\nThe answer is $\\boxed{D: \\int_0^{\\pi/3}\\sec(y)\\,dy}$."
+  },
+  {
+    "id": "s76_concept_1",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A spring requires a force of 3 N to stretch 20 cm beyond its natural length. The work required to stretch it 40 cm beyond its natural length compared to stretching it 20 cm is:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "four times as much."
+      },
+      {
+        "label": "B",
+        "text": "twice as much."
+      },
+      {
+        "label": "C",
+        "text": "six times as much."
+      },
+      {
+        "label": "D",
+        "text": "the same."
+      }
+    ],
+    "answer": "A",
+    "solution": "By Hooke's Law, $F = kx$. Find $k$: $3 = k(0.20)$, so $k = 15$ N/m.\n\nWork is $W = \\int_0^x kx\\,dx = \\frac{kx^2}{2}$.\n\n$$W_1 = \\frac{k(0.20)^2}{2}, \\quad W_2 = \\frac{k(0.40)^2}{2}$$\n\n$$\\frac{W_2}{W_1} = \\frac{(0.40)^2}{(0.20)^2} = \\frac{0.16}{0.04} = 4$$\n\n**Key insight:** Work scales with the *square* of displacement because $W = \\frac{kx^2}{2}$. Doubling distance quadruples work.\n\nThe answer is $\\boxed{A}$."
+  },
+  {
+    "id": "s76_concept_2",
+    "type": "select-all",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A 10 m chain with mass density $\\rho$ kg/m hangs vertically. Select ALL true statements about the work to lift the entire chain to the top.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "A small segment at depth $x$ from the top must be lifted a distance $x$."
+      },
+      {
+        "label": "B",
+        "text": "The work integral is $\\displaystyle W = \\int_0^{10} \\rho g x\\,dx$."
+      },
+      {
+        "label": "C",
+        "text": "The total work equals the work to lift the entire chain's weight through 10 m."
+      },
+      {
+        "label": "D",
+        "text": "The total work equals the work to lift the entire chain's weight through 5 m."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A:** True. A segment at depth $x$ from the top needs to travel distance $x$ to reach the top. ✓\n\n**B:** True. Each segment has mass $\\rho\\,dx$ and must be lifted distance $x$, so $dW = \\rho g x\\,dx$, giving $W = \\int_0^{10} \\rho gx\\,dx$. ✓\n\n**C:** False. $W = \\int_0^{10} \\rho gx\\,dx = \\rho g \\cdot \\frac{100}{2} = 50\\rho g$. The total weight is $10\\rho g$, and $50\\rho g \\neq 10\\rho g \\cdot 10$. ✗\n\n**D:** True. $W = 50\\rho g = (10\\rho g) \\cdot 5$. This equals lifting the total weight through the center of mass (5 m). ✓\n\nThe answers are $\\boxed{A, B, D}$."
+  },
+  {
+    "id": "s66_concept_4",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Which of the following correctly defines the Laplace Transform $\\mathcal{L}\\{f(t)\\}(s)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{\\infty} e^{st} f(t)\\,dt$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_{-\\infty}^{\\infty} e^{-st} f(t)\\,dt$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{\\infty} e^{-st} f(t)\\,dt$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{\\infty} e^{-t} f(s)\\,ds$"
+      }
+    ],
+    "answer": "C",
+    "solution": "The Laplace Transform is defined as:\n$$\\mathcal{L}\\{f(t)\\}(s) = \\int_0^{\\infty} e^{-st} f(t)\\,dt$$\n\nKey features: lower limit is 0 (function defined for $t \\geq 0$), the kernel is $e^{-st}$ (not $e^{st}$ — that would diverge), and the integral is over $t$ with $s$ treated as a fixed constant.\n\nThe answer is $\\boxed{C}$."
+  },
+  {
+    "id": "s66_concept_5",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Using the definition of the Laplace Transform, $\\mathcal{L}\\{1\\} =$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{s}$"
+      },
+      {
+        "label": "C",
+        "text": "$-\\dfrac{1}{s}$"
+      },
+      {
+        "label": "D",
+        "text": "$1$"
+      },
+      {
+        "label": "E",
+        "text": "$-s$"
+      }
+    ],
+    "answer": "B",
+    "solution": "With $f(t) = 1$:\n$$\\mathcal{L}\\{1\\} = \\int_0^{\\infty} e^{-st}\\,dt = \\left[\\frac{e^{-st}}{-s}\\right]_0^{\\infty}$$\n\nAs $t \\to \\infty$: $e^{-st} \\to 0$ (for $s > 0$), so the upper limit gives $0$.\n\nAt $t = 0$: $e^{0}/(-s) = -1/s$.\n\n$$= 0 - \\left(\\frac{-1}{s}\\right) = \\frac{1}{s}$$\n\nThe answer is $\\boxed{\\dfrac{1}{s}}$."
+  },
+  {
+    "id": "s66_concept_6",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Using the Laplace Transform definition and integration by parts, $\\mathcal{L}\\{t\\} =$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\dfrac{1}{s^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$0$"
+      },
+      {
+        "label": "C",
+        "text": "$-s^2$"
+      },
+      {
+        "label": "D",
+        "text": "$1$"
+      },
+      {
+        "label": "E",
+        "text": "$\\dfrac{1}{s^2}$"
+      }
+    ],
+    "answer": "E",
+    "solution": "With $f(t) = t$, use IBP: let $u = t$, $dv = e^{-st}\\,dt$, so $du = dt$, $v = -\\frac{1}{s}e^{-st}$.\n\n$$\\mathcal{L}\\{t\\} = \\left[-\\frac{t}{s}e^{-st}\\right]_0^{\\infty} + \\frac{1}{s}\\int_0^{\\infty} e^{-st}\\,dt$$\n\n**Boundary term:** As $t \\to \\infty$, $te^{-st} \\to 0$ (exponential beats linear). At $t = 0$: $0$. So the boundary term is $0$.\n\n**Remaining integral:** $\\frac{1}{s}\\int_0^{\\infty} e^{-st}\\,dt = \\frac{1}{s} \\cdot \\mathcal{L}\\{1\\} = \\frac{1}{s} \\cdot \\frac{1}{s} = \\frac{1}{s^2}$.\n\nThe answer is $\\boxed{\\dfrac{1}{s^2}}$."
   }
 ]
