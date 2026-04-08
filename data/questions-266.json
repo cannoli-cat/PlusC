@@ -2788,5 +2788,369 @@
     ],
     "answer": "E",
     "solution": "With $f(t) = t$, use IBP: let $u = t$, $dv = e^{-st}\\,dt$, so $du = dt$, $v = -\\frac{1}{s}e^{-st}$.\n\n$$\\mathcal{L}\\{t\\} = \\left[-\\frac{t}{s}e^{-st}\\right]_0^{\\infty} + \\frac{1}{s}\\int_0^{\\infty} e^{-st}\\,dt$$\n\n**Boundary term:** As $t \\to \\infty$, $te^{-st} \\to 0$ (exponential beats linear). At $t = 0$: $0$. So the boundary term is $0$.\n\n**Remaining integral:** $\\frac{1}{s}\\int_0^{\\infty} e^{-st}\\,dt = \\frac{1}{s} \\cdot \\mathcal{L}\\{1\\} = \\frac{1}{s} \\cdot \\frac{1}{s} = \\frac{1}{s^2}$.\n\nThe answer is $\\boxed{\\dfrac{1}{s^2}}$."
+  },
+  {
+    "id": "s72_cross_1",
+    "type": "multiple-choice",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "A solid has square cross-sections perpendicular to the $x$-axis. The side length of each square is $s(x) = 4 - x^2$ on the interval $[0, 2]$. Find the volume of the solid.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{256}{15}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{128}{15}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{256}{5}$"
+      },
+      {
+        "label": "D",
+        "text": "$16$"
+      }
+    ],
+    "answer": "A",
+    "solution": "For a solid with known cross-sections, $V = \\int_a^b A(x)\\,dx$ where $A(x)$ is the cross-sectional area.\n\nSince the cross-sections are squares with side $s(x) = 4 - x^2$:\n$$A(x) = [s(x)]^2 = (4 - x^2)^2 = 16 - 8x^2 + x^4$$\n\n$$V = \\int_0^2 (16 - 8x^2 + x^4)\\,dx = \\left[16x - \\frac{8}{3}x^3 + \\frac{1}{5}x^5\\right]_0^2$$\n$$= 32 - \\frac{64}{3} + \\frac{32}{5} = \\frac{480 - 320 + 96}{15} = \\frac{256}{15}$$\n\nThe answer is $\\boxed{\\dfrac{256}{15}}$."
+  },
+  {
+    "id": "s72_cross_2",
+    "type": "free-response",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "A solid has semicircular cross-sections perpendicular to the $x$-axis. The diameter of each semicircle stretches from $y = 0$ to $y = \\sqrt{x}$ on the interval $[0, 4]$. Find the volume of the solid.",
+    "answer": "pi",
+    "solution": "The diameter of each semicircle is $\\sqrt{x}$, so the radius is $r = \\frac{\\sqrt{x}}{2}$.\n\nThe area of a semicircle is $A = \\frac{1}{2}\\pi r^2 = \\frac{1}{2}\\pi \\left(\\frac{\\sqrt{x}}{2}\\right)^2 = \\frac{\\pi x}{8}$.\n\n$$V = \\int_0^4 \\frac{\\pi x}{8}\\,dx = \\frac{\\pi}{8}\\left[\\frac{x^2}{2}\\right]_0^4 = \\frac{\\pi}{8} \\cdot 8 = \\pi$$\n\nWait — let me recheck. $\\frac{\\pi}{8} \\cdot \\frac{16}{2} = \\frac{\\pi}{8} \\cdot 8 = \\pi$.\n\nThe answer is $\\boxed{\\pi}$."
+  },
+  {
+    "id": "s72_cross_3",
+    "type": "multiple-choice",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "A solid has equilateral triangle cross-sections perpendicular to the $x$-axis. The base of each triangle runs from $y = 0$ to $y = x$ on the interval $[0, 3]$. Find the volume. (Recall: area of equilateral triangle with side $s$ is $\\frac{\\sqrt{3}}{4}s^2$.)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{9\\sqrt{3}}{4}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{9\\sqrt{3}}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{3\\sqrt{3}}{4}$"
+      },
+      {
+        "label": "D",
+        "text": "$9\\sqrt{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "The side length of each equilateral triangle is $s(x) = x$.\n\nArea of cross-section: $A(x) = \\frac{\\sqrt{3}}{4}x^2$\n\n$$V = \\int_0^3 \\frac{\\sqrt{3}}{4}x^2\\,dx = \\frac{\\sqrt{3}}{4}\\left[\\frac{x^3}{3}\\right]_0^3 = \\frac{\\sqrt{3}}{4} \\cdot 9 = \\frac{9\\sqrt{3}}{4}$$\n\nThe answer is $\\boxed{\\dfrac{9\\sqrt{3}}{4}}$."
+  },
+  {
+    "id": "s72_cross_4",
+    "type": "select-all",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "A solid with known cross-sections has volume $V = \\int_a^b A(x)\\,dx$. Select ALL true statements.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If cross-sections are squares with side $s(x)$, then $A(x) = [s(x)]^2$."
+      },
+      {
+        "label": "B",
+        "text": "This method only works when the cross-sections are circles."
+      },
+      {
+        "label": "C",
+        "text": "If cross-sections are circles with radius $r(x)$, this reduces to the disk method formula $V = \\pi\\int_a^b [r(x)]^2\\,dx$."
+      },
+      {
+        "label": "D",
+        "text": "The cross-sections must be perpendicular to the axis of integration."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A:** True. A square with side $s(x)$ has area $[s(x)]^2$. ✓\n\n**B:** False. The formula $V = \\int A(x)\\,dx$ works for any shape of cross-section — squares, triangles, semicircles, etc. ✗\n\n**C:** True. A circle with radius $r(x)$ has area $\\pi[r(x)]^2$, giving $V = \\pi\\int_a^b [r(x)]^2\\,dx$, which is exactly the disk method. ✓\n\n**D:** True. The cross-sections must be perpendicular to the axis of integration so that $A(x)\\,dx$ represents a thin slab of thickness $dx$. ✓\n\nThe answers are $\\boxed{A, C, D}$."
+  },
+  {
+    "id": "s72_nonaxis_1",
+    "type": "multiple-choice",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "Find the volume of the solid generated by revolving the region bounded by $y = x^2$ and $y = 1$ from $x = 0$ to $x = 1$ about the line $y = 1$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{8\\pi}{15}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\pi}{5}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{2\\pi}{5}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{\\pi}{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "When rotating about $y = 1$, the radius of each disk is the distance from the curve to the line $y = 1$:\n$$r(x) = 1 - x^2$$\n\n$$V = \\pi\\int_0^1 [1 - x^2]^2\\,dx = \\pi\\int_0^1 (1 - 2x^2 + x^4)\\,dx$$\n$$= \\pi\\left[x - \\frac{2}{3}x^3 + \\frac{1}{5}x^5\\right]_0^1 = \\pi\\left(1 - \\frac{2}{3} + \\frac{1}{5}\\right) = \\pi \\cdot \\frac{15 - 10 + 3}{15} = \\frac{8\\pi}{15}$$\n\nThe answer is $\\boxed{\\dfrac{8\\pi}{15}}$."
+  },
+  {
+    "id": "s72_nonaxis_2",
+    "type": "free-response",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "Find the volume of the solid generated by revolving the region bounded by $x = \\sqrt{y}$ and $x = 2$ from $y = 0$ to $y = 4$ about the line $x = 2$.",
+    "answer": "8pi/3",
+    "solution": "Rotating about the vertical line $x = 2$, integrate with respect to $y$. The radius of each disk is:\n$$r(y) = 2 - \\sqrt{y}$$\n\n$$V = \\pi\\int_0^4 (2 - \\sqrt{y})^2\\,dy = \\pi\\int_0^4 (4 - 4\\sqrt{y} + y)\\,dy$$\n$$= \\pi\\left[4y - \\frac{8}{3}y^{3/2} + \\frac{y^2}{2}\\right]_0^4$$\n$$= \\pi\\left(16 - \\frac{8}{3}(8) + 8\\right) = \\pi\\left(24 - \\frac{64}{3}\\right) = \\pi \\cdot \\frac{72 - 64}{3} = \\frac{8\\pi}{3}$$\n\nThe answer is $\\boxed{\\dfrac{8\\pi}{3}}$."
+  },
+  {
+    "id": "s72_nonaxis_3",
+    "type": "multiple-choice",
+    "section": "§7.2. Volumes: Disk and Washer Method",
+    "text": "The region bounded by $y = 2x^2$ and $y = x^2$ from $x = 0$ to $x = 1$ is revolved about the line $y = -1$. Which integral gives the volume?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\pi\\displaystyle\\int_0^1 [(2x^2+1)^2 - (x^2+1)^2]\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\pi\\displaystyle\\int_0^1 [(2x^2)^2 - (x^2)^2]\\,dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\pi\\displaystyle\\int_0^1 [(2x^2-1)^2 - (x^2-1)^2]\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\pi\\displaystyle\\int_0^1 (x^2+1)^2\\,dx$"
+      }
+    ],
+    "answer": "A",
+    "solution": "When rotating about $y = -1$, the outer radius is the distance from $y = 2x^2$ to $y = -1$:\n$$R(x) = 2x^2 - (-1) = 2x^2 + 1$$\n\nThe inner radius is the distance from $y = x^2$ to $y = -1$:\n$$r(x) = x^2 - (-1) = x^2 + 1$$\n\nWasher method:\n$$V = \\pi\\int_0^1 [(2x^2 + 1)^2 - (x^2 + 1)^2]\\,dx$$\n\n**Key rule:** When rotating about $y = k$ where $k < 0$ and curves are above the axis, add $|k|$ to both radii.\n\nThe answer is $\\boxed{A}$."
+  },
+  {
+    "id": "s73_nonaxis_1",
+    "type": "multiple-choice",
+    "section": "§7.3. Volumes: Cylindrical Shells",
+    "text": "Find the volume of the solid generated by revolving the region in the first quadrant bounded by $y = x^2$ and $y = 4$ about the line $x = 3$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$24\\pi$"
+      },
+      {
+        "label": "B",
+        "text": "$8\\pi$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{544\\pi}{15}$"
+      },
+      {
+        "label": "D",
+        "text": "$16\\pi$"
+      }
+    ],
+    "answer": "A",
+    "solution": "The axis of rotation $x = 3$ is a vertical line outside the region $[0,2]$, so use shells integrating with respect to $x$.\n\nFor shells rotating about $x = 3$:\n- Radius = distance from strip to axis = $3 - x$\n- Height = $4 - x^2$\n\n$$V = 2\\pi\\int_0^2 (3-x)(4-x^2)\\,dx = 2\\pi\\int_0^2 (12 - 4x - 3x^2 + x^3)\\,dx$$\n$$= 2\\pi\\left[12x - 2x^2 - x^3 + \\frac{x^4}{4}\\right]_0^2$$\n$$= 2\\pi\\left(24 - 8 - 8 + 4\\right) = 2\\pi(12) = 24\\pi$$\n\nThe answer is $\\boxed{24\\pi}$."
+  },
+  {
+    "id": "s73_nonaxis_2",
+    "type": "free-response",
+    "section": "§7.3. Volumes: Cylindrical Shells",
+    "text": "Find the volume of the solid generated by revolving the region in the first quadrant bounded by $y = x^2$ and $y = 4$ about the line $y = -1$.",
+    "answer": "544pi/15",
+    "solution": "The axis $y = -1$ is horizontal, so use shells integrating with respect to $y$.\n\nExpress $x$ in terms of $y$: $x = \\sqrt{y}$. The region runs from $y = 0$ to $y = 4$.\n\nFor shells rotating about $y = -1$:\n- Radius = $y - (-1) = y + 1$\n- Height = $\\sqrt{y}$ (the width of the region at height $y$)\n\n$$V = 2\\pi\\int_0^4 (y+1)\\sqrt{y}\\,dy = 2\\pi\\int_0^4 (y^{3/2} + y^{1/2})\\,dy$$\n$$= 2\\pi\\left[\\frac{2}{5}y^{5/2} + \\frac{2}{3}y^{3/2}\\right]_0^4$$\n$$= 2\\pi\\left(\\frac{2}{5}(32) + \\frac{2}{3}(8)\\right) = 2\\pi\\left(\\frac{64}{5} + \\frac{16}{3}\\right) = 2\\pi \\cdot \\frac{192 + 80}{15} = \\frac{544\\pi}{15}$$\n\nThe answer is $\\boxed{\\dfrac{544\\pi}{15}}$."
+  },
+  {
+    "id": "s73_nonaxis_3",
+    "type": "select-all",
+    "section": "§7.3. Volumes: Cylindrical Shells",
+    "text": "When using the shell method to rotate a region about a line $x = k$ (where $k$ is not the $y$-axis), which of the following correctly describe the shell radius? Select ALL that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $k$ is to the right of the region ($k > x$), the radius is $k - x$."
+      },
+      {
+        "label": "B",
+        "text": "The radius is always just $x$."
+      },
+      {
+        "label": "C",
+        "text": "If $k$ is to the left of the region ($k < x$), the radius is $x - k$."
+      },
+      {
+        "label": "D",
+        "text": "The radius is the horizontal distance from the shell to the axis of rotation."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A:** True. If the axis $x = k$ is to the right of the strip at position $x$, the distance is $k - x$. ✓\n\n**B:** False. The radius is $x$ only when rotating about the $y$-axis (i.e., $x = 0$). For other vertical axes, the radius must account for the shift. ✗\n\n**C:** True. If the axis $x = k$ is to the left of the strip at position $x$, the distance is $x - k$. ✓\n\n**D:** True. The shell radius is always the perpendicular distance from the shell's position to the axis of rotation. ✓\n\nThe answers are $\\boxed{A, C, D}$."
+  },
+  {
+    "id": "s74_arcfn_1",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "Find the arc length function $s(x)$ for the curve $y = \\frac{2}{3}x^{3/2}$ from $x = 0$ to a variable endpoint $x$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$s(x) = \\dfrac{2}{3}(1+x)^{3/2} - \\dfrac{2}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$s(x) = \\sqrt{1+x}$"
+      },
+      {
+        "label": "C",
+        "text": "$s(x) = \\dfrac{2}{3}(1+x)^{3/2}$"
+      },
+      {
+        "label": "D",
+        "text": "$s(x) = x\\sqrt{1+x}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "The arc length function is $s(x) = \\int_{x_0}^x \\sqrt{1 + [f'(t)]^2}\\,dt$.\n\nFind $f'(x)$: $y = \\frac{2}{3}x^{3/2}$ so $y' = x^{1/2} = \\sqrt{x}$.\n\n$$s(x) = \\int_0^x \\sqrt{1 + (\\sqrt{t})^2}\\,dt = \\int_0^x \\sqrt{1+t}\\,dt$$\n\nLet $u = 1+t$, $du = dt$:\n$$= \\left[\\frac{2}{3}(1+t)^{3/2}\\right]_0^x = \\frac{2}{3}(1+x)^{3/2} - \\frac{2}{3}$$\n\nThe answer is $\\boxed{\\dfrac{2}{3}(1+x)^{3/2} - \\dfrac{2}{3}}$."
+  },
+  {
+    "id": "s74_arcfn_2",
+    "type": "free-response",
+    "section": "§7.4. Arc Length",
+    "text": "Find the arc length function $s(x)$ for the curve $y = \\ln(\\cos x)$ starting from $x_0 = 0$.",
+    "answer": "ln(sec(x) + tan(x))",
+    "solution": "Find $y'$: $y = \\ln(\\cos x)$ so $y' = -\\frac{\\sin x}{\\cos x} = -\\tan x$.\n\n$$s(x) = \\int_0^x \\sqrt{1 + \\tan^2 t}\\,dt = \\int_0^x \\sqrt{\\sec^2 t}\\,dt = \\int_0^x \\sec t\\,dt$$\n\n$$= \\Big[\\ln|\\sec t + \\tan t|\\Big]_0^x = \\ln|\\sec x + \\tan x| - \\ln(1) = \\ln(\\sec x + \\tan x)$$\n\nThe answer is $\\boxed{\\ln(\\sec x + \\tan x)}$."
+  },
+  {
+    "id": "s74_arcfn_3",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "The arc length function $s(x) = \\int_{x_0}^{x} \\sqrt{1 + [f'(t)]^2}\\,dt$ represents:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The total arc length of $f$ from $a$ to $b$."
+      },
+      {
+        "label": "B",
+        "text": "The distance along the curve from the starting point $x_0$ to a variable point $x$."
+      },
+      {
+        "label": "C",
+        "text": "The slope of the curve at the point $x$."
+      },
+      {
+        "label": "D",
+        "text": "The area under the curve from $x_0$ to $x$."
+      }
+    ],
+    "answer": "B",
+    "solution": "The arc length function $s(x)$ measures the length along the curve from a fixed starting point $x_0$ to a variable endpoint $x$. It is a function of $x$ — as $x$ increases, $s(x)$ gives the accumulated arc length.\n\nThis is different from computing a fixed arc length (A), which would be a specific number, not a function.\n\nNote also: by the Fundamental Theorem of Calculus, $s'(x) = \\sqrt{1 + [f'(x)]^2}$, which is the local 'speed' of length accumulation.\n\nThe answer is $\\boxed{B}$."
+  },
+  {
+    "id": "s76_force_1",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A variable force $F(x) = 3x^2 - 4x + 2$ newtons moves a particle along the $x$-axis from $x = 1$ to $x = 3$ meters. Find the work done.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$14$ J"
+      },
+      {
+        "label": "B",
+        "text": "$18$ J"
+      },
+      {
+        "label": "C",
+        "text": "$24$ J"
+      },
+      {
+        "label": "D",
+        "text": "$10$ J"
+      }
+    ],
+    "answer": "A",
+    "solution": "Work is $W = \\int_a^b F(x)\\,dx$.\n\n$$W = \\int_1^3 (3x^2 - 4x + 2)\\,dx = \\left[x^3 - 2x^2 + 2x\\right]_1^3$$\n$$= (27 - 18 + 6) - (1 - 2 + 2) = 15 - 1 = 14 \\text{ J}$$\n\nThe answer is $\\boxed{14 \\text{ J}}$."
+  },
+  {
+    "id": "s76_force_2",
+    "type": "free-response",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A force of $F(x) = \\sin(\\pi x)$ newtons acts on a particle moving from $x = 0$ to $x = 1$ meter. Find the total work done in Joules.",
+    "answer": "2/pi",
+    "solution": "$$W = \\int_0^1 \\sin(\\pi x)\\,dx = \\left[-\\frac{\\cos(\\pi x)}{\\pi}\\right]_0^1$$\n$$= -\\frac{\\cos(\\pi)}{\\pi} + \\frac{\\cos(0)}{\\pi} = -\\frac{-1}{\\pi} + \\frac{1}{\\pi} = \\frac{2}{\\pi} \\text{ J}$$\n\nThe answer is $\\boxed{\\dfrac{2}{\\pi}}$ J."
+  },
+  {
+    "id": "s76_force_3",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A chain 50 feet long weighing 2 pounds per linear foot hangs from the roof of a building. Find the work done in pulling the entire chain up to the roof.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2500$ ft-lb"
+      },
+      {
+        "label": "B",
+        "text": "$5000$ ft-lb"
+      },
+      {
+        "label": "C",
+        "text": "$100$ ft-lb"
+      },
+      {
+        "label": "D",
+        "text": "$1250$ ft-lb"
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $y$ = distance (in feet) below the roof. A small segment at depth $y$ has weight $2\\,dy$ lb and must be lifted $y$ feet.\n\n$$W = \\int_0^{50} 2y\\,dy = \\left[y^2\\right]_0^{50} = 2500 \\text{ ft-lb}$$\n\n**Check:** This equals the total weight ($100$ lb) times the center of mass distance ($25$ ft) $= 2500$ ft-lb. ✓\n\nThe answer is $\\boxed{2500 \\text{ ft-lb}}$."
+  },
+  {
+    "id": "s76_force_4",
+    "type": "select-all",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "Select ALL true statements about work done by a variable force.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $F(x)$ is constant, $W = F \\cdot d$ where $d$ is the displacement."
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_a^b F(x)\\,dx$ generalizes $W = Fd$ to non-constant forces."
+      },
+      {
+        "label": "C",
+        "text": "Work can be negative if the force acts opposite to the direction of motion."
+      },
+      {
+        "label": "D",
+        "text": "The units of work are always Newtons."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**A:** True. For constant force, $\\int_a^b F\\,dx = F(b-a) = Fd$. ✓\n\n**B:** True. The integral generalizes the constant-force formula by summing infinitesimal $F(x)\\,dx$ contributions. ✓\n\n**C:** True. If $F(x) < 0$ on $[a,b]$, the integral is negative, representing work done against the direction of motion. ✓\n\n**D:** False. Work is force × distance: Newton × meter = Joule (SI), or pound × foot = ft-lb (imperial). Newtons alone are units of force, not work. ✗\n\nThe answers are $\\boxed{A, B, C}$."
   }
 ]
