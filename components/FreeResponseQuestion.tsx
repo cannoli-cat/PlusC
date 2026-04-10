@@ -55,7 +55,6 @@ function normalizeMath(expr: string): string {
 
     s = s.replace(/\b(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\^(\([^)]+\)|-?\d+)\(([^)]*)\)/g, '($1($3))^$2')
 
-    // Split variable names glued to 'e^' — e.g. xe^x -> x*e^x, 2xe^x -> 2x*e^x
     s = s.replace(/([a-dA-Df-zF-Z0-9])e\^/g, '$1*e^')
 
     return s
@@ -70,7 +69,7 @@ export function checkAnswer(input: string, expected: string, variables: string[]
         for (let i = 0; i < 20; i++) {
             const scope: Record<string, number> = {}
             for (const v of variables) {
-                scope[v] = Math.random() * 8 + 0.5
+                scope[v] = Math.random() * 1.4 + 0.1
             }
             testPoints.push(scope)
         }
@@ -79,9 +78,12 @@ export function checkAnswer(input: string, expected: string, variables: string[]
         for (const scope of testPoints) {
             const v1 = parsedInput.evaluate({ ...scope })
             const v2 = parsedExpected.evaluate({ ...scope })
-            if (typeof v1 !== 'number' || typeof v2 !== 'number') return false
+
+            if (typeof v1 !== 'number' || typeof v2 !== 'number') continue
             if (!isFinite(v1) || !isFinite(v2)) continue
+
             if (Math.abs(v1 - v2) > 1e-4 * Math.max(1, Math.abs(v2))) return false
+
             validComparisons++
         }
         return validComparisons >= 5
