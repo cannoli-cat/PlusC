@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { EB_Garamond, JetBrains_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react'
 import "./globals.css";
@@ -18,6 +18,12 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Plus C",
   description: "A calculus study tool by Tyler Wolfe",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

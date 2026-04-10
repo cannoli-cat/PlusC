@@ -21,7 +21,7 @@ interface AnswerRecord {
 export default function TestPage() {
     return (
         <Suspense fallback={
-            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px', color: 'var(--text-dim)' }}>
+            <div className="container" style={{ color: 'var(--text-dim)' }}>
                 Loading test...
             </div>
         }>
@@ -52,20 +52,23 @@ function TestContent() {
     const [allQuestions, setAllQuestions] = useState<Question[] | null>(null)
 
     useEffect(() => {
-        const filtered = questionBank.filter((q) => sections.includes(q.section))
+        const timer = setTimeout(() => {
+            const filtered = questionBank.filter((q) => sections.includes(q.section))
 
-        if (isRandom) {
-            setAllQuestions(shuffle(filtered).slice(0, randomCount))
-            return
-        }
+            if (isRandom) {
+                setAllQuestions(shuffle(filtered).slice(0, randomCount))
+                return
+            }
 
-        const mc = shuffle(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice')).slice(0, mcCount)
-        const sa = shuffle(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all')).slice(0, saCount)
-        const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
+            const mc = shuffle(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice')).slice(0, mcCount)
+            const sa = shuffle(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all')).slice(0, saCount)
+            const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
 
-        setAllQuestions(shuffle([...mc, ...sa, ...fr]))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+            setAllQuestions(shuffle([...mc, ...sa, ...fr]))
+        }, 0)
+
+        return () => clearTimeout(timer)
+    }, [questionBank, sections, isRandom, randomCount, mcCount, saCount, frCount])
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answered, setAnswered] = useState<Map<number, AnswerRecord>>(new Map())
@@ -104,25 +107,27 @@ function TestContent() {
     }, [gradeFrAndSubmit])
 
     useEffect(() => {
-        if (paused || submitted || timeLeft <= 0) return
+        if (paused || submitted) return;
+
         const interval = setInterval(() => {
             setTimeLeft(t => {
-                const next = t - 1
+                const next = t - 1;
                 if (next <= 0) {
                     setTimeout(() => {
-                        alert('Time is up! Your test will be submitted.')
-                        gradeFrAndSubmitRef.current()
-                    }, 0)
+                        gradeFrAndSubmitRef.current();
+                    }, 0);
+                    return 0;
                 }
-                return Math.max(0, next)
-            })
-        }, 1000)
-        return () => clearInterval(interval)
-    }, [timeLeft, paused, submitted])
+                return next;
+            });
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [paused, submitted]);
 
     if (!allQuestions) {
         return (
-            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px', color: 'var(--text-dim)' }}>
+            <div className="container" style={{ color: 'var(--text-dim)' }}>
                 Loading test...
             </div>
         )
@@ -130,7 +135,7 @@ function TestContent() {
 
     if (allQuestions.length === 0) {
         return (
-            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
+            <div className="container">
                 <p style={{ color: 'var(--text-dim)' }}>No questions found for the selected sections.</p>
                 <button className={styles.btn} onClick={() => router.push('/')}>
                     ← Back to Home
@@ -149,7 +154,7 @@ function TestContent() {
         const isFullReview = attemptCount <= 0 || score === 100
 
         return (
-            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
+            <div className="container">
                 <Header />
                 <div style={{ marginBottom: '32px' }}>
                     <h2 style={{ marginBottom: '8px' }}>Results</h2>
@@ -232,7 +237,7 @@ function TestContent() {
     }
 
     return (
-        <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
+        <div className="container">
             <Header />
             <h2>Practice Test</h2>
             <div>Sections: {[...sections].sort((a, b) => parseFloat(a.replace(/[^0-9.]/g, '')) - parseFloat(b.replace(/[^0-9.]/g, ''))).map(s => s.match(/§[\d.]+/)?.[0] ?? s).join(', ')}</div>

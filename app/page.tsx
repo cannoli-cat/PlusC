@@ -7,7 +7,7 @@ const HomeForm = dynamic(() => import('@/components/HomeForm'), { ssr: false })
 
 export default function Home() {
   return (
-    <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
+    <div className="container">
       <Header />
       <HomeForm />
     </div>
