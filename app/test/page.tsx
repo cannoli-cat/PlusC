@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-import type { MultipleChoiceQuestion as MultipleChoiceQuestionType, FreeResponseQuestion as FreeResponseQuestionType, SelectAllQuestion as SelectAllQuestionType } from '@/data/questions'
+import type { MultipleChoiceQuestion as MultipleChoiceQuestionType, FreeResponseQuestion as FreeResponseQuestionType, SelectAllQuestion as SelectAllQuestionType, Question } from '@/data/questions'
 import { questions265, questions266 } from '@/data/questions'
 import MultipleChoiceQuestion from "@/components/MultipleChoiceQuestion"
 import SelectAllQuestion from "@/components/SelectAllQuestion"
@@ -49,19 +49,23 @@ function TestContent() {
     const isRandom = searchParams.get('random') === 'true'
     const randomCount = Number(searchParams.get('count'))
 
-    const allQuestions = useMemo(() => {
+    const [allQuestions, setAllQuestions] = useState<Question[] | null>(null)
+
+    useEffect(() => {
         const filtered = questionBank.filter((q) => sections.includes(q.section))
 
         if (isRandom) {
-            return shuffle(filtered).slice(0, randomCount)
+            setAllQuestions(shuffle(filtered).slice(0, randomCount))
+            return
         }
 
         const mc = shuffle(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice')).slice(0, mcCount)
         const sa = shuffle(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all')).slice(0, saCount)
         const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
 
-        return shuffle([...mc, ...sa, ...fr])
-    }, [sections, mcCount, saCount, frCount, isRandom, randomCount, questionBank])
+        setAllQuestions(shuffle([...mc, ...sa, ...fr]))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answered, setAnswered] = useState<Map<number, AnswerRecord>>(new Map())
@@ -72,8 +76,6 @@ function TestContent() {
     const [lockedQuestions, setLockedQuestions] = useState<Set<number>>(new Set())
     const [frInputs, setFrInputs] = useState<Map<number, string>>(new Map())
     const isLocked = lockedQuestions.has(currentIndex)
-
-    const current = allQuestions[currentIndex]
 
     const markAnswered = (index: number, correct: boolean, selected?: string | string[]) => {
         setAnswered(prev => new Map(prev).set(index, { correct, selected }))
@@ -117,6 +119,14 @@ function TestContent() {
         return () => clearInterval(interval)
     }, [timeLeft, paused, submitted])
 
+    if (!allQuestions) {
+        return (
+            <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px', color: 'var(--text-dim)' }}>
+                Loading test...
+            </div>
+        )
+    }
+
     if (allQuestions.length === 0) {
         return (
             <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 32px' }}>
@@ -127,6 +137,8 @@ function TestContent() {
             </div>
         )
     }
+
+    const current = allQuestions[currentIndex]
 
     if (submitted) {
         const correct = [...answered.values()].filter(v => v.correct).length

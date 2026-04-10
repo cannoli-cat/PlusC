@@ -52,7 +52,7 @@ export default function MultipleChoiceQuestion({ question, number, onAnswered, r
                                 onAnswered(choice.label === question.answer, choice.label)
                             }}
                         >
-                            {choice.label}. <MathText text={choice.text} />
+                            {choice.label}. <MathText text={choice.text} inline />
                         </button>
                     )
                 })}

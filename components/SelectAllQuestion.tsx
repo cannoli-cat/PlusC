@@ -63,7 +63,7 @@ export default function SelectAllQuestion({ question, number, onAnswered, review
                             disabled={reviewMode}
                             onClick={() => toggle(choice.label)}
                         >
-                            {choice.label}. <MathText text={choice.text} />
+                            {choice.label}. <MathText text={choice.text} inline />
                         </button>
                     )
                 })}

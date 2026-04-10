@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import MathText from './MathText'
 import type { FreeResponseQuestion as FreeResponseQuestionType } from '@/data/questions'
 import styles from './FreeResponseQuestion.module.css'
-import { parse } from 'mathjs'
+import { ComputeEngine } from '@cortex-js/compute-engine'
+import { parse as mathjsParse } from 'mathjs'
 
 interface FreeResponseQuestionProps {
     question: FreeResponseQuestionType
@@ -16,15 +17,25 @@ interface FreeResponseQuestionProps {
     savedInput?: string
 }
 
-function normalizeMath(expr: string): string {
+interface MathfieldEl extends HTMLElement {
+    value: string
+}
+
+const ce = new ComputeEngine()
+
+/**
+ * Normalize ascii-math (from the answer bank) so mathjs can parse it,
+ * then convert to LaTeX so ComputeEngine can consume it.
+ */
+function normalizeAsciiMath(expr: string): string {
     let s = expr
 
     s = s.replace(/\bln\b/g, 'log')
-
     s = s.replace(/\barcsin\b/g, 'asin')
     s = s.replace(/\barccos\b/g, 'acos')
     s = s.replace(/\barctan\b/g, 'atan')
 
+    // |x| → abs(x)
     let result = ''
     let i = 0
     while (i < s.length) {
@@ -32,7 +43,7 @@ function normalizeMath(expr: string): string {
             let j = i + 1
             while (j < s.length && s[j] !== '|') j++
             if (j < s.length) {
-                result += `abs(${normalizeMath(s.slice(i + 1, j))})`
+                result += `abs(${normalizeAsciiMath(s.slice(i + 1, j))})`
                 i = j + 1
             } else {
                 result += s[i]
@@ -46,13 +57,14 @@ function normalizeMath(expr: string): string {
     s = result
 
     s = s.replace(/\b(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\s*(abs\([^)]*\))/g, '$1($2)')
-
     s = s.replace(/(\d)(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\b/g, '$1*$2')
 
+    // sin^-1(x) → asin(x), etc.
     s = s.replace(/\btan\^\(?-1\)?\(([^)]*)\)/g, 'atan($1)')
     s = s.replace(/\bsin\^\(?-1\)?\(([^)]*)\)/g, 'asin($1)')
     s = s.replace(/\bcos\^\(?-1\)?\(([^)]*)\)/g, 'acos($1)')
 
+    // sin^4(x) → (sin(x))^4
     s = s.replace(/\b(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\^(\([^)]+\)|-?\d+)\(([^)]*)\)/g, '($1($3))^$2')
 
     s = s.replace(/([a-dA-Df-zF-Z0-9])e\^/g, '$1*e^')
@@ -60,48 +72,63 @@ function normalizeMath(expr: string): string {
     return s
 }
 
-export function checkAnswer(input: string, expected: string, variables: string[]): boolean {
+function asciiMathToLatex(ascii: string): string {
     try {
-        const parsedInput = parse(normalizeMath(input))
-        const parsedExpected = parse(normalizeMath(expected))
+        return mathjsParse(normalizeAsciiMath(ascii)).toTex()
+    } catch {
+        return ascii
+    }
+}
 
-        const testPoints: Record<string, number>[] = []
-        for (let i = 0; i < 20; i++) {
-            const scope: Record<string, number> = {}
-            for (const v of variables) {
-                scope[v] = Math.random() * 1.4 + 0.1
-            }
-            testPoints.push(scope)
-        }
-
-        let validComparisons = 0
-        for (const scope of testPoints) {
-            const v1 = parsedInput.evaluate({ ...scope })
-            const v2 = parsedExpected.evaluate({ ...scope })
-
-            if (typeof v1 !== 'number' || typeof v2 !== 'number') continue
-            if (!isFinite(v1) || !isFinite(v2)) continue
-
-            if (Math.abs(v1 - v2) > 1e-4 * Math.max(1, Math.abs(v2))) return false
-
-            validComparisons++
-        }
-        return validComparisons >= 5
+/**
+ * Check user's LaTeX answer against an ascii-math expected answer
+ * using the Compute Engine for symbolic comparison.
+ */
+export function checkAnswer(input: string, expected: string, variables: string[]): boolean {
+    void variables // kept for call-site compatibility
+    try {
+        const userExpr = ce.parse(input)
+        const expectedExpr = ce.parse(asciiMathToLatex(expected))
+        return userExpr.isEqual(expectedExpr) ?? false
     } catch {
         return false
     }
 }
 
 export default function FreeResponseQuestion({ question, number, onInput, reviewMode, wasCorrect, showSolution, savedInput }: FreeResponseQuestionProps) {
-    const [input, setInput] = useState(savedInput ?? '')
+    const [mounted, setMounted] = useState(false)
+    const mfRef = useRef<MathfieldEl>(null)
+    const initializedRef = useRef(false)
+
     const cardClass = wasCorrect === true ? styles.questionCorrect
         : wasCorrect === false ? styles.questionWrong
             : ''
 
-    const handleChange = (value: string) => {
-        setInput(value)
-        onInput(value)
-    }
+    // Load MathLive dynamically — it accesses the DOM at import time
+    useEffect(() => {
+        import('mathlive').then((ml) => {
+            ml.MathfieldElement.fontsDirectory = '/mathlive-fonts/'
+            setMounted(true)
+        })
+    }, [])
+
+    // Wire up input listener + restore saved value (once only)
+    useEffect(() => {
+        const mf = mfRef.current
+        if (!mf || !mounted) return
+
+        if (!initializedRef.current && savedInput) {
+            mf.value = savedInput
+            initializedRef.current = true
+        }
+
+        const handleInput = () => {
+            onInput(mf.value)
+        }
+
+        mf.addEventListener('input', handleInput)
+        return () => mf.removeEventListener('input', handleInput)
+    }, [mounted, onInput, savedInput])
 
     return (
         <div className={`${styles.question} ${cardClass}`}>
@@ -109,20 +136,27 @@ export default function FreeResponseQuestion({ question, number, onInput, review
                 <span className={styles.number}>{number}</span>
                 <MathText text={question.text} />
             </div>
+
             {!reviewMode ? (
                 <div className={styles.inputArea}>
-                    <input
-                        type="text"
-                        className={styles.mathInput}
-                        value={input}
-                        onChange={(e) => handleChange(e.target.value)}
-                        placeholder="e.g. (1/4)*tan(4*x)+C"
-                    />
-                    {input.trim() && (
-                        <div className={styles.preview}>
-                            <span className={styles.previewLabel}>Preview:</span>
-                            <MathText text={`$${formatPreview(input)}$`} />
-                        </div>
+                    {mounted ? (
+                        /* @ts-expect-error MathLive web component */
+                        <math-field
+                            ref={mfRef}
+                            style={{
+                                width: '100%',
+                                fontSize: '1.2rem',
+                                padding: '8px',
+                                border: '1px solid var(--border)',
+                                borderRadius: '2px',
+                                backgroundColor: 'var(--bg)',
+                                color: 'var(--text)',
+                            }}
+                        >
+                            {/* @ts-expect-error MathLive web component */}
+                        </math-field>
+                    ) : (
+                        <div style={{ height: '40px', width: '100%' }} />
                     )}
                 </div>
             ) : (
@@ -130,11 +164,12 @@ export default function FreeResponseQuestion({ question, number, onInput, review
                     <div className={styles.inputArea}>
                         <div className={styles.savedAnswer}>
                             <span className={styles.previewLabel}>Your answer:</span>
-                            <MathText text={`$${formatPreview(savedInput)}$`} />
+                            <MathText text={`$$${savedInput}$$`} />
                         </div>
                     </div>
                 )
             )}
+
             {showSolution && (
                 <div className={styles.solutionArea}>
                     <p className={styles.solutionLabel}>Solution:</p>
@@ -143,12 +178,4 @@ export default function FreeResponseQuestion({ question, number, onInput, review
             )}
         </div>
     )
-}
-
-function formatPreview(input: string): string {
-    try {
-        return parse(input).toTex()
-    } catch {
-        return input
-    }
 }
