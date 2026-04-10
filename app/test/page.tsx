@@ -64,7 +64,7 @@ function TestContent() {
         const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
 
         setAllQuestions(shuffle([...mc, ...sa, ...fr]))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -82,6 +82,7 @@ function TestContent() {
     }
 
     const gradeFrAndSubmit = useCallback(() => {
+        if (!allQuestions) return
         setAnswered(prev => {
             const next = new Map(prev)
             for (const [i, input] of frInputs) {

@@ -23,10 +23,6 @@ interface MathfieldEl extends HTMLElement {
 
 const ce = new ComputeEngine()
 
-/**
- * Normalize ascii-math (from the answer bank) so mathjs can parse it,
- * then convert to LaTeX so ComputeEngine can consume it.
- */
 function normalizeAsciiMath(expr: string): string {
     let s = expr
 
@@ -35,7 +31,6 @@ function normalizeAsciiMath(expr: string): string {
     s = s.replace(/\barccos\b/g, 'acos')
     s = s.replace(/\barctan\b/g, 'atan')
 
-    // |x| → abs(x)
     let result = ''
     let i = 0
     while (i < s.length) {
@@ -59,12 +54,10 @@ function normalizeAsciiMath(expr: string): string {
     s = s.replace(/\b(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\s*(abs\([^)]*\))/g, '$1($2)')
     s = s.replace(/(\d)(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\b/g, '$1*$2')
 
-    // sin^-1(x) → asin(x), etc.
     s = s.replace(/\btan\^\(?-1\)?\(([^)]*)\)/g, 'atan($1)')
     s = s.replace(/\bsin\^\(?-1\)?\(([^)]*)\)/g, 'asin($1)')
     s = s.replace(/\bcos\^\(?-1\)?\(([^)]*)\)/g, 'acos($1)')
 
-    // sin^4(x) → (sin(x))^4
     s = s.replace(/\b(sin|cos|tan|sec|csc|cot|log|asin|acos|atan)\^(\([^)]+\)|-?\d+)\(([^)]*)\)/g, '($1($3))^$2')
 
     s = s.replace(/([a-dA-Df-zF-Z0-9])e\^/g, '$1*e^')
@@ -80,12 +73,8 @@ function asciiMathToLatex(ascii: string): string {
     }
 }
 
-/**
- * Check user's LaTeX answer against an ascii-math expected answer
- * using the Compute Engine for symbolic comparison.
- */
 export function checkAnswer(input: string, expected: string, variables: string[]): boolean {
-    void variables // kept for call-site compatibility
+    void variables
     try {
         const userExpr = ce.parse(input)
         const expectedExpr = ce.parse(asciiMathToLatex(expected))
@@ -104,7 +93,6 @@ export default function FreeResponseQuestion({ question, number, onInput, review
         : wasCorrect === false ? styles.questionWrong
             : ''
 
-    // Load MathLive dynamically — it accesses the DOM at import time
     useEffect(() => {
         import('mathlive').then((ml) => {
             ml.MathfieldElement.fontsDirectory = '/mathlive-fonts/'
@@ -112,7 +100,6 @@ export default function FreeResponseQuestion({ question, number, onInput, review
         })
     }, [])
 
-    // Wire up input listener + restore saved value (once only)
     useEffect(() => {
         const mf = mfRef.current
         if (!mf || !mounted) return

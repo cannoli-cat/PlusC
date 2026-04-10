@@ -7,19 +7,15 @@ interface MathTextProps {
     inline?: boolean;
 }
 
-/**
- * Parse a markdown table string into rows of cells.
- * Expects lines like: | a | b | c |
- * Skips separator lines like: |---|---|---|
- */
 function parseTable(tableStr: string): string[][] {
     const lines = tableStr.trim().split('\n')
     const rows: string[][] = []
     for (const line of lines) {
         const trimmed = line.trim()
         if (!trimmed.startsWith('|')) continue
-        // Skip separator rows (|---|---|)
+
         if (/^\|[\s\-:|]+\|$/.test(trimmed)) continue
+
         const cells = trimmed
             .replace(/^\||\|$/g, '')
             .split('|')
@@ -29,11 +25,8 @@ function parseTable(tableStr: string): string[][] {
     return rows
 }
 
-/**
- * Render inline content: handles $math$, **bold**, and plain text.
- */
+
 function renderInline(text: string, isMounted: boolean, keyPrefix: string): React.ReactNode[] {
-    // Split on $$..$$ (display math), $..$  (inline math), and **..** (bold)
     const tokens = text.split(/(\$\$[\s\S]*?\$\$|\$[^$]*?\$|\*\*.*?\*\*)/g)
     return tokens.map((token, i) => {
         const key = `${keyPrefix}-${i}`
@@ -74,12 +67,10 @@ export default function MathText({ text, inline }: MathTextProps) {
 
     if (!text) return null;
 
-    // Inline mode: no paragraphs, tables, or line breaks — just inline math/bold/text
     if (inline) {
         return <span>{renderInline(text, isMounted, 'i')}</span>
     }
 
-    // Split into paragraphs on double newlines
     const paragraphs = text.split(/\n\n+/)
 
     return (
@@ -87,11 +78,9 @@ export default function MathText({ text, inline }: MathTextProps) {
             {paragraphs.map((para, pIdx) => {
                 const trimmed = para.trim()
 
-                // Detect markdown tables (lines starting with |)
                 if (trimmed.includes('|') && trimmed.split('\n').some(l => l.trim().startsWith('|'))) {
                     const rows = parseTable(trimmed)
                     if (rows.length > 0) {
-                        // Text before the table (if any)
                         const lines = trimmed.split('\n')
                         const preTableLines: string[] = []
                         for (const line of lines) {
@@ -145,7 +134,6 @@ export default function MathText({ text, inline }: MathTextProps) {
                     }
                 }
 
-                // Regular paragraph — handle single newlines as line breaks
                 const lines = trimmed.split('\n')
                 return (
                     <p key={pIdx} style={{ marginBottom: '8px' }}>
