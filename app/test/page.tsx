@@ -181,6 +181,7 @@ function TestContent() {
                 </div>
                 {currentQ.type === 'multiple-choice' ? (
                     <MultipleChoiceQuestion
+                        key={currentQ.id}
                         question={currentQ}
                         number={currentIndex + 1}
                         onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
@@ -191,6 +192,7 @@ function TestContent() {
                     />
                 ) : currentQ.type === 'select-all' ? (
                     <SelectAllQuestion
+                        key={currentQ.id}
                         question={currentQ}
                         number={currentIndex + 1}
                         onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
@@ -201,6 +203,7 @@ function TestContent() {
                     />
                 ) : (
                     <FreeResponseQuestion
+                        key={currentQ.id}
                         question={currentQ}
                         number={currentIndex + 1}
                         onInput={() => { }}
@@ -215,7 +218,7 @@ function TestContent() {
                         <button className={styles.btn} onClick={() => router.push('/')}>
                             ← Back to Home
                         </button>
-                        <button className={styles.btn} onClick={() => {
+                        <button className={styles.btn} disabled={timeLeft <= 0} onClick={() => {
                             const newLocked = new Set(lockedQuestions)
                             for (const [i, record] of answered) {
                                 if (record.correct) newLocked.add(i)
@@ -224,7 +227,7 @@ function TestContent() {
                             setSubmitted(false)
                             setCurrentIndex(0)
                         }}>
-                            Retry -- {attemptCount} attempt{attemptCount === 1 ? '' : 's'} remaining
+                            {timeLeft <= 0 ? 'Time expired' : `Retry -- ${attemptCount} attempt${attemptCount === 1 ? '' : 's'} remaining`}
                         </button>
                     </div>
                 ) : (
