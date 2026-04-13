@@ -4836,19 +4836,19 @@
     "choices": [
       {
         "label": "A",
-        "text": "$x = 2$ in, $V = 128$ in$^3$"
+        "text": "$x = 2$ in, $V = 128\\text{ in}^3$"
       },
       {
         "label": "B",
-        "text": "$x = 3$ in, $V = 108$ in$^3$"
+        "text": "$x = 3$ in, $V = 108\\text{ in}^3$"
       },
       {
         "label": "C",
-        "text": "$x = 6$ in, $V = 0$ in$^3$"
+        "text": "$x = 6$ in, $V = 0\\text{ in}^3$"
       },
       {
         "label": "D",
-        "text": "$x = 2$ in, $V = 64$ in$^3$"
+        "text": "$x = 2$ in, $V = 64\\text{ in}^3$"
       }
     ],
     "answer": "A",
@@ -4892,7 +4892,7 @@
     "id": "s26545_gen_5",
     "type": "free-response",
     "section": "§4.5. Optimization Problems",
-    "text": "A cylindrical can must hold $500\\pi$ cm$^3$ of liquid. The material for the top and bottom costs $0.02/\\text{cm}^2$ and the material for the lateral side costs $0.01/\\text{cm}^2$. Find the radius $r$ (in cm) that minimizes the total cost of the can.",
+    "text": "A cylindrical can must hold $500\\pi$ $\\text{cm}^3$ of liquid. The material for the top and bottom costs $0.02/\\text{cm}^2$ and the material for the lateral side costs $0.01/\\text{cm}^2$. Find the radius $r$ (in cm) that minimizes the total cost of the can.",
     "answer": "5",
     "solution": "Let $r$ = radius (cm) and $h$ = height (cm).\n\n**Constraint:** $\\pi r^2 h = 500\\pi \\implies h = \\dfrac{500}{r^2}$\n\n**Cost function:**\n$$C = 0.02 \\cdot 2\\pi r^2 + 0.01 \\cdot 2\\pi r h = 0.04\\pi r^2 + 0.02\\pi r \\cdot \\frac{500}{r^2}$$\n$$C(r) = 0.04\\pi r^2 + \\frac{10\\pi}{r}$$\n\n**Derivative:**\n$$C'(r) = 0.08\\pi r - \\frac{10\\pi}{r^2} = 0$$\n$$0.08r = \\frac{10}{r^2} \\implies r^3 = \\frac{10}{0.08} = 125 \\implies r = \\boxed{5} \\text{ cm}$$\n\n**Verify minimum:** $C''(r) = 0.08\\pi + \\dfrac{20\\pi}{r^3} > 0$ → minimum confirmed."
   },
@@ -4950,7 +4950,7 @@
       "B",
       "C"
     ],
-    "solution": "**Setup:** $V(x) = (6-2x)^2 \\cdot x = 4x^3 - 24x^2 + 36x$, domain $0 < x < 3$.\n\n**A:** To keep positive side lengths, $6 - 2x > 0 \\Rightarrow x < 3$, and $x > 0$. So domain is $(0,3)$. \n\n**Derivative:**\n$$V'(x) = 12x^2 - 48x + 36 = 12(x^2 - 4x + 3) = 12(x-1)(x-3)$$\n\n**C:** Interior critical numbers from $V'(x)=0$: $x=1$ and $x=3$. Since $x=3$ is a boundary point, the only **interior** critical number is $x=1$. \n\n**B:** $V(1) = (6-2)^2 \\cdot 1 = 16$ in$^3$. Checking endpoints: $V(0) = V(3) = 0$. So maximum is $16$. \n\n**D:** $x=3$ gives $V(3)=0$ (collapsed box) — this is a minimum, not maximum."
+    "solution": "**Setup:** $V(x) = (6-2x)^2 \\cdot x = 4x^3 - 24x^2 + 36x$, domain $0 < x < 3$.\n\n**A:** To keep positive side lengths, $6 - 2x > 0 \\Rightarrow x < 3$, and $x > 0$. So domain is $(0,3)$. \n\n**Derivative:**\n$$V'(x) = 12x^2 - 48x + 36 = 12(x^2 - 4x + 3) = 12(x-1)(x-3)$$\n\n**C:** Interior critical numbers from $V'(x)=0$: $x=1$ and $x=3$. Since $x=3$ is a boundary point, the only **interior** critical number is $x=1$. \n\n**B:** $V(1) = (6-2)^2 \\cdot 1 = 16\\text{ in}^3$. Checking endpoints: $V(0) = V(3) = 0$. So maximum is $16$. \n\n**D:** $x=3$ gives $V(3)=0$ (collapsed box) — this is a minimum, not maximum."
   },
   {
     "id": "s26545_gen_8",
