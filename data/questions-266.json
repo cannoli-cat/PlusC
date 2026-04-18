@@ -3152,5 +3152,908 @@
       "C"
     ],
     "solution": "**A:** True. For constant force, $\\int_a^b F\\,dx = F(b-a) = Fd$. ✓\n\n**B:** True. The integral generalizes the constant-force formula by summing infinitesimal $F(x)\\,dx$ contributions. ✓\n\n**C:** True. If $F(x) < 0$ on $[a,b]$, the integral is negative, representing work done against the direction of motion. ✓\n\n**D:** False. Work is force × distance: Newton × meter = Joule (SI), or pound × foot = ft-lb (imperial). Newtons alone are units of force, not work. ✗\n\nThe answers are $\\boxed{A, B, C}$."
+  },
+  {
+    "id": "s26682_gen_1",
+    "type": "free-response",
+    "section": "§8.2. Series",
+    "text": "Let $a_n = \\dfrac{1}{n(n+1)}$. Write out the first four partial sums $S_1, S_2, S_3, S_4$ of $\\displaystyle\\sum_{n=1}^{\\infty} a_n$, and then find the exact sum of the series.",
+    "answer": "1",
+    "solution": "Use partial fractions: $\\dfrac{1}{n(n+1)} = \\dfrac{1}{n} - \\dfrac{1}{n+1}$.\n\n**Individual terms:**\n$$a_1 = 1 - \\tfrac{1}{2} = \\tfrac{1}{2}, \\quad a_2 = \\tfrac{1}{2}-\\tfrac{1}{3} = \\tfrac{1}{6}, \\quad a_3 = \\tfrac{1}{3}-\\tfrac{1}{4} = \\tfrac{1}{12}, \\quad a_4 = \\tfrac{1}{4}-\\tfrac{1}{5} = \\tfrac{1}{20}.$$\n\n**Partial sums (telescoping):**\n$$S_1 = \\tfrac{1}{2}, \\quad S_2 = \\tfrac{1}{2}+\\tfrac{1}{6} = \\tfrac{2}{3}, \\quad S_3 = \\tfrac{2}{3}+\\tfrac{1}{12} = \\tfrac{3}{4}, \\quad S_4 = \\tfrac{3}{4}+\\tfrac{1}{20} = \\tfrac{4}{5}.$$\n\nThe pattern is $S_n = 1 - \\dfrac{1}{n+1}$. Taking the limit:\n$$\\sum_{n=1}^{\\infty} \\frac{1}{n(n+1)} = \\lim_{n\\to\\infty}\\left(1 - \\frac{1}{n+1}\\right) = 1.$$"
+  },
+  {
+    "id": "s26682_gen_2",
+    "type": "multiple-choice",
+    "section": "§8.2. Series",
+    "text": "Find the sum of the series $\\displaystyle\\sum_{n=0}^{\\infty} \\frac{7}{4^n}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{28}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{7}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$28$"
+      },
+      {
+        "label": "D",
+        "text": "Diverges"
+      }
+    ],
+    "answer": "A",
+    "solution": "Rewrite: $\\displaystyle\\sum_{n=0}^{\\infty} 7\\left(\\frac{1}{4}\\right)^n$.\n\nThis is a geometric series with first term $a = 7$ and common ratio $r = \\dfrac{1}{4}$.\n\nSince $|r| = \\dfrac{1}{4} < 1$, it converges:\n$$S = \\frac{a}{1-r} = \\frac{7}{1 - \\tfrac{1}{4}} = \\frac{7}{\\tfrac{3}{4}} = \\frac{28}{3}.$$\n\n**Distractor notes:**\n- $\\dfrac{7}{3}$: forgot to include $a$, used $\\dfrac{1}{1-r}$ only.\n- $28$: incorrectly used $a(1-r) = 7\\cdot\\tfrac{3}{4}$... (or other mis-application).\n- Diverges: incorrect; $|r|<1$ guarantees convergence."
+  },
+  {
+    "id": "s26682_gen_3",
+    "type": "multiple-choice",
+    "section": "§8.2. Series",
+    "text": "Which of the following correctly applies the Divergence Test to $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{n^2}{n^2+1}$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\lim_{n\\to\\infty}\\dfrac{n^2}{n^2+1} = 0$, so the series converges."
+      },
+      {
+        "label": "B",
+        "text": "$\\lim_{n\\to\\infty}\\dfrac{n^2}{n^2+1} = 1 \\neq 0$, so the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$\\lim_{n\\to\\infty}\\dfrac{n^2}{n^2+1} = 1$, so the series converges to $1$."
+      },
+      {
+        "label": "D",
+        "text": "The Divergence Test is inconclusive because the terms are positive."
+      }
+    ],
+    "answer": "B",
+    "solution": "Compute the limit of the general term:\n$$\\lim_{n\\to\\infty} \\frac{n^2}{n^2+1} = \\lim_{n\\to\\infty} \\frac{1}{1+\\tfrac{1}{n^2}} = 1.$$\n\nSince $\\lim_{n\\to\\infty} a_n = 1 \\neq 0$, the **Divergence Test** guarantees the series **diverges**.\n\n**Common errors:**\n- Choice A: a limit of $0$ would be required for the test to be inconclusive (not sufficient for convergence), and the limit is not $0$ here anyway.\n- Choice C: the limit of $a_n$ is not the sum of the series.\n- Choice D: the Divergence Test applies perfectly here."
+  },
+  {
+    "id": "s26682_gen_4",
+    "type": "free-response",
+    "section": "§8.2. Series",
+    "text": "Identify the first term $a$ and common ratio $r$ of the geometric series $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{4 \\cdot 2^{n-1}}{5^{n-1}}$. Then determine whether it converges and, if so, find its exact sum.",
+    "answer": "20/3",
+    "solution": "Rewrite the general term:\n$$\\frac{4\\cdot 2^{n-1}}{5^{n-1}} = 4\\left(\\frac{2}{5}\\right)^{n-1}.$$\n\nThis is a geometric series $\\displaystyle\\sum_{n=1}^{\\infty} a\\,r^{n-1}$ with:\n$$a = 4, \\qquad r = \\frac{2}{5}.$$\n\nSince $|r| = \\dfrac{2}{5} < 1$, the series converges:\n$$S = \\frac{a}{1-r} = \\frac{4}{1 - \\tfrac{2}{5}} = \\frac{4}{\\tfrac{3}{5}} = \\frac{20}{3}.$$"
+  },
+  {
+    "id": "s26682_gen_5",
+    "type": "free-response",
+    "section": "§8.2. Series",
+    "text": "Find the exact sum of $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{2^n + 6^n}{9^n}$.",
+    "answer": "16/7",
+    "solution": "Split the series using the sum rule:\n$$\\sum_{n=1}^{\\infty} \\frac{2^n + 6^n}{9^n} = \\sum_{n=1}^{\\infty}\\left(\\frac{2}{9}\\right)^n + \\sum_{n=1}^{\\infty}\\left(\\frac{6}{9}\\right)^n = \\sum_{n=1}^{\\infty}\\left(\\frac{2}{9}\\right)^n + \\sum_{n=1}^{\\infty}\\left(\\frac{2}{3}\\right)^n.$$\n\nBoth are geometric series with $|r|<1$ starting at $n=1$. Use $\\displaystyle\\sum_{n=1}^\\infty r^n = \\frac{r}{1-r}$:\n\n$$\\sum_{n=1}^{\\infty}\\left(\\frac{2}{9}\\right)^n = \\frac{\\tfrac{2}{9}}{1-\\tfrac{2}{9}} = \\frac{\\tfrac{2}{9}}{\\tfrac{7}{9}} = \\frac{2}{7}.$$\n\n$$\\sum_{n=1}^{\\infty}\\left(\\frac{2}{3}\\right)^n = \\frac{\\tfrac{2}{3}}{1-\\tfrac{2}{3}} = \\frac{\\tfrac{2}{3}}{\\tfrac{1}{3}} = 2.$$\n\n$$S = \\frac{2}{7} + 2 = \\frac{2}{7} + \\frac{14}{7} = \\frac{16}{7}.$$"
+  },
+  {
+    "id": "s26682_gen_6",
+    "type": "multiple-choice",
+    "section": "§8.2. Series",
+    "text": "Suppose $\\displaystyle\\sum_{n=1}^{\\infty} a_n = 5$ and $\\displaystyle\\sum_{n=1}^{\\infty} b_n = -3$. Find $\\displaystyle\\sum_{n=1}^{\\infty}(2a_n + 4b_n)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-2$"
+      },
+      {
+        "label": "B",
+        "text": "$22$"
+      },
+      {
+        "label": "C",
+        "text": "$4$"
+      },
+      {
+        "label": "D",
+        "text": "$-12$"
+      }
+    ],
+    "answer": "A",
+    "solution": "By the constant-multiple and sum rules for convergent series:\n$$\\sum_{n=1}^{\\infty}(2a_n + 4b_n) = 2\\sum_{n=1}^{\\infty} a_n + 4\\sum_{n=1}^{\\infty} b_n = 2(5) + 4(-3) = 10 - 12 = -2.$$\n\n**Distractor notes:**\n- $22$: sign error — treated $+4b_n$ as $-4b_n$, getting $2(5)-4(-3) = 10+12 = 22$.\n- $4$: factored out $2$ from the combined sum $\\sum a_n + \\sum b_n$: $2(5+(-3)) = 4$.\n- $-12$: ignored $\\sum a_n$ entirely, computed only $4(-3) = -12$."
+  },
+  {
+    "id": "s26682_gen_7",
+    "type": "multiple-choice",
+    "section": "§8.2. Series",
+    "text": "Find the sum of the series $\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-1)^n \\cdot 3}{4^n}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{12}{5}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{3}{5}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{4}{5}$"
+      },
+      {
+        "label": "D",
+        "text": "Diverges"
+      }
+    ],
+    "answer": "A",
+    "solution": "Rewrite: $\\displaystyle\\sum_{n=0}^{\\infty} 3\\left(-\\frac{1}{4}\\right)^n$.\n\nThis is geometric with $a = 3$ and $r = -\\dfrac{1}{4}$.\n\nSince $|r| = \\dfrac{1}{4} < 1$, the series converges:\n$$S = \\frac{a}{1-r} = \\frac{3}{1-\\left(-\\tfrac{1}{4}\\right)} = \\frac{3}{\\tfrac{5}{4}} = \\frac{12}{5}.$$\n\n**Distractor notes:**\n- $\\dfrac{3}{5}$: used $1+r$ in denominator instead of $1-r$ (i.e., computed $\\tfrac{3}{1+1/4}$).\n- $\\dfrac{4}{5}$: dropped the factor of $3$, computing $\\dfrac{1}{5/4}$.\n- Diverges: incorrect; $|{-1/4}|<1$ so it converges."
+  },
+  {
+    "id": "s26682_gen_8",
+    "type": "select-all",
+    "section": "§8.2. Series",
+    "text": "Select **all** series that converge.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty} \\frac{3}{2^n}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty} \\frac{n+1}{n}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\left(-\\frac{4}{5}\\right)^n$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty} \\frac{n}{n+1}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**A.** $\\displaystyle\\sum_{n=1}^{\\infty} 3\\left(\\tfrac{1}{2}\\right)^n$ is geometric with $|r|=\\tfrac{1}{2}<1$. **Converges.** Sum $= \\dfrac{3/2}{1-1/2} = 3$.\n\n**B.** $\\lim_{n\\to\\infty}\\dfrac{n+1}{n} = 1 \\neq 0$. By the **Divergence Test**, the series **diverges**.\n\n**C.** Geometric with $r = -\\tfrac{4}{5}$, $|r| = \\tfrac{4}{5} < 1$. **Converges.** Sum $= \\dfrac{1}{1+4/5} = \\dfrac{5}{9}$.\n\n**D.** $\\lim_{n\\to\\infty}\\dfrac{n}{n+1} = 1 \\neq 0$. By the **Divergence Test**, the series **diverges**.\n\nConvergent series: **A and C**."
+  },
+  {
+    "id": "s26682_gen_9",
+    "type": "multiple-choice",
+    "section": "§8.2. Series",
+    "text": "Find the exact sum of $\\displaystyle\\sum_{n=2}^{\\infty} 3\\left(\\frac{1}{2}\\right)^{n-1}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$6$"
+      },
+      {
+        "label": "B",
+        "text": "$3$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{3}{2}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{9}{2}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Method 1 (subtract the missing term):**\n\nThe full series starting at $n=1$ is geometric with $a=3$, $r=\\tfrac{1}{2}$:\n$$\\sum_{n=1}^{\\infty} 3\\left(\\tfrac{1}{2}\\right)^{n-1} = \\frac{3}{1-1/2} = 6.$$\n\nSubtract the $n=1$ term ($a_1 = 3\\cdot(\\tfrac{1}{2})^0 = 3$):\n$$\\sum_{n=2}^{\\infty} 3\\left(\\tfrac{1}{2}\\right)^{n-1} = 6 - 3 = 3.$$\n\n**Method 2 (re-index):** When $n=2$, the first term is $3(\\tfrac{1}{2})^1 = \\tfrac{3}{2}$, ratio $r=\\tfrac{1}{2}$:\n$$S = \\frac{3/2}{1-1/2} = \\frac{3/2}{1/2} = 3.\\checkmark$$\n\n**Distractor notes:**\n- $6$: forgot to account for starting at $n=2$ (used full sum from $n=1$).\n- $\\tfrac{3}{2}$: reported only the first term of this series.\n- $\\tfrac{9}{2}$: partial sum $S_1+S_2$ error."
+  },
+  {
+    "id": "s26682_gen_10",
+    "type": "free-response",
+    "section": "§8.2. Series",
+    "text": "Write out the first four partial sums $S_1, S_2, S_3, S_4$ for $\\displaystyle\\sum_{n=1}^{\\infty} 6\\left(\\frac{1}{3}\\right)^{n-1}$, and find the exact sum of the series.",
+    "answer": "9",
+    "solution": "The general term is $a_n = 6\\left(\\dfrac{1}{3}\\right)^{n-1}$, so:\n$$a_1 = 6,\\quad a_2 = 6\\cdot\\tfrac{1}{3} = 2,\\quad a_3 = 6\\cdot\\tfrac{1}{9} = \\tfrac{2}{3},\\quad a_4 = 6\\cdot\\tfrac{1}{27} = \\tfrac{2}{9}.$$\n\n**Partial sums:**\n$$S_1 = 6$$\n$$S_2 = 6 + 2 = 8$$\n$$S_3 = 8 + \\tfrac{2}{3} = \\tfrac{26}{3}$$\n$$S_4 = \\tfrac{26}{3} + \\tfrac{2}{9} = \\tfrac{78}{9}+\\tfrac{2}{9} = \\tfrac{80}{9}$$\n\n**Sum of the series:** This is geometric with $a = 6$, $r = \\dfrac{1}{3}$, and $|r| < 1$:\n$$S = \\frac{6}{1 - \\tfrac{1}{3}} = \\frac{6}{\\tfrac{2}{3}} = 6 \\cdot \\frac{3}{2} = 9.$$\n\nNote that $S_n = 6 \\cdot \\dfrac{1-(1/3)^n}{1-1/3} = 9\\!left(1 - \\tfrac{1}{3^n}\\right) \\to 9$ as $n\\to\\infty$, consistent with the partial sums approaching $9$."
+  },
+  {
+    "id": "s26684_gen_1",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to the series $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{n!}{n^n}$. Which of the following correctly states the value of $L = \\lim_{n\\to\\infty}\\left|\\frac{a_{n+1}}{a_n}\\right|$ and the conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = \\dfrac{1}{e}$; the series converges absolutely."
+      },
+      {
+        "label": "B",
+        "text": "$L = e$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = \\dfrac{1}{e}$; the series diverges."
+      },
+      {
+        "label": "D",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      }
+    ],
+    "answer": "A",
+    "solution": "We have $a_n = \\dfrac{n!}{n^n}$. Compute the ratio:\\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{(n+1)^{n+1}} \\cdot \\frac{n^n}{n!} = \\frac{(n+1)\\cdot n! \\cdot n^n}{(n+1)^{n+1}\\cdot n!} = \\frac{n^n}{(n+1)^n} = \\left(\\frac{n}{n+1}\\right)^n = \\frac{1}{\\left(1+\\frac{1}{n}\\right)^n}.$$\nTaking the limit as $n\\to\\infty$:\n$$L = \\lim_{n\\to\\infty}\\frac{1}{\\left(1+\\frac{1}{n}\\right)^n} = \\frac{1}{e}.$$\nSince $L = \\dfrac{1}{e} < 1$, the series **converges absolutely** by the Ratio Test.\n\n**Common errors:** Choice B flips the ratio, giving $L=e$. Choice C has the right $L$ but draws the wrong conclusion. Choice D incorrectly claims the limit equals 1, forgetting that $\\left(1+\\frac{1}{n}\\right)^n \\to e$."
+  },
+  {
+    "id": "s26684_gen_2",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Find the value of $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ as a simplified fraction, and state whether the series converges or diverges.",
+    "answer": "10/13",
+    "solution": "Let $a_n = \\dfrac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10^{n+1}}{(7(n+1)^2+5)\\cdot 13^{n+4}} \\cdot \\frac{(7n^2+5)\\cdot 13^{n+3}}{10^n}.$$\nSimplifying:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10\\cdot(7n^2+5)}{13\\cdot(7(n+1)^2+5)}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{10(7n^2+5)}{13(7n^2+14n+12)} = \\frac{10}{13}\\cdot\\lim_{n\\to\\infty}\\frac{7n^2+5}{7n^2+14n+12} = \\frac{10}{13}\\cdot 1 = \\frac{10}{13}.$$\nSince $L = \\dfrac{10}{13} < 1$, the series **converges absolutely** by the Ratio Test."
+  },
+  {
+    "id": "s26684_gen_3",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Consider the series $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{e^{n-6}}{\\sqrt{n+7}\\,(n+3)!}$. After computing $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$, what is the correct conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = 0$; the series converges absolutely."
+      },
+      {
+        "label": "B",
+        "text": "$L = e$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      },
+      {
+        "label": "D",
+        "text": "$L = \\dfrac{1}{e}$; the series converges absolutely."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{e^{n-6}}{\\sqrt{n+7}\\,(n+3)!}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{e^{n-5}}{\\sqrt{n+8}\\,(n+4)!}\\cdot\\frac{\\sqrt{n+7}\\,(n+3)!}{e^{n-6}} = \\frac{e\\,\\sqrt{n+7}}{\\sqrt{n+8}\\,(n+4)}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{e\\,\\sqrt{n+7}}{\\sqrt{n+8}\\,(n+4)} = e\\cdot\\lim_{n\\to\\infty}\\frac{\\sqrt{n+7}}{(n+4)\\sqrt{n+8}} = e\\cdot\\lim_{n\\to\\infty}\\frac{1}{n\\cdot 1} \\cdot \\frac{\\sqrt{n}}{\\sqrt{n}} = 0.$$\nMore precisely, numerator grows like $\\sqrt{n}$ while denominator grows like $n$, so the ratio $\\to 0$. Since $L = 0 < 1$, the series **converges absolutely**.\n\n**Common errors:** Choice B gives $L=e$ by ignoring the $(n+4)!$ growth entirely. Choice D gives $1/e$ by treating only the exponential part of the ratio."
+  },
+  {
+    "id": "s26684_gen_4",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "A student applies the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2}{n^3+7}$. What is the correct outcome?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      },
+      {
+        "label": "B",
+        "text": "$L = 1$; the series diverges by the Ratio Test."
+      },
+      {
+        "label": "C",
+        "text": "$L = 0$; the series converges absolutely."
+      },
+      {
+        "label": "D",
+        "text": "$L = \\infty$; the series diverges."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{n^2}{n^3+7}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)^2}{(n+1)^3+7}\\cdot\\frac{n^3+7}{n^2}.$$\nAs $n\\to\\infty$, the leading behavior of numerator is $n^2\\cdot n^3 = n^5$ and denominator is $n^2\\cdot n^3 = n^5$, so:\n$$L = \\lim_{n\\to\\infty}\\frac{(n+1)^2(n^3+7)}{n^2((n+1)^3+7)} = \\lim_{n\\to\\infty}\\frac{n^5+\\cdots}{n^5+\\cdots} = 1.$$\nSince $L = 1$, the **Ratio Test is inconclusive** — it gives no information. (In fact, this series behaves like $\\sum 1/n$, which diverges by the $p$-series test or limit comparison.)\n\n**Common error:** Choice B wrongly concludes divergence directly from $L=1$; when $L=1$ the Ratio Test makes no conclusion."
+  },
+  {
+    "id": "s26684_gen_5",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=0}^{\\infty}\\frac{3^n}{n!}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$.",
+    "answer": "0",
+    "solution": "Let $a_n = \\dfrac{3^n}{n!}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{3^{n+1}}{(n+1)!}\\cdot\\frac{n!}{3^n} = \\frac{3\\cdot 3^n}{(n+1)\\cdot n!}\\cdot\\frac{n!}{3^n} = \\frac{3}{n+1}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{3}{n+1} = 0.$$\nSince $L = 0 < 1$, the series converges absolutely by the Ratio Test. (This is the Taylor series for $e^3$.)"
+  },
+  {
+    "id": "s26684_gen_6",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^n}{n!}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ and state whether the series converges or diverges.",
+    "answer": "e",
+    "solution": "Let $a_n = \\dfrac{n^n}{n!}$. Compute:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)^{n+1}}{(n+1)!}\\cdot\\frac{n!}{n^n} = \\frac{(n+1)^{n+1}}{(n+1)\\cdot n!}\\cdot\\frac{n!}{n^n} = \\frac{(n+1)^n}{n^n} = \\left(1+\\frac{1}{n}\\right)^n.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^n = e.$$\nSince $L = e > 1$, the series **diverges** by the Ratio Test."
+  },
+  {
+    "id": "s26684_gen_7",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Use the Ratio Test on $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2 \\cdot 2^n}{3^n}$. Which answer gives the correct $L$ and conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = \\dfrac{2}{3}$; the series converges absolutely."
+      },
+      {
+        "label": "B",
+        "text": "$L = 2$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = \\dfrac{2}{3}$; the series diverges."
+      },
+      {
+        "label": "D",
+        "text": "$L = \\dfrac{4}{9}$; the series converges absolutely."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{n^2 \\cdot 2^n}{3^n}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)^2\\cdot 2^{n+1}}{3^{n+1}}\\cdot\\frac{3^n}{n^2\\cdot 2^n} = \\frac{2}{3}\\cdot\\frac{(n+1)^2}{n^2}.$$\nTaking the limit:\n$$L = \\frac{2}{3}\\cdot\\lim_{n\\to\\infty}\\frac{(n+1)^2}{n^2} = \\frac{2}{3}\\cdot 1 = \\frac{2}{3}.$$\nSince $L = \\dfrac{2}{3} < 1$, the series **converges absolutely**.\n\n**Distractor analysis:** B gives $L=2$ by considering only the $2^n/3^n$ ratio (forgetting the factor of $1/3$). C has the right $L$ but wrong conclusion. D gives $L=4/9$ by mistakenly squaring the exponential ratio."
+  },
+  {
+    "id": "s26684_gen_8",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{5^n}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ and state whether the series converges or diverges.",
+    "answer": "infinity",
+    "solution": "Let $a_n = \\dfrac{n!}{5^n}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{5^{n+1}}\\cdot\\frac{5^n}{n!} = \\frac{(n+1)\\cdot n!}{5\\cdot n!} = \\frac{n+1}{5}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{n+1}{5} = \\infty.$$\nSince $L = \\infty > 1$, the series **diverges** by the Ratio Test. Factorials eventually grow far faster than any fixed exponential base."
+  },
+  {
+    "id": "s26684_gen_9",
+    "type": "select-all",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "**Select all** series that the Ratio Test **conclusively shows to converge absolutely** (i.e., the Ratio Test gives $L < 1$).",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}\\frac{3^n}{n!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{5^n}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2\\cdot 2^n}{3^n}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(2n)!}{(n!)^2}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "Check each series with the Ratio Test:\n\n**A:** $a_n = 3^n/n!$. Ratio $= 3/(n+1) \\to 0 < 1$. ✓ **Converges absolutely.**\n\n**B:** $a_n = n!/5^n$. Ratio $= (n+1)/5 \\to \\infty > 1$. ✗ **Diverges.**\n\n**C:** $a_n = n^2\\cdot 2^n/3^n$. Ratio $= \\dfrac{2}{3}\\cdot\\dfrac{(n+1)^2}{n^2} \\to \\dfrac{2}{3} < 1$. ✓ **Converges absolutely.**\n\n**D:** $a_n = (2n)!/((n!)^2)$. Ratio $= \\dfrac{(2n+2)!}{((n+1)!)^2}\\cdot\\dfrac{(n!)^2}{(2n)!} = \\dfrac{(2n+2)(2n+1)}{(n+1)^2} = \\dfrac{2(2n+1)}{n+1} \\to 4 > 1$. ✗ **Diverges.**\n\nOnly **A and C** are conclusively shown to converge absolutely."
+  },
+  {
+    "id": "s26684_gen_10",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(2n)!}{(n!)^2}$. Which of the following correctly identifies $L$ and the conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = 4$; the series diverges."
+      },
+      {
+        "label": "B",
+        "text": "$L = 2$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      },
+      {
+        "label": "D",
+        "text": "$L = 4$; the series converges absolutely."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{(2n)!}{(n!)^2}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(2n+2)!}{((n+1)!)^2}\\cdot\\frac{(n!)^2}{(2n)!}.$$\nUsing $(2n+2)! = (2n+2)(2n+1)(2n)!$ and $(n+1)! = (n+1)\\cdot n!$:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(2n+2)(2n+1)(2n)!}{(n+1)^2(n!)^2}\\cdot\\frac{(n!)^2}{(2n)!} = \\frac{(2n+2)(2n+1)}{(n+1)^2} = \\frac{2(n+1)(2n+1)}{(n+1)^2} = \\frac{2(2n+1)}{n+1}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{2(2n+1)}{n+1} = \\lim_{n\\to\\infty}\\frac{4n+2}{n+1} = 4.$$\nSince $L = 4 > 1$, the series **diverges** by the Ratio Test.\n\n**Common errors:** Choice B gives $L=2$ by only keeping one factor of $(2n+2)/(n+1) = 2$ and forgetting the second factor $(2n+1)/(n+1) \\to 2$. Choice D correctly finds $L=4$ but draws the wrong conclusion."
+  },
+  {
+    "id": "s26685_gen_1",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=0}^{\\infty} \\frac{x^n}{7^n}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-7,\\, 7)$"
+      },
+      {
+        "label": "B",
+        "text": "$[-7,\\, 7]$"
+      },
+      {
+        "label": "C",
+        "text": "$\\left(-\\tfrac{1}{7},\\, \\tfrac{1}{7}\\right)$"
+      },
+      {
+        "label": "D",
+        "text": "$(-7,\\, 7]$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Ratio Test.** Let $a_n = x^n/7^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{x^{n+1}}{7^{n+1}}\\cdot\\frac{7^n}{x^n}\\right| = \\frac{|x|}{7}.$$ Setting $|x|/7 < 1$ gives $|x| < 7$, so $R = 7$.\n\n**Endpoint $x = 7$:** $\\sum_{n=0}^\\infty 1$ diverges (terms $\\to 1 \\neq 0$).\n\n**Endpoint $x = -7$:** $\\sum_{n=0}^\\infty (-1)^n$ diverges (terms do not $\\to 0$).\n\nBoth endpoints are excluded, so the interval of convergence is $(-7,\\,7)$. Choice **A**.\n\n*Distractor notes:* (B) incorrectly closes both endpoints; (C) inverts the ratio, getting $R = 1/7$; (D) incorrectly closes the right endpoint."
+  },
+  {
+    "id": "s26685_gen_2",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(x-3)^n}{n \\cdot 4^n}.$$",
+    "answer": "[-1, 7)",
+    "solution": "**Ratio Test.** Let $a_n = (x-3)^n/(n\\cdot 4^n)$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{(x-3)^{n+1}}{(n+1)4^{n+1}}\\cdot\\frac{n\\cdot 4^n}{(x-3)^n}\\right| = \\frac{|x-3|}{4}\\cdot\\frac{n}{n+1} \\xrightarrow{n\\to\\infty} \\frac{|x-3|}{4}.$$ Convergence requires $|x-3|/4 < 1$, i.e., $|x-3| < 4$. Hence $R = 4$ and the series converges on $(3-4, 3+4) = (-1, 7)$.\n\n**Endpoint $x = 7$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{4^n}{n\\cdot 4^n} = \\sum_{n=1}^\\infty \\frac{1}{n}$, the harmonic series. **Diverges.**\n\n**Endpoint $x = -1$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-4)^n}{n\\cdot 4^n} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$, the alternating harmonic series. By the Alternating Series Test it **converges.**\n\nThe interval of convergence is $\\boxed{[-1,\\,7)}$."
+  },
+  {
+    "id": "s26685_gen_3",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=1}^{\\infty} \\frac{(3x)^n}{n^2}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-1,\\,1)$"
+      },
+      {
+        "label": "B",
+        "text": "$\\left[-\\tfrac{1}{3},\\,\\tfrac{1}{3}\\right]$"
+      },
+      {
+        "label": "C",
+        "text": "$(-3,\\,3)$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left(-\\tfrac{1}{3},\\,\\tfrac{1}{3}\\right)$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Ratio Test.** Let $a_n = (3x)^n/n^2$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |3x|\\cdot\\frac{n^2}{(n+1)^2} \\to |3x| \\quad\\text{as } n\\to\\infty.$$ Convergence requires $|3x| < 1$, so $|x| < 1/3$. Thus $R = 1/3$ and the open interval is $(-1/3, 1/3)$.\n\n**Endpoint $x = 1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n^2}$, a $p$-series with $p = 2 > 1$. **Converges.**\n\n**Endpoint $x = -1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n^2}$, converges absolutely (same $p$-series). **Converges.**\n\nBoth endpoints included; interval of convergence is $\\left[-\\tfrac{1}{3},\\tfrac{1}{3}\\right]$. Choice **B**.\n\n*Distractor notes:* (A) forgets to divide by 3 (treats it as $x^n/n^2$); (C) inverts to $R = 3$; (D) gets the right $R$ but wrongly excludes endpoints."
+  },
+  {
+    "id": "s26685_gen_4",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=0}^{\\infty} \\frac{5^n x^n}{n!}.$$",
+    "answer": "(-inf, inf)",
+    "solution": "**Ratio Test.** Let $a_n = 5^n x^n / n!$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{5^{n+1}x^{n+1}}{(n+1)!}\\cdot\\frac{n!}{5^n x^n}\\right| = \\frac{5|x|}{n+1} \\xrightarrow{n\\to\\infty} 0 < 1$$ for every real $x$.\n\nSince the limit is $0$ for all $x$, the series converges for every $x\\in\\mathbb{R}$.\n\n$$R = \\infty, \\qquad \\text{interval of convergence: } (-\\infty,\\infty).$$"
+  },
+  {
+    "id": "s26685_gen_5",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=0}^{\\infty} n!\\,(x-2)^n.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-\\infty, \\infty)$"
+      },
+      {
+        "label": "B",
+        "text": "$\\{2\\}$"
+      },
+      {
+        "label": "C",
+        "text": "$(1, 3)$"
+      },
+      {
+        "label": "D",
+        "text": "$(-2, 2)$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Ratio Test.** Let $a_n = n!(x-2)^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = (n+1)|x-2| \\xrightarrow{n\\to\\infty} \\infty \\quad \\text{whenever } x \\neq 2.$$ The ratio exceeds $1$ for all $x\\neq 2$, so the series **diverges** for every $x\\neq 2$. At $x=2$ every term is $0$, so it converges trivially.\n\nThus $R = 0$ and the interval of convergence is $\\{2\\}$. Choice **B**.\n\n*Distractor notes:* (A) confuses with $e^x$-type series that have $1/n!$; (C) treats $n!$ as if it were a constant; (D) ignores the factorial growth entirely."
+  },
+  {
+    "id": "s26685_gen_6",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(x+1)^n}{2^n \\sqrt{n}}.$$",
+    "answer": "[-3, 1)",
+    "solution": "**Ratio Test.** Let $a_n = (x+1)^n/(2^n\\sqrt{n})$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{|x+1|}{2}\\cdot\\sqrt{\\frac{n}{n+1}} \\to \\frac{|x+1|}{2}.$$ Convergence requires $|x+1|/2 < 1$, i.e., $|x+1| < 2$. So $R = 2$ and the center is $a = -1$; open interval is $(-3, 1)$.\n\n**Endpoint $x = 1$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{2^n}{2^n\\sqrt{n}} = \\sum_{n=1}^\\infty \\frac{1}{\\sqrt{n}}$, a $p$-series with $p = 1/2 \\leq 1$. **Diverges.**\n\n**Endpoint $x = -3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-2)^n}{2^n\\sqrt{n}} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{\\sqrt{n}}$. By the Alternating Series Test (terms decrease to $0$), this **converges.**\n\nThe interval of convergence is $\\boxed{[-3,\\,1)}$."
+  },
+  {
+    "id": "s26685_gen_7",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(-1)^n\\, x^{2n}}{n \\cdot 9^n}.$$",
+    "answer": "[-3, 3]",
+    "solution": "**Ratio Test.** Let $a_n = (-1)^n x^{2n}/(n\\cdot 9^n)$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{x^{2(n+1)}}{(n+1)\\,9^{n+1}}\\cdot\\frac{n\\cdot 9^n}{x^{2n}} = \\frac{x^2}{9}\\cdot\\frac{n}{n+1} \\to \\frac{x^2}{9}.$$ Convergence requires $x^2/9 < 1$, i.e., $|x| < 3$. So $R = 3$; open interval $(-3, 3)$.\n\n**Endpoint $x = 3$:** $$\\sum_{n=1}^\\infty \\frac{(-1)^n \\cdot 9^n}{n\\cdot 9^n} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{n},$$ the alternating harmonic series. **Converges** (Alternating Series Test).\n\n**Endpoint $x = -3$:** $x^{2n} = 9^n$, so $$\\sum_{n=1}^\\infty \\frac{(-1)^n\\cdot 9^n}{n\\cdot 9^n} = \\sum_{n=1}^\\infty\\frac{(-1)^n}{n},$$ same series. **Converges.**\n\nBoth endpoints included; interval of convergence is $\\boxed{[-3,\\,3]}$."
+  },
+  {
+    "id": "s26685_gen_8",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=1}^{\\infty} \\frac{(10x)^n}{n}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\left(-\\tfrac{1}{10},\\,\\tfrac{1}{10}\\right)$"
+      },
+      {
+        "label": "B",
+        "text": "$\\left[-\\tfrac{1}{10},\\,\\tfrac{1}{10}\\right)$"
+      },
+      {
+        "label": "C",
+        "text": "$[-10,\\,10)$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left(-\\tfrac{1}{10},\\,\\tfrac{1}{10}\\right]$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Ratio Test.** Let $a_n = (10x)^n/n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |10x|\\cdot\\frac{n}{n+1} \\to |10x|.$$ Convergence requires $|10x| < 1$, i.e., $|x| < 1/10$. So $R = 1/10$; open interval $(-1/10, 1/10)$.\n\n**Endpoint $x = 1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n}$ (harmonic series). **Diverges.**\n\n**Endpoint $x = -1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$ (alternating harmonic series). **Converges** by the Alternating Series Test.\n\nLeft endpoint included, right excluded: $\\left[-\\tfrac{1}{10},\\tfrac{1}{10}\\right)$. Choice **B**.\n\n*Distractor notes:* (A) misidentifies both endpoints as excluded; (C) gets $R = 10$ by forgetting to invert; (D) swaps which endpoint converges."
+  },
+  {
+    "id": "s26685_gen_9",
+    "type": "select-all",
+    "section": "§8.5. Power Series",
+    "text": "The power series $\\displaystyle\\sum_{n=0}^{\\infty} c_n(x-4)^n$ is known to **converge** at $x = 10$. Select **all** values of $x$ at which the series **must** converge.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = 4$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 9$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 0$"
+      },
+      {
+        "label": "D",
+        "text": "$x = -2$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "The series converges at $x = 10$, which satisfies $|10 - 4| = 6$. By the theorem on power series, the radius of convergence satisfies $R \\geq 6$, so the series converges for **all** $x$ with $|x - 4| < 6$, i.e., $x \\in (-2, 10)$ (at minimum).\n\n**A: $x = 4$** — the center; every power series converges at its center. $|4-4|=0 < 6$. **Must converge. ✓**\n\n**B: $x = 9$** — $|9-4| = 5 < 6 \\leq R$, so this is strictly inside the interval of convergence. **Must converge. ✓**\n\n**C: $x = 0$** — $|0-4| = 4 < 6 \\leq R$, strictly inside. **Must converge. ✓**\n\n**D: $x = -2$** — $|-2-4| = 6$, exactly on the boundary of the minimum interval. The series may or may not converge at an endpoint (the Ratio Test is inconclusive there). **Cannot be guaranteed.**\n\nCorrect selections: **A, B, C**."
+  },
+  {
+    "id": "s26685_gen_10",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{n^2(x+2)^n}{4^n}.$$",
+    "answer": "(-6, 2)",
+    "solution": "**Ratio Test.** Let $a_n = n^2(x+2)^n/4^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{(n+1)^2}{n^2}\\cdot\\frac{|x+2|}{4} \\to \\frac{|x+2|}{4}.$$ Convergence requires $|x+2|/4 < 1$, i.e., $|x+2| < 4$. So $R = 4$ and the center is $a = -2$; open interval $(-6,\\,2)$.\n\n**Endpoint $x = 2$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{n^2\\cdot 4^n}{4^n} = \\sum_{n=1}^\\infty n^2$. Terms grow without bound. **Diverges.**\n\n**Endpoint $x = -6$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{n^2(-4)^n}{4^n} = \\sum_{n=1}^\\infty (-1)^n n^2$. The terms $n^2\\not\\to 0$, so the series **diverges** (fails the Divergence Test).\n\nBoth endpoints diverge; the interval of convergence is $\\boxed{(-6,\\,2)}$."
+  },
+  {
+    "id": "s26687_gen_1",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Which of the following is the Maclaurin series for $\\sin(5x)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n+1}\\, x^{2n+1}}{(2n+1)!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n}\\, x^{2n+1}}{(2n+1)!}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n+1}\\, x^{2n}}{(2n)!}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{5^{2n+1}\\, x^{2n+1}}{(2n+1)!}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Start with the known Maclaurin series:\n$$\\sin u = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, u^{2n+1}}{(2n+1)!}.$$\nSubstitute $u = 5x$:\n$$\\sin(5x) = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, (5x)^{2n+1}}{(2n+1)!} = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n+1}\\, x^{2n+1}}{(2n+1)!}.$$\nChoice B has $5^{2n}$ instead of $5^{2n+1}$ (forgot to raise 5 to the full power). Choice C uses cosine-type powers. Choice D is missing the alternating sign. The answer is **A**."
+  },
+  {
+    "id": "s26687_gen_2",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Evaluate the limit using Maclaurin series:\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1 + \\dfrac{x^2}{2}}{x^4}.$$",
+    "answer": "1/24",
+    "solution": "Write the Maclaurin series for $\\cos x$:\n$$\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\frac{x^6}{6!} + \\cdots$$\nSubtract $1$ and add $\\dfrac{x^2}{2}$:\n$$\\cos x - 1 + \\frac{x^2}{2} = \\left(1 - \\frac{x^2}{2} + \\frac{x^4}{24} - \\cdots\\right) - 1 + \\frac{x^2}{2} = \\frac{x^4}{24} - \\frac{x^6}{720} + \\cdots$$\nDivide by $x^4$:\n$$\\frac{\\cos x - 1 + \\frac{x^2}{2}}{x^4} = \\frac{1}{24} - \\frac{x^2}{720} + \\cdots$$\nTaking $x \\to 0$:\n$$\\lim_{x\\to 0}\\frac{\\cos x - 1 + \\frac{x^2}{2}}{x^4} = \\boxed{\\dfrac{1}{24}}.$$"
+  },
+  {
+    "id": "s26687_gen_3",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Find the Maclaurin series for $f(x) = 10x^2\\, e^{-9x^2}$ and write it in sigma notation.",
+    "answer": "sum_{n=0}^{infty} 10*(-9)^n * x^(2n+2) / n!",
+    "solution": "Start with $e^u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{u^n}{n!}$. Substitute $u = -9x^2$:\n$$e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{(-9x^2)^n}{n!} = \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!}.$$\nMultiply by $10x^2$:\n$$10x^2 e^{-9x^2} = 10x^2 \\cdot \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!} = \\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}.$$\nThe first few terms are:\n$$10x^2 - 90x^4 + 405x^6 - \\frac{2430x^8}{6} + \\cdots$$\nThe series converges for all $x \\in (-\\infty, \\infty)$."
+  },
+  {
+    "id": "s26687_gen_4",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Which of the following correctly gives the Taylor series for $\\ln x$ centered at $a = 2$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\ln 2 + \\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n\\cdot 2^n}(x-2)^n$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n\\cdot 2^n}(x-2)^n$"
+      },
+      {
+        "label": "C",
+        "text": "$\\ln 2 + \\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n}}{n\\cdot 2^n}(x-2)^n$"
+      },
+      {
+        "label": "D",
+        "text": "$\\ln 2 + \\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n!}(x-2)^n$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Compute derivatives of $f(x) = \\ln x$ and evaluate at $x = 2$:\n$$f(x) = \\ln x,\\quad f(2) = \\ln 2$$\n$$f'(x) = x^{-1},\\quad f'(2) = \\tfrac{1}{2}$$\n$$f''(x) = -x^{-2},\\quad f''(2) = -\\tfrac{1}{4}$$\n$$f'''(x) = 2x^{-3},\\quad f'''(2) = \\tfrac{1}{4}$$\nIn general, $f^{(n)}(x) = (-1)^{n+1}(n-1)!/x^n$ for $n \\ge 1$, so\n$$f^{(n)}(2) = \\frac{(-1)^{n+1}(n-1)!}{2^n}.$$\nThe Taylor coefficient is\n$$\\frac{f^{(n)}(2)}{n!} = \\frac{(-1)^{n+1}(n-1)!}{2^n \\cdot n!} = \\frac{(-1)^{n+1}}{n\\cdot 2^n}.$$\nSo the series is $\\ln 2 + \\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n+1}}{n\\cdot 2^n}(x-2)^n$, which is **A**. Choice B omits the constant $\\ln 2$. Choice C has the wrong sign pattern. Choice D is missing the $2^n$ factor."
+  },
+  {
+    "id": "s26687_gen_5",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Let $f(x) = \\cos(x^2)$. Use the Maclaurin series to find $f^{(8)}(0)$.",
+    "answer": "1680",
+    "solution": "Begin with $\\cos u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n u^{2n}}{(2n)!}$. Substitute $u = x^2$:\n$$\\cos(x^2) = \\sum_{n=0}^{\\infty} \\frac{(-1)^n x^{4n}}{(2n)!}.$$\nTo find the coefficient $c_8$ of $x^8$, set $4n = 8 \\Rightarrow n = 2$:\n$$c_8 = \\frac{(-1)^2}{(2\\cdot 2)!} = \\frac{1}{4!} = \\frac{1}{24}.$$\nBy the Taylor coefficient formula $c_8 = \\dfrac{f^{(8)}(0)}{8!}$, so:\n$$f^{(8)}(0) = 8! \\cdot c_8 = 40320 \\cdot \\frac{1}{24} = \\boxed{1680}.$$"
+  },
+  {
+    "id": "s26687_gen_6",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Using the first three nonzero terms of a Maclaurin series, which expression best approximates\n$$\\int_0^{1/2} e^{-x^2}\\,dx\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{2} - \\dfrac{1}{24} + \\dfrac{1}{320}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{2} - \\dfrac{1}{24} + \\dfrac{1}{160}$"
+      },
+      {
+        "label": "C",
+        "text": "$1 - \\dfrac{1}{3} + \\dfrac{1}{10}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2} + \\dfrac{1}{24} + \\dfrac{1}{320}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Write the Maclaurin series for $e^{-x^2}$ by substituting $u = -x^2$ into $e^u$:\n$$e^{-x^2} = 1 - x^2 + \\frac{x^4}{2!} - \\frac{x^6}{3!} + \\cdots$$\nIntegrate term by term:\n$$\\int e^{-x^2}\\,dx = x - \\frac{x^3}{3} + \\frac{x^5}{10} - \\frac{x^7}{42} + \\cdots$$\nEvaluate from $0$ to $\\tfrac{1}{2}$:\n$$\\frac{1}{2} - \\frac{(1/2)^3}{3} + \\frac{(1/2)^5}{10} - \\cdots = \\frac{1}{2} - \\frac{1}{24} + \\frac{1}{320} - \\cdots$$\nSo the three-term approximation is $\\dfrac{1}{2} - \\dfrac{1}{24} + \\dfrac{1}{320}$, which is **A**. Choice B used $x^5/5$ instead of $x^5/10$ (forgot the $2!$ denominator). Choice C forgot to evaluate at $x=1/2$ and used $x=1$. Choice D has all positive signs."
+  },
+  {
+    "id": "s26687_gen_7",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Write the Taylor series for $f(x) = e^x$ centered at $a = 2$ in sigma notation.",
+    "answer": "sum_{n=0}^{infty} e^2/n! * (x-2)^n",
+    "solution": "Since $f(x) = e^x$, every derivative satisfies $f^{(n)}(x) = e^x$, so $f^{(n)}(2) = e^2$ for all $n \\ge 0$.\n\nApplying the Taylor series formula $f(x) = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{f^{(n)}(a)}{n!}(x-a)^n$:\n$$e^x = \\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n.$$\nThe first few terms are:\n$$e^2 + e^2(x-2) + \\frac{e^2}{2}(x-2)^2 + \\frac{e^2}{6}(x-2)^3 + \\cdots$$\nThis converges for all $x \\in (-\\infty,\\infty)$."
+  },
+  {
+    "id": "s26687_gen_8",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Evaluate using Maclaurin series:\n$$\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "The limit does not exist."
+      }
+    ],
+    "answer": "B",
+    "solution": "Write the Maclaurin series for $e^x$:\n$$e^x = 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\cdots$$\nSubtract $1$ and $x$:\n$$e^x - 1 - x = \\frac{x^2}{2} + \\frac{x^3}{6} + \\cdots$$\nDivide by $x^2$:\n$$\\frac{e^x - 1 - x}{x^2} = \\frac{1}{2} + \\frac{x}{6} + \\cdots$$\nAs $x \\to 0$, the right side approaches $\\dfrac{1}{2}$. The answer is **B**. Choice A confuses the result with the numerator going to $0$ without comparing rates. Choice C mistakes the $x^2/2$ term for the coefficient $1$."
+  },
+  {
+    "id": "s26687_gen_9",
+    "type": "select-all",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "**Select all** statements that give a correct Maclaurin series.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\cos x = \\displaystyle\\sum_{n=0}^{\\infty} \\dfrac{(-1)^n\\, x^{2n}}{(2n)!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\sin x = \\displaystyle\\sum_{n=0}^{\\infty} \\dfrac{(-1)^n\\, x^{2n}}{(2n+1)!}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\ln(1+x) = \\displaystyle\\sum_{n=1}^{\\infty} \\dfrac{(-1)^{n+1}\\, x^n}{n}$"
+      },
+      {
+        "label": "D",
+        "text": "$e^x = \\displaystyle\\sum_{n=0}^{\\infty} \\dfrac{x^n}{(n+1)!}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**A. TRUE.** The standard series $\\cos x = \\sum_{n=0}^{\\infty}\\dfrac{(-1)^n x^{2n}}{(2n)!}$ is correct: $1 - \\tfrac{x^2}{2!} + \\tfrac{x^4}{4!} - \\cdots$\n\n**B. FALSE.** The correct series is $\\sin x = \\sum_{n=0}^{\\infty}\\dfrac{(-1)^n x^{2n+1}}{(2n+1)!}$. Choice B has the power $x^{2n}$ (an even power) instead of $x^{2n+1}$ (odd power), which would be the series for $\\sin x$ evaluated incorrectly.\n\n**C. TRUE.** $\\ln(1+x) = \\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n+1} x^n}{n} = x - \\tfrac{x^2}{2} + \\tfrac{x^3}{3} - \\cdots$, valid for $-1 < x \\le 1$.\n\n**D. FALSE.** The correct series is $e^x = \\sum_{n=0}^{\\infty}\\dfrac{x^n}{n!}$. Choice D has $(n+1)!$ in the denominator instead of $n!$, giving a different (incorrect) series.\n\nCorrect answers: **A and C**."
+  },
+  {
+    "id": "s26687_gen_10",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Let $f(x) = \\arctan(x)$. Use the Maclaurin series for $\\arctan x$ to find $f^{(5)}(0)$.",
+    "answer": "24",
+    "solution": "The Maclaurin series for $\\arctan x$ is:\n$$\\arctan x = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, x^{2n+1}}{2n+1} = x - \\frac{x^3}{3} + \\frac{x^5}{5} - \\cdots$$\nTo find $f^{(5)}(0)$, identify the coefficient $c_5$ of $x^5$. Setting $2n+1 = 5$ gives $n = 2$, so:\n$$c_5 = \\frac{(-1)^2}{2(2)+1} = \\frac{1}{5}.$$\nBy the Taylor coefficient formula $c_5 = \\dfrac{f^{(5)}(0)}{5!}$:\n$$f^{(5)}(0) = 5!\\cdot c_5 = 120 \\cdot \\frac{1}{5} = \\boxed{24}.$$"
+  },
+  {
+    "id": "s26686_gen_1",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the power series representation for $f(x) = \\dfrac{1}{1+x}$ centered at $0$. Write the general term and state the interval of convergence.",
+    "answer": "sum_{n=0}^{inf} (-1)^n x^n, interval (-1,1)",
+    "solution": "Start from the geometric series identity $\\dfrac{1}{1-r} = \\sum_{n=0}^{\\infty} r^n$ for $|r|<1$.\n\nRewrite $f(x)$ by setting $r = -x$:\n$$\\frac{1}{1+x} = \\frac{1}{1-(-x)} = \\sum_{n=0}^{\\infty}(-x)^n = \\sum_{n=0}^{\\infty}(-1)^n x^n.$$\n\nThe series converges when $|-x|<1$, i.e., $|x|<1$.\n\nChecking endpoints: at $x=1$, $\\sum (-1)^n$ diverges; at $x=-1$, $\\sum 1$ diverges.\n\nInterval of convergence: $(-1,\\,1)$."
+  },
+  {
+    "id": "s26686_gen_2",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Which of the following correctly represents $f(x) = \\dfrac{2}{1-3x}$ as a power series with its interval of convergence?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 2\\cdot 3^n x^n$, $\\quad |x|<\\dfrac{1}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 3^n x^n$, $\\quad |x|<\\dfrac{1}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 2\\cdot 3^n x^n$, $\\quad |x|<3$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 2(-3)^n x^n$, $\\quad |x|<\\dfrac{1}{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Identify $a=2$ and $r=3x$:\n$$\\frac{2}{1-3x} = 2\\cdot\\frac{1}{1-3x} = 2\\sum_{n=0}^{\\infty}(3x)^n = \\sum_{n=0}^{\\infty} 2\\cdot 3^n x^n.$$\nConverges when $|3x|<1 \\Rightarrow |x|<\\tfrac{1}{3}$. This is choice **A**.\n\n- **B** omits the factor of $2$.\n- **C** has the correct series but wrong radius ($|x|<3$ would mean $r=x/3$).\n- **D** uses $r=-3x$ (wrong sign), which would represent $\\dfrac{2}{1+3x}$."
+  },
+  {
+    "id": "s26686_gen_3",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "By integrating the power series for $\\dfrac{1}{1+x}$ term-by-term, find the power series for $\\ln(1+x)$ centered at $0$. Write the general term and state the interval of convergence.",
+    "answer": "sum_{n=1}^{inf} (-1)^(n-1) x^n / n, interval (-1,1]",
+    "solution": "From the previous result:\n$$\\frac{1}{1+x} = \\sum_{n=0}^{\\infty}(-1)^n x^n, \\quad |x|<1.$$\n\nIntegrate both sides from $0$ to $x$:\n$$\\int_0^x \\frac{1}{1+t}\\,dt = \\sum_{n=0}^{\\infty}(-1)^n\\int_0^x t^n\\,dt = \\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{n+1}}{n+1}.$$\n\nThe left side equals $\\ln(1+x)$. Re-index with $m=n+1$:\n$$\\ln(1+x) = \\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1} x^n}{n} = x - \\frac{x^2}{2}+\\frac{x^3}{3}-\\frac{x^4}{4}+\\cdots$$\n\nRadius of convergence is $R=1$ (inherited from geometric series). At $x=1$: $\\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n}$ converges (alternating harmonic). At $x=-1$: $-\\sum_{n=1}^{\\infty}\\frac{1}{n}$ diverges.\n\nInterval of convergence: $(-1,\\,1]$."
+  },
+  {
+    "id": "s26686_gen_4",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the first five nonzero terms of the power series for $f(x)=\\dfrac{x}{1+4x}$ and its radius of convergence.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x - 4x^2 + 16x^3 - 64x^4 + 256x^5$, $\\quad R=\\dfrac{1}{4}$"
+      },
+      {
+        "label": "B",
+        "text": "$x + 4x^2 + 16x^3 + 64x^4 + 256x^5$, $\\quad R=\\dfrac{1}{4}$"
+      },
+      {
+        "label": "C",
+        "text": "$x - 4x^2 + 16x^3 - 64x^4 + 256x^5$, $\\quad R=4$"
+      },
+      {
+        "label": "D",
+        "text": "$1 - 4x + 16x^2 - 64x^3 + 256x^4$, $\\quad R=\\dfrac{1}{4}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Write $\\dfrac{x}{1+4x} = x\\cdot\\dfrac{1}{1-(-4x)}$. Set $r=-4x$:\n$$\\frac{1}{1+4x}=\\sum_{n=0}^{\\infty}(-4x)^n=\\sum_{n=0}^{\\infty}(-1)^n 4^n x^n.$$\n\nMultiplying by $x$:\n$$\\frac{x}{1+4x}=\\sum_{n=0}^{\\infty}(-1)^n 4^n x^{n+1}.$$\n\nFirst five terms ($n=0,1,2,3,4$):\n$$x - 4x^2+16x^3-64x^4+256x^5.$$\n\nConverges when $|-4x|<1 \\Rightarrow |x|<\\tfrac{1}{4}$, so $R=\\tfrac{1}{4}$.\n\n- **B** uses $r=+4x$ (wrong sign).\n- **C** has the correct terms but $R=4$ is wrong.\n- **D** forgot to multiply by $x$."
+  },
+  {
+    "id": "s26686_gen_5",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find a power series representation for $f(x)=\\arctan\\!\\left(\\dfrac{x}{7}\\right)$ centered at $0$. Write the general term and state the radius of convergence.",
+    "answer": "sum_{n=0}^{inf} (-1)^n x^(2n+1) / ((2n+1)*7^(2n+1)), R=7",
+    "solution": "**Step 1.** Start from $\\dfrac{1}{1+u^2}=\\sum_{n=0}^{\\infty}(-1)^n u^{2n}$ for $|u|<1$.\n\n**Step 2.** Integrate to get $\\arctan(u)=\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n u^{2n+1}}{2n+1}$ for $|u|\\leq 1$.\n\n**Step 3.** Substitute $u = x/7$:\n$$\\arctan\\!\\left(\\frac{x}{7}\\right) = \\sum_{n=0}^{\\infty}\\frac{(-1)^n}{2n+1}\\left(\\frac{x}{7}\\right)^{2n+1} = \\sum_{n=0}^{\\infty}\\frac{(-1)^n\\, x^{2n+1}}{(2n+1)\\cdot 7^{2n+1}}.$$\n\n**First four nonzero terms:**\n$$\\frac{x}{7} - \\frac{x^3}{3\\cdot 343} + \\frac{x^5}{5\\cdot 16807} - \\frac{x^7}{7\\cdot 7^7}+\\cdots$$\n\n**Radius of convergence:** converges when $|x/7|\\leq 1$, i.e., $|x|\\leq 7$, so $R=7$."
+  },
+  {
+    "id": "s26686_gen_6",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "By differentiating the power series for $\\dfrac{1}{1+x}$, find the power series for $\\dfrac{1}{(1+x)^2}$ centered at $0$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(-1)^n(n+1)x^n$, $\\quad |x|<1$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(-1)^{n+1}(n+1)x^n$, $\\quad |x|<1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(n+1)x^n$, $\\quad |x|<1$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(-1)^n x^n$, $\\quad |x|<1$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Note $\\dfrac{d}{dx}\\left[\\dfrac{1}{1+x}\\right] = -\\dfrac{1}{(1+x)^2}$, so $\\dfrac{1}{(1+x)^2} = -\\dfrac{d}{dx}\\left[\\dfrac{1}{1+x}\\right]$.\n\nDifferentiate $\\dfrac{1}{1+x}=\\sum_{n=0}^{\\infty}(-1)^n x^n$ term-by-term:\n$$\\frac{d}{dx}\\sum_{n=0}^{\\infty}(-1)^n x^n = \\sum_{n=1}^{\\infty}(-1)^n n\\, x^{n-1}.$$\n\nThus:\n$$\\frac{1}{(1+x)^2} = -\\sum_{n=1}^{\\infty}(-1)^n n\\,x^{n-1} = \\sum_{n=1}^{\\infty}(-1)^{n+1}n\\,x^{n-1}.$$\n\nRe-index $m = n-1$:\n$$= \\sum_{m=0}^{\\infty}(-1)^{m+2}(m+1)x^m = \\sum_{n=0}^{\\infty}(-1)^n(n+1)x^n, \\quad |x|<1.$$\n\n- **B** has the overall sign wrong (omitted the minus from $-d/dx$).\n- **C** omits the alternating signs.\n- **D** forgot to differentiate at all."
+  },
+  {
+    "id": "s26686_gen_7",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the first five nonzero terms and the general term of the power series for $f(x)=\\dfrac{1}{1-x^3}$ centered at $0$. State the radius of convergence.",
+    "answer": "1 + x^3 + x^6 + x^9 + x^12 + ...; general term x^(3n); R=1",
+    "solution": "Set $r = x^3$ in the geometric series formula:\n$$\\frac{1}{1-x^3} = \\frac{1}{1-r}\\bigg|_{r=x^3} = \\sum_{n=0}^{\\infty}(x^3)^n = \\sum_{n=0}^{\\infty} x^{3n}.$$\n\n**First five nonzero terms:**\n$$1 + x^3 + x^6 + x^9 + x^{12}.$$\n\n**Radius of convergence:** the series converges when $|x^3|<1$, i.e., $|x|<1$, so $R=1$.\n\n(Endpoints $x=\\pm1$ both give $\\sum 1$, which diverges.)"
+  },
+  {
+    "id": "s26686_gen_8",
+    "type": "select-all",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Select **all** statements that are correct power series representations (valid on the stated interval).",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{1-2x} = \\displaystyle\\sum_{n=0}^{\\infty} 2^n x^n$ for $|x|<\\dfrac{1}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{1+x^2} = \\displaystyle\\sum_{n=0}^{\\infty} x^{2n}$ for $|x|<1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\ln(1+x) = \\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n-1}x^n}{n}$ for $|x|<1$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{(1-x)^2} = \\displaystyle\\sum_{n=0}^{\\infty}(n+1)x^n$ for $|x|<1$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A: Correct.** Set $r=2x$: $\\dfrac{1}{1-2x}=\\sum_{n=0}^{\\infty}(2x)^n=\\sum_{n=0}^{\\infty}2^n x^n$, $|x|<\\tfrac{1}{2}$. ✓\n\n**B: Incorrect.** The correct formula is $\\dfrac{1}{1+x^2}=\\dfrac{1}{1-(-x^2)}=\\sum_{n=0}^{\\infty}(-1)^n x^{2n}$. The choice omits the $(-1)^n$ factor. ✗\n\n**C: Correct.** Integrating $\\sum_{n=0}^{\\infty}(-1)^n x^n$ gives $\\ln(1+x)=\\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n-1}x^n}{n}$ for $|x|<1$. ✓\n\n**D: Correct.** Differentiate $\\dfrac{1}{1-x}=\\sum x^n$ to get $\\dfrac{1}{(1-x)^2}=\\sum_{n=1}^{\\infty}nx^{n-1}=\\sum_{n=0}^{\\infty}(n+1)x^n$, $|x|<1$. ✓"
+  },
+  {
+    "id": "s26686_gen_9",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the power series representation for $f(x) = \\ln(6-x)$ centered at $0$. Write the general term and state the interval of convergence.",
+    "answer": "ln(6) - sum_{n=1}^{inf} x^n/(n*6^n), interval [-6,6)",
+    "solution": "Factor out $6$:\n$$\\ln(6-x)=\\ln\\!\\left(6\\!left(1-\\tfrac{x}{6}\\right)\\right)=\\ln 6+\\ln\\!\\left(1-\\tfrac{x}{6}\\right).$$\n\nUse $\\ln(1-u)=-\\sum_{n=1}^{\\infty}\\dfrac{u^n}{n}$ with $u=x/6$:\n$$\\ln\\!\\left(1-\\frac{x}{6}\\right)=-\\sum_{n=1}^{\\infty}\\frac{1}{n}\\left(\\frac{x}{6}\\right)^n = -\\sum_{n=1}^{\\infty}\\frac{x^n}{n\\cdot 6^n}.$$\n\nTherefore:\n$$\\ln(6-x)=\\ln 6 - \\sum_{n=1}^{\\infty}\\frac{x^n}{n\\cdot 6^n}.$$\n\n**Interval of convergence:** convergence requires $|x/6|<1$, i.e., $|x|<6$; $R=6$.\n\n- At $x=6$: $\\ln 6 - \\sum\\dfrac{1}{n}$ diverges (harmonic). Excluded.\n- At $x=-6$: $\\ln 6 - \\sum\\dfrac{(-1)^n}{n} = \\ln 6 + \\sum\\dfrac{(-1)^{n+1}}{n}$ converges (alternating harmonic). Included.\n\nInterval of convergence: $[-6,\\,6)$."
+  },
+  {
+    "id": "s26686_gen_10",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "If $f(x)=\\dfrac{1}{1+4x^2}=\\displaystyle\\sum_{n=0}^{\\infty}c_n x^n$, find the coefficients $c_0,\\,c_1,\\,c_2,\\,c_3,\\,c_4$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$c_0=1,\\; c_1=0,\\; c_2=-4,\\; c_3=0,\\; c_4=16$"
+      },
+      {
+        "label": "B",
+        "text": "$c_0=1,\\; c_1=-4,\\; c_2=16,\\; c_3=-64,\\; c_4=256$"
+      },
+      {
+        "label": "C",
+        "text": "$c_0=1,\\; c_1=0,\\; c_2=4,\\; c_3=0,\\; c_4=16$"
+      },
+      {
+        "label": "D",
+        "text": "$c_0=1,\\; c_1=0,\\; c_2=-4,\\; c_3=0,\\; c_4=-16$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Set $r=-4x^2$ in the geometric series:\n$$\\frac{1}{1+4x^2}=\\frac{1}{1-(-4x^2)}=\\sum_{n=0}^{\\infty}(-4x^2)^n=\\sum_{n=0}^{\\infty}(-1)^n 4^n x^{2n}.$$\n\nWriting out terms: $1 - 4x^2 + 16x^4 - 64x^6 + \\cdots$\n\nMatching $\\sum c_n x^n$:\n$$c_0=1,\\quad c_1=0,\\quad c_2=-4,\\quad c_3=0,\\quad c_4=16.$$\n\nThis is **A**.\n\n- **B** treats $4x^2$ as $4x$ (wrong variable power—ignores that only even powers appear).\n- **C** omits the alternating sign ($(-1)^n$), giving $+4$ instead of $-4$ for $c_2$.\n- **D** uses the wrong sign on $c_4$: $(-1)^2 4^2 = +16$, not $-16$."
   }
 ]
