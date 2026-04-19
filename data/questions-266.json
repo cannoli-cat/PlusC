@@ -3374,7 +3374,7 @@
     "id": "s26684_gen_2",
     "type": "free-response",
     "section": "§8.4. Other Convergence Tests",
-    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Find the value of $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ as a simplified fraction, and state whether the series converges or diverges.",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ as a simplified fraction.",
     "answer": "10/13",
     "solution": "Let $a_n = \\dfrac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10^{n+1}}{(7(n+1)^2+5)\\cdot 13^{n+4}} \\cdot \\frac{(7n^2+5)\\cdot 13^{n+3}}{10^n}.$$\nSimplifying:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10\\cdot(7n^2+5)}{13\\cdot(7(n+1)^2+5)}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{10(7n^2+5)}{13(7n^2+14n+12)} = \\frac{10}{13}\\cdot\\lim_{n\\to\\infty}\\frac{7n^2+5}{7n^2+14n+12} = \\frac{10}{13}\\cdot 1 = \\frac{10}{13}.$$\nSince $L = \\dfrac{10}{13} < 1$, the series **converges absolutely** by the Ratio Test."
   },
@@ -3476,7 +3476,7 @@
     "id": "s26684_gen_8",
     "type": "free-response",
     "section": "§8.4. Other Convergence Tests",
-    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{5^n}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ and state whether the series converges or diverges.",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{5^n}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$.",
     "answer": "infinity",
     "solution": "Let $a_n = \\dfrac{n!}{5^n}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{5^{n+1}}\\cdot\\frac{5^n}{n!} = \\frac{(n+1)\\cdot n!}{5\\cdot n!} = \\frac{n+1}{5}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{n+1}{5} = \\infty.$$\nSince $L = \\infty > 1$, the series **diverges** by the Ratio Test. Factorials eventually grow far faster than any fixed exponential base."
   },
