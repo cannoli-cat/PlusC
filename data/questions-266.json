@@ -3442,7 +3442,7 @@
     "id": "s26684_gen_6",
     "type": "free-response",
     "section": "§8.4. Other Convergence Tests",
-    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^n}{n!}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ and state whether the series converges or diverges.",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^n}{n!}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$.",
     "answer": "e",
     "solution": "Let $a_n = \\dfrac{n^n}{n!}$. Compute:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)^{n+1}}{(n+1)!}\\cdot\\frac{n!}{n^n} = \\frac{(n+1)^{n+1}}{(n+1)\\cdot n!}\\cdot\\frac{n!}{n^n} = \\frac{(n+1)^n}{n^n} = \\left(1+\\frac{1}{n}\\right)^n.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^n = e.$$\nSince $L = e > 1$, the series **diverges** by the Ratio Test."
   },
