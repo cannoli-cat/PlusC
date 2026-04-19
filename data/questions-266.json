@@ -3342,7 +3342,7 @@
     "section": "§8.2. Series",
     "text": "Write out the first four partial sums $S_1, S_2, S_3, S_4$ for $\\displaystyle\\sum_{n=1}^{\\infty} 6\\left(\\frac{1}{3}\\right)^{n-1}$, and find the exact sum of the series.",
     "answer": "9",
-    "solution": "The general term is $a_n = 6\\left(\\dfrac{1}{3}\\right)^{n-1}$, so:\n$$a_1 = 6,\\quad a_2 = 6\\cdot\\tfrac{1}{3} = 2,\\quad a_3 = 6\\cdot\\tfrac{1}{9} = \\tfrac{2}{3},\\quad a_4 = 6\\cdot\\tfrac{1}{27} = \\tfrac{2}{9}.$$\n\n**Partial sums:**\n$$S_1 = 6$$\n$$S_2 = 6 + 2 = 8$$\n$$S_3 = 8 + \\tfrac{2}{3} = \\tfrac{26}{3}$$\n$$S_4 = \\tfrac{26}{3} + \\tfrac{2}{9} = \\tfrac{78}{9}+\\tfrac{2}{9} = \\tfrac{80}{9}$$\n\n**Sum of the series:** This is geometric with $a = 6$, $r = \\dfrac{1}{3}$, and $|r| < 1$:\n$$S = \\frac{6}{1 - \\tfrac{1}{3}} = \\frac{6}{\\tfrac{2}{3}} = 6 \\cdot \\frac{3}{2} = 9.$$\n\nNote that $S_n = 6 \\cdot \\dfrac{1-(1/3)^n}{1-1/3} = 9\\!left(1 - \\tfrac{1}{3^n}\\right) \\to 9$ as $n\\to\\infty$, consistent with the partial sums approaching $9$."
+    "solution": "The general term is $a_n = 6\\left(\\dfrac{1}{3}\\right)^{n-1}$, so:\n$$a_1 = 6,\\quad a_2 = 6\\cdot\\tfrac{1}{3} = 2,\\quad a_3 = 6\\cdot\\tfrac{1}{9} = \\tfrac{2}{3},\\quad a_4 = 6\\cdot\\tfrac{1}{27} = \\tfrac{2}{9}.$$\n\n**Partial sums:**\n$$S_1 = 6$$\n$$S_2 = 6 + 2 = 8$$\n$$S_3 = 8 + \\tfrac{2}{3} = \\tfrac{26}{3}$$\n$$S_4 = \\tfrac{26}{3} + \\tfrac{2}{9} = \\tfrac{78}{9}+\\tfrac{2}{9} = \\tfrac{80}{9}$$\n\n**Sum of the series:** This is geometric with $a = 6$, $r = \\dfrac{1}{3}$, and $|r| < 1$:\n$$S = \\frac{6}{1 - \\tfrac{1}{3}} = \\frac{6}{\\tfrac{2}{3}} = 6 \\cdot \\frac{3}{2} = 9.$$\n\nNote that $S_n = 6 \\cdot \\dfrac{1-(1/3)^n}{1-1/3} = 9\\left(1 - \\tfrac{1}{3^n}\\right) \\to 9$ as $n\\to\\infty$, consistent with the partial sums approaching $9$."
   },
   {
     "id": "s26684_gen_1",
@@ -3566,7 +3566,16 @@
     "type": "free-response",
     "section": "§8.5. Power Series",
     "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(x-3)^n}{n \\cdot 4^n}.$$",
-    "answer": "[-1, 7)",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "4"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-1, 7)"
+      }
+    ],
     "solution": "**Ratio Test.** Let $a_n = (x-3)^n/(n\\cdot 4^n)$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{(x-3)^{n+1}}{(n+1)4^{n+1}}\\cdot\\frac{n\\cdot 4^n}{(x-3)^n}\\right| = \\frac{|x-3|}{4}\\cdot\\frac{n}{n+1} \\xrightarrow{n\\to\\infty} \\frac{|x-3|}{4}.$$ Convergence requires $|x-3|/4 < 1$, i.e., $|x-3| < 4$. Hence $R = 4$ and the series converges on $(3-4, 3+4) = (-1, 7)$.\n\n**Endpoint $x = 7$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{4^n}{n\\cdot 4^n} = \\sum_{n=1}^\\infty \\frac{1}{n}$, the harmonic series. **Diverges.**\n\n**Endpoint $x = -1$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-4)^n}{n\\cdot 4^n} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$, the alternating harmonic series. By the Alternating Series Test it **converges.**\n\nThe interval of convergence is $\\boxed{[-1,\\,7)}$."
   },
   {
@@ -3600,7 +3609,16 @@
     "type": "free-response",
     "section": "§8.5. Power Series",
     "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=0}^{\\infty} \\frac{5^n x^n}{n!}.$$",
-    "answer": "(-inf, inf)",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "\\infty"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-\\infty, \\infty)"
+      }
+    ],
     "solution": "**Ratio Test.** Let $a_n = 5^n x^n / n!$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{5^{n+1}x^{n+1}}{(n+1)!}\\cdot\\frac{n!}{5^n x^n}\\right| = \\frac{5|x|}{n+1} \\xrightarrow{n\\to\\infty} 0 < 1$$ for every real $x$.\n\nSince the limit is $0$ for all $x$, the series converges for every $x\\in\\mathbb{R}$.\n\n$$R = \\infty, \\qquad \\text{interval of convergence: } (-\\infty,\\infty).$$"
   },
   {
@@ -3634,7 +3652,16 @@
     "type": "free-response",
     "section": "§8.5. Power Series",
     "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(x+1)^n}{2^n \\sqrt{n}}.$$",
-    "answer": "[-3, 1)",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "2"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-3, 1)"
+      }
+    ],
     "solution": "**Ratio Test.** Let $a_n = (x+1)^n/(2^n\\sqrt{n})$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{|x+1|}{2}\\cdot\\sqrt{\\frac{n}{n+1}} \\to \\frac{|x+1|}{2}.$$ Convergence requires $|x+1|/2 < 1$, i.e., $|x+1| < 2$. So $R = 2$ and the center is $a = -1$; open interval is $(-3, 1)$.\n\n**Endpoint $x = 1$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{2^n}{2^n\\sqrt{n}} = \\sum_{n=1}^\\infty \\frac{1}{\\sqrt{n}}$, a $p$-series with $p = 1/2 \\leq 1$. **Diverges.**\n\n**Endpoint $x = -3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-2)^n}{2^n\\sqrt{n}} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{\\sqrt{n}}$. By the Alternating Series Test (terms decrease to $0$), this **converges.**\n\nThe interval of convergence is $\\boxed{[-3,\\,1)}$."
   },
   {
@@ -3642,7 +3669,16 @@
     "type": "free-response",
     "section": "§8.5. Power Series",
     "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(-1)^n\\, x^{2n}}{n \\cdot 9^n}.$$",
-    "answer": "[-3, 3]",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "3"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-3, 3]"
+      }
+    ],
     "solution": "**Ratio Test.** Let $a_n = (-1)^n x^{2n}/(n\\cdot 9^n)$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{x^{2(n+1)}}{(n+1)\\,9^{n+1}}\\cdot\\frac{n\\cdot 9^n}{x^{2n}} = \\frac{x^2}{9}\\cdot\\frac{n}{n+1} \\to \\frac{x^2}{9}.$$ Convergence requires $x^2/9 < 1$, i.e., $|x| < 3$. So $R = 3$; open interval $(-3, 3)$.\n\n**Endpoint $x = 3$:** $$\\sum_{n=1}^\\infty \\frac{(-1)^n \\cdot 9^n}{n\\cdot 9^n} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{n},$$ the alternating harmonic series. **Converges** (Alternating Series Test).\n\n**Endpoint $x = -3$:** $x^{2n} = 9^n$, so $$\\sum_{n=1}^\\infty \\frac{(-1)^n\\cdot 9^n}{n\\cdot 9^n} = \\sum_{n=1}^\\infty\\frac{(-1)^n}{n},$$ same series. **Converges.**\n\nBoth endpoints included; interval of convergence is $\\boxed{[-3,\\,3]}$."
   },
   {
@@ -3706,7 +3742,16 @@
     "type": "free-response",
     "section": "§8.5. Power Series",
     "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{n^2(x+2)^n}{4^n}.$$",
-    "answer": "(-6, 2)",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "4"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-6, 2)"
+      }
+    ],
     "solution": "**Ratio Test.** Let $a_n = n^2(x+2)^n/4^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{(n+1)^2}{n^2}\\cdot\\frac{|x+2|}{4} \\to \\frac{|x+2|}{4}.$$ Convergence requires $|x+2|/4 < 1$, i.e., $|x+2| < 4$. So $R = 4$ and the center is $a = -2$; open interval $(-6,\\,2)$.\n\n**Endpoint $x = 2$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{n^2\\cdot 4^n}{4^n} = \\sum_{n=1}^\\infty n^2$. Terms grow without bound. **Diverges.**\n\n**Endpoint $x = -6$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{n^2(-4)^n}{4^n} = \\sum_{n=1}^\\infty (-1)^n n^2$. The terms $n^2\\not\\to 0$, so the series **diverges** (fails the Divergence Test).\n\nBoth endpoints diverge; the interval of convergence is $\\boxed{(-6,\\,2)}$."
   },
   {
@@ -3745,11 +3790,29 @@
   },
   {
     "id": "s26687_gen_3",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§8.7. Taylor and Maclaurin Series",
-    "text": "Find the Maclaurin series for $f(x) = 10x^2\\, e^{-9x^2}$ and write it in sigma notation.",
-    "answer": "sum_{n=0}^{infty} 10*(-9)^n * x^(2n+2) / n!",
-    "solution": "Start with $e^u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{u^n}{n!}$. Substitute $u = -9x^2$:\n$$e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{(-9x^2)^n}{n!} = \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!}.$$\nMultiply by $10x^2$:\n$$10x^2 e^{-9x^2} = 10x^2 \\cdot \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!} = \\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}.$$\nThe first few terms are:\n$$10x^2 - 90x^4 + 405x^6 - \\frac{2430x^8}{6} + \\cdots$$\nThe series converges for all $x \\in (-\\infty, \\infty)$."
+    "text": "Find the Maclaurin series for $f(x) = 10x^2\\, e^{-9x^2}$ in sigma notation.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{10 \\cdot 9^n\\, x^{2n+2}}{n!}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n}}{n!}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-9)^n\\, x^{2n+2}}{n!}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Start with $e^u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{u^n}{n!}$. Substitute $u = -9x^2$:\n$$e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!}.$$\nMultiply by $10x^2$:\n$$10x^2 e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}.$$\n**Distractor notes:** B omits the $(-1)^n$ alternating sign. C forgets to multiply by $x^2$, leaving $x^{2n}$ instead of $x^{2n+2}$. D drops the factor of 10."
   },
   {
     "id": "s26687_gen_4",
@@ -3813,11 +3876,29 @@
   },
   {
     "id": "s26687_gen_7",
-    "type": "free-response",
+    "type": "multiple-choice",
     "section": "§8.7. Taylor and Maclaurin Series",
     "text": "Write the Taylor series for $f(x) = e^x$ centered at $a = 2$ in sigma notation.",
-    "answer": "sum_{n=0}^{infty} e^2/n! * (x-2)^n",
-    "solution": "Since $f(x) = e^x$, every derivative satisfies $f^{(n)}(x) = e^x$, so $f^{(n)}(2) = e^2$ for all $n \\ge 0$.\n\nApplying the Taylor series formula $f(x) = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{f^{(n)}(a)}{n!}(x-a)^n$:\n$$e^x = \\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n.$$\nThe first few terms are:\n$$e^2 + e^2(x-2) + \\frac{e^2}{2}(x-2)^2 + \\frac{e^2}{6}(x-2)^3 + \\cdots$$\nThis converges for all $x \\in (-\\infty,\\infty)$."
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{1}{n!}(x-2)^n$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{e^2}{n!}\\, x^n$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{e^n}{n!}(x-2)^n$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Since $f^{(n)}(x) = e^x$ for all $n$, evaluating at $a=2$ gives $f^{(n)}(2) = e^2$. The Taylor series formula gives:\n$$e^x = \\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n.$$\n**Distractor notes:** B forgets to evaluate $e^x$ at $x=2$, using $1/n!$ instead. C has the right coefficient but forgot the center shift, using $x^n$ instead of $(x-2)^n$. D incorrectly uses $e^n$ as if the coefficient grows with $n$."
   },
   {
     "id": "s26687_gen_8",
@@ -3886,8 +3967,17 @@
     "id": "s26686_gen_1",
     "type": "free-response",
     "section": "§8.6. Representing Functions as Power Series",
-    "text": "Find the power series representation for $f(x) = \\dfrac{1}{1+x}$ centered at $0$. Write the general term and state the interval of convergence.",
-    "answer": "sum_{n=0}^{inf} (-1)^n x^n, interval (-1,1)",
+    "text": "Find the radius of convergence $R$ and interval of convergence of the power series for $f(x) = \\dfrac{1}{1+x}$ centered at $0$.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "1"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-1, 1)"
+      }
+    ],
     "solution": "Start from the geometric series identity $\\dfrac{1}{1-r} = \\sum_{n=0}^{\\infty} r^n$ for $|r|<1$.\n\nRewrite $f(x)$ by setting $r = -x$:\n$$\\frac{1}{1+x} = \\frac{1}{1-(-x)} = \\sum_{n=0}^{\\infty}(-x)^n = \\sum_{n=0}^{\\infty}(-1)^n x^n.$$\n\nThe series converges when $|-x|<1$, i.e., $|x|<1$.\n\nChecking endpoints: at $x=1$, $\\sum (-1)^n$ diverges; at $x=-1$, $\\sum 1$ diverges.\n\nInterval of convergence: $(-1,\\,1)$."
   },
   {
@@ -3920,9 +4010,18 @@
     "id": "s26686_gen_3",
     "type": "free-response",
     "section": "§8.6. Representing Functions as Power Series",
-    "text": "By integrating the power series for $\\dfrac{1}{1+x}$ term-by-term, find the power series for $\\ln(1+x)$ centered at $0$. Write the general term and state the interval of convergence.",
-    "answer": "sum_{n=1}^{inf} (-1)^(n-1) x^n / n, interval (-1,1]",
-    "solution": "From the previous result:\n$$\\frac{1}{1+x} = \\sum_{n=0}^{\\infty}(-1)^n x^n, \\quad |x|<1.$$\n\nIntegrate both sides from $0$ to $x$:\n$$\\int_0^x \\frac{1}{1+t}\\,dt = \\sum_{n=0}^{\\infty}(-1)^n\\int_0^x t^n\\,dt = \\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{n+1}}{n+1}.$$\n\nThe left side equals $\\ln(1+x)$. Re-index with $m=n+1$:\n$$\\ln(1+x) = \\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1} x^n}{n} = x - \\frac{x^2}{2}+\\frac{x^3}{3}-\\frac{x^4}{4}+\\cdots$$\n\nRadius of convergence is $R=1$ (inherited from geometric series). At $x=1$: $\\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n}$ converges (alternating harmonic). At $x=-1$: $-\\sum_{n=1}^{\\infty}\\frac{1}{n}$ diverges.\n\nInterval of convergence: $(-1,\\,1]$."
+    "text": "By integrating the power series for $\\dfrac{1}{1+x}$ term-by-term, find the radius of convergence $R$ and interval of convergence of the power series for $\\ln(1+x)$ centered at $0$.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "1"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-1, 1]"
+      }
+    ],
+    "solution": "From the geometric series: $\\dfrac{1}{1+x} = \\sum_{n=0}^{\\infty}(-1)^n x^n$, $|x|<1$.\n\nIntegrate both sides from $0$ to $x$:\n$$\\ln(1+x) = \\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1} x^n}{n} = x - \\frac{x^2}{2}+\\frac{x^3}{3}-\\cdots$$\n\nRadius of convergence $R=1$. At $x=1$: alternating harmonic series, **converges**. At $x=-1$: $-\\sum 1/n$, **diverges**.\n\nInterval of convergence: $(-1,\\,1]$."
   },
   {
     "id": "s26686_gen_4",
@@ -3954,9 +4053,9 @@
     "id": "s26686_gen_5",
     "type": "free-response",
     "section": "§8.6. Representing Functions as Power Series",
-    "text": "Find a power series representation for $f(x)=\\arctan\\!\\left(\\dfrac{x}{7}\\right)$ centered at $0$. Write the general term and state the radius of convergence.",
-    "answer": "sum_{n=0}^{inf} (-1)^n x^(2n+1) / ((2n+1)*7^(2n+1)), R=7",
-    "solution": "**Step 1.** Start from $\\dfrac{1}{1+u^2}=\\sum_{n=0}^{\\infty}(-1)^n u^{2n}$ for $|u|<1$.\n\n**Step 2.** Integrate to get $\\arctan(u)=\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n u^{2n+1}}{2n+1}$ for $|u|\\leq 1$.\n\n**Step 3.** Substitute $u = x/7$:\n$$\\arctan\\!\\left(\\frac{x}{7}\\right) = \\sum_{n=0}^{\\infty}\\frac{(-1)^n}{2n+1}\\left(\\frac{x}{7}\\right)^{2n+1} = \\sum_{n=0}^{\\infty}\\frac{(-1)^n\\, x^{2n+1}}{(2n+1)\\cdot 7^{2n+1}}.$$\n\n**First four nonzero terms:**\n$$\\frac{x}{7} - \\frac{x^3}{3\\cdot 343} + \\frac{x^5}{5\\cdot 16807} - \\frac{x^7}{7\\cdot 7^7}+\\cdots$$\n\n**Radius of convergence:** converges when $|x/7|\\leq 1$, i.e., $|x|\\leq 7$, so $R=7$."
+    "text": "Find the radius of convergence $R$ of the power series for $f(x)=\\arctan\\!\\left(\\dfrac{x}{7}\\right)$ centered at $0$.",
+    "answer": "7",
+    "solution": "Start from $\\arctan(u)=\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n u^{2n+1}}{2n+1}$, valid for $|u|\\leq 1$.\n\nSubstitute $u = x/7$:\n$$\\arctan\\!\\left(\\frac{x}{7}\\right) = \\sum_{n=0}^{\\infty}\\frac{(-1)^n\\, x^{2n+1}}{(2n+1)\\cdot 7^{2n+1}}.$$\n\nConverges when $|x/7|\\leq 1$, i.e., $|x|\\leq 7$, so $R=7$."
   },
   {
     "id": "s26686_gen_6",
@@ -3988,9 +4087,9 @@
     "id": "s26686_gen_7",
     "type": "free-response",
     "section": "§8.6. Representing Functions as Power Series",
-    "text": "Find the first five nonzero terms and the general term of the power series for $f(x)=\\dfrac{1}{1-x^3}$ centered at $0$. State the radius of convergence.",
-    "answer": "1 + x^3 + x^6 + x^9 + x^12 + ...; general term x^(3n); R=1",
-    "solution": "Set $r = x^3$ in the geometric series formula:\n$$\\frac{1}{1-x^3} = \\frac{1}{1-r}\\bigg|_{r=x^3} = \\sum_{n=0}^{\\infty}(x^3)^n = \\sum_{n=0}^{\\infty} x^{3n}.$$\n\n**First five nonzero terms:**\n$$1 + x^3 + x^6 + x^9 + x^{12}.$$\n\n**Radius of convergence:** the series converges when $|x^3|<1$, i.e., $|x|<1$, so $R=1$.\n\n(Endpoints $x=\\pm1$ both give $\\sum 1$, which diverges.)"
+    "text": "Find the radius of convergence $R$ of the power series for $f(x)=\\dfrac{1}{1-x^3}$ centered at $0$.",
+    "answer": "1",
+    "solution": "Set $r = x^3$ in the geometric series:\n$$\\frac{1}{1-x^3} = \\sum_{n=0}^{\\infty} x^{3n} = 1 + x^3 + x^6 + x^9 + \\cdots$$\n\nConverges when $|x^3|<1$, i.e., $|x|<1$, so $R=1$.\n\n(At $x=\\pm1$ both give $\\sum 1$, which diverges.)"
   },
   {
     "id": "s26686_gen_8",
@@ -4026,9 +4125,18 @@
     "id": "s26686_gen_9",
     "type": "free-response",
     "section": "§8.6. Representing Functions as Power Series",
-    "text": "Find the power series representation for $f(x) = \\ln(6-x)$ centered at $0$. Write the general term and state the interval of convergence.",
-    "answer": "ln(6) - sum_{n=1}^{inf} x^n/(n*6^n), interval [-6,6)",
-    "solution": "Factor out $6$:\n$$\\ln(6-x)=\\ln\\!\\left(6\\!left(1-\\tfrac{x}{6}\\right)\\right)=\\ln 6+\\ln\\!\\left(1-\\tfrac{x}{6}\\right).$$\n\nUse $\\ln(1-u)=-\\sum_{n=1}^{\\infty}\\dfrac{u^n}{n}$ with $u=x/6$:\n$$\\ln\\!\\left(1-\\frac{x}{6}\\right)=-\\sum_{n=1}^{\\infty}\\frac{1}{n}\\left(\\frac{x}{6}\\right)^n = -\\sum_{n=1}^{\\infty}\\frac{x^n}{n\\cdot 6^n}.$$\n\nTherefore:\n$$\\ln(6-x)=\\ln 6 - \\sum_{n=1}^{\\infty}\\frac{x^n}{n\\cdot 6^n}.$$\n\n**Interval of convergence:** convergence requires $|x/6|<1$, i.e., $|x|<6$; $R=6$.\n\n- At $x=6$: $\\ln 6 - \\sum\\dfrac{1}{n}$ diverges (harmonic). Excluded.\n- At $x=-6$: $\\ln 6 - \\sum\\dfrac{(-1)^n}{n} = \\ln 6 + \\sum\\dfrac{(-1)^{n+1}}{n}$ converges (alternating harmonic). Included.\n\nInterval of convergence: $[-6,\\,6)$."
+    "text": "Find the radius of convergence $R$ and interval of convergence of the power series for $f(x) = \\ln(6-x)$ centered at $0$.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "6"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-6, 6)"
+      }
+    ],
+    "solution": "Factor: $\\ln(6-x)=\\ln 6+\\ln\\!\\left(1-\\tfrac{x}{6}\\right)$.\n\nUse $\\ln(1-u)=-\\sum_{n=1}^{\\infty}\\dfrac{u^n}{n}$ with $u=x/6$:\n$$\\ln(6-x)=\\ln 6 - \\sum_{n=1}^{\\infty}\\frac{x^n}{n\\cdot 6^n}.$$\n\n$R=6$. At $x=6$: harmonic series, **diverges**. At $x=-6$: alternating harmonic series, **converges**.\n\nInterval of convergence: $[-6,\\,6)$."
   },
   {
     "id": "s26686_gen_10",

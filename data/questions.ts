@@ -28,12 +28,17 @@ export interface SelectAllQuestion {
     solution?: string
 }
 
+export interface FreeResponseAnswer {
+    label: string
+    value: string
+}
+
 export interface FreeResponseQuestion {
     id: string
     type: 'free-response'
     section: string
     text: string
-    answer: string
+    answer: string | FreeResponseAnswer[]
     variables?: string[]
     solution: string
 }
