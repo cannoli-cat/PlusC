@@ -166,7 +166,7 @@ function MultiField({ fields, savedInput, onInput, mounted }: {
     onInput: (val: string) => void
     mounted: boolean
 }) {
-    const [values, setValues] = useState<string[]>(() => {
+    const [, setValues] = useState<string[]>(() => {
         try {
             return savedInput ? JSON.parse(savedInput) : fields.map(() => '')
         } catch {

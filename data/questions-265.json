@@ -211,7 +211,7 @@
       "B",
       "D"
     ],
-    "solution": "**Left-hand limit:** For $x < 1$, $f(x) = x + 3$: $$\\lim_{x \\to 1^-} f(x) = 1 + 3 = 4. \\quad \\textbf{(A is TRUE)}$$\n\n**Right-hand limit:** For $x > 1$, $f(x) = 4 - x$: $$\\lim_{x \\to 1^+} f(x) = 4 - 1 = 3. \\quad \\textbf{(B is TRUE)}$$\n\n**Two-sided limit:** Since $\\lim_{x \\to 1^-} f(x) = 4 \\neq 3 = \\lim_{x \\to 1^+} f(x)$, the two-sided limit **does not exist**. $\\textbf{(D is TRUE)}$\n\n**Statement C:** $\\lim_{x \\to 1} f(x) = 5$ is FALSE. $f(1) = 5$ is the function's value at $x=1$, not the limit. The limit DNE."
+    "solution": "**Left-hand limit:** For $x < 1$, $f(x) = x + 3$: $$\\lim_{x \\to 1^-} f(x) = 1 + 3 = 4. \\quad {(A is TRUE)}$$\n\n**Right-hand limit:** For $x > 1$, $f(x) = 4 - x$: $$\\lim_{x \\to 1^+} f(x) = 4 - 1 = 3. \\quad {(B is TRUE)}$$\n\n**Two-sided limit:** Since $\\lim_{x \\to 1^-} f(x) = 4 \\neq 3 = \\lim_{x \\to 1^+} f(x)$, the two-sided limit **does not exist**. ${(D is TRUE)}$\n\n**Statement C:** $\\lim_{x \\to 1} f(x) = 5$ is FALSE. $f(1) = 5$ is the function's value at $x=1$, not the limit. The limit DNE."
   },
   {
     "id": "s26514_gen_1",
@@ -237,7 +237,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Direct substitution gives $\\frac{0}{0}$, so we factor the numerator:\\n$$\\frac{x^2 - 9}{x - 3} = \\frac{(x-3)(x+3)}{x-3}$$\\nCancel the $(x-3)$ factor (valid since $x \\neq 3$):\\n$$= x + 3$$\\nNow substitute $x = 3$:\\n$$\\lim_{x \\to 3}(x+3) = 3 + 3 = 6$$"
+    "solution": "Direct substitution gives $\\frac{0}{0}$, so we factor the numerator:\n$$\\frac{x^2 - 9}{x - 3} = \\frac{(x-3)(x+3)}{x-3}$$\nCancel the $(x-3)$ factor (valid since $x \\neq 3$):\n$$= x + 3$$\nNow substitute $x = 3$:\n$$\\lim_{x \\to 3}(x+3) = 3 + 3 = 6$$"
   },
   {
     "id": "s26514_gen_2",
@@ -245,7 +245,7 @@
     "section": "§1.4. Calculating Limits",
     "text": "Evaluate the limit: $$\\lim_{x \\to -2} \\frac{x^2 + 5x + 6}{x^2 - 4}$$",
     "answer": "-1/4",
-    "solution": "Direct substitution gives $\\frac{0}{0}$, so we factor both numerator and denominator.\\n\\nNumerator: $x^2 + 5x + 6 = (x+2)(x+3)$\\nDenominator: $x^2 - 4 = (x+2)(x-2)$\\n\\nSo:\\n$$\\frac{(x+2)(x+3)}{(x+2)(x-2)} = \\frac{x+3}{x-2} \\quad (x \\neq -2)$$\\nSubstitute $x = -2$:\\n$$\\frac{-2+3}{-2-2} = \\frac{1}{-4} = -\\frac{1}{4}.$$\\n\\nThe answer is $-\\dfrac{1}{4}$."
+    "solution": "Direct substitution gives $\\frac{0}{0}$, so we factor both numerator and denominator.\n\nNumerator: $x^2 + 5x + 6 = (x+2)(x+3)$\nDenominator: $x^2 - 4 = (x+2)(x-2)$\n\nSo:\n$$\\frac{(x+2)(x+3)}{(x+2)(x-2)} = \\frac{x+3}{x-2} \\quad (x \\neq -2)$$\nSubstitute $x = -2$:\n$$\\frac{-2+3}{-2-2} = \\frac{1}{-4} = -\\frac{1}{4}.$$\n\nThe answer is $-\\dfrac{1}{4}$."
   },
   {
     "id": "s26514_gen_3",
@@ -271,7 +271,7 @@
       }
     ],
     "answer": "C",
-    "solution": "We rewrite the limit to use the standard special limit $\\lim_{u \\to 0} \\dfrac{\\sin u}{u} = 1$.\\n\\nMultiply and divide by $3$:\\n$$\\lim_{x \\to 0} \\frac{\\sin(3x)}{x} = \\lim_{x \\to 0} \\frac{\\sin(3x)}{3x} \\cdot 3$$\\n\\nLet $u = 3x$; as $x \\to 0$, $u \\to 0$:\\n$$= 3 \\cdot \\lim_{u \\to 0} \\frac{\\sin u}{u} = 3 \\cdot 1 = 3$$\\n\\nDistractor B ($1$) is the error of forgetting to account for the coefficient $3$. Distractor D ($1/3$) is the error of dividing by $3$ instead of multiplying."
+    "solution": "We rewrite the limit to use the standard special limit $\\lim_{u \\to 0} \\dfrac{\\sin u}{u} = 1$.\n\nMultiply and divide by $3$:\n$$\\lim_{x \\to 0} \\frac{\\sin(3x)}{x} = \\lim_{x \\to 0} \\frac{\\sin(3x)}{3x} \\cdot 3$$\n\nLet $u = 3x$; as $x \\to 0$, $u \\to 0$:\n$$= 3 \\cdot \\lim_{u \\to 0} \\frac{\\sin u}{u} = 3 \\cdot 1 = 3$$\n\nDistractor B ($1$) is the error of forgetting to account for the coefficient $3$. Distractor D ($1/3$) is the error of dividing by $3$ instead of multiplying."
   },
   {
     "id": "s26514_gen_4",
@@ -279,13 +279,13 @@
     "section": "§1.4. Calculating Limits",
     "text": "Evaluate the limit using conjugate multiplication: $$\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$$",
     "answer": "1/4",
-    "solution": "Direct substitution gives $\\frac{0}{0}$. Multiply numerator and denominator by the conjugate $\\sqrt{x}+2$:\\n$$\\frac{\\sqrt{x}-2}{x-4} \\cdot \\frac{\\sqrt{x}+2}{\\sqrt{x}+2} = \\frac{x - 4}{(x-4)(\\sqrt{x}+2)}$$\\n\\nCancel $(x-4)$:\\n$$= \\frac{1}{\\sqrt{x}+2}$$\\n\\nNow substitute $x = 4$:\\n$$\\frac{1}{\\sqrt{4}+2} = \\frac{1}{2+2} = \\frac{1}{4}$$"
+    "solution": "Direct substitution gives $\\frac{0}{0}$. Multiply numerator and denominator by the conjugate $\\sqrt{x}+2$:\n$$\\frac{\\sqrt{x}-2}{x-4} \\cdot \\frac{\\sqrt{x}+2}{\\sqrt{x}+2} = \\frac{x - 4}{(x-4)(\\sqrt{x}+2)}$$\n\nCancel $(x-4)$:\n$$= \\frac{1}{\\sqrt{x}+2}$$\n\nNow substitute $x = 4$:\n$$\\frac{1}{\\sqrt{4}+2} = \\frac{1}{2+2} = \\frac{1}{4}$$"
   },
   {
     "id": "s26514_gen_5",
     "type": "select-all",
     "section": "§1.4. Calculating Limits",
-    "text": "Which of the following limits equal $1$? Select all that apply.\\n\\n**A.** $\\displaystyle\\lim_{x \\to 0} \\frac{\\sin x}{x}$\\n\\n**B.** $\\displaystyle\\lim_{x \\to 0} \\frac{\\tan x}{x}$\\n\\n**C.** $\\displaystyle\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1}$\\n\\n**D.** $\\displaystyle\\lim_{x \\to 0} \\frac{x}{\\sin(2x)}$",
+    "text": "Which of the following limits equal $1$? Select all that apply.",
     "choices": [
       {
         "label": "A",
@@ -308,7 +308,7 @@
       "A",
       "B"
     ],
-    "solution": "**A.** $\\lim_{x \\to 0} \\dfrac{\\sin x}{x} = 1$ — this is the standard special trig limit. ✓\\n\\n**B.** $\\lim_{x \\to 0} \\dfrac{\\tan x}{x} = \\lim_{x \\to 0} \\dfrac{\\sin x}{x} \\cdot \\dfrac{1}{\\cos x} = 1 \\cdot 1 = 1$ ✓\\n\\n**C.** $\\lim_{x \\to 1} \\dfrac{x^2-1}{x-1} = \\lim_{x \\to 1}(x+1) = 2 \\neq 1$ ✗\\n\\n**D.** $\\lim_{x \\to 0} \\dfrac{x}{\\sin(2x)} = \\lim_{x \\to 0} \\dfrac{1}{2} \\cdot \\dfrac{2x}{\\sin(2x)} = \\dfrac{1}{2} \\cdot 1 = \\dfrac{1}{2} \\neq 1$ ✗\\n\\nSo the correct answers are **A** and **B**."
+    "solution": "**A.** $\\lim_{x \\to 0} \\dfrac{\\sin x}{x} = 1$ — this is the standard special trig limit. ✓\n\n**B.** $\\lim_{x \\to 0} \\dfrac{\\tan x}{x} = \\lim_{x \\to 0} \\dfrac{\\sin x}{x} \\cdot \\dfrac{1}{\\cos x} = 1 \\cdot 1 = 1$ ✓\n\n**C.** $\\lim_{x \\to 1} \\dfrac{x^2-1}{x-1} = \\lim_{x \\to 1}(x+1) = 2 \\neq 1$ ✗\n\n**D.** $\\lim_{x \\to 0} \\dfrac{x}{\\sin(2x)} = \\lim_{x \\to 0} \\dfrac{1}{2} \\cdot \\dfrac{2x}{\\sin(2x)} = \\dfrac{1}{2} \\cdot 1 = \\dfrac{1}{2} \\neq 1$ ✗\n\nSo the correct answers are **A** and **B**."
   },
   {
     "id": "s26514_gen_6",
@@ -334,7 +334,7 @@
       }
     ],
     "answer": "C",
-    "solution": "Expand $(2+h)^2$:\\n$$(2+h)^2 = 4 + 4h + h^2$$\\n\\nSo:\\n$$\\frac{(2+h)^2 - 4}{h} = \\frac{4 + 4h + h^2 - 4}{h} = \\frac{4h + h^2}{h} = \\frac{h(4+h)}{h} = 4 + h$$\\n\\nNow take the limit:\\n$$\\lim_{h \\to 0}(4+h) = 4$$\\n\\nThis confirms that $f'(2) = 4$ for $f(x) = x^2$.\\n\\nDistractor B ($2$) comes from forgetting to double when expanding (using $2^1$ instead of $2 \\cdot 2$). Distractor D ($8$) would arise from computing $2 \\cdot (2+h)$ without squaring."
+    "solution": "Expand $(2+h)^2$:\n$$(2+h)^2 = 4 + 4h + h^2$$\n\nSo:\n$$\\frac{(2+h)^2 - 4}{h} = \\frac{4 + 4h + h^2 - 4}{h} = \\frac{4h + h^2}{h} = \\frac{h(4+h)}{h} = 4 + h$$\n\nNow take the limit:\n$$\\lim_{h \\to 0}(4+h) = 4$$\n\nThis confirms that $f'(2) = 4$ for $f(x) = x^2$.\n\nDistractor B ($2$) comes from forgetting to double when expanding (using $2^1$ instead of $2 \\cdot 2$). Distractor D ($8$) would arise from computing $2 \\cdot (2+h)$ without squaring."
   },
   {
     "id": "s26514_gen_7",
@@ -342,7 +342,7 @@
     "section": "§1.4. Calculating Limits",
     "text": "Use the limit laws to evaluate: $$\\lim_{x \\to 2} \\left(3x^3 - 5x + 1\\right)$$",
     "answer": "15",
-    "solution": "Since $f(x) = 3x^3 - 5x + 1$ is a polynomial, it is continuous everywhere, so we may use direct substitution:\\n$$\\lim_{x \\to 2}(3x^3 - 5x + 1) = 3(2)^3 - 5(2) + 1$$\\n$$= 3(8) - 10 + 1$$\\n$$= 24 - 10 + 1$$\\n$$= 15$$"
+    "solution": "Since $f(x) = 3x^3 - 5x + 1$ is a polynomial, it is continuous everywhere, so we may use direct substitution:$$\\lim_{x \\to 2}(3x^3 - 5x + 1) = 3(2)^3 - 5(2) + 1$$$$= 3(8) - 10 + 1$$$$= 24 - 10 + 1$$$$= 15$$"
   },
   {
     "id": "s26514_gen_8",
@@ -368,7 +368,7 @@
       }
     ],
     "answer": "B",
-    "solution": "We multiply and divide strategically to introduce the standard form $\\dfrac{\\sin u}{u}$:\\n$$\\frac{\\sin(5x)}{\\sin(3x)} = \\frac{\\sin(5x)}{5x} \\cdot \\frac{3x}{\\sin(3x)} \\cdot \\frac{5x}{3x}$$\\n\\nAs $x \\to 0$, both $\\dfrac{\\sin(5x)}{5x} \\to 1$ and $\\dfrac{3x}{\\sin(3x)} \\to 1$.\\n\\nSo the limit equals:\\n$$1 \\cdot 1 \\cdot \\frac{5}{3} = \\frac{5}{3}$$\\n\\nDistractor A ($3/5$) arises from inverting the ratio."
+    "solution": "We multiply and divide strategically to introduce the standard form $\\dfrac{\\sin u}{u}$:\n$$\\frac{\\sin(5x)}{\\sin(3x)} = \\frac{\\sin(5x)}{5x} \\cdot \\frac{3x}{\\sin(3x)} \\cdot \\frac{5x}{3x}$$\n\nAs $x \\to 0$, both $\\dfrac{\\sin(5x)}{5x} \\to 1$ and $\\dfrac{3x}{\\sin(3x)} \\to 1$.\n\nSo the limit equals:\n$$1 \\cdot 1 \\cdot \\frac{5}{3} = \\frac{5}{3}$$\n\nDistractor A ($3/5$) arises from inverting the ratio."
   },
   {
     "id": "s26514_gen_9",
@@ -376,7 +376,7 @@
     "section": "§1.4. Calculating Limits",
     "text": "Evaluate the limit by rationalizing (conjugate method): $$\\lim_{h \\to 0} \\frac{\\sqrt{9+h} - 3}{h}$$\nNote: This is the definition of the derivative of $f(x) = \\sqrt{x}$ at $x = 9$.",
     "answer": "1/6",
-    "solution": "Direct substitution gives $\\frac{0}{0}$. Multiply by the conjugate $\\dfrac{\\sqrt{9+h}+3}{\\sqrt{9+h}+3}$:\\n$$\\frac{\\sqrt{9+h}-3}{h} \\cdot \\frac{\\sqrt{9+h}+3}{\\sqrt{9+h}+3} = \\frac{(9+h) - 9}{h(\\sqrt{9+h}+3)} = \\frac{h}{h(\\sqrt{9+h}+3)}$$\\n\\nCancel $h$:\\n$$= \\frac{1}{\\sqrt{9+h}+3}$$\\n\\nNow take the limit as $h \\to 0$:\\n$$\\frac{1}{\\sqrt{9+0}+3} = \\frac{1}{3+3} = \\frac{1}{6}$$"
+    "solution": "Direct substitution gives $\\frac{0}{0}$. Multiply by the conjugate $\\dfrac{\\sqrt{9+h}+3}{\\sqrt{9+h}+3}$:\n$$\\frac{\\sqrt{9+h}-3}{h} \\cdot \\frac{\\sqrt{9+h}+3}{\\sqrt{9+h}+3} = \\frac{(9+h) - 9}{h(\\sqrt{9+h}+3)} = \\frac{h}{h(\\sqrt{9+h}+3)}$$\n\nCancel $h$:\n$$= \\frac{1}{\\sqrt{9+h}+3}$$\n\nNow take the limit as $h \\to 0$:\n$$\\frac{1}{\\sqrt{9+0}+3} = \\frac{1}{3+3} = \\frac{1}{6}$$"
   },
   {
     "id": "s26514_gen_10",
@@ -402,7 +402,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Direct substitution gives $\\frac{0}{0}$. Factor numerator and denominator.\\n\\nNumerator (sum of cubes): $x^3 + 1 = (x+1)(x^2 - x + 1)$\\nDenominator (difference of squares): $x^2 - 1 = (x+1)(x-1)$\\n\\nSo:\\n$$\\frac{(x+1)(x^2-x+1)}{(x+1)(x-1)} = \\frac{x^2-x+1}{x-1} \\quad (x \\neq -1)$$\\n\\nSubstitute $x = -1$:\\n$$\\frac{(-1)^2 - (-1) + 1}{-1-1} = \\frac{1+1+1}{-2} = \\frac{3}{-2} = -\\frac{3}{2}$$\\n\\nDistractor B ($3/2$) is the sign error from writing $x - (-1) = x + 1$ in the denominator incorrectly."
+    "solution": "Direct substitution gives $\\frac{0}{0}$. Factor numerator and denominator.\n\nNumerator (sum of cubes): $x^3 + 1 = (x+1)(x^2 - x + 1)$\nDenominator (difference of squares): $x^2 - 1 = (x+1)(x-1)$\n\nSo:\n$$\\frac{(x+1)(x^2-x+1)}{(x+1)(x-1)} = \\frac{x^2-x+1}{x-1} \\quad (x \\neq -1)$$\n\nSubstitute $x = -1$:\n$$\\frac{(-1)^2 - (-1) + 1}{-1-1} = \\frac{1+1+1}{-2} = \\frac{3}{-2} = -\\frac{3}{2}$$\n\nDistractor B ($3/2$) is the sign error from writing $x - (-1) = x + 1$ in the denominator incorrectly."
   },
   {
     "id": "s26515_gen_1",
@@ -604,7 +604,7 @@
     "section": "§1.5. Continuity",
     "text": "Find constants $a$ and $b$ so that\n$$f(x) = \\begin{cases} 2x + b & x < -1 \\\\ ax - 1 & -1 \\leq x \\leq 2 \\\\ 3x + b & x > 2 \\end{cases}$$\nis continuous everywhere.",
     "answer": "a=8/3, b=-5/3",
-    "solution": "For $f$ to be continuous everywhere, we need continuity at the two breakpoints $x = -1$ and $x = 2$.\n\n**Condition at $x = -1$:**\n\n$$\\lim_{x \\to -1^-}(2x + b) = -2 + b, \\qquad f(-1) = a(-1) - 1 = -a - 1.$$\n\nSetting equal: $-2 + b = -a - 1 \\implies a + b = 1. \\tag{1}$$\n\n**Condition at $x = 2$:**\n\n$$f(2) = 2a - 1, \\qquad \\lim_{x \\to 2^+}(3x + b) = 6 + b.$$\n\nSetting equal: $2a - 1 = 6 + b \\implies 2a - b = 7. \\tag{2}$$\n\n**Solve the system:**\n\nAdding $(1)$ and $(2)$: $3a = 8 \\implies a = \\dfrac{8}{3}$.\n\nSubstitute into $(1)$: $b = 1 - \\dfrac{8}{3} = -\\dfrac{5}{3}$.\n\n**Verification:**\n\n- At $x=-1$: Left $= 2(-1) - \\tfrac{5}{3} = -\\tfrac{11}{3}$; Right $= \\tfrac{8}{3}(-1) - 1 = -\\tfrac{11}{3}$. ✓\n- At $x=2$: Middle $= \\tfrac{8}{3}(2) - 1 = \\tfrac{13}{3}$; Right $= 3(2) - \\tfrac{5}{3} = \\tfrac{13}{3}$. ✓\n\n$$a = \\frac{8}{3}, \\quad b = -\\frac{5}{3}.$$"
+    "solution": "For $f$ to be continuous everywhere, we need continuity at the two breakpoints $x = -1$ and $x = 2$.\n\n**Condition at $x = -1$:**\n\n$$\\lim_{x \\to -1^-}(2x + b) = -2 + b, \\qquad f(-1) = a(-1) - 1 = -a - 1.$$\n\nSetting equal: $-2 + b = -a - 1 \\implies a + b = 1. $$\n\n**Condition at $x = 2$:**\n\n$$f(2) = 2a - 1, \\qquad \\lim_{x \\to 2^+}(3x + b) = 6 + b.$$\n\nSetting equal: $2a - 1 = 6 + b \\implies 2a - b = 7. $$\n\n**Solve the system:**\n\nAdding $(1)$ and $(2)$: $3a = 8 \\implies a = \\dfrac{8}{3}$.\n\nSubstitute into $(1)$: $b = 1 - \\dfrac{8}{3} = -\\dfrac{5}{3}$.\n\n**Verification:**\n\n- At $x=-1$: Left $= 2(-1) - \\tfrac{5}{3} = -\\tfrac{11}{3}$; Right $= \\tfrac{8}{3}(-1) - 1 = -\\tfrac{11}{3}$. ✓\n- At $x=2$: Middle $= \\tfrac{8}{3}(2) - 1 = \\tfrac{13}{3}$; Right $= 3(2) - \\tfrac{5}{3} = \\tfrac{13}{3}$. ✓\n\n$$a = \\frac{8}{3}, \\quad b = -\\frac{5}{3}.$$"
   },
   {
     "id": "s26515_gen_10",
@@ -1808,7 +1808,7 @@
     "section": "§2.6. Implicit Differentiation",
     "text": "Find the equation of the tangent line to $x^2y + y^3 = 2$ at the point $(1, 1)$.",
     "answer": "y = (-1/2)(x-1) + 1",
-    "solution": "Differentiate both sides with respect to $x$:\n$$\\frac{d}{dx}(x^2 y) + \\frac{d}{dx}(y^3) = 0$$\n$$2xy + x^2\\frac{dy}{dx} + 3y^2\\frac{dy}{dx} = 0$$\nSolve for $\\frac{dy}{dx}$:\n$$(x^2 + 3y^2)\\frac{dy}{dx} = -2xy$$\n$$\\frac{dy}{dx} = \\frac{-2xy}{x^2 + 3y^2}$$\nAt $(1,1)$:\n$$\\frac{dy}{dx} = \\frac{-2(1)(1)}{1 + 3} = \\frac{-2}{4} = -\\frac{1}{2}$$\nEquation of tangent line:\n$$y - 1 = -\\frac{1}{2}(x - 1)$$\n$$y = -\\frac{1}{2}(x-1) + 1$$"
+    "solution": "Differentiate both sides with respect to $x$:\n$$\\frac{d}{dx}(x^2 y) + \\frac{d}{dx}(y^3) = 0$$\n$$2xy + x^2\\frac{dy}{dx} + 3y^2\\frac{dy}{dx} = 0$$\nSolve for $\\frac{dy}{dx}$:\n$$(x^2 + 3y^2)\\frac{dy}{dx} = -2xy$$\n$$\\frac{dy}{dx} = \\frac{-2xy}{x^2 + 3y^2}$$\nAt $(1,1)$:\n$$\\frac{dy}{dx} = \\frac{-2(1)(1)}{1 + 3} = \\frac{-2}{4} = -\\frac{1}{2}$$\\nequation of tangent line:\n$$y - 1 = -\\frac{1}{2}(x - 1)$$\n$$y = -\\frac{1}{2}(x-1) + 1$$"
   },
   {
     "id": "s26526_gen_10",
@@ -3280,7 +3280,7 @@
     "id": "s26537_gen_7",
     "type": "select-all",
     "section": "§3.7. L'Hospital's Rule",
-    "text": "Which of the following limits equal $0$? Select **all** that apply.\n\n**A.** $\\displaystyle\\lim_{x\\to\\infty}\\frac{\\ln x}{x}$\n\n**B.** $\\displaystyle\\lim_{x\\to 0}\\frac{\\tan x - x}{x^2}$\n\n**C.** $\\displaystyle\\lim_{x\\to\\infty}\\frac{x^{100}}{e^x}$\n\n**D.** $\\displaystyle\\lim_{x\\to 0}\\frac{1-\\cos x}{x}$",
+    "text": "Which of the following limits equal $0$? Select **all** that apply.",
     "choices": [
       {
         "label": "A",
@@ -3645,7 +3645,7 @@
     "type": "free-response",
     "section": "§4.3. Derivatives and Shapes of Graphs",
     "text": "Find the intervals on which $f(x) = xe^{-x}$ is concave up.",
-    "answer": "x>2",
+    "answer": "(2,\\infty)",
     "solution": "**Step 1: Find $f'(x)$ using the product rule.**\n$$f'(x) = e^{-x} + x \\cdot (-e^{-x}) = e^{-x}(1 - x)$$\n\n**Step 2: Find $f''(x)$.**\n$$f''(x) = -e^{-x}(1-x) + e^{-x}(-1) = e^{-x}[-(1-x) - 1] = e^{-x}(x - 2)$$\n\n**Step 3: Determine where $f''(x) > 0$.**\nSince $e^{-x} > 0$ for all $x$, the sign of $f''(x)$ is determined by $(x - 2)$:\n$$f''(x) > 0 \\iff x - 2 > 0 \\iff x > 2$$\n\n**Conclusion:** $f$ is concave up on $(2, \\infty)$, i.e., $x > 2$."
   },
   {
@@ -5125,7 +5125,7 @@
       }
     ],
     "answer": "A",
-    "solution": "**Identify the Riemann sum structure.**\n\n$$\\Delta x = \\frac{3}{n},\\qquad x_i^* = \\frac{3i}{n} \\quad (\\text{right endpoints with }a=0,\\,b=3)$$\n\nThe factor $e^{3i/n} = e^{x_i^*}$, so $f(x) = e^x$:\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}e^{x_i^*}\\,\\Delta x = \\int_0^3 e^x\\,dx = e^3 - 1$$\n\n**Why the distractors fail:**\n- **B ($\\int_0^1 e^{3x}\\,dx$):** Would need $\\Delta x = 1/n$; gives $(e^3-1)/3 \\ne e^3-1$.\n- **C ($\\int_0^3 e^{3x}\\,dx$):** Incorrectly writes $e^{3x_i^*}$ with an extra factor of 3 in the exponent.\n- **D ($\\int_1^3 e^x\\,dx$):** Uses the wrong lower limit; $x_i^*$ starts at $0$, not $1$."
+    "solution": "**Identify the Riemann sum structure.**\n\n$$\\Delta x = \\frac{3}{n},\\qquad x_i^* = \\frac{3i}{n} \\quad (\\text{right endpoints with }a=0,\\,b=3)$$\n\nThe factor $e^{3i/n} = e^{x_i^*}$, so $f(x) = e^x$:\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}e^{x_i^*}\\,\\Delta x = \\int_0^3 e^x\\,dx = e^3 - 1$$\n\n**Why the distractors fail:**\n- **B ($\\int_0^1 e^{3x}\\,dx$):** Would need $\\Delta x = 1/n$; gives $(e^3-1)/3 \ne e^3-1$.\n- **C ($\\int_0^3 e^{3x}\\,dx$):** Incorrectly writes $e^{3x_i^*}$ with an extra factor of 3 in the exponent.\n- **D ($\\int_1^3 e^x\\,dx$):** Uses the wrong lower limit; $x_i^*$ starts at $0$, not $1$."
   },
   {
     "id": "s26551_gen_8",
