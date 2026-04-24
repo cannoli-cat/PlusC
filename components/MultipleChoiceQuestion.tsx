@@ -12,10 +12,11 @@ interface MultipleChoiceQuestionProps {
     reviewMode?: boolean
     selectedAnswer?: string
     showCorrect?: boolean
+    showSolution?: boolean
     wasCorrect?: boolean
 }
 
-export default function MultipleChoiceQuestion({ question, number, onAnswered, reviewMode, selectedAnswer, showCorrect, wasCorrect }: MultipleChoiceQuestionProps) {
+export default function MultipleChoiceQuestion({ question, number, onAnswered, reviewMode, selectedAnswer, showCorrect, showSolution, wasCorrect }: MultipleChoiceQuestionProps) {
     const [selected, setSelected] = useState<string | null>(selectedAnswer ?? null)
     const cardClass = wasCorrect === true ? styles.questionCorrect
         : wasCorrect === false ? styles.questionWrong
@@ -57,6 +58,12 @@ export default function MultipleChoiceQuestion({ question, number, onAnswered, r
                     )
                 })}
             </div>
+            {showSolution && question.solution && (
+                <div className={styles.solutionArea}>
+                    <p className={styles.solutionLabel}>Solution:</p>
+                    <MathText text={question.solution} />
+                </div>
+            )}
         </div>
     )
 }

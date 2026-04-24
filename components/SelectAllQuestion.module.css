@@ -92,3 +92,17 @@
 .questionWrong:hover {
     border-color: var(--red);
 }
+
+.solutionArea {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.solutionLabel {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}

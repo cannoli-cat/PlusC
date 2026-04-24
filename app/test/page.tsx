@@ -187,6 +187,7 @@ function TestContent() {
                         onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
                         reviewMode={true}
                         showCorrect={isFullReview}
+                        showSolution={isFullReview}
                         selectedAnswer={answered.get(currentIndex)?.selected as string | undefined}
                         wasCorrect={answered.get(currentIndex)?.correct ?? false}
                     />
@@ -198,6 +199,7 @@ function TestContent() {
                         onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
                         reviewMode={true}
                         showCorrect={isFullReview}
+                        showSolution={isFullReview}
                         selectedAnswers={answered.get(currentIndex)?.selected as string[] | undefined}
                         wasCorrect={answered.get(currentIndex)?.correct ?? false}
                     />

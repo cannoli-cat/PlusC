@@ -12,10 +12,11 @@ interface SelectAllQuestionProps {
     reviewMode?: boolean
     selectedAnswers?: string[]
     showCorrect?: boolean
+    showSolution?: boolean
     wasCorrect?: boolean
 }
 
-export default function SelectAllQuestion({ question, number, onAnswered, reviewMode, selectedAnswers, showCorrect, wasCorrect }: SelectAllQuestionProps) {
+export default function SelectAllQuestion({ question, number, onAnswered, reviewMode, selectedAnswers, showCorrect, showSolution, wasCorrect }: SelectAllQuestionProps) {
     const [selected, setSelected] = useState<Set<string>>(new Set(selectedAnswers ?? []))
     const sortedAnswers = useMemo(() => [...question.answers].sort(), [question.answers])
     const cardClass = wasCorrect === true ? styles.questionCorrect
@@ -68,6 +69,12 @@ export default function SelectAllQuestion({ question, number, onAnswered, review
                     )
                 })}
             </div>
+            {showSolution && question.solution && (
+                <div className={styles.solutionArea}>
+                    <p className={styles.solutionLabel}>Solution:</p>
+                    <MathText text={question.solution} />
+                </div>
+            )}
         </div>
     )
 }
