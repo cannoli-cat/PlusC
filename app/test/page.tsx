@@ -82,7 +82,7 @@ function TestContent() {
         }, 0)
 
         return () => clearTimeout(timer)
-    }, [questionBank, sections, isRandom, randomCount, mcCount, saCount, frCount])
+    }, [questionBank, sections, isRandom, randomCount, mcCount, saCount, frCount, prioritySections, weightPct])
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [answered, setAnswered] = useState<Map<number, AnswerRecord>>(new Map())
@@ -187,7 +187,7 @@ function TestContent() {
                         const record = answered.get(i)
                         const creditClass = record?.correct ? styles.gridBtnCorrect
                             : (record && record.credit > 0) ? styles.gridBtnPartial
-                            : styles.gridBtnWrong
+                                : styles.gridBtnWrong
                         return (
                             <button
                                 key={i}
