@@ -87,12 +87,54 @@ function asciiMathToLatex(ascii: string): string {
 }
 
 function checkSingle(input: string, expected: string): boolean {
-    if (INTERVAL_PATTERN.test(expected.trim())) {
-        return normalizeInterval(input.trim()) === normalizeInterval(expected.trim())
+    const cleanInput = input.trim();
+    const cleanExpected = expected.trim();
+
+    if (normalizeInterval(cleanInput) === normalizeInterval(cleanExpected)) {
+        return true;
     }
-    const userExpr = ce.parse(input)
-    const expectedExpr = ce.parse(asciiMathToLatex(expected))
-    return userExpr.isEqual(expectedExpr) ?? false
+
+    try {
+        const userExpr = ce.parse(cleanInput).subs({ c: "C" });
+        const expectedExpr = ce.parse(asciiMathToLatex(cleanExpected)).subs({ c: "C" });
+
+        if (userExpr.isEqual(expectedExpr)) return true;
+    } catch {
+        // ignore
+    }
+
+    if (INTERVAL_PATTERN.test(cleanExpected)) {
+        const inputMatch = cleanInput.match(/^\\left[\[\(](.*)\\right[\]\)]$|^[\[\(](.*)[\]\)]$/);
+        const expectedMatch = cleanExpected.match(/^[\[\(](.*)[\]\)]$/);
+
+        if (inputMatch && expectedMatch) {
+            const innerInput = inputMatch[1] || inputMatch[2];
+            const innerExpected = expectedMatch[1];
+
+            const inputParts = innerInput.split(',');
+            const expectedParts = innerExpected.split(',');
+
+            if (inputParts.length === expectedParts.length && inputParts.length > 1) {
+                let allPartsEqual = true;
+                for (let i = 0; i < inputParts.length; i++) {
+                    try {
+                        const uPart = ce.parse(inputParts[i].trim()).subs({ c: "C" });
+                        const ePart = ce.parse(asciiMathToLatex(expectedParts[i].trim())).subs({ c: "C" });
+                        if (!uPart.isEqual(ePart)) {
+                            allPartsEqual = false;
+                            break;
+                        }
+                    } catch {
+                        allPartsEqual = false;
+                        break;
+                    }
+                }
+                if (allPartsEqual) return true;
+            }
+        }
+    }
+
+    return false;
 }
 
 export function checkAnswer(input: string, expected: string | FreeResponseAnswer[], variables: string[]): boolean {

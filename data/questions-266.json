@@ -30,7 +30,7 @@
     "type": "free-response",
     "section": "§5.5. U-Substitution",
     "text": "Evaluate $\\displaystyle \\int \\sin^3 x \\cos x \\, dx$.",
-    "answer": "sin^4(x)/4 + C",
+    "answer": "\\frac{\\sin^4 x}{4} + C",
     "solution": "Let $u = \\sin x$. Then $du = \\cos x \\, dx$.\n\nThe integral becomes:\n$$\\int u^3 \\, du = \\frac{u^4}{4} + C = \\frac{\\sin^4 x}{4} + C$$\n\nThe answer is $\\boxed{\\frac{\\sin^4 x}{4} + C}$."
   },
   {
@@ -64,7 +64,7 @@
     "type": "free-response",
     "section": "§5.5. U-Substitution",
     "text": "Evaluate $\\displaystyle \\int \\frac{x}{x^2+1} \\, dx$.",
-    "answer": "ln(x^2+1)/2 + C",
+    "answer": "\\frac{\\ln(x^2+1)}{2} + C",
     "solution": "Let $u = x^2 + 1$. Then $du = 2x\\,dx$, so $x\\,dx = \\frac{1}{2}du$.\n\nThe integral becomes:\n$$\\int \\frac{1}{u} \\cdot \\frac{1}{2}\\,du = \\frac{1}{2}\\ln|u| + C = \\frac{1}{2}\\ln(x^2+1) + C$$\n\nNote: $x^2 + 1 > 0$ always, so absolute value is unnecessary.\n\nThe answer is $\\boxed{\\frac{\\ln(x^2+1)}{2} + C}$."
   },
   {
@@ -127,7 +127,7 @@
     "type": "free-response",
     "section": "§5.5. U-Substitution",
     "text": "Evaluate the definite integral $\\displaystyle \\int_0^{\\pi/4} \\tan x \\sec^2 x \\, dx$.",
-    "answer": "1/2",
+    "answer": "\\frac{1}{2}",
     "solution": "Let $u = \\tan x$. Then $du = \\sec^2 x \\, dx$.\n\nChange bounds: when $x = 0$, $u = \\tan(0) = 0$; when $x = \\pi/4$, $u = \\tan(\\pi/4) = 1$.\n\n$$\\int_0^{\\pi/4} \\tan x \\sec^2 x \\, dx = \\int_0^1 u \\, du = \\frac{u^2}{2}\\Big|_0^1 = \\frac{1}{2} - 0 = \\frac{1}{2}$$\n\nThe answer is $\\boxed{\\frac{1}{2}}$."
   },
   {
@@ -161,7 +161,7 @@
     "type": "free-response",
     "section": "§5.5. U-Substitution",
     "text": "Evaluate $\\displaystyle \\int \\frac{\\ln^3 x}{x} \\, dx$.",
-    "answer": "ln^4(x)/4 + C",
+    "answer": "\\frac{\\ln^4 x}{4} + C",
     "solution": "Let $u = \\ln x$. Then $du = \\frac{1}{x}dx$.\n\nThe integral becomes:\n$$\\int u^3 \\, du = \\frac{u^4}{4} + C = \\frac{\\ln^4 x}{4} + C$$\n\nThe answer is $\\boxed{\\frac{\\ln^4 x}{4} + C}$."
   },
   {
@@ -221,7 +221,7 @@
     "type": "free-response",
     "section": "§6.1. Integration by Parts",
     "text": "Evaluate $\\int_0^{\\pi} x \\sin x \\, dx$.",
-    "answer": "pi",
+    "answer": "\\pi",
     "solution": "Using LIATE, let $u = x$ and $dv = \\sin x\\,dx$.\n\nThen $du = dx$ and $v = -\\cos x$.\n\nApplying integration by parts:\n$$\\int_0^{\\pi} x \\sin x \\, dx = \\left[-x\\cos x\\right]_0^{\\pi} + \\int_0^{\\pi} \\cos x\\,dx$$\n$$= \\left[-x\\cos x\\right]_0^{\\pi} + \\left[\\sin x\\right]_0^{\\pi}$$\n\nEvaluating the first term:\n$$[-x\\cos x]_0^{\\pi} = -\\pi\\cos(\\pi) - (-0\\cos(0)) = -\\pi(-1) - 0 = \\pi$$\n\nEvaluating the second term:\n$$[\\sin x]_0^{\\pi} = \\sin(\\pi) - \\sin(0) = 0 - 0 = 0$$\n\nTherefore:\n$$\\int_0^{\\pi} x \\sin x \\, dx = \\pi + 0 = \\pi$$"
   },
   {
@@ -318,7 +318,7 @@
     "type": "free-response",
     "section": "§6.1. Integration by Parts",
     "text": "Evaluate $\\int x^3 \\ln x \\, dx$.",
-    "answer": "(x^4/4)*ln(x) - x^4/16 + C",
+    "answer": "\\frac{x^4}{4}\\ln x - \\frac{x^4}{16} + C",
     "solution": "Using LIATE, let $u = \\ln x$ and $dv = x^3\\,dx$.\n\nThen $du = \\frac{1}{x}dx$ and $v = \\frac{x^4}{4}$.\n\nApplying integration by parts:\n$$\\int x^3 \\ln x\\,dx = \\frac{x^4}{4}\\ln x - \\int \\frac{x^4}{4} \\cdot \\frac{1}{x}\\,dx$$\n$$= \\frac{x^4}{4}\\ln x - \\frac{1}{4}\\int x^3\\,dx$$\n$$= \\frac{x^4}{4}\\ln x - \\frac{1}{4} \\cdot \\frac{x^4}{4} + C$$\n$$= \\frac{x^4}{4}\\ln x - \\frac{x^4}{16} + C$$"
   },
   {
@@ -352,7 +352,7 @@
     "type": "free-response",
     "section": "§6.1. Integration by Parts",
     "text": "Evaluate $\\int_0^{\\pi/2} x^2 \\cos x \\, dx$.",
-    "answer": "pi^2/4 - 2",
+    "answer": "\\frac{\\pi^2}{4} - 2",
     "solution": "This requires repeated integration by parts.\n\n**First IBP:** Let $u = x^2$, $dv = \\cos x\\,dx$. Then $du = 2x\\,dx$, $v = \\sin x$.\n$$\\int x^2 \\cos x\\,dx = x^2 \\sin x - \\int 2x \\sin x\\,dx$$\n\n**Second IBP:** Let $u = 2x$, $dv = \\sin x\\,dx$. Then $du = 2\\,dx$, $v = -\\cos x$.\n$$\\int 2x \\sin x\\,dx = -2x\\cos x - \\int (-2\\cos x)\\,dx = -2x\\cos x + 2\\sin x + C$$\n\nSubstituting back:\n$$\\int x^2 \\cos x\\,dx = x^2 \\sin x - (-2x\\cos x + 2\\sin x) + C$$\n$$= x^2 \\sin x + 2x\\cos x - 2\\sin x + C$$\n\nEvaluating from $0$ to $\\pi/2$:\n$$\\left[x^2 \\sin x + 2x\\cos x - 2\\sin x\\right]_0^{\\pi/2}$$\n\nAt $x = \\pi/2$: $(\\pi/2)^2(1) + 2(\\pi/2)(0) - 2(1) = \\frac{\\pi^2}{4} - 2$\n\nAt $x = 0$: $0 + 0 - 0 = 0$\n\nFinal answer: $\\frac{\\pi^2}{4} - 2$"
   },
   {
@@ -412,7 +412,7 @@
     "type": "free-response",
     "section": "§6.2. Trigonometric Integrals and Trig Substitution",
     "text": "Evaluate $\\displaystyle \\int \\frac{dx}{\\sqrt{9 - x^2}}$.",
-    "answer": "arcsin(x/3) + C",
+    "answer": "\\arcsin\\left(\\frac{x}{3}\\right) + C",
     "solution": "This integral involves $\\sqrt{a^2 - x^2}$ with $a = 3$, so we use the substitution $x = 3\\sin\\theta$, $dx = 3\\cos\\theta \\, d\\theta$.\n\nThen $\\sqrt{9 - x^2} = \\sqrt{9 - 9\\sin^2\\theta} = 3\\sqrt{1 - \\sin^2\\theta} = 3\\cos\\theta$.\n\nThe integral becomes:\n$$\\int \\frac{3\\cos\\theta \\, d\\theta}{3\\cos\\theta} = \\int d\\theta = \\theta + C$$\n\n**Back-substitution:** From $x = 3\\sin\\theta$, we get $\\sin\\theta = \\frac{x}{3}$, so $\\theta = \\arcsin\\left(\\frac{x}{3}\\right)$.\n\n**Triangle:** In a right triangle with $\\sin\\theta = \\frac{x}{3}$, the opposite side is $x$, the hypotenuse is $3$, and the adjacent side is $\\sqrt{9-x^2}$.\n\n$$\\boxed{\\arcsin\\left(\\frac{x}{3}\\right) + C}$$"
   },
   {
@@ -446,7 +446,7 @@
     "type": "free-response",
     "section": "§6.2. Trigonometric Integrals and Trig Substitution",
     "text": "Evaluate $\\displaystyle \\int \\frac{x^3}{\\sqrt{x^2 + 4}} \\, dx$.",
-    "answer": "(1/3)(x^2 + 4)^(3/2) - 4*sqrt(x^2 + 4) + C",
+    "answer": "\\frac{1}{3}(x^2 + 4)^{3/2} - 4\\sqrt{x^2 + 4} + C",
     "solution": "Use the substitution $x = 2\\tan\\theta$, $dx = 2\\sec^2\\theta \\, d\\theta$.\n\nThen $\\sqrt{x^2 + 4} = \\sqrt{4\\tan^2\\theta + 4} = 2\\sec\\theta$.\n\nAlso, $x^3 = 8\\tan^3\\theta$.\n\n$$\\int \\frac{8\\tan^3\\theta \\cdot 2\\sec^2\\theta \\, d\\theta}{2\\sec\\theta} = \\int 8\\tan^3\\theta \\sec\\theta \\, d\\theta$$\n\nRewrite $\\tan^3\\theta = \\tan\\theta(\\sec^2\\theta - 1)$:\n\n$$= 8\\int \\tan\\theta(\\sec^2\\theta - 1)\\sec\\theta \\, d\\theta = 8\\int (\\sec^2\\theta - 1)\\sec\\theta \\tan\\theta \\, d\\theta$$\n\nLet $u = \\sec\\theta$, $du = \\sec\\theta \\tan\\theta \\, d\\theta$:\n\n$$= 8\\int (u^2 - 1) \\, du = 8\\left(\\frac{u^3}{3} - u\\right) + C = \\frac{8\\sec^3\\theta}{3} - 8\\sec\\theta + C$$\n\n**Back-substitution using triangle:** With $\\tan\\theta = \\frac{x}{2}$, draw a right triangle: opposite = $x$, adjacent = $2$, hypotenuse = $\\sqrt{x^2 + 4}$.\n\nThus $\\sec\\theta = \\frac{\\sqrt{x^2+4}}{2}$.\n\n$$= \\frac{8}{3}\\cdot\\frac{(x^2+4)^{3/2}}{8} - 8\\cdot\\frac{\\sqrt{x^2+4}}{2} + C = \\frac{(x^2+4)^{3/2}}{3} - 4\\sqrt{x^2+4} + C$$\n\n$$\\boxed{\\frac{1}{3}(x^2 + 4)^{3/2} - 4\\sqrt{x^2 + 4} + C}$$"
   },
   {
@@ -509,7 +509,7 @@
     "type": "free-response",
     "section": "§6.2. Trigonometric Integrals and Trig Substitution",
     "text": "Evaluate $\\displaystyle \\int \\frac{\\sqrt{x^2 - 25}}{x} \\, dx$ for $x > 5$.",
-    "answer": "sqrt(x^2 - 25) - 5*arcsec(x/5) + C",
+    "answer": "\\sqrt{x^2 - 25} - 5\\sec^{-1}\\left(\\frac{x}{5}\\right) + C",
     "solution": "Use $x = 5\\sec\\theta$ (where $\\theta \\in [0, \\pi/2)$ since $x > 5$), so $dx = 5\\sec\\theta\\tan\\theta \\, d\\theta$.\n\nThen $\\sqrt{x^2 - 25} = \\sqrt{25\\sec^2\\theta - 25} = 5\\tan\\theta$.\n\n$$\\int \\frac{5\\tan\\theta}{5\\sec\\theta} \\cdot 5\\sec\\theta\\tan\\theta \\, d\\theta = \\int 5\\tan^2\\theta \\, d\\theta$$\n\nUse $\\tan^2\\theta = \\sec^2\\theta - 1$:\n$$= 5\\int (\\sec^2\\theta - 1) \\, d\\theta = 5(\\tan\\theta - \\theta) + C$$\n\n**Back-substitution using triangle:** With $\\sec\\theta = \\frac{x}{5}$, draw a right triangle: hypotenuse = $x$, adjacent = $5$, opposite = $\\sqrt{x^2 - 25}$.\n\nThus $\\tan\\theta = \\frac{\\sqrt{x^2-25}}{5}$ and $\\theta = \\text{arcsec}\\left(\\frac{x}{5}\\right)$.\n\n$$= 5 \\cdot \\frac{\\sqrt{x^2-25}}{5} - 5\\text{arcsec}\\left(\\frac{x}{5}\\right) + C = \\sqrt{x^2 - 25} - 5\\text{arcsec}\\left(\\frac{x}{5}\\right) + C$$\n\n$$\\boxed{\\sqrt{x^2 - 25} - 5\\text{arcsec}\\left(\\frac{x}{5}\\right) + C}$$"
   },
   {
@@ -543,7 +543,7 @@
     "type": "free-response",
     "section": "§6.2. Trigonometric Integrals and Trig Substitution",
     "text": "Evaluate $\\displaystyle \\int \\frac{dx}{x^2\\sqrt{x^2 + 1}}$.",
-    "answer": "-sqrt(x^2 + 1)/x + C",
+    "answer": "-\\frac{\\sqrt{x^2 + 1}}{x} + C",
     "solution": "Use $x = \\tan\\theta$, so $dx = \\sec^2\\theta \\, d\\theta$ and $\\sqrt{x^2 + 1} = \\sec\\theta$.\n\n$$\\int \\frac{\\sec^2\\theta \\, d\\theta}{\\tan^2\\theta \\cdot \\sec\\theta} = \\int \\frac{\\sec\\theta}{\\tan^2\\theta} \\, d\\theta = \\int \\frac{\\cos\\theta}{\\sin^2\\theta} \\, d\\theta$$\n\nLet $u = \\sin\\theta$, $du = \\cos\\theta \\, d\\theta$:\n$$= \\int \\frac{du}{u^2} = -\\frac{1}{u} + C = -\\csc\\theta + C$$\n\n**Back-substitution using triangle:** With $\\tan\\theta = x$, draw a right triangle: opposite = $x$, adjacent = $1$, hypotenuse = $\\sqrt{x^2 + 1}$.\n\nThus $\\csc\\theta = \\frac{\\text{hypotenuse}}{\\text{opposite}} = \\frac{\\sqrt{x^2+1}}{x}$.\n\n$$= -\\frac{\\sqrt{x^2 + 1}}{x} + C$$\n\n$$\\boxed{-\\frac{\\sqrt{x^2 + 1}}{x} + C}$$"
   },
   {
@@ -640,7 +640,7 @@
     "type": "free-response",
     "section": "§6.3. Partial Fraction Decomposition",
     "text": "Evaluate $\\displaystyle \\int \\frac{3}{(x - 1)(x + 2)} \\, dx$.",
-    "answer": "ln|x-1| - ln|x+2| + C",
+    "answer": "\\ln|x-1| - \\ln|x+2| + C",
     "solution": "**Step 1: Partial fraction decomposition**\n\n$$\\frac{3}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}$$\n\nMultiply by $(x - 1)(x + 2)$:\n$$3 = A(x + 2) + B(x - 1)$$\n\nLet $x = 1$: $3 = A(3) + B(0) \\implies A = 1$\n\nLet $x = -2$: $3 = A(0) + B(-3) \\implies B = -1$\n\nSo: $\\displaystyle \\frac{3}{(x - 1)(x + 2)} = \\frac{1}{x - 1} - \\frac{1}{x + 2}$\n\n**Step 2: Integrate**\n\n$$\\int \\frac{3}{(x - 1)(x + 2)} \\, dx = \\int \\frac{1}{x - 1} \\, dx - \\int \\frac{1}{x + 2} \\, dx$$\n\n$$= \\ln|x - 1| - \\ln|x + 2| + C$$"
   },
   {
@@ -704,7 +704,7 @@
     "type": "free-response",
     "section": "§6.3. Partial Fraction Decomposition",
     "text": "In the partial fraction decomposition $\\displaystyle \\frac{x + 9}{(x - 2)(x^2 + 9)} = \\frac{A}{x - 2} + \\frac{Bx + C}{x^2 + 9}$, find the value of $A$.",
-    "answer": "11/13",
+    "answer": "\\frac{11}{13}",
     "solution": "Multiply both sides by $(x - 2)(x^2 + 9)$:\n$$x + 9 = A(x^2 + 9) + (Bx + C)(x - 2)$$\n\n**Substitute $x = 2$:**\n$$2 + 9 = A(4 + 9) + (2B + C)(0)$$\n$$11 = 13A$$\n$$A = \\frac{11}{13}$$\n\nTherefore $A = \\frac{11}{13}$."
   },
   {
@@ -738,7 +738,7 @@
     "type": "free-response",
     "section": "§6.3. Partial Fraction Decomposition",
     "text": "Evaluate $\\displaystyle \\int \\frac{6x + 2}{(x-1)(x+1)(x+3)} \\, dx$.",
-    "answer": "ln|x-1| + ln|x+1| - 2*ln|x+3| + C",
+    "answer": "\\ln|x-1| + \\ln|x+1| - 2\\ln|x+3| + C",
     "solution": "**Step 1: Partial fraction decomposition**\n\n$$\\frac{6x + 2}{(x-1)(x+1)(x+3)} = \\frac{A}{x-1} + \\frac{B}{x+1} + \\frac{C}{x+3}$$\n\nMultiply by $(x-1)(x+1)(x+3)$:\n$$6x + 2 = A(x+1)(x+3) + B(x-1)(x+3) + C(x-1)(x+1)$$\n\n**Substitute $x = 1$:**\n$$8 = A(2)(4) = 8A \\implies A = 1$$\n\n**Substitute $x = -1$:**\n$$-4 = B(-2)(2) = -4B \\implies B = 1$$\n\n**Substitute $x = -3$:**\n$$-16 = C(-4)(-2) = 8C \\implies C = -2$$\n\n**Verification at $x = 0$:**\n$$3A - 3B - C = 3(1) - 3(1) - (-2) = 2 = 6(0) + 2$$ ✓\n\nSo the decomposition is:\n$$\\frac{6x + 2}{(x-1)(x+1)(x+3)} = \\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}$$\n\n**Step 2: Integrate**\n$$\\int \\left(\\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}\\right) dx$$\n$$= \\ln|x-1| + \\ln|x+1| - 2\\ln|x+3| + C$$"
   },
   {
@@ -802,7 +802,7 @@
     "type": "free-response",
     "section": "§6.5. Approximate Integration",
     "text": "Use Simpson's Rule with $n = 4$ to approximate $\\int_1^3 f(x)\\,dx$ given:\n\n| $x$ | 1 | 1.5 | 2 | 2.5 | 3 |\n|-----|---|-----|---|-----|---|\n| $f(x)$ | 2 | 3 | 6 | 11 | 18 |\n\nGive your answer as a fraction or decimal.",
-    "answer": "44/3",
+    "answer": "\\frac{44}{3}",
     "solution": "First, compute $\\Delta x = \\frac{3-1}{4} = 0.5$.\n\nSimpson's Rule formula:\n$$S_n = \\frac{\\Delta x}{3}[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + f(x_4)]$$\n\nSubstituting:\n$$S_4 = \\frac{0.5}{3}[2 + 4(3) + 2(6) + 4(11) + 18]$$\n$$= \\frac{0.5}{3}[2 + 12 + 12 + 44 + 18]$$\n$$= \\frac{0.5}{3}[88]$$\n$$= \\frac{44}{3} = \\frac{41}{3}$$\n\nLet me verify: $2 + 12 + 12 + 44 + 18 = 88$\n$$S_4 = \\frac{0.5 \\times 88}{3} = \\frac{44}{3}$$\n\nSo the answer is $\\boxed{\\frac{44}{3}}$ (approximately 14.67)."
   },
   {
@@ -1109,7 +1109,7 @@
     "type": "free-response",
     "section": "§6.6. Improper Integrals",
     "text": "Evaluate $\\displaystyle\\int_{-\\infty}^{\\infty} \\frac{1}{1+x^2}\\,dx$, or state that it diverges.",
-    "answer": "pi",
+    "answer": "\\pi",
     "solution": "This is a Type 1 improper integral with both limits infinite. We must split it:\n\n$$\\int_{-\\infty}^{\\infty} \\frac{1}{1+x^2}\\,dx = \\int_{-\\infty}^{0} \\frac{1}{1+x^2}\\,dx + \\int_{0}^{\\infty} \\frac{1}{1+x^2}\\,dx$$\n\nThe antiderivative is:\n$$\\int \\frac{1}{1+x^2}\\,dx = \\arctan(x)$$\n\n**For the right integral:**\n$$\\lim_{b \\to \\infty} \\left[\\arctan(x)\\right]_0^{b} = \\lim_{b \\to \\infty} (\\arctan(b) - \\arctan(0)) = \\frac{\\pi}{2} - 0 = \\frac{\\pi}{2}$$\n\n**For the left integral:**\n$$\\lim_{a \\to -\\infty} \\left[\\arctan(x)\\right]_a^{0} = \\arctan(0) - \\lim_{a \\to -\\infty} \\arctan(a) = 0 - \\left(-\\frac{\\pi}{2}\\right) = \\frac{\\pi}{2}$$\n\n**Total:**\n$$\\frac{\\pi}{2} + \\frac{\\pi}{2} = \\pi$$\n\nThe integral converges to $\\boxed{\\pi}$."
   },
   {
@@ -1302,7 +1302,7 @@
     "type": "free-response",
     "section": "§7.1. Areas Between Curves",
     "text": "Find the area of the region enclosed by $y = e^x$, $y = e^{-x}$, and $x = \\ln 3$.",
-    "answer": "4/3",
+    "answer": "\\frac{4}{3}",
     "solution": "The curves $y = e^x$ and $y = e^{-x}$ intersect when $e^x = e^{-x}$, so $e^{2x} = 1$, giving $x = 0$.\n\nOn $[0, \\ln 3]$, since $e^x > e^{-x}$ for $x > 0$:\n\nArea $= \\int_0^{\\ln 3}(e^x - e^{-x})\\,dx$\n\nThe antiderivative of $e^x - e^{-x}$ is $e^x + e^{-x}$.\n\n$= \\left[e^x + e^{-x}\\right]_0^{\\ln 3}$\n\n$= (e^{\\ln 3} + e^{-\\ln 3}) - (e^0 + e^0)$\n\n$= (3 + \\frac{1}{3}) - 2 = \\frac{10}{3} - 2 = \\frac{4}{3}$"
   },
   {
@@ -1336,7 +1336,7 @@
     "type": "free-response",
     "section": "§7.1. Areas Between Curves",
     "text": "Find the area of the region bounded by $x = y^2 - 4$ and $x = 4 - y^2$.",
-    "answer": "64/3",
+    "answer": "\\frac{64}{3}",
     "solution": "Find intersections: $y^2 - 4 = 4 - y^2 \\implies 2y^2 = 8 \\implies y^2 = 4 \\implies y = \\pm 2$\n\nTest $y = 0$: Left curve gives $x = -4$, right curve gives $x = 4$.\n\nSo $x = 4 - y^2$ is to the right of $x = y^2 - 4$.\n\nArea $= \\int_{-2}^{2}[(4 - y^2) - (y^2 - 4)]\\,dy$\n\n$= \\int_{-2}^{2}(8 - 2y^2)\\,dy$\n\n$= \\left[8y - \\frac{2y^3}{3}\\right]_{-2}^{2}$\n\nAt $y = 2$: $16 - \\frac{16}{3} = \\frac{48 - 16}{3} = \\frac{32}{3}$\n\nAt $y = -2$: $-16 + \\frac{16}{3} = \\frac{-48 + 16}{3} = -\\frac{32}{3}$\n\nArea $= \\frac{32}{3} - (-\\frac{32}{3}) = \\frac{64}{3}$"
   },
   {
@@ -1399,7 +1399,7 @@
     "type": "free-response",
     "section": "§7.2. Volumes: Disk and Washer Method",
     "text": "Find the volume of the solid generated by revolving the region bounded by $y = \\sqrt{x}$, $y = 0$, and $x = 4$ about the $y$-axis. Express your answer in terms of $\\pi$.",
-    "answer": "128*pi/5",
+    "answer": "\\frac{128\\pi}{5}",
     "solution": "**Rotation about the $y$-axis, integrating in $y$.**\n\nFirst, solve for $x$: $y = \\sqrt{x} \\Rightarrow x = y^2$.\n\nWhen $x = 4$, $y = 2$. The region extends from $y = 0$ to $y = 2$.\n\nUsing the disk method with horizontal slices:\n$$V = \\pi \\int_0^2 [R(y)]^2\\,dy$$\n\nThe outer radius from the $y$-axis to $x = 4$ is $R = 4$.\nThe inner radius from the $y$-axis to the curve $x = y^2$ is $r = y^2$.\n\n$$V = \\pi \\int_0^2 \\left(16 - y^4\\right)\\,dy = \\pi \\left[16y - \\frac{y^5}{5}\\right]_0^2$$\n\n$$V = \\pi \\left(32 - \\frac{32}{5}\\right) = \\pi \\cdot \\frac{160 - 32}{5} = \\frac{128\\pi}{5}$$"
   },
   {
@@ -1433,7 +1433,7 @@
     "type": "free-response",
     "section": "§7.2. Volumes: Disk and Washer Method",
     "text": "A water tank has the shape of the solid obtained by revolving $y = x^3$ from $x = 0$ to $x = 2$ about the $x$-axis. Find the volume of the tank in terms of $\\pi$.",
-    "answer": "128*pi/7",
+    "answer": "\\frac{128\\pi}{7}",
     "solution": "**Rotation about the $x$-axis, integrating in $x$.**\n\nUsing the disk method:\n$$V = \\pi \\int_0^2 [f(x)]^2\\,dx = \\pi \\int_0^2 (x^3)^2\\,dx = \\pi \\int_0^2 x^6\\,dx$$\n\n$$V = \\pi \\left[\\frac{x^7}{7}\\right]_0^2 = \\pi \\cdot \\frac{128}{7} = \\frac{128\\pi}{7}$$"
   },
   {
@@ -1496,7 +1496,7 @@
     "type": "free-response",
     "section": "§7.2. Volumes: Disk and Washer Method",
     "text": "Find the volume of the solid generated by revolving the region bounded by $x = y^2$ and $x = 4$ about the line $x = 5$. Integrate with respect to $y$.",
-    "answer": "832*pi/15",
+    "answer": "\\frac{832\\pi}{15}",
     "solution": "**Rotation about $x = 5$, integrating in $y$.**\n\nThe curves intersect when $y^2 = 4$, so $y = \\pm 2$.\n\nThe outer radius (from $x = 5$ to $x = y^2$): $R(y) = 5 - y^2$\n\nThe inner radius (from $x = 5$ to $x = 4$): $r(y) = 5 - 4 = 1$\n\nUsing the washer method:\n$$V = \\pi \\int_{-2}^{2} \\left[(5-y^2)^2 - 1^2\\right]\\,dy$$\n\nExpanding: $(5-y^2)^2 = 25 - 10y^2 + y^4$\n\n$$V = \\pi \\int_{-2}^{2} \\left(24 - 10y^2 + y^4\\right)\\,dy$$\n\nUsing symmetry:\n$$V = 2\\pi \\int_0^2 \\left(24 - 10y^2 + y^4\\right)\\,dy = 2\\pi \\left[24y - \\frac{10y^3}{3} + \\frac{y^5}{5}\\right]_0^2$$\n\n$$V = 2\\pi \\left(48 - \\frac{80}{3} + \\frac{32}{5}\\right) = 2\\pi \\cdot \\frac{720 - 400 + 96}{15} = 2\\pi \\cdot \\frac{416}{15} = \\frac{832\\pi}{15}$$"
   },
   {
@@ -1530,7 +1530,7 @@
     "type": "free-response",
     "section": "§7.2. Volumes: Disk and Washer Method",
     "text": "Find the volume of the solid generated by revolving the region bounded by $y = \\sqrt{x}$, $y = 0$, and $x = 9$ about the line $y = 4$.",
-    "answer": "207*pi/2",
+    "answer": "\\frac{207\\pi}{2}",
     "solution": "**Rotation about $y = 4$, integrating in $x$.**\n\nThe region extends from $x = 0$ to $x = 9$, with $0 \\le y \\le \\sqrt{x} \\le 3$.\n\nSince $y = 4$ is above the entire region:\n- Outer radius: from $y = 4$ to $y = 0$: $R(x) = 4$\n- Inner radius: from $y = 4$ to $y = \\sqrt{x}$: $r(x) = 4 - \\sqrt{x}$\n\nUsing the washer method:\n$$V = \\pi \\int_0^9 \\left[16 - (4-\\sqrt{x})^2\\right]\\,dx$$\n\nExpanding: $(4-\\sqrt{x})^2 = 16 - 8\\sqrt{x} + x$\n\n$$V = \\pi \\int_0^9 \\left(8x^{1/2} - x\\right)\\,dx$$\n\n$$V = \\pi \\left[\\frac{16x^{3/2}}{3} - \\frac{x^2}{2}\\right]_0^9$$\n\nAt $x = 9$: $x^{3/2} = 27$, $x^2 = 81$\n\n$$V = \\pi \\left(\\frac{16 \\cdot 27}{3} - \\frac{81}{2}\\right) = \\pi \\left(144 - \\frac{81}{2}\\right) = \\frac{207\\pi}{2}$$"
   },
   {
@@ -1590,7 +1590,7 @@
     "type": "free-response",
     "section": "§7.3. Volumes: Cylindrical Shells",
     "text": "Use the shell method to find the volume of the solid generated by rotating the region bounded by $y = \\sqrt{x}$, $y = 0$, and $x = 4$ about the $y$-axis. Give your answer in exact form.",
-    "answer": "128*pi/5",
+    "answer": "\\frac{128\\pi}{5}",
     "solution": "Using the shell method for rotation about the $y$-axis:\n\n**Shell radius:** $r = x$ (distance from the $y$-axis)\n\n**Shell height:** $h = \\sqrt{x}$ (the function value)\n\nThe region extends from $x = 0$ to $x = 4$.\n\n$$V = 2\\pi \\int_0^4 x \\cdot \\sqrt{x} \\, dx = 2\\pi \\int_0^4 x^{3/2} \\, dx$$\n\n$$= 2\\pi \\left[\\frac{x^{5/2}}{5/2}\\right]_0^4 = 2\\pi \\cdot \\frac{2}{5} \\left[x^{5/2}\\right]_0^4$$\n\n$$= \\frac{4\\pi}{5} \\cdot (4)^{5/2} = \\frac{4\\pi}{5} \\cdot 32 = \\frac{128\\pi}{5}$$"
   },
   {
@@ -1624,7 +1624,7 @@
     "type": "free-response",
     "section": "§7.3. Volumes: Cylindrical Shells",
     "text": "Use cylindrical shells to find the volume of the solid formed by rotating the region bounded by $y = x^3$, $x = 0$, and $y = 8$ about the $x$-axis.",
-    "answer": "768*pi/7",
+    "answer": "\\frac{768\\pi}{7}",
     "solution": "For rotation about the $x$-axis, we use horizontal shells with $y$-integration.\n\nFrom $y = x^3$, we get $x = y^{1/3}$. The region has $y$ ranging from $0$ to $8$.\n\n**Shell radius:** $r = y$ (distance from the $x$-axis)\n\n**Shell height:** $h = y^{1/3}$ (the horizontal distance from the $y$-axis to the curve)\n\n$$V = 2\\pi \\int_0^8 y \\cdot y^{1/3} \\, dy = 2\\pi \\int_0^8 y^{4/3} \\, dy$$\n\n$$= 2\\pi \\left[\\frac{y^{7/3}}{7/3}\\right]_0^8 = 2\\pi \\cdot \\frac{3}{7} \\left[y^{7/3}\\right]_0^8$$\n\nSince $8^{7/3} = (2^3)^{7/3} = 2^7 = 128$:\n\n$$V = \\frac{6\\pi}{7} \\cdot 128 = \\frac{768\\pi}{7}$$"
   },
   {
@@ -1687,7 +1687,7 @@
     "type": "free-response",
     "section": "§7.3. Volumes: Cylindrical Shells",
     "text": "The region bounded by $y = 4 - x^2$ and $y = 0$ in the first quadrant is rotated about the line $x = 3$. Use the shell method to find the volume.",
-    "answer": "24*pi",
+    "answer": "24\\pi",
     "solution": "The region in the first quadrant is bounded by $x = 0$, $x = 2$ (where $4 - x^2 = 0$), and $y = 4 - x^2$.\n\nFor rotation about the line $x = 3$:\n\n**Shell radius:** $r = 3 - x$ (distance from $x$ to the axis $x = 3$)\n\n**Shell height:** $h = 4 - x^2$\n\n$$V = 2\\pi \\int_0^2 (3-x)(4-x^2) \\, dx$$\n\nExpand the integrand:\n$$(3-x)(4-x^2) = 12 - 3x^2 - 4x + x^3 = 12 - 4x - 3x^2 + x^3$$\n\n$$V = 2\\pi \\int_0^2 (12 - 4x - 3x^2 + x^3) \\, dx$$\n\n$$= 2\\pi \\left[12x - 2x^2 - x^3 + \\frac{x^4}{4}\\right]_0^2$$\n\n$$= 2\\pi \\left[12(2) - 2(4) - 8 + \\frac{16}{4}\\right]$$\n\n$$= 2\\pi \\left[24 - 8 - 8 + 4\\right] = 2\\pi \\cdot 12 = 24\\pi$$"
   },
   {
@@ -1721,7 +1721,7 @@
     "type": "free-response",
     "section": "§7.3. Volumes: Cylindrical Shells",
     "text": "Use the shell method to find the volume when the region bounded by $y = x^2$ and $y = 2x$ is rotated about the $y$-axis.",
-    "answer": "8*pi/3",
+    "answer": "\\frac{8\\pi}{3}",
     "solution": "First, find the intersection points:\n$$x^2 = 2x \\Rightarrow x^2 - 2x = 0 \\Rightarrow x(x-2) = 0 \\Rightarrow x = 0 \\text{ or } x = 2$$\n\nFor $0 \\le x \\le 2$, the line $y = 2x$ is above the parabola $y = x^2$.\n\nUsing the shell method for rotation about the $y$-axis:\n\n**Shell radius:** $r = x$\n\n**Shell height:** $h = 2x - x^2$ (top minus bottom)\n\n$$V = 2\\pi \\int_0^2 x(2x - x^2) \\, dx = 2\\pi \\int_0^2 (2x^2 - x^3) \\, dx$$\n\n$$= 2\\pi \\left[\\frac{2x^3}{3} - \\frac{x^4}{4}\\right]_0^2$$\n\n$$= 2\\pi \\left[\\frac{2(8)}{3} - \\frac{16}{4}\\right] = 2\\pi \\left[\\frac{16}{3} - 4\\right]$$\n\n$$= 2\\pi \\left[\\frac{16 - 12}{3}\\right] = 2\\pi \\cdot \\frac{4}{3} = \\frac{8\\pi}{3}$$"
   },
   {
@@ -1786,7 +1786,7 @@
     "type": "free-response",
     "section": "§7.4. Arc Length",
     "text": "Find the exact arc length of $y = \\frac{x^2}{4} - \\frac{\\ln x}{2}$ for $1 \\le x \\le e$.",
-    "answer": "(e^2 - 1)/4 + 1/2",
+    "answer": "\\frac{e^2 - 1}{4} + \\frac{1}{2}",
     "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\frac{x^2}{4} - \\frac{\\ln x}{2}$$\n$$f'(x) = \\frac{x}{2} - \\frac{1}{2x}$$\n\nStep 2: Compute $[f'(x)]^2$.\n$$[f'(x)]^2 = \\left(\\frac{x}{2} - \\frac{1}{2x}\\right)^2 = \\frac{x^2}{4} - \\frac{1}{2} + \\frac{1}{4x^2}$$\n\nStep 3: Compute $1 + [f'(x)]^2$.\n$$1 + [f'(x)]^2 = 1 + \\frac{x^2}{4} - \\frac{1}{2} + \\frac{1}{4x^2} = \\frac{x^2}{4} + \\frac{1}{2} + \\frac{1}{4x^2}$$\n\nStep 4: Recognize the perfect square.\n$$\\frac{x^2}{4} + \\frac{1}{2} + \\frac{1}{4x^2} = \\left(\\frac{x}{2} + \\frac{1}{2x}\\right)^2$$\n\nStep 5: Evaluate the integral.\n$$L = \\int_1^e \\sqrt{\\left(\\frac{x}{2} + \\frac{1}{2x}\\right)^2}\\, dx = \\int_1^e \\left(\\frac{x}{2} + \\frac{1}{2x}\\right) dx$$\n$$= \\left[\\frac{x^2}{4} + \\frac{\\ln x}{2}\\right]_1^e = \\left(\\frac{e^2}{4} + \\frac{1}{2}\\right) - \\left(\\frac{1}{4} + 0\\right)$$\n$$= \\frac{e^2}{4} - \\frac{1}{4} + \\frac{1}{2} = \\frac{e^2 - 1}{4} + \\frac{1}{2}$$\n\nThe exact arc length is $\\boxed{\\frac{e^2 - 1}{4} + \\frac{1}{2}}$."
   },
   {
@@ -1820,7 +1820,7 @@
     "type": "free-response",
     "section": "§7.4. Arc Length",
     "text": "Find the exact arc length of the curve $x = \\frac{y^3}{3} + \\frac{1}{4y}$ for $1 \\le y \\le 2$.",
-    "answer": "59/24",
+    "answer": "\\frac{59}{24}",
     "solution": "Since $x$ is given as a function of $y$, we use $L = \\int_c^d \\sqrt{1 + [g'(y)]^2}\\, dy$.\n\nStep 1: Find $g'(y)$.\n$$g(y) = \\frac{y^3}{3} + \\frac{1}{4y} = \\frac{y^3}{3} + \\frac{y^{-1}}{4}$$\n$$g'(y) = y^2 - \\frac{1}{4y^2}$$\n\nStep 2: Compute $[g'(y)]^2$.\n$$[g'(y)]^2 = \\left(y^2 - \\frac{1}{4y^2}\\right)^2 = y^4 - \\frac{1}{2} + \\frac{1}{16y^4}$$\n\nStep 3: Compute $1 + [g'(y)]^2$.\n$$1 + [g'(y)]^2 = y^4 + \\frac{1}{2} + \\frac{1}{16y^4} = \\left(y^2 + \\frac{1}{4y^2}\\right)^2$$\n\nStep 4: Evaluate the integral.\n$$L = \\int_1^2 \\left(y^2 + \\frac{1}{4y^2}\\right) dy = \\left[\\frac{y^3}{3} - \\frac{1}{4y}\\right]_1^2$$\n$$= \\left(\\frac{8}{3} - \\frac{1}{8}\\right) - \\left(\\frac{1}{3} - \\frac{1}{4}\\right)$$\n$$= \\frac{7}{3} + \\frac{1}{8} = \\frac{56 + 3}{24} = \\frac{59}{24}$$\n\nThe exact arc length is $\\boxed{\\frac{59}{24}}$."
   },
   {
@@ -1884,7 +1884,7 @@
     "type": "free-response",
     "section": "§7.4. Arc Length",
     "text": "A wire follows the curve $y = \\frac{x^4}{8} + \\frac{1}{4x^2}$ from $x = 1$ to $x = 2$. Find the exact length of the wire.",
-    "answer": "33/16",
+    "answer": "\\frac{33}{16}",
     "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\frac{x^4}{8} + \\frac{1}{4x^2} = \\frac{x^4}{8} + \\frac{x^{-2}}{4}$$\n$$f'(x) = \\frac{x^3}{2} - \\frac{1}{2x^3}$$\n\nStep 2: Compute $[f'(x)]^2$.\n$$[f'(x)]^2 = \\left(\\frac{x^3}{2} - \\frac{1}{2x^3}\\right)^2 = \\frac{x^6}{4} - \\frac{1}{2} + \\frac{1}{4x^6}$$\n\nStep 3: Compute $1 + [f'(x)]^2$.\n$$1 + [f'(x)]^2 = \\frac{x^6}{4} + \\frac{1}{2} + \\frac{1}{4x^6} = \\left(\\frac{x^3}{2} + \\frac{1}{2x^3}\\right)^2$$\n\nStep 4: Evaluate the integral.\n$$L = \\int_1^2 \\left(\\frac{x^3}{2} + \\frac{1}{2x^3}\\right) dx = \\left[\\frac{x^4}{8} - \\frac{1}{4x^2}\\right]_1^2$$\n$$= \\left(\\frac{16}{8} - \\frac{1}{16}\\right) - \\left(\\frac{1}{8} - \\frac{1}{4}\\right)$$\n$$= \\left(2 - \\frac{1}{16}\\right) - \\left(-\\frac{1}{8}\\right) = 2 - \\frac{1}{16} + \\frac{1}{8}$$\n$$= 2 + \\frac{1}{16} = \\frac{32 + 1}{16} = \\frac{33}{16}$$\n\nThe exact length of the wire is $\\boxed{\\frac{33}{16}}$."
   },
   {
@@ -1947,7 +1947,7 @@
     "type": "free-response",
     "section": "§7.4. Arc Length",
     "text": "Find the exact arc length of $y = \\frac{e^x + e^{-x}}{2}$ (the catenary) from $x = 0$ to $x = \\ln 3$.",
-    "answer": "4/3",
+    "answer": "\\frac{4}{3}",
     "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\frac{e^x + e^{-x}}{2} = \\cosh x$$\n$$f'(x) = \\frac{e^x - e^{-x}}{2} = \\sinh x$$\n\nStep 2: Compute $1 + [f'(x)]^2$.\n$$1 + \\sinh^2 x = \\cosh^2 x$$\n(This is the hyperbolic identity.)\n\nStep 3: Evaluate the integral.\n$$L = \\int_0^{\\ln 3} \\sqrt{\\cosh^2 x}\\, dx = \\int_0^{\\ln 3} \\cosh x\\, dx$$\n$$= [\\sinh x]_0^{\\ln 3} = \\sinh(\\ln 3) - \\sinh(0)$$\n\nStep 4: Compute $\\sinh(\\ln 3)$.\n$$\\sinh(\\ln 3) = \\frac{e^{\\ln 3} - e^{-\\ln 3}}{2} = \\frac{3 - \\frac{1}{3}}{2} = \\frac{\\frac{8}{3}}{2} = \\frac{4}{3}$$\n\nSince $\\sinh(0) = 0$:\n$$L = \\frac{4}{3} - 0 = \\frac{4}{3}$$\n\nThe exact arc length is $\\boxed{\\frac{4}{3}}$."
   },
   {
@@ -2820,7 +2820,7 @@
     "type": "free-response",
     "section": "§7.2. Volumes: Disk and Washer Method",
     "text": "A solid has semicircular cross-sections perpendicular to the $x$-axis. The diameter of each semicircle stretches from $y = 0$ to $y = \\sqrt{x}$ on the interval $[0, 4]$. Find the volume of the solid.",
-    "answer": "pi",
+    "answer": "\\pi",
     "solution": "The diameter of each semicircle is $\\sqrt{x}$, so the radius is $r = \\frac{\\sqrt{x}}{2}$.\n\nThe area of a semicircle is $A = \\frac{1}{2}\\pi r^2 = \\frac{1}{2}\\pi \\left(\\frac{\\sqrt{x}}{2}\\right)^2 = \\frac{\\pi x}{8}$.\n\n$$V = \\int_0^4 \\frac{\\pi x}{8}\\,dx = \\frac{\\pi}{8}\\left[\\frac{x^2}{2}\\right]_0^4 = \\frac{\\pi}{8} \\cdot 8 = \\pi$$\n\nThe answer is $\\boxed{\\pi}$."
   },
   {
@@ -2910,7 +2910,7 @@
     "type": "free-response",
     "section": "§7.2. Volumes: Disk and Washer Method",
     "text": "Find the volume of the solid generated by revolving the region bounded by $x = \\sqrt{y}$ and $x = 2$ from $y = 0$ to $y = 4$ about the line $x = 2$.",
-    "answer": "8pi/3",
+    "answer": "\\frac{8\\pi}{3}",
     "solution": "Rotating about the vertical line $x = 2$, integrate with respect to $y$. The radius of each disk is:\n$$r(y) = 2 - \\sqrt{y}$$\n\n$$V = \\pi\\int_0^4 (2 - \\sqrt{y})^2\\,dy = \\pi\\int_0^4 (4 - 4\\sqrt{y} + y)\\,dy$$\n$$= \\pi\\left[4y - \\frac{8}{3}y^{3/2} + \\frac{y^2}{2}\\right]_0^4$$\n$$= \\pi\\left(16 - \\frac{8}{3}(8) + 8\\right) = \\pi\\left(24 - \\frac{64}{3}\\right) = \\pi \\cdot \\frac{72 - 64}{3} = \\frac{8\\pi}{3}$$\n\nThe answer is $\\boxed{\\dfrac{8\\pi}{3}}$."
   },
   {
@@ -2970,7 +2970,7 @@
     "type": "free-response",
     "section": "§7.3. Volumes: Cylindrical Shells",
     "text": "Find the volume of the solid generated by revolving the region in the first quadrant bounded by $y = x^2$ and $y = 4$ about the line $y = -1$.",
-    "answer": "544pi/15",
+    "answer": "\\frac{544\\pi}{15}",
     "solution": "The axis $y = -1$ is horizontal, so use shells integrating with respect to $y$.\n\nExpress $x$ in terms of $y$: $x = \\sqrt{y}$. The region runs from $y = 0$ to $y = 4$.\n\nFor shells rotating about $y = -1$:\n- Radius = $y - (-1) = y + 1$\n- Height = $\\sqrt{y}$ (the width of the region at height $y$)\n\n$$V = 2\\pi\\int_0^4 (y+1)\\sqrt{y}\\,dy = 2\\pi\\int_0^4 (y^{3/2} + y^{1/2})\\,dy$$\n$$= 2\\pi\\left[\\frac{2}{5}y^{5/2} + \\frac{2}{3}y^{3/2}\\right]_0^4$$\n$$= 2\\pi\\left(\\frac{2}{5}(32) + \\frac{2}{3}(8)\\right) = 2\\pi\\left(\\frac{64}{5} + \\frac{16}{3}\\right) = 2\\pi \\cdot \\frac{192 + 80}{15} = \\frac{544\\pi}{15}$$\n\nThe answer is $\\boxed{\\dfrac{544\\pi}{15}}$."
   },
   {
@@ -3034,7 +3034,7 @@
     "type": "free-response",
     "section": "§7.4. Arc Length",
     "text": "Find the arc length function $s(x)$ for the curve $y = \\ln(\\cos x)$ starting from $x_0 = 0$.",
-    "answer": "ln(sec(x) + tan(x))",
+    "answer": "\\ln|\\sec x + \\tan x|",
     "solution": "Find $y'$: $y = \\ln(\\cos x)$ so $y' = -\\frac{\\sin x}{\\cos x} = -\\tan x$.\n\n$$s(x) = \\int_0^x \\sqrt{1 + \\tan^2 t}\\,dt = \\int_0^x \\sqrt{\\sec^2 t}\\,dt = \\int_0^x \\sec t\\,dt$$\n\n$$= \\Big[\\ln|\\sec t + \\tan t|\\Big]_0^x = \\ln|\\sec x + \\tan x| - \\ln(1) = \\ln(\\sec x + \\tan x)$$\n\nThe answer is $\\boxed{\\ln(\\sec x + \\tan x)}$."
   },
   {
@@ -3094,7 +3094,7 @@
     "type": "free-response",
     "section": "§7.6. Work (Physics Applications)",
     "text": "A force of $F(x) = \\sin(\\pi x)$ newtons acts on a particle moving from $x = 0$ to $x = 1$ meter. Find the total work done in Joules.",
-    "answer": "2/pi",
+    "answer": "\\frac{2}{\\pi}",
     "solution": "$$W = \\int_0^1 \\sin(\\pi x)\\,dx = \\left[-\\frac{\\cos(\\pi x)}{\\pi}\\right]_0^1$$\n$$= -\\frac{\\cos(\\pi)}{\\pi} + \\frac{\\cos(0)}{\\pi} = -\\frac{-1}{\\pi} + \\frac{1}{\\pi} = \\frac{2}{\\pi} \\text{ J}$$\n\nThe answer is $\\boxed{\\dfrac{2}{\\pi}}$ J."
   },
   {
@@ -3218,7 +3218,7 @@
     "type": "free-response",
     "section": "§8.2. Series",
     "text": "Identify the first term $a$ and common ratio $r$ of the geometric series $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{4 \\cdot 2^{n-1}}{5^{n-1}}$. Then determine whether it converges and, if so, find its exact sum.",
-    "answer": "20/3",
+    "answer": "\\frac{20}{3}",
     "solution": "Rewrite the general term:\n$$\\frac{4\\cdot 2^{n-1}}{5^{n-1}} = 4\\left(\\frac{2}{5}\\right)^{n-1}.$$\n\nThis is a geometric series $\\displaystyle\\sum_{n=1}^{\\infty} a\\,r^{n-1}$ with:\n$$a = 4, \\qquad r = \\frac{2}{5}.$$\n\nSince $|r| = \\dfrac{2}{5} < 1$, the series converges:\n$$S = \\frac{a}{1-r} = \\frac{4}{1 - \\tfrac{2}{5}} = \\frac{4}{\\tfrac{3}{5}} = \\frac{20}{3}.$$"
   },
   {
@@ -3226,7 +3226,7 @@
     "type": "free-response",
     "section": "§8.2. Series",
     "text": "Find the exact sum of $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{2^n + 6^n}{9^n}$.",
-    "answer": "16/7",
+    "answer": "\\frac{16}{7}",
     "solution": "Split the series using the sum rule:\n$$\\sum_{n=1}^{\\infty} \\frac{2^n + 6^n}{9^n} = \\sum_{n=1}^{\\infty}\\left(\\frac{2}{9}\\right)^n + \\sum_{n=1}^{\\infty}\\left(\\frac{6}{9}\\right)^n = \\sum_{n=1}^{\\infty}\\left(\\frac{2}{9}\\right)^n + \\sum_{n=1}^{\\infty}\\left(\\frac{2}{3}\\right)^n.$$\n\nBoth are geometric series with $|r|<1$ starting at $n=1$. Use $\\displaystyle\\sum_{n=1}^\\infty r^n = \\frac{r}{1-r}$:\n\n$$\\sum_{n=1}^{\\infty}\\left(\\frac{2}{9}\\right)^n = \\frac{\\tfrac{2}{9}}{1-\\tfrac{2}{9}} = \\frac{\\tfrac{2}{9}}{\\tfrac{7}{9}} = \\frac{2}{7}.$$\n\n$$\\sum_{n=1}^{\\infty}\\left(\\frac{2}{3}\\right)^n = \\frac{\\tfrac{2}{3}}{1-\\tfrac{2}{3}} = \\frac{\\tfrac{2}{3}}{\\tfrac{1}{3}} = 2.$$\n\n$$S = \\frac{2}{7} + 2 = \\frac{2}{7} + \\frac{14}{7} = \\frac{16}{7}.$$"
   },
   {
@@ -3375,7 +3375,7 @@
     "type": "free-response",
     "section": "§8.4. Other Convergence Tests",
     "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ as a simplified fraction.",
-    "answer": "10/13",
+    "answer": "\\frac{10}{13}",
     "solution": "Let $a_n = \\dfrac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10^{n+1}}{(7(n+1)^2+5)\\cdot 13^{n+4}} \\cdot \\frac{(7n^2+5)\\cdot 13^{n+3}}{10^n}.$$\nSimplifying:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10\\cdot(7n^2+5)}{13\\cdot(7(n+1)^2+5)}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{10(7n^2+5)}{13(7n^2+14n+12)} = \\frac{10}{13}\\cdot\\lim_{n\\to\\infty}\\frac{7n^2+5}{7n^2+14n+12} = \\frac{10}{13}\\cdot 1 = \\frac{10}{13}.$$\nSince $L = \\dfrac{10}{13} < 1$, the series **converges absolutely** by the Ratio Test."
   },
   {
@@ -3477,7 +3477,7 @@
     "type": "free-response",
     "section": "§8.4. Other Convergence Tests",
     "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{5^n}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$.",
-    "answer": "infinity",
+    "answer": "\\infty",
     "solution": "Let $a_n = \\dfrac{n!}{5^n}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{5^{n+1}}\\cdot\\frac{5^n}{n!} = \\frac{(n+1)\\cdot n!}{5\\cdot n!} = \\frac{n+1}{5}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{n+1}{5} = \\infty.$$\nSince $L = \\infty > 1$, the series **diverges** by the Ratio Test. Factorials eventually grow far faster than any fixed exponential base."
   },
   {
@@ -3785,7 +3785,7 @@
     "type": "free-response",
     "section": "§8.7. Taylor and Maclaurin Series",
     "text": "Evaluate the limit using Maclaurin series:\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1 + \\dfrac{x^2}{2}}{x^4}.$$",
-    "answer": "1/24",
+    "answer": "\\frac{1}{24}",
     "solution": "Write the Maclaurin series for $\\cos x$:\n$$\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\frac{x^6}{6!} + \\cdots$$\nSubtract $1$ and add $\\dfrac{x^2}{2}$:\n$$\\cos x - 1 + \\frac{x^2}{2} = \\left(1 - \\frac{x^2}{2} + \\frac{x^4}{24} - \\cdots\\right) - 1 + \\frac{x^2}{2} = \\frac{x^4}{24} - \\frac{x^6}{720} + \\cdots$$\nDivide by $x^4$:\n$$\\frac{\\cos x - 1 + \\frac{x^2}{2}}{x^4} = \\frac{1}{24} - \\frac{x^2}{720} + \\cdots$$\nTaking $x \\to 0$:\n$$\\lim_{x\\to 0}\\frac{\\cos x - 1 + \\frac{x^2}{2}}{x^4} = \\boxed{\\dfrac{1}{24}}.$$"
   },
   {
@@ -4163,5 +4163,1060 @@
     ],
     "answer": "A",
     "solution": "Set $r=-4x^2$ in the geometric series:\n$$\\frac{1}{1+4x^2}=\\frac{1}{1-(-4x^2)}=\\sum_{n=0}^{\\infty}(-4x^2)^n=\\sum_{n=0}^{\\infty}(-1)^n 4^n x^{2n}.$$\n\nWriting out terms: $1 - 4x^2 + 16x^4 - 64x^6 + \\cdots$\n\nMatching $\\sum c_n x^n$:\n$$c_0=1,\\quad c_1=0,\\quad c_2=-4,\\quad c_3=0,\\quad c_4=16.$$\n\nThis is **A**.\n\n- **B** treats $4x^2$ as $4x$ (wrong variable power—ignores that only even powers appear).\n- **C** omits the alternating sign ($(-1)^n$), giving $+4$ instead of $-4$ for $c_2$.\n- **D** uses the wrong sign on $c_4$: $(-1)^2 4^2 = +16$, not $-16$."
+  },
+  {
+    "id": "s9_1_gen_1",
+    "type": "free-response",
+    "section": "§9.1 Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find a Cartesian equation for the curve\n$$x = \\sqrt{t}, \\quad y = 3t - 1, \\quad t \\geq 0.$$\nExpress your answer in the form $y = f(x)$ and state any restriction on $x$.",
+    "answer": [
+      {
+        "label": "y =",
+        "value": "3x^2 - 1"
+      },
+      {
+        "label": "Restriction (x):",
+        "value": "x \\ge 0"
+      }
+    ],
+    "solution": "From $x = \\sqrt{t}$, square both sides to get $t = x^2$. Substitute into $y = 3t - 1$:\n$$y = 3x^2 - 1.$$\nSince $t \\geq 0$ we have $x = \\sqrt{t} \\geq 0$, so the restriction is $x \\geq 0$. The curve is the right branch of the parabola $y = 3x^2 - 1$, starting at the vertex $(0, -1)$ when $t = 0$."
+  },
+  {
+    "id": "s9_1_gen_2",
+    "type": "multiple-choice",
+    "section": "§9.1 Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find the Cartesian equation of the curve\n$$x = 2t + 1, \\quad y = 4t^2 + 4t + 5.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = x^2 + 4$"
+      },
+      {
+        "label": "B",
+        "text": "$y = (x-1)^2 + 5$"
+      },
+      {
+        "label": "C",
+        "text": "$y = 4x^2 + 4x + 5$"
+      },
+      {
+        "label": "D",
+        "text": "$y = x^2 - 2x + 5$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Solve for $t$ from the first equation: $t = \\dfrac{x-1}{2}$. Substitute into $y$:\n$$y = 4\\left(\\frac{x-1}{2}\\right)^2 + 4\\left(\\frac{x-1}{2}\\right) + 5 = (x-1)^2 + 2(x-1) + 5.$$\nExpanding: $(x^2 - 2x + 1) + (2x - 2) + 5 = x^2 + 4.$ Choice **A**.\n\n*Distractor notes:* B computes $(x-1)^2 + 5$ but drops the cross term $2(x-1)$. C substitutes $t = x$ without eliminating. D has a sign error in expansion."
+  },
+  {
+    "id": "s9_1_gen_3",
+    "type": "free-response",
+    "section": "§9.1 Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = 4\\cos\\theta, \\quad y = 4\\sin\\theta, \\quad 0 \\leq \\theta \\leq 2\\pi.$$\nThe curve is a circle with Cartesian equation $x^2 + y^2 = R^2$. Find $R$, the initial point, and the terminal point.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "4"
+      },
+      {
+        "label": "Initial point:",
+        "value": "(4, 0)"
+      },
+      {
+        "label": "Terminal point:",
+        "value": "(4, 0)"
+      }
+    ],
+    "solution": "Squaring and adding: $x^2 + y^2 = 16\\cos^2\\theta + 16\\sin^2\\theta = 16$, so $R = 4$.\n\n**Initial point** ($\\theta = 0$): $(4\\cos 0,\\, 4\\sin 0) = (4, 0)$.\n\n**Terminal point** ($\\theta = 2\\pi$): $(4\\cos 2\\pi,\\, 4\\sin 2\\pi) = (4, 0)$. The curve is closed."
+  },
+  {
+    "id": "s9_1_gen_4",
+    "type": "free-response",
+    "section": "§9.1 Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = 6\\cos\\theta, \\quad y = 2\\sin\\theta, \\quad 0 \\leq \\theta \\leq \\pi.$$\nThe curve is part of an ellipse with Cartesian equation $\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1$. Find $a$, $b$, the initial point, and the terminal point.",
+    "answer": [
+      {
+        "label": "a =",
+        "value": "6"
+      },
+      {
+        "label": "b =",
+        "value": "2"
+      },
+      {
+        "label": "Initial point:",
+        "value": "(6, 0)"
+      },
+      {
+        "label": "Terminal point:",
+        "value": "(-6, 0)"
+      }
+    ],
+    "solution": "Dividing: $\\dfrac{x^2}{36} + \\dfrac{y^2}{4} = \\cos^2\\theta + \\sin^2\\theta = 1$. So $a = 6$, $b = 2$.\n\n**Initial point** ($\\theta = 0$): $(6\\cos 0,\\, 2\\sin 0) = (6, 0)$.\n\n**Terminal point** ($\\theta = \\pi$): $(6\\cos\\pi,\\, 2\\sin\\pi) = (-6, 0)$."
+  },
+  {
+    "id": "s9_1_gen_5",
+    "type": "multiple-choice",
+    "section": "§9.1 Parametric Curves",
+    "text": "Eliminate the parameter to find the Cartesian equation of the curve\n$$x = 5\\sec\\theta, \\quad y = 3\\tan\\theta, \\quad -\\tfrac{\\pi}{2} < \\theta < \\tfrac{\\pi}{2}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{x^2}{25} - \\dfrac{y^2}{9} = 1$, $\\quad x \\geq 5$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{x^2}{9} - \\dfrac{y^2}{25} = 1$, $\\quad x \\geq 3$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{y^2}{9} - \\dfrac{x^2}{25} = 1$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Use the Pythagorean identity $\\sec^2\\theta - \\tan^2\\theta = 1$. Since $x/5 = \\sec\\theta$ and $y/3 = \\tan\\theta$:\n$$\\frac{x^2}{25} - \\frac{y^2}{9} = \\sec^2\\theta - \\tan^2\\theta = 1.$$\nFor $-\\pi/2 < \\theta < \\pi/2$, $\\sec\\theta > 0$, so $x = 5\\sec\\theta \\geq 5$. This is the **right branch** of the hyperbola. Choice **A**.\n\n*Distractor notes:* B uses a $+$ sign, giving an ellipse. C swaps the denominators. D inverts the subtraction order, giving a different hyperbola orientation."
+  },
+  {
+    "id": "s9_1_gen_6",
+    "type": "free-response",
+    "section": "§9.1 Parametric Curves",
+    "text": "Suppose Parametric Curves for the line segment between $(-3, 5)$ and $(4, 1)$ have the form\n$$x = a + bt, \\quad y = c + dt.$$\nIf the curve starts at $(-3, 5)$ when $t = 0$ and ends at $(4, 1)$ when $t = 1$, find $a$, $b$, $c$, and $d$.",
+    "answer": [
+      {
+        "label": "a =",
+        "value": "-3"
+      },
+      {
+        "label": "b =",
+        "value": "7"
+      },
+      {
+        "label": "c =",
+        "value": "5"
+      },
+      {
+        "label": "d =",
+        "value": "-4"
+      }
+    ],
+    "solution": "At $t = 0$: $x = a = -3$ and $y = c = 5$.\n\nAt $t = 1$: $x = a + b = 4 \\Rightarrow b = 4 - (-3) = 7$.\nAnd $y = c + d = 1 \\Rightarrow d = 1 - 5 = -4$.\n\nThe Parametric Curves are $x = -3 + 7t$ and $y = 5 - 4t$."
+  },
+  {
+    "id": "s9_1_gen_7",
+    "type": "multiple-choice",
+    "section": "§9.1 Parametric Curves",
+    "text": "The circle $(x - 2)^2 + (y + 1)^2 = 9$ is to be traced **clockwise** as $t$ increases. If $x = 2 + 3\\cos t$, which of the following gives $y$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = -1 + 3\\sin t$"
+      },
+      {
+        "label": "B",
+        "text": "$y = -1 - 3\\sin t$"
+      },
+      {
+        "label": "C",
+        "text": "$y = 1 + 3\\sin t$"
+      },
+      {
+        "label": "D",
+        "text": "$y = 1 - 3\\sin t$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The center is $(2, -1)$ and radius is $3$. The standard **counterclockwise** parametrization uses $y = -1 + 3\\sin t$. To reverse to **clockwise**, negate the sine term:\n$$y = -1 - 3\\sin t.$$\n**Verification:** At $t = 0$: $(5, -1)$ (rightmost point). As $t$ increases, $y$ decreases — the curve moves downward from the right, which is clockwise. ✓\n\n*Distractor notes:* A gives counterclockwise. C and D use the wrong center $y$-coordinate ($+1$ instead of $-1$)."
+  },
+  {
+    "id": "s9_1_gen_8",
+    "type": "select-all",
+    "section": "§9.1 Parametric Curves",
+    "text": "Consider the parametric curve $x = \\cos t$, $y = \\sin t$, $0 \\leq t \\leq 2\\pi$. **Select all** statements that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The Cartesian equation is $x^2 + y^2 = 1$."
+      },
+      {
+        "label": "B",
+        "text": "As $t$ increases from $0$ to $2\\pi$, the curve is traced counterclockwise."
+      },
+      {
+        "label": "C",
+        "text": "The initial and terminal points are both $(1, 0)$."
+      },
+      {
+        "label": "D",
+        "text": "The curve passes through the point $\\left(\\dfrac{1}{2},\\, \\dfrac{1}{2}\\right)$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**A: TRUE.** $x^2 + y^2 = \\cos^2 t + \\sin^2 t = 1$. ✓\n\n**B: TRUE.** At $t=0$: $(1,0)$. At $t=\\pi/2$: $(0,1)$. Motion goes from the positive $x$-axis into the first quadrant — **counterclockwise**. ✓\n\n**C: TRUE.** At both $t=0$ and $t=2\\pi$: $(\\cos 0, \\sin 0) = (1,0)$. The curve closes on itself. ✓\n\n**D: FALSE.** Check: $(1/2)^2 + (1/2)^2 = 1/4 + 1/4 = 1/2 \\neq 1$. The point $(1/2, 1/2)$ lies inside the unit circle, not on it. ✗\n\nCorrect selections: **A, B, C**."
+  },
+  {
+    "id": "s9_1_gen_9",
+    "type": "free-response",
+    "section": "§9.1 Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find a Cartesian equation for the curve\n$$x = t^2, \\quad y = t^3.$$",
+    "answer": "y^2 = x^3",
+    "solution": "From $x = t^2$: $x^3 = (t^2)^3 = t^6$. From $y = t^3$: $y^2 = (t^3)^2 = t^6$. Therefore:\n$$y^2 = x^3.$$\n*Alternatively:* For any $t$, $t^2 = x$ so $t = \\pm\\sqrt{x}$, giving $y = \\pm x^{3/2}$. Squaring both cases yields $y^2 = x^3$.\n\nThis curve (defined for $x \\geq 0$) is called a **semicubical parabola**."
+  },
+  {
+    "id": "s9_1_gen_10",
+    "type": "multiple-choice",
+    "section": "§9.1 Parametric Curves",
+    "text": "Which of the following Parametric Curves traces the **upper** semicircle of $x^2 + y^2 = 4$ (i.e., $y \\geq 0$) exactly once, going from left to right?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = -2\\cos t,\\quad y = 2\\sin t, \\quad 0 \\leq t \\leq \\pi$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 2\\cos t,\\quad y = 2\\sin t, \\quad 0 \\leq t \\leq \\pi$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 2\\cos t,\\quad y = 2\\sin t, \\quad 0 \\leq t \\leq 2\\pi$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 2\\cos t,\\quad y = -2\\sin t, \\quad 0 \\leq t \\leq \\pi$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We need $y \\geq 0$ and the curve to go from $(-2, 0)$ to $(2, 0)$ (left to right).\n\n**A:** At $t=0$: $(-2, 0)$. At $t=\\pi/2$: $(0, 2)$. At $t=\\pi$: $(2, 0)$. Since $y = 2\\sin t \\geq 0$ for $0 \\leq t \\leq \\pi$, this traces the upper semicircle from left to right. ✓\n\n**B:** At $t=0$: $(2, 0)$; at $t=\\pi$: $(-2, 0)$. Correct half, but goes **right to left**. ✗\n\n**C:** Traces the full circle, not just the upper half. ✗\n\n**D:** $y = -2\\sin t \\leq 0$ for $0 \\leq t \\leq \\pi$ — this is the **lower** semicircle. ✗\n\nThe answer is **A**."
+  },
+  {
+    "id": "s9_1_gen_11",
+    "type": "free-response",
+    "section": "§9.1 Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find a Cartesian equation for the curve\n$$x = e^t, \\quad y = e^{2t} + 3.$$\nState any restriction on $x$.",
+    "answer": [
+      {
+        "label": "y =",
+        "value": "x^2 + 3"
+      },
+      {
+        "label": "Restriction (x):",
+        "value": "x > 0"
+      }
+    ],
+    "solution": "Since $x = e^t$, we have $x^2 = e^{2t}$. Substituting:\n$$y = e^{2t} + 3 = x^2 + 3.$$\nSince $e^t > 0$ for all real $t$, the restriction is $x > 0$.\n\nThe curve is the portion of the upward-opening parabola $y = x^2 + 3$ with $x > 0$ (the vertex at $(0, 3)$ is not included)."
+  },
+  {
+    "id": "s9_1_gen_12",
+    "type": "multiple-choice",
+    "section": "§9.1 Parametric Curves",
+    "text": "Which of the following best describes the parametric curve\n$$x = -\\cos t, \\quad y = -\\sin t, \\quad 0 \\leq t \\leq 2\\pi\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Starts at $(1, 0)$ and moves counterclockwise once around the unit circle."
+      },
+      {
+        "label": "B",
+        "text": "Starts at $(-1, 0)$ and moves clockwise once around the unit circle."
+      },
+      {
+        "label": "C",
+        "text": "Starts at $(-1, 0)$ and moves counterclockwise once around the unit circle."
+      },
+      {
+        "label": "D",
+        "text": "Starts at $(1, 0)$ and moves clockwise once around the unit circle."
+      }
+    ],
+    "answer": "B",
+    "solution": "**Starting point** ($t = 0$): $(-\\cos 0,\\, -\\sin 0) = (-1, 0)$. This rules out A and D.\n\n**Direction:** At $t = \\pi/2$: $(-\\cos(\\pi/2),\\, -\\sin(\\pi/2)) = (0, -1)$. The curve moves from $(-1, 0)$ to $(0, -1)$ — downward from the leftmost point. This is **clockwise** motion.\n\nChoice **B**.\n\n*Contrast with* $x = \\cos t$, $y = \\sin t$, which starts at $(1, 0)$ and traces counterclockwise."
+  },
+  {
+    "id": "s9_1_gen_13",
+    "type": "free-response",
+    "section": "§9.1 Parametric Curves",
+    "text": "Suppose Parametric Curves for the line segment from $(0, 4)$ to $(6, 1)$ have the form\n$$x = a + bt, \\quad y = c + dt.$$\nIf the curve starts at $(0, 4)$ when $t = 0$ and ends at $(6, 1)$ when $t = 3$, find $a$, $b$, $c$, and $d$.",
+    "answer": [
+      {
+        "label": "a =",
+        "value": "0"
+      },
+      {
+        "label": "b =",
+        "value": "2"
+      },
+      {
+        "label": "c =",
+        "value": "4"
+      },
+      {
+        "label": "d =",
+        "value": "-1"
+      }
+    ],
+    "solution": "At $t = 0$: $x = a = 0$ and $y = c = 4$.\n\nAt $t = 3$: $x = 0 + 3b = 6 \\Rightarrow b = 2$. And $y = 4 + 3d = 1 \\Rightarrow d = -1$.\n\nThe Parametric Curves are $x = 2t$ and $y = 4 - t$, for $0 \\leq t \\leq 3$."
+  },
+  {
+    "id": "s9_1_gen_14",
+    "type": "select-all",
+    "section": "§9.1 Parametric Curves",
+    "text": "**Select all** pairs of Parametric Curves whose graphs are straight lines.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = t^2, \\quad y = 2t + 1$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 3t - 1, \\quad y = 6t + 2$"
+      },
+      {
+        "label": "C",
+        "text": "$x = \\cos t, \\quad y = \\sin t$"
+      },
+      {
+        "label": "D",
+        "text": "$x = t + 2, \\quad y = 2t - 5$"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "solution": "**A: NOT a line.** Solve for $t$: $t = (y-1)/2$, so $x = ((y-1)/2)^2$. This is a parabola. ✗\n\n**B: LINE. ✓** Solve for $t$: $t = (x+1)/3$, so $y = 6 \\cdot \\frac{x+1}{3} + 2 = 2(x+1)+2 = 2x+4$. Slope $2$, $y$-intercept $4$.\n\n**C: NOT a line.** $x^2 + y^2 = \\cos^2 t + \\sin^2 t = 1$. This is the unit circle. ✗\n\n**D: LINE. ✓** Solve for $t$: $t = x - 2$, so $y = 2(x-2) - 5 = 2x - 9$. Slope $2$, $y$-intercept $-9$.\n\nCorrect selections: **B and D**."
+  },
+  {
+    "id": "s9_1_gen_15",
+    "type": "multiple-choice",
+    "section": "§9.1 Parametric Curves",
+    "text": "The ellipse $\\dfrac{x^2}{49} + \\dfrac{y^2}{16} = 1$ can be drawn with Parametric Curves. Assume the curve is traced **clockwise** as $t$ increases. If $x = 7\\cos t$, which of the following gives $y$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = 4\\sin t$"
+      },
+      {
+        "label": "B",
+        "text": "$y = -4\\sin t$"
+      },
+      {
+        "label": "C",
+        "text": "$y = 16\\sin t$"
+      },
+      {
+        "label": "D",
+        "text": "$y = -16\\sin t$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The standard **counterclockwise** parametrization is $x = 7\\cos t$, $y = 4\\sin t$. To trace the ellipse **clockwise**, negate the sine component:\n$$y = -4\\sin t.$$\n**Verification:** $\\dfrac{(7\\cos t)^2}{49} + \\dfrac{(-4\\sin t)^2}{16} = \\cos^2 t + \\sin^2 t = 1$. ✓\n\nAt $t=0$: $(7, 0)$. At $t=\\pi/2$: $(0, -4)$ (bottom of ellipse). Moving from the rightmost point downward is **clockwise**. Choice **B**.\n\n*Distractor notes:* A gives counterclockwise. C and D use $16$ instead of $4$ (confusing $b^2$ with $b$)."
+  },
+  {
+    "id": "s9_2_gen_1",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Given the parametric equations\n$$x = t^2 + 3t, \\quad y = t^3 - 2t,$$\ncompute $\\dfrac{dy}{dx}$ as a function of $t$.",
+    "answer": "\\frac{3t^2 - 2}{2t + 3}",
+    "solution": "Differentiate both equations with respect to $t$:\n$$\\frac{dx}{dt} = 2t + 3, \\qquad \\frac{dy}{dt} = 3t^2 - 2.$$\nBy the parametric derivative formula:\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{3t^2 - 2}{2t + 3}.$$"
+  },
+  {
+    "id": "s9_2_gen_2",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Given the parametric equations $x = t^3$, $y = t^4$:\n\n(a) Find $\\dfrac{dy}{dx}$ expressed as a function of $t$.\n\n(b) Find $\\dfrac{d^2y}{dx^2}$ expressed as a function of $t$.",
+    "answer": [
+      {
+        "label": "dy/dx =",
+        "value": "\\frac{4t}{3}"
+      },
+      {
+        "label": "d^2y/dx^2 =",
+        "value": "\\frac{4}{9t^2}"
+      }
+    ],
+    "solution": "**(a)** Differentiate: $dx/dt = 3t^2$, $dy/dt = 4t^3$.\n$$\\frac{dy}{dx} = \\frac{4t^3}{3t^2} = \\frac{4t}{3}.$$\n\n**(b)** Differentiate $dy/dx$ with respect to $t$:\n$$\\frac{d}{dt}\\!\\left(\\frac{4t}{3}\\right) = \\frac{4}{3}.$$\nThen divide by $dx/dt = 3t^2$:\n$$\\frac{d^2y}{dx^2} = \\frac{4/3}{3t^2} = \\frac{4}{9t^2}.$$"
+  },
+  {
+    "id": "s9_2_gen_3",
+    "type": "multiple-choice",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Find $\\dfrac{dy}{dx}$ expressed as a function of $t$ for the Parametric Curves\n$$x = 2t + \\ln t, \\quad y = 5t - 3\\ln t.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{5t - 3}{2t + 1}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{5t + 3}{2t + 1}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{5t - 3}{2t - 1}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{2t + 1}{5t - 3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate with respect to $t$:\n$$\\frac{dx}{dt} = 2 + \\frac{1}{t} = \\frac{2t+1}{t}, \\qquad \\frac{dy}{dt} = 5 - \\frac{3}{t} = \\frac{5t-3}{t}.$$\nThen:\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{(5t-3)/t}{(2t+1)/t} = \\frac{5t-3}{2t+1}.$$\nChoice **A**.\n\n*Distractor notes:* B uses the wrong sign on the $\\ln t$ derivative in the numerator. C gets the sign wrong on the $+1$ in the denominator. D inverts the fraction."
+  },
+  {
+    "id": "s9_2_gen_4",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Find the equation of the line tangent to the parametric curve\n$$x = \\cos t, \\quad y = \\sin t$$\nat $t = \\dfrac{\\pi}{4}$. Write your answer in the form $y = mx + b$.",
+    "answer": "y = -x + \\sqrt{2}",
+    "solution": "**Point:** At $t = \\pi/4$: $x = \\cos(\\pi/4) = \\dfrac{\\sqrt{2}}{2}$, $y = \\sin(\\pi/4) = \\dfrac{\\sqrt{2}}{2}$.\n\n**Slope:** $\\dfrac{dx}{dt} = -\\sin t$, $\\dfrac{dy}{dt} = \\cos t$, so\n$$\\frac{dy}{dx} = \\frac{\\cos t}{-\\sin t} = -\\cot t.$$\nAt $t = \\pi/4$: $\\dfrac{dy}{dx} = -\\cot(\\pi/4) = -1$.\n\n**Tangent line:**\n$$y - \\frac{\\sqrt{2}}{2} = -1\\!\\left(x - \\frac{\\sqrt{2}}{2}\\right) \\implies y = -x + \\sqrt{2}.$$"
+  },
+  {
+    "id": "s9_2_gen_5",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Find the equation for the line tangent to the parametric curve\n$$x = t^2 + t, \\quad y = t^3 + t^2$$\nat the points where $t = 1$ and $t = -1$.\n\nWrite your tangent lines in the form $y = mx + b$.",
+    "answer": [
+      {
+        "label": "t = 1:",
+        "value": "y = \\frac{5}{3}x - \\frac{4}{3}"
+      },
+      {
+        "label": "t = -1:",
+        "value": "y = -x"
+      }
+    ],
+    "solution": "**Derivatives:** $dx/dt = 2t+1$, $dy/dt = 3t^2+2t$, so $\\dfrac{dy}{dx} = \\dfrac{3t^2+2t}{2t+1}$.\n\n**At $t = 1$:** Point: $(1^2+1,\\, 1^3+1^2) = (2,\\,2)$.\n$dx/dt = 3$, $dy/dt = 5$, slope $= 5/3$.\n$$y - 2 = \\tfrac{5}{3}(x-2) \\implies y = \\tfrac{5}{3}x - \\tfrac{4}{3}.$$\n\n**At $t = -1$:** Point: $(1-1,\\, -1+1) = (0,\\,0)$.\n$dx/dt = -1$, $dy/dt = 3-2 = 1$, slope $= 1/(-1) = -1$.\n$$y - 0 = -1(x-0) \\implies y = -x.$$"
+  },
+  {
+    "id": "s9_2_gen_6",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = t^2 - 2t, \\quad y = t^3 - 12t.$$\n\nAt which $t$ value is the tangent vertical? Give the corresponding point $(x, y)$.\n\nAt which $t$ values is the tangent horizontal? (Enter the smaller $t$ value first, followed by its corresponding point).",
+    "answer": [
+      {
+        "label": "Vertical tangent at t =",
+        "value": "1"
+      },
+      {
+        "label": "Vertical tangent point:",
+        "value": "(-1, -11)"
+      },
+      {
+        "label": "Horizontal tangent (smaller t):",
+        "value": "-2"
+      },
+      {
+        "label": "Point:",
+        "value": "(8, 16)"
+      },
+      {
+        "label": "Horizontal tangent (larger t):",
+        "value": "2"
+      },
+      {
+        "label": "Point:",
+        "value": "(0, -16)"
+      }
+    ],
+    "solution": "**Derivatives:**\n$$\\frac{dx}{dt} = 2t - 2 = 2(t-1), \\qquad \\frac{dy}{dt} = 3t^2 - 12 = 3(t^2-4).$$\n\n**Vertical tangent** — set $dx/dt = 0$: $t = 1$. Check $dy/dt\\big|_{t=1} = 3(1-4) = -9 \\neq 0$ ✓.\nPoint: $(1-2,\\;1-12) = (-1,\\,-11)$.\n\n**Horizontal tangents** — set $dy/dt = 0$: $t = \\pm 2$.\n- $t=-2$: $dx/dt = 2(-3) = -6 \\neq 0$ ✓. Point: $(4+4,\\;-8+24) = (8,\\,16)$.\n- $t=2$: $dx/dt = 2(1) = 2 \\neq 0$ ✓. Point: $(4-4,\\;8-24) = (0,\\,-16)$."
+  },
+  {
+    "id": "s9_2_gen_7",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Find $\\dfrac{d^2y}{dx^2}$ as a function of $t$ for the Parametric Curves\n$$x = \\sin t, \\quad y = 1 + \\cos t.$$",
+    "answer": "-\\sec^3(t)",
+    "solution": "**First derivative:**\n$$\\frac{dx}{dt} = \\cos t, \\quad \\frac{dy}{dt} = -\\sin t \\implies \\frac{dy}{dx} = \\frac{-\\sin t}{\\cos t} = -\\tan t.$$\n\n**Differentiate $dy/dx$ with respect to $t$:**\n$$\\frac{d}{dt}(-\\tan t) = -\\sec^2 t.$$\n\n**Divide by $dx/dt = \\cos t$:**\n$$\\frac{d^2y}{dx^2} = \\frac{-\\sec^2 t}{\\cos t} = -\\sec^2 t \\cdot \\sec t = -\\sec^3 t.$$\n\nNote: this is defined for $\\cos t \\neq 0$, i.e., $t \\neq \\pi/2 + n\\pi$."
+  },
+  {
+    "id": "s9_2_gen_8",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = t^2 - 3, \\quad y = t^3 - 3t.$$\n\nAt which $t$ value is the tangent vertical? Give the corresponding point $(x, y)$.\n\nAt which $t$ values is the tangent horizontal? (Enter the smaller $t$ value first, followed by its corresponding point).",
+    "answer": [
+      {
+        "label": "Vertical tangent at t =",
+        "value": "0"
+      },
+      {
+        "label": "Vertical tangent point:",
+        "value": "(-3, 0)"
+      },
+      {
+        "label": "Horizontal tangent (smaller t):",
+        "value": "-1"
+      },
+      {
+        "label": "Point:",
+        "value": "(-2, 2)"
+      },
+      {
+        "label": "Horizontal tangent (larger t):",
+        "value": "1"
+      },
+      {
+        "label": "Point:",
+        "value": "(-2, -2)"
+      }
+    ],
+    "solution": "**Derivatives:**\n$$\\frac{dx}{dt} = 2t, \\qquad \\frac{dy}{dt} = 3t^2 - 3 = 3(t-1)(t+1).$$\n\n**Vertical tangent** — set $dx/dt = 0$: $t = 0$. Check $dy/dt\\big|_{t=0} = -3 \\neq 0$ ✓.\nPoint: $(0-3,\\;0-0) = (-3,\\,0)$.\n\n**Horizontal tangents** — set $dy/dt = 0$: $t = \\pm 1$.\n- $t=-1$: $dx/dt = -2 \\neq 0$ ✓. Point: $(1-3,\\;-1+3) = (-2,\\,2)$.\n- $t=1$: $dx/dt = 2 \\neq 0$ ✓. Point: $(1-3,\\;1-3) = (-2,\\,-2)$.\n\nObserve that both horizontal tangent points share $x = -2$ — the curve passes through this $x$-value twice."
+  },
+  {
+    "id": "s9_2_gen_9",
+    "type": "multiple-choice",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Which of the following integrals represents the arc length of the parametric curve\n$$x = t - \\sin t, \\quad y = 1 - \\cos t, \\quad 0 \\leq t \\leq 2\\pi\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\cos t}\\;dt$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{2 + 2\\cos t}\\;dt$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{2\\pi} (1 - \\cos t)\\;dt$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\sin t}\\;dt$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate: $\\dfrac{dx}{dt} = 1 - \\cos t$ and $\\dfrac{dy}{dt} = \\sin t$.\n\nCompute the sum of squares:\n$$\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 = (1-\\cos t)^2 + \\sin^2 t$$\n$$= 1 - 2\\cos t + \\cos^2 t + \\sin^2 t = 2 - 2\\cos t.$$\n\nArc length $= \\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\cos t}\\;dt$. Choice **A**.\n\n*Distractor notes:* B has a $+$ sign (would come from $(1+\\cos t)^2 + \\sin^2 t$). C forgot the square root. D uses $\\sin t$ instead of $\\cos t$ in the radicand."
+  },
+  {
+    "id": "s9_2_gen_10",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Find the exact arc length of the parametric curve\n$$x = t^2, \\quad y = \\tfrac{2}{3}t^3, \\quad 0 \\leq t \\leq 3.$$",
+    "answer": "\\frac{2(10\\sqrt{10} - 1)}{3}",
+    "solution": "Differentiate: $dx/dt = 2t$, $dy/dt = 2t^2$.\n$$\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 = 4t^2 + 4t^4 = 4t^2(1+t^2).$$\n$$L = \\int_0^3 \\sqrt{4t^2(1+t^2)}\\;dt = \\int_0^3 2t\\sqrt{1+t^2}\\;dt.$$\n**Substitute** $u = 1+t^2$, $du = 2t\\,dt$. When $t=0$, $u=1$; when $t=3$, $u=10$:\n$$L = \\int_1^{10} \\sqrt{u}\\;du = \\left[\\frac{2}{3}u^{3/2}\\right]_1^{10} = \\frac{2}{3}\\bigl(10^{3/2} - 1\\bigr) = \\frac{2(10\\sqrt{10}-1)}{3}.$$"
+  },
+  {
+    "id": "s9_2_gen_11",
+    "type": "multiple-choice",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Which of the following integrals represents the arc length of the parametric curve\n$$x = \\ln t, \\quad y = \\sqrt{t+1}, \\quad 1 \\leq t \\leq 5\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_1^5 \\frac{t+2}{2t\\sqrt{t+1}}\\;dt$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_1^5 \\frac{t^2+4}{2t\\sqrt{t+1}}\\;dt$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_1^5 \\frac{t+2}{t\\sqrt{t+1}}\\;dt$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_1^5 \\frac{1}{2t\\sqrt{t+1}}\\;dt$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate: $\\dfrac{dx}{dt} = \\dfrac{1}{t}$ and $\\dfrac{dy}{dt} = \\dfrac{1}{2\\sqrt{t+1}}$.\n\nSum of squares:\n$$\\frac{1}{t^2} + \\frac{1}{4(t+1)} = \\frac{4(t+1) + t^2}{4t^2(t+1)} = \\frac{t^2 + 4t + 4}{4t^2(t+1)} = \\frac{(t+2)^2}{4t^2(t+1)}.$$\n\nTaking the square root:\n$$\\sqrt{\\frac{(t+2)^2}{4t^2(t+1)}} = \\frac{t+2}{2t\\sqrt{t+1}}.$$\n\nArc length $= \\displaystyle\\int_1^5\\frac{t+2}{2t\\sqrt{t+1}}\\;dt$. Choice **A**.\n\n*Distractor notes:* B squares the numerator instead of summing. C drops the factor of $2$ in the denominator. D omits the $(t+2)$ factor from the numerator entirely."
+  },
+  {
+    "id": "s9_2_gen_12",
+    "type": "free-response",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "Use the Parametric Curves of the ellipse\n$$x = 4\\cos\\theta, \\quad y = 7\\sin\\theta, \\quad 0 \\leq \\theta \\leq 2\\pi$$\nto find the area it encloses.",
+    "answer": "28\\pi",
+    "solution": "For a simple closed curve traced counterclockwise, the enclosed area is\n$$A = -\\int_0^{2\\pi} y\\,\\frac{dx}{d\\theta}\\,d\\theta.$$\nHere $\\dfrac{dx}{d\\theta} = -4\\sin\\theta$, so:\n$$A = -\\int_0^{2\\pi} (7\\sin\\theta)(-4\\sin\\theta)\\,d\\theta = 28\\int_0^{2\\pi} \\sin^2\\theta\\,d\\theta.$$\nUsing $\\sin^2\\theta = \\dfrac{1-\\cos(2\\theta)}{2}$:\n$$A = 28\\int_0^{2\\pi}\\frac{1-\\cos 2\\theta}{2}\\,d\\theta = 14\\left[\\theta - \\frac{\\sin 2\\theta}{2}\\right]_0^{2\\pi} = 14 \\cdot 2\\pi = 28\\pi.$$\n\n*Note:* This confirms the general formula $A = \\pi ab$ for an ellipse with semi-axes $a = 4$ and $b = 7$."
+  },
+  {
+    "id": "s9_2_gen_13",
+    "type": "select-all",
+    "section": "§9.2 Calculus with Parametric Curves",
+    "text": "For a parametric curve $x = f(t)$, $y = g(t)$, **select all** statements that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{dy}{dx} = \\dfrac{dy/dt}{dx/dt}$, provided $dx/dt \\neq 0$."
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{d^2y}{dx^2} = \\dfrac{d^2y/dt^2}{d^2x/dt^2}$."
+      },
+      {
+        "label": "C",
+        "text": "A horizontal tangent occurs at any $t$ where $dy/dt = 0$ and $dx/dt \\neq 0$."
+      },
+      {
+        "label": "D",
+        "text": "If $dx/dt = 0$ and $dy/dt = 0$ at the same $t$, the curve has a vertical tangent there."
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**A: TRUE. ✓** This is the defining formula for $dy/dx$ in parametric form, valid whenever $dx/dt \\neq 0$.\n\n**B: FALSE. ✗** This is a very common error. The correct formula is\n$$\\frac{d^2y}{dx^2} = \\frac{\\dfrac{d}{dt}\\!\\left(\\dfrac{dy}{dx}\\right)}{\\dfrac{dx}{dt}},$$\nwhich is generally different from $(d^2y/dt^2)/(d^2x/dt^2)$.\n\n**C: TRUE. ✓** When $dy/dt = 0$ and $dx/dt \\neq 0$, the slope $dy/dx = 0$, giving a horizontal tangent.\n\n**D: FALSE. ✗** When both $dx/dt = 0$ and $dy/dt = 0$, the point is a **singular point** (sometimes called a cusp or self-intersection). The tangent behavior there requires further analysis; there is no guarantee of a vertical tangent.\n\nCorrect selections: **A and C**."
+  },
+  {
+    "id": "s9_3_gen_1",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Convert from rectangular to polar coordinates. Choose $r \\geq 0$ and $0 \\leq \\theta < 2\\pi$.\n\n(a) $(3,\\,0)$\n(b) $(-1,\\,1)$\n(c) $(0,\\,-5)$\n(d) $(2,\\,-2\\sqrt{3})$",
+    "answer": [
+      {
+        "label": "(a):",
+        "value": "(3, 0)"
+      },
+      {
+        "label": "(b):",
+        "value": "(\\sqrt{2}, \\frac{3\\pi}{4})"
+      },
+      {
+        "label": "(c):",
+        "value": "(5, \\frac{3\\pi}{2})"
+      },
+      {
+        "label": "(d):",
+        "value": "(4, \\frac{5\\pi}{3})"
+      }
+    ],
+    "solution": "Use $r = \\sqrt{x^2+y^2}$ and $\\theta = \\operatorname{atan2}(y,x)$ adjusted to $[0,2\\pi)$.\n\n**(a)** $r=3$, $\\theta=0$.\n\n**(b)** $r=\\sqrt{1+1}=\\sqrt{2}$. The point $(-1,1)$ is in QII, so $\\theta = \\pi - \\pi/4 = 3\\pi/4$.\n\n**(c)** $r=5$. On the negative $y$-axis, $\\theta = 3\\pi/2$.\n\n**(d)** $r=\\sqrt{4+12}=4$. Point $(2,-2\\sqrt{3})$ is in QIV; $\\tan\\theta = -2\\sqrt{3}/2 = -\\sqrt{3}$, so $\\theta = 2\\pi - \\pi/3 = 5\\pi/3$."
+  },
+  {
+    "id": "s9_3_gen_2",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Convert from polar to rectangular coordinates.\n\n(a) $(4,\\,\\pi)$\n(b) $(3,\\,\\pi/6)$\n(c) $(2,\\,5\\pi/4)$",
+    "answer": [
+      {
+        "label": "(a):",
+        "value": "(-4,0)"
+      },
+      {
+        "label": "(b):",
+        "value": "(\\frac{3\\sqrt{3}}{2},\\frac{3}{2})"
+      },
+      {
+        "label": "(c):",
+        "value": "(-\\sqrt{2},-\\sqrt{2})"
+      }
+    ],
+    "solution": "Use $x = r\\cos\\theta$, $y = r\\sin\\theta$.\n\n**(a)** $x = 4\\cos\\pi = -4$, $y = 4\\sin\\pi = 0$.\n\n**(b)** $x = 3\\cos(\\pi/6) = 3\\cdot\\tfrac{\\sqrt{3}}{2} = \\tfrac{3\\sqrt{3}}{2}$, $y = 3\\sin(\\pi/6) = \\tfrac{3}{2}$.\n\n**(c)** $x = 2\\cos(5\\pi/4) = -\\sqrt{2}$, $y = 2\\sin(5\\pi/4) = -\\sqrt{2}$."
+  },
+  {
+    "id": "s9_3_gen_3",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "The polar equation $r = 6\\sin\\theta$ represents a circle. Write its Cartesian equation and identify the center and radius.",
+    "answer": [
+      {
+        "label": "Cartesian equation:",
+        "value": "x^2 + (y - 3)^2 = 9"
+      },
+      {
+        "label": "Center:",
+        "value": "(0, 3)"
+      },
+      {
+        "label": "Radius:",
+        "value": "3"
+      }
+    ],
+    "solution": "Multiply both sides by $r$:\n$$r^2 = 6r\\sin\\theta.$$\nSubstitute $r^2 = x^2+y^2$ and $r\\sin\\theta = y$:\n$$x^2 + y^2 = 6y \\implies x^2 + y^2 - 6y = 0.$$\nComplete the square in $y$:\n$$x^2 + (y-3)^2 = 9.$$\nCenter $(0,\\,3)$, radius $3$."
+  },
+  {
+    "id": "s9_3_gen_4",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "The equation $r = 3\\cos\\theta$ represents a circle. Find the Cartesian coordinates of the center and the radius.",
+    "answer": [
+      {
+        "label": "Center:",
+        "value": "(3/2, 0)"
+      },
+      {
+        "label": "Radius:",
+        "value": "3/2"
+      }
+    ],
+    "solution": "Multiply both sides by $r$:\n$$r^2 = 3r\\cos\\theta \\implies x^2+y^2 = 3x.$$\nComplete the square in $x$:\n$$(x - \\tfrac{3}{2})^2 + y^2 = \\tfrac{9}{4}.$$\nCenter $\\left(\\tfrac{3}{2},\\,0\\right)$, radius $\\dfrac{3}{2}$."
+  },
+  {
+    "id": "s9_3_gen_5",
+    "type": "multiple-choice",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Which of the following is the Cartesian equation of the circle with polar equation $r = 2\\sin\\theta + 2\\cos\\theta$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(x-1)^2 + (y-1)^2 = 2$"
+      },
+      {
+        "label": "B",
+        "text": "$(x+1)^2 + (y+1)^2 = 2$"
+      },
+      {
+        "label": "C",
+        "text": "$x^2 + y^2 = 4$"
+      },
+      {
+        "label": "D",
+        "text": "$(x-1)^2 + (y-1)^2 = 4$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Multiply both sides by $r$:\n$$r^2 = 2r\\sin\\theta + 2r\\cos\\theta \\implies x^2+y^2 = 2y+2x.$$\nRearrange and complete the square:\n$$(x-1)^2+(y-1)^2 = 2.$$\nCenter $(1,1)$, radius $\\sqrt{2}$. Choice **A**.\n\n*Distractor notes:* B uses the wrong sign for the center. C loses the linear terms. D has the right center but uses $4$ instead of $2$ for the radius squared."
+  },
+  {
+    "id": "s9_3_gen_6",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Find a polar equation of the form $r = f(\\theta)$ for the curve given by the Cartesian equation $5x - 2y = 10$.",
+    "answer": "\\frac{10}{5\\cos\\theta - 2\\sin\\theta}",
+    "solution": "Substitute $x = r\\cos\\theta$ and $y = r\\sin\\theta$:\n$$5r\\cos\\theta - 2r\\sin\\theta = 10.$$\nFactor out $r$:\n$$r(5\\cos\\theta - 2\\sin\\theta) = 10 \\implies r = \\frac{10}{5\\cos\\theta - 2\\sin\\theta}.$$"
+  },
+  {
+    "id": "s9_3_gen_7",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Find a polar equation for each Cartesian equation.\n\n(a) $x^2 + y^2 = 9$\n\n(b) $y = 4$",
+    "answer": [
+      {
+        "label": "(a) r =",
+        "value": "3"
+      },
+      {
+        "label": "(b) r =",
+        "value": "4\\csc\\theta"
+      }
+    ],
+    "solution": "**(a)** Since $r^2 = x^2+y^2 = 9$, we get $r = 3$.\n\n**(b)** Since $y = r\\sin\\theta$, the equation becomes $r\\sin\\theta = 4$, so $r = 4\\csc\\theta$."
+  },
+  {
+    "id": "s9_3_gen_8",
+    "type": "multiple-choice",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Find the Cartesian equation of the polar curve $r = \\tan\\theta\\sec\\theta$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = x$"
+      },
+      {
+        "label": "B",
+        "text": "$y = x^2$"
+      },
+      {
+        "label": "C",
+        "text": "$x = y^2$"
+      },
+      {
+        "label": "D",
+        "text": "$y = -x^2$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Write $r = \\dfrac{\\sin\\theta}{\\cos^2\\theta}$, so $r\\cos^2\\theta = \\sin\\theta$.\n\nMultiply both sides by $r$:\n$$r^2\\cos^2\\theta = r\\sin\\theta \\implies (r\\cos\\theta)^2 = r\\sin\\theta \\implies x^2 = y.$$\nChoice **B**.\n\n*Distractor notes:* A comes from $r = \\tan\\theta$. C swaps $x$ and $y$. D has a spurious negative sign."
+  },
+  {
+    "id": "s9_3_gen_9",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Find the slope of the tangent line to the polar curve $r = 3\\cos\\theta$ at $\\theta = \\dfrac{\\pi}{3}$.",
+    "answer": "\\frac{\\sqrt{3}}{3}",
+    "solution": "Use $\\dfrac{dy}{dx} = \\dfrac{(dr/d\\theta)\\sin\\theta + r\\cos\\theta}{(dr/d\\theta)\\cos\\theta - r\\sin\\theta}$ with $dr/d\\theta = -3\\sin\\theta$.\n\nAt $\\theta = \\pi/3$: $r = 3/2$, $dr/d\\theta = -3\\sqrt{3}/2$, $\\sin\\theta = \\sqrt{3}/2$, $\\cos\\theta = 1/2$.\n\n$$\\text{Numerator} = \\left(-\\tfrac{3\\sqrt{3}}{2}\\right)\\tfrac{\\sqrt{3}}{2} + \\tfrac{3}{2}\\cdot\\tfrac{1}{2} = -\\tfrac{9}{4}+\\tfrac{3}{4} = -\\tfrac{3}{2}.$$\n$$\\text{Denominator} = \\left(-\\tfrac{3\\sqrt{3}}{2}\\right)\\tfrac{1}{2} - \\tfrac{3}{2}\\cdot\\tfrac{\\sqrt{3}}{2} = -\\tfrac{3\\sqrt{3}}{4}-\\tfrac{3\\sqrt{3}}{4} = -\\tfrac{3\\sqrt{3}}{2}.$$\n$$\\frac{dy}{dx} = \\frac{-3/2}{-3\\sqrt{3}/2} = \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}.$$"
+  },
+  {
+    "id": "s9_3_gen_10",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Find the slope of the tangent line to the polar curve $r = 2 + \\sin\\theta$ at $\\theta = \\dfrac{\\pi}{2}$. Also, provide the corresponding Cartesian coordinate $(x, y)$ where this occurs.",
+    "answer": [
+      {
+        "label": "Slope:",
+        "value": "0"
+      },
+      {
+        "label": "Point (x,y):",
+        "value": "(0, 3)"
+      }
+    ],
+    "solution": "Here $dr/d\\theta = \\cos\\theta$. At $\\theta = \\pi/2$: $r = 3$, $\\cos\\theta = 0$, $\\sin\\theta = 1$.\n\n$$\\text{Numerator} = (0)(1) + 3(0) = 0.$$\n$$\\text{Denominator} = (0)(0) - 3(1) = -3.$$\n$$\\frac{dy}{dx} = \\frac{0}{-3} = 0.$$\nThe tangent is horizontal. In Cartesian coordinates the point is $(r\\cos\\theta, r\\sin\\theta) = (0, 3)$, the topmost point of the curve."
+  },
+  {
+    "id": "s9_3_gen_11",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Find Cartesian equations for the following polar curves.\n\n(a) $r = 5\\csc\\theta$\n\n(b) $r = -\\tan\\theta\\sec\\theta$",
+    "answer": [
+      {
+        "label": "(a):",
+        "value": "y = 5"
+      },
+      {
+        "label": "(b):",
+        "value": "y = -x^2"
+      }
+    ],
+    "solution": "**(a)** $r = 5/\\sin\\theta \\Rightarrow r\\sin\\theta = 5 \\Rightarrow y = 5$. A horizontal line.\n\n**(b)** $r = -\\sin\\theta/\\cos^2\\theta$. Multiply by $\\cos^2\\theta$: $r\\cos^2\\theta = -\\sin\\theta$. Multiply by $r$: $r^2\\cos^2\\theta = -r\\sin\\theta \\Rightarrow x^2 = -y$, i.e., $y = -x^2$. A downward-opening parabola."
+  },
+  {
+    "id": "s9_3_gen_12",
+    "type": "multiple-choice",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Which polar equation represents the Cartesian curve $x^2 + y^2 = 2x$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$r = 2\\sin\\theta$"
+      },
+      {
+        "label": "B",
+        "text": "$r = 2\\cos\\theta$"
+      },
+      {
+        "label": "C",
+        "text": "$r^2 = 2\\cos\\theta$"
+      },
+      {
+        "label": "D",
+        "text": "$r = \\cos\\theta$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Substitute $x^2+y^2 = r^2$ and $x = r\\cos\\theta$:\n$$r^2 = 2r\\cos\\theta \\implies r = 2\\cos\\theta.$$\nChoice **B**. This is a circle of radius $1$ centered at $(1,0)$.\n\n*Distractor notes:* A gives $x^2+y^2=2y$ (circle on the $y$-axis). C incorrectly leaves $r^2$ on the left without simplifying. D drops the factor of $2$."
+  },
+  {
+    "id": "s9_3_gen_13",
+    "type": "select-all",
+    "section": "§9.3 Polar Coordinates",
+    "text": "**Select all** statements that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The polar equation $r = 4$ corresponds to the Cartesian equation $x^2 + y^2 = 16$."
+      },
+      {
+        "label": "B",
+        "text": "The polar equation $r = 6\\sin\\theta$ corresponds to the circle $x^2 + (y-3)^2 = 9$."
+      },
+      {
+        "label": "C",
+        "text": "The polar equation $\\theta = \\pi/4$ represents the Cartesian line $y = -x$."
+      },
+      {
+        "label": "D",
+        "text": "The polar equation $r = 2/\\sin\\theta$ is equivalent to the Cartesian equation $y = 2$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A: TRUE. ✓** $r=4 \\Rightarrow r^2=16 \\Rightarrow x^2+y^2=16$.\n\n**B: TRUE. ✓** $r=6\\sin\\theta \\Rightarrow r^2=6r\\sin\\theta \\Rightarrow x^2+y^2=6y \\Rightarrow x^2+(y-3)^2=9$.\n\n**C: FALSE. ✗** The ray $\\theta = \\pi/4$ has slope $\\tan(\\pi/4)=1$, giving $y = x$, **not** $y=-x$. The ray $\\theta=3\\pi/4$ gives $y=-x$.\n\n**D: TRUE. ✓** $r=2/\\sin\\theta \\Rightarrow r\\sin\\theta=2 \\Rightarrow y=2$.\n\nCorrect selections: **A, B, D**."
+  },
+  {
+    "id": "s9_3_gen_14",
+    "type": "free-response",
+    "section": "§9.3 Polar Coordinates",
+    "text": "Find the slope of the tangent line to the polar curve $r = \\sin\\theta$ at $\\theta = \\dfrac{\\pi}{6}$.",
+    "answer": "\\sqrt{3}",
+    "solution": "Here $dr/d\\theta = \\cos\\theta$. At $\\theta = \\pi/6$: $r = 1/2$, $\\cos\\theta = \\sqrt{3}/2$, $\\sin\\theta = 1/2$.\n\n$$\\text{Numerator} = \\frac{\\sqrt{3}}{2}\\cdot\\frac{1}{2} + \\frac{1}{2}\\cdot\\frac{\\sqrt{3}}{2} = \\frac{\\sqrt{3}}{4}+\\frac{\\sqrt{3}}{4} = \\frac{\\sqrt{3}}{2}.$$\n$$\\text{Denominator} = \\frac{\\sqrt{3}}{2}\\cdot\\frac{\\sqrt{3}}{2} - \\frac{1}{2}\\cdot\\frac{1}{2} = \\frac{3}{4}-\\frac{1}{4} = \\frac{1}{2}.$$\n$$\\frac{dy}{dx} = \\frac{\\sqrt{3}/2}{1/2} = \\sqrt{3}.$$"
+  },
+  {
+    "id": "s9_3_gen_15",
+    "type": "multiple-choice",
+    "section": "§9.3 Polar Coordinates",
+    "text": "The polar equation $r(3\\sin\\theta + 4\\cos\\theta) = 12$ represents a line. Which of the following is its Cartesian equation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$4x + 3y = 12$"
+      },
+      {
+        "label": "B",
+        "text": "$3x + 4y = 12$"
+      },
+      {
+        "label": "C",
+        "text": "$4x - 3y = 12$"
+      },
+      {
+        "label": "D",
+        "text": "$4x + 3y = 6$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Distribute:\n$$3r\\sin\\theta + 4r\\cos\\theta = 12.$$\nSubstitute $r\\sin\\theta = y$ and $r\\cos\\theta = x$:\n$$3y + 4x = 12 \\implies 4x + 3y = 12.$$\nChoice **A**.\n\n*Distractor notes:* B swaps the coefficients of $x$ and $y$. C introduces a spurious sign change. D halves the right-hand side."
+  },
+  {
+    "id": "s9_4_gen_1",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area enclosed by the cardioid $r = 3(1 + \\cos\\theta)$.",
+    "answer": "\\frac{27\\pi}{2}",
+    "solution": "$$A = \\frac{1}{2}\\int_0^{2\\pi} r^2\\,d\\theta = \\frac{1}{2}\\int_0^{2\\pi} 9(1+\\cos\\theta)^2\\,d\\theta = \\frac{9}{2}\\int_0^{2\\pi}(1+2\\cos\\theta+\\cos^2\\theta)\\,d\\theta.$$\nUsing $\\displaystyle\\int_0^{2\\pi}\\cos\\theta\\,d\\theta=0$ and $\\displaystyle\\int_0^{2\\pi}\\cos^2\\theta\\,d\\theta=\\pi$:\n$$A = \\frac{9}{2}\\bigl[2\\pi + 0 + \\pi\\bigr] = \\frac{9}{2}\\cdot 3\\pi = \\boxed{\\frac{27\\pi}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_2",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area inside one leaf of the four-petaled rose $r = 6\\sin(2\\theta)$.",
+    "answer": "\\frac{9\\pi}{2}",
+    "solution": "One petal spans $0 \\leq \\theta \\leq \\pi/2$ (where $\\sin(2\\theta) \\geq 0$).\n$$A = \\frac{1}{2}\\int_0^{\\pi/2} 36\\sin^2(2\\theta)\\,d\\theta = 18\\int_0^{\\pi/2}\\frac{1-\\cos(4\\theta)}{2}\\,d\\theta = 9\\left[\\theta - \\frac{\\sin(4\\theta)}{4}\\right]_0^{\\pi/2} = 9\\cdot\\frac{\\pi}{2} = \\boxed{\\frac{9\\pi}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_3",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area enclosed by one loop of the lemniscate $r^2 = 9\\cos(2\\theta)$.",
+    "answer": "9/2",
+    "solution": "The right loop requires $\\cos(2\\theta) \\geq 0$, which holds for $-\\pi/4 \\leq \\theta \\leq \\pi/4$.\n$$A = \\frac{1}{2}\\int_{-\\pi/4}^{\\pi/4} r^2\\,d\\theta = \\frac{1}{2}\\int_{-\\pi/4}^{\\pi/4} 9\\cos(2\\theta)\\,d\\theta = \\frac{9}{2}\\left[\\frac{\\sin(2\\theta)}{2}\\right]_{-\\pi/4}^{\\pi/4} = \\frac{9}{4}\\bigl[\\sin(\\tfrac{\\pi}{2})-\\sin(-\\tfrac{\\pi}{2})\\bigr] = \\frac{9}{4}\\cdot 2 = \\boxed{\\frac{9}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_4",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region that lies inside the circle $r = 2\\sin\\theta$ but outside the circle $r = 1$.",
+    "answer": "\\frac{\\pi}{3} + \\frac{\\sqrt{3}}{2}",
+    "solution": "Find intersections: $2\\sin\\theta = 1 \\Rightarrow \\sin\\theta = 1/2 \\Rightarrow \\theta = \\pi/6,\\;5\\pi/6$. The circle $r=2\\sin\\theta$ lies outside $r=1$ between these angles.\n$$A = \\frac{1}{2}\\int_{\\pi/6}^{5\\pi/6}\\bigl[(2\\sin\\theta)^2 - 1^2\\bigr]\\,d\\theta = \\frac{1}{2}\\int_{\\pi/6}^{5\\pi/6}\\bigl[4\\sin^2\\theta - 1\\bigr]\\,d\\theta.$$\nUsing $4\\sin^2\\theta = 2(1-\\cos 2\\theta)$:\n$$= \\frac{1}{2}\\int_{\\pi/6}^{5\\pi/6}\\bigl[1-2\\cos(2\\theta)\\bigr]\\,d\\theta = \\frac{1}{2}\\left[\\theta - \\sin(2\\theta)\\right]_{\\pi/6}^{5\\pi/6}.$$\n$$= \\frac{1}{2}\\Bigl[\\bigl(\\tfrac{5\\pi}{6}+\\tfrac{\\sqrt{3}}{2}\\bigr) - \\bigl(\\tfrac{\\pi}{6}-\\tfrac{\\sqrt{3}}{2}\\bigr)\\Bigr] = \\frac{1}{2}\\Bigl[\\frac{2\\pi}{3}+\\sqrt{3}\\Bigr] = \\boxed{\\frac{\\pi}{3}+\\frac{\\sqrt{3}}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_5",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region inside the circle $r = 6\\cos\\theta$ but outside the circle $r = 3$.",
+    "answer": "3\\pi + \\frac{9\\sqrt{3}}{2}",
+    "solution": "Intersections: $6\\cos\\theta = 3 \\Rightarrow \\cos\\theta = 1/2 \\Rightarrow \\theta = \\pm\\pi/3$. For $|\\theta| < \\pi/3$, $r=6\\cos\\theta > 3$.\n$$A = \\frac{1}{2}\\int_{-\\pi/3}^{\\pi/3}\\bigl[(6\\cos\\theta)^2 - 9\\bigr]\\,d\\theta = \\int_0^{\\pi/3}\\bigl[36\\cos^2\\theta - 9\\bigr]\\,d\\theta.$$\nUsing $36\\cos^2\\theta = 18(1+\\cos 2\\theta)$:\n$$= \\int_0^{\\pi/3}\\bigl[9+18\\cos(2\\theta)\\bigr]\\,d\\theta = \\Bigl[9\\theta + 9\\sin(2\\theta)\\Bigr]_0^{\\pi/3} = 3\\pi + 9\\sin\\tfrac{2\\pi}{3} = \\boxed{3\\pi + \\frac{9\\sqrt{3}}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_6",
+    "type": "multiple-choice",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Which of the following integrals represents the arc length of the polar curve $r = 2 + \\cos\\theta$, $0 \\leq \\theta \\leq 2\\pi$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{5 + 4\\cos\\theta}\\;d\\theta$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{4 + 4\\cos\\theta}\\;d\\theta$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{5 - 4\\cos\\theta}\\;d\\theta$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{5 + 4\\sin\\theta}\\;d\\theta$"
+      }
+    ],
+    "answer": "A",
+    "solution": "The polar arc length formula is $L = \\displaystyle\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\tfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$.\n\nHere $r = 2+\\cos\\theta$, $dr/d\\theta = -\\sin\\theta$.\n$$r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2 = (2+\\cos\\theta)^2+\\sin^2\\theta = 4+4\\cos\\theta+\\cos^2\\theta+\\sin^2\\theta = 5+4\\cos\\theta.$$\nSo $L = \\displaystyle\\int_0^{2\\pi}\\sqrt{5+4\\cos\\theta}\\;d\\theta$. Choice **A**.\n\n*Distractor notes:* B uses $4+4\\cos\\theta$ (forgot the $1$ from $\\sin^2\\theta+\\cos^2\\theta$). C has the wrong sign. D uses $\\sin\\theta$ instead of $\\cos\\theta$."
+  },
+  {
+    "id": "s9_4_gen_7",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the exact arc length of the polar curve $r = 4\\cos\\theta$, $\\;0 \\leq \\theta \\leq \\pi$.",
+    "answer": "4\\pi",
+    "solution": "Here $dr/d\\theta = -4\\sin\\theta$.\n$$r^2+\\left(\\frac{dr}{d\\theta}\\right)^2 = 16\\cos^2\\theta+16\\sin^2\\theta = 16.$$\n$$L = \\int_0^{\\pi}\\sqrt{16}\\;d\\theta = 4\\int_0^{\\pi}d\\theta = \\boxed{4\\pi}.$$\n\nThis makes sense: $r=4\\cos\\theta$ is a circle of radius $2$ (diameter $4$), and its full circumference is $2\\pi(2)=4\\pi$. The interval $0$ to $\\pi$ traces it exactly once."
+  },
+  {
+    "id": "s9_4_gen_8",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the exact arc length of the polar curve $r = 3e^{\\theta}$, $\\;0 \\leq \\theta \\leq 2\\pi$.",
+    "answer": "3\\sqrt{2}(e^{2\\pi} - 1)",
+    "solution": "Here $dr/d\\theta = 3e^{\\theta}$.\n$$r^2+\\left(\\frac{dr}{d\\theta}\\right)^2 = 9e^{2\\theta}+9e^{2\\theta} = 18e^{2\\theta}.$$\n$$L = \\int_0^{2\\pi}\\sqrt{18e^{2\\theta}}\\,d\\theta = 3\\sqrt{2}\\int_0^{2\\pi}e^{\\theta}\\,d\\theta = 3\\sqrt{2}\\bigl[e^{\\theta}\\bigr]_0^{2\\pi} = \\boxed{3\\sqrt{2}(e^{2\\pi}-1)}.$$"
+  },
+  {
+    "id": "s9_4_gen_9",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area inside one leaf of the six-petaled rose $r = 4\\cos(3\\theta)$.",
+    "answer": "\\frac{4\\pi}{3}",
+    "solution": "One petal spans $-\\pi/6 \\leq \\theta \\leq \\pi/6$ (where $\\cos(3\\theta) \\geq 0$).\n$$A = \\frac{1}{2}\\int_{-\\pi/6}^{\\pi/6} 16\\cos^2(3\\theta)\\,d\\theta = 16\\int_0^{\\pi/6}\\cos^2(3\\theta)\\,d\\theta = 8\\int_0^{\\pi/6}(1+\\cos(6\\theta))\\,d\\theta.$$\n$$= 8\\left[\\theta + \\frac{\\sin(6\\theta)}{6}\\right]_0^{\\pi/6} = 8\\left[\\frac{\\pi}{6}+\\frac{\\sin\\pi}{6}\\right] = 8\\cdot\\frac{\\pi}{6} = \\boxed{\\frac{4\\pi}{3}}.$$"
+  },
+  {
+    "id": "s9_4_gen_10",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region that lies inside **both** curves $r = 4\\sin\\theta$ and $r = 4\\cos\\theta$.",
+    "answer": "2\\pi - 4",
+    "solution": "The two circles intersect where $4\\sin\\theta = 4\\cos\\theta$, i.e., $\\theta = \\pi/4$ (and at the origin). For $0 \\leq \\theta \\leq \\pi/4$, the inner boundary is $r=4\\sin\\theta$; for $\\pi/4 \\leq \\theta \\leq \\pi/2$, the inner boundary is $r=4\\cos\\theta$.\n\nBy the symmetry of $\\sin$ and $\\cos$ about $\\pi/4$, both pieces contribute equally:\n$$A = 2\\cdot\\frac{1}{2}\\int_0^{\\pi/4}(4\\sin\\theta)^2\\,d\\theta = 16\\int_0^{\\pi/4}\\sin^2\\theta\\,d\\theta = 8\\int_0^{\\pi/4}(1-\\cos(2\\theta))\\,d\\theta.$$\n$$= 8\\left[\\theta - \\frac{\\sin(2\\theta)}{2}\\right]_0^{\\pi/4} = 8\\left[\\frac{\\pi}{4}-\\frac{1}{2}\\right] = \\boxed{2\\pi - 4}.$$\n\n**Geometric check:** Each circle has radius $2$; two unit-radius circles with centers distance $2\\sqrt{2}$ apart... actually radius $2$ and center distance $2\\sqrt{2}/\\sqrt{2}=2$... the intersection area by the lens formula is $2r^2\\cos^{-1}\\!\\bigl(\\tfrac{d}{2r}\\bigr) - \\tfrac{d}{2}\\sqrt{4r^2-d^2} = 8(\\pi/4)-(\\sqrt{2})(2\\sqrt{2}) = 2\\pi-4$. ✓"
+  },
+  {
+    "id": "s9_4_gen_11",
+    "type": "free-response",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region that lies inside the circle $r = 4$ but outside the cardioid $r = 2 + 2\\cos\\theta$.",
+    "answer": "10\\pi",
+    "solution": "The cardioid satisfies $r = 2+2\\cos\\theta \\leq 4$ for all $\\theta$ (maximum at $\\theta=0$: $r=4$). So the cardioid lies entirely within or on the circle.\n\n$$A = \\underbrace{\\frac{1}{2}\\int_0^{2\\pi}16\\,d\\theta}_{\\text{circle}} - \\underbrace{\\frac{1}{2}\\int_0^{2\\pi}(2+2\\cos\\theta)^2\\,d\\theta}_{\\text{cardioid}}.$$\n\n**Circle area:** $\\frac{1}{2}\\cdot 16\\cdot 2\\pi = 16\\pi$.\n\n**Cardioid area:** $\\frac{1}{2}\\int_0^{2\\pi}4(1+\\cos\\theta)^2\\,d\\theta = 2(2\\pi+0+\\pi) = 6\\pi$.\n\n$$A = 16\\pi - 6\\pi = \\boxed{10\\pi}.$$"
+  },
+  {
+    "id": "s9_4_gen_12",
+    "type": "multiple-choice",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "Which of the following integrals gives the area of **one petal** of the rose $r = 3\\sin(2\\theta)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{2}\\displaystyle\\int_0^{\\pi/2} 9\\sin^2(2\\theta)\\;d\\theta$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{2}\\displaystyle\\int_0^{\\pi} 9\\sin^2(2\\theta)\\;d\\theta$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{\\pi/2} 9\\sin^2(2\\theta)\\;d\\theta$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2}\\displaystyle\\int_0^{\\pi/2} 9\\sin(2\\theta)\\;d\\theta$"
+      }
+    ],
+    "answer": "A",
+    "solution": "One petal of $r=3\\sin(2\\theta)$ spans $0 \\leq \\theta \\leq \\pi/2$ (where $\\sin(2\\theta) \\geq 0$ and traces one complete lobe). Applying the formula $A = \\frac{1}{2}\\int r^2\\,d\\theta$:\n$$A = \\frac{1}{2}\\int_0^{\\pi/2}9\\sin^2(2\\theta)\\,d\\theta = \\frac{9}{8}\\pi.$$\nChoice **A**.\n\n*Distractor notes:* B integrates over $[0,\\pi]$, which covers two petals (since $r$ is negative for $\\pi/2 < \\theta < \\pi$, tracing a second petal). C is missing the $\\frac{1}{2}$ factor. D forgot to square $r$."
+  },
+  {
+    "id": "s9_4_gen_13",
+    "type": "select-all",
+    "section": "§9.4 Areas and Lengths in Polar Coordinates",
+    "text": "**Select all** statements about polar area and arc length that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The area enclosed by a polar curve $r = f(\\theta)$, $\\alpha \\leq \\theta \\leq \\beta$, is $A = \\dfrac{1}{2}\\displaystyle\\int_\\alpha^\\beta [f(\\theta)]^2\\,d\\theta$."
+      },
+      {
+        "label": "B",
+        "text": "The arc length of a polar curve is $L = \\displaystyle\\int_\\alpha^\\beta \\sqrt{r^2 + \\left(\\dfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$."
+      },
+      {
+        "label": "C",
+        "text": "The area of the region inside $r = f(\\theta)$ and outside $r = g(\\theta)$ (where $f > g \\geq 0$) is $\\dfrac{1}{2}\\displaystyle\\int_\\alpha^\\beta\\bigl[g^2 - f^2\\bigr]\\,d\\theta$."
+      },
+      {
+        "label": "D",
+        "text": "For the constant curve $r = a$, the arc length formula gives $L = a(\\beta - \\alpha)$, the arc length of a circular arc."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A: TRUE. ✓** This is the standard polar area formula.\n\n**B: TRUE. ✓** This follows from the parametric arc length formula applied to $x = r\\cos\\theta$, $y = r\\sin\\theta$.\n\n**C: FALSE. ✗** The correct formula subtracts the *smaller* from the *larger*: $\\frac{1}{2}\\int[f^2 - g^2]\\,d\\theta$, not $[g^2-f^2]$. The given expression would yield a negative area.\n\n**D: TRUE. ✓** For $r = a$ (constant), $dr/d\\theta = 0$, so $\\sqrt{r^2+(dr/d\\theta)^2} = a$. Then $L = \\int_\\alpha^\\beta a\\,d\\theta = a(\\beta-\\alpha)$, which is the standard arc length of a circular arc of radius $a$.\n\nCorrect selections: **A, B, D**."
   }
 ]
