@@ -15,6 +15,7 @@ import styles from './page.module.css'
 
 interface AnswerRecord {
     correct: boolean
+    credit: number
     selected?: string | string[]
 }
 
@@ -48,21 +49,34 @@ function TestContent() {
     const attempts = Number(searchParams.get('a'))
     const isRandom = searchParams.get('random') === 'true'
     const randomCount = Number(searchParams.get('count'))
+    const prioritySections = useMemo(() =>
+        searchParams.get('priority')?.split(',').filter(Boolean) ?? []
+        , [searchParams])
+    const weightPct = Number(searchParams.get('wpct') ?? 0)
 
     const [allQuestions, setAllQuestions] = useState<Question[] | null>(null)
 
     useEffect(() => {
         const timer = setTimeout(() => {
             const filtered = questionBank.filter((q) => sections.includes(q.section))
+            const weighted = prioritySections.length > 0 && weightPct > 0
 
             if (isRandom) {
-                setAllQuestions(shuffle(filtered).slice(0, randomCount))
+                setAllQuestions(weighted
+                    ? weightedSelect(filtered, randomCount, prioritySections, weightPct)
+                    : shuffle(filtered).slice(0, randomCount))
                 return
             }
 
-            const mc = shuffle(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice')).slice(0, mcCount)
-            const sa = shuffle(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all')).slice(0, saCount)
-            const fr = shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
+            const mc = weighted
+                ? weightedSelect(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice'), mcCount, prioritySections, weightPct)
+                : shuffle(filtered.filter((q): q is MultipleChoiceQuestionType => q.type === 'multiple-choice')).slice(0, mcCount)
+            const sa = weighted
+                ? weightedSelect(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all'), saCount, prioritySections, weightPct)
+                : shuffle(filtered.filter((q): q is SelectAllQuestionType => q.type === 'select-all')).slice(0, saCount)
+            const fr = weighted
+                ? weightedSelect(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response'), frCount, prioritySections, weightPct)
+                : shuffle(filtered.filter((q): q is FreeResponseQuestionType => q.type === 'free-response')).slice(0, frCount)
 
             setAllQuestions(shuffle([...mc, ...sa, ...fr]))
         }, 0)
@@ -80,8 +94,8 @@ function TestContent() {
     const [frInputs, setFrInputs] = useState<Map<number, string>>(new Map())
     const isLocked = lockedQuestions.has(currentIndex)
 
-    const markAnswered = (index: number, correct: boolean, selected?: string | string[]) => {
-        setAnswered(prev => new Map(prev).set(index, { correct, selected }))
+    const markAnswered = (index: number, correct: boolean, selected?: string | string[], credit?: number) => {
+        setAnswered(prev => new Map(prev).set(index, { correct, credit: credit ?? (correct ? 1 : 0), selected }))
     }
 
     const gradeFrAndSubmit = useCallback(() => {
@@ -92,8 +106,8 @@ function TestContent() {
                 if (lockedQuestions.has(i)) continue
                 const q = allQuestions[i]
                 if (q.type !== 'free-response') continue
-                const correct = input.trim() ? checkAnswer(input, q.answer, q.variables ?? ['x', 'C']) : false
-                next.set(i, { correct, selected: input })
+                const { correct, credit } = input.trim() ? checkAnswer(input, q.answer, q.variables ?? ['x', 'C']) : { correct: false, credit: 0 }
+                next.set(i, { correct, credit, selected: input })
             }
             return next
         })
@@ -147,11 +161,13 @@ function TestContent() {
     const current = allQuestions[currentIndex]
 
     if (submitted) {
-        const correct = [...answered.values()].filter(v => v.correct).length
+        const totalCredit = [...answered.values()].reduce((sum, v) => sum + v.credit, 0)
         const total = allQuestions.length
-        const score = Math.round((correct / total) * 100)
+        const score = Math.round((totalCredit / total) * 100)
         const currentQ = allQuestions[currentIndex]
         const isFullReview = attemptCount <= 0 || score === 100
+        const fullyCorrect = [...answered.values()].filter(v => v.correct).length
+        const partial = [...answered.values()].filter(v => !v.correct && v.credit > 0).length
 
         return (
             <div className="container">
@@ -162,16 +178,20 @@ function TestContent() {
                         {score}%
                     </p>
                     <p style={{ color: 'var(--text-dim)', marginTop: '4px' }}>
-                        {correct} correct, {total - correct} incorrect out of {total} questions
+                        {+totalCredit.toFixed(1)} / {total} points
+                        {partial > 0 && ` (${fullyCorrect} full, ${partial} partial)`}
                     </p>
                 </div>
                 <div className={styles.grid} style={{ marginBottom: '28px' }}>
                     {allQuestions.map((_, i) => {
                         const record = answered.get(i)
+                        const creditClass = record?.correct ? styles.gridBtnCorrect
+                            : (record && record.credit > 0) ? styles.gridBtnPartial
+                            : styles.gridBtnWrong
                         return (
                             <button
                                 key={i}
-                                className={`${styles.gridBtn} ${record?.correct ? styles.gridBtnCorrect : styles.gridBtnWrong} ${i === currentIndex ? styles.gridBtnCurrent : ''}`}
+                                className={`${styles.gridBtn} ${creditClass} ${i === currentIndex ? styles.gridBtnCurrent : ''}`}
                                 onClick={() => setCurrentIndex(i)}
                             >
                                 {i + 1}
@@ -179,42 +199,46 @@ function TestContent() {
                         )
                     })}
                 </div>
-                {currentQ.type === 'multiple-choice' ? (
-                    <MultipleChoiceQuestion
-                        key={currentQ.id}
-                        question={currentQ}
-                        number={currentIndex + 1}
-                        onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
-                        reviewMode={true}
-                        showCorrect={isFullReview}
-                        showSolution={isFullReview}
-                        selectedAnswer={answered.get(currentIndex)?.selected as string | undefined}
-                        wasCorrect={answered.get(currentIndex)?.correct ?? false}
-                    />
-                ) : currentQ.type === 'select-all' ? (
-                    <SelectAllQuestion
-                        key={currentQ.id}
-                        question={currentQ}
-                        number={currentIndex + 1}
-                        onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
-                        reviewMode={true}
-                        showCorrect={isFullReview}
-                        showSolution={isFullReview}
-                        selectedAnswers={answered.get(currentIndex)?.selected as string[] | undefined}
-                        wasCorrect={answered.get(currentIndex)?.correct ?? false}
-                    />
-                ) : (
-                    <FreeResponseQuestion
-                        key={currentQ.id}
-                        question={currentQ}
-                        number={currentIndex + 1}
-                        onInput={() => { }}
-                        reviewMode={true}
-                        showSolution={isFullReview}
-                        savedInput={answered.get(currentIndex)?.selected as string | undefined}
-                        wasCorrect={answered.get(currentIndex)?.correct ?? false}
-                    />
-                )}
+                {(() => {
+                    const rec = answered.get(currentIndex)
+                    const wasCorrect = rec?.correct === true ? true : (rec?.credit ?? 0) > 0 ? undefined : false
+                    return currentQ.type === 'multiple-choice' ? (
+                        <MultipleChoiceQuestion
+                            key={currentQ.id}
+                            question={currentQ}
+                            number={currentIndex + 1}
+                            onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
+                            reviewMode={true}
+                            showCorrect={isFullReview}
+                            showSolution={isFullReview}
+                            selectedAnswer={rec?.selected as string | undefined}
+                            wasCorrect={wasCorrect}
+                        />
+                    ) : currentQ.type === 'select-all' ? (
+                        <SelectAllQuestion
+                            key={currentQ.id}
+                            question={currentQ}
+                            number={currentIndex + 1}
+                            onAnswered={(correct, selected, credit) => markAnswered(currentIndex, correct, selected, credit)}
+                            reviewMode={true}
+                            showCorrect={isFullReview}
+                            showSolution={isFullReview}
+                            selectedAnswers={rec?.selected as string[] | undefined}
+                            wasCorrect={wasCorrect}
+                        />
+                    ) : (
+                        <FreeResponseQuestion
+                            key={currentQ.id}
+                            question={currentQ}
+                            number={currentIndex + 1}
+                            onInput={() => { }}
+                            reviewMode={true}
+                            showSolution={isFullReview}
+                            savedInput={rec?.selected as string | undefined}
+                            wasCorrect={wasCorrect}
+                        />
+                    )
+                })()}
                 {!isFullReview ? (
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '24px' }}>
                         <button className={styles.btn} onClick={() => router.push('/')}>
@@ -283,7 +307,7 @@ function TestContent() {
                     key={current.id}
                     question={current}
                     number={currentIndex + 1}
-                    onAnswered={(correct, selected) => markAnswered(currentIndex, correct, selected)}
+                    onAnswered={(correct, selected, credit) => markAnswered(currentIndex, correct, selected, credit)}
                     selectedAnswers={answered.get(currentIndex)?.selected as string[] | undefined}
                     showCorrect={isLocked}
                     reviewMode={isLocked}
@@ -316,6 +340,23 @@ function TestContent() {
             </div>
         </div>
     )
+}
+
+function weightedSelect<T extends { section: string }>(pool: T[], count: number, priority: string[], pct: number): T[] {
+    if (count === 0) return []
+    const priorityPool = shuffle(pool.filter(q => priority.includes(q.section)))
+    const restPool = shuffle(pool.filter(q => !priority.includes(q.section)))
+    if (priorityPool.length === 0 || restPool.length === 0) return shuffle(pool).slice(0, count)
+
+    const wantPriority = Math.round(count * pct / 100)
+    const fromPriority = priorityPool.slice(0, Math.min(wantPriority, priorityPool.length))
+    const fromRest = restPool.slice(0, Math.min(count - fromPriority.length, restPool.length))
+    const taken = fromPriority.length + fromRest.length
+    const overflow = shuffle([
+        ...priorityPool.slice(fromPriority.length),
+        ...restPool.slice(fromRest.length),
+    ]).slice(0, count - taken)
+    return shuffle([...fromPriority, ...fromRest, ...overflow])
 }
 
 function shuffle<T>(array: T[]): T[] {

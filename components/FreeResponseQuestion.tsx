@@ -137,7 +137,7 @@ function checkSingle(input: string, expected: string): boolean {
     return false;
 }
 
-export function checkAnswer(input: string, expected: string | FreeResponseAnswer[], variables: string[]): boolean {
+export function checkAnswer(input: string, expected: string | FreeResponseAnswer[], variables: string[]): { correct: boolean; credit: number } {
     void variables
     try {
         if (Array.isArray(expected)) {
@@ -145,17 +145,21 @@ export function checkAnswer(input: string, expected: string | FreeResponseAnswer
             try {
                 inputs = JSON.parse(input)
             } catch {
-                return false
+                return { correct: false, credit: 0 }
             }
-            return expected.every((field, i) => {
+            const results = expected.map((field, i) => {
                 const userInput = inputs[i] ?? ''
                 if (!userInput.trim()) return false
                 return checkSingle(userInput, field.value)
             })
+            const correctCount = results.filter(Boolean).length
+            const credit = correctCount / expected.length
+            return { correct: credit === 1, credit }
         }
-        return checkSingle(input, expected)
+        const correct = checkSingle(input, expected)
+        return { correct, credit: correct ? 1 : 0 }
     } catch {
-        return false
+        return { correct: false, credit: 0 }
     }
 }
 
@@ -307,6 +311,34 @@ export default function FreeResponseQuestion({ question, number, onInput, review
                 <MathText text={question.text} />
             </div>
 
+            {reviewMode && isMulti && savedInput && showSolution && (() => {
+                let inputs: string[] = []
+                try { inputs = JSON.parse(savedInput) } catch { /* empty */ }
+                return (
+                    <div className={styles.inputArea}>
+                        <div className={styles.savedAnswer}>
+                            <span className={styles.previewLabel}>Your answer:</span>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                {(question.answer as FreeResponseAnswer[]).map((field, i) => {
+                                    const val = inputs[i] ?? ''
+                                    const correct = val.trim() ? checkSingle(val, field.value) : null
+                                    const color = correct === true ? 'var(--green)' : correct === false ? 'var(--red)' : undefined
+                                    return (
+                                        <div key={i} style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                            <span style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '0.85rem', color: 'var(--text-dim)', minWidth: '80px' }}>
+                                                {field.label}
+                                            </span>
+                                            <span style={{ color }}>
+                                                <MathText text={`$$${val}$$`} />
+                                            </span>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                )
+            })()}
             {!reviewMode ? (
                 <div className={styles.inputArea}>
                     {isMulti ? (
@@ -325,7 +357,7 @@ export default function FreeResponseQuestion({ question, number, onInput, review
                     )}
                 </div>
             ) : (
-                savedInput && (
+                savedInput && !(isMulti && showSolution) && (
                     <div className={styles.inputArea}>
                         <div className={styles.savedAnswer}>
                             <span className={styles.previewLabel}>Your answer:</span>

@@ -43,6 +43,16 @@ export default function HomeForm() {
     const v = localStorage.getItem('byparts-randomcount'); return v ? Math.max(1, Number(v)) : 10
   })
 
+  const [useWeights, setUseWeights] = useState(() => {
+    return localStorage.getItem('byparts-useweights') === 'true'
+  })
+  const [prioritySections, setPrioritySections] = useState<string[]>(() => {
+    try { const s = localStorage.getItem('byparts-priority'); return s ? JSON.parse(s) : [] } catch { return [] }
+  })
+  const [weightPct, setWeightPct] = useState(() => {
+    const v = localStorage.getItem('byparts-wpct'); return v ? Math.min(100, Math.max(1, Number(v))) : 50
+  })
+
   const [sectionSearch, setSectionSearch] = useState('')
 
   const skipFirstSave = useRef(true)
@@ -57,7 +67,10 @@ export default function HomeForm() {
     localStorage.setItem('byparts-fr', String(frCount))
     localStorage.setItem('byparts-attempts', String(attempts))
     localStorage.setItem('byparts-randomcount', String(randomCount))
-  }, [course, selectedSections, randomTest, timeLimit, mcCount, saCount, frCount, attempts, randomCount])
+    localStorage.setItem('byparts-useweights', String(useWeights))
+    localStorage.setItem('byparts-priority', JSON.stringify(prioritySections))
+    localStorage.setItem('byparts-wpct', String(weightPct))
+  }, [course, selectedSections, randomTest, timeLimit, mcCount, saCount, frCount, attempts, randomCount, useWeights, prioritySections, weightPct])
 
   const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newCourse = e.target.value
@@ -69,7 +82,23 @@ export default function HomeForm() {
     )
 
     setSelectedSections(newSections)
+    setPrioritySections([])
     setSectionSearch('')
+  }
+
+  const toggleSection = (section: string) => {
+    if (selectedSections.includes(section)) {
+      setSelectedSections(selectedSections.filter(s => s !== section))
+      setPrioritySections(prev => prev.filter(s => s !== section))
+    } else {
+      setSelectedSections([...selectedSections, section])
+    }
+  }
+
+  const togglePriority = (section: string) => {
+    setPrioritySections(prev =>
+      prev.includes(section) ? prev.filter(s => s !== section) : [...prev, section]
+    )
   }
 
   const handleStart = () => {
@@ -87,8 +116,16 @@ export default function HomeForm() {
       params.set('sa', String(saCount))
       params.set('fr', String(frCount))
     }
+    const effectivePriority = prioritySections.filter(s => selectedSections.includes(s))
+    if (useWeights && effectivePriority.length > 0 && effectivePriority.length < selectedSections.length) {
+      params.set('priority', effectivePriority.join(','))
+      params.set('wpct', String(weightPct))
+    }
     router.push(`/test?${params.toString()}`)
   }
+
+  const filteredSections = sections.filter(s => s.toLowerCase().includes(sectionSearch.toLowerCase()))
+  const activePriorityCount = prioritySections.filter(s => selectedSections.includes(s)).length
 
   return (
     <div className={styles.config}>
@@ -116,41 +153,95 @@ export default function HomeForm() {
             onChange={(e) => setSectionSearch(e.target.value)}
           />
           <div className={styles.sectionList}>
-            {sections
-              .filter(s => s.toLowerCase().includes(sectionSearch.toLowerCase()))
-              .map((section) => (
-                <button
-                  key={section}
-                  className={`${styles.sectionBtn} ${selectedSections.includes(section) ? styles.sectionBtnActive : ''}`}
-                  style={{ borderRadius: 0, border: 'none', borderBottom: '1px solid var(--border)', textAlign: 'left' }}
-                  onClick={() => {
-                    if (selectedSections.includes(section)) {
-                      setSelectedSections(selectedSections.filter((s) => s !== section))
-                    } else {
-                      setSelectedSections([...selectedSections, section])
-                    }
-                  }}
-                >
-                  {section}
-                </button>
-              ))}
+            {filteredSections.map((section) => {
+              const isSelected = selectedSections.includes(section)
+              const isPriority = prioritySections.includes(section)
+              return (
+                <div key={section} style={{ display: 'flex', borderBottom: '1px solid var(--border)' }}>
+                  <button
+                    className={`${styles.sectionBtn} ${isSelected ? styles.sectionBtnActive : ''}`}
+                    style={{ flex: 1, borderRadius: 0, border: 'none', textAlign: 'left' }}
+                    onClick={() => toggleSection(section)}
+                  >
+                    {section}
+                  </button>
+                  {useWeights && isSelected && (
+                    <button
+                      className={`${styles.priorityBtn} ${isPriority ? styles.priorityBtnActive : ''}`}
+                      onClick={() => togglePriority(section)}
+                      title="Mark as priority"
+                    >
+                      ★
+                    </button>
+                  )}
+                </div>
+              )
+            })}
           </div>
           <div style={{ display: 'flex', gap: '8px' }}>
             <button
               className={styles.sectionBtn}
-              onClick={() => setSelectedSections(sections.filter(s => s.toLowerCase().includes(sectionSearch.toLowerCase())))}
+              onClick={() => setSelectedSections(filteredSections)}
             >
               Select All
             </button>
             <button
               className={styles.sectionBtn}
-              onClick={() => setSelectedSections([])}
+              onClick={() => {
+                setSelectedSections([])
+                setPrioritySections([])
+              }}
             >
               Clear
             </button>
           </div>
         </div>
       </div>
+
+      <div className={styles.configRow} style={{ flexDirection: 'row', alignItems: 'center', gap: '12px' }}>
+        <span className={styles.label}>Weight Sections</span>
+        <div
+          className={`${styles.checkbox} ${useWeights ? styles.checkboxChecked : ''}`}
+          onClick={() => setUseWeights(!useWeights)}
+        >
+          <svg
+            className={`${styles.checkmark} ${useWeights ? styles.checkmarkVisible : ''}`}
+            viewBox="0 0 10 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="1.5,5 4,7.5 8.5,2"
+              stroke="var(--bg)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {useWeights && (
+        <div className={styles.configRow}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <input
+              className={styles.input}
+              type="number"
+              min="1"
+              max="99"
+              value={weightPct}
+              onChange={(e) => setWeightPct(Math.min(99, Math.max(1, Number(e.target.value))))}
+              style={{ width: '72px' }}
+            />
+            <span className={styles.label} style={{ textTransform: 'none', letterSpacing: 0 }}>
+              % from ★ sections
+              {activePriorityCount > 0
+                ? ` (${activePriorityCount} starred)`
+                : ' - star sections above'}
+            </span>
+          </div>
+        </div>
+      )}
 
       <div className={styles.configRow} style={{ flexDirection: 'row', alignItems: 'center', gap: '12px' }}>
         <span className={styles.label}>Randomize Question Type Amounts</span>

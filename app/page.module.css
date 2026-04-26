@@ -56,6 +56,29 @@
     color: var(--accent);
 }
 
+.priorityBtn {
+    font-family: var(--font-mono), monospace;
+    font-size: 11px;
+    padding: 0 10px;
+    border: none;
+    border-left: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-faint);
+    cursor: pointer;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+
+@media (hover: hover) {
+    .priorityBtn:hover {
+        color: var(--accent);
+    }
+}
+
+.priorityBtnActive {
+    color: var(--accent);
+}
+
 .input {
     font-family: var(--font-mono), monospace;
     font-size: 14px;

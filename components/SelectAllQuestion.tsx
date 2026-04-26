@@ -8,7 +8,7 @@ import styles from './SelectAllQuestion.module.css'
 interface SelectAllQuestionProps {
     question: SelectAllQuestionType
     number: number
-    onAnswered: (correct: boolean, selected: string[]) => void
+    onAnswered: (correct: boolean, selected: string[], credit: number) => void
     reviewMode?: boolean
     selectedAnswers?: string[]
     showCorrect?: boolean
@@ -31,7 +31,10 @@ export default function SelectAllQuestion({ question, number, onAnswered, review
         setSelected(next)
         const arr = [...next].sort()
         const correct = arr.length === sortedAnswers.length && arr.every((v, i) => v === sortedAnswers[i])
-        onAnswered(correct, arr)
+        const correctlySelected = arr.filter(v => sortedAnswers.includes(v)).length
+        const incorrectlySelected = arr.length - correctlySelected
+        const credit = arr.length === 0 ? 0 : Math.max(0, (correctlySelected - incorrectlySelected) / sortedAnswers.length)
+        onAnswered(correct, arr, credit)
     }
 
     return (
