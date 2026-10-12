@@ -2,62 +2,81 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { questions265, questions266 } from '@/data/questions'
+import { courses, getCourse, getSections } from '@/data/questions'
 import styles from '../app/page.module.css'
 
 export default function HomeForm() {
   const router = useRouter()
 
   const [course, setCourse] = useState(() => {
-    const v = localStorage.getItem('byparts-course'); return v ? v : '265'
+    const v = localStorage.getItem('byparts-course')
+    return getCourse(v).id
   })
 
-  const activeBank = course === '266' ? questions266 : questions265
-  const sections = [...new Set(activeBank.map((q) => q.section))].sort((a, b) =>
-    a.localeCompare(b, undefined, { numeric: true })
-  )
+  const sections = getSections(course)
 
   const [selectedSections, setSelectedSections] = useState<string[]>(() => {
-    try { const s = localStorage.getItem('byparts-sections'); return s ? JSON.parse(s) : sections } catch { return sections }
+    try {
+      const s = localStorage.getItem('byparts-sections')
+      return s ? JSON.parse(s) : sections
+    }
+    catch {
+      return sections
+    }
   })
 
   const [randomTest, setRandomTest] = useState(() => {
-    const v = localStorage.getItem('byparts-random'); return v === 'true'
+    const v = localStorage.getItem('byparts-random')
+    return v === 'true'
   })
   const [timeLimit, setTimeLimit] = useState(() => {
-    const v = localStorage.getItem('byparts-time'); return v ? Math.max(1, Number(v)) : 60
+    const v = localStorage.getItem('byparts-time')
+    return v ? Math.max(1, Number(v)) : 60
   })
   const [mcCount, setMcCount] = useState(() => {
-    const v = localStorage.getItem('byparts-mc'); return v ? Math.max(0, Number(v)) : 5
+    const v = localStorage.getItem('byparts-mc')
+    return v ? Math.max(0, Number(v)) : 5
   })
   const [saCount, setSaCount] = useState(() => {
-    const v = localStorage.getItem('byparts-sa'); return v ? Math.max(0, Number(v)) : 3
+    const v = localStorage.getItem('byparts-sa')
+    return v ? Math.max(0, Number(v)) : 3
   })
   const [frCount, setFrCount] = useState(() => {
-    const v = localStorage.getItem('byparts-fr'); return v ? Math.max(0, Number(v)) : 3
+    const v = localStorage.getItem('byparts-fr')
+    return v ? Math.max(0, Number(v)) : 3
   })
   const [attempts, setAttempts] = useState(() => {
-    const v = localStorage.getItem('byparts-attempts'); return v ? Math.max(1, Number(v)) : 2
+    const v = localStorage.getItem('byparts-attempts')
+    return v ? Math.max(1, Number(v)) : 2
   })
   const [randomCount, setRandomCount] = useState(() => {
-    const v = localStorage.getItem('byparts-randomcount'); return v ? Math.max(1, Number(v)) : 10
+    const v = localStorage.getItem('byparts-randomcount')
+    return v ? Math.max(1, Number(v)) : 10
   })
 
   const [useWeights, setUseWeights] = useState(() => {
     return localStorage.getItem('byparts-useweights') === 'true'
   })
   const [prioritySections, setPrioritySections] = useState<string[]>(() => {
-    try { const s = localStorage.getItem('byparts-priority'); return s ? JSON.parse(s) : [] } catch { return [] }
+    try {
+      const s = localStorage.getItem('byparts-priority')
+      return s ? JSON.parse(s) : []
+    } catch { return [] }
   })
   const [weightPct, setWeightPct] = useState(() => {
-    const v = localStorage.getItem('byparts-wpct'); return v ? Math.min(100, Math.max(1, Number(v))) : 50
+    const v = localStorage.getItem('byparts-wpct')
+    return v ? Math.min(100, Math.max(1, Number(v))) : 50
   })
 
   const [sectionSearch, setSectionSearch] = useState('')
 
   const skipFirstSave = useRef(true)
   useEffect(() => {
-    if (skipFirstSave.current) { skipFirstSave.current = false; return }
+    if (skipFirstSave.current) {
+      skipFirstSave.current = false
+      return
+    }
+
     localStorage.setItem('byparts-course', course)
     localStorage.setItem('byparts-sections', JSON.stringify(selectedSections))
     localStorage.setItem('byparts-random', String(randomTest))
@@ -76,10 +95,7 @@ export default function HomeForm() {
     const newCourse = e.target.value
     setCourse(newCourse)
 
-    const newBank = newCourse === '266' ? questions266 : questions265
-    const newSections = [...new Set(newBank.map(q => q.section))].sort((a, b) =>
-      a.localeCompare(b, undefined, { numeric: true })
-    )
+    const newSections = getSections(newCourse)
 
     setSelectedSections(newSections)
     setPrioritySections([])
@@ -137,8 +153,11 @@ export default function HomeForm() {
           onChange={handleCourseChange}
           style={{ width: '100%', cursor: 'pointer' }}
         >
-          <option value="265">MAT 265 (Calculus for Engineers I)</option>
-          <option value="266">MAT 266 (Calculus for Engineers II)</option>
+          {courses.map((c) => (
+            <option key={c.id} value={c.id}>
+              {c.name}
+            </option>
+          ))}
         </select>
       </div>
 
