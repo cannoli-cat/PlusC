@@ -6,7 +6,8 @@ import type { MultipleChoiceQuestion as MultipleChoiceQuestionType, FreeResponse
 import { getCourse } from '@/data/questions'
 import MultipleChoiceQuestion from "@/components/MultipleChoiceQuestion"
 import SelectAllQuestion from "@/components/SelectAllQuestion"
-import FreeResponseQuestion, { checkAnswer } from "@/components/FreeResponseQuestion"
+import FreeResponseQuestion from "@/components/FreeResponseQuestion"
+import { checkAnswer } from '@/lib/checkAnswer'
 import Timer from "@/components/Timer"
 import Header from "@/components/Header"
 import { useRouter } from 'next/navigation'
