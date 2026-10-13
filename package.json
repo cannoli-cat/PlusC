@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check-questions": "tsx scripts/check-questions.ts"
   },
   "dependencies": {
     "@cortex-js/compute-engine": "^0.55.6",
