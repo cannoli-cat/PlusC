@@ -1,0 +1,260 @@
+[
+  {
+    "id": "s26515_gen_1",
+    "type": "multiple-choice",
+    "section": "§1.5. Continuity",
+    "text": "Let $f(x) = \\dfrac{x^2 - 9}{x - 3}$. Which statement best describes the behavior of $f$ at $x = 3$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f$ is continuous at $x = 3$ because $\\lim_{x \\to 3} f(x) = 6$."
+      },
+      {
+        "label": "B",
+        "text": "$f$ has a jump discontinuity at $x = 3$."
+      },
+      {
+        "label": "C",
+        "text": "$f$ has a removable discontinuity at $x = 3$; redefining $f(3) = 6$ makes it continuous."
+      },
+      {
+        "label": "D",
+        "text": "$f$ has an infinite discontinuity at $x = 3$."
+      }
+    ],
+    "answer": "C",
+    "solution": "**Step 1: Check whether $f(3)$ is defined.**\n\nThe function is $f(x) = \\dfrac{x^2 - 9}{x - 3}$. At $x = 3$, the denominator is $0$, so $f(3)$ is **undefined**.\n\n**Step 2: Compute the limit.**\n\n$$\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3} = \\lim_{x \\to 3} \\frac{(x-3)(x+3)}{x-3} = \\lim_{x \\to 3}(x+3) = 6.$$\n\n**Step 3: Classify the discontinuity.**\n\nThe limit exists (equals $6$), but $f(3)$ is undefined. This is a **removable discontinuity**. We can remove it by defining $f(3) = 6$.\n\nAnswer: **C**."
+  },
+  {
+    "id": "s26515_gen_2",
+    "type": "free-response",
+    "section": "§1.5. Continuity",
+    "text": "Find the value of the constant $k$ that makes the following function continuous everywhere:\n$$f(x) = \\begin{cases} kx + 2 & x \\leq 1 \\\\ 3x^2 - 1 & x > 1 \\end{cases}$$",
+    "answer": "0",
+    "solution": "**Step 1: For continuity at $x = 1$, the left-hand and right-hand limits must equal $f(1)$.**\n\nLeft-hand value (also $f(1)$): $k(1) + 2 = k + 2$.\n\nRight-hand limit: $\\lim_{x \\to 1^+}(3x^2 - 1) = 3(1)^2 - 1 = 2$.\n\n**Step 2: Set them equal.**\n\n$$k + 2 = 2 \\implies k = 0.$$\n\n**Step 3: Verify.**\n\nWith $k = 0$: $f(x) = 2$ for $x \\leq 1$ and $f(x) = 3x^2 - 1$ for $x > 1$. Both pieces meet at $f(1) = 2$ and $\\lim_{x\\to 1^+} f(x) = 2$. ✓\n\nThe polynomial pieces are each continuous on their respective domains, so $f$ is continuous everywhere.\n\n$$k = 0.$$"
+  },
+  {
+    "id": "s26515_gen_3",
+    "type": "multiple-choice",
+    "section": "§1.5. Continuity",
+    "text": "Classify the discontinuity of $g(x) = \\dfrac{1}{(x+2)^2}$ at $x = -2$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Removable discontinuity"
+      },
+      {
+        "label": "B",
+        "text": "Jump discontinuity"
+      },
+      {
+        "label": "C",
+        "text": "Infinite discontinuity"
+      },
+      {
+        "label": "D",
+        "text": "$g$ is continuous at $x = -2$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Step 1: Check $g(-2)$.**\n\n$g(-2) = \\dfrac{1}{0}$, which is undefined.\n\n**Step 2: Examine the limit.**\n\nAs $x \\to -2$, $(x+2)^2 \\to 0^+$, so $\\dfrac{1}{(x+2)^2} \\to +\\infty$.\n\nThe limit is $+\\infty$ (does not exist as a finite number).\n\n**Step 3: Classify.**\n\nBecause the function approaches infinity, this is an **infinite discontinuity**.\n\nAnswer: **C**."
+  },
+  {
+    "id": "s26515_gen_4",
+    "type": "multiple-choice",
+    "section": "§1.5. Continuity",
+    "text": "Use the Intermediate Value Theorem to determine which of the following statements guarantees that the equation $x^3 - x - 1 = 0$ has at least one real root in the interval $(1, 2)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f(1) = -1 < 0$ and $f(2) = 5 > 0$, and $f$ is continuous."
+      },
+      {
+        "label": "B",
+        "text": "$f(1) = 1 > 0$ and $f(2) = 5 > 0$, so the root is between them."
+      },
+      {
+        "label": "C",
+        "text": "$f'(1) = 2$ and $f'(2) = 11$, which means the function is increasing."
+      },
+      {
+        "label": "D",
+        "text": "$f(1) = -1$ and $f(2) = 1$, so the root must be at $x = 1.5$."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $f(x) = x^3 - x - 1$.\n\n**Step 1: Verify that $f$ is continuous.**\n$f$ is a polynomial, hence continuous everywhere, and in particular on $[1, 2]$.\n\n**Step 2: Evaluate at the endpoints.**\n$$f(1) = 1^3 - 1 - 1 = -1 < 0.$$\n$$f(2) = 2^3 - 2 - 1 = 8 - 3 = 5 > 0.$$\n\n**Step 3: Apply the IVT.**\nSince $f$ is continuous on $[1,2]$ and $f(1) = -1 < 0 < 5 = f(2)$, by the **Intermediate Value Theorem** there exists at least one $c \\in (1, 2)$ such that $f(c) = 0$."
+  },
+  {
+    "id": "s26515_gen_5",
+    "type": "select-all",
+    "section": "§1.5. Continuity",
+    "text": "Which of the following functions are continuous on all of $(-\\infty, \\infty)$? Select **all** that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f(x) = \\sin(x^2 + 1)$"
+      },
+      {
+        "label": "B",
+        "text": "$g(x) = \\dfrac{x}{x^2 + 1}$"
+      },
+      {
+        "label": "C",
+        "text": "$h(x) = \\tan(x)$"
+      },
+      {
+        "label": "D",
+        "text": "$p(x) = |x^2 - 4|$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A: $f(x) = \\sin(x^2 + 1)$.**\n$x^2 + 1$ is a polynomial (continuous everywhere) and $\\sin$ is continuous everywhere. A composition of continuous functions is continuous. ✓\n\n**B: $g(x) = \\dfrac{x}{x^2 + 1}$.**\nThe denominator $x^2 + 1 \\geq 1 > 0$ for all $x$, so it never equals zero. A rational function with nonzero denominator is continuous everywhere. ✓\n\n**C: $h(x) = \\tan(x)$.**\n$\\tan(x)$ is undefined at $x = \\dfrac{\\pi}{2} + n\\pi$ for integer $n$, so it is **not** continuous on all of $(-\\infty, \\infty)$. ✗\n\n**D: $p(x) = |x^2 - 4|$.**\n$x^2 - 4$ is a polynomial (continuous), and $|\\cdot|$ is continuous everywhere. Their composition is continuous everywhere. ✓\n\nAnswers: **A, B, D**."
+  },
+  {
+    "id": "s26515_gen_6",
+    "type": "multiple-choice",
+    "section": "§1.5. Continuity",
+    "text": "The function $f(x) = \\begin{cases} x^2 & x < 2 \\\\ 5 & x = 2 \\\\ 3x - 2 & x > 2 \\end{cases}$\n\nhas what type of discontinuity at $x = 2$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No discontinuity; $f$ is continuous at $x = 2$."
+      },
+      {
+        "label": "B",
+        "text": "Removable discontinuity"
+      },
+      {
+        "label": "C",
+        "text": "Jump discontinuity"
+      },
+      {
+        "label": "D",
+        "text": "Infinite discontinuity"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Step 1: Compute the left- and right-hand limits.**\n\n$$\\lim_{x \\to 2^-} x^2 = 4, \\qquad \\lim_{x \\to 2^+}(3x - 2) = 3(2) - 2 = 4.$$\n\nBoth one-sided limits equal $4$, so $\\lim_{x \\to 2} f(x) = 4$.\n\n**Step 2: Check $f(2)$.**\n\n$f(2) = 5 \\neq 4$.\n\n**Step 3: Classify.**\n\nThe two-sided limit exists but does **not** equal $f(2)$. This is a **removable discontinuity** (redefine $f(2) = 4$ to fix it).\n\nAnswer: **B**."
+  },
+  {
+    "id": "s26515_gen_7",
+    "type": "multiple-choice",
+    "section": "§1.5. Continuity",
+    "text": "Find all values of $x$ at which $f(x) = \\dfrac{x^2 - 5x + 6}{x^2 - 4}$ is discontinuous, and classify each discontinuity.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Removable at $x=2$, Infinite at $x=-2$"
+      },
+      {
+        "label": "B",
+        "text": "Infinite at $x=2$ and $x=-2$"
+      },
+      {
+        "label": "C",
+        "text": "Removable at $x=3$, Infinite at $x=2$"
+      },
+      {
+        "label": "D",
+        "text": "Removable at $x=2$ and $x=-2$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1: Factor numerator and denominator.**\n$$f(x) = \\frac{x^2 - 5x + 6}{x^2 - 4} = \\frac{(x-2)(x-3)}{(x-2)(x+2)}.$$\nThe denominator equals zero at $x = 2$ and $x = -2$, so $f$ is potentially discontinuous there.\n\n**Step 2: Analyze $x = 2$.**\nFor $x \\neq 2$: $f(x) = \\dfrac{x - 3}{x + 2}$.\n$$\\lim_{x \\to 2} f(x) = \\frac{2 - 3}{2 + 2} = \\frac{-1}{4}.$$\nThe limit exists but $f(2)$ is undefined. This is a **removable discontinuity** at $x = 2$.\n\n**Step 3: Analyze $x = -2$.**\n$$\\lim_{x \\to -2} \\frac{x-3}{x+2}: \\text{ numerator } \\to -5,\\ \\text{denominator } \\to 0.$$\nThe limit is $\\pm\\infty$. This is an **infinite discontinuity** at $x = -2$."
+  },
+  {
+    "id": "s26515_gen_8",
+    "type": "multiple-choice",
+    "section": "§1.5. Continuity",
+    "text": "Find the value of $c$ that makes\n$$h(x) = \\begin{cases} \\dfrac{\\sin(cx)}{x} & x \\neq 0 \\\\ 4 & x = 0 \\end{cases}$$\ncontinuous at $x = 0$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$c = 0$"
+      },
+      {
+        "label": "B",
+        "text": "$c = 2$"
+      },
+      {
+        "label": "C",
+        "text": "$c = 4$"
+      },
+      {
+        "label": "D",
+        "text": "$c = 1/4$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Step 1: Compute $\\lim_{x \\to 0} h(x)$.**\n\nUsing the standard limit $\\lim_{u \\to 0} \\dfrac{\\sin u}{u} = 1$:\n\n$$\\lim_{x \\to 0} \\frac{\\sin(cx)}{x} = \\lim_{x \\to 0} c \\cdot \\frac{\\sin(cx)}{cx} = c \\cdot 1 = c.$$\n\n**Step 2: Set the limit equal to $h(0)$.**\n\nFor continuity: $\\lim_{x \\to 0} h(x) = h(0)$, so $c = 4$.\n\n**Step 3: Verify.**\n\nWith $c = 4$: $\\lim_{x \\to 0} \\dfrac{\\sin(4x)}{x} = 4 = h(0)$. ✓\n\nAnswer: **C**."
+  },
+  {
+    "id": "s26515_gen_9_fix",
+    "type": "free-response",
+    "section": "§1.5. Continuity",
+    "text": "Find constants $a$ and $b$ so that\n$$f(x) = \\begin{cases} 2x + b & x < -1 \\\\ ax - 1 & -1 \\leq x \\leq 2 \\\\ 3x + b & x > 2 \\end{cases}$$\nis continuous everywhere.",
+    "answer": "a=8/3, b=-5/3",
+    "solution": "For $f$ to be continuous everywhere, we need continuity at the two breakpoints $x = -1$ and $x = 2$.\n\n**Condition at $x = -1$:**\n\n$$\\lim_{x \\to -1^-}(2x + b) = -2 + b, \\qquad f(-1) = a(-1) - 1 = -a - 1.$$\n\nSetting equal: $-2 + b = -a - 1 \\implies a + b = 1. $$\n\n**Condition at $x = 2$:**\n\n$$f(2) = 2a - 1, \\qquad \\lim_{x \\to 2^+}(3x + b) = 6 + b.$$\n\nSetting equal: $2a - 1 = 6 + b \\implies 2a - b = 7. $$\n\n**Solve the system:**\n\nAdding $(1)$ and $(2)$: $3a = 8 \\implies a = \\dfrac{8}{3}$.\n\nSubstitute into $(1)$: $b = 1 - \\dfrac{8}{3} = -\\dfrac{5}{3}$.\n\n**Verification:**\n\n- At $x=-1$: Left $= 2(-1) - \\tfrac{5}{3} = -\\tfrac{11}{3}$; Right $= \\tfrac{8}{3}(-1) - 1 = -\\tfrac{11}{3}$. ✓\n- At $x=2$: Middle $= \\tfrac{8}{3}(2) - 1 = \\tfrac{13}{3}$; Right $= 3(2) - \\tfrac{5}{3} = \\tfrac{13}{3}$. ✓\n\n$$a = \\frac{8}{3}, \\quad b = -\\frac{5}{3}.$$"
+  },
+  {
+    "id": "s26515_gen_10",
+    "type": "select-all",
+    "section": "§1.5. Continuity",
+    "text": "Let $f(x) = \\begin{cases} x^2 - 1 & x < 1 \\\\ 0 & x = 1 \\\\ 2 - x & x > 1 \\end{cases}$.\n\nWhich of the following statements are **true**? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\lim_{x \\to 1^-} f(x) = 0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\lim_{x \\to 1^+} f(x) = 1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\lim_{x \\to 1} f(x)$ does not exist."
+      },
+      {
+        "label": "D",
+        "text": "$f$ has a removable discontinuity at $x = 1$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**Compute one-sided limits:**\n\n$$\\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^-}(x^2 - 1) = 1 - 1 = 0.$$\n\n$$\\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1^+}(2 - x) = 2 - 1 = 1.$$\n\n**Check each statement:**\n\n- **A:** $\\lim_{x \\to 1^-} f(x) = 0$. ✓ **TRUE**\n\n- **B:** $\\lim_{x \\to 1^+} f(x) = 1$. **TRUE** ✓\n\nSince the one-sided limits exist but $0 \\neq 1$, the two-sided limit does not exist.\n\n- **C:** Since $0 \\neq 1$, $\\lim_{x \\to 1} f(x)$ does not exist. **TRUE** ✓\n- **D:** A removable discontinuity requires the two-sided limit to exist but differ from $f(a)$. Here the two-sided limit does not exist, so this is a **jump** discontinuity, not removable. **FALSE** ✗\n\nAnswers: **A, B, C**."
+  },
+  {
+    "id": "s26515_gen_11",
+    "type": "multiple-choice",
+    "section": "§1.5. Continuity",
+    "text": "Using the Intermediate Value Theorem, which of the following correctly concludes that $f(x) = x^5 - 4x + 1$ has a root in $(-2, 0)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f(-2) = -23 < 0$ and $f(0) = 1 > 0$, so by IVT there is a $c \\in (-2, 0)$ with $f(c) = 0$."
+      },
+      {
+        "label": "B",
+        "text": "$f(-2) = -23 < 0$ and $f(0) = 1 > 0$, but IVT does not apply because $f$ is a polynomial."
+      },
+      {
+        "label": "C",
+        "text": "$f(-2) = -23$ and $f(0) = 1$, so $f$ has exactly one root in $(-2, 0)$."
+      },
+      {
+        "label": "D",
+        "text": "$f(-2) = 23 > 0$ and $f(0) = 1 > 0$, so there is no root in $(-2, 0)$."
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1: Evaluate $f$ at the endpoints.**\n\n$$f(-2) = (-2)^5 - 4(-2) + 1 = -32 + 8 + 1 = -23 < 0.$$\n\n$$f(0) = 0 - 0 + 1 = 1 > 0.$$\n\n**Step 2: Check IVT conditions.**\n\n$f(x) = x^5 - 4x + 1$ is a polynomial, hence continuous on $[-2, 0]$. Since $f(-2) = -23 < 0 < 1 = f(0)$, the IVT guarantees at least one $c \\in (-2, 0)$ with $f(c) = 0$.\n\n**Step 3: Evaluate the choices.**\n\n- **A** correctly states $f(-2) = -23 < 0$ and $f(0) = 1 > 0$, and correctly applies IVT. ✓\n- **B** is wrong: IVT *does* apply to polynomials (they're continuous).\n- **C** is wrong: IVT guarantees *at least one* root, not exactly one.\n- **D** is wrong: $f(-2) = -23$, not $23$.\n\nAnswer: **A**."
+  }
+]

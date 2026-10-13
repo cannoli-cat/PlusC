@@ -1,0 +1,295 @@
+[
+  {
+    "id": "s9_3_gen_1",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Convert from rectangular to polar coordinates. Choose $r \\geq 0$ and $0 \\leq \\theta < 2\\pi$.\n\n(a) $(3,\\,0)$\n(b) $(-1,\\,1)$\n(c) $(0,\\,-5)$\n(d) $(2,\\,-2\\sqrt{3})$",
+    "answer": [
+      {
+        "label": "(a):",
+        "value": "(3, 0)"
+      },
+      {
+        "label": "(b):",
+        "value": "(\\sqrt{2}, \\frac{3\\pi}{4})"
+      },
+      {
+        "label": "(c):",
+        "value": "(5, \\frac{3\\pi}{2})"
+      },
+      {
+        "label": "(d):",
+        "value": "(4, \\frac{5\\pi}{3})"
+      }
+    ],
+    "solution": "Use $r = \\sqrt{x^2+y^2}$ and $\\theta = \\operatorname{atan2}(y,x)$ adjusted to $[0,2\\pi)$.\n\n**(a)** $r=3$, $\\theta=0$.\n\n**(b)** $r=\\sqrt{1+1}=\\sqrt{2}$. The point $(-1,1)$ is in QII, so $\\theta = \\pi - \\pi/4 = 3\\pi/4$.\n\n**(c)** $r=5$. On the negative $y$-axis, $\\theta = 3\\pi/2$.\n\n**(d)** $r=\\sqrt{4+12}=4$. Point $(2,-2\\sqrt{3})$ is in QIV; $\\tan\\theta = -2\\sqrt{3}/2 = -\\sqrt{3}$, so $\\theta = 2\\pi - \\pi/3 = 5\\pi/3$."
+  },
+  {
+    "id": "s9_3_gen_2",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Convert from polar to rectangular coordinates.\n\n(a) $(4,\\,\\pi)$\n(b) $(3,\\,\\pi/6)$\n(c) $(2,\\,5\\pi/4)$",
+    "answer": [
+      {
+        "label": "(a):",
+        "value": "(-4,0)"
+      },
+      {
+        "label": "(b):",
+        "value": "(\\frac{3\\sqrt{3}}{2},\\frac{3}{2})"
+      },
+      {
+        "label": "(c):",
+        "value": "(-\\sqrt{2},-\\sqrt{2})"
+      }
+    ],
+    "solution": "Use $x = r\\cos\\theta$, $y = r\\sin\\theta$.\n\n**(a)** $x = 4\\cos\\pi = -4$, $y = 4\\sin\\pi = 0$.\n\n**(b)** $x = 3\\cos(\\pi/6) = 3\\cdot\\tfrac{\\sqrt{3}}{2} = \\tfrac{3\\sqrt{3}}{2}$, $y = 3\\sin(\\pi/6) = \\tfrac{3}{2}$.\n\n**(c)** $x = 2\\cos(5\\pi/4) = -\\sqrt{2}$, $y = 2\\sin(5\\pi/4) = -\\sqrt{2}$."
+  },
+  {
+    "id": "s9_3_gen_3",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "The polar equation $r = 6\\sin\\theta$ represents a circle. Write its Cartesian equation and identify the center and radius.",
+    "answer": [
+      {
+        "label": "Cartesian equation:",
+        "value": "x^2 + (y - 3)^2 = 9"
+      },
+      {
+        "label": "Center:",
+        "value": "(0, 3)"
+      },
+      {
+        "label": "Radius:",
+        "value": "3"
+      }
+    ],
+    "solution": "Multiply both sides by $r$:\n$$r^2 = 6r\\sin\\theta.$$\nSubstitute $r^2 = x^2+y^2$ and $r\\sin\\theta = y$:\n$$x^2 + y^2 = 6y \\implies x^2 + y^2 - 6y = 0.$$\nComplete the square in $y$:\n$$x^2 + (y-3)^2 = 9.$$\nCenter $(0,\\,3)$, radius $3$."
+  },
+  {
+    "id": "s9_3_gen_4",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "The equation $r = 3\\cos\\theta$ represents a circle. Find the Cartesian coordinates of the center and the radius.",
+    "answer": [
+      {
+        "label": "Center:",
+        "value": "(3/2, 0)"
+      },
+      {
+        "label": "Radius:",
+        "value": "3/2"
+      }
+    ],
+    "solution": "Multiply both sides by $r$:\n$$r^2 = 3r\\cos\\theta \\implies x^2+y^2 = 3x.$$\nComplete the square in $x$:\n$$(x - \\tfrac{3}{2})^2 + y^2 = \\tfrac{9}{4}.$$\nCenter $\\left(\\tfrac{3}{2},\\,0\\right)$, radius $\\dfrac{3}{2}$."
+  },
+  {
+    "id": "s9_3_gen_5",
+    "type": "multiple-choice",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Which of the following is the Cartesian equation of the circle with polar equation $r = 2\\sin\\theta + 2\\cos\\theta$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(x-1)^2 + (y-1)^2 = 2$"
+      },
+      {
+        "label": "B",
+        "text": "$(x+1)^2 + (y+1)^2 = 2$"
+      },
+      {
+        "label": "C",
+        "text": "$x^2 + y^2 = 4$"
+      },
+      {
+        "label": "D",
+        "text": "$(x-1)^2 + (y-1)^2 = 4$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Multiply both sides by $r$:\n$$r^2 = 2r\\sin\\theta + 2r\\cos\\theta \\implies x^2+y^2 = 2y+2x.$$\nRearrange and complete the square:\n$$(x-1)^2+(y-1)^2 = 2.$$\nCenter $(1,1)$, radius $\\sqrt{2}$. Choice **A**.\n\n"
+  },
+  {
+    "id": "s9_3_gen_6",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Find a polar equation of the form $r = f(\\theta)$ for the curve given by the Cartesian equation $5x - 2y = 10$.",
+    "answer": "\\frac{10}{5\\cos\\theta - 2\\sin\\theta}",
+    "solution": "Substitute $x = r\\cos\\theta$ and $y = r\\sin\\theta$:\n$$5r\\cos\\theta - 2r\\sin\\theta = 10.$$\nFactor out $r$:\n$$r(5\\cos\\theta - 2\\sin\\theta) = 10 \\implies r = \\frac{10}{5\\cos\\theta - 2\\sin\\theta}.$$"
+  },
+  {
+    "id": "s9_3_gen_7",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Find a polar equation for each Cartesian equation.\n\n(a) $x^2 + y^2 = 9$\n\n(b) $y = 4$",
+    "answer": [
+      {
+        "label": "(a) r =",
+        "value": "3"
+      },
+      {
+        "label": "(b) r =",
+        "value": "4\\csc\\theta"
+      }
+    ],
+    "solution": "**(a)** Since $r^2 = x^2+y^2 = 9$, we get $r = 3$.\n\n**(b)** Since $y = r\\sin\\theta$, the equation becomes $r\\sin\\theta = 4$, so $r = 4\\csc\\theta$."
+  },
+  {
+    "id": "s9_3_gen_8",
+    "type": "multiple-choice",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Find the Cartesian equation of the polar curve $r = \\tan\\theta\\sec\\theta$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = x$"
+      },
+      {
+        "label": "B",
+        "text": "$y = x^2$"
+      },
+      {
+        "label": "C",
+        "text": "$x = y^2$"
+      },
+      {
+        "label": "D",
+        "text": "$y = -x^2$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Write $r = \\dfrac{\\sin\\theta}{\\cos^2\\theta}$, so $r\\cos^2\\theta = \\sin\\theta$.\n\nMultiply both sides by $r$:\n$$r^2\\cos^2\\theta = r\\sin\\theta \\implies (r\\cos\\theta)^2 = r\\sin\\theta \\implies x^2 = y.$$\nChoice **B**.\n\n"
+  },
+  {
+    "id": "s9_3_gen_9",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Find the slope of the tangent line to the polar curve $r = 3\\cos\\theta$ at $\\theta = \\dfrac{\\pi}{3}$.",
+    "answer": "\\frac{\\sqrt{3}}{3}",
+    "solution": "Use $\\dfrac{dy}{dx} = \\dfrac{(dr/d\\theta)\\sin\\theta + r\\cos\\theta}{(dr/d\\theta)\\cos\\theta - r\\sin\\theta}$ with $dr/d\\theta = -3\\sin\\theta$.\n\nAt $\\theta = \\pi/3$: $r = 3/2$, $dr/d\\theta = -3\\sqrt{3}/2$, $\\sin\\theta = \\sqrt{3}/2$, $\\cos\\theta = 1/2$.\n\n$$\\text{Numerator} = \\left(-\\tfrac{3\\sqrt{3}}{2}\\right)\\tfrac{\\sqrt{3}}{2} + \\tfrac{3}{2}\\cdot\\tfrac{1}{2} = -\\tfrac{9}{4}+\\tfrac{3}{4} = -\\tfrac{3}{2}.$$\n$$\\text{Denominator} = \\left(-\\tfrac{3\\sqrt{3}}{2}\\right)\\tfrac{1}{2} - \\tfrac{3}{2}\\cdot\\tfrac{\\sqrt{3}}{2} = -\\tfrac{3\\sqrt{3}}{4}-\\tfrac{3\\sqrt{3}}{4} = -\\tfrac{3\\sqrt{3}}{2}.$$\n$$\\frac{dy}{dx} = \\frac{-3/2}{-3\\sqrt{3}/2} = \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}.$$"
+  },
+  {
+    "id": "s9_3_gen_10",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Find the slope of the tangent line to the polar curve $r = 2 + \\sin\\theta$ at $\\theta = \\dfrac{\\pi}{2}$. Also, provide the corresponding Cartesian coordinate $(x, y)$ where this occurs.",
+    "answer": [
+      {
+        "label": "Slope:",
+        "value": "0"
+      },
+      {
+        "label": "Point (x,y):",
+        "value": "(0, 3)"
+      }
+    ],
+    "solution": "Here $dr/d\\theta = \\cos\\theta$. At $\\theta = \\pi/2$: $r = 3$, $\\cos\\theta = 0$, $\\sin\\theta = 1$.\n\n$$\\text{Numerator} = (0)(1) + 3(0) = 0.$$\n$$\\text{Denominator} = (0)(0) - 3(1) = -3.$$\n$$\\frac{dy}{dx} = \\frac{0}{-3} = 0.$$\nThe tangent is horizontal. In Cartesian coordinates the point is $(r\\cos\\theta, r\\sin\\theta) = (0, 3)$, the topmost point of the curve."
+  },
+  {
+    "id": "s9_3_gen_11",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Find Cartesian equations for the following polar curves.\n\n(a) $r = 5\\csc\\theta$\n\n(b) $r = -\\tan\\theta\\sec\\theta$",
+    "answer": [
+      {
+        "label": "(a):",
+        "value": "y = 5"
+      },
+      {
+        "label": "(b):",
+        "value": "y = -x^2"
+      }
+    ],
+    "solution": "**(a)** $r = 5/\\sin\\theta \\Rightarrow r\\sin\\theta = 5 \\Rightarrow y = 5$. A horizontal line.\n\n**(b)** $r = -\\sin\\theta/\\cos^2\\theta$. Multiply by $\\cos^2\\theta$: $r\\cos^2\\theta = -\\sin\\theta$. Multiply by $r$: $r^2\\cos^2\\theta = -r\\sin\\theta \\Rightarrow x^2 = -y$, i.e., $y = -x^2$. A downward-opening parabola."
+  },
+  {
+    "id": "s9_3_gen_12",
+    "type": "multiple-choice",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Which polar equation represents the Cartesian curve $x^2 + y^2 = 2x$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$r = 2\\sin\\theta$"
+      },
+      {
+        "label": "B",
+        "text": "$r = 2\\cos\\theta$"
+      },
+      {
+        "label": "C",
+        "text": "$r^2 = 2\\cos\\theta$"
+      },
+      {
+        "label": "D",
+        "text": "$r = \\cos\\theta$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Substitute $x^2+y^2 = r^2$ and $x = r\\cos\\theta$:\n$$r^2 = 2r\\cos\\theta \\implies r = 2\\cos\\theta.$$\nChoice **B**. This is a circle of radius $1$ centered at $(1,0)$.\n\n"
+  },
+  {
+    "id": "s9_3_gen_13",
+    "type": "select-all",
+    "section": "§9.3. Polar Coordinates",
+    "text": "**Select all** statements that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The polar equation $r = 4$ corresponds to the Cartesian equation $x^2 + y^2 = 16$."
+      },
+      {
+        "label": "B",
+        "text": "The polar equation $r = 6\\sin\\theta$ corresponds to the circle $x^2 + (y-3)^2 = 9$."
+      },
+      {
+        "label": "C",
+        "text": "The polar equation $\\theta = \\pi/4$ represents the Cartesian line $y = -x$."
+      },
+      {
+        "label": "D",
+        "text": "The polar equation $r = 2/\\sin\\theta$ is equivalent to the Cartesian equation $y = 2$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A: TRUE. ✓** $r=4 \\Rightarrow r^2=16 \\Rightarrow x^2+y^2=16$.\n\n**B: TRUE. ✓** $r=6\\sin\\theta \\Rightarrow r^2=6r\\sin\\theta \\Rightarrow x^2+y^2=6y \\Rightarrow x^2+(y-3)^2=9$.\n\n**C: FALSE. ✗** The ray $\\theta = \\pi/4$ has slope $\\tan(\\pi/4)=1$, giving $y = x$, **not** $y=-x$. The ray $\\theta=3\\pi/4$ gives $y=-x$.\n\n**D: TRUE. ✓** $r=2/\\sin\\theta \\Rightarrow r\\sin\\theta=2 \\Rightarrow y=2$.\n\nCorrect selections: **A, B, D**."
+  },
+  {
+    "id": "s9_3_gen_14",
+    "type": "free-response",
+    "section": "§9.3. Polar Coordinates",
+    "text": "Find the slope of the tangent line to the polar curve $r = \\sin\\theta$ at $\\theta = \\dfrac{\\pi}{6}$.",
+    "answer": "\\sqrt{3}",
+    "solution": "Here $dr/d\\theta = \\cos\\theta$. At $\\theta = \\pi/6$: $r = 1/2$, $\\cos\\theta = \\sqrt{3}/2$, $\\sin\\theta = 1/2$.\n\n$$\\text{Numerator} = \\frac{\\sqrt{3}}{2}\\cdot\\frac{1}{2} + \\frac{1}{2}\\cdot\\frac{\\sqrt{3}}{2} = \\frac{\\sqrt{3}}{4}+\\frac{\\sqrt{3}}{4} = \\frac{\\sqrt{3}}{2}.$$\n$$\\text{Denominator} = \\frac{\\sqrt{3}}{2}\\cdot\\frac{\\sqrt{3}}{2} - \\frac{1}{2}\\cdot\\frac{1}{2} = \\frac{3}{4}-\\frac{1}{4} = \\frac{1}{2}.$$\n$$\\frac{dy}{dx} = \\frac{\\sqrt{3}/2}{1/2} = \\sqrt{3}.$$"
+  },
+  {
+    "id": "s9_3_gen_15",
+    "type": "multiple-choice",
+    "section": "§9.3. Polar Coordinates",
+    "text": "The polar equation $r(3\\sin\\theta + 4\\cos\\theta) = 12$ represents a line. Which of the following is its Cartesian equation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$4x + 3y = 12$"
+      },
+      {
+        "label": "B",
+        "text": "$3x + 4y = 12$"
+      },
+      {
+        "label": "C",
+        "text": "$4x - 3y = 12$"
+      },
+      {
+        "label": "D",
+        "text": "$4x + 3y = 6$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Distribute:\n$$3r\\sin\\theta + 4r\\cos\\theta = 12.$$\nSubstitute $r\\sin\\theta = y$ and $r\\cos\\theta = x$:\n$$3y + 4x = 12 \\implies 4x + 3y = 12.$$\nChoice **A**.\n\n"
+  }
+]

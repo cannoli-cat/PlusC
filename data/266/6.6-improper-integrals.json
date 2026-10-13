@@ -1,0 +1,383 @@
+[
+  {
+    "id": "s66_gen_1",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Evaluate the improper integral $\\displaystyle\\int_1^{\\infty} \\frac{1}{x^3}\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "The integral diverges"
+      }
+    ],
+    "answer": "A",
+    "solution": "This is a Type 1 improper integral with an infinite upper limit.\n\n$$\\int_1^{\\infty} \\frac{1}{x^3}\\,dx = \\lim_{b \\to \\infty} \\int_1^{b} x^{-3}\\,dx$$\n\nCompute the antiderivative:\n$$\\int x^{-3}\\,dx = \\frac{x^{-2}}{-2} = -\\frac{1}{2x^2}$$\n\nEvaluate:\n$$\\lim_{b \\to \\infty} \\left[-\\frac{1}{2x^2}\\right]_1^{b} = \\lim_{b \\to \\infty} \\left(-\\frac{1}{2b^2} + \\frac{1}{2}\\right)$$\n\nAs $b \\to \\infty$, $\\frac{1}{2b^2} \\to 0$, so:\n$$= 0 + \\frac{1}{2} = \\frac{1}{2}$$\n\nThe integral converges to $\\boxed{\\dfrac{1}{2}}$.\n\n**Distractor analysis:** B ($\\frac{1}{3}$) is the off-by-one power error using $\\frac{1}{3}$ instead of $\\frac{1}{2}$. C ($1$) forgets the coefficient from integration."
+  },
+  {
+    "id": "s66_gen_2",
+    "type": "free-response",
+    "section": "§6.6. Improper Integrals",
+    "text": "Evaluate the improper integral $\\displaystyle\\int_0^{4} \\frac{1}{\\sqrt{x}}\\,dx$, or state that it diverges.",
+    "answer": "4",
+    "solution": "This is a Type 2 improper integral because $\\frac{1}{\\sqrt{x}}$ is undefined at $x = 0$.\n\n$$\\int_0^{4} \\frac{1}{\\sqrt{x}}\\,dx = \\lim_{a \\to 0^+} \\int_a^{4} x^{-1/2}\\,dx$$\n\nCompute the antiderivative:\n$$\\int x^{-1/2}\\,dx = \\frac{x^{1/2}}{1/2} = 2\\sqrt{x}$$\n\nEvaluate:\n$$\\lim_{a \\to 0^+} \\left[2\\sqrt{x}\\right]_a^{4} = \\lim_{a \\to 0^+} \\left(2\\sqrt{4} - 2\\sqrt{a}\\right)$$\n$$= \\lim_{a \\to 0^+} \\left(4 - 2\\sqrt{a}\\right) = 4 - 0 = 4$$\n\nThe integral converges to $\\boxed{4}$."
+  },
+  {
+    "id": "s66_gen_3",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Determine whether $\\displaystyle\\int_{-\\infty}^{0} e^{2x}\\,dx$ converges or diverges. If it converges, find its value.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Converges to $\\dfrac{1}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $1$"
+      },
+      {
+        "label": "C",
+        "text": "Converges to $2$"
+      },
+      {
+        "label": "D",
+        "text": "Diverges"
+      }
+    ],
+    "answer": "A",
+    "solution": "This is a Type 1 improper integral with limit at $-\\infty$.\n\n$$\\int_{-\\infty}^{0} e^{2x}\\,dx = \\lim_{a \\to -\\infty} \\int_a^{0} e^{2x}\\,dx$$\n\nCompute the antiderivative:\n$$\\int e^{2x}\\,dx = \\frac{1}{2}e^{2x}$$\n\nEvaluate:\n$$\\lim_{a \\to -\\infty} \\left[\\frac{1}{2}e^{2x}\\right]_a^{0} = \\lim_{a \\to -\\infty} \\left(\\frac{1}{2}e^{0} - \\frac{1}{2}e^{2a}\\right)$$\n\nAs $a \\to -\\infty$, $e^{2a} \\to 0$, so:\n$$= \\frac{1}{2}(1) - \\frac{1}{2}(0) = \\frac{1}{2}$$\n\nThe integral converges to $\\boxed{\\dfrac{1}{2}}$.\n\n**Distractor analysis:** B ($1$) forgets the $\\frac{1}{2}$ from integrating $e^{2x}$. C ($2$) uses wrong coefficient."
+  },
+  {
+    "id": "s66_gen_4",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Evaluate $\\displaystyle\\int_1^{\\infty} \\frac{1}{x}\\,dx$, or state that it diverges.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diverges"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $0$"
+      },
+      {
+        "label": "C",
+        "text": "Converges to $1$"
+      },
+      {
+        "label": "D",
+        "text": "Converges to $e$"
+      }
+    ],
+    "answer": "A",
+    "solution": "This is a Type 1 improper integral.\n\n$$\\int_1^{\\infty} \\frac{1}{x}\\,dx = \\lim_{b \\to \\infty} \\int_1^{b} \\frac{1}{x}\\,dx$$\n\nCompute the antiderivative:\n$$\\int \\frac{1}{x}\\,dx = \\ln|x|$$\n\nEvaluate:\n$$\\lim_{b \\to \\infty} \\left[\\ln|x|\\right]_1^{b} = \\lim_{b \\to \\infty} (\\ln b - \\ln 1)$$\n$$= \\lim_{b \\to \\infty} (\\ln b - 0) = \\lim_{b \\to \\infty} \\ln b = \\infty$$\n\nSince the limit is infinite, the integral **diverges**.\n\nThis is the critical case $p = 1$ for the p-integral $\\int_1^{\\infty} \\frac{1}{x^p}\\,dx$."
+  },
+  {
+    "id": "s66_gen_5",
+    "type": "select-all",
+    "section": "§6.6. Improper Integrals",
+    "text": "Select ALL of the following improper integrals that converge.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_1^{\\infty} \\frac{1}{x^{0.5}}\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_1^{\\infty} \\frac{1}{x^{1.5}}\\,dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{1} \\frac{1}{x^{0.5}}\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{1} \\frac{1}{x^{1.5}}\\,dx$"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "solution": "For **p-integrals at infinity**: $\\int_1^{\\infty} \\frac{1}{x^p}\\,dx$ converges if and only if $p > 1$.\n\nFor **p-integrals at zero**: $\\int_0^{1} \\frac{1}{x^p}\\,dx$ converges if and only if $p < 1$.\n\n**A:** $p = 0.5 < 1$, so $\\int_1^{\\infty} \\frac{1}{x^{0.5}}\\,dx$ **diverges**. ✗\n\n**B:** $p = 1.5 > 1$, so $\\int_1^{\\infty} \\frac{1}{x^{1.5}}\\,dx$ **converges**. ✓\n\n**C:** $p = 0.5 < 1$, so $\\int_0^{1} \\frac{1}{x^{0.5}}\\,dx$ **converges**. ✓\n\n**D:** $p = 1.5 > 1$, so $\\int_0^{1} \\frac{1}{x^{1.5}}\\,dx$ **diverges**. ✗\n\nThe convergent integrals are **B and C**."
+  },
+  {
+    "id": "s66_gen_6",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Evaluate $\\displaystyle\\int_0^{1} \\frac{1}{(1-x)^2}\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Converges to $1$"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $2$"
+      },
+      {
+        "label": "C",
+        "text": "Diverges to $+\\infty$"
+      },
+      {
+        "label": "D",
+        "text": "Diverges (limit does not exist)"
+      }
+    ],
+    "answer": "C",
+    "solution": "This is a Type 2 improper integral because $\\frac{1}{(1-x)^2}$ is undefined at $x = 1$.\n\n$$\\int_0^{1} \\frac{1}{(1-x)^2}\\,dx = \\lim_{b \\to 1^-} \\int_0^{b} (1-x)^{-2}\\,dx$$\n\nUse substitution $u = 1-x$, $du = -dx$:\n$$\\int (1-x)^{-2}\\,dx = \\frac{(1-x)^{-1}}{1} = \\frac{1}{1-x}$$\n\nEvaluate:\n$$\\lim_{b \\to 1^-} \\left[\\frac{1}{1-x}\\right]_0^{b} = \\lim_{b \\to 1^-} \\left(\\frac{1}{1-b} - \\frac{1}{1-0}\\right)$$\n$$= \\lim_{b \\to 1^-} \\left(\\frac{1}{1-b} - 1\\right)$$\n\nAs $b \\to 1^-$, $(1-b) \\to 0^+$, so $\\frac{1}{1-b} \\to +\\infty$.\n\nThe integral **diverges to $+\\infty$**.\n\n**Distractor analysis:** A and B assume convergence with arithmetic errors."
+  },
+  {
+    "id": "s66_gen_7",
+    "type": "free-response",
+    "section": "§6.6. Improper Integrals",
+    "text": "Evaluate $\\displaystyle\\int_{-\\infty}^{\\infty} \\frac{1}{1+x^2}\\,dx$, or state that it diverges.",
+    "answer": "\\pi",
+    "solution": "This is a Type 1 improper integral with both limits infinite. We must split it:\n\n$$\\int_{-\\infty}^{\\infty} \\frac{1}{1+x^2}\\,dx = \\int_{-\\infty}^{0} \\frac{1}{1+x^2}\\,dx + \\int_{0}^{\\infty} \\frac{1}{1+x^2}\\,dx$$\n\nThe antiderivative is:\n$$\\int \\frac{1}{1+x^2}\\,dx = \\arctan(x)$$\n\n**For the right integral:**\n$$\\lim_{b \\to \\infty} \\left[\\arctan(x)\\right]_0^{b} = \\lim_{b \\to \\infty} (\\arctan(b) - \\arctan(0)) = \\frac{\\pi}{2} - 0 = \\frac{\\pi}{2}$$\n\n**For the left integral:**\n$$\\lim_{a \\to -\\infty} \\left[\\arctan(x)\\right]_a^{0} = \\arctan(0) - \\lim_{a \\to -\\infty} \\arctan(a) = 0 - \\left(-\\frac{\\pi}{2}\\right) = \\frac{\\pi}{2}$$\n\n**Total:**\n$$\\frac{\\pi}{2} + \\frac{\\pi}{2} = \\pi$$\n\nThe integral converges to $\\boxed{\\pi}$."
+  },
+  {
+    "id": "s66_gen_8",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "The integral $\\displaystyle\\int_0^{3} \\frac{1}{x-1}\\,dx$ is improper because the integrand has a discontinuity at $x=1$. Determine whether this integral converges or diverges.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Converges to $\\ln 2$"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $0$"
+      },
+      {
+        "label": "C",
+        "text": "Diverges because the left-hand limit at $x=1$ is $-\\infty$"
+      },
+      {
+        "label": "D",
+        "text": "Diverges because the two one-sided limits do not cancel"
+      }
+    ],
+    "answer": "D",
+    "solution": "This is a Type 2 improper integral with an interior discontinuity at $x = 1$. We must split:\n\n$$\\int_0^{3} \\frac{1}{x-1}\\,dx = \\int_0^{1} \\frac{1}{x-1}\\,dx + \\int_1^{3} \\frac{1}{x-1}\\,dx$$\n\n**Both integrals must converge independently** for the original to converge.\n\n**Left integral:**\n$$\\lim_{b \\to 1^-} \\int_0^{b} \\frac{1}{x-1}\\,dx = \\lim_{b \\to 1^-} [\\ln|x-1|]_0^{b}$$\n$$= \\lim_{b \\to 1^-} (\\ln|b-1| - \\ln|-1|) = \\lim_{b \\to 1^-} (\\ln|b-1| - 0)$$\n\nAs $b \\to 1^-$, $|b-1| \\to 0^+$, so $\\ln|b-1| \\to -\\infty$.\n\n**Right integral:**\n$$\\lim_{a \\to 1^+} \\int_a^{3} \\frac{1}{x-1}\\,dx = \\lim_{a \\to 1^+} [\\ln|x-1|]_a^{3}$$\n$$= \\ln 2 - \\lim_{a \\to 1^+} \\ln|a-1| = \\ln 2 - (-\\infty) = +\\infty$$\n\nSince each piece diverges (to opposite infinities), we **cannot** combine them. The integral **diverges because the two one-sided limits do not cancel** (they must each converge independently)."
+  },
+  {
+    "id": "s66_gen_9",
+    "type": "free-response",
+    "section": "§6.6. Improper Integrals",
+    "text": "Evaluate $\\displaystyle\\int_0^{\\infty} x e^{-x}\\,dx$, or state that it diverges.",
+    "answer": "1",
+    "solution": "This is a Type 1 improper integral requiring integration by parts.\n\n$$\\int_0^{\\infty} x e^{-x}\\,dx = \\lim_{b \\to \\infty} \\int_0^{b} x e^{-x}\\,dx$$\n\n**Integration by parts:** Let $u = x$ and $dv = e^{-x}\\,dx$.\nThen $du = dx$ and $v = -e^{-x}$.\n\n$$\\int x e^{-x}\\,dx = -xe^{-x} - \\int (-e^{-x})\\,dx = -xe^{-x} + \\int e^{-x}\\,dx$$\n$$= -xe^{-x} - e^{-x} = -e^{-x}(x+1)$$\n\n**Evaluate the limit:**\n$$\\lim_{b \\to \\infty} \\left[-e^{-x}(x+1)\\right]_0^{b} = \\lim_{b \\to \\infty} \\left(-e^{-b}(b+1) + e^{0}(0+1)\\right)$$\n$$= \\lim_{b \\to \\infty} \\left(-\\frac{b+1}{e^b}\\right) + 1$$\n\nBy L'Hôpital's Rule (or noting exponential growth dominates polynomial):\n$$\\lim_{b \\to \\infty} \\frac{b+1}{e^b} = \\lim_{b \\to \\infty} \\frac{1}{e^b} = 0$$\n\nSo the integral equals:\n$$0 + 1 = \\boxed{1}$$"
+  },
+  {
+    "id": "s66_gen_10",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Evaluate $\\displaystyle\\int_2^{\\infty} \\frac{1}{x \\ln x}\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Converges to $\\ln(\\ln 2)$"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $\\dfrac{1}{\\ln 2}$"
+      },
+      {
+        "label": "C",
+        "text": "Diverges to $+\\infty$"
+      },
+      {
+        "label": "D",
+        "text": "Converges to $1$"
+      }
+    ],
+    "answer": "C",
+    "solution": "This is a Type 1 improper integral. Use substitution $u = \\ln x$, $du = \\frac{1}{x}\\,dx$.\n\n$$\\int \\frac{1}{x \\ln x}\\,dx = \\int \\frac{1}{u}\\,du = \\ln|u| = \\ln|\\ln x|$$\n\nNow evaluate:\n$$\\int_2^{\\infty} \\frac{1}{x \\ln x}\\,dx = \\lim_{b \\to \\infty} \\left[\\ln(\\ln x)\\right]_2^{b}$$\n$$= \\lim_{b \\to \\infty} \\left(\\ln(\\ln b) - \\ln(\\ln 2)\\right)$$\n\nAs $b \\to \\infty$, $\\ln b \\to \\infty$, so $\\ln(\\ln b) \\to \\infty$.\n\nThe integral **diverges to $+\\infty$**.\n\n**Distractor analysis:** A uses wrong sign pattern. B confuses with a different integral form. D is a common guess."
+  },
+  {
+    "id": "s66_concept_1",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "If $f(x)$ has a vertical asymptote at $x = 0$ and $a > 0$, then $\\displaystyle \\int_{-a}^{a} f(x)\\,dx$ converges. This statement is:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "false for all functions $f(x)$."
+      },
+      {
+        "label": "B",
+        "text": "None of these."
+      },
+      {
+        "label": "C",
+        "text": "true for all functions $f(x)$."
+      },
+      {
+        "label": "D",
+        "text": "true for all even functions $f(x)$."
+      },
+      {
+        "label": "E",
+        "text": "true for some functions $f(x)$."
+      }
+    ],
+    "answer": "E",
+    "solution": "The integral is improper because of the vertical asymptote at $x = 0$ inside the interval. It must be split: $\\int_{-a}^{0} f(x)\\,dx + \\int_{0}^{a} f(x)\\,dx$, and both parts must converge independently.\n\n**Counter to 'all':** $f(x) = x^{-2}$ is even, but $\\int_0^a x^{-2}\\,dx = \\left[-x^{-1}\\right]_0^a$ diverges. So it fails for some even functions.\n\n**Evidence for 'some':** $f(x) = |x|^{-1/2}$ has a vertical asymptote at 0, and $\\int_0^a x^{-1/2}\\,dx = 2\\sqrt{a}$ converges. So the statement is true for some functions.\n\nThe answer is $\\boxed{E}$."
+  },
+  {
+    "id": "s66_concept_2",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "If $f(x)$ is an odd function, then $\\displaystyle \\int_{-\\infty}^{\\infty} f(x)\\,dx = 0$. This statement is:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "false for all odd functions $f(x)$."
+      },
+      {
+        "label": "B",
+        "text": "true for some odd functions $f(x)$."
+      },
+      {
+        "label": "C",
+        "text": "None of these."
+      },
+      {
+        "label": "D",
+        "text": "true for all odd functions $f(x)$."
+      }
+    ],
+    "answer": "B",
+    "solution": "The integral $\\int_{-\\infty}^{\\infty} f(x)\\,dx$ is defined as $\\lim_{a\\to\\infty}\\int_{-a}^{0} f(x)\\,dx + \\lim_{b\\to\\infty}\\int_{0}^{b} f(x)\\,dx$. Both limits must exist independently.\n\n**True for some:** $f(x) = xe^{-x^2}$ is odd. Each half converges: $\\int_0^\\infty xe^{-x^2}\\,dx = \\frac{1}{2}$, and by symmetry the total is $0$. ✓\n\n**Not true for all:** $f(x) = x$ is odd, but $\\int_0^\\infty x\\,dx$ diverges. The integral is undefined, not $0$.\n\nThe answer is $\\boxed{B}$."
+  },
+  {
+    "id": "s66_concept_3",
+    "type": "select-all",
+    "section": "§6.6. Improper Integrals",
+    "text": "Select ALL true statements about $\\displaystyle \\int_1^{\\infty} \\frac{1}{x^p}\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "It converges for all $p > 1$."
+      },
+      {
+        "label": "B",
+        "text": "It converges for $p = 1$."
+      },
+      {
+        "label": "C",
+        "text": "It diverges for all $p \\leq 1$."
+      },
+      {
+        "label": "D",
+        "text": "When it converges, its value is $\\dfrac{1}{p-1}$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A:** For $p > 1$: $\\int_1^\\infty x^{-p}\\,dx = \\left[\\frac{x^{-p+1}}{-p+1}\\right]_1^\\infty = \\frac{1}{p-1}$. Since $-p+1 < 0$, the upper limit goes to 0. ✓ Converges.\n\n**B:** For $p = 1$: $\\int_1^\\infty \\frac{1}{x}\\,dx = [\\ln x]_1^\\infty = \\infty$. ✗ Diverges.\n\n**C:** For $p \\leq 1$: $-p+1 \\geq 0$, so $x^{-p+1}$ grows or stays constant as $x \\to \\infty$. The integral diverges. ✓\n\n**D:** When $p > 1$: the value is $\\frac{0 - (-\\frac{1}{p-1} \\cdot 1)}{1} = \\frac{1}{p-1}$. ✓\n\nThe answers are $\\boxed{A, C, D}$."
+  },
+  {
+    "id": "s66_concept_4",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Which of the following correctly defines the Laplace Transform $\\mathcal{L}\\{f(t)\\}(s)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{\\infty} e^{st} f(t)\\,dt$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_{-\\infty}^{\\infty} e^{-st} f(t)\\,dt$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{\\infty} e^{-st} f(t)\\,dt$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{\\infty} e^{-t} f(s)\\,ds$"
+      }
+    ],
+    "answer": "C",
+    "solution": "The Laplace Transform is defined as:\n$$\\mathcal{L}\\{f(t)\\}(s) = \\int_0^{\\infty} e^{-st} f(t)\\,dt$$\n\nKey features: lower limit is 0 (function defined for $t \\geq 0$), the kernel is $e^{-st}$ (not $e^{st}$ — that would diverge), and the integral is over $t$ with $s$ treated as a fixed constant.\n\nThe answer is $\\boxed{C}$."
+  },
+  {
+    "id": "s66_concept_5",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Using the definition of the Laplace Transform, $\\mathcal{L}\\{1\\} =$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{s}$"
+      },
+      {
+        "label": "C",
+        "text": "$-\\dfrac{1}{s}$"
+      },
+      {
+        "label": "D",
+        "text": "$1$"
+      },
+      {
+        "label": "E",
+        "text": "$-s$"
+      }
+    ],
+    "answer": "B",
+    "solution": "With $f(t) = 1$:\n$$\\mathcal{L}\\{1\\} = \\int_0^{\\infty} e^{-st}\\,dt = \\left[\\frac{e^{-st}}{-s}\\right]_0^{\\infty}$$\n\nAs $t \\to \\infty$: $e^{-st} \\to 0$ (for $s > 0$), so the upper limit gives $0$.\n\nAt $t = 0$: $e^{0}/(-s) = -1/s$.\n\n$$= 0 - \\left(\\frac{-1}{s}\\right) = \\frac{1}{s}$$\n\nThe answer is $\\boxed{\\dfrac{1}{s}}$."
+  },
+  {
+    "id": "s66_concept_6",
+    "type": "multiple-choice",
+    "section": "§6.6. Improper Integrals",
+    "text": "Using the Laplace Transform definition and integration by parts, $\\mathcal{L}\\{t\\} =$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\dfrac{1}{s^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$0$"
+      },
+      {
+        "label": "C",
+        "text": "$-s^2$"
+      },
+      {
+        "label": "D",
+        "text": "$1$"
+      },
+      {
+        "label": "E",
+        "text": "$\\dfrac{1}{s^2}$"
+      }
+    ],
+    "answer": "E",
+    "solution": "With $f(t) = t$, use IBP: let $u = t$, $dv = e^{-st}\\,dt$, so $du = dt$, $v = -\\frac{1}{s}e^{-st}$.\n\n$$\\mathcal{L}\\{t\\} = \\left[-\\frac{t}{s}e^{-st}\\right]_0^{\\infty} + \\frac{1}{s}\\int_0^{\\infty} e^{-st}\\,dt$$\n\n**Boundary term:** As $t \\to \\infty$, $te^{-st} \\to 0$ (exponential beats linear). At $t = 0$: $0$. So the boundary term is $0$.\n\n**Remaining integral:** $\\frac{1}{s}\\int_0^{\\infty} e^{-st}\\,dt = \\frac{1}{s} \\cdot \\mathcal{L}\\{1\\} = \\frac{1}{s} \\cdot \\frac{1}{s} = \\frac{1}{s^2}$.\n\nThe answer is $\\boxed{\\dfrac{1}{s^2}}$."
+  }
+]

@@ -1,0 +1,193 @@
+[
+  {
+    "id": "s26514_gen_1",
+    "type": "multiple-choice",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit: $$\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$6$"
+      },
+      {
+        "label": "B",
+        "text": "$0$"
+      },
+      {
+        "label": "C",
+        "text": "$3$"
+      },
+      {
+        "label": "D",
+        "text": "$9$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Direct substitution gives $\\frac{0}{0}$, so we factor the numerator:\n$$\\frac{x^2 - 9}{x - 3} = \\frac{(x-3)(x+3)}{x-3}$$\nCancel the $(x-3)$ factor (valid since $x \\neq 3$):\n$$= x + 3$$\nNow substitute $x = 3$:\n$$\\lim_{x \\to 3}(x+3) = 3 + 3 = 6$$"
+  },
+  {
+    "id": "s26514_gen_2",
+    "type": "free-response",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit: $$\\lim_{x \\to -2} \\frac{x^2 + 5x + 6}{x^2 - 4}$$",
+    "answer": "-1/4",
+    "solution": "Direct substitution gives $\\frac{0}{0}$, so we factor both numerator and denominator.\n\nNumerator: $x^2 + 5x + 6 = (x+2)(x+3)$\nDenominator: $x^2 - 4 = (x+2)(x-2)$\n\nSo:\n$$\\frac{(x+2)(x+3)}{(x+2)(x-2)} = \\frac{x+3}{x-2} \\quad (x \\neq -2)$$\nSubstitute $x = -2$:\n$$\\frac{-2+3}{-2-2} = \\frac{1}{-4} = -\\frac{1}{4}.$$\n\nThe answer is $-\\dfrac{1}{4}$."
+  },
+  {
+    "id": "s26514_gen_3",
+    "type": "multiple-choice",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin(3x)}{x}$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$1$"
+      },
+      {
+        "label": "C",
+        "text": "$3$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{3}$"
+      }
+    ],
+    "answer": "C",
+    "solution": "We rewrite the limit to use the standard special limit $\\lim_{u \\to 0} \\dfrac{\\sin u}{u} = 1$.\n\nMultiply and divide by $3$:\n$$\\lim_{x \\to 0} \\frac{\\sin(3x)}{x} = \\lim_{x \\to 0} \\frac{\\sin(3x)}{3x} \\cdot 3$$\n\nLet $u = 3x$; as $x \\to 0$, $u \\to 0$:\n$$= 3 \\cdot \\lim_{u \\to 0} \\frac{\\sin u}{u} = 3 \\cdot 1 = 3$$\n\nDistractor B ($1$) is the error of forgetting to account for the coefficient $3$. Distractor D ($1/3$) is the error of dividing by $3$ instead of multiplying."
+  },
+  {
+    "id": "s26514_gen_4",
+    "type": "free-response",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit using conjugate multiplication: $$\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$$",
+    "answer": "1/4",
+    "solution": "Direct substitution gives $\\frac{0}{0}$. Multiply numerator and denominator by the conjugate $\\sqrt{x}+2$:\n$$\\frac{\\sqrt{x}-2}{x-4} \\cdot \\frac{\\sqrt{x}+2}{\\sqrt{x}+2} = \\frac{x - 4}{(x-4)(\\sqrt{x}+2)}$$\n\nCancel $(x-4)$:\n$$= \\frac{1}{\\sqrt{x}+2}$$\n\nNow substitute $x = 4$:\n$$\\frac{1}{\\sqrt{4}+2} = \\frac{1}{2+2} = \\frac{1}{4}$$"
+  },
+  {
+    "id": "s26514_gen_5",
+    "type": "select-all",
+    "section": "§1.4. Calculating Limits",
+    "text": "Which of the following limits equal $1$? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\lim_{x \\to 0} \\dfrac{\\sin x}{x}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\lim_{x \\to 0} \\dfrac{\\tan x}{x}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\lim_{x \\to 1} \\dfrac{x^2-1}{x-1}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\lim_{x \\to 0} \\dfrac{x}{\\sin(2x)}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "solution": "**A.** $\\lim_{x \\to 0} \\dfrac{\\sin x}{x} = 1$ — this is the standard special trig limit. ✓\n\n**B.** $\\lim_{x \\to 0} \\dfrac{\\tan x}{x} = \\lim_{x \\to 0} \\dfrac{\\sin x}{x} \\cdot \\dfrac{1}{\\cos x} = 1 \\cdot 1 = 1$ ✓\n\n**C.** $\\lim_{x \\to 1} \\dfrac{x^2-1}{x-1} = \\lim_{x \\to 1}(x+1) = 2 \\neq 1$ ✗\n\n**D.** $\\lim_{x \\to 0} \\dfrac{x}{\\sin(2x)} = \\lim_{x \\to 0} \\dfrac{1}{2} \\cdot \\dfrac{2x}{\\sin(2x)} = \\dfrac{1}{2} \\cdot 1 = \\dfrac{1}{2} \\neq 1$ ✗\n\nSo the correct answers are **A** and **B**."
+  },
+  {
+    "id": "s26514_gen_6",
+    "type": "multiple-choice",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit: $$\\lim_{h \\to 0} \\frac{(2+h)^2 - 4}{h}$$\nThis is related to the definition of the derivative of $f(x) = x^2$ at $x = 2$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$2$"
+      },
+      {
+        "label": "C",
+        "text": "$4$"
+      },
+      {
+        "label": "D",
+        "text": "$8$"
+      }
+    ],
+    "answer": "C",
+    "solution": "Expand $(2+h)^2$:\n$$(2+h)^2 = 4 + 4h + h^2$$\n\nSo:\n$$\\frac{(2+h)^2 - 4}{h} = \\frac{4 + 4h + h^2 - 4}{h} = \\frac{4h + h^2}{h} = \\frac{h(4+h)}{h} = 4 + h$$\n\nNow take the limit:\n$$\\lim_{h \\to 0}(4+h) = 4$$\n\nThis confirms that $f'(2) = 4$ for $f(x) = x^2$.\n\nDistractor B ($2$) comes from forgetting to double when expanding (using $2^1$ instead of $2 \\cdot 2$). Distractor D ($8$) would arise from computing $2 \\cdot (2+h)$ without squaring."
+  },
+  {
+    "id": "s26514_gen_7",
+    "type": "free-response",
+    "section": "§1.4. Calculating Limits",
+    "text": "Use the limit laws to evaluate: $$\\lim_{x \\to 2} \\left(3x^3 - 5x + 1\\right)$$",
+    "answer": "15",
+    "solution": "Since $f(x) = 3x^3 - 5x + 1$ is a polynomial, it is continuous everywhere, so we may use direct substitution:$$\\lim_{x \\to 2}(3x^3 - 5x + 1) = 3(2)^3 - 5(2) + 1$$$$= 3(8) - 10 + 1$$$$= 24 - 10 + 1$$$$= 15$$"
+  },
+  {
+    "id": "s26514_gen_8",
+    "type": "multiple-choice",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin(5x)}{\\sin(3x)}$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{3}{5}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{5}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "$0$"
+      }
+    ],
+    "answer": "B",
+    "solution": "We multiply and divide strategically to introduce the standard form $\\dfrac{\\sin u}{u}$:\n$$\\frac{\\sin(5x)}{\\sin(3x)} = \\frac{\\sin(5x)}{5x} \\cdot \\frac{3x}{\\sin(3x)} \\cdot \\frac{5x}{3x}$$\n\nAs $x \\to 0$, both $\\dfrac{\\sin(5x)}{5x} \\to 1$ and $\\dfrac{3x}{\\sin(3x)} \\to 1$.\n\nSo the limit equals:\n$$1 \\cdot 1 \\cdot \\frac{5}{3} = \\frac{5}{3}$$\n\nDistractor A ($3/5$) arises from inverting the ratio."
+  },
+  {
+    "id": "s26514_gen_9",
+    "type": "free-response",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit by rationalizing (conjugate method): $$\\lim_{h \\to 0} \\frac{\\sqrt{9+h} - 3}{h}$$\nNote: This is the definition of the derivative of $f(x) = \\sqrt{x}$ at $x = 9$.",
+    "answer": "1/6",
+    "solution": "Direct substitution gives $\\frac{0}{0}$. Multiply by the conjugate $\\dfrac{\\sqrt{9+h}+3}{\\sqrt{9+h}+3}$:\n$$\\frac{\\sqrt{9+h}-3}{h} \\cdot \\frac{\\sqrt{9+h}+3}{\\sqrt{9+h}+3} = \\frac{(9+h) - 9}{h(\\sqrt{9+h}+3)} = \\frac{h}{h(\\sqrt{9+h}+3)}$$\n\nCancel $h$:\n$$= \\frac{1}{\\sqrt{9+h}+3}$$\n\nNow take the limit as $h \\to 0$:\n$$\\frac{1}{\\sqrt{9+0}+3} = \\frac{1}{3+3} = \\frac{1}{6}$$"
+  },
+  {
+    "id": "s26514_gen_10",
+    "type": "multiple-choice",
+    "section": "§1.4. Calculating Limits",
+    "text": "Evaluate the limit: $$\\lim_{x \\to -1} \\frac{x^3 + 1}{x^2 - 1}$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\dfrac{3}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{3}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "$-1$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Direct substitution gives $\\frac{0}{0}$. Factor numerator and denominator.\n\nNumerator (sum of cubes): $x^3 + 1 = (x+1)(x^2 - x + 1)$\nDenominator (difference of squares): $x^2 - 1 = (x+1)(x-1)$\n\nSo:\n$$\\frac{(x+1)(x^2-x+1)}{(x+1)(x-1)} = \\frac{x^2-x+1}{x-1} \\quad (x \\neq -1)$$\n\nSubstitute $x = -1$:\n$$\\frac{(-1)^2 - (-1) + 1}{-1-1} = \\frac{1+1+1}{-2} = \\frac{3}{-2} = -\\frac{3}{2}$$\n\nDistractor B ($3/2$) is the sign error from writing $x - (-1) = x + 1$ in the denominator incorrectly."
+  }
+]

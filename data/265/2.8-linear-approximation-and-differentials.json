@@ -1,0 +1,194 @@
+[
+  {
+    "id": "s26528_gen_1",
+    "type": "multiple-choice",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "Find the linearization $L(x)$ of $f(x) = \\sqrt{x}$ at $a = 9$, then use it to approximate $\\sqrt{9.2}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{91}{30}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{3}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$3 + \\dfrac{1}{9}(0.2)$, which equals $\\dfrac{28}{9}$"
+      },
+      {
+        "label": "D",
+        "text": "$3 + \\dfrac{1}{3}(0.2)$, which equals $\\dfrac{47}{15}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We use $L(x) = f(a) + f'(a)(x-a)$ with $a = 9$.\n\n$$f(x) = \\sqrt{x},\\quad f(9) = 3$$\n$$f'(x) = \\frac{1}{2\\sqrt{x}},\\quad f'(9) = \\frac{1}{2\\cdot 3} = \\frac{1}{6}$$\n\nSo the linearization is:\n$$L(x) = 3 + \\frac{1}{6}(x - 9)$$\n\nApproximating $\\sqrt{9.2}$:\n$$L(9.2) = 3 + \\frac{1}{6}(9.2 - 9) = 3 + \\frac{0.2}{6} = 3 + \\frac{1}{30} = \\frac{90}{30} + \\frac{1}{30} = \\frac{91}{30}$$\n\nDistractors: (B) used $f'(9)=\\frac{1}{2}$ (forgot the $\\sqrt{9}$ in denominator); (C) used $f'(9)=\\frac{1}{9}$; (D) used $f'(9)=\\frac{1}{3}$."
+  },
+  {
+    "id": "s26528_gen_2",
+    "type": "free-response",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "Use linear approximation to estimate $\\sin(0.1)$. Use $a = 0$.",
+    "answer": "1/10",
+    "solution": "Let $f(x) = \\sin x$ and $a = 0$.\n\n$$f(0) = \\sin(0) = 0$$\n$$f'(x) = \\cos x,\\quad f'(0) = \\cos(0) = 1$$\n\nLinearization:\n$$L(x) = 0 + 1\\cdot(x - 0) = x$$\n\nApproximation:\n$$\\sin(0.1) \\approx L(0.1) = 0.1 = \\frac{1}{10}$$\n\nThis is the standard small-angle approximation $\\sin\\theta \\approx \\theta$ for $\\theta$ near $0$."
+  },
+  {
+    "id": "s26528_gen_3",
+    "type": "free-response",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "Find the differential $dy$ for $y = x^3 - 4x + 1$.",
+    "answer": "(3x^2-4)dx",
+    "solution": "The differential is $dy = f'(x)\\,dx$.\n\nDifferentiate $y = x^3 - 4x + 1$:\n$$\\frac{dy}{dx} = 3x^2 - 4$$\n\nTherefore:\n$$dy = (3x^2 - 4)\\,dx$$"
+  },
+  {
+    "id": "s26528_gen_4",
+    "type": "multiple-choice",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "The radius of a circle is measured to be $r = 5$ cm with a possible error of $\\pm 0.02$ cm. Use differentials to estimate the maximum error in the calculated area $A = \\pi r^2$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0.2\\pi$ cm²"
+      },
+      {
+        "label": "B",
+        "text": "$0.04\\pi$ cm²"
+      },
+      {
+        "label": "C",
+        "text": "$0.1\\pi$ cm²"
+      },
+      {
+        "label": "D",
+        "text": "$50\\pi$ cm²"
+      }
+    ],
+    "answer": "A",
+    "solution": "Given $A = \\pi r^2$, differentiate:\n$$dA = 2\\pi r\\,dr$$\n\nSubstitute $r = 5$ and $dr = \\pm 0.02$:\n$$|dA| = 2\\pi(5)(0.02) = 0.2\\pi \\text{ cm}^2$$\n\nDistractors: (B) forgot the factor of 2 in derivative, using $dA = \\pi r\\,dr$; (C) used $dr = 0.01$ instead of $0.02$; (D) computed $\\pi r^2 \\cdot dr = \\pi(25)(0.02) \\cdot 100$ — a dimensional error."
+  },
+  {
+    "id": "s26528_gen_5",
+    "type": "multiple-choice",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "For $f(x) = x^2$, compute both $\\Delta y$ and $dy$ at $x = 2$ with $\\Delta x = dx = 0.5$. What is $\\Delta y - dy$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$0.25$"
+      },
+      {
+        "label": "C",
+        "text": "$0.5$"
+      },
+      {
+        "label": "D",
+        "text": "$2.25$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Computing $dy$:**\n$$dy = f'(x)\\,dx = 2x\\,dx = 2(2)(0.5) = 2$$\n\n**Computing $\\Delta y$:**\n$$\\Delta y = f(2 + 0.5) - f(2) = (2.5)^2 - (2)^2 = 6.25 - 4 = 2.25$$\n\n**Difference:**\n$$\\Delta y - dy = 2.25 - 2 = 0.25$$\n\nThis illustrates that $dy$ is a linear approximation to $\\Delta y$; the difference $\\Delta y - dy = (\\Delta x)^2 = 0.25$."
+  },
+  {
+    "id": "s26528_gen_6",
+    "type": "free-response",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "Use linear approximation at $a = 0$ to approximate $e^{0.3}$.",
+    "answer": "1.3",
+    "solution": "Let $f(x) = e^x$ and $a = 0$.\n\n$$f(0) = e^0 = 1$$\n$$f'(x) = e^x,\\quad f'(0) = 1$$\n\nLinearization:\n$$L(x) = 1 + 1\\cdot(x-0) = 1 + x$$\n\nApproximation:\n$$e^{0.3} \\approx L(0.3) = 1 + 0.3 = 1.3$$"
+  },
+  {
+    "id": "s26528_gen_7",
+    "type": "multiple-choice",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "The radius of a sphere is measured with a relative error of $1\\%$ (i.e., $|dr/r| = 0.01$). Use differentials to find the approximate relative error $|dV/V|$ in the volume $V = \\tfrac{4}{3}\\pi r^3$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1\\%$"
+      },
+      {
+        "label": "B",
+        "text": "$2\\%$"
+      },
+      {
+        "label": "C",
+        "text": "$3\\%$"
+      },
+      {
+        "label": "D",
+        "text": "$4\\%$"
+      }
+    ],
+    "answer": "C",
+    "solution": "Differentiate $V = \\frac{4}{3}\\pi r^3$:\n$$dV = 4\\pi r^2\\,dr$$\n\nRelative error:\n$$\\frac{dV}{V} = \\frac{4\\pi r^2\\,dr}{\\frac{4}{3}\\pi r^3} = \\frac{3\\,dr}{r} = 3\\cdot\\frac{dr}{r}$$\n\nSubstitute $|dr/r| = 0.01$:\n$$\\left|\\frac{dV}{V}\\right| = 3(0.01) = 0.03 = 3\\%$$\n\nThe relative error in volume is 3 times the relative error in radius. Distractor (A): forgot the exponent factor; (B): used factor 2 (area of circle, not sphere); (D): used factor 4."
+  },
+  {
+    "id": "s26528_gen_8",
+    "type": "free-response",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "Find the linearization $L(x)$ of $f(x) = \\ln x$ at $a = 1$, and use it to approximate $\\ln(1.05)$.",
+    "answer": "1/20",
+    "solution": "Let $f(x) = \\ln x$ and $a = 1$.\n\n$$f(1) = \\ln(1) = 0$$\n$$f'(x) = \\frac{1}{x},\\quad f'(1) = 1$$\n\nLinearization:\n$$L(x) = 0 + 1\\cdot(x - 1) = x - 1$$\n\nApproximation:\n$$\\ln(1.05) \\approx L(1.05) = 1.05 - 1 = 0.05 = \\frac{1}{20}$$"
+  },
+  {
+    "id": "s26528_gen_9",
+    "type": "select-all",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "Which of the following statements about linear approximation and differentials are **true**? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The linearization of $f$ at $a$ is $L(x) = f(a) + f'(a)(x-a)$."
+      },
+      {
+        "label": "B",
+        "text": "The differential $dy$ equals $\\Delta y$ exactly for any function."
+      },
+      {
+        "label": "C",
+        "text": "For $f(x) = e^x$ near $x=0$, $L(x) = 1 + x$."
+      },
+      {
+        "label": "D",
+        "text": "$dy = f'(x)\\,dx$ is an approximation to the actual change $\\Delta y = f(x+\\Delta x)-f(x)$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A. True.** This is the definition of the linearization (tangent line) at $a$:\n$$L(x) = f(a) + f'(a)(x-a)$$\n\n**B. False.** In general $dy \\neq \\Delta y$. We have $\\Delta y = dy + \\varepsilon\\,\\Delta x$ where $\\varepsilon\\to 0$ as $\\Delta x\\to 0$. They are equal only for linear functions.\n\n**C. True.** $f(x)=e^x$, $f(0)=1$, $f'(0)=1$, so $L(x)=1+x$. ✓\n\n**D. True.** The differential $dy = f'(x)\\,dx$ is defined precisely to approximate $\\Delta y$ for small $dx$."
+  },
+  {
+    "id": "s26528_gen_10",
+    "type": "multiple-choice",
+    "section": "§2.8. Linear Approximation and Differentials",
+    "text": "For $f(x) = \\dfrac{1}{x}$ at $x = 2$ with $dx = 0.1$, compute the differential $dy$ and the actual change $\\Delta y$. Which answer correctly states both?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$dy = -\\dfrac{1}{40}$, $\\;\\Delta y = -\\dfrac{1}{42}$"
+      },
+      {
+        "label": "B",
+        "text": "$dy = \\dfrac{1}{40}$, $\\;\\Delta y = \\dfrac{1}{42}$"
+      },
+      {
+        "label": "C",
+        "text": "$dy = -\\dfrac{1}{40}$, $\\;\\Delta y = -\\dfrac{1}{40}$"
+      },
+      {
+        "label": "D",
+        "text": "$dy = -\\dfrac{1}{4}$, $\\;\\Delta y = -\\dfrac{1}{42}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Computing $dy$:**\n$$f'(x) = -\\frac{1}{x^2},\\quad f'(2) = -\\frac{1}{4}$$\n$$dy = f'(2)\\,dx = -\\frac{1}{4}\\cdot 0.1 = -\\frac{1}{40}$$\n\n**Computing $\\Delta y$:**\n$$\\Delta y = f(2.1) - f(2) = \\frac{1}{2.1} - \\frac{1}{2} = \\frac{1}{\\frac{21}{10}} - \\frac{1}{2} = \\frac{10}{21} - \\frac{1}{2}$$\n$$= \\frac{20}{42} - \\frac{21}{42} = -\\frac{1}{42}$$\n\nSo $dy = -\\dfrac{1}{40}$ and $\\Delta y = -\\dfrac{1}{42}$. Note $|dy| > |\\Delta y|$ here, which makes sense since $f$ is concave up.\n\nDistractor (B): sign error; (C): claims $dy=\\Delta y$ (false in general); (D): forgot to multiply by $dx=0.1$."
+  }
+]

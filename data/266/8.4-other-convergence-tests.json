@@ -1,0 +1,193 @@
+[
+  {
+    "id": "s26684_gen_1",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to the series $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{n!}{n^n}$. Which of the following correctly states the value of $L = \\lim_{n\\to\\infty}\\left|\\frac{a_{n+1}}{a_n}\\right|$ and the conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = \\dfrac{1}{e}$; the series converges absolutely."
+      },
+      {
+        "label": "B",
+        "text": "$L = e$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = \\dfrac{1}{e}$; the series diverges."
+      },
+      {
+        "label": "D",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      }
+    ],
+    "answer": "A",
+    "solution": "We have $a_n = \\dfrac{n!}{n^n}$. Compute the ratio:\\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{(n+1)^{n+1}} \\cdot \\frac{n^n}{n!} = \\frac{(n+1)\\cdot n! \\cdot n^n}{(n+1)^{n+1}\\cdot n!} = \\frac{n^n}{(n+1)^n} = \\left(\\frac{n}{n+1}\\right)^n = \\frac{1}{\\left(1+\\frac{1}{n}\\right)^n}.$$\nTaking the limit as $n\\to\\infty$:\n$$L = \\lim_{n\\to\\infty}\\frac{1}{\\left(1+\\frac{1}{n}\\right)^n} = \\frac{1}{e}.$$\nSince $L = \\dfrac{1}{e} < 1$, the series **converges absolutely** by the Ratio Test.\n\n**Common errors:** Choice B flips the ratio, giving $L=e$. Choice C has the right $L$ but draws the wrong conclusion. Choice D incorrectly claims the limit equals 1, forgetting that $\\left(1+\\frac{1}{n}\\right)^n \\to e$."
+  },
+  {
+    "id": "s26684_gen_2",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ as a simplified fraction.",
+    "answer": "\\frac{10}{13}",
+    "solution": "Let $a_n = \\dfrac{10^n}{(7n^2+5)\\cdot 13^{n+3}}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10^{n+1}}{(7(n+1)^2+5)\\cdot 13^{n+4}} \\cdot \\frac{(7n^2+5)\\cdot 13^{n+3}}{10^n}.$$\nSimplifying:\n$$\\frac{a_{n+1}}{a_n} = \\frac{10\\cdot(7n^2+5)}{13\\cdot(7(n+1)^2+5)}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{10(7n^2+5)}{13(7n^2+14n+12)} = \\frac{10}{13}\\cdot\\lim_{n\\to\\infty}\\frac{7n^2+5}{7n^2+14n+12} = \\frac{10}{13}\\cdot 1 = \\frac{10}{13}.$$\nSince $L = \\dfrac{10}{13} < 1$, the series **converges absolutely** by the Ratio Test."
+  },
+  {
+    "id": "s26684_gen_3",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Consider the series $\\displaystyle\\sum_{n=1}^{\\infty} \\frac{e^{n-6}}{\\sqrt{n+7}\\,(n+3)!}$. After computing $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$, what is the correct conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = 0$; the series converges absolutely."
+      },
+      {
+        "label": "B",
+        "text": "$L = e$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      },
+      {
+        "label": "D",
+        "text": "$L = \\dfrac{1}{e}$; the series converges absolutely."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{e^{n-6}}{\\sqrt{n+7}\\,(n+3)!}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{e^{n-5}}{\\sqrt{n+8}\\,(n+4)!}\\cdot\\frac{\\sqrt{n+7}\\,(n+3)!}{e^{n-6}} = \\frac{e\\,\\sqrt{n+7}}{\\sqrt{n+8}\\,(n+4)}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{e\\,\\sqrt{n+7}}{\\sqrt{n+8}\\,(n+4)} = e\\cdot\\lim_{n\\to\\infty}\\frac{\\sqrt{n+7}}{(n+4)\\sqrt{n+8}} = e\\cdot\\lim_{n\\to\\infty}\\frac{1}{n\\cdot 1} \\cdot \\frac{\\sqrt{n}}{\\sqrt{n}} = 0.$$\nMore precisely, numerator grows like $\\sqrt{n}$ while denominator grows like $n$, so the ratio $\\to 0$. Since $L = 0 < 1$, the series **converges absolutely**.\n\n**Common errors:** Choice B gives $L=e$ by ignoring the $(n+4)!$ growth entirely. Choice D gives $1/e$ by treating only the exponential part of the ratio."
+  },
+  {
+    "id": "s26684_gen_4",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "A student applies the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2}{n^3+7}$. What is the correct outcome?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      },
+      {
+        "label": "B",
+        "text": "$L = 1$; the series diverges by the Ratio Test."
+      },
+      {
+        "label": "C",
+        "text": "$L = 0$; the series converges absolutely."
+      },
+      {
+        "label": "D",
+        "text": "$L = \\infty$; the series diverges."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{n^2}{n^3+7}$. Then:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)^2}{(n+1)^3+7}\\cdot\\frac{n^3+7}{n^2}.$$\nAs $n\\to\\infty$, the leading behavior of numerator is $n^2\\cdot n^3 = n^5$ and denominator is $n^2\\cdot n^3 = n^5$, so:\n$$L = \\lim_{n\\to\\infty}\\frac{(n+1)^2(n^3+7)}{n^2((n+1)^3+7)} = \\lim_{n\\to\\infty}\\frac{n^5+\\cdots}{n^5+\\cdots} = 1.$$\nSince $L = 1$, the **Ratio Test is inconclusive** — it gives no information. (In fact, this series behaves like $\\sum 1/n$, which diverges by the $p$-series test or limit comparison.)\n\n**Common error:** Choice B wrongly concludes divergence directly from $L=1$; when $L=1$ the Ratio Test makes no conclusion."
+  },
+  {
+    "id": "s26684_gen_5",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=0}^{\\infty}\\frac{3^n}{n!}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$.",
+    "answer": "0",
+    "solution": "Let $a_n = \\dfrac{3^n}{n!}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{3^{n+1}}{(n+1)!}\\cdot\\frac{n!}{3^n} = \\frac{3\\cdot 3^n}{(n+1)\\cdot n!}\\cdot\\frac{n!}{3^n} = \\frac{3}{n+1}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{3}{n+1} = 0.$$\nSince $L = 0 < 1$, the series converges absolutely by the Ratio Test. (This is the Taylor series for $e^3$.)"
+  },
+  {
+    "id": "s26684_gen_6",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^n}{n!}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$.",
+    "answer": "e",
+    "solution": "Let $a_n = \\dfrac{n^n}{n!}$. Compute:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)^{n+1}}{(n+1)!}\\cdot\\frac{n!}{n^n} = \\frac{(n+1)^{n+1}}{(n+1)\\cdot n!}\\cdot\\frac{n!}{n^n} = \\frac{(n+1)^n}{n^n} = \\left(1+\\frac{1}{n}\\right)^n.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^n = e.$$\nSince $L = e > 1$, the series **diverges** by the Ratio Test."
+  },
+  {
+    "id": "s26684_gen_7",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Use the Ratio Test on $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2 \\cdot 2^n}{3^n}$. Which answer gives the correct $L$ and conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = \\dfrac{2}{3}$; the series converges absolutely."
+      },
+      {
+        "label": "B",
+        "text": "$L = 2$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = \\dfrac{2}{3}$; the series diverges."
+      },
+      {
+        "label": "D",
+        "text": "$L = \\dfrac{4}{9}$; the series converges absolutely."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{n^2 \\cdot 2^n}{3^n}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)^2\\cdot 2^{n+1}}{3^{n+1}}\\cdot\\frac{3^n}{n^2\\cdot 2^n} = \\frac{2}{3}\\cdot\\frac{(n+1)^2}{n^2}.$$\nTaking the limit:\n$$L = \\frac{2}{3}\\cdot\\lim_{n\\to\\infty}\\frac{(n+1)^2}{n^2} = \\frac{2}{3}\\cdot 1 = \\frac{2}{3}.$$\nSince $L = \\dfrac{2}{3} < 1$, the series **converges absolutely**.\n\n**Distractor analysis:** B gives $L=2$ by considering only the $2^n/3^n$ ratio (forgetting the factor of $1/3$). C has the right $L$ but wrong conclusion. D gives $L=4/9$ by mistakenly squaring the exponential ratio."
+  },
+  {
+    "id": "s26684_gen_8",
+    "type": "free-response",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{5^n}$. Find $L = \\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_n}\\right|$.",
+    "answer": "\\infty",
+    "solution": "Let $a_n = \\dfrac{n!}{5^n}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{5^{n+1}}\\cdot\\frac{5^n}{n!} = \\frac{(n+1)\\cdot n!}{5\\cdot n!} = \\frac{n+1}{5}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{n+1}{5} = \\infty.$$\nSince $L = \\infty > 1$, the series **diverges** by the Ratio Test. Factorials eventually grow far faster than any fixed exponential base."
+  },
+  {
+    "id": "s26684_gen_9",
+    "type": "select-all",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "**Select all** series that the Ratio Test **conclusively shows to converge absolutely** (i.e., the Ratio Test gives $L < 1$).",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}\\frac{3^n}{n!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{5^n}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2\\cdot 2^n}{3^n}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(2n)!}{(n!)^2}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "Check each series with the Ratio Test:\n\n**A:** $a_n = 3^n/n!$. Ratio $= 3/(n+1) \\to 0 < 1$. ✓ **Converges absolutely.**\n\n**B:** $a_n = n!/5^n$. Ratio $= (n+1)/5 \\to \\infty > 1$. ✗ **Diverges.**\n\n**C:** $a_n = n^2\\cdot 2^n/3^n$. Ratio $= \\dfrac{2}{3}\\cdot\\dfrac{(n+1)^2}{n^2} \\to \\dfrac{2}{3} < 1$. ✓ **Converges absolutely.**\n\n**D:** $a_n = (2n)!/((n!)^2)$. Ratio $= \\dfrac{(2n+2)!}{((n+1)!)^2}\\cdot\\dfrac{(n!)^2}{(2n)!} = \\dfrac{(2n+2)(2n+1)}{(n+1)^2} = \\dfrac{2(2n+1)}{n+1} \\to 4 > 1$. ✗ **Diverges.**\n\nOnly **A and C** are conclusively shown to converge absolutely."
+  },
+  {
+    "id": "s26684_gen_10",
+    "type": "multiple-choice",
+    "section": "§8.4. Other Convergence Tests",
+    "text": "Apply the Ratio Test to $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(2n)!}{(n!)^2}$. Which of the following correctly identifies $L$ and the conclusion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$L = 4$; the series diverges."
+      },
+      {
+        "label": "B",
+        "text": "$L = 2$; the series diverges."
+      },
+      {
+        "label": "C",
+        "text": "$L = 1$; the Ratio Test is inconclusive."
+      },
+      {
+        "label": "D",
+        "text": "$L = 4$; the series converges absolutely."
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $a_n = \\dfrac{(2n)!}{(n!)^2}$. Compute the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(2n+2)!}{((n+1)!)^2}\\cdot\\frac{(n!)^2}{(2n)!}.$$\nUsing $(2n+2)! = (2n+2)(2n+1)(2n)!$ and $(n+1)! = (n+1)\\cdot n!$:\n$$\\frac{a_{n+1}}{a_n} = \\frac{(2n+2)(2n+1)(2n)!}{(n+1)^2(n!)^2}\\cdot\\frac{(n!)^2}{(2n)!} = \\frac{(2n+2)(2n+1)}{(n+1)^2} = \\frac{2(n+1)(2n+1)}{(n+1)^2} = \\frac{2(2n+1)}{n+1}.$$\nTaking the limit:\n$$L = \\lim_{n\\to\\infty}\\frac{2(2n+1)}{n+1} = \\lim_{n\\to\\infty}\\frac{4n+2}{n+1} = 4.$$\nSince $L = 4 > 1$, the series **diverges** by the Ratio Test.\n\n**Common errors:** Choice B gives $L=2$ by only keeping one factor of $(2n+2)/(n+1) = 2$ and forgetting the second factor $(2n+1)/(n+1) \\to 2$. Choice D correctly finds $L=4$ but draws the wrong conclusion."
+  }
+]

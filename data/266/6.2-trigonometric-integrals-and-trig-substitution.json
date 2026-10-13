@@ -1,0 +1,196 @@
+[
+  {
+    "id": "s62_gen_1",
+    "type": "multiple-choice",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int \\sin^3 x \\cos^2 x \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{\\cos^5 x}{5} - \\dfrac{\\cos^3 x}{3} + C$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\cos^3 x}{3} - \\dfrac{\\cos^5 x}{5} + C$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{\\sin^4 x}{4} - \\dfrac{\\sin^6 x}{6} + C$"
+      },
+      {
+        "label": "D",
+        "text": "$-\\dfrac{\\cos^3 x}{3} - \\dfrac{\\cos^5 x}{5} + C$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Since the power of $\\sin x$ is odd, we save one factor of $\\sin x$ and convert the rest using $\\sin^2 x = 1 - \\cos^2 x$.\n\n$$\\int \\sin^3 x \\cos^2 x \\, dx = \\int \\sin^2 x \\cos^2 x \\cdot \\sin x \\, dx = \\int (1 - \\cos^2 x) \\cos^2 x \\sin x \\, dx$$\n\nLet $u = \\cos x$, so $du = -\\sin x \\, dx$:\n\n$$= -\\int (1 - u^2) u^2 \\, du = -\\int (u^2 - u^4) \\, du = -\\left(\\frac{u^3}{3} - \\frac{u^5}{5}\\right) + C$$\n\n$$= -\\frac{\\cos^3 x}{3} + \\frac{\\cos^5 x}{5} + C = \\frac{\\cos^5 x}{5} - \\frac{\\cos^3 x}{3} + C$$\n\nVerification by differentiation:\n$$\\frac{d}{dx}\\left(\\frac{\\cos^5 x}{5} - \\frac{\\cos^3 x}{3}\\right) = \\cos^4 x(-\\sin x) - \\cos^2 x(-\\sin x) = \\sin x \\cos^2 x(1 - \\cos^2 x) = \\sin^3 x \\cos^2 x$$ ✓\n\nThe answer is **A**."
+  },
+  {
+    "id": "s62_gen_2",
+    "type": "free-response",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int \\frac{dx}{\\sqrt{9 - x^2}}$.",
+    "answer": "\\arcsin\\left(\\frac{x}{3}\\right) + C",
+    "solution": "This integral involves $\\sqrt{a^2 - x^2}$ with $a = 3$, so we use the substitution $x = 3\\sin\\theta$, $dx = 3\\cos\\theta \\, d\\theta$.\n\nThen $\\sqrt{9 - x^2} = \\sqrt{9 - 9\\sin^2\\theta} = 3\\sqrt{1 - \\sin^2\\theta} = 3\\cos\\theta$.\n\nThe integral becomes:\n$$\\int \\frac{3\\cos\\theta \\, d\\theta}{3\\cos\\theta} = \\int d\\theta = \\theta + C$$\n\n**Back-substitution:** From $x = 3\\sin\\theta$, we get $\\sin\\theta = \\frac{x}{3}$, so $\\theta = \\arcsin\\left(\\frac{x}{3}\\right)$.\n\n**Triangle:** In a right triangle with $\\sin\\theta = \\frac{x}{3}$, the opposite side is $x$, the hypotenuse is $3$, and the adjacent side is $\\sqrt{9-x^2}$.\n\n$$\\boxed{\\arcsin\\left(\\frac{x}{3}\\right) + C}$$"
+  },
+  {
+    "id": "s62_gen_3",
+    "type": "multiple-choice",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int \\sec^4 x \\tan^2 x \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{\\tan^5 x}{5} + \\dfrac{\\tan^3 x}{3} + C$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\tan^5 x}{5} - \\dfrac{\\tan^3 x}{3} + C$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{\\sec^5 x}{5} + \\dfrac{\\sec^3 x}{3} + C$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{\\tan^6 x}{6} + C$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Since the power of $\\sec x$ is even, we save $\\sec^2 x$ for $du$ and convert the remaining $\\sec^2 x$ using $\\sec^2 x = 1 + \\tan^2 x$.\n\n$$\\int \\sec^4 x \\tan^2 x \\, dx = \\int \\sec^2 x \\cdot \\sec^2 x \\cdot \\tan^2 x \\, dx = \\int (1 + \\tan^2 x) \\tan^2 x \\cdot \\sec^2 x \\, dx$$\n\nLet $u = \\tan x$, $du = \\sec^2 x \\, dx$:\n\n$$= \\int (1 + u^2) u^2 \\, du = \\int (u^2 + u^4) \\, du = \\frac{u^3}{3} + \\frac{u^5}{5} + C$$\n\n$$= \\frac{\\tan^3 x}{3} + \\frac{\\tan^5 x}{5} + C = \\frac{\\tan^5 x}{5} + \\frac{\\tan^3 x}{3} + C$$\n\nThe answer is **A**.\n\n(Distractor B has the wrong sign on the second term. Distractor C incorrectly uses $\\sec x$ substitution. Distractor D assumes simple power rule without the identity.)"
+  },
+  {
+    "id": "s62_gen_4",
+    "type": "free-response",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int \\frac{x^3}{\\sqrt{x^2 + 4}} \\, dx$.",
+    "answer": "\\frac{1}{3}(x^2 + 4)^{3/2} - 4\\sqrt{x^2 + 4} + C",
+    "solution": "Use the substitution $x = 2\\tan\\theta$, $dx = 2\\sec^2\\theta \\, d\\theta$.\n\nThen $\\sqrt{x^2 + 4} = \\sqrt{4\\tan^2\\theta + 4} = 2\\sec\\theta$.\n\nAlso, $x^3 = 8\\tan^3\\theta$.\n\n$$\\int \\frac{8\\tan^3\\theta \\cdot 2\\sec^2\\theta \\, d\\theta}{2\\sec\\theta} = \\int 8\\tan^3\\theta \\sec\\theta \\, d\\theta$$\n\nRewrite $\\tan^3\\theta = \\tan\\theta(\\sec^2\\theta - 1)$:\n\n$$= 8\\int \\tan\\theta(\\sec^2\\theta - 1)\\sec\\theta \\, d\\theta = 8\\int (\\sec^2\\theta - 1)\\sec\\theta \\tan\\theta \\, d\\theta$$\n\nLet $u = \\sec\\theta$, $du = \\sec\\theta \\tan\\theta \\, d\\theta$:\n\n$$= 8\\int (u^2 - 1) \\, du = 8\\left(\\frac{u^3}{3} - u\\right) + C = \\frac{8\\sec^3\\theta}{3} - 8\\sec\\theta + C$$\n\n**Back-substitution using triangle:** With $\\tan\\theta = \\frac{x}{2}$, draw a right triangle: opposite = $x$, adjacent = $2$, hypotenuse = $\\sqrt{x^2 + 4}$.\n\nThus $\\sec\\theta = \\frac{\\sqrt{x^2+4}}{2}$.\n\n$$= \\frac{8}{3}\\cdot\\frac{(x^2+4)^{3/2}}{8} - 8\\cdot\\frac{\\sqrt{x^2+4}}{2} + C = \\frac{(x^2+4)^{3/2}}{3} - 4\\sqrt{x^2+4} + C$$\n\n$$\\boxed{\\frac{1}{3}(x^2 + 4)^{3/2} - 4\\sqrt{x^2 + 4} + C}$$"
+  },
+  {
+    "id": "s62_gen_5",
+    "type": "select-all",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Which of the following integrals would appropriately use the substitution $x = a\\sec\\theta$ for some constant $a > 0$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle \\int \\frac{dx}{\\sqrt{x^2 - 16}}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle \\int \\sqrt{25 - x^2} \\, dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle \\int \\frac{x^2}{\\sqrt{x^2 - 9}} \\, dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle \\int \\frac{dx}{x^2 + 4}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "The substitution $x = a\\sec\\theta$ is used for integrands containing $\\sqrt{x^2 - a^2}$.\n\n**A:** Contains $\\sqrt{x^2 - 16} = \\sqrt{x^2 - 4^2}$. Use $x = 4\\sec\\theta$. ✓\n\n**B:** Contains $\\sqrt{25 - x^2} = \\sqrt{5^2 - x^2}$. This is $\\sqrt{a^2 - x^2}$ form, so use $x = 5\\sin\\theta$, NOT secant. ✗\n\n**C:** Contains $\\sqrt{x^2 - 9} = \\sqrt{x^2 - 3^2}$. Use $x = 3\\sec\\theta$. ✓\n\n**D:** Contains $x^2 + 4$ (no square root of this form, but if needed, this is $x^2 + a^2$ form). Use $x = 2\\tan\\theta$, NOT secant. ✗\n\nThe answers are **A** and **C**."
+  },
+  {
+    "id": "s62_gen_6",
+    "type": "multiple-choice",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int_0^{\\pi/2} \\sin^2 x \\cos^2 x \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{\\pi}{16}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\pi}{8}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{\\pi}{4}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{8}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Both powers are even, so we use power-reduction identities.\n\nFirst, use $\\sin x \\cos x = \\frac{1}{2}\\sin 2x$, so:\n$$\\sin^2 x \\cos^2 x = \\frac{1}{4}\\sin^2 2x$$\n\nNow apply power reduction to $\\sin^2 2x = \\frac{1 - \\cos 4x}{2}$:\n$$\\sin^2 x \\cos^2 x = \\frac{1}{4} \\cdot \\frac{1 - \\cos 4x}{2} = \\frac{1 - \\cos 4x}{8}$$\n\nIntegrate:\n$$\\int_0^{\\pi/2} \\frac{1 - \\cos 4x}{8} \\, dx = \\frac{1}{8}\\left[x - \\frac{\\sin 4x}{4}\\right]_0^{\\pi/2}$$\n\n$$= \\frac{1}{8}\\left[\\left(\\frac{\\pi}{2} - \\frac{\\sin 2\\pi}{4}\\right) - \\left(0 - \\frac{\\sin 0}{4}\\right)\\right] = \\frac{1}{8}\\left(\\frac{\\pi}{2} - 0\\right) = \\frac{\\pi}{16}$$\n\nThe answer is **A**."
+  },
+  {
+    "id": "s62_gen_7",
+    "type": "free-response",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int \\frac{\\sqrt{x^2 - 25}}{x} \\, dx$ for $x > 5$.",
+    "answer": "\\sqrt{x^2 - 25} - 5\\sec^{-1}\\left(\\frac{x}{5}\\right) + C",
+    "solution": "Use $x = 5\\sec\\theta$ (where $\\theta \\in [0, \\pi/2)$ since $x > 5$), so $dx = 5\\sec\\theta\\tan\\theta \\, d\\theta$.\n\nThen $\\sqrt{x^2 - 25} = \\sqrt{25\\sec^2\\theta - 25} = 5\\tan\\theta$.\n\n$$\\int \\frac{5\\tan\\theta}{5\\sec\\theta} \\cdot 5\\sec\\theta\\tan\\theta \\, d\\theta = \\int 5\\tan^2\\theta \\, d\\theta$$\n\nUse $\\tan^2\\theta = \\sec^2\\theta - 1$:\n$$= 5\\int (\\sec^2\\theta - 1) \\, d\\theta = 5(\\tan\\theta - \\theta) + C$$\n\n**Back-substitution using triangle:** With $\\sec\\theta = \\frac{x}{5}$, draw a right triangle: hypotenuse = $x$, adjacent = $5$, opposite = $\\sqrt{x^2 - 25}$.\n\nThus $\\tan\\theta = \\frac{\\sqrt{x^2-25}}{5}$ and $\\theta = \\text{arcsec}\\left(\\frac{x}{5}\\right)$.\n\n$$= 5 \\cdot \\frac{\\sqrt{x^2-25}}{5} - 5\\text{arcsec}\\left(\\frac{x}{5}\\right) + C = \\sqrt{x^2 - 25} - 5\\text{arcsec}\\left(\\frac{x}{5}\\right) + C$$\n\n$$\\boxed{\\sqrt{x^2 - 25} - 5\\text{arcsec}\\left(\\frac{x}{5}\\right) + C}$$"
+  },
+  {
+    "id": "s62_gen_8",
+    "type": "multiple-choice",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int \\tan^5 x \\sec x \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{\\sec^5 x}{5} - \\dfrac{2\\sec^3 x}{3} + \\sec x + C$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\sec^5 x}{5} - \\dfrac{\\sec^3 x}{3} + C$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{\\tan^6 x}{6} + C$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{\\sec^5 x}{5} + \\dfrac{2\\sec^3 x}{3} - \\sec x + C$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We have an odd power of $\\tan x$ with $\\sec x$, so we save $\\sec x \\tan x$ for $du$ and convert the remaining $\\tan^4 x$.\n\n$$\\int \\tan^5 x \\sec x \\, dx = \\int \\tan^4 x \\cdot \\sec x \\tan x \\, dx$$\n\nUsing $\\tan^2 x = \\sec^2 x - 1$:\n$$\\tan^4 x = (\\sec^2 x - 1)^2 = \\sec^4 x - 2\\sec^2 x + 1$$\n\nLet $u = \\sec x$, $du = \\sec x \\tan x \\, dx$:\n\n$$= \\int (u^4 - 2u^2 + 1) \\, du = \\frac{u^5}{5} - \\frac{2u^3}{3} + u + C$$\n\n$$= \\frac{\\sec^5 x}{5} - \\frac{2\\sec^3 x}{3} + \\sec x + C$$\n\nThe answer is **A**.\n\n(Distractor B forgot the constant term. Distractor D has wrong signs.)"
+  },
+  {
+    "id": "s62_gen_9",
+    "type": "free-response",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "Evaluate $\\displaystyle \\int \\frac{dx}{x^2\\sqrt{x^2 + 1}}$.",
+    "answer": "-\\frac{\\sqrt{x^2 + 1}}{x} + C",
+    "solution": "Use $x = \\tan\\theta$, so $dx = \\sec^2\\theta \\, d\\theta$ and $\\sqrt{x^2 + 1} = \\sec\\theta$.\n\n$$\\int \\frac{\\sec^2\\theta \\, d\\theta}{\\tan^2\\theta \\cdot \\sec\\theta} = \\int \\frac{\\sec\\theta}{\\tan^2\\theta} \\, d\\theta = \\int \\frac{\\cos\\theta}{\\sin^2\\theta} \\, d\\theta$$\n\nLet $u = \\sin\\theta$, $du = \\cos\\theta \\, d\\theta$:\n$$= \\int \\frac{du}{u^2} = -\\frac{1}{u} + C = -\\csc\\theta + C$$\n\n**Back-substitution using triangle:** With $\\tan\\theta = x$, draw a right triangle: opposite = $x$, adjacent = $1$, hypotenuse = $\\sqrt{x^2 + 1}$.\n\nThus $\\csc\\theta = \\frac{\\text{hypotenuse}}{\\text{opposite}} = \\frac{\\sqrt{x^2+1}}{x}$.\n\n$$= -\\frac{\\sqrt{x^2 + 1}}{x} + C$$\n\n$$\\boxed{-\\frac{\\sqrt{x^2 + 1}}{x} + C}$$"
+  },
+  {
+    "id": "s62_gen_10",
+    "type": "select-all",
+    "section": "§6.2. Trigonometric Integrals and Trig Substitution",
+    "text": "For the integral $\\displaystyle \\int \\sin^4 x \\, dx$, which of the following are valid approaches?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Write $\\sin^4 x = (\\sin^2 x)^2$ and use the power-reduction identity $\\sin^2 x = \\frac{1-\\cos 2x}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "Substitute $u = \\cos x$ directly"
+      },
+      {
+        "label": "C",
+        "text": "Write $\\sin^4 x = \\sin^3 x \\cdot \\sin x$ and use $\\sin^2 x = 1 - \\cos^2 x$"
+      },
+      {
+        "label": "D",
+        "text": "Use integration by parts with $u = \\sin^3 x$ and $dv = \\sin x \\, dx$"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "solution": "**A:** Valid. Writing $\\sin^4 x = \\left(\\frac{1-\\cos 2x}{2}\\right)^2 = \\frac{1 - 2\\cos 2x + \\cos^2 2x}{4}$ and then applying power reduction to $\\cos^2 2x$ gives an integrable form. ✓\n\n**B:** Invalid. Substituting $u = \\cos x$ gives $du = -\\sin x \\, dx$, but we need a single factor of $\\sin x$ to pair with $du$. We have $\\sin^4 x$, which doesn't simplify properly — we'd need to write $\\sin^4 x$ in terms of $\\cos x$, and we'd still have $\\sin x$ issues. This doesn't work directly. ✗\n\n**C:** Invalid. The strategy of saving one odd power works for $\\int \\sin^m x \\cos^n x \\, dx$ when one exponent is odd and we convert the even powers. Here there's no $\\cos x$ factor, so after converting $\\sin^2 x = 1 - \\cos^2 x$, we get $\\int (1-\\cos^2 x) \\sin x \\cdot \\sin x \\, dx$. The remaining $\\sin x$ factor cannot be handled by a simple $u$-substitution. ✗\n\n**D:** Valid. Integration by parts (reduction formula approach) can be used. With $u = \\sin^3 x$ and $dv = \\sin x \\, dx$, we get $du = 3\\sin^2 x \\cos x \\, dx$ and $v = -\\cos x$. This leads to a reduction formula. ✓\n\nThe answers are **A** and **D**."
+  }
+]

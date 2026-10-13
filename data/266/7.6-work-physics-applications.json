@@ -1,0 +1,416 @@
+[
+  {
+    "id": "s76_gen_1",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A cylindrical tank has radius 3 m and height 5 m. It is completely filled with water ($\\rho = 1000$ kg/m³, $g = 9.8$ m/s²). The tank is oriented vertically with its base on the ground. Which integral represents the work required to pump all the water over the top of the tank?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^5 9800 \\cdot 9\\pi (5 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^5 9800 \\cdot 9\\pi \\cdot y \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^5 9800 \\cdot 9\\pi (5 + y) \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^5 9800 \\cdot 3\\pi (5 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the base of the tank with $y$ measured upward.\n\n**Step 1:** At height $y$, a thin slice of water has:\n- Thickness: $dy$\n- Cross-sectional area: $A(y) = \\pi(3)^2 = 9\\pi$ m² (constant for a cylinder)\n- Volume: $dV = 9\\pi \\, dy$\n- Mass: $dm = 1000 \\cdot 9\\pi \\, dy$\n- Weight (force): $dF = 9800 \\cdot 9\\pi \\, dy$\n\n**Step 2:** The slice at height $y$ must be lifted to the top at $y = 5$.\n- Distance lifted: $d(y) = 5 - y$\n\n**Step 3:** Work for this slice:\n$$dW = 9800 \\cdot 9\\pi (5 - y) \\, dy$$\n\n**Step 4:** Total work:\n$$W = \\int_0^5 9800 \\cdot 9\\pi (5 - y) \\, dy$$\n\nThe answer is **A**."
+  },
+  {
+    "id": "s76_gen_2",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A conical tank (vertex down) has height 6 m and top radius 2 m. It is filled with water ($\\rho = 1000$ kg/m³, $g = 9.8$ m/s²). Select the integral for the work required to pump all the water to the top of the tank.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^6 9800 \\cdot \\pi \\cdot \\dfrac{y^2}{9} \\cdot (6 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^6 9800 \\cdot \\pi \\cdot \\dfrac{y^2}{3} \\cdot (6 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^6 9800 \\cdot \\pi \\cdot \\dfrac{y^2}{9} \\cdot y \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^6 9800 \\cdot 2\\pi \\cdot \\dfrac{y}{3} \\cdot (6 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the vertex (bottom) of the cone with $y$ measured upward.\n\n**Step 1:** Find the radius at height $y$ using similar triangles.\n- At $y = 6$, radius $= 2$\n- At height $y$: $\\frac{r}{y} = \\frac{2}{6} = \\frac{1}{3}$\n- So $r(y) = \\frac{y}{3}$\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A(y) = \\pi r^2 = \\pi \\left(\\frac{y}{3}\\right)^2 = \\frac{\\pi y^2}{9}$\n- Volume: $dV = \\frac{\\pi y^2}{9} \\, dy$\n- Weight: $dF = 1000 \\cdot 9.8 \\cdot \\frac{\\pi y^2}{9} \\, dy = \\frac{9800 \\pi y^2}{9} \\, dy$\n\n**Step 3:** Distance to pump to the top ($y = 6$):\n$$d(y) = 6 - y$$\n\n**Step 4:** The integral is:\n$$W = \\int_0^6 9800 \\cdot \\frac{\\pi y^2}{9} (6 - y) \\, dy$$"
+  },
+  {
+    "id": "s76_gen_3",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A hemispherical tank of radius 4 m is filled with water ($\\rho = 1000$ kg/m³). The tank sits with its flat side on top (bowl shape). If the origin is placed at the bottom of the tank, which integral gives the work to pump all the water out over the top?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^4 9800\\pi (16 - y^2)(4 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^4 9800\\pi (16 - (y-4)^2)(4 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^4 9800\\pi y^2 (4 - y) \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^4 9800\\pi (16 - y^2) \\cdot y \\, dy$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Place the origin at the bottom of the hemispherical bowl, $y$ measured upward. The flat top is at $y = 4$.\n\n**Step 1:** The hemisphere is the lower half of a sphere of radius 4 centered at $(0, 4)$.\n- Sphere equation: $x^2 + (y-4)^2 = 16$\n- At height $y$: $r^2 = 16 - (y-4)^2$\n\n**Step 2:** Cross-sectional area at height $y$:\n$$A(y) = \\pi r^2 = \\pi[16 - (y-4)^2]$$\n\n**Step 3:** Distance to pump to the top at $y = 4$:\n$$d(y) = 4 - y$$\n\n**Step 4:** Work integral:\n$$W = \\int_0^4 1000 \\cdot 9.8 \\cdot \\pi[16 - (y-4)^2](4 - y) \\, dy$$\n$$W = \\int_0^4 9800\\pi (16 - (y-4)^2)(4 - y) \\, dy$$\n\nThe answer is **B**.\n\nNote: Choice A uses $16 - y^2$, which would be correct if the center were at the origin, but here the center is at $y = 4$."
+  },
+  {
+    "id": "s76_gen_4",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A rectangular tank has length 8 m, width 4 m, and height 3 m. It is half-filled with saltwater ($\\rho = 1030$ kg/m³, $g = 9.8$ m/s²). Select the integral for the work required to pump all the saltwater to the top of the tank.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^{1.5} 1030 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^3 1030 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^{1.5} 1030 \\cdot 9.8 \\cdot 32 \\cdot y \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^{1.5} 1000 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the bottom of the tank with $y$ measured upward.\n\n**Step 1:** The tank is half-filled, so water goes from $y = 0$ to $y = 1.5$ m (half of 3 m).\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A = 8 \\times 4 = 32$ m² (constant)\n- Volume: $dV = 32 \\, dy$\n- Mass: $dm = 1030 \\cdot 32 \\, dy$\n- Weight: $dF = 1030 \\cdot 9.8 \\cdot 32 \\, dy$\n\n**Step 3:** Distance to pump to the top at $y = 3$:\n$$d(y) = 3 - y$$\n\n**Step 4:** Work integral (integrating over the water, from 0 to 1.5):\n$$W = \\int_0^{1.5} 1030 \\cdot 9.8 \\cdot 32 \\cdot (3 - y) \\, dy$$"
+  },
+  {
+    "id": "s76_gen_5",
+    "type": "select-all",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A cylindrical tank of radius 2 m and height 10 m is full of water. The water must be pumped through a spout that extends 2 m above the top of the tank. With $y = 0$ at the base, select ALL correct statements about the work integral.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The distance function is $d(y) = 12 - y$"
+      },
+      {
+        "label": "B",
+        "text": "The cross-sectional area is $A(y) = 4\\pi$ for all $y$ in $[0, 10]$"
+      },
+      {
+        "label": "C",
+        "text": "The limits of integration are from $y = 0$ to $y = 12$"
+      },
+      {
+        "label": "D",
+        "text": "The work integral is $W = \\int_0^{10} 9800 \\cdot 4\\pi (12 - y) \\, dy$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**Analyzing each statement:**\n\n**A: The distance function is $d(y) = 12 - y$** ✓\n- The spout is 2 m above the top of a 10 m tank, so water exits at height 12 m.\n- Water at height $y$ must travel $12 - y$ meters. **TRUE**\n\n**B: The cross-sectional area is $A(y) = 4\\pi$** ✓\n- For a cylinder with radius 2: $A = \\pi r^2 = \\pi(2)^2 = 4\\pi$\n- This is constant for all $y$. **TRUE**\n\n**C: The limits are from 0 to 12** ✗\n- The water is only in the tank from $y = 0$ to $y = 10$.\n- The spout region (10 to 12) contains no water to pump. **FALSE**\n\n**D: $W = \\int_0^{10} 9800 \\cdot 4\\pi (12 - y) \\, dy$** ✓\n- This correctly combines: $\\rho g = 9800$, $A = 4\\pi$, $d(y) = 12 - y$, limits 0 to 10. **TRUE**\n\nCorrect answers: **A, B, D**"
+  },
+  {
+    "id": "s76_gen_6",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A conical tank (vertex up) has height 8 m and base radius 4 m. The base is on the ground, and the vertex points upward. If the tank is full of water and we place the origin at ground level, what is the radius $r(y)$ at height $y$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$r(y) = \\dfrac{y}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$r(y) = 4 - \\dfrac{y}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$r(y) = 4 - 2y$"
+      },
+      {
+        "label": "D",
+        "text": "$r(y) = 2y$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Setting up the geometry:**\n- Vertex up means the cone is widest at the bottom and narrows to a point at the top.\n- At $y = 0$ (ground): radius $= 4$ m\n- At $y = 8$ (top): radius $= 0$ m\n\n**Using similar triangles:**\nThe radius decreases linearly from 4 to 0 as $y$ goes from 0 to 8. The rate of decrease is $\\frac{4}{8} = \\frac{1}{2}$ per meter, giving:\n\n$$r(y) = 4 - \\frac{1}{2}y$$\n\n**Verification:**\n- At $y = 0$: $r(0) = 4$ ✓\n- At $y = 8$: $r(8) = 4 - 4 = 0$ ✓\n\n**Why the others are wrong:**\n- **A:** $r(y) = \\frac{y}{2}$ increases with height — that describes a vertex-down cone.\n- **C:** $r(y) = 4 - 2y$ uses an inverted ratio (2 instead of $\\frac{1}{2}$), giving a negative radius before $y = 8$.\n- **D:** $r(y) = 2y$ increases with height and has the wrong slope entirely."
+  },
+  {
+    "id": "s76_gen_7",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A trough is 10 m long with triangular cross-sections. Each cross-section is an isoceles triangle with vertex down, base width 3 m at the top, and depth 2 m. The trough is full of water. Select the integral for the work to pump all water to the top of the trough.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^2 9800 \\cdot 10 \\cdot \\dfrac{3y}{2} \\cdot (2 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^2 9800 \\cdot 10 \\cdot 3y \\cdot (2 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^2 9800 \\cdot 10 \\cdot \\dfrac{3y}{2} \\cdot y \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^3 9800 \\cdot 10 \\cdot \\dfrac{2y}{3} \\cdot (2 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the bottom (vertex) of the triangular cross-section, $y$ measured upward.\n\n**Step 1:** Find the width $w(y)$ at height $y$ using similar triangles.\n- At $y = 2$: width $= 3$ m\n- At $y = 0$: width $= 0$ m\n- $\\frac{w(y)}{y} = \\frac{3}{2}$, so $w(y) = \\frac{3y}{2}$\n\n**Step 2:** At height $y$, a thin slice has:\n- Cross-sectional area: $A(y) = \\text{length} \\times \\text{width} = 10 \\cdot \\frac{3y}{2} = 15y$\n- Volume: $dV = 15y \\, dy$\n- Weight: $dF = 9800 \\cdot 15y \\, dy$\n\n**Step 3:** Distance to pump to the top at $y = 2$:\n$$d(y) = 2 - y$$\n\n**Step 4:** Work integral:\n$$W = \\int_0^2 9800 \\cdot 10 \\cdot \\frac{3y}{2} \\cdot (2 - y) \\, dy$$"
+  },
+  {
+    "id": "s76_gen_8",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A spherical tank of radius 5 m is half-filled with water (the bottom half). The center of the sphere is at ground level, so the tank extends from $y = -5$ to $y = 5$. Which integral gives the work to pump the water to the top of the tank?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_{-5}^{0} 9800\\pi (25 - y^2)(5 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_{-5}^{5} 9800\\pi (25 - y^2)(5 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_{0}^{5} 9800\\pi (25 - y^2)(5 - y) \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_{-5}^{0} 9800\\pi (25 - y^2) \\cdot y \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Setup:**\n- Sphere centered at origin: $x^2 + y^2 = 25$\n- Tank extends from $y = -5$ to $y = 5$\n- Half-filled (bottom half): water from $y = -5$ to $y = 0$\n\n**Step 1:** At height $y$, the radius of the circular cross-section:\n$$r^2 = 25 - y^2$$\n$$A(y) = \\pi(25 - y^2)$$\n\n**Step 2:** Distance to pump to the top at $y = 5$:\n$$d(y) = 5 - y$$\n\n**Step 3:** Limits of integration: from $y = -5$ to $y = 0$ (where the water is)\n\n**Step 4:** Work integral:\n$$W = \\int_{-5}^{0} 9800\\pi (25 - y^2)(5 - y) \\, dy$$\n\nThe answer is **A**.\n\n**Common errors:**\n- B: Integrates over the entire tank, not just the water\n- C: Integrates over the top half, which is empty\n- D: Uses wrong distance function (would be for pumping to $y = 0$)"
+  },
+  {
+    "id": "s76_gen_9",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A cylindrical tank of radius 3 m and height 6 m stands vertically, filled with water to a depth of 4 m. Water is pumped through a pipe that exits 1 m above the top of the tank. Select the integral for the work required to empty the tank. (Use $\\rho = 1000$ kg/m³, $g = 9.8$ m/s².)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$W = \\int_0^4 9800 \\cdot 9\\pi \\cdot (7 - y) \\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_0^6 9800 \\cdot 9\\pi \\cdot (7 - y) \\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$W = \\int_0^4 9800 \\cdot 3\\pi \\cdot (6 - y) \\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$W = \\int_0^4 9800 \\cdot 9\\pi \\cdot (6 - y) \\, dy$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Place the origin at the bottom of the tank, $y$ measured upward.\n\n**Step 1:** Identify key heights:\n- Water fills from $y = 0$ to $y = 4$ (depth of 4 m)\n- Top of tank: $y = 6$\n- Exit point of pipe: $y = 6 + 1 = 7$ m\n\n**Step 2:** At height $y$:\n- Cross-sectional area: $A = \\pi(3)^2 = 9\\pi$ m²\n- Volume: $dV = 9\\pi \\, dy$\n- Weight: $dF = 1000 \\cdot 9.8 \\cdot 9\\pi \\, dy = 9800 \\cdot 9\\pi \\, dy$\n\n**Step 3:** Distance to pump to exit at $y = 7$:\n$$d(y) = 7 - y$$\n\n**Step 4:** Limits: from $y = 0$ to $y = 4$ (where the water is)\n\n**Step 5:** Work integral:\n$$W = \\int_0^4 9800 \\cdot 9\\pi (7 - y) \\, dy$$"
+  },
+  {
+    "id": "s76_gen_10",
+    "type": "select-all",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "For a work-pumping problem, which factors affect the total work required? Select ALL that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The density of the fluid being pumped"
+      },
+      {
+        "label": "B",
+        "text": "The shape of the tank (which affects the cross-sectional area function)"
+      },
+      {
+        "label": "C",
+        "text": "The height to which the fluid must be pumped"
+      },
+      {
+        "label": "D",
+        "text": "The time allowed to complete the pumping"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**Work formula:** $W = \\int \\rho \\cdot g \\cdot A(y) \\cdot d(y) \\, dy$\n\n**A: Density of the fluid ($\\rho$)** ✓\n- Appears directly in the formula\n- Denser fluid (e.g., saltwater vs. freshwater) requires more work. **TRUE**\n\n**B: Shape of the tank (affects $A(y)$)** ✓\n- The cross-sectional area function depends on tank geometry\n- A cone vs. cylinder with the same volume will require different work. **TRUE**\n\n**C: Height to which fluid is pumped (affects $d(y)$)** ✓\n- The distance function $d(y)$ directly involves the exit height\n- Pumping to a higher spout requires more work. **TRUE**\n\n**D: Time allowed** ✗\n- Work is a measure of energy transferred, independent of time\n- Power = Work/Time, but the total work is unchanged\n- Taking longer doesn't change the work, just the power needed. **FALSE**\n\nCorrect answers: **A, B, C**"
+  },
+  {
+    "id": "s76_concept_1",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A spring requires a force of 3 N to stretch 20 cm beyond its natural length. The work required to stretch it 40 cm beyond its natural length compared to stretching it 20 cm is:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "four times as much."
+      },
+      {
+        "label": "B",
+        "text": "twice as much."
+      },
+      {
+        "label": "C",
+        "text": "six times as much."
+      },
+      {
+        "label": "D",
+        "text": "the same."
+      }
+    ],
+    "answer": "A",
+    "solution": "By Hooke's Law, $F = kx$. Find $k$: $3 = k(0.20)$, so $k = 15$ N/m.\n\nWork is $W = \\int_0^x kx\\,dx = \\frac{kx^2}{2}$.\n\n$$W_1 = \\frac{k(0.20)^2}{2}, \\quad W_2 = \\frac{k(0.40)^2}{2}$$\n\n$$\\frac{W_2}{W_1} = \\frac{(0.40)^2}{(0.20)^2} = \\frac{0.16}{0.04} = 4$$\n\n**Key insight:** Work scales with the *square* of displacement because $W = \\frac{kx^2}{2}$. Doubling distance quadruples work.\n\nThe answer is $\\boxed{A}$."
+  },
+  {
+    "id": "s76_concept_2",
+    "type": "select-all",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A 10 m chain with mass density $\\rho$ kg/m hangs vertically. Select ALL true statements about the work to lift the entire chain to the top.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "A small segment at depth $x$ from the top must be lifted a distance $x$."
+      },
+      {
+        "label": "B",
+        "text": "The work integral is $\\displaystyle W = \\int_0^{10} \\rho g x\\,dx$."
+      },
+      {
+        "label": "C",
+        "text": "The total work equals the work to lift the entire chain's weight through 10 m."
+      },
+      {
+        "label": "D",
+        "text": "The total work equals the work to lift the entire chain's weight through 5 m."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A:** True. A segment at depth $x$ from the top needs to travel distance $x$ to reach the top. ✓\n\n**B:** True. Each segment has mass $\\rho\\,dx$ and must be lifted distance $x$, so $dW = \\rho g x\\,dx$, giving $W = \\int_0^{10} \\rho gx\\,dx$. ✓\n\n**C:** False. $W = \\int_0^{10} \\rho gx\\,dx = \\rho g \\cdot \\frac{100}{2} = 50\\rho g$. The total weight is $10\\rho g$, and $50\\rho g \\neq 10\\rho g \\cdot 10$. ✗\n\n**D:** True. $W = 50\\rho g = (10\\rho g) \\cdot 5$. This equals lifting the total weight through the center of mass (5 m). ✓\n\nThe answers are $\\boxed{A, B, D}$."
+  },
+  {
+    "id": "s76_force_1",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A variable force $F(x) = 3x^2 - 4x + 2$ newtons moves a particle along the $x$-axis from $x = 1$ to $x = 3$ meters. Find the work done.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$14$ J"
+      },
+      {
+        "label": "B",
+        "text": "$18$ J"
+      },
+      {
+        "label": "C",
+        "text": "$24$ J"
+      },
+      {
+        "label": "D",
+        "text": "$10$ J"
+      }
+    ],
+    "answer": "A",
+    "solution": "Work is $W = \\int_a^b F(x)\\,dx$.\n\n$$W = \\int_1^3 (3x^2 - 4x + 2)\\,dx = \\left[x^3 - 2x^2 + 2x\\right]_1^3$$\n$$= (27 - 18 + 6) - (1 - 2 + 2) = 15 - 1 = 14 \\text{ J}$$\n\nThe answer is $\\boxed{14 \\text{ J}}$."
+  },
+  {
+    "id": "s76_force_2",
+    "type": "free-response",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A force of $F(x) = \\sin(\\pi x)$ newtons acts on a particle moving from $x = 0$ to $x = 1$ meter. Find the total work done in Joules.",
+    "answer": "\\frac{2}{\\pi}",
+    "solution": "$$W = \\int_0^1 \\sin(\\pi x)\\,dx = \\left[-\\frac{\\cos(\\pi x)}{\\pi}\\right]_0^1$$\n$$= -\\frac{\\cos(\\pi)}{\\pi} + \\frac{\\cos(0)}{\\pi} = -\\frac{-1}{\\pi} + \\frac{1}{\\pi} = \\frac{2}{\\pi} \\text{ J}$$\n\nThe answer is $\\boxed{\\dfrac{2}{\\pi}}$ J."
+  },
+  {
+    "id": "s76_force_3",
+    "type": "multiple-choice",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "A chain 50 feet long weighing 2 pounds per linear foot hangs from the roof of a building. Find the work done in pulling the entire chain up to the roof.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2500$ ft-lb"
+      },
+      {
+        "label": "B",
+        "text": "$5000$ ft-lb"
+      },
+      {
+        "label": "C",
+        "text": "$100$ ft-lb"
+      },
+      {
+        "label": "D",
+        "text": "$1250$ ft-lb"
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $y$ = distance (in feet) below the roof. A small segment at depth $y$ has weight $2\\,dy$ lb and must be lifted $y$ feet.\n\n$$W = \\int_0^{50} 2y\\,dy = \\left[y^2\\right]_0^{50} = 2500 \\text{ ft-lb}$$\n\n**Check:** This equals the total weight ($100$ lb) times the center of mass distance ($25$ ft) $= 2500$ ft-lb. ✓\n\nThe answer is $\\boxed{2500 \\text{ ft-lb}}$."
+  },
+  {
+    "id": "s76_force_4",
+    "type": "select-all",
+    "section": "§7.6. Work (Physics Applications)",
+    "text": "Select ALL true statements about work done by a variable force.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $F(x)$ is constant, $W = F \\cdot d$ where $d$ is the displacement."
+      },
+      {
+        "label": "B",
+        "text": "$W = \\int_a^b F(x)\\,dx$ generalizes $W = Fd$ to non-constant forces."
+      },
+      {
+        "label": "C",
+        "text": "Work can be negative if the force acts opposite to the direction of motion."
+      },
+      {
+        "label": "D",
+        "text": "The units of work are always Newtons."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**A:** True. For constant force, $\\int_a^b F\\,dx = F(b-a) = Fd$. ✓\n\n**B:** True. The integral generalizes the constant-force formula by summing infinitesimal $F(x)\\,dx$ contributions. ✓\n\n**C:** True. If $F(x) < 0$ on $[a,b]$, the integral is negative, representing work done against the direction of motion. ✓\n\n**D:** False. Work is force × distance: Newton × meter = Joule (SI), or pound × foot = ft-lb (imperial). Newtons alone are units of force, not work. ✗\n\nThe answers are $\\boxed{A, B, C}$."
+  }
+]

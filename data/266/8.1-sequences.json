@@ -1,0 +1,215 @@
+[
+  {
+    "id": "s81_gen_1",
+    "type": "multiple-choice",
+    "section": "§8.1. Sequences",
+    "text": "Determine the limit of the sequence $a_n = \\dfrac{5n^2 - 3n + 2}{2n^2 + 7n - 1}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{5}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{5}{7}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{2}{5}$"
+      },
+      {
+        "label": "D",
+        "text": "The sequence diverges"
+      }
+    ],
+    "answer": "A",
+    "solution": "For rational sequences where the numerator and denominator have the same degree, divide all terms by the highest power of $n$:\n\n$$a_n = \\frac{5n^2 - 3n + 2}{2n^2 + 7n - 1} = \\frac{5 - \\frac{3}{n} + \\frac{2}{n^2}}{2 + \\frac{7}{n} - \\frac{1}{n^2}}$$\n\nAs $n \\to \\infty$, the terms $\\frac{3}{n}$, $\\frac{2}{n^2}$, $\\frac{7}{n}$, and $\\frac{1}{n^2}$ all approach $0$.\n\n$$\\lim_{n \\to \\infty} a_n = \\frac{5 - 0 + 0}{2 + 0 - 0} = \\frac{5}{2}$$\n\nThe sequence **converges** to $\\boxed{\\dfrac{5}{2}}$."
+  },
+  {
+    "id": "s81_gen_2",
+    "type": "multiple-choice",
+    "section": "§8.1. Sequences",
+    "text": "Determine whether the sequence $a_n = \\dfrac{n!}{3^n}$ converges or diverges. If it converges, find the limit.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diverges"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $0$"
+      },
+      {
+        "label": "C",
+        "text": "Converges to $\\dfrac{1}{3}$"
+      },
+      {
+        "label": "D",
+        "text": "Converges to $1$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We analyze the ratio of consecutive terms:\n\n$$\\frac{a_{n+1}}{a_n} = \\frac{(n+1)!}{3^{n+1}} \\cdot \\frac{3^n}{n!} = \\frac{(n+1)!}{n!} \\cdot \\frac{3^n}{3^{n+1}} = \\frac{n+1}{3}$$\n\nAs $n \\to \\infty$, we have $\\frac{n+1}{3} \\to \\infty$.\n\nSince $\\frac{a_{n+1}}{a_n} > 1$ for all $n \\geq 3$, the sequence is eventually increasing without bound.\n\nAlternatively, for $n \\geq 6$:\n$$a_n = \\frac{n!}{3^n} = \\frac{1 \\cdot 2 \\cdot 3 \\cdot 4 \\cdot 5 \\cdot 6 \\cdots n}{3 \\cdot 3 \\cdot 3 \\cdot 3 \\cdot 3 \\cdot 3 \\cdots 3}$$\n\nEach factor $\\frac{k}{3} > 1$ for $k \\geq 4$, so the product grows without bound.\n\nThe sequence **diverges** (to $+\\infty$)."
+  },
+  {
+    "id": "s81_gen_3",
+    "type": "multiple-choice",
+    "section": "§8.1. Sequences",
+    "text": "For what values of $r$ does the sequence $a_n = r \\cdot \\left(\\dfrac{2}{5}\\right)^n$ converge?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Only $r = 0$"
+      },
+      {
+        "label": "B",
+        "text": "$|r| < 1$"
+      },
+      {
+        "label": "C",
+        "text": "All real numbers $r$"
+      },
+      {
+        "label": "D",
+        "text": "$|r| < \\dfrac{5}{2}$"
+      }
+    ],
+    "answer": "C",
+    "solution": "This is a geometric sequence with common ratio $\\frac{2}{5}$.\n\nSince $\\left|\\frac{2}{5}\\right| = 0.4 < 1$, we have:\n$$\\lim_{n \\to \\infty} \\left(\\frac{2}{5}\\right)^n = 0$$\n\nTherefore:\n$$\\lim_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} r \\cdot \\left(\\frac{2}{5}\\right)^n = r \\cdot 0 = 0$$\n\nThis holds for **any** value of $r$ (the constant $r$ doesn't affect convergence when multiplied by a sequence converging to 0).\n\nThe sequence converges to $0$ for **all real numbers $r$**."
+  },
+  {
+    "id": "s81_gen_4",
+    "type": "free-response",
+    "section": "§8.1. Sequences",
+    "text": "Find the limit of the sequence $a_n = \\dfrac{(-1)^n}{n^2}$, or state that it diverges.",
+    "answer": "0",
+    "solution": "We apply the Squeeze Theorem. Note that:\n$$-1 \\leq (-1)^n \\leq 1 \\text{ for all } n$$\n\nDividing by $n^2 > 0$:\n$$-\\frac{1}{n^2} \\leq \\frac{(-1)^n}{n^2} \\leq \\frac{1}{n^2}$$\n\nTaking limits as $n \\to \\infty$:\n$$\\lim_{n \\to \\infty} \\left(-\\frac{1}{n^2}\\right) = 0 \\quad \\text{and} \\quad \\lim_{n \\to \\infty} \\frac{1}{n^2} = 0$$\n\nBy the Squeeze Theorem:\n$$\\lim_{n \\to \\infty} \\frac{(-1)^n}{n^2} = 0$$\n\nThe sequence **converges** to $\\boxed{0}$."
+  },
+  {
+    "id": "s81_gen_5",
+    "type": "select-all",
+    "section": "§8.1. Sequences",
+    "text": "Select ALL sequences that converge.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$a_n = \\dfrac{4n^3 + n}{2n^3 - 5}$"
+      },
+      {
+        "label": "B",
+        "text": "$b_n = (-1)^n \\cdot n$"
+      },
+      {
+        "label": "C",
+        "text": "$c_n = \\dfrac{2^n}{n!}$"
+      },
+      {
+        "label": "D",
+        "text": "$d_n = \\dfrac{n^2}{e^n}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A:** $a_n = \\dfrac{4n^3 + n}{2n^3 - 5}$. Same degree in numerator and denominator. Divide by $n^3$:\n$$\\lim_{n \\to \\infty} \\frac{4 + \\frac{1}{n^2}}{2 - \\frac{5}{n^3}} = \\frac{4}{2} = 2$$\n✓ **Converges to 2**\n\n**B:** $b_n = (-1)^n \\cdot n$. This oscillates between increasingly large positive and negative values: $-1, 2, -3, 4, -5, ...$\n✗ **Diverges** (oscillates unboundedly)\n\n**C:** $c_n = \\dfrac{2^n}{n!}$. Check the ratio:\n$$\\frac{c_{n+1}}{c_n} = \\frac{2^{n+1}}{(n+1)!} \\cdot \\frac{n!}{2^n} = \\frac{2}{n+1} \\to 0$$\nSince ratio $< 1$ eventually, and $\\frac{2}{n+1} \\to 0$, we have $c_n \\to 0$.\n✓ **Converges to 0**\n\n**D:** $d_n = \\dfrac{n^2}{e^n}$. Exponentials dominate polynomials. Using L'Hôpital's Rule (or known result):\n$$\\lim_{n \\to \\infty} \\frac{n^2}{e^n} = 0$$\n✓ **Converges to 0**"
+  },
+  {
+    "id": "s81_gen_6",
+    "type": "multiple-choice",
+    "section": "§8.1. Sequences",
+    "text": "Find the limit of the sequence $a_n = \\dfrac{n^2 + 4n}{3n^3 - 2n + 1}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$0$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{4}{-2} = -2$"
+      },
+      {
+        "label": "D",
+        "text": "The sequence diverges to $+\\infty$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The degree of the numerator is 2, and the degree of the denominator is 3.\n\nWhen the denominator has higher degree, divide all terms by the highest power ($n^3$):\n\n$$a_n = \\frac{n^2 + 4n}{3n^3 - 2n + 1} = \\frac{\\frac{1}{n} + \\frac{4}{n^2}}{3 - \\frac{2}{n^2} + \\frac{1}{n^3}}$$\n\nAs $n \\to \\infty$:\n$$\\lim_{n \\to \\infty} a_n = \\frac{0 + 0}{3 - 0 + 0} = \\frac{0}{3} = 0$$\n\nThe sequence **converges** to $\\boxed{0}$.\n\n(Note: Choice C reflects the error of comparing linear coefficients rather than leading terms.)"
+  },
+  {
+    "id": "s81_gen_7",
+    "type": "free-response",
+    "section": "§8.1. Sequences",
+    "text": "Use the Squeeze Theorem to find the limit of $a_n = \\dfrac{\\sin(n)}{n}$.",
+    "answer": "0",
+    "solution": "We know that for all $n$:\n$$-1 \\leq \\sin(n) \\leq 1$$\n\nDividing by $n > 0$:\n$$-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$$\n\nNow we take limits:\n$$\\lim_{n \\to \\infty} \\left(-\\frac{1}{n}\\right) = 0$$\n$$\\lim_{n \\to \\infty} \\frac{1}{n} = 0$$\n\nBy the Squeeze Theorem:\n$$\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 0$$\n\nThe sequence **converges** to $\\boxed{0}$."
+  },
+  {
+    "id": "s81_gen_8",
+    "type": "multiple-choice",
+    "section": "§8.1. Sequences",
+    "text": "Determine whether the sequence $a_n = (-1)^n \\cdot \\dfrac{n}{n+1}$ converges or diverges.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Converges to $1$"
+      },
+      {
+        "label": "B",
+        "text": "Converges to $0$"
+      },
+      {
+        "label": "C",
+        "text": "Converges to $-1$"
+      },
+      {
+        "label": "D",
+        "text": "Diverges"
+      }
+    ],
+    "answer": "D",
+    "solution": "Let's examine the behavior of this sequence.\n\nFirst, note that $\\dfrac{n}{n+1} = \\dfrac{1}{1 + \\frac{1}{n}} \\to 1$ as $n \\to \\infty$.\n\nThe factor $(-1)^n$ causes the sequence to alternate in sign:\n- When $n$ is even: $a_n \\to +1$\n- When $n$ is odd: $a_n \\to -1$\n\nLet's look at specific terms:\n- $a_1 = (-1)^1 \\cdot \\frac{1}{2} = -\\frac{1}{2}$\n- $a_2 = (-1)^2 \\cdot \\frac{2}{3} = \\frac{2}{3}$\n- $a_{100} = (-1)^{100} \\cdot \\frac{100}{101} \\approx 0.99$\n- $a_{101} = (-1)^{101} \\cdot \\frac{101}{102} \\approx -0.99$\n\nThe subsequence of even terms approaches $+1$, while the subsequence of odd terms approaches $-1$.\n\nSince these subsequences have different limits, the sequence **diverges** (by oscillation)."
+  },
+  {
+    "id": "s81_gen_9",
+    "type": "free-response",
+    "section": "§8.1. Sequences",
+    "text": "Find the limit of the sequence $a_n = \\left(1 + \\dfrac{3}{n}\\right)^n$.",
+    "answer": "e^3",
+    "solution": "We use the fundamental limit $\\lim_{n \\to \\infty} \\left(1 + \\frac{1}{n}\\right)^n = e$.\n\nLet $m = \\frac{n}{3}$, so $n = 3m$ and as $n \\to \\infty$, we have $m \\to \\infty$.\n\nRewrite the expression:\n$$a_n = \\left(1 + \\frac{3}{n}\\right)^n = \\left(1 + \\frac{1}{n/3}\\right)^n = \\left(1 + \\frac{1}{m}\\right)^{3m} = \\left[\\left(1 + \\frac{1}{m}\\right)^m\\right]^3$$\n\nTaking the limit:\n$$\\lim_{n \\to \\infty} a_n = \\lim_{m \\to \\infty} \\left[\\left(1 + \\frac{1}{m}\\right)^m\\right]^3 = e^3$$\n\nThe sequence **converges** to $\\boxed{e^3}$."
+  },
+  {
+    "id": "s81_gen_10",
+    "type": "select-all",
+    "section": "§8.1. Sequences",
+    "text": "Select ALL sequences that diverge.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$a_n = \\dfrac{5^n}{n^{100}}$"
+      },
+      {
+        "label": "B",
+        "text": "$b_n = \\dfrac{(-1)^n}{\\sqrt{n}}$"
+      },
+      {
+        "label": "C",
+        "text": "$c_n = (-1)^n + \\dfrac{1}{n}$"
+      },
+      {
+        "label": "D",
+        "text": "$d_n = \\dfrac{n^2 - 3n + 1}{n^2 + 2n + 5}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**A:** $a_n = \\dfrac{5^n}{n^{100}}$. Exponential growth beats polynomial growth. Check the ratio:\n$$\\frac{a_{n+1}}{a_n} = \\frac{5^{n+1}}{(n+1)^{100}} \\cdot \\frac{n^{100}}{5^n} = 5 \\cdot \\left(\\frac{n}{n+1}\\right)^{100} \\to 5 \\cdot 1 = 5 > 1$$\nSince the ratio exceeds 1, the sequence grows without bound.\n✓ **Diverges** (to $+\\infty$)\n\n**B:** $b_n = \\dfrac{(-1)^n}{\\sqrt{n}}$. Apply the Squeeze Theorem:\n$$-\\frac{1}{\\sqrt{n}} \\leq \\frac{(-1)^n}{\\sqrt{n}} \\leq \\frac{1}{\\sqrt{n}}$$\nBoth bounds approach 0, so $b_n \\to 0$.\n✗ **Converges to 0**\n\n**C:** $c_n = (-1)^n + \\dfrac{1}{n}$. The term $\\frac{1}{n} \\to 0$, but $(-1)^n$ oscillates between $-1$ and $+1$ forever.\n- Odd terms: $-1 + \\frac{1}{n} \\to -1$\n- Even terms: $1 + \\frac{1}{n} \\to 1$\nDifferent subsequences have different limits.\n✓ **Diverges** (oscillates)\n\n**D:** $d_n = \\dfrac{n^2 - 3n + 1}{n^2 + 2n + 5}$. Same degree, so:\n$$\\lim_{n \\to \\infty} d_n = \\frac{1}{1} = 1$$\n✗ **Converges to 1**"
+  }
+]

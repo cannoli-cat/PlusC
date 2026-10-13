@@ -1,0 +1,198 @@
+[
+  {
+    "id": "s63_gen_1",
+    "type": "multiple-choice",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "Find the partial fraction decomposition of $\\displaystyle \\frac{5x - 1}{(x - 3)(x + 2)}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle \\frac{14/5}{x - 3} + \\frac{11/5}{x + 2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle \\frac{14/5}{x - 3} - \\frac{11/5}{x + 2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle \\frac{11/5}{x - 3} + \\frac{14/5}{x + 2}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle \\frac{2}{x - 3} + \\frac{3}{x + 2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We write $\\displaystyle \\frac{5x - 1}{(x - 3)(x + 2)} = \\frac{A}{x - 3} + \\frac{B}{x + 2}$.\n\nMultiplying both sides by $(x - 3)(x + 2)$:\n$$5x - 1 = A(x + 2) + B(x - 3)$$\n\n**Method: Strategic substitution**\n\nLet $x = 3$: $5(3) - 1 = A(3 + 2) + B(0)$\n$$14 = 5A \\implies A = \\frac{14}{5}$$\n\nLet $x = -2$: $5(-2) - 1 = A(0) + B(-2 - 3)$\n$$-11 = -5B \\implies B = \\frac{11}{5}$$\n\nTherefore: $\\displaystyle \\frac{5x - 1}{(x - 3)(x + 2)} = \\frac{14/5}{x - 3} + \\frac{11/5}{x + 2}$\n\nThe answer is **A**."
+  },
+  {
+    "id": "s63_gen_2",
+    "type": "free-response",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "Find the value of $A$ in the partial fraction decomposition $\\displaystyle \\frac{2x + 7}{(x + 1)(x - 4)} = \\frac{A}{x + 1} + \\frac{B}{x - 4}$.",
+    "answer": "-1",
+    "solution": "Multiply both sides by $(x + 1)(x - 4)$:\n$$2x + 7 = A(x - 4) + B(x + 1)$$\n\nSubstitute $x = -1$:\n$$2(-1) + 7 = A(-1 - 4) + B(0)$$\n$$5 = -5A$$\n$$A = -1$$\n\nVerify by substituting $x = 4$:\n$$2(4) + 7 = A(0) + B(5)$$\n$$15 = 5B \\implies B = 3$$\n\nCheck: $\\frac{-1}{x+1} + \\frac{3}{x-4} = \\frac{-1(x-4) + 3(x+1)}{(x+1)(x-4)} = \\frac{-x+4+3x+3}{(x+1)(x-4)} = \\frac{2x+7}{(x+1)(x-4)}$ ✓\n\nTherefore $A = -1$."
+  },
+  {
+    "id": "s63_gen_3",
+    "type": "multiple-choice",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "What is the correct form for the partial fraction decomposition of $\\displaystyle \\frac{x^2 + 2}{(x - 1)^2(x + 3)}$? (Do not solve for the constants.)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle \\frac{A}{x - 1} + \\frac{B}{x + 3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle \\frac{A}{(x - 1)^2} + \\frac{B}{x + 3}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle \\frac{A}{x - 1} + \\frac{B}{(x - 1)^2} + \\frac{C}{x + 3}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle \\frac{Ax + B}{(x - 1)^2} + \\frac{C}{x + 3}$"
+      }
+    ],
+    "answer": "C",
+    "solution": "The denominator has:\n- A **repeated linear factor** $(x - 1)^2$\n- A **distinct linear factor** $(x + 3)$\n\nFor a repeated linear factor $(x - a)^n$, we need terms for each power from 1 to $n$:\n$$\\frac{A_1}{x - a} + \\frac{A_2}{(x - a)^2} + \\cdots + \\frac{A_n}{(x - a)^n}$$\n\nFor $(x - 1)^2$, we need: $\\frac{A}{x - 1} + \\frac{B}{(x - 1)^2}$\n\nFor $(x + 3)$, we need: $\\frac{C}{x + 3}$\n\nThe correct form is: $\\displaystyle \\frac{A}{x - 1} + \\frac{B}{(x - 1)^2} + \\frac{C}{x + 3}$\n\nThe answer is **C**."
+  },
+  {
+    "id": "s63_gen_4",
+    "type": "free-response",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "Evaluate $\\displaystyle \\int \\frac{3}{(x - 1)(x + 2)} \\, dx$.",
+    "answer": "\\ln|x-1| - \\ln|x+2| + C",
+    "solution": "**Step 1: Partial fraction decomposition**\n\n$$\\frac{3}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}$$\n\nMultiply by $(x - 1)(x + 2)$:\n$$3 = A(x + 2) + B(x - 1)$$\n\nLet $x = 1$: $3 = A(3) + B(0) \\implies A = 1$\n\nLet $x = -2$: $3 = A(0) + B(-3) \\implies B = -1$\n\nSo: $\\displaystyle \\frac{3}{(x - 1)(x + 2)} = \\frac{1}{x - 1} - \\frac{1}{x + 2}$\n\n**Step 2: Integrate**\n\n$$\\int \\frac{3}{(x - 1)(x + 2)} \\, dx = \\int \\frac{1}{x - 1} \\, dx - \\int \\frac{1}{x + 2} \\, dx$$\n\n$$= \\ln|x - 1| - \\ln|x + 2| + C$$"
+  },
+  {
+    "id": "s63_gen_5",
+    "type": "select-all",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "Which of the following partial fraction setups are **correct**? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle \\frac{x}{(x+1)(x^2+1)} = \\frac{A}{x+1} + \\frac{Bx + C}{x^2+1}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle \\frac{1}{x^2(x-2)} = \\frac{A}{x} + \\frac{B}{x-2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle \\frac{x+5}{(x-3)^3} = \\frac{A}{x-3} + \\frac{B}{(x-3)^2} + \\frac{C}{(x-3)^3}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle \\frac{2x}{(x^2+4)^2} = \\frac{Ax+B}{x^2+4} + \\frac{Cx+D}{(x^2+4)^2}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A: CORRECT** ✓\n$(x+1)$ is linear → needs $\\frac{A}{x+1}$\n$(x^2+1)$ is irreducible quadratic → needs $\\frac{Bx+C}{x^2+1}$\n\n**B: INCORRECT** ✗\n$x^2$ is a repeated linear factor. It needs:\n$\\frac{A}{x} + \\frac{B}{x^2} + \\frac{C}{x-2}$\nThe setup is missing the $\\frac{B}{x^2}$ term.\n\n**C: CORRECT** ✓\n$(x-3)^3$ is a repeated linear factor with power 3. It needs terms for each power:\n$\\frac{A}{x-3} + \\frac{B}{(x-3)^2} + \\frac{C}{(x-3)^3}$\n\n**D: CORRECT** ✓\n$(x^2+4)^2$ is a repeated irreducible quadratic. It needs:\n$\\frac{Ax+B}{x^2+4} + \\frac{Cx+D}{(x^2+4)^2}$\n\nThe correct answers are **A, C, D**."
+  },
+  {
+    "id": "s63_gen_6",
+    "type": "multiple-choice",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "Find the partial fraction decomposition of $\\displaystyle \\frac{4x}{(x + 1)^2}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle \\frac{4}{x + 1} - \\frac{4}{(x + 1)^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle \\frac{4}{x + 1} + \\frac{4}{(x + 1)^2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle \\frac{4}{(x + 1)^2}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle \\frac{4}{x + 1} - \\frac{1}{(x + 1)^2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We write: $\\displaystyle \\frac{4x}{(x + 1)^2} = \\frac{A}{x + 1} + \\frac{B}{(x + 1)^2}$\n\nMultiply by $(x + 1)^2$:\n$$4x = A(x + 1) + B$$\n\nExpand: $4x = Ax + A + B$\n\n**Matching coefficients:**\n- Coefficient of $x$: $4 = A$\n- Constant term: $0 = A + B \\implies B = -A = -4$\n\nTherefore: $\\displaystyle \\frac{4x}{(x + 1)^2} = \\frac{4}{x + 1} - \\frac{4}{(x + 1)^2}$\n\n**Verification:** $\\frac{4(x+1) - 4}{(x+1)^2} = \\frac{4x + 4 - 4}{(x+1)^2} = \\frac{4x}{(x+1)^2}$ ✓\n\nThe answer is **A**."
+  },
+  {
+    "id": "s63_gen_7",
+    "type": "free-response",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "In the partial fraction decomposition $\\displaystyle \\frac{x + 9}{(x - 2)(x^2 + 9)} = \\frac{A}{x - 2} + \\frac{Bx + C}{x^2 + 9}$, find the value of $A$.",
+    "answer": "\\frac{11}{13}",
+    "solution": "Multiply both sides by $(x - 2)(x^2 + 9)$:\n$$x + 9 = A(x^2 + 9) + (Bx + C)(x - 2)$$\n\n**Substitute $x = 2$:**\n$$2 + 9 = A(4 + 9) + (2B + C)(0)$$\n$$11 = 13A$$\n$$A = \\frac{11}{13}$$\n\nTherefore $A = \\frac{11}{13}$."
+  },
+  {
+    "id": "s63_gen_8",
+    "type": "multiple-choice",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "Before applying partial fractions to $\\displaystyle \\frac{x^3 + 2x}{x^2 - 4}$, what must you do first?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Factor the numerator"
+      },
+      {
+        "label": "B",
+        "text": "Perform polynomial long division since the degree of the numerator equals or exceeds the degree of the denominator"
+      },
+      {
+        "label": "C",
+        "text": "Immediately set up $\\frac{A}{x-2} + \\frac{B}{x+2}$"
+      },
+      {
+        "label": "D",
+        "text": "Use integration by parts"
+      }
+    ],
+    "answer": "B",
+    "solution": "The numerator has degree 3 and the denominator has degree 2.\n\n**Partial fractions only apply to proper rational functions**, where the degree of the numerator is strictly less than the degree of the denominator.\n\nSince $\\deg(x^3 + 2x) = 3 \\geq 2 = \\deg(x^2 - 4)$, we must first perform **polynomial long division** to write:\n$$\\frac{x^3 + 2x}{x^2 - 4} = q(x) + \\frac{r(x)}{x^2 - 4}$$\nwhere $\\deg(r) < 2$.\n\nThen we apply partial fractions to the remainder term.\n\nThe answer is **B**."
+  },
+  {
+    "id": "s63_gen_9",
+    "type": "free-response",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "Evaluate $\\displaystyle \\int \\frac{6x + 2}{(x-1)(x+1)(x+3)} \\, dx$.",
+    "answer": "\\ln|x-1| + \\ln|x+1| - 2\\ln|x+3| + C",
+    "solution": "**Step 1: Partial fraction decomposition**\n\n$$\\frac{6x + 2}{(x-1)(x+1)(x+3)} = \\frac{A}{x-1} + \\frac{B}{x+1} + \\frac{C}{x+3}$$\n\nMultiply by $(x-1)(x+1)(x+3)$:\n$$6x + 2 = A(x+1)(x+3) + B(x-1)(x+3) + C(x-1)(x+1)$$\n\n**Substitute $x = 1$:**\n$$8 = A(2)(4) = 8A \\implies A = 1$$\n\n**Substitute $x = -1$:**\n$$-4 = B(-2)(2) = -4B \\implies B = 1$$\n\n**Substitute $x = -3$:**\n$$-16 = C(-4)(-2) = 8C \\implies C = -2$$\n\n**Verification at $x = 0$:**\n$$3A - 3B - C = 3(1) - 3(1) - (-2) = 2 = 6(0) + 2$$ ✓\n\nSo the decomposition is:\n$$\\frac{6x + 2}{(x-1)(x+1)(x+3)} = \\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}$$\n\n**Step 2: Integrate**\n$$\\int \\left(\\frac{1}{x-1} + \\frac{1}{x+1} - \\frac{2}{x+3}\\right) dx$$\n$$= \\ln|x-1| + \\ln|x+1| - 2\\ln|x+3| + C$$"
+  },
+  {
+    "id": "s63_gen_10",
+    "type": "select-all",
+    "section": "§6.3. Partial Fraction Decomposition",
+    "text": "For the decomposition $\\displaystyle \\frac{3x^2 - x + 2}{(x-1)(x^2+x+1)} = \\frac{A}{x-1} + \\frac{Bx+C}{x^2+x+1}$, which statements are true?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The factor $x^2 + x + 1$ is irreducible over the reals"
+      },
+      {
+        "label": "B",
+        "text": "$A = \\frac{4}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "The term $\\frac{Bx+C}{x^2+x+1}$ could be written as $\\frac{B}{x^2+x+1}$ instead"
+      },
+      {
+        "label": "D",
+        "text": "Substituting $x = 1$ directly gives the value of $A$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A: TRUE** ✓\nThe discriminant of $x^2 + x + 1$ is $b^2 - 4ac = 1 - 4 = -3 < 0$.\nSince the discriminant is negative, the quadratic has no real roots and is irreducible over the reals.\n\n**B: Check if $A = 4/3$**\nMultiply by $(x-1)(x^2+x+1)$:\n$$3x^2 - x + 2 = A(x^2+x+1) + (Bx+C)(x-1)$$\n\nSubstitute $x = 1$:\n$$3(1) - 1 + 2 = A(1+1+1) + 0$$\n$$4 = 3A$$\n$$A = \\frac{4}{3}$$\n**TRUE** ✓\n\n**C: FALSE** ✗\nFor an irreducible quadratic factor, the numerator must be a general linear expression $Bx + C$, not just a constant. Using only $B$ would not provide enough degrees of freedom to match coefficients.\n\n**D: TRUE** ✓\nWhen $x = 1$, the factor $(x-1) = 0$, which eliminates the $(Bx+C)(x-1)$ term, leaving only the $A$ term. This allows us to solve for $A$ directly.\n\nThe correct answers are **A, B, D**."
+  }
+]

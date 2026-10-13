@@ -1,0 +1,198 @@
+[
+  {
+    "id": "s26535_gen_1",
+    "type": "multiple-choice",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Find $\\dfrac{d}{dx}[\\arctan(x^2)]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{2x}{1+x^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{2x}{1+x^4}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{1+x^4}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{2x}{(1+x^2)^2}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Using the chain rule with $u = x^2$:\n$$\\frac{d}{dx}[\\arctan(x^2)] = \\frac{1}{1+(x^2)^2} \\cdot 2x = \\frac{2x}{1+x^4}.$$\n\n**Distractor analysis:**\n- A: Used $1+x^2$ instead of $1+(x^2)^2$ — forgot to square the inner function.\n- C: Applied the outer derivative correctly but forgot the chain rule factor $2x$.\n- D: Confused $\\arctan$ derivative with a quotient rule result."
+  },
+  {
+    "id": "s26535_gen_2",
+    "type": "free-response",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Evaluate $\\arcsin\\!\\left(\\dfrac{\\sqrt{3}}{2}\\right)$. Give your answer in radians.",
+    "answer": "pi/3",
+    "solution": "We need the angle $\\theta \\in \\left[-\\dfrac{\\pi}{2}, \\dfrac{\\pi}{2}\\right]$ such that $\\sin\\theta = \\dfrac{\\sqrt{3}}{2}$.\n\nRecall $\\sin\\dfrac{\\pi}{3} = \\dfrac{\\sqrt{3}}{2}$, and $\\dfrac{\\pi}{3}$ is in the range of arcsin.\n\n$$\\arcsin\\!\\left(\\frac{\\sqrt{3}}{2}\\right) = \\frac{\\pi}{3}.$$"
+  },
+  {
+    "id": "s26535_gen_3",
+    "type": "multiple-choice",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Find $\\dfrac{d}{dx}\\!\\left[\\arcsin(e^x)\\right]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{e^x}{\\sqrt{1-e^x}}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{e^x}{\\sqrt{1-e^{2x}}}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{\\sqrt{1-e^{2x}}}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{e^x}{1+e^{2x}}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Using the chain rule with $u = e^x$:\n$$\\frac{d}{dx}[\\arcsin(e^x)] = \\frac{1}{\\sqrt{1-(e^x)^2}} \\cdot e^x = \\frac{e^x}{\\sqrt{1-e^{2x}}}.$$\n\n**Distractor analysis:**\n- A: Wrote $\\sqrt{1 - e^x}$ instead of $\\sqrt{1 - e^{2x}}$ — forgot to square the inner function.\n- C: Forgot the chain rule factor $e^x$.\n- D: Used the $\\arctan$ derivative formula instead of the $\\arcsin$ formula."
+  },
+  {
+    "id": "s26535_gen_4",
+    "type": "free-response",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Find $\\dfrac{d}{dx}\\!\\left[x^2 \\arctan(3x)\\right]$.",
+    "answer": "2*x*arctan(3x) + 3*x^2/(1+9*x^2)",
+    "solution": "Apply the product rule with $f = x^2$ and $g = \\arctan(3x)$:\n$$\\frac{d}{dx}[x^2 \\arctan(3x)] = 2x \\cdot \\arctan(3x) + x^2 \\cdot \\frac{d}{dx}[\\arctan(3x)].$$\n\nFor the second factor, use the chain rule:\n$$\\frac{d}{dx}[\\arctan(3x)] = \\frac{1}{1+(3x)^2} \\cdot 3 = \\frac{3}{1+9x^2}.$$\n\nTherefore:\n$$\\frac{d}{dx}[x^2 \\arctan(3x)] = 2x\\arctan(3x) + \\frac{3x^2}{1+9x^2}.$$"
+  },
+  {
+    "id": "s26535_gen_5",
+    "type": "select-all",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Which of the following are **true** statements about inverse trigonometric functions? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{d}{dx}[\\arccos x] = -\\dfrac{1}{\\sqrt{1-x^2}}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\arctan(-1) = -\\dfrac{\\pi}{4}$"
+      },
+      {
+        "label": "C",
+        "text": "The range of $\\arcsin$ is $[0, \\pi]$."
+      },
+      {
+        "label": "D",
+        "text": "$\\arcsin(x) + \\arccos(x) = \\dfrac{\\pi}{2}$ for all $x \\in [-1,1]$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A:** $\\dfrac{d}{dx}[\\arccos x] = -\\dfrac{1}{\\sqrt{1-x^2}}$. ✓ This is the standard derivative formula.\n\n**B:** $\\arctan(-1)$: we need $\\theta \\in (-\\pi/2, \\pi/2)$ with $\\tan\\theta = -1$. That is $\\theta = -\\pi/4$. ✓\n\n**C:** The range of $\\arcsin$ is $\\left[-\\dfrac{\\pi}{2}, \\dfrac{\\pi}{2}\\right]$, **not** $[0,\\pi]$ (that is the range of $\\arccos$). ✗\n\n**D:** The identity $\\arcsin x + \\arccos x = \\dfrac{\\pi}{2}$ holds for all $x \\in [-1,1]$. ✓ (This follows from complementary angles in a right triangle.)\n\nCorrect answers: **A, B, D**."
+  },
+  {
+    "id": "s26535_gen_6",
+    "type": "multiple-choice",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Find $\\dfrac{d}{dx}\\!\\left[\\arcsin(\\sqrt{x})\\right]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{\\sqrt{1-x}}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{2\\sqrt{x}\\,\\sqrt{1-x}}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{\\sqrt{x}}{\\sqrt{1-x}}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2\\sqrt{x(1-x^2)}}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Let $u = \\sqrt{x} = x^{1/2}$. By the chain rule:\n$$\\frac{d}{dx}[\\arcsin(\\sqrt{x})] = \\frac{1}{\\sqrt{1-(\\sqrt{x})^2}} \\cdot \\frac{d}{dx}[\\sqrt{x}] = \\frac{1}{\\sqrt{1-x}} \\cdot \\frac{1}{2\\sqrt{x}}.$$\n\nSo the answer is:\n$$\\frac{1}{2\\sqrt{x}\\,\\sqrt{1-x}} = \\frac{1}{2\\sqrt{x(1-x)}}.$$\n\n**Distractor analysis:**\n- A: Forgot the chain rule factor $\\frac{1}{2\\sqrt{x}}$.\n- C: Placed $\\sqrt{x}$ in the numerator — incorrectly applied chain rule.\n- D: Wrote $\\sqrt{1-x^2}$ (squaring $x$ instead of $\\sqrt{x}$) inside the radical."
+  },
+  {
+    "id": "s26535_gen_7",
+    "type": "free-response",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Evaluate $\\cos\\!\\left(\\arctan\\!\\left(\\dfrac{3}{4}\\right)\\right)$. Give your answer as a simplified fraction.",
+    "answer": "4/5",
+    "solution": "Let $\\theta = \\arctan\\!\\left(\\dfrac{3}{4}\\right)$, so $\\tan\\theta = \\dfrac{3}{4}$ with $\\theta \\in \\left(-\\dfrac{\\pi}{2}, \\dfrac{\\pi}{2}\\right)$.\n\nDraw a right triangle with opposite side $= 3$, adjacent side $= 4$. The hypotenuse is:\n$$\\sqrt{3^2 + 4^2} = \\sqrt{9+16} = \\sqrt{25} = 5.$$\n\nTherefore:\n$$\\cos\\theta = \\frac{\\text{adjacent}}{\\text{hypotenuse}} = \\frac{4}{5}.$$"
+  },
+  {
+    "id": "s26535_gen_8",
+    "type": "multiple-choice",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "A particle's position is given by $s(t) = \\arctan(t^3 - t)$. Find $s'(t)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{3t^2-1}{1+(t^3-t)^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{1+(t^3-t)^2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{3t^2-1}{(1+(t^3-t))^2}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{3t^2}{1+(t^3-t)^2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Using the chain rule with $u = t^3 - t$:\n$$s'(t) = \\frac{d}{dt}[\\arctan(t^3-t)] = \\frac{1}{1+(t^3-t)^2} \\cdot \\frac{d}{dt}[t^3-t].$$\n\nSince $\\dfrac{d}{dt}[t^3 - t] = 3t^2 - 1$:\n$$s'(t) = \\frac{3t^2-1}{1+(t^3-t)^2}.$$\n\n**Distractor analysis:**\n- B: Forgot the chain rule factor $3t^2 - 1$.\n- C: Wrote $(1+(t^3-t))^2$ instead of $1+(t^3-t)^2$ — misapplied the denominator.\n- D: Differentiated $t^3$ but forgot $-t$, giving $3t^2$ instead of $3t^2-1$."
+  },
+  {
+    "id": "s26535_gen_9",
+    "type": "free-response",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Find $\\dfrac{d}{dx}\\!\\left[\\arccos(2x^3)\\right]$.",
+    "answer": "-6*x^2/sqrt(1-4*x^6)",
+    "solution": "Using the chain rule with $u = 2x^3$:\n$$\\frac{d}{dx}[\\arccos(2x^3)] = -\\frac{1}{\\sqrt{1-(2x^3)^2}} \\cdot \\frac{d}{dx}[2x^3].$$\n\nCompute $\\dfrac{d}{dx}[2x^3] = 6x^2$ and $(2x^3)^2 = 4x^6$:\n$$\\frac{d}{dx}[\\arccos(2x^3)] = -\\frac{6x^2}{\\sqrt{1-4x^6}}.$$"
+  },
+  {
+    "id": "s26535_gen_10",
+    "type": "select-all",
+    "section": "§3.5. Inverse Trig Functions",
+    "text": "Let $f(x) = \\arctan(x)$. Which of the following are correct? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f'(x) = \\dfrac{1}{1+x^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$f(\\sqrt{3}) = \\dfrac{\\pi}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$f(0) = 0$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\lim_{x\\to\\infty} f(x) = \\pi$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**A:** The standard derivative is $\\dfrac{d}{dx}[\\arctan x] = \\dfrac{1}{1+x^2}$. ✓\n\n**B:** We need $\\theta \\in \\left(-\\dfrac{\\pi}{2}, \\dfrac{\\pi}{2}\\right)$ with $\\tan\\theta = \\sqrt{3}$. Since $\\tan\\dfrac{\\pi}{3} = \\sqrt{3}$, we get $\\arctan(\\sqrt{3}) = \\dfrac{\\pi}{3}$. ✓\n\n**C:** $\\arctan(0) = 0$ since $\\tan(0) = 0$. ✓\n\n**D:** $\\displaystyle\\lim_{x\\to\\infty}\\arctan(x) = \\dfrac{\\pi}{2}$, **not** $\\pi$. ✗\n\nCorrect answers: **A, B, C**."
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "s26552_gen_1",
+    "type": "multiple-choice",
+    "section": "§5.2. Definite Integrals",
+    "text": "Evaluate $\\displaystyle\\int_0^4 (4-x)\\,dx$ by interpreting it geometrically.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$16$"
+      },
+      {
+        "label": "B",
+        "text": "$8$"
+      },
+      {
+        "label": "C",
+        "text": "$4$"
+      },
+      {
+        "label": "D",
+        "text": "$12$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The integrand $y = 4 - x$ is a line that equals $4$ at $x=0$ and $0$ at $x=4$. On $[0,4]$ the line lies entirely above the $x$-axis, forming a right triangle with base $4$ and height $4$.\n\n$$\\int_0^4(4-x)\\,dx = \\frac{1}{2}\\cdot\\text{base}\\cdot\\text{height} = \\frac{1}{2}(4)(4) = 8.$$\n\n**Common errors:**\n- Choosing $16$: forgot the factor of $\\tfrac{1}{2}$ for the triangle area.\n- Choosing $4$: used height alone.\n- Choosing $12$: arithmetic error."
+  },
+  {
+    "id": "s26552_gen_2",
+    "type": "free-response",
+    "section": "§5.2. Definite Integrals",
+    "text": "Evaluate $\\displaystyle\\int_{-3}^{3} \\sqrt{9-x^2}\\,dx$ by interpreting it geometrically.",
+    "answer": "9*pi/2",
+    "solution": "The curve $y = \\sqrt{9-x^2}$ is the **upper semicircle** of radius $r = 3$ centered at the origin, since $x^2 + y^2 = 9$ with $y \\ge 0$.\n\nThe integral equals the area of that upper semicircle:\n$$\\int_{-3}^{3}\\sqrt{9-x^2}\\,dx = \\frac{1}{2}\\pi r^2 = \\frac{1}{2}\\pi(3)^2 = \\frac{9\\pi}{2}.$$"
+  },
+  {
+    "id": "s26552_gen_3",
+    "type": "multiple-choice",
+    "section": "§5.2. Definite Integrals",
+    "text": "If $\\displaystyle\\int_1^5 f(x)\\,dx = 7$, what is $\\displaystyle\\int_5^1 f(x)\\,dx$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$7$"
+      },
+      {
+        "label": "B",
+        "text": "$-7$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{7}$"
+      },
+      {
+        "label": "D",
+        "text": "$0$"
+      }
+    ],
+    "answer": "B",
+    "solution": "By the **reversal-of-limits** property of definite integrals:\n$$\\int_b^a f(x)\\,dx = -\\int_a^b f(x)\\,dx.$$\nTherefore:\n$$\\int_5^1 f(x)\\,dx = -\\int_1^5 f(x)\\,dx = -7.$$\n\n**Common errors:**\n- Choosing $7$: forgot to negate when reversing limits.\n- Choosing $0$: incorrectly applied the zero-width-interval rule."
+  },
+  {
+    "id": "s26552_gen_4",
+    "type": "free-response",
+    "section": "§5.2. Definite Integrals",
+    "text": "Given that $\\displaystyle\\int_0^6 f(x)\\,dx = 10$ and $\\displaystyle\\int_0^4 f(x)\\,dx = 3$, find $\\displaystyle\\int_4^6 f(x)\\,dx$.",
+    "answer": "7",
+    "solution": "By the **interval-splitting** (additivity) property:\n$$\\int_0^6 f(x)\\,dx = \\int_0^4 f(x)\\,dx + \\int_4^6 f(x)\\,dx.$$\nSolving for the unknown integral:\n$$\\int_4^6 f(x)\\,dx = \\int_0^6 f(x)\\,dx - \\int_0^4 f(x)\\,dx = 10 - 3 = 7.$$"
+  },
+  {
+    "id": "s26552_gen_5",
+    "type": "multiple-choice",
+    "section": "§5.2. Definite Integrals",
+    "text": "Evaluate $\\displaystyle\\int_{-2}^{2} |x|\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$2$"
+      },
+      {
+        "label": "C",
+        "text": "$4$"
+      },
+      {
+        "label": "D",
+        "text": "$8$"
+      }
+    ],
+    "answer": "C",
+    "solution": "Split the integral at the zero of $|x|$, which is $x = 0$:\n$$\\int_{-2}^{2}|x|\\,dx = \\int_{-2}^{0}(-x)\\,dx + \\int_{0}^{2} x\\,dx.$$\n\n**First piece:**\n$$\\int_{-2}^{0}(-x)\\,dx = \\left[-\\frac{x^2}{2}\\right]_{-2}^{0} = 0 - \\left(-\\frac{4}{2}\\right) = 2.$$\n\n**Second piece:**\n$$\\int_{0}^{2} x\\,dx = \\left[\\frac{x^2}{2}\\right]_0^2 = 2 - 0 = 2.$$\n\n**Total:** $2 + 2 = 4.$\n\n**Common errors:**\n- Choosing $0$: ignored the absolute value and computed signed area (the two halves cancel without absolute value).\n- Choosing $2$: only computed one half of the interval."
+  },
+  {
+    "id": "s26552_gen_6",
+    "type": "select-all",
+    "section": "§5.2. Definite Integrals",
+    "text": "Select **all** statements that are guaranteed to be true for any integrable functions $f$ and $g$ on $[a,b]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_a^b [f(x)+g(x)]\\,dx = \\int_a^b f(x)\\,dx + \\int_a^b g(x)\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_a^b f(x)g(x)\\,dx = \\left(\\int_a^b f(x)\\,dx\\right)\\left(\\int_a^b g(x)\\,dx\\right)$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_a^b c\\,f(x)\\,dx = c\\int_a^b f(x)\\,dx$ for any constant $c$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_a^a f(x)\\,dx = 0$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A — TRUE:** This is the **additivity over integrands** (linearity) property.\n\n**B — FALSE:** The integral of a product does **not** equal the product of the integrals in general. For example, $\\int_0^1 x\\cdot x\\,dx = \\tfrac{1}{3}$, but $\\left(\\int_0^1 x\\,dx\\right)^2 = \\tfrac{1}{4}$.\n\n**C — TRUE:** This is the **constant-multiple** rule (part of linearity).\n\n**D — TRUE:** An integral over a zero-width interval is always $0$, since the \"width'' of the interval $[a,a]$ is zero."
+  },
+  {
+    "id": "s26552_gen_7",
+    "type": "free-response",
+    "section": "§5.2. Definite Integrals",
+    "text": "The piecewise-linear function $f$ satisfies $f(0)=0$, $f(2)=4$, and $f(4)=0$, with $f$ linear on $[0,2]$ and on $[2,4]$. Evaluate $\\displaystyle\\int_0^4 f(x)\\,dx$ geometrically.",
+    "answer": "8",
+    "solution": "The graph of $f$ consists of two straight-line segments:\n- From $(0,0)$ to $(2,4)$: rising line.\n- From $(2,4)$ to $(4,0)$: falling line.\n\nTogether these form a **triangle** with base along the $x$-axis from $0$ to $4$ (base $= 4$) and apex at $(2,4)$ (height $= 4$). The function is non-negative on $[0,4]$, so:\n$$\\int_0^4 f(x)\\,dx = \\frac{1}{2}\\cdot\\text{base}\\cdot\\text{height} = \\frac{1}{2}(4)(4) = 8.$$"
+  },
+  {
+    "id": "s26552_gen_8",
+    "type": "multiple-choice",
+    "section": "§5.2. Definite Integrals",
+    "text": "Suppose $\\displaystyle\\int_0^3 f(x)\\,dx = 5$ and $\\displaystyle\\int_0^3 g(x)\\,dx = -2$. Find $\\displaystyle\\int_0^3 [3f(x) - 2g(x)]\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$11$"
+      },
+      {
+        "label": "B",
+        "text": "$19$"
+      },
+      {
+        "label": "C",
+        "text": "$9$"
+      },
+      {
+        "label": "D",
+        "text": "$15$"
+      }
+    ],
+    "answer": "B",
+    "solution": "By **linearity** of the definite integral:\n$$\\int_0^3[3f(x)-2g(x)]\\,dx = 3\\int_0^3 f(x)\\,dx - 2\\int_0^3 g(x)\\,dx.$$\nSubstituting the given values:\n$$= 3(5) - 2(-2) = 15 + 4 = 19.$$\n\n**Common errors:**\n- Choosing $11$: sign error — computed $3(5)-2(2)=11$, treating $g$'s integral as positive.\n- Choosing $9$: combined integrals first — computed $3(5+(-2))=9$.\n- Choosing $15$: dropped the $g$ term entirely."
+  },
+  {
+    "id": "s26552_gen_9",
+    "type": "free-response",
+    "section": "§5.2. Definite Integrals",
+    "text": "Evaluate $\\displaystyle\\int_0^3 (x-3)\\,dx$ by interpreting it geometrically.",
+    "answer": "-9/2",
+    "solution": "The integrand $y = x-3$ is a line. Check the sign on $[0,3]$:\n- At $x=0$: $y = -3$.\n- At $x=3$: $y = 0$.\n\nThe line is **entirely at or below** the $x$-axis on $[0,3]$, touching it only at $x=3$. The region is a right triangle with base $3$ (along the $x$-axis) and height $3$ (at $x=0$), lying below the axis.\n\nGeometric area of triangle $= \\dfrac{1}{2}(3)(3) = \\dfrac{9}{2}$, but since the region is below the $x$-axis, the **signed area** is negative:\n$$\\int_0^3(x-3)\\,dx = -\\frac{9}{2}.$$"
+  },
+  {
+    "id": "s26552_gen_10",
+    "type": "multiple-choice",
+    "section": "§5.2. Definite Integrals",
+    "text": "Given $\\displaystyle\\int_1^4 f(x)\\,dx = 6$ and $\\displaystyle\\int_1^7 f(x)\\,dx = 10$, find $\\displaystyle\\int_4^7 f(x)\\,dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$16$"
+      },
+      {
+        "label": "B",
+        "text": "$-4$"
+      },
+      {
+        "label": "C",
+        "text": "$4$"
+      },
+      {
+        "label": "D",
+        "text": "$60$"
+      }
+    ],
+    "answer": "C",
+    "solution": "By the **interval-splitting** property:\n$$\\int_1^7 f(x)\\,dx = \\int_1^4 f(x)\\,dx + \\int_4^7 f(x)\\,dx.$$\nSolving for the unknown:\n$$\\int_4^7 f(x)\\,dx = \\int_1^7 f(x)\\,dx - \\int_1^4 f(x)\\,dx = 10 - 6 = 4.$$\n\n**Common errors:**\n- Choosing $16$: added the two given integrals instead of subtracting ($6+10=16$).\n- Choosing $-4$: reversed the subtraction ($6-10=-4$).\n- Choosing $60$: multiplied the given values."
+  }
+]

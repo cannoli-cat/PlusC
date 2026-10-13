@@ -1,5 +1,5 @@
-import rawQuestions265 from './questions-265.json'
-import rawQuestions266 from './questions-266.json'
+import { questions265 } from './265'
+import { questions266 } from './266'
 
 export interface Course {
     id: string
@@ -50,10 +50,6 @@ export interface FreeResponseQuestion {
 }
 
 export type Question = MultipleChoiceQuestion | SelectAllQuestion | FreeResponseQuestion
-
-export const questions265: Question[] = rawQuestions265 as Question[]
-export const questions266: Question[] = rawQuestions266 as Question[]
-// export const questions267: Question[] = []
 
 export const courses: Course[] = [
     { id: '265', name: 'MAT 265: Calculus for Engineers I', questions: questions265 },

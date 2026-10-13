@@ -1,0 +1,195 @@
+[
+  {
+    "id": "s26551_gen_1",
+    "type": "free-response",
+    "section": "§5.1. Areas and Distances",
+    "text": "Let $f(x) = x^2 + 1$ on $[0, 2]$. Compute the left-endpoint Riemann sum $L_4$ using $n = 4$ equal subintervals. Give your answer as a fraction.",
+    "answer": "15/4",
+    "solution": "**Step 1 – Set up the partition.**\n\n$$\\Delta x = \\frac{2-0}{4} = 0.5$$\n\nLeft endpoints: $x_0 = 0,\\; x_1 = 0.5,\\; x_2 = 1,\\; x_3 = 1.5$.\n\n**Step 2 – Evaluate $f$ at each left endpoint.**\n\n$$f(0)=1, \\quad f(0.5)=1.25, \\quad f(1)=2, \\quad f(1.5)=3.25$$\n\n**Step 3 – Form the Riemann sum.**\n\n$$L_4 = \\Delta x\\bigl[f(x_0)+f(x_1)+f(x_2)+f(x_3)\\bigr] = 0.5(1+1.25+2+3.25)$$\n\n$$= 0.5 \\times 7.5 = \\frac{15}{4}$$"
+  },
+  {
+    "id": "s26551_gen_2",
+    "type": "multiple-choice",
+    "section": "§5.1. Areas and Distances",
+    "text": "Let $f(x) = x^2$ on $[0, 2]$. Which of the following equals the **right-endpoint** Riemann sum $R_4$ with $n = 4$ equal subintervals?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$3.75$"
+      },
+      {
+        "label": "B",
+        "text": "$1.75$"
+      },
+      {
+        "label": "C",
+        "text": "$7.5$"
+      },
+      {
+        "label": "D",
+        "text": "$2.625$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1 – Partition.**\n\n$$\\Delta x = \\frac{2-0}{4} = 0.5$$\n\nRight endpoints: $x_1 = 0.5,\\; x_2 = 1,\\; x_3 = 1.5,\\; x_4 = 2$.\n\n**Step 2 – Evaluate $f$.**\n\n$$f(0.5)=0.25,\\quad f(1)=1,\\quad f(1.5)=2.25,\\quad f(2)=4$$\n\n**Step 3 – Sum.**\n\n$$R_4 = 0.5(0.25+1+2.25+4) = 0.5 \\times 7.5 = \\mathbf{3.75}$$\n\n**Why the distractors are wrong:**\n- **B ($1.75$):** Uses *left* endpoints ($f(0)+f(0.5)+f(1)+f(1.5)$), a left-vs-right error.\n- **C ($7.5$):** Forgot to multiply by $\\Delta x = 0.5$.\n- **D ($2.625$):** Uses midpoints $0.25, 0.75, 1.25, 1.75$: $0.5(0.0625+0.5625+1.5625+3.0625)=2.625$."
+  },
+  {
+    "id": "s26551_gen_3",
+    "type": "free-response",
+    "section": "§5.1. Areas and Distances",
+    "text": "Compute the midpoint Riemann sum $M_4$ for $f(x) = 2x + 1$ on $[0, 4]$ using $n = 4$ equal subintervals.",
+    "answer": "20",
+    "solution": "**Step 1 – Partition.**\n\n$$\\Delta x = \\frac{4-0}{4} = 1$$\n\nSubintervals: $[0,1],[1,2],[2,3],[3,4]$. Midpoints: $\\bar{x}_1 = 0.5,\\; \\bar{x}_2 = 1.5,\\; \\bar{x}_3 = 2.5,\\; \\bar{x}_4 = 3.5$.\n\n**Step 2 – Evaluate $f$ at midpoints.**\n\n$$f(0.5)=2,\\quad f(1.5)=4,\\quad f(2.5)=6,\\quad f(3.5)=8$$\n\n**Step 3 – Sum.**\n\n$$M_4 = 1 \\cdot (2+4+6+8) = \\mathbf{20}$$\n\n*Note:* Since $f$ is linear, the midpoint sum gives the **exact** value: $\\int_0^4(2x+1)\\,dx = \\bigl[x^2+x\\bigr]_0^4 = 16+4 = 20.$"
+  },
+  {
+    "id": "s26551_gen_4",
+    "type": "multiple-choice",
+    "section": "§5.1. Areas and Distances",
+    "text": "Which definite integral does the following limit of Riemann sums represent?\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\frac{2}{n}\\left(1+\\frac{2i}{n}\\right)^{\\!3}$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^2 (1+x)^3\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^2 x^3\\,dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_1^3 x^2\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^1 (1+2x)^3\\,dx$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Identify the pieces.**\n\n$$\\Delta x = \\frac{2}{n}, \\qquad x_i^* = \\frac{2i}{n} \\quad (\\text{right endpoints with } a=0,\\, b=2)$$\n\nThe summand is $f(x_i^*)\\,\\Delta x$ where $f(x) = (1+x)^3$, so\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}f(x_i^*)\\,\\Delta x = \\int_0^2(1+x)^3\\,dx$$\n\n**Why the distractors fail:**\n- **B:** Drops the \"$1+$\" inside the cube — a substitution error.\n- **C:** Has wrong limits ($[1,3]$ instead of $[0,2]$) and wrong power ($x^2$ vs $(1+x)^3$).\n- **D:** Misidentifies $\\Delta x = 1/n$ and absorbs the 2 into the exponent."
+  },
+  {
+    "id": "s26551_gen_5",
+    "type": "free-response",
+    "section": "§5.1. Areas and Distances",
+    "text": "A particle's velocity (in m/s) is recorded at 2-second intervals:\n\n| $t$ (s) | 0 | 2 | 4 | 6 | 8 |\n|---------|---|---|---|---|---|\n| $v$ (m/s) | 0 | 6 | 10 | 12 | 13 |\n\nUsing a **left-endpoint** approximation with $n = 4$ subintervals, estimate the total distance traveled over $[0, 8]$.",
+    "answer": "56",
+    "solution": "**Step 1 – Identify the setup.**\n\n$\\Delta t = 2$ s, $n = 4$ subintervals. Left endpoints occur at $t = 0, 2, 4, 6$.\n\n**Step 2 – Read off velocities at left endpoints.**\n\n$$v(0)=0,\\quad v(2)=6,\\quad v(4)=10,\\quad v(6)=12$$\n\n**Step 3 – Approximate the integral $\\int_0^8 v(t)\\,dt$.**\n\n$$\\text{Distance} \\approx \\Delta t\\bigl[v(0)+v(2)+v(4)+v(6)\\bigr] = 2(0+6+10+12) = 2(28) = \\mathbf{56 \\text{ m}}$$"
+  },
+  {
+    "id": "s26551_gen_6",
+    "type": "select-all",
+    "section": "§5.1. Areas and Distances",
+    "text": "Consider $f(x) = 3 - x$ on $[0, 3]$ with $n = 3$ equal subintervals ($\\Delta x = 1$). Select **all** true statements.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The left-endpoint sum is $L_3 = 6$."
+      },
+      {
+        "label": "B",
+        "text": "The right-endpoint sum is $R_3 = 3$."
+      },
+      {
+        "label": "C",
+        "text": "The left-endpoint sum **overestimates** $\\displaystyle\\int_0^3(3-x)\\,dx$."
+      },
+      {
+        "label": "D",
+        "text": "The midpoint sum $M_3$ equals the **exact** value of the integral."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "**Exact value:**\n\n$$\\int_0^3(3-x)\\,dx = \\left[3x - \\tfrac{x^2}{2}\\right]_0^3 = 9 - 4.5 = 4.5$$\n\n**Left endpoints** ($x = 0,1,2$):\n\n$$L_3 = 1\\cdot[f(0)+f(1)+f(2)] = 3+2+1 = 6 \\quad \\checkmark \\text{ (A)}$$\n\n**Right endpoints** ($x = 1,2,3$):\n\n$$R_3 = 1\\cdot[f(1)+f(2)+f(3)] = 2+1+0 = 3 \\quad \\checkmark \\text{ (B)}$$\n\n**Overestimate check:** $f$ is *decreasing* on $[0,3]$, so the left sum overestimates. $L_3 = 6 > 4.5$. $\\checkmark$ **(C)**\n\n**Midpoint** ($\\bar{x} = 0.5, 1.5, 2.5$):\n\n$$M_3 = 1\\cdot[f(0.5)+f(1.5)+f(2.5)] = 2.5+1.5+0.5 = 4.5$$\n\nSince $f$ is **linear**, the midpoint sum is always exact. $M_3 = 4.5 = $ exact value. $\\checkmark$ **(D)**\n\nAll four statements are true."
+  },
+  {
+    "id": "s26551_gen_7",
+    "type": "multiple-choice",
+    "section": "§5.1. Areas and Distances",
+    "text": "Which definite integral equals the following limit?\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\frac{3}{n}\\,e^{3i/n}$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^3 e^x\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^1 e^{3x}\\,dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^3 e^{3x}\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_1^3 e^x\\,dx$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Identify the Riemann sum structure.**\n\n$$\\Delta x = \\frac{3}{n},\\qquad x_i^* = \\frac{3i}{n} \\quad (\\text{right endpoints with }a=0,\\,b=3)$$\n\nThe factor $e^{3i/n} = e^{x_i^*}$, so $f(x) = e^x$:\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}e^{x_i^*}\\,\\Delta x = \\int_0^3 e^x\\,dx = e^3 - 1$$\n\n**Why the distractors fail:**\n- **B ($\\int_0^1 e^{3x}\\,dx$):** Would need $\\Delta x = 1/n$; gives $(e^3-1)/3 \ne e^3-1$.\n- **C ($\\int_0^3 e^{3x}\\,dx$):** Incorrectly writes $e^{3x_i^*}$ with an extra factor of 3 in the exponent.\n- **D ($\\int_1^3 e^x\\,dx$):** Uses the wrong lower limit; $x_i^*$ starts at $0$, not $1$."
+  },
+  {
+    "id": "s26551_gen_8",
+    "type": "free-response",
+    "section": "§5.1. Areas and Distances",
+    "text": "The table below gives values of a function $f$.\n\n| $x$ | 1 | 2 | 3 | 4 | 5 |\n|-----|---|---|---|---|---|\n| $f(x)$ | 4 | 7 | 3 | 9 | 2 |\n\nUsing the data in the table, compute the **right-endpoint** Riemann sum $R_4$ for $f$ on $[1, 5]$ with $n = 4$ equal subintervals.",
+    "answer": "21",
+    "solution": "**Step 1 – Subintervals.**\n\n$$\\Delta x = \\frac{5-1}{4} = 1$$\n\nSubintervals: $[1,2],\\,[2,3],\\,[3,4],\\,[4,5]$. Right endpoints: $x = 2, 3, 4, 5$.\n\n**Step 2 – Read values.**\n\n$$f(2)=7,\\quad f(3)=3,\\quad f(4)=9,\\quad f(5)=2$$\n\n**Step 3 – Sum.**\n\n$$R_4 = \\Delta x\\bigl[f(2)+f(3)+f(4)+f(5)\\bigr] = 1(7+3+9+2) = \\mathbf{21}$$"
+  },
+  {
+    "id": "s26551_gen_9",
+    "type": "multiple-choice",
+    "section": "§5.1. Areas and Distances",
+    "text": "Which definite integral does the following limit represent?\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\frac{1}{n}\\sin\\!\\left(\\frac{\\pi i}{n}\\right)$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^1 \\sin(\\pi x)\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^{\\pi} \\sin(x)\\,dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^1 \\sin(x)\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{\\pi} \\sin(\\pi x)\\,dx$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Identify the pieces.**\n\n$$\\Delta x = \\frac{1}{n},\\qquad x_i^* = \\frac{i}{n} \\quad (\\text{right endpoints with }a=0,\\,b=1)$$\n\nThen $\\sin\\!\\left(\\dfrac{\\pi i}{n}\\right) = \\sin(\\pi x_i^*)$, so $f(x) = \\sin(\\pi x)$:\n\n$$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\sin(\\pi x_i^*)\\,\\Delta x = \\int_0^1 \\sin(\\pi x)\\,dx$$\n\n**Verify:** $\\displaystyle\\int_0^1\\sin(\\pi x)\\,dx = \\Bigl[-\\tfrac{\\cos(\\pi x)}{\\pi}\\Bigr]_0^1 = \\frac{-(-1)+1}{\\pi} = \\frac{2}{\\pi}$.\n\n**Why the distractors fail:**\n- **B:** Would require $\\Delta x = \\pi/n$ (i.e., $a=0, b=\\pi$) and $f(x)=\\sin(x)$.\n- **C:** Missing the $\\pi$ inside $\\sin$; a misread of the argument.\n- **D:** Combines the wrong interval $[0,\\pi]$ with the $\\pi$ inside $\\sin$."
+  },
+  {
+    "id": "s26551_gen_10",
+    "type": "multiple-choice",
+    "section": "§5.1. Areas and Distances",
+    "text": "For $f(x) = x^2$ on $[0, 3]$, which of the following Riemann sums **overestimates** $\\displaystyle\\int_0^3 x^2\\,dx$ for every $n \\geq 1$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The left-endpoint sum $L_n$, because $f$ is increasing."
+      },
+      {
+        "label": "B",
+        "text": "The right-endpoint sum $R_n$, because $f$ is increasing."
+      },
+      {
+        "label": "C",
+        "text": "The midpoint sum $M_n$, because it uses interior points."
+      },
+      {
+        "label": "D",
+        "text": "Both $L_n$ and $R_n$ overestimate for all $n$."
+      }
+    ],
+    "answer": "B",
+    "solution": "**Key theorem:** If $f$ is **increasing** on $[a,b]$, then for any $n$:\n\n$$L_n \\leq \\int_a^b f(x)\\,dx \\leq R_n$$\n\nSince $f(x) = x^2$ is increasing on $[0,3]$ (its derivative $2x \\geq 0$ there), the right-endpoint sum **overestimates** the integral and the left-endpoint sum **underestimates** it.\n\n**Verify with $n=1$:**\n\n$$R_1 = 3 \\cdot f(3) = 3 \\cdot 9 = 27, \\qquad \\int_0^3 x^2\\,dx = \\frac{x^3}{3}\\Bigg|_0^3 = 9$$\n\nIndeed $R_1 = 27 > 9$. $\\;$ $L_1 = 3\\cdot f(0) = 0 < 9$.\n\nSo the answer is **B**."
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "s26542_gen_1",
+    "type": "multiple-choice",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Let $f(x) = x^2 - 4x + 3$ on $[1, 3]$. Rolle's Theorem applies because $f(1) = f(3) = 0$. Find the value $c \\in (1,3)$ guaranteed by Rolle's Theorem.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$c = 2$"
+      },
+      {
+        "label": "B",
+        "text": "$c = 1$"
+      },
+      {
+        "label": "C",
+        "text": "$c = 3$"
+      },
+      {
+        "label": "D",
+        "text": "$c = \\dfrac{3}{2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1: Verify hypotheses.**\n$f(x) = x^2 - 4x + 3$ is a polynomial, so it is continuous on $[1,3]$ and differentiable on $(1,3)$.\n\n**Step 2: Check equal endpoints.**\n$$f(1) = 1 - 4 + 3 = 0, \\quad f(3) = 9 - 12 + 3 = 0.$$\nSince $f(1) = f(3)$, Rolle's Theorem applies.\n\n**Step 3: Find $c$.**\n$$f'(x) = 2x - 4.$$\nSet $f'(c) = 0$:\n$$2c - 4 = 0 \\implies c = 2.$$\nSince $2 \\in (1, 3)$, the answer is $c = 2$."
+  },
+  {
+    "id": "s26542_gen_2",
+    "type": "free-response",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Apply the Mean Value Theorem to $f(x) = \\sqrt{x}$ on $[1, 9]$. Find the value $c$ guaranteed by the MVT.",
+    "answer": "4",
+    "solution": "**Step 1: Verify hypotheses.**\n$f(x) = \\sqrt{x}$ is continuous on $[1,9]$ and differentiable on $(1,9)$.\n\n**Step 2: Compute the average rate of change.**\n$$\\frac{f(9)-f(1)}{9-1} = \\frac{3 - 1}{8} = \\frac{2}{8} = \\frac{1}{4}.$$\n\n**Step 3: Find $c$.**\n$$f'(x) = \\frac{1}{2\\sqrt{x}}.$$\nSet $f'(c) = \\dfrac{1}{4}$:\n$$\\frac{1}{2\\sqrt{c}} = \\frac{1}{4} \\implies 2\\sqrt{c} = 4 \\implies \\sqrt{c} = 2 \\implies c = 4.$$\nSince $4 \\in (1, 9)$, the MVT is satisfied at $c = 4$."
+  },
+  {
+    "id": "s26542_gen_3",
+    "type": "multiple-choice",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "A car travels 120 miles in 2 hours. By the Mean Value Theorem, at some moment during the trip the car's speed was exactly:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$60$ mph"
+      },
+      {
+        "label": "B",
+        "text": "$120$ mph"
+      },
+      {
+        "label": "C",
+        "text": "$30$ mph"
+      },
+      {
+        "label": "D",
+        "text": "Cannot be determined without knowing the position function"
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $s(t)$ be the position function (in miles), with $t$ in hours, $t \\in [0,2]$.\n\nThe position function is continuous on $[0,2]$ and differentiable on $(0,2)$ (assuming the car moves smoothly).\n\nBy the MVT, there exists $c \\in (0,2)$ such that:\n$$s'(c) = \\frac{s(2) - s(0)}{2 - 0} = \\frac{120}{2} = 60 \\text{ mph}.$$\nSo at some moment, the speedometer read exactly $60$ mph."
+  },
+  {
+    "id": "s26542_gen_4",
+    "type": "free-response",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Find all values $c$ guaranteed by the MVT for $f(x) = x^3 - x$ on $[-1, 2]$.",
+    "answer": "1",
+    "solution": "**Step 1: Verify hypotheses.**\n$f(x) = x^3 - x$ is a polynomial, hence continuous on $[-1,2]$ and differentiable on $(-1,2)$.\n\n**Step 2: Compute the average rate of change.**\n$$f(-1) = -1 - (-1) = 0, \\quad f(2) = 8 - 2 = 6.$$\n$$\\frac{f(2)-f(-1)}{2-(-1)} = \\frac{6 - 0}{3} = 2.$$\n\n**Step 3: Solve $f'(c) = 2$.**\n$$f'(x) = 3x^2 - 1.$$\n$$3c^2 - 1 = 2 \\implies 3c^2 = 3 \\implies c^2 = 1 \\implies c = \\pm 1.$$\n\n**Step 4: Check which values are in $(-1, 2)$.**\n$c = 1 \\in (-1,2)$ ✓\n$c = -1 \\notin (-1,2)$ ✗ (endpoint, not in open interval)\n\nThe MVT guarantees $c = 1$.\n\n*Note on answer field:* Re-examining: $c=1$ is the value in the open interval. The answer is $c = 1$."
+  },
+  {
+    "id": "s26542_gen_5",
+    "type": "multiple-choice",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Which of the following functions satisfies the hypotheses of Rolle's Theorem on $[-2, 2]$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f(x) = |x|$, since $f(-2) = f(2) = 2$"
+      },
+      {
+        "label": "B",
+        "text": "$f(x) = x^2 - 4$, since $f(-2) = f(2) = 0$"
+      },
+      {
+        "label": "C",
+        "text": "$f(x) = \\dfrac{1}{x^2}$, since $f(-2) = f(2) = \\dfrac{1}{4}$"
+      },
+      {
+        "label": "D",
+        "text": "$f(x) = \\tan(x)$, since $\\tan(-2)= -\\tan(2)$ and we can set the interval"
+      }
+    ],
+    "answer": "B",
+    "solution": "Rolle's Theorem requires: (1) continuous on $[a,b]$, (2) differentiable on $(a,b)$, (3) $f(a) = f(b)$.\n\n**Option A:** $f(x) = |x|$ is continuous on $[-2,2]$ and $f(-2)=f(2)=2$, but $f$ is **not differentiable** at $x=0$. Fails hypothesis.\n\n**Option B:** $f(x) = x^2 - 4$ is a polynomial — continuous and differentiable everywhere. $f(-2) = 4-4=0$ and $f(2)=4-4=0$. All hypotheses satisfied. ✓\n\n**Option C:** $f(x) = 1/x^2$ is **not defined (and not continuous)** at $x=0 \\in [-2,2]$. Fails hypothesis.\n\n**Option D:** $\\tan(x)$ is not defined at $x = \\pm\\pi/2 \\approx \\pm 1.57 \\in (-2,2)$. Fails hypothesis.\n\nThe answer is **B**."
+  },
+  {
+    "id": "s26542_gen_6",
+    "type": "free-response",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Use the Mean Value Theorem to show that $|\\sin a - \\sin b| \\le |a - b|$ for all real numbers $a$ and $b$. (Provide the key reasoning, then state the conclusion.)\n\nAs a specific numerical check: using MVT on $[0, \\pi/2]$, find the value $c$ where $f'(c)$ equals the average rate of change of $\\sin x$.",
+    "answer": "arccos(2/pi)",
+    "solution": "**Part 1 — Inequality proof:**\nLet $f(x) = \\sin x$. For any $a \\neq b$, $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and differentiable on the interior.\n\nBy the MVT, there exists $c$ between $a$ and $b$ such that:\n$$\\sin a - \\sin b = f'(c)(a - b) = \\cos(c)(a-b).$$\nTaking absolute values:\n$$|\\sin a - \\sin b| = |\\cos c| \\cdot |a - b| \\le 1 \\cdot |a - b| = |a - b|.$$\nThis holds since $|\\cos c| \\le 1$ for all $c$.\n\n**Part 2 — Numerical check on $[0, \\pi/2]$:**\n$$\\frac{f(\\pi/2) - f(0)}{\\pi/2 - 0} = \\frac{1 - 0}{\\pi/2} = \\frac{2}{\\pi}.$$\nSet $f'(c) = \\cos c = \\dfrac{2}{\\pi}$:\n$$c = \\arccos\\!\\left(\\frac{2}{\\pi}\\right).$$\nAlternatively written as $c = \\arcsin\\!\\left(\\sqrt{1 - \\frac{4}{\\pi^2}}\\right)$, but the cleanest exact form is $c = \\arccos(2/\\pi)$."
+  },
+  {
+    "id": "s26542_gen_7",
+    "type": "select-all",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Select **all** statements that are valid conclusions from the Mean Value Theorem (assuming appropriate hypotheses hold).",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $f'(x) = 0$ for all $x \\in (a,b)$, then $f$ is constant on $[a,b]$."
+      },
+      {
+        "label": "B",
+        "text": "If $f(a) = f(b)$, then $f'(x) = 0$ for all $x \\in (a,b)$."
+      },
+      {
+        "label": "C",
+        "text": "If $f'(x) > 0$ for all $x \\in (a,b)$, then $f(a) < f(b)$."
+      },
+      {
+        "label": "D",
+        "text": "The MVT guarantees $f'(c) = \\dfrac{f(b)-f(a)}{b-a}$ for at least one $c \\in (a,b)$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A:** TRUE. If $f'(x)=0$ on $(a,b)$, then by MVT, for any two points $x_1, x_2 \\in [a,b]$:\n$$f(x_2)-f(x_1) = f'(c)(x_2-x_1) = 0,$$\nso $f$ is constant.\n\n**B:** FALSE. $f(a)=f(b)$ only guarantees $f'(c)=0$ for **some** $c$ (Rolle's Theorem), not for **all** $x$. Example: $f(x) = \\sin(\\pi x)$ on $[0,1]$.\n\n**C:** TRUE. By MVT, $f(b)-f(a) = f'(c)(b-a)$. Since $f'(c)>0$ and $b-a>0$, we get $f(b)-f(a)>0$, i.e., $f(a)<f(b)$.\n\n**D:** TRUE. This is exactly the statement of the MVT.\n\nCorrect selections: **A, C, D**."
+  },
+  {
+    "id": "s26542_gen_8",
+    "type": "multiple-choice",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Find all values $c$ in $(-2, 2)$ satisfying the MVT for $f(x) = x^3 - 3x + 1$ on $[-2, 2]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$c = \\pm\\dfrac{2}{\\sqrt{3}}$"
+      },
+      {
+        "label": "B",
+        "text": "$c = 0$"
+      },
+      {
+        "label": "C",
+        "text": "$c = \\pm 1$"
+      },
+      {
+        "label": "D",
+        "text": "$c = \\pm\\sqrt{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1: Verify hypotheses.**\n$f(x)=x^3-3x+1$ is a polynomial, continuous on $[-2,2]$ and differentiable on $(-2,2)$.\n\n**Step 2: Compute average rate of change.**\n$$f(-2) = -8+6+1 = -1, \\quad f(2) = 8-6+1 = 3.$$\n$$\\frac{f(2)-f(-2)}{2-(-2)} = \\frac{3-(-1)}{4} = \\frac{4}{4} = 1.$$\n\n**Step 3: Solve $f'(c)=1$.**\n$$f'(x) = 3x^2 - 3.$$\n$$3c^2 - 3 = 1 \\implies 3c^2 = 4 \\implies c^2 = \\frac{4}{3} \\implies c = \\pm\\frac{2}{\\sqrt{3}}.$$\n\n**Step 4: Check interval.**\n$\\dfrac{2}{\\sqrt{3}} \\approx 1.155 \\in (-2,2)$ ✓\n$-\\dfrac{2}{\\sqrt{3}} \\approx -1.155 \\in (-2,2)$ ✓\n\nBoth values are valid. The answer is **A**."
+  },
+  {
+    "id": "s26542_gen_9",
+    "type": "free-response",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "Verify that Rolle's Theorem applies to $f(x) = \\sin(2x)$ on $\\left[0, \\dfrac{\\pi}{2}\\right]$, then find all values $c$ in $\\left(0, \\dfrac{\\pi}{2}\\right)$ where $f'(c) = 0$.",
+    "answer": "pi/4",
+    "solution": "**Step 1: Verify hypotheses.**\n$f(x) = \\sin(2x)$ is continuous on $\\left[0, \\dfrac{\\pi}{2}\\right]$ and differentiable on $\\left(0, \\dfrac{\\pi}{2}\\right)$ (it's a composition of smooth functions).\n\n**Step 2: Check endpoints.**\n$$f(0) = \\sin(0) = 0, \\quad f\\!\\left(\\frac{\\pi}{2}\\right) = \\sin(\\pi) = 0.$$\nSince $f(0) = f(\\pi/2) = 0$, Rolle's Theorem applies.\n\n**Step 3: Solve $f'(c) = 0$.**\n$$f'(x) = 2\\cos(2x).$$\n$$2\\cos(2c) = 0 \\implies \\cos(2c) = 0 \\implies 2c = \\frac{\\pi}{2} \\implies c = \\frac{\\pi}{4}.$$\n\nCheck: $\\dfrac{\\pi}{4} \\in \\left(0, \\dfrac{\\pi}{2}\\right)$ ✓\n\nThe unique value is $c = \\dfrac{\\pi}{4}$."
+  },
+  {
+    "id": "s26542_gen_10",
+    "type": "multiple-choice",
+    "section": "§4.2. Mean Value Theorem",
+    "text": "A police officer uses the MVT to argue that a driver exceeded the 65 mph speed limit. The driver entered a 100-mile toll road segment and exited it exactly 1 hour and 20 minutes later. Which statement best represents the officer's argument?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The driver's average speed was $75$ mph, so by the MVT, the driver's instantaneous speed equaled $75$ mph at some moment — exceeding the limit."
+      },
+      {
+        "label": "B",
+        "text": "The driver's average speed was $65$ mph, so the driver never exceeded the speed limit."
+      },
+      {
+        "label": "C",
+        "text": "The MVT cannot be applied here because the car may have stopped and started."
+      },
+      {
+        "label": "D",
+        "text": "The MVT guarantees the driver traveled at exactly $100$ mph at some point."
+      }
+    ],
+    "answer": "A",
+    "solution": "**Setting up the MVT:**\nLet $s(t)$ be the driver's position. The time elapsed is $1$ hour $20$ minutes $= \\dfrac{4}{3}$ hours.\n\n**Average speed:**\n$$\\frac{s(4/3) - s(0)}{4/3 - 0} = \\frac{100}{4/3} = 100 \\cdot \\frac{3}{4} = 75 \\text{ mph}.$$\n\n**MVT conclusion:**\nAssuming $s(t)$ is continuous on $\\left[0, \\dfrac{4}{3}\\right]$ and differentiable on the open interval (reasonable for a car), the MVT guarantees there exists a time $c$ where:\n$$s'(c) = 75 \\text{ mph}.$$\nSince $75 > 65$, the driver's instantaneous speed was $75$ mph at some moment — exceeding the $65$ mph limit.\n\nThe answer is **A**."
+  }
+]

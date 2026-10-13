@@ -1,0 +1,164 @@
+[
+  {
+    "id": "s9_4_gen_1",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area enclosed by the cardioid $r = 3(1 + \\cos\\theta)$.",
+    "answer": "\\frac{27\\pi}{2}",
+    "solution": "$$A = \\frac{1}{2}\\int_0^{2\\pi} r^2\\,d\\theta = \\frac{1}{2}\\int_0^{2\\pi} 9(1+\\cos\\theta)^2\\,d\\theta = \\frac{9}{2}\\int_0^{2\\pi}(1+2\\cos\\theta+\\cos^2\\theta)\\,d\\theta.$$\nUsing $\\displaystyle\\int_0^{2\\pi}\\cos\\theta\\,d\\theta=0$ and $\\displaystyle\\int_0^{2\\pi}\\cos^2\\theta\\,d\\theta=\\pi$:\n$$A = \\frac{9}{2}\\bigl[2\\pi + 0 + \\pi\\bigr] = \\frac{9}{2}\\cdot 3\\pi = \\boxed{\\frac{27\\pi}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_2",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area inside one leaf of the four-petaled rose $r = 6\\sin(2\\theta)$.",
+    "answer": "\\frac{9\\pi}{2}",
+    "solution": "One petal spans $0 \\leq \\theta \\leq \\pi/2$ (where $\\sin(2\\theta) \\geq 0$).\n$$A = \\frac{1}{2}\\int_0^{\\pi/2} 36\\sin^2(2\\theta)\\,d\\theta = 18\\int_0^{\\pi/2}\\frac{1-\\cos(4\\theta)}{2}\\,d\\theta = 9\\left[\\theta - \\frac{\\sin(4\\theta)}{4}\\right]_0^{\\pi/2} = 9\\cdot\\frac{\\pi}{2} = \\boxed{\\frac{9\\pi}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_3",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area enclosed by one loop of the lemniscate $r^2 = 9\\cos(2\\theta)$.",
+    "answer": "9/2",
+    "solution": "The right loop requires $\\cos(2\\theta) \\geq 0$, which holds for $-\\pi/4 \\leq \\theta \\leq \\pi/4$.\n$$A = \\frac{1}{2}\\int_{-\\pi/4}^{\\pi/4} r^2\\,d\\theta = \\frac{1}{2}\\int_{-\\pi/4}^{\\pi/4} 9\\cos(2\\theta)\\,d\\theta = \\frac{9}{2}\\left[\\frac{\\sin(2\\theta)}{2}\\right]_{-\\pi/4}^{\\pi/4} = \\frac{9}{4}\\bigl[\\sin(\\tfrac{\\pi}{2})-\\sin(-\\tfrac{\\pi}{2})\\bigr] = \\frac{9}{4}\\cdot 2 = \\boxed{\\frac{9}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_4",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region that lies inside the circle $r = 2\\sin\\theta$ but outside the circle $r = 1$.",
+    "answer": "\\frac{\\pi}{3} + \\frac{\\sqrt{3}}{2}",
+    "solution": "Find intersections: $2\\sin\\theta = 1 \\Rightarrow \\sin\\theta = 1/2 \\Rightarrow \\theta = \\pi/6,\\;5\\pi/6$. The circle $r=2\\sin\\theta$ lies outside $r=1$ between these angles.\n$$A = \\frac{1}{2}\\int_{\\pi/6}^{5\\pi/6}\\bigl[(2\\sin\\theta)^2 - 1^2\\bigr]\\,d\\theta = \\frac{1}{2}\\int_{\\pi/6}^{5\\pi/6}\\bigl[4\\sin^2\\theta - 1\\bigr]\\,d\\theta.$$\nUsing $4\\sin^2\\theta = 2(1-\\cos 2\\theta)$:\n$$= \\frac{1}{2}\\int_{\\pi/6}^{5\\pi/6}\\bigl[1-2\\cos(2\\theta)\\bigr]\\,d\\theta = \\frac{1}{2}\\left[\\theta - \\sin(2\\theta)\\right]_{\\pi/6}^{5\\pi/6}.$$\n$$= \\frac{1}{2}\\Bigl[\\bigl(\\tfrac{5\\pi}{6}+\\tfrac{\\sqrt{3}}{2}\\bigr) - \\bigl(\\tfrac{\\pi}{6}-\\tfrac{\\sqrt{3}}{2}\\bigr)\\Bigr] = \\frac{1}{2}\\Bigl[\\frac{2\\pi}{3}+\\sqrt{3}\\Bigr] = \\boxed{\\frac{\\pi}{3}+\\frac{\\sqrt{3}}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_5",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region inside the circle $r = 6\\cos\\theta$ but outside the circle $r = 3$.",
+    "answer": "3\\pi + \\frac{9\\sqrt{3}}{2}",
+    "solution": "Intersections: $6\\cos\\theta = 3 \\Rightarrow \\cos\\theta = 1/2 \\Rightarrow \\theta = \\pm\\pi/3$. For $|\\theta| < \\pi/3$, $r=6\\cos\\theta > 3$.\n$$A = \\frac{1}{2}\\int_{-\\pi/3}^{\\pi/3}\\bigl[(6\\cos\\theta)^2 - 9\\bigr]\\,d\\theta = \\int_0^{\\pi/3}\\bigl[36\\cos^2\\theta - 9\\bigr]\\,d\\theta.$$\nUsing $36\\cos^2\\theta = 18(1+\\cos 2\\theta)$:\n$$= \\int_0^{\\pi/3}\\bigl[9+18\\cos(2\\theta)\\bigr]\\,d\\theta = \\Bigl[9\\theta + 9\\sin(2\\theta)\\Bigr]_0^{\\pi/3} = 3\\pi + 9\\sin\\tfrac{2\\pi}{3} = \\boxed{3\\pi + \\frac{9\\sqrt{3}}{2}}.$$"
+  },
+  {
+    "id": "s9_4_gen_6",
+    "type": "multiple-choice",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Which of the following integrals represents the arc length of the polar curve $r = 2 + \\cos\\theta$, $0 \\leq \\theta \\leq 2\\pi$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{5 + 4\\cos\\theta}\\;d\\theta$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{4 + 4\\cos\\theta}\\;d\\theta$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{5 - 4\\cos\\theta}\\;d\\theta$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{5 + 4\\sin\\theta}\\;d\\theta$"
+      }
+    ],
+    "answer": "A",
+    "solution": "The polar arc length formula is $L = \\displaystyle\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\tfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$.\n\nHere $r = 2+\\cos\\theta$, $dr/d\\theta = -\\sin\\theta$.\n$$r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2 = (2+\\cos\\theta)^2+\\sin^2\\theta = 4+4\\cos\\theta+\\cos^2\\theta+\\sin^2\\theta = 5+4\\cos\\theta.$$\nSo $L = \\displaystyle\\int_0^{2\\pi}\\sqrt{5+4\\cos\\theta}\\;d\\theta$. Choice **A**.\n\n"
+  },
+  {
+    "id": "s9_4_gen_7",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the exact arc length of the polar curve $r = 4\\cos\\theta$, $\\;0 \\leq \\theta \\leq \\pi$.",
+    "answer": "4\\pi",
+    "solution": "Here $dr/d\\theta = -4\\sin\\theta$.\n$$r^2+\\left(\\frac{dr}{d\\theta}\\right)^2 = 16\\cos^2\\theta+16\\sin^2\\theta = 16.$$\n$$L = \\int_0^{\\pi}\\sqrt{16}\\;d\\theta = 4\\int_0^{\\pi}d\\theta = \\boxed{4\\pi}.$$\n\nThis makes sense: $r=4\\cos\\theta$ is a circle of radius $2$ (diameter $4$), and its full circumference is $2\\pi(2)=4\\pi$. The interval $0$ to $\\pi$ traces it exactly once."
+  },
+  {
+    "id": "s9_4_gen_8",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the exact arc length of the polar curve $r = 3e^{\\theta}$, $\\;0 \\leq \\theta \\leq 2\\pi$.",
+    "answer": "3\\sqrt{2}(e^{2\\pi} - 1)",
+    "solution": "Here $dr/d\\theta = 3e^{\\theta}$.\n$$r^2+\\left(\\frac{dr}{d\\theta}\\right)^2 = 9e^{2\\theta}+9e^{2\\theta} = 18e^{2\\theta}.$$\n$$L = \\int_0^{2\\pi}\\sqrt{18e^{2\\theta}}\\,d\\theta = 3\\sqrt{2}\\int_0^{2\\pi}e^{\\theta}\\,d\\theta = 3\\sqrt{2}\\bigl[e^{\\theta}\\bigr]_0^{2\\pi} = \\boxed{3\\sqrt{2}(e^{2\\pi}-1)}.$$"
+  },
+  {
+    "id": "s9_4_gen_9",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area inside one leaf of the six-petaled rose $r = 4\\cos(3\\theta)$.",
+    "answer": "\\frac{4\\pi}{3}",
+    "solution": "One petal spans $-\\pi/6 \\leq \\theta \\leq \\pi/6$ (where $\\cos(3\\theta) \\geq 0$).\n$$A = \\frac{1}{2}\\int_{-\\pi/6}^{\\pi/6} 16\\cos^2(3\\theta)\\,d\\theta = 16\\int_0^{\\pi/6}\\cos^2(3\\theta)\\,d\\theta = 8\\int_0^{\\pi/6}(1+\\cos(6\\theta))\\,d\\theta.$$\n$$= 8\\left[\\theta + \\frac{\\sin(6\\theta)}{6}\\right]_0^{\\pi/6} = 8\\left[\\frac{\\pi}{6}+\\frac{\\sin\\pi}{6}\\right] = 8\\cdot\\frac{\\pi}{6} = \\boxed{\\frac{4\\pi}{3}}.$$"
+  },
+  {
+    "id": "s9_4_gen_10",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region that lies inside **both** curves $r = 4\\sin\\theta$ and $r = 4\\cos\\theta$.",
+    "answer": "2\\pi - 4",
+    "solution": "The two circles intersect where $4\\sin\\theta = 4\\cos\\theta$, i.e., $\\theta = \\pi/4$ (and at the origin). For $0 \\leq \\theta \\leq \\pi/4$, the inner boundary is $r=4\\sin\\theta$; for $\\pi/4 \\leq \\theta \\leq \\pi/2$, the inner boundary is $r=4\\cos\\theta$.\n\nBy the symmetry of $\\sin$ and $\\cos$ about $\\pi/4$, both pieces contribute equally:\n$$A = 2\\cdot\\frac{1}{2}\\int_0^{\\pi/4}(4\\sin\\theta)^2\\,d\\theta = 16\\int_0^{\\pi/4}\\sin^2\\theta\\,d\\theta = 8\\int_0^{\\pi/4}(1-\\cos(2\\theta))\\,d\\theta.$$\n$$= 8\\left[\\theta - \\frac{\\sin(2\\theta)}{2}\\right]_0^{\\pi/4} = 8\\left[\\frac{\\pi}{4}-\\frac{1}{2}\\right] = \\boxed{2\\pi - 4}.$$\n\n**Geometric check:** Each circle has radius $2$; two unit-radius circles with centers distance $2\\sqrt{2}$ apart... actually radius $2$ and center distance $2\\sqrt{2}/\\sqrt{2}=2$... the intersection area by the lens formula is $2r^2\\cos^{-1}\\!\\bigl(\\tfrac{d}{2r}\\bigr) - \\tfrac{d}{2}\\sqrt{4r^2-d^2} = 8(\\pi/4)-(\\sqrt{2})(2\\sqrt{2}) = 2\\pi-4$. ✓"
+  },
+  {
+    "id": "s9_4_gen_11",
+    "type": "free-response",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Find the area of the region that lies inside the circle $r = 4$ but outside the cardioid $r = 2 + 2\\cos\\theta$.",
+    "answer": "10\\pi",
+    "solution": "The cardioid satisfies $r = 2+2\\cos\\theta \\leq 4$ for all $\\theta$ (maximum at $\\theta=0$: $r=4$). So the cardioid lies entirely within or on the circle.\n\n$$A = \\underbrace{\\frac{1}{2}\\int_0^{2\\pi}16\\,d\\theta}_{\\text{circle}} - \\underbrace{\\frac{1}{2}\\int_0^{2\\pi}(2+2\\cos\\theta)^2\\,d\\theta}_{\\text{cardioid}}.$$\n\n**Circle area:** $\\frac{1}{2}\\cdot 16\\cdot 2\\pi = 16\\pi$.\n\n**Cardioid area:** $\\frac{1}{2}\\int_0^{2\\pi}4(1+\\cos\\theta)^2\\,d\\theta = 2(2\\pi+0+\\pi) = 6\\pi$.\n\n$$A = 16\\pi - 6\\pi = \\boxed{10\\pi}.$$"
+  },
+  {
+    "id": "s9_4_gen_12",
+    "type": "multiple-choice",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "Which of the following integrals gives the area of **one petal** of the rose $r = 3\\sin(2\\theta)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{2}\\displaystyle\\int_0^{\\pi/2} 9\\sin^2(2\\theta)\\;d\\theta$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{2}\\displaystyle\\int_0^{\\pi} 9\\sin^2(2\\theta)\\;d\\theta$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{\\pi/2} 9\\sin^2(2\\theta)\\;d\\theta$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2}\\displaystyle\\int_0^{\\pi/2} 9\\sin(2\\theta)\\;d\\theta$"
+      }
+    ],
+    "answer": "A",
+    "solution": "One petal of $r=3\\sin(2\\theta)$ spans $0 \\leq \\theta \\leq \\pi/2$ (where $\\sin(2\\theta) \\geq 0$ and traces one complete lobe). Applying the formula $A = \\frac{1}{2}\\int r^2\\,d\\theta$:\n$$A = \\frac{1}{2}\\int_0^{\\pi/2}9\\sin^2(2\\theta)\\,d\\theta = \\frac{9}{8}\\pi.$$\nChoice **A**.\n\n"
+  },
+  {
+    "id": "s9_4_gen_13",
+    "type": "select-all",
+    "section": "§9.4. Areas and Lengths in Polar Coordinates",
+    "text": "**Select all** statements about polar area and arc length that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The area enclosed by a polar curve $r = f(\\theta)$, $\\alpha \\leq \\theta \\leq \\beta$, is $A = \\dfrac{1}{2}\\displaystyle\\int_\\alpha^\\beta [f(\\theta)]^2\\,d\\theta$."
+      },
+      {
+        "label": "B",
+        "text": "The arc length of a polar curve is $L = \\displaystyle\\int_\\alpha^\\beta \\sqrt{r^2 + \\left(\\dfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$."
+      },
+      {
+        "label": "C",
+        "text": "The area of the region inside $r = f(\\theta)$ and outside $r = g(\\theta)$ (where $f > g \\geq 0$) is $\\dfrac{1}{2}\\displaystyle\\int_\\alpha^\\beta\\bigl[g^2 - f^2\\bigr]\\,d\\theta$."
+      },
+      {
+        "label": "D",
+        "text": "For the constant curve $r = a$, the arc length formula gives $L = a(\\beta - \\alpha)$, the arc length of a circular arc."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A: TRUE. ✓** This is the standard polar area formula.\n\n**B: TRUE. ✓** This follows from the parametric arc length formula applied to $x = r\\cos\\theta$, $y = r\\sin\\theta$.\n\n**C: FALSE. ✗** The correct formula subtracts the *smaller* from the *larger*: $\\frac{1}{2}\\int[f^2 - g^2]\\,d\\theta$, not $[g^2-f^2]$. The given expression would yield a negative area.\n\n**D: TRUE. ✓** For $r = a$ (constant), $dr/d\\theta = 0$, so $\\sqrt{r^2+(dr/d\\theta)^2} = a$. Then $L = \\int_\\alpha^\\beta a\\,d\\theta = a(\\beta-\\alpha)$, which is the standard arc length of a circular arc of radius $a$.\n\nCorrect selections: **A, B, D**."
+  }
+]

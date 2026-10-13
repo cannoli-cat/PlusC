@@ -1,0 +1,194 @@
+[
+  {
+    "id": "s26516_gen_1",
+    "type": "multiple-choice",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to\\infty}\\frac{3x^2-5x+1}{7x^2+2x-4}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{3}{7}$"
+      },
+      {
+        "label": "B",
+        "text": "$0$"
+      },
+      {
+        "label": "C",
+        "text": "$\\infty$"
+      },
+      {
+        "label": "D",
+        "text": "$-\\dfrac{5}{2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Divide numerator and denominator by $x^2$ (the highest power):\n$$\\lim_{x\\to\\infty}\\frac{3x^2-5x+1}{7x^2+2x-4} = \\lim_{x\\to\\infty}\\frac{3 - \\tfrac{5}{x} + \\tfrac{1}{x^2}}{7 + \\tfrac{2}{x} - \\tfrac{4}{x^2}}.$$\nAs $x\\to\\infty$, all terms with $x$ in the denominator vanish:\n$$= \\frac{3-0+0}{7+0-0} = \\frac{3}{7}.$$\nDistractor B would occur if you thought highest-degree terms cancel to 0. Distractor D comes from mistakenly taking the ratio of second-largest coefficients $-5/2$."
+  },
+  {
+    "id": "s26516_gen_2",
+    "type": "free-response",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to-\\infty}\\frac{\\sqrt{4x^2+x}}{3x-1}$.",
+    "answer": "-2/3",
+    "solution": "We divide numerator and denominator by $x$. Because $x\\to-\\infty$, we have $x<0$, so $|x|=-x$ and $\\sqrt{x^2}=|x|=-x$.\n\n$$\\frac{\\sqrt{4x^2+x}}{3x-1} = \\frac{\\sqrt{x^2\\left(4+\\tfrac{1}{x}\\right)}}{x\\left(3-\\tfrac{1}{x}\\right)} = \\frac{|x|\\sqrt{4+\\tfrac{1}{x}}}{x\\left(3-\\tfrac{1}{x}\\right)}.$$\n\nSince $x<0$, $|x|/x = -1$:\n$$= \\frac{-\\sqrt{4+\\tfrac{1}{x}}}{3-\\tfrac{1}{x}}.$$\n\nTaking the limit as $x\\to-\\infty$:\n$$= \\frac{-\\sqrt{4+0}}{3-0} = \\frac{-2}{3}.$$\n\nThe answer is $-\\dfrac{2}{3}$."
+  },
+  {
+    "id": "s26516_gen_3",
+    "type": "multiple-choice",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to 3^+}\\frac{x+1}{x-3}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\infty$"
+      },
+      {
+        "label": "B",
+        "text": "$+\\infty$"
+      },
+      {
+        "label": "C",
+        "text": "$0$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{4}{3}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "As $x\\to 3^+$, the numerator $x+1\\to 4>0$. The denominator $x-3\\to 0^+$ (small positive number, since $x>3$). Therefore:\n$$\\frac{x+1}{x-3}\\to\\frac{4}{0^+}=+\\infty.$$\nDistractor A would result from approaching from the left ($3^-$), where $x-3\\to 0^-$. Distractor D arises from incorrectly substituting $x=3$ and treating the result as finite."
+  },
+  {
+    "id": "s26516_gen_4",
+    "type": "free-response",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Find the horizontal asymptote(s) of $f(x)=\\dfrac{2x^3-x}{x^3+5}$ by computing $\\displaystyle\\lim_{x\\to\\pm\\infty}f(x)$.",
+    "answer": "y=2",
+    "solution": "Divide numerator and denominator by $x^3$:\n$$\\lim_{x\\to\\pm\\infty}\\frac{2x^3-x}{x^3+5} = \\lim_{x\\to\\pm\\infty}\\frac{2-\\tfrac{1}{x^2}}{1+\\tfrac{5}{x^3}} = \\frac{2-0}{1+0}=2.$$\nBoth one-sided limits at $\\pm\\infty$ equal $2$, so the only horizontal asymptote is $y=2$."
+  },
+  {
+    "id": "s26516_gen_5",
+    "type": "multiple-choice",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to\\infty}\\frac{5x^3-2x}{x^2+1}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$5$"
+      },
+      {
+        "label": "B",
+        "text": "$0$"
+      },
+      {
+        "label": "C",
+        "text": "$+\\infty$"
+      },
+      {
+        "label": "D",
+        "text": "$-2$"
+      }
+    ],
+    "answer": "C",
+    "solution": "Divide numerator and denominator by $x^2$:\n$$\\frac{5x^3-2x}{x^2+1} = \\frac{5x - \\tfrac{2}{x}}{1+\\tfrac{1}{x^2}}.$$\nAs $x\\to\\infty$, the numerator $5x-\\tfrac{2}{x}\\to+\\infty$ while the denominator $\\to 1$. Hence the limit is $+\\infty$.\n\nDistractor A would result from incorrectly comparing the leading coefficients as if the degrees were equal. Distractor D comes from taking the coefficient of the $-2x$ term without proper analysis."
+  },
+  {
+    "id": "s26516_gen_6",
+    "type": "select-all",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Which of the following statements about $f(x)=\\dfrac{x^2-9}{x^2-5x+6}$ are true? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f$ has a horizontal asymptote at $y=1$."
+      },
+      {
+        "label": "B",
+        "text": "$f$ has a vertical asymptote at $x=2$."
+      },
+      {
+        "label": "C",
+        "text": "$f$ has a vertical asymptote at $x=3$."
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\lim_{x\\to 2^+}f(x)=+\\infty$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**Factor:** $x^2-9=(x-3)(x+3)$ and $x^2-5x+6=(x-2)(x-3)$.\n\nSo $f(x)=\\dfrac{(x-3)(x+3)}{(x-2)(x-3)}$.\n\nFor $x\\neq 3$, this simplifies to $\\dfrac{x+3}{x-2}$, but $x=3$ is a removable discontinuity (hole), NOT a vertical asymptote. So **C is false**.\n\n**Horizontal asymptote:** Both numerator and denominator of $\\dfrac{x+3}{x-2}$ are degree 1 with leading coefficient 1, so $\\lim_{x\\to\\pm\\infty}f(x)=1$. Thus $y=1$ is a horizontal asymptote. **A is true**.\n\n**Vertical asymptote at $x=2$:** The factor $(x-2)$ does not cancel, so $x=2$ is a vertical asymptote. **B is true**.\n\n**Sign of limit at $2^+$:** For $x$ slightly greater than 2, $x+3\\approx5>0$ and $x-2\\approx0^+>0$, so $f(x)\\to+\\infty$. **D is true**."
+  },
+  {
+    "id": "s26516_gen_7",
+    "type": "free-response",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to\\infty}\\left(\\sqrt{x^2+6x}-x\\right)$.",
+    "answer": "3",
+    "solution": "Multiply and divide by the conjugate $\\sqrt{x^2+6x}+x$:\n$$\\sqrt{x^2+6x}-x = \\frac{(\\sqrt{x^2+6x}-x)(\\sqrt{x^2+6x}+x)}{\\sqrt{x^2+6x}+x} = \\frac{x^2+6x-x^2}{\\sqrt{x^2+6x}+x} = \\frac{6x}{\\sqrt{x^2+6x}+x}.$$\nDivide numerator and denominator by $x$ (positive since $x\\to+\\infty$, so $\\sqrt{x^2}=x$):\n$$= \\frac{6}{\\sqrt{1+\\tfrac{6}{x}}+1}.$$\nAs $x\\to\\infty$:\n$$= \\frac{6}{\\sqrt{1+0}+1} = \\frac{6}{2} = 3.$$"
+  },
+  {
+    "id": "s26516_gen_8",
+    "type": "multiple-choice",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "A drug concentration (in mg/L) in the bloodstream $t$ hours after injection is modeled by $C(t)=\\dfrac{8t}{t^2+4}$. What value does the concentration approach as $t\\to\\infty$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$8$"
+      },
+      {
+        "label": "B",
+        "text": "$2$"
+      },
+      {
+        "label": "C",
+        "text": "$+\\infty$"
+      },
+      {
+        "label": "D",
+        "text": "$0$"
+      }
+    ],
+    "answer": "D",
+    "solution": "Divide numerator and denominator by $t^2$:\n$$\\lim_{t\\to\\infty}\\frac{8t}{t^2+4} = \\lim_{t\\to\\infty}\\frac{\\tfrac{8}{t}}{1+\\tfrac{4}{t^2}} = \\frac{0}{1+0}=0.$$\nThe numerator has degree 1 and the denominator has degree 2; since the denominator grows faster, the concentration approaches $0$ mg/L as time goes on. Distractor A comes from comparing coefficients incorrectly. Distractor B might come from $8/4=2$, confusing the constant term with the leading behavior."
+  },
+  {
+    "id": "s26516_gen_9",
+    "type": "free-response",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Find all vertical asymptotes of $g(x)=\\dfrac{x^2+2x-3}{x^2-x-2}$ and verify each is a true vertical asymptote (not a removable discontinuity).",
+    "answer": "x=-1, x=2",
+    "solution": "**Factor:**\n$$x^2+2x-3=(x+3)(x-1),\\quad x^2-x-2=(x-2)(x+1).$$\nSo $g(x)=\\dfrac{(x+3)(x-1)}{(x-2)(x+1)}$.\n\nThe denominator is zero at $x=2$ and $x=-1$. Check the numerator at each:\n- At $x=2$: numerator $=(2+3)(2-1)=5\\neq0$. So $x=2$ is a vertical asymptote.\n- At $x=-1$: numerator $=(-1+3)(-1-1)=(2)(-2)=-4\\neq0$. So $x=-1$ is a vertical asymptote.\n\nNeither factor cancels, so both are true vertical asymptotes: $x=-1$ and $x=2$."
+  },
+  {
+    "id": "s26516_gen_10",
+    "type": "multiple-choice",
+    "section": "§1.6. Limits Involving Infinity",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to-\\infty}\\frac{4x-1}{\\sqrt{9x^2+x+2}}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{4}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$-\\dfrac{4}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{4}{9}$"
+      },
+      {
+        "label": "D",
+        "text": "$+\\infty$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Divide numerator and denominator by $x$. Since $x\\to-\\infty$, $x<0$ so $\\sqrt{x^2}=|x|=-x$:\n$$\\frac{4x-1}{\\sqrt{9x^2+x+2}} = \\frac{x\\left(4-\\tfrac{1}{x}\\right)}{\\sqrt{x^2\\left(9+\\tfrac{1}{x}+\\tfrac{2}{x^2}\\right)}} = \\frac{x\\left(4-\\tfrac{1}{x}\\right)}{|x|\\sqrt{9+\\tfrac{1}{x}+\\tfrac{2}{x^2}}}.$$\nSince $x<0$, $x/|x|=-1$:\n$$= \\frac{-\\left(4-\\tfrac{1}{x}\\right)}{\\sqrt{9+\\tfrac{1}{x}+\\tfrac{2}{x^2}}}.$$\nAs $x\\to-\\infty$:\n$$= \\frac{-(4-0)}{\\sqrt{9+0+0}} = \\frac{-4}{3}.$$\nDistractor A results from forgetting the sign flip when $x<0$ (i.e., treating $x/|x|=+1$). Distractor C comes from squaring the 4 incorrectly: $4/9$."
+  }
+]

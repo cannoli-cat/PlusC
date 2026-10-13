@@ -1,0 +1,283 @@
+[
+  {
+    "id": "s74_gen_1",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "Set up, but do not evaluate, an integral for the arc length of $y = x^3$ from $x = 0$ to $x = 2$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\int_0^2 \\sqrt{1 + 9x^4}\\, dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\int_0^2 \\sqrt{1 + 3x^2}\\, dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\int_0^2 \\sqrt{1 + x^6}\\, dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\int_0^2 \\sqrt{1 + 6x^2}\\, dx$"
+      }
+    ],
+    "answer": "A",
+    "solution": "For arc length, we use $L = \\int_a^b \\sqrt{1 + [f'(x)]^2}\\, dx$.\n\nStep 1: Find $f'(x)$.\n$$f(x) = x^3 \\implies f'(x) = 3x^2$$\n\nStep 2: Compute $1 + [f'(x)]^2$.\n$$1 + [f'(x)]^2 = 1 + (3x^2)^2 = 1 + 9x^4$$\n\nStep 3: Set up the integral.\n$$L = \\int_0^2 \\sqrt{1 + 9x^4}\\, dx$$\n\nThe answer is **A**.\n\n(Distractor B uses $f'(x) = 3x^2$ without squaring; C uses $[f(x)]^2$ instead of $[f'(x)]^2$; D doubles instead of squaring.)"
+  },
+  {
+    "id": "s74_gen_2",
+    "type": "free-response",
+    "section": "§7.4. Arc Length",
+    "text": "Find the exact arc length of $y = \\frac{x^2}{4} - \\frac{\\ln x}{2}$ for $1 \\le x \\le e$.",
+    "answer": "\\frac{e^2 - 1}{4} + \\frac{1}{2}",
+    "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\frac{x^2}{4} - \\frac{\\ln x}{2}$$\n$$f'(x) = \\frac{x}{2} - \\frac{1}{2x}$$\n\nStep 2: Compute $[f'(x)]^2$.\n$$[f'(x)]^2 = \\left(\\frac{x}{2} - \\frac{1}{2x}\\right)^2 = \\frac{x^2}{4} - \\frac{1}{2} + \\frac{1}{4x^2}$$\n\nStep 3: Compute $1 + [f'(x)]^2$.\n$$1 + [f'(x)]^2 = 1 + \\frac{x^2}{4} - \\frac{1}{2} + \\frac{1}{4x^2} = \\frac{x^2}{4} + \\frac{1}{2} + \\frac{1}{4x^2}$$\n\nStep 4: Recognize the perfect square.\n$$\\frac{x^2}{4} + \\frac{1}{2} + \\frac{1}{4x^2} = \\left(\\frac{x}{2} + \\frac{1}{2x}\\right)^2$$\n\nStep 5: Evaluate the integral.\n$$L = \\int_1^e \\sqrt{\\left(\\frac{x}{2} + \\frac{1}{2x}\\right)^2}\\, dx = \\int_1^e \\left(\\frac{x}{2} + \\frac{1}{2x}\\right) dx$$\n$$= \\left[\\frac{x^2}{4} + \\frac{\\ln x}{2}\\right]_1^e = \\left(\\frac{e^2}{4} + \\frac{1}{2}\\right) - \\left(\\frac{1}{4} + 0\\right)$$\n$$= \\frac{e^2}{4} - \\frac{1}{4} + \\frac{1}{2} = \\frac{e^2 - 1}{4} + \\frac{1}{2}$$\n\nThe exact arc length is $\\boxed{\\frac{e^2 - 1}{4} + \\frac{1}{2}}$."
+  },
+  {
+    "id": "s74_gen_3",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "A drone flies along the path $y = \\ln(\\cos x)$ from $x = 0$ to $x = \\frac{\\pi}{4}$. Set up an integral representing the distance traveled.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\int_0^{\\pi/4} \\sqrt{1 + \\tan^2 x}\\, dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\int_0^{\\pi/4} \\sqrt{1 - \\tan^2 x}\\, dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\int_0^{\\pi/4} \\sqrt{1 + \\sec^2 x}\\, dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\int_0^{\\pi/4} \\sqrt{1 + \\sin^2 x}\\, dx$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\ln(\\cos x)$$\n$$f'(x) = \\frac{-\\sin x}{\\cos x} = -\\tan x$$\n\nStep 2: Compute $1 + [f'(x)]^2$.\n$$1 + [f'(x)]^2 = 1 + (-\\tan x)^2 = 1 + \\tan^2 x$$\n\nStep 3: Set up the arc length integral.\n$$L = \\int_0^{\\pi/4} \\sqrt{1 + \\tan^2 x}\\, dx$$\n\nThe answer is **A**.\n\n(Note: This simplifies to $\\int_0^{\\pi/4} \\sec x\\, dx$ since $1 + \\tan^2 x = \\sec^2 x$, but the question asks for the setup.)"
+  },
+  {
+    "id": "s74_gen_4",
+    "type": "free-response",
+    "section": "§7.4. Arc Length",
+    "text": "Find the exact arc length of the curve $x = \\frac{y^3}{3} + \\frac{1}{4y}$ for $1 \\le y \\le 2$.",
+    "answer": "\\frac{59}{24}",
+    "solution": "Since $x$ is given as a function of $y$, we use $L = \\int_c^d \\sqrt{1 + [g'(y)]^2}\\, dy$.\n\nStep 1: Find $g'(y)$.\n$$g(y) = \\frac{y^3}{3} + \\frac{1}{4y} = \\frac{y^3}{3} + \\frac{y^{-1}}{4}$$\n$$g'(y) = y^2 - \\frac{1}{4y^2}$$\n\nStep 2: Compute $[g'(y)]^2$.\n$$[g'(y)]^2 = \\left(y^2 - \\frac{1}{4y^2}\\right)^2 = y^4 - \\frac{1}{2} + \\frac{1}{16y^4}$$\n\nStep 3: Compute $1 + [g'(y)]^2$.\n$$1 + [g'(y)]^2 = y^4 + \\frac{1}{2} + \\frac{1}{16y^4} = \\left(y^2 + \\frac{1}{4y^2}\\right)^2$$\n\nStep 4: Evaluate the integral.\n$$L = \\int_1^2 \\left(y^2 + \\frac{1}{4y^2}\\right) dy = \\left[\\frac{y^3}{3} - \\frac{1}{4y}\\right]_1^2$$\n$$= \\left(\\frac{8}{3} - \\frac{1}{8}\\right) - \\left(\\frac{1}{3} - \\frac{1}{4}\\right)$$\n$$= \\frac{7}{3} + \\frac{1}{8} = \\frac{56 + 3}{24} = \\frac{59}{24}$$\n\nThe exact arc length is $\\boxed{\\frac{59}{24}}$."
+  },
+  {
+    "id": "s74_gen_5",
+    "type": "select-all",
+    "section": "§7.4. Arc Length",
+    "text": "Which of the following integrals correctly represent the arc length of $y = e^x$ from $x = 0$ to $x = 1$? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\int_0^1 \\sqrt{1 + e^{2x}}\\, dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\int_1^e \\sqrt{1 + \\frac{1}{y^2}}\\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$\\int_0^1 \\sqrt{1 + e^x}\\, dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\int_1^e \\frac{\\sqrt{y^2 + 1}}{y}\\, dy$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**Check A:** For $y = e^x$, we have $f'(x) = e^x$, so $[f'(x)]^2 = e^{2x}$.\n$$L = \\int_0^1 \\sqrt{1 + e^{2x}}\\, dx \\quad \\checkmark$$\nA is **correct**.\n\n**Check B:** Convert to $x = \\ln y$. Then $g'(y) = \\frac{1}{y}$.\nWhen $x = 0$, $y = 1$; when $x = 1$, $y = e$.\n$$L = \\int_1^e \\sqrt{1 + \\frac{1}{y^2}}\\, dy \\quad \\checkmark$$\nB is **correct**.\n\n**Check C:** This uses $e^x$ instead of $e^{2x}$ — forgot to square the derivative.\nC is **incorrect**.\n\n**Check D:** From B, $\\sqrt{1 + \\frac{1}{y^2}} = \\sqrt{\\frac{y^2 + 1}{y^2}} = \\frac{\\sqrt{y^2 + 1}}{y}$ (since $y > 0$).\n$$L = \\int_1^e \\frac{\\sqrt{y^2 + 1}}{y}\\, dy \\quad \\checkmark$$\nD is **correct**.\n\nThe correct answers are **A, B, D**."
+  },
+  {
+    "id": "s74_gen_6",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "Find the exact arc length of $y = \\frac{2}{3}x^{3/2}$ from $x = 0$ to $x = 3$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\frac{14}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\frac{8}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$2\\sqrt{10}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\frac{16}{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\frac{2}{3}x^{3/2} \\implies f'(x) = \\frac{2}{3} \\cdot \\frac{3}{2}x^{1/2} = x^{1/2} = \\sqrt{x}$$\n\nStep 2: Compute $1 + [f'(x)]^2$.\n$$1 + [f'(x)]^2 = 1 + x$$\n\nStep 3: Set up and evaluate the integral.\n$$L = \\int_0^3 \\sqrt{1 + x}\\, dx$$\n\nLet $u = 1 + x$, so $du = dx$. When $x = 0$, $u = 1$; when $x = 3$, $u = 4$.\n$$L = \\int_1^4 \\sqrt{u}\\, du = \\left[\\frac{2}{3}u^{3/2}\\right]_1^4 = \\frac{2}{3}(8) - \\frac{2}{3}(1) = \\frac{16}{3} - \\frac{2}{3} = \\frac{14}{3}$$\n\nThe answer is **A**.\n\n(B forgets the lower limit contribution; C is a computational error; D uses the antiderivative value at the upper limit only.)"
+  },
+  {
+    "id": "s74_gen_7",
+    "type": "free-response",
+    "section": "§7.4. Arc Length",
+    "text": "A wire follows the curve $y = \\frac{x^4}{8} + \\frac{1}{4x^2}$ from $x = 1$ to $x = 2$. Find the exact length of the wire.",
+    "answer": "\\frac{33}{16}",
+    "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\frac{x^4}{8} + \\frac{1}{4x^2} = \\frac{x^4}{8} + \\frac{x^{-2}}{4}$$\n$$f'(x) = \\frac{x^3}{2} - \\frac{1}{2x^3}$$\n\nStep 2: Compute $[f'(x)]^2$.\n$$[f'(x)]^2 = \\left(\\frac{x^3}{2} - \\frac{1}{2x^3}\\right)^2 = \\frac{x^6}{4} - \\frac{1}{2} + \\frac{1}{4x^6}$$\n\nStep 3: Compute $1 + [f'(x)]^2$.\n$$1 + [f'(x)]^2 = \\frac{x^6}{4} + \\frac{1}{2} + \\frac{1}{4x^6} = \\left(\\frac{x^3}{2} + \\frac{1}{2x^3}\\right)^2$$\n\nStep 4: Evaluate the integral.\n$$L = \\int_1^2 \\left(\\frac{x^3}{2} + \\frac{1}{2x^3}\\right) dx = \\left[\\frac{x^4}{8} - \\frac{1}{4x^2}\\right]_1^2$$\n$$= \\left(\\frac{16}{8} - \\frac{1}{16}\\right) - \\left(\\frac{1}{8} - \\frac{1}{4}\\right)$$\n$$= \\left(2 - \\frac{1}{16}\\right) - \\left(-\\frac{1}{8}\\right) = 2 - \\frac{1}{16} + \\frac{1}{8}$$\n$$= 2 + \\frac{1}{16} = \\frac{32 + 1}{16} = \\frac{33}{16}$$\n\nThe exact length of the wire is $\\boxed{\\frac{33}{16}}$."
+  },
+  {
+    "id": "s74_gen_8",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "Set up an integral for the arc length of $x = \\sqrt{y - y^2}$ from $y = 0$ to $y = 1$. (This is a semicircle.)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\int_0^1 \\frac{1}{\\sqrt{y - y^2}}\\, dy$"
+      },
+      {
+        "label": "B",
+        "text": "$\\int_0^1 \\sqrt{1 + y - y^2}\\, dy$"
+      },
+      {
+        "label": "C",
+        "text": "$\\int_0^1 \\frac{1}{2\\sqrt{y - y^2}}\\, dy$"
+      },
+      {
+        "label": "D",
+        "text": "$\\int_0^1 \\sqrt{y - y^2}\\, dy$"
+      }
+    ],
+    "answer": "C",
+    "solution": "Step 1: Find $g'(y)$ where $x = g(y) = \\sqrt{y - y^2} = (y - y^2)^{1/2}$.\n$$g'(y) = \\frac{1}{2}(y - y^2)^{-1/2}(1 - 2y) = \\frac{1 - 2y}{2\\sqrt{y - y^2}}$$\n\nStep 2: Compute $[g'(y)]^2$.\n$$[g'(y)]^2 = \\frac{(1 - 2y)^2}{4(y - y^2)}$$\n\nStep 3: Compute $1 + [g'(y)]^2$.\n$$1 + [g'(y)]^2 = \\frac{4(y - y^2) + (1 - 2y)^2}{4(y - y^2)}$$\n\nExpand: $4(y - y^2) = 4y - 4y^2$ and $(1-2y)^2 = 1 - 4y + 4y^2$.\n$$= \\frac{4y - 4y^2 + 1 - 4y + 4y^2}{4(y - y^2)} = \\frac{1}{4(y - y^2)}$$\n\nStep 4: Set up the integral.\n$$L = \\int_0^1 \\sqrt{\\frac{1}{4(y - y^2)}}\\, dy = \\int_0^1 \\frac{1}{2\\sqrt{y - y^2}}\\, dy$$\n\nThe answer is **C**.\n\n(A is missing the factor of 1/2; B incorrectly adds terms; D uses the function itself.)"
+  },
+  {
+    "id": "s74_gen_9",
+    "type": "select-all",
+    "section": "§7.4. Arc Length",
+    "text": "For which of the following curves does $1 + [f'(x)]^2$ simplify to a perfect square, making the arc length integral elementary? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = \\frac{x^2}{2} - \\frac{\\ln x}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$y = \\ln(\\sec x)$"
+      },
+      {
+        "label": "C",
+        "text": "$y = e^x + e^{-x}$"
+      },
+      {
+        "label": "D",
+        "text": "$y = \\frac{x^3}{6} + \\frac{1}{2x}$"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "solution": "**Check A:** $f'(x) = x - \\frac{1}{2x}$\n$$[f'(x)]^2 = x^2 - 1 + \\frac{1}{4x^2}$$\n$$1 + [f'(x)]^2 = x^2 + \\frac{1}{4x^2}$$\nNote that $\\left(x + \\frac{1}{2x}\\right)^2 = x^2 + 1 + \\frac{1}{4x^2} \\ne x^2 + \\frac{1}{4x^2}$. Not a perfect square. A is **incorrect**.\n\n**Check B:** $f(x) = \\ln(\\sec x)$, $f'(x) = \\tan x$.\n$1 + \\tan^2 x = \\sec^2 x = (\\sec x)^2$ ✓\nB is **correct**.\n\n**Check C:** $f(x) = e^x + e^{-x}$, $f'(x) = e^x - e^{-x}$.\n$[f'(x)]^2 = e^{2x} - 2 + e^{-2x}$.\n$1 + [f'(x)]^2 = e^{2x} - 1 + e^{-2x}$.\nThis is not $(e^x + e^{-x})^2 = e^{2x} + 2 + e^{-2x}$.\nC is **incorrect**.\n\n**Check D:** $f(x) = \\frac{x^3}{6} + \\frac{1}{2x}$, $f'(x) = \\frac{x^2}{2} - \\frac{1}{2x^2}$.\n$[f'(x)]^2 = \\frac{x^4}{4} - \\frac{1}{2} + \\frac{1}{4x^4}$.\n$1 + [f'(x)]^2 = \\frac{x^4}{4} + \\frac{1}{2} + \\frac{1}{4x^4} = \\left(\\frac{x^2}{2} + \\frac{1}{2x^2}\\right)^2$ ✓\nD is **correct**.\n\nThe correct answers are **B, D**."
+  },
+  {
+    "id": "s74_gen_10",
+    "type": "free-response",
+    "section": "§7.4. Arc Length",
+    "text": "Find the exact arc length of $y = \\frac{e^x + e^{-x}}{2}$ (the catenary) from $x = 0$ to $x = \\ln 3$.",
+    "answer": "\\frac{4}{3}",
+    "solution": "Step 1: Find $f'(x)$.\n$$f(x) = \\frac{e^x + e^{-x}}{2} = \\cosh x$$\n$$f'(x) = \\frac{e^x - e^{-x}}{2} = \\sinh x$$\n\nStep 2: Compute $1 + [f'(x)]^2$.\n$$1 + \\sinh^2 x = \\cosh^2 x$$\n(This is the hyperbolic identity.)\n\nStep 3: Evaluate the integral.\n$$L = \\int_0^{\\ln 3} \\sqrt{\\cosh^2 x}\\, dx = \\int_0^{\\ln 3} \\cosh x\\, dx$$\n$$= [\\sinh x]_0^{\\ln 3} = \\sinh(\\ln 3) - \\sinh(0)$$\n\nStep 4: Compute $\\sinh(\\ln 3)$.\n$$\\sinh(\\ln 3) = \\frac{e^{\\ln 3} - e^{-\\ln 3}}{2} = \\frac{3 - \\frac{1}{3}}{2} = \\frac{\\frac{8}{3}}{2} = \\frac{4}{3}$$\n\nSince $\\sinh(0) = 0$:\n$$L = \\frac{4}{3} - 0 = \\frac{4}{3}$$\n\nThe exact arc length is $\\boxed{\\frac{4}{3}}$."
+  },
+  {
+    "id": "s74_concept_1",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "Find the arc length integral (do not evaluate) for $e^x = \\cos(y)$ on $0 \\leq y \\leq \\pi/3$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sqrt{(\\ln(\\cos y))^2 + 1}\\,dy$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sqrt{1 - \\left(\\tfrac{1}{\\cos y}\\right)^2}\\,dy$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sqrt{\\left(\\tfrac{-1}{\\cos y}\\right)^2 + 1}\\,dy$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{\\pi/3} \\sec(y)\\,dy$"
+      }
+    ],
+    "answer": "D",
+    "solution": "Since the interval is in $y$, use arc length in terms of $y$: $L = \\int_0^{\\pi/3}\\sqrt{1 + \\left(\\frac{dx}{dy}\\right)^2}\\,dy$.\n\nSolve for $x$: $e^x = \\cos y \\Rightarrow x = \\ln(\\cos y)$.\n\nDifferentiate: $\\frac{dx}{dy} = \\frac{-\\sin y}{\\cos y} = -\\tan y$.\n\nSo: $\\sqrt{1 + \\tan^2 y} = \\sqrt{\\sec^2 y} = \\sec y$ (using the Pythagorean identity $1 + \\tan^2\\theta = \\sec^2\\theta$).\n\nThe answer is $\\boxed{D: \\int_0^{\\pi/3}\\sec(y)\\,dy}$."
+  },
+  {
+    "id": "s74_arcfn_1",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "Find the arc length function $s(x)$ for the curve $y = \\frac{2}{3}x^{3/2}$ from $x = 0$ to a variable endpoint $x$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$s(x) = \\dfrac{2}{3}(1+x)^{3/2} - \\dfrac{2}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$s(x) = \\sqrt{1+x}$"
+      },
+      {
+        "label": "C",
+        "text": "$s(x) = \\dfrac{2}{3}(1+x)^{3/2}$"
+      },
+      {
+        "label": "D",
+        "text": "$s(x) = x\\sqrt{1+x}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "The arc length function is $s(x) = \\int_{x_0}^x \\sqrt{1 + [f'(t)]^2}\\,dt$.\n\nFind $f'(x)$: $y = \\frac{2}{3}x^{3/2}$ so $y' = x^{1/2} = \\sqrt{x}$.\n\n$$s(x) = \\int_0^x \\sqrt{1 + (\\sqrt{t})^2}\\,dt = \\int_0^x \\sqrt{1+t}\\,dt$$\n\nLet $u = 1+t$, $du = dt$:\n$$= \\left[\\frac{2}{3}(1+t)^{3/2}\\right]_0^x = \\frac{2}{3}(1+x)^{3/2} - \\frac{2}{3}$$\n\nThe answer is $\\boxed{\\dfrac{2}{3}(1+x)^{3/2} - \\dfrac{2}{3}}$."
+  },
+  {
+    "id": "s74_arcfn_2",
+    "type": "free-response",
+    "section": "§7.4. Arc Length",
+    "text": "Find the arc length function $s(x)$ for the curve $y = \\ln(\\cos x)$ starting from $x_0 = 0$.",
+    "answer": "\\ln|\\sec x + \\tan x|",
+    "solution": "Find $y'$: $y = \\ln(\\cos x)$ so $y' = -\\frac{\\sin x}{\\cos x} = -\\tan x$.\n\n$$s(x) = \\int_0^x \\sqrt{1 + \\tan^2 t}\\,dt = \\int_0^x \\sqrt{\\sec^2 t}\\,dt = \\int_0^x \\sec t\\,dt$$\n\n$$= \\Big[\\ln|\\sec t + \\tan t|\\Big]_0^x = \\ln|\\sec x + \\tan x| - \\ln(1) = \\ln(\\sec x + \\tan x)$$\n\nThe answer is $\\boxed{\\ln(\\sec x + \\tan x)}$."
+  },
+  {
+    "id": "s74_arcfn_3",
+    "type": "multiple-choice",
+    "section": "§7.4. Arc Length",
+    "text": "The arc length function $s(x) = \\int_{x_0}^{x} \\sqrt{1 + [f'(t)]^2}\\,dt$ represents:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The total arc length of $f$ from $a$ to $b$."
+      },
+      {
+        "label": "B",
+        "text": "The distance along the curve from the starting point $x_0$ to a variable point $x$."
+      },
+      {
+        "label": "C",
+        "text": "The slope of the curve at the point $x$."
+      },
+      {
+        "label": "D",
+        "text": "The area under the curve from $x_0$ to $x$."
+      }
+    ],
+    "answer": "B",
+    "solution": "The arc length function $s(x)$ measures the length along the curve from a fixed starting point $x_0$ to a variable endpoint $x$. It is a function of $x$ — as $x$ increases, $s(x)$ gives the accumulated arc length.\n\nThis is different from computing a fixed arc length (A), which would be a specific number, not a function.\n\nNote also: by the Fundamental Theorem of Calculus, $s'(x) = \\sqrt{1 + [f'(x)]^2}$, which is the local 'speed' of length accumulation.\n\nThe answer is $\\boxed{B}$."
+  }
+]

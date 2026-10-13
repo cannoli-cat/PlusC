@@ -1,0 +1,195 @@
+[
+  {
+    "id": "s26554_gen_1",
+    "type": "multiple-choice",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Using the Fundamental Theorem of Calculus Part 1, find $$\\frac{d}{dx}\\left[\\int_3^x (t^2 + \\sin t)\\, dt\\right].$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x^2 + \\sin x$"
+      },
+      {
+        "label": "B",
+        "text": "$x^2 - \\cos x$"
+      },
+      {
+        "label": "C",
+        "text": "$\\frac{x^3}{3} - \\cos x$"
+      },
+      {
+        "label": "D",
+        "text": "$2x + \\cos x$"
+      }
+    ],
+    "answer": "A",
+    "solution": "By FTC Part 1, if $F(x) = \\int_3^x f(t)\\,dt$, then $F'(x) = f(x)$.\n\nHere $f(t) = t^2 + \\sin t$, so:\n$$\\frac{d}{dx}\\left[\\int_3^x (t^2 + \\sin t)\\,dt\\right] = x^2 + \\sin x.$$\n\n- Choice B ($x^2 - \\cos x$) is the antiderivative of $f$, not $f(x)$ itself.\n- Choice C is the antiderivative evaluated (an integration error).\n- Choice D is $f'(x)$, i.e., the derivative of the integrand instead of the integrand itself."
+  },
+  {
+    "id": "s26554_gen_2",
+    "type": "free-response",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Find $$\\frac{d}{dx}\\left[\\int_1^{x^3} \\sqrt{1+t^4}\\, dt\\right].$$",
+    "answer": "3*x^2*sqrt(1+x^12)",
+    "solution": "The upper limit is $g(x) = x^3$, so we apply FTC Part 1 with the chain rule:\n$$\\frac{d}{dx}\\left[\\int_1^{g(x)} f(t)\\,dt\\right] = f(g(x))\\cdot g'(x).$$\n\nHere $f(t) = \\sqrt{1+t^4}$ and $g(x) = x^3$, so $g'(x) = 3x^2$.\n\nSubstituting:\n$$= \\sqrt{1+(x^3)^4}\\cdot 3x^2 = 3x^2\\sqrt{1+x^{12}}.$$"
+  },
+  {
+    "id": "s26554_gen_3",
+    "type": "multiple-choice",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Find $$\\frac{d}{dx}\\left[\\int_x^{x^2} e^{t^2}\\, dt\\right].$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2x\\,e^{x^4} - e^{x^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$e^{x^4} - e^{x^2}$"
+      },
+      {
+        "label": "C",
+        "text": "$2x\\,e^{x^4} + e^{x^2}$"
+      },
+      {
+        "label": "D",
+        "text": "$2x\\,e^{x^2} - e^{x^2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Since both limits depend on $x$, split at a constant $a$:\n$$\\int_x^{x^2} e^{t^2}\\,dt = \\int_a^{x^2} e^{t^2}\\,dt - \\int_a^{x} e^{t^2}\\,dt.$$\n\nDifferentiating each piece with FTC Part 1 + chain rule:\n- $\\frac{d}{dx}\\int_a^{x^2} e^{t^2}\\,dt = e^{(x^2)^2}\\cdot 2x = 2x\\,e^{x^4}$\n- $\\frac{d}{dx}\\int_a^{x} e^{t^2}\\,dt = e^{x^2}$\n\nTherefore:\n$$\\frac{d}{dx}\\left[\\int_x^{x^2} e^{t^2}\\,dt\\right] = 2x\\,e^{x^4} - e^{x^2}.$$\n\nChoice B forgets the chain rule factor $2x$ for the upper limit. Choice C has the wrong sign on the lower-limit term. Choice D substitutes $x$ into both exponentials instead of $x^2$ into the first."
+  },
+  {
+    "id": "s26554_gen_4",
+    "type": "free-response",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Find the average value of $f(x) = 6x^2 - 4x$ on the interval $[1, 3]$.",
+    "answer": "22",
+    "solution": "The average value formula is:\n$$f_{\\text{avg}} = \\frac{1}{b-a}\\int_a^b f(x)\\,dx.$$\n\nHere $a=1$, $b=3$, so $b-a=2$.\n\n$$\\int_1^3 (6x^2 - 4x)\\,dx = \\left[2x^3 - 2x^2\\right]_1^3$$\n$$= \\bigl(2(27) - 2(9)\\bigr) - \\bigl(2(1) - 2(1)\\bigr)$$\n$$= (54 - 18) - (2 - 2) = 36 - 0 = 36.$$\n\nAverage value:\n$$f_{\\text{avg}} = \\frac{1}{2}\\cdot 36 = 22. \\quad \\checkmark$$"
+  },
+  {
+    "id": "s26554_gen_5",
+    "type": "multiple-choice",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Find $$\\frac{d}{dx}\\left[\\int_{\\cos x}^{5} \\tan(t^2)\\, dt\\right].$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\tan(\\cos^2 x)\\cdot\\sin x$"
+      },
+      {
+        "label": "B",
+        "text": "$-\\tan(\\cos^2 x)\\cdot\\sin x$"
+      },
+      {
+        "label": "C",
+        "text": "$\\tan(\\cos^2 x)\\cdot(-\\sin x)$"
+      },
+      {
+        "label": "D",
+        "text": "$\\tan(25)\\cdot 0 - \\tan(\\cos^2 x)\\cdot\\sin x$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Rewrite by flipping limits:\n$$\\int_{\\cos x}^{5} \\tan(t^2)\\,dt = -\\int_{5}^{\\cos x} \\tan(t^2)\\,dt.$$\n\nDifferentiate using the chain rule:\n$$\\frac{d}{dx}\\left[-\\int_5^{\\cos x}\\tan(t^2)\\,dt\\right] = -\\tan(\\cos^2 x)\\cdot(-\\sin x) = \\tan(\\cos^2 x)\\cdot\\sin x.$$\n\nSo the answer is $\\tan(\\cos^2 x)\\cdot \\sin x$.\n\nNote choices B and C are the same expression ($-\\tan(\\cos^2 x)\\cdot\\sin x$) and represent a sign error from forgetting to account for the flip of limits combined with $\\frac{d}{dx}[\\cos x] = -\\sin x$. Choice D incorrectly treats the constant upper limit $5$ as variable."
+  },
+  {
+    "id": "s26554_gen_6",
+    "type": "free-response",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Find $$\\frac{d}{dx}\\left[\\int_2^{\\ln x} (t^3 - t)\\, dt\\right].$$",
+    "answer": "(ln(x)^3 - ln(x))*(1/x)",
+    "solution": "Let $g(x) = \\ln x$, so $g'(x) = \\dfrac{1}{x}$.\n\nBy FTC Part 1 with chain rule:\n$$\\frac{d}{dx}\\left[\\int_2^{\\ln x}(t^3-t)\\,dt\\right] = (g(x)^3 - g(x))\\cdot g'(x)$$\n$$= \\left((\\ln x)^3 - \\ln x\\right)\\cdot\\frac{1}{x}.$$"
+  },
+  {
+    "id": "s26554_gen_7",
+    "type": "select-all",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Which of the following statements are **true** about $F(x) = \\int_0^x (t-1)(t-3)\\,dt$? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$F'(x) = (x-1)(x-3)$"
+      },
+      {
+        "label": "B",
+        "text": "$F$ has a local minimum at $x = 3$"
+      },
+      {
+        "label": "C",
+        "text": "$F'(1) = 0$"
+      },
+      {
+        "label": "D",
+        "text": "$F$ is decreasing on $(1, 3)$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "By FTC Part 1, $F'(x) = (x-1)(x-3)$. So **A is true**.\n\n$F'(1) = (1-1)(1-3) = 0$. So **C is true**.\n\nOn $(1,3)$: pick $x=2$: $F'(2) = (1)(-1) = -1 < 0$, so $F$ is decreasing on $(1,3)$. **D is true**.\n\nFor B: Analyze the sign of $F'(x) = (x-1)(x-3)$:\n- For $x < 1$: $(x-1)<0$, $(x-3)<0$, product $>0$. $F$ increasing.\n- For $1 < x < 3$: $(x-1)>0$, $(x-3)<0$, product $<0$. $F$ decreasing.\n- For $x > 3$: both positive, product $>0$. $F$ increasing.\n\nAt $x=3$, $F'$ changes from negative to positive, so $F$ has a **local minimum** at $x=3$. **B is true**.\n\nAll four statements are true: **A, B, C, D**."
+  },
+  {
+    "id": "s26554_gen_8",
+    "type": "multiple-choice",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Water flows into a tank at a rate of $r(t) = 3t^2 + 2$ gallons per minute. How many gallons accumulate in the tank from $t = 1$ to $t = 4$ minutes?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$63$ gallons"
+      },
+      {
+        "label": "B",
+        "text": "$69$ gallons"
+      },
+      {
+        "label": "C",
+        "text": "$75$ gallons"
+      },
+      {
+        "label": "D",
+        "text": "$57$ gallons"
+      }
+    ],
+    "answer": "B",
+    "solution": "Total accumulated quantity = $\\int_1^4 r(t)\\,dt = \\int_1^4 (3t^2+2)\\,dt$.\n\n$$= \\left[t^3 + 2t\\right]_1^4 = (64 + 8) - (1 + 2) = 72 - 3 = 69 \\text{ gallons}.$$\n\n- Choice A (63): subtracts the lower bound as $4+5=9$ instead of $3$, arithmetic error.\n- Choice C (75): uses $t=0$ as the lower bound instead of $t=1$, i.e., forgets to subtract the lower limit's value.\n- Choice D (57): uses $r(4)-r(1)$ (differences of rates) instead of integrating."
+  },
+  {
+    "id": "s26554_gen_9",
+    "type": "free-response",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Find the average value of $g(x) = \\cos x$ on $\\left[0,\\, \\dfrac{\\pi}{2}\\right].$",
+    "answer": "2/pi",
+    "solution": "The average value formula gives:\n$$g_{\\text{avg}} = \\frac{1}{\\pi/2 - 0}\\int_0^{\\pi/2}\\cos x\\,dx = \\frac{2}{\\pi}\\int_0^{\\pi/2}\\cos x\\,dx.$$\n\nEvaluate the integral:\n$$\\int_0^{\\pi/2}\\cos x\\,dx = \\left[\\sin x\\right]_0^{\\pi/2} = \\sin\\frac{\\pi}{2} - \\sin 0 = 1 - 0 = 1.$$\n\nTherefore:\n$$g_{\\text{avg}} = \\frac{2}{\\pi}\\cdot 1 = \\frac{2}{\\pi}.$$"
+  },
+  {
+    "id": "s26554_gen_10",
+    "type": "multiple-choice",
+    "section": "§5.4. Fundamental Theorem of Calculus",
+    "text": "Find $$\\frac{d}{dx}\\left[\\int_{x^2}^{x^3} \\frac{1}{1+t^2}\\, dt\\right].$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{3x^2}{1+x^6} - \\dfrac{2x}{1+x^4}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{3x^2}{1+x^6} + \\dfrac{2x}{1+x^4}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{1+x^6} - \\dfrac{1}{1+x^4}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{3x^2}{1+x^4} - \\dfrac{2x}{1+x^6}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Split at a constant $a$:\n$$\\int_{x^2}^{x^3}\\frac{dt}{1+t^2} = \\int_a^{x^3}\\frac{dt}{1+t^2} - \\int_a^{x^2}\\frac{dt}{1+t^2}.$$\n\nDifferentiate each using FTC Part 1 + chain rule:\n\n**Upper limit $x^3$:** $g(x)=x^3$, $g'(x)=3x^2$:\n$$\\frac{d}{dx}\\int_a^{x^3}\\frac{dt}{1+t^2} = \\frac{1}{1+(x^3)^2}\\cdot 3x^2 = \\frac{3x^2}{1+x^6}.$$\n\n**Lower limit $x^2$:** $h(x)=x^2$, $h'(x)=2x$:\n$$\\frac{d}{dx}\\int_a^{x^2}\\frac{dt}{1+t^2} = \\frac{1}{1+(x^2)^2}\\cdot 2x = \\frac{2x}{1+x^4}.$$\n\nSubtracting:\n$$\\frac{d}{dx}\\left[\\int_{x^2}^{x^3}\\frac{dt}{1+t^2}\\right] = \\frac{3x^2}{1+x^6} - \\frac{2x}{1+x^4}.$$\n\nChoice B has a plus sign (forgot the subtraction from the lower limit). Choice C omits the chain rule factors $3x^2$ and $2x$. Choice D swaps which exponent goes with which term."
+  }
+]

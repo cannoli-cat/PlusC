@@ -1,0 +1,193 @@
+[
+  {
+    "id": "s61_gen_1",
+    "type": "multiple-choice",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int x \\ln x \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\frac{x^2}{2}\\ln x - \\frac{x^2}{4} + C$"
+      },
+      {
+        "label": "B",
+        "text": "$\\frac{x^2}{2}\\ln x + \\frac{x^2}{4} + C$"
+      },
+      {
+        "label": "C",
+        "text": "$x^2 \\ln x - \\frac{x^2}{2} + C$"
+      },
+      {
+        "label": "D",
+        "text": "$\\frac{x^2}{2}\\ln x - \\frac{x}{2} + C$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Using LIATE, let $u = \\ln x$ and $dv = x\\,dx$.\n\nThen $du = \\frac{1}{x}dx$ and $v = \\frac{x^2}{2}$.\n\nApplying integration by parts:\n$$\\int x \\ln x \\, dx = \\frac{x^2}{2}\\ln x - \\int \\frac{x^2}{2} \\cdot \\frac{1}{x}\\,dx$$\n$$= \\frac{x^2}{2}\\ln x - \\frac{1}{2}\\int x\\,dx$$\n$$= \\frac{x^2}{2}\\ln x - \\frac{1}{2} \\cdot \\frac{x^2}{2} + C$$\n$$= \\frac{x^2}{2}\\ln x - \\frac{x^2}{4} + C$$\n\nThe answer is **A**.\n\nDistractor analysis:\n- B: Wrong sign (forgot the minus in IBP formula)\n- C: Used $v = x^2$ instead of $v = x^2/2$\n- D: Off-by-one power error in the second integral"
+  },
+  {
+    "id": "s61_gen_2",
+    "type": "free-response",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int_0^{\\pi} x \\sin x \\, dx$.",
+    "answer": "\\pi",
+    "solution": "Using LIATE, let $u = x$ and $dv = \\sin x\\,dx$.\n\nThen $du = dx$ and $v = -\\cos x$.\n\nApplying integration by parts:\n$$\\int_0^{\\pi} x \\sin x \\, dx = \\left[-x\\cos x\\right]_0^{\\pi} + \\int_0^{\\pi} \\cos x\\,dx$$\n$$= \\left[-x\\cos x\\right]_0^{\\pi} + \\left[\\sin x\\right]_0^{\\pi}$$\n\nEvaluating the first term:\n$$[-x\\cos x]_0^{\\pi} = -\\pi\\cos(\\pi) - (-0\\cos(0)) = -\\pi(-1) - 0 = \\pi$$\n\nEvaluating the second term:\n$$[\\sin x]_0^{\\pi} = \\sin(\\pi) - \\sin(0) = 0 - 0 = 0$$\n\nTherefore:\n$$\\int_0^{\\pi} x \\sin x \\, dx = \\pi + 0 = \\pi$$"
+  },
+  {
+    "id": "s61_gen_3",
+    "type": "multiple-choice",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int (3x+1)e^{2x} \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\frac{(3x+1)e^{2x}}{2} - \\frac{3e^{2x}}{2} + C$"
+      },
+      {
+        "label": "B",
+        "text": "$\\frac{(3x+1)e^{2x}}{2} - \\frac{3e^{2x}}{4} + C$"
+      },
+      {
+        "label": "C",
+        "text": "$(3x+1)e^{2x} - 3e^{2x} + C$"
+      },
+      {
+        "label": "D",
+        "text": "$\\frac{(3x+1)e^{2x}}{2} + \\frac{3e^{2x}}{4} + C$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Using LIATE, let $u = 3x+1$ and $dv = e^{2x}dx$.\n\nThen $du = 3\\,dx$ and $v = \\frac{e^{2x}}{2}$.\n\nApplying integration by parts:\n$$\\int (3x+1)e^{2x}\\,dx = \\frac{(3x+1)e^{2x}}{2} - \\int \\frac{e^{2x}}{2} \\cdot 3\\,dx$$\n$$= \\frac{(3x+1)e^{2x}}{2} - \\frac{3}{2}\\int e^{2x}\\,dx$$\n$$= \\frac{(3x+1)e^{2x}}{2} - \\frac{3}{2} \\cdot \\frac{e^{2x}}{2} + C$$\n$$= \\frac{(3x+1)e^{2x}}{2} - \\frac{3e^{2x}}{4} + C$$\n\nThe answer is **B**.\n\nDistractor analysis:\n- A: Forgot the factor of $1/2$ when integrating $e^{2x}$ in the second step\n- C: Forgot to divide by 2 when integrating $e^{2x}$ (both times)\n- D: Wrong sign in the IBP formula"
+  },
+  {
+    "id": "s61_gen_4",
+    "type": "free-response",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int x^2 e^x \\, dx$.",
+    "answer": "(x^2 - 2x + 2)e^x + C",
+    "solution": "This requires repeated integration by parts (tabular method works well).\n\n**First IBP:** Let $u = x^2$, $dv = e^x dx$. Then $du = 2x\\,dx$, $v = e^x$.\n$$\\int x^2 e^x\\,dx = x^2 e^x - \\int 2x e^x\\,dx$$\n\n**Second IBP:** Let $u = 2x$, $dv = e^x dx$. Then $du = 2\\,dx$, $v = e^x$.\n$$\\int 2x e^x\\,dx = 2xe^x - \\int 2e^x\\,dx = 2xe^x - 2e^x + C$$\n\nSubstituting back:\n$$\\int x^2 e^x\\,dx = x^2 e^x - (2xe^x - 2e^x) + C$$\n$$= x^2 e^x - 2xe^x + 2e^x + C$$\n$$= (x^2 - 2x + 2)e^x + C$$"
+  },
+  {
+    "id": "s61_gen_5",
+    "type": "multiple-choice",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int x \\cos(2x) \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\frac{x\\sin(2x)}{2} + \\frac{\\cos(2x)}{4} + C$"
+      },
+      {
+        "label": "B",
+        "text": "$\\frac{x\\sin(2x)}{2} - \\frac{\\cos(2x)}{4} + C$"
+      },
+      {
+        "label": "C",
+        "text": "$x\\sin(2x) + \\frac{\\cos(2x)}{2} + C$"
+      },
+      {
+        "label": "D",
+        "text": "$\\frac{x\\sin(2x)}{2} + \\frac{\\cos(2x)}{2} + C$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Using LIATE, let $u = x$ and $dv = \\cos(2x)\\,dx$.\n\nThen $du = dx$ and $v = \\frac{\\sin(2x)}{2}$.\n\nApplying integration by parts:\n$$\\int x\\cos(2x)\\,dx = \\frac{x\\sin(2x)}{2} - \\int \\frac{\\sin(2x)}{2}\\,dx$$\n$$= \\frac{x\\sin(2x)}{2} - \\frac{1}{2}\\left(-\\frac{\\cos(2x)}{2}\\right) + C$$\n$$= \\frac{x\\sin(2x)}{2} + \\frac{\\cos(2x)}{4} + C$$\n\nThe answer is **A**.\n\nDistractor analysis:\n- B: Wrong sign on the cosine term (sign error with the negative from $-\\cos$)\n- C: Forgot to divide by 2 when integrating $\\cos(2x)$\n- D: Made only one chain rule error, not both"
+  },
+  {
+    "id": "s61_gen_6",
+    "type": "select-all",
+    "section": "§6.1. Integration by Parts",
+    "text": "Which of the following integrals require integration by parts to evaluate? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\int x e^{x^2} \\, dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\int x e^x \\, dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\int \\ln x \\, dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\int x^3 \\sqrt{x^4 + 1} \\, dx$"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "solution": "**A: $\\int x e^{x^2}\\,dx$** — This is solved by substitution with $u = x^2$, giving $\\frac{1}{2}e^{x^2} + C$. **Does NOT require IBP.**\n\n**B: $\\int x e^x\\,dx$** — The $x$ and $e^x$ are not related by differentiation/integration, so IBP is needed with $u = x$, $dv = e^x dx$. **Requires IBP.**\n\n**C: $\\int \\ln x\\,dx$** — There's no obvious substitution. Use IBP with $u = \\ln x$, $dv = dx$, giving $x\\ln x - x + C$. **Requires IBP.**\n\n**D: $\\int x^3\\sqrt{x^4+1}\\,dx$** — This is solved by substitution with $u = x^4 + 1$, giving $\\frac{1}{6}(x^4+1)^{3/2} + C$. **Does NOT require IBP.**\n\nThe answers are **B** and **C**."
+  },
+  {
+    "id": "s61_gen_7",
+    "type": "free-response",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int x^3 \\ln x \\, dx$.",
+    "answer": "\\frac{x^4}{4}\\ln x - \\frac{x^4}{16} + C",
+    "solution": "Using LIATE, let $u = \\ln x$ and $dv = x^3\\,dx$.\n\nThen $du = \\frac{1}{x}dx$ and $v = \\frac{x^4}{4}$.\n\nApplying integration by parts:\n$$\\int x^3 \\ln x\\,dx = \\frac{x^4}{4}\\ln x - \\int \\frac{x^4}{4} \\cdot \\frac{1}{x}\\,dx$$\n$$= \\frac{x^4}{4}\\ln x - \\frac{1}{4}\\int x^3\\,dx$$\n$$= \\frac{x^4}{4}\\ln x - \\frac{1}{4} \\cdot \\frac{x^4}{4} + C$$\n$$= \\frac{x^4}{4}\\ln x - \\frac{x^4}{16} + C$$"
+  },
+  {
+    "id": "s61_gen_8",
+    "type": "multiple-choice",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int_1^e (\\ln x)^2 \\, dx$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$e - 2$"
+      },
+      {
+        "label": "B",
+        "text": "$e - 1$"
+      },
+      {
+        "label": "C",
+        "text": "$e + 2$"
+      },
+      {
+        "label": "D",
+        "text": "$2e - 2$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $u = (\\ln x)^2$ and $dv = dx$.\n\nThen $du = \\frac{2\\ln x}{x}dx$ and $v = x$.\n\n**First IBP:**\n$$\\int (\\ln x)^2\\,dx = x(\\ln x)^2 - \\int x \\cdot \\frac{2\\ln x}{x}\\,dx = x(\\ln x)^2 - 2\\int \\ln x\\,dx$$\n\n**Second IBP for $\\int \\ln x\\,dx$:** Let $u = \\ln x$, $dv = dx$. Then $du = \\frac{1}{x}dx$, $v = x$.\n$$\\int \\ln x\\,dx = x\\ln x - \\int x \\cdot \\frac{1}{x}\\,dx = x\\ln x - x + C$$\n\nSubstituting back:\n$$\\int (\\ln x)^2\\,dx = x(\\ln x)^2 - 2(x\\ln x - x) + C = x(\\ln x)^2 - 2x\\ln x + 2x + C$$\n\nEvaluating from 1 to $e$:\n$$\\left[x(\\ln x)^2 - 2x\\ln x + 2x\\right]_1^e$$\n\nAt $x = e$: $e(1)^2 - 2e(1) + 2e = e - 2e + 2e = e$\n\nAt $x = 1$: $1(0)^2 - 2(1)(0) + 2(1) = 2$\n\nFinal answer: $e - 2$\n\nThe answer is **A**."
+  },
+  {
+    "id": "s61_gen_9",
+    "type": "free-response",
+    "section": "§6.1. Integration by Parts",
+    "text": "Evaluate $\\int_0^{\\pi/2} x^2 \\cos x \\, dx$.",
+    "answer": "\\frac{\\pi^2}{4} - 2",
+    "solution": "This requires repeated integration by parts.\n\n**First IBP:** Let $u = x^2$, $dv = \\cos x\\,dx$. Then $du = 2x\\,dx$, $v = \\sin x$.\n$$\\int x^2 \\cos x\\,dx = x^2 \\sin x - \\int 2x \\sin x\\,dx$$\n\n**Second IBP:** Let $u = 2x$, $dv = \\sin x\\,dx$. Then $du = 2\\,dx$, $v = -\\cos x$.\n$$\\int 2x \\sin x\\,dx = -2x\\cos x - \\int (-2\\cos x)\\,dx = -2x\\cos x + 2\\sin x + C$$\n\nSubstituting back:\n$$\\int x^2 \\cos x\\,dx = x^2 \\sin x - (-2x\\cos x + 2\\sin x) + C$$\n$$= x^2 \\sin x + 2x\\cos x - 2\\sin x + C$$\n\nEvaluating from $0$ to $\\pi/2$:\n$$\\left[x^2 \\sin x + 2x\\cos x - 2\\sin x\\right]_0^{\\pi/2}$$\n\nAt $x = \\pi/2$: $(\\pi/2)^2(1) + 2(\\pi/2)(0) - 2(1) = \\frac{\\pi^2}{4} - 2$\n\nAt $x = 0$: $0 + 0 - 0 = 0$\n\nFinal answer: $\\frac{\\pi^2}{4} - 2$"
+  },
+  {
+    "id": "s61_gen_10",
+    "type": "multiple-choice",
+    "section": "§6.1. Integration by Parts",
+    "text": "A particle moves along a line with velocity $v(t) = te^{-t}$ meters per second for $t \\geq 0$. What is the total displacement of the particle from $t = 0$ to $t = 2$ seconds?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1 - 3e^{-2}$ meters"
+      },
+      {
+        "label": "B",
+        "text": "$1 + 3e^{-2}$ meters"
+      },
+      {
+        "label": "C",
+        "text": "$1 - e^{-2}$ meters"
+      },
+      {
+        "label": "D",
+        "text": "$3e^{-2} - 1$ meters"
+      }
+    ],
+    "answer": "A",
+    "solution": "Displacement equals $\\int_0^2 v(t)\\,dt = \\int_0^2 te^{-t}\\,dt$.\n\nUsing IBP with $u = t$, $dv = e^{-t}dt$. Then $du = dt$, $v = -e^{-t}$.\n\n$$\\int te^{-t}\\,dt = -te^{-t} - \\int (-e^{-t})\\,dt = -te^{-t} + \\int e^{-t}\\,dt$$\n$$= -te^{-t} - e^{-t} + C = -(t+1)e^{-t} + C$$\n\nEvaluating from 0 to 2:\n$$\\left[-(t+1)e^{-t}\\right]_0^2 = -(2+1)e^{-2} - (-(0+1)e^{0})$$\n$$= -3e^{-2} - (-1)$$\n$$= -3e^{-2} + 1 = 1 - 3e^{-2}$$\n\nThe answer is **A**.\n\nDistractor analysis:\n- B: Wrong sign from evaluating at $t=0$\n- C: Coefficient error (used $-1$ instead of $-3$)\n- D: Sign error throughout the evaluation"
+  }
+]

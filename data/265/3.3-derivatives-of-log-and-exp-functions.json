@@ -1,0 +1,198 @@
+[
+  {
+    "id": "s26533_gen_1",
+    "type": "multiple-choice",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Find $\\dfrac{d}{dx}\\left[3^{x^2}\\right]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2x \\cdot 3^{x^2} \\ln 3$"
+      },
+      {
+        "label": "B",
+        "text": "$2x \\cdot 3^{x^2}$"
+      },
+      {
+        "label": "C",
+        "text": "$x^2 \\cdot 3^{x^2-1} \\ln 3$"
+      },
+      {
+        "label": "D",
+        "text": "$3^{x^2} \\ln 3$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We apply the chain rule with $a^u$ where $a = 3$ and $u = x^2$. $$\\frac{d}{dx}\\left[3^{x^2}\\right] = 3^{x^2} \\ln 3 \\cdot \\frac{d}{dx}\\left[x^2\\right] = 3^{x^2} \\ln 3 \\cdot 2x = 2x \\cdot 3^{x^2} \\ln 3.$$ Choice B forgets $\\ln 3$. Choice C incorrectly uses the power rule treating the base as a variable. Choice D forgets the chain rule factor $2x$."
+  },
+  {
+    "id": "s26533_gen_2",
+    "type": "free-response",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Find $\\dfrac{d}{dx}\\left[\\ln(x^3 + 5x)\\right]$.",
+    "answer": "(3x^2+5)/(x^3+5x)",
+    "solution": "Using the chain rule with $\\frac{d}{dx}[\\ln u] = \\frac{u'}{u}$, where $u = x^3 + 5x$: $$\\frac{d}{dx}\\left[\\ln(x^3+5x)\\right] = \\frac{3x^2+5}{x^3+5x}.$$ This cannot be simplified further in general."
+  },
+  {
+    "id": "s26533_gen_3",
+    "type": "multiple-choice",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Find $\\dfrac{d}{dx}\\left[x^2 e^{3x}\\right]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2x e^{3x} + 3x^2 e^{3x}$"
+      },
+      {
+        "label": "B",
+        "text": "$2x e^{3x}$"
+      },
+      {
+        "label": "C",
+        "text": "$6x e^{3x}$"
+      },
+      {
+        "label": "D",
+        "text": "$2x e^{3x} + x^2 e^{3x}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Apply the product rule: $\\frac{d}{dx}[x^2 e^{3x}] = (x^2)' e^{3x} + x^2 (e^{3x})'$. We have $(x^2)' = 2x$ and $(e^{3x})' = 3e^{3x}$ by the chain rule. Therefore: $$\\frac{d}{dx}\\left[x^2 e^{3x}\\right] = 2x e^{3x} + x^2 \\cdot 3e^{3x} = 2xe^{3x} + 3x^2 e^{3x}.$$ Choice B forgets the second product rule term. Choice C multiplies incorrectly. Choice D forgets the chain rule factor of 3."
+  },
+  {
+    "id": "s26533_gen_4",
+    "type": "free-response",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Use logarithmic differentiation to find $y'$ if $y = x^{\\sin x}$.",
+    "answer": "x^(sin x)*(cos(x)*ln(x) + sin(x)/x)",
+    "solution": "Take the natural log of both sides: $$\\ln y = \\sin x \\cdot \\ln x.$$ Differentiate both sides with respect to $x$: $$\\frac{y'}{y} = \\cos x \\cdot \\ln x + \\sin x \\cdot \\frac{1}{x}.$$ Multiply both sides by $y = x^{\\sin x}$: $$y' = x^{\\sin x}\\left(\\cos x \\cdot \\ln x + \\frac{\\sin x}{x}\\right).$$"
+  },
+  {
+    "id": "s26533_gen_5",
+    "type": "select-all",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Which of the following are correct statements? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{d}{dx}[\\ln(7x)] = \\dfrac{1}{x}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{d}{dx}[e^{5x}] = 5e^{5x}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{d}{dx}[\\log_2 x] = \\dfrac{1}{2x}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{d}{dx}[\\ln(\\cos x)] = -\\tan x$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A:** $\\frac{d}{dx}[\\ln(7x)] = \\frac{7}{7x} = \\frac{1}{x}$. ✓ (Alternatively, $\\ln(7x) = \\ln 7 + \\ln x$, and the derivative is $\\frac{1}{x}$.)\n\n**B:** $\\frac{d}{dx}[e^{5x}] = e^{5x} \\cdot 5 = 5e^{5x}$. ✓\n\n**C:** $\\frac{d}{dx}[\\log_2 x] = \\frac{1}{x \\ln 2}$, not $\\frac{1}{2x}$. ✗\n\n**D:** $\\frac{d}{dx}[\\ln(\\cos x)] = \\frac{-\\sin x}{\\cos x} = -\\tan x$. ✓"
+  },
+  {
+    "id": "s26533_gen_6",
+    "type": "multiple-choice",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Use logarithmic differentiation to find $y'$ if $$y = \\frac{x^4 \\sqrt{x+1}}{e^{2x}}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{x^4\\sqrt{x+1}}{e^{2x}}\\left(\\dfrac{4}{x} + \\dfrac{1}{2(x+1)} - 2\\right)$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{x^4\\sqrt{x+1}}{e^{2x}}\\left(\\dfrac{4}{x} + \\dfrac{1}{2(x+1)} + 2\\right)$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{x^4\\sqrt{x+1}}{e^{2x}}\\left(4x^3 + \\dfrac{1}{2\\sqrt{x+1}} - 2\\right)$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{4x^3\\sqrt{x+1}}{e^{2x}}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Take $\\ln$ of both sides: $$\\ln y = 4\\ln x + \\frac{1}{2}\\ln(x+1) - 2x.$$ Differentiate: $$\\frac{y'}{y} = \\frac{4}{x} + \\frac{1}{2(x+1)} - 2.$$ Multiply by $y$: $$y' = \\frac{x^4\\sqrt{x+1}}{e^{2x}}\\left(\\frac{4}{x} + \\frac{1}{2(x+1)} - 2\\right).$$ Choice B has a wrong sign on $-2x$. Choice C incorrectly applies power rule before taking log. Choice D only differentiates $x^4$ and ignores the other factors."
+  },
+  {
+    "id": "s26533_gen_7",
+    "type": "free-response",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Find $f'(x)$ if $f(x) = e^{x^2 - 4x}$.",
+    "answer": "(2x-4)*e^(x^2-4x)",
+    "solution": "Apply the chain rule: $$f'(x) = e^{x^2 - 4x} \\cdot \\frac{d}{dx}[x^2 - 4x] = e^{x^2-4x} \\cdot (2x - 4).$$ So $f'(x) = (2x-4)e^{x^2-4x}$."
+  },
+  {
+    "id": "s26533_gen_8",
+    "type": "multiple-choice",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Find $\\dfrac{d}{dx}\\left[\\log_5(\\sin x)\\right]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{\\cos x}{\\sin x \\cdot \\ln 5}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\cos x}{\\sin x}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{\\sin x \\cdot \\ln 5}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{-\\cos x}{\\sin x \\cdot \\ln 5}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Using $\\frac{d}{dx}[\\log_a u] = \\frac{u'}{u \\ln a}$ with $a = 5$ and $u = \\sin x$: $$\\frac{d}{dx}[\\log_5(\\sin x)] = \\frac{\\cos x}{\\sin x \\cdot \\ln 5} = \\frac{\\cot x}{\\ln 5}.$$ Choice B forgets the $\\ln 5$ factor. Choice C forgets the chain rule (derivative of $\\sin x$). Choice D has a wrong sign."
+  },
+  {
+    "id": "s26533_gen_9",
+    "type": "free-response",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "A population grows according to $P(t) = 500 \\cdot 2^{0.3t}$, where $t$ is in years. Find $P'(t)$, the instantaneous rate of growth (in individuals per year).",
+    "answer": "150*ln(2)*2^(0.3t)",
+    "solution": "Differentiate using $\\frac{d}{dt}[a^u] = a^u \\ln a \\cdot u'$ with $a = 2$ and $u = 0.3t$: $$P'(t) = 500 \\cdot 2^{0.3t} \\cdot \\ln 2 \\cdot 0.3 = 500 \\cdot 0.3 \\cdot \\ln 2 \\cdot 2^{0.3t} = 150\\ln(2)\\cdot 2^{0.3t}.$$ So $P'(t) = 150\\ln(2)\\cdot 2^{0.3t}$ individuals per year."
+  },
+  {
+    "id": "s26533_gen_10",
+    "type": "select-all",
+    "section": "§3.3. Derivatives of Log and Exp Functions",
+    "text": "Let $y = x^x$ for $x > 0$. Which of the following steps are correct when finding $y'$ using logarithmic differentiation? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Taking the natural log of both sides gives $\\ln y = x \\ln x$."
+      },
+      {
+        "label": "B",
+        "text": "Differentiating both sides gives $\\dfrac{y'}{y} = \\ln x + 1$."
+      },
+      {
+        "label": "C",
+        "text": "The final answer is $y' = x^x(\\ln x + 1)$."
+      },
+      {
+        "label": "D",
+        "text": "The final answer is $y' = x \\cdot x^{x-1}$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**A:** $\\ln(x^x) = x \\ln x$. ✓ This is correct by log properties.\n\n**B:** Differentiate $\\ln y = x \\ln x$: $$\\frac{y'}{y} = (x)' \\ln x + x (\\ln x)' = 1 \\cdot \\ln x + x \\cdot \\frac{1}{x} = \\ln x + 1.$$ ✓\n\n**C:** Multiply both sides by $y = x^x$: $y' = x^x(\\ln x + 1)$. ✓\n\n**D:** $y' = x \\cdot x^{x-1}$ is incorrect. This would be the result if we (wrongly) treated the exponent $x$ as a constant and used the power rule. The correct answer is $x^x(\\ln x + 1)$. ✗"
+  }
+]

@@ -1,0 +1,196 @@
+[
+  {
+    "id": "s26522_gen_1",
+    "type": "free-response",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Use the limit definition of the derivative to find $f'(x)$ for $f(x) = 3x^2 - 5x + 2$.",
+    "answer": "6x-5",
+    "solution": "We compute $f'(x) = \\lim_{h \\to 0} \\dfrac{f(x+h) - f(x)}{h}$.\n\n$$f(x+h) = 3(x+h)^2 - 5(x+h) + 2 = 3x^2 + 6xh + 3h^2 - 5x - 5h + 2$$\n\n$$f(x+h) - f(x) = (3x^2 + 6xh + 3h^2 - 5x - 5h + 2) - (3x^2 - 5x + 2) = 6xh + 3h^2 - 5h$$\n\n$$\\frac{f(x+h)-f(x)}{h} = \\frac{h(6x + 3h - 5)}{h} = 6x + 3h - 5$$\n\n$$f'(x) = \\lim_{h \\to 0}(6x + 3h - 5) = 6x - 5$$"
+  },
+  {
+    "id": "s26522_gen_2",
+    "type": "multiple-choice",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Use the limit definition to find $f'(x)$ for $f(x) = \\sqrt{x+1}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{2\\sqrt{x+1}}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{\\sqrt{x+1}}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{2\\sqrt{x}}$"
+      },
+      {
+        "label": "D",
+        "text": "$2\\sqrt{x+1}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "$$f'(x) = \\lim_{h \\to 0} \\frac{\\sqrt{x+h+1} - \\sqrt{x+1}}{h}$$\n\nMultiply numerator and denominator by the conjugate $\\sqrt{x+h+1} + \\sqrt{x+1}$:\n\n$$= \\lim_{h \\to 0} \\frac{(x+h+1)-(x+1)}{h(\\sqrt{x+h+1}+\\sqrt{x+1})} = \\lim_{h \\to 0} \\frac{h}{h(\\sqrt{x+h+1}+\\sqrt{x+1})}$$\n\n$$= \\lim_{h \\to 0} \\frac{1}{\\sqrt{x+h+1}+\\sqrt{x+1}} = \\frac{1}{2\\sqrt{x+1}}$$\n\n**Choice B** is wrong by a factor of 2 (forgot to add the two square roots). **Choice C** is wrong — it drops the $+1$. **Choice D** is the reciprocal."
+  },
+  {
+    "id": "s26522_gen_3",
+    "type": "multiple-choice",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "At which of the following points is $f(x) = |2x - 4|$ **not** differentiable?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = 0$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 2$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 4$"
+      },
+      {
+        "label": "D",
+        "text": "$x = -2$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The function $f(x) = |2x-4|$ has a corner (sharp point) wherever $2x - 4 = 0$, i.e., at $x = 2$.\n\nFor $x > 2$: $f(x) = 2x-4$, so $f'(x) = 2$.\nFor $x < 2$: $f(x) = -(2x-4) = 4-2x$, so $f'(x) = -2$.\n\nThe left and right derivatives at $x = 2$ are $-2$ and $2$ respectively — they differ, so $f$ is **not differentiable** at $x = 2$.\n\nAt all other listed points ($x=0, 4, -2$), the function is smooth and differentiable."
+  },
+  {
+    "id": "s26522_gen_4",
+    "type": "select-all",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Which of the following statements are **always true**? Select all that apply.\n\n(A) If $f$ is differentiable at $x = a$, then $f$ is continuous at $x = a$.\n\n(B) If $f$ is continuous at $x = a$, then $f$ is differentiable at $x = a$.\n\n(C) If $f$ is not continuous at $x = a$, then $f$ is not differentiable at $x = a$.\n\n(D) If $f$ is not differentiable at $x = a$, then $f$ is not continuous at $x = a$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $f$ is differentiable at $x = a$, then $f$ is continuous at $x = a$."
+      },
+      {
+        "label": "B",
+        "text": "If $f$ is continuous at $x = a$, then $f$ is differentiable at $x = a$."
+      },
+      {
+        "label": "C",
+        "text": "If $f$ is not continuous at $x = a$, then $f$ is not differentiable at $x = a$."
+      },
+      {
+        "label": "D",
+        "text": "If $f$ is not differentiable at $x = a$, then $f$ is not continuous at $x = a$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**A — TRUE.** Differentiability implies continuity. This is a fundamental theorem: if the derivative exists at $a$, then $\\lim_{x\\to a}f(x)=f(a)$.\n\n**B — FALSE.** Continuity does NOT imply differentiability. Counterexample: $f(x)=|x|$ is continuous at $0$ but not differentiable there (corner).\n\n**C — TRUE.** This is the contrapositive of statement A: if $f$ is not continuous at $a$, it cannot be differentiable there.\n\n**D — FALSE.** Not differentiable does not mean not continuous. Again, $f(x)=|x|$ at $x=0$ is continuous but not differentiable."
+  },
+  {
+    "id": "s26522_gen_5",
+    "type": "free-response",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Find $f''(x)$ for $f(x) = x^4 - 6x^3 + 2x - 7$.",
+    "answer": "12x^2-36x",
+    "solution": "First, find the first derivative using power rules:\n$$f'(x) = 4x^3 - 18x^2 + 2$$\n\nDifferentiate again:\n$$f''(x) = 12x^2 - 36x$$"
+  },
+  {
+    "id": "s26522_gen_6",
+    "type": "multiple-choice",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Use the limit definition to find $f'(x)$ for $f(x) = \\dfrac{1}{x-3}$ (where $x \\neq 3$).",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{-1}{(x-3)^2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{(x-3)^2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{-1}{x-3}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2(x-3)^2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "$$f'(x) = \\lim_{h\\to 0} \\frac{\\frac{1}{x+h-3} - \\frac{1}{x-3}}{h}$$\n\nCombine the fractions in the numerator:\n$$= \\lim_{h\\to 0} \\frac{\\frac{(x-3)-(x+h-3)}{(x+h-3)(x-3)}}{h} = \\lim_{h\\to 0} \\frac{-h}{h(x+h-3)(x-3)}$$\n\n$$= \\lim_{h\\to 0} \\frac{-1}{(x+h-3)(x-3)} = \\frac{-1}{(x-3)^2}$$\n\n**B** is wrong by sign (forgot the negative from the subtraction). **C** forgot to square the denominator. **D** introduced a spurious factor of 2."
+  },
+  {
+    "id": "s26522_gen_7",
+    "type": "free-response",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Find the third derivative $f'''(x)$ of $f(x) = \\sin(x)$.",
+    "answer": "-cos(x)",
+    "solution": "Differentiate repeatedly:\n$$f(x) = \\sin x$$\n$$f'(x) = \\cos x$$\n$$f''(x) = -\\sin x$$\n$$f'''(x) = -\\cos x$$"
+  },
+  {
+    "id": "s26522_gen_8",
+    "type": "multiple-choice",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "The graph of $f$ is shown below (described): $f$ is increasing and concave up on $(-\\infty, 0)$, has a sharp corner at $x = 0$, is decreasing and concave down on $(0, 2)$, and has a vertical tangent at $x = 2$.\n\nWhich of the following correctly describes $f'$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f'$ is positive on $(-\\infty,0)$, undefined at $x=0$, negative on $(0,2)$, and undefined at $x=2$."
+      },
+      {
+        "label": "B",
+        "text": "$f'$ is positive on $(-\\infty,0)$, defined at $x=0$, negative on $(0,2)$, and defined at $x=2$."
+      },
+      {
+        "label": "C",
+        "text": "$f'$ is negative on $(-\\infty,0)$, undefined at $x=0$, positive on $(0,2)$, and undefined at $x=2$."
+      },
+      {
+        "label": "D",
+        "text": "$f'$ is zero on $(-\\infty,0)$, undefined at $x=0$, zero on $(0,2)$, and undefined at $x=2$."
+      }
+    ],
+    "answer": "A",
+    "solution": "When $f$ is **increasing**, $f' > 0$. When $f$ is **decreasing**, $f' < 0$.\n\n- On $(-\\infty, 0)$: $f$ is increasing, so $f' > 0$. ✓\n- At $x = 0$: sharp corner means the left and right derivatives differ, so $f'$ is **undefined**. ✓\n- On $(0, 2)$: $f$ is decreasing, so $f' < 0$. ✓\n- At $x = 2$: vertical tangent means the slope is $\\pm\\infty$, so $f'$ is **undefined**. ✓\n\nThis matches **Choice A**."
+  },
+  {
+    "id": "s26522_gen_9",
+    "type": "select-all",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Let $f(x) = x^{2/3}$. Which of the following are true? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f$ is continuous at $x = 0$."
+      },
+      {
+        "label": "B",
+        "text": "$f$ is differentiable at $x = 0$."
+      },
+      {
+        "label": "C",
+        "text": "$f'(x) = \\dfrac{2}{3}x^{-1/3}$ for all $x$."
+      },
+      {
+        "label": "D",
+        "text": "$f$ has a vertical tangent line at $x=0$."
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "solution": "**A — TRUE.** $f(x) = x^{2/3}$ is defined and continuous at $x=0$ since $f(0)=0$ and $\\lim_{x\\to 0}x^{2/3}=0$.\n\n**B — FALSE.** $f'(x) = \\frac{2}{3}x^{-1/3}$. As $x\\to 0$, $|f'(x)| \\to \\infty$, so the derivative does not exist (as a finite number) at $x=0$.\n\n**C — FALSE.** $f'(x) = \\frac{2}{3}x^{-1/3}$ is valid for $x \\neq 0$, but not **for all $x$** since it is undefined at $x=0$.\n\n**D — TRUE.** Since $\\lim_{x\\to 0}f'(x) = \\pm\\infty$ (slope becomes infinite), $f$ has a **vertical tangent** at $x=0$. This is why it is not differentiable there, even though it is continuous."
+  },
+  {
+    "id": "s26522_gen_10",
+    "type": "free-response",
+    "section": "§2.2. Derivatives as Functions",
+    "text": "Use the limit definition of the derivative to find $f'(x)$ for $f(x) = x^3$.",
+    "answer": "3x^2",
+    "solution": "$$f'(x) = \\lim_{h\\to 0}\\frac{(x+h)^3 - x^3}{h}$$\n\nExpand $(x+h)^3 = x^3 + 3x^2h + 3xh^2 + h^3$:\n\n$$= \\lim_{h\\to 0}\\frac{x^3 + 3x^2h + 3xh^2 + h^3 - x^3}{h} = \\lim_{h\\to 0}\\frac{3x^2h + 3xh^2 + h^3}{h}$$\n\n$$= \\lim_{h\\to 0}(3x^2 + 3xh + h^2) = 3x^2$$"
+  }
+]

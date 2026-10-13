@@ -1,0 +1,198 @@
+[
+  {
+    "id": "s26547_gen_1",
+    "type": "multiple-choice",
+    "section": "§4.7. Antiderivatives",
+    "text": "Find the general antiderivative of $f(x) = 3x^2 - 5x + 2$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x^3 - \\dfrac{5x^2}{2} + 2x + C$"
+      },
+      {
+        "label": "B",
+        "text": "$6x - 5 + C$"
+      },
+      {
+        "label": "C",
+        "text": "$x^3 - 5x^2 + 2x + C$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{3x^3}{2} - \\dfrac{5x^2}{2} + 2x + C$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Apply the reverse power rule term by term:\n$$\\int (3x^2 - 5x + 2)\\,dx$$\n- $\\int 3x^2\\,dx = \\dfrac{3x^3}{3} = x^3$\n- $\\int -5x\\,dx = -\\dfrac{5x^2}{2}$\n- $\\int 2\\,dx = 2x$\n\nSo the general antiderivative is $x^3 - \\dfrac{5x^2}{2} + 2x + C$.\n\nChoice B is the derivative (not antiderivative). Choice C forgot to divide by the new exponent on $x$. Choice D used the wrong exponent for the first term."
+  },
+  {
+    "id": "s26547_gen_2",
+    "type": "free-response",
+    "section": "§4.7. Antiderivatives",
+    "text": "Find the particular antiderivative $F(x)$ of $f(x) = \\cos x - e^x$ satisfying $F(0) = 3$.",
+    "answer": "sin(x)-e^x+4",
+    "solution": "First find the general antiderivative:\n$$F(x) = \\int (\\cos x - e^x)\\,dx = \\sin x - e^x + C$$\n\nApply the initial condition $F(0) = 3$:\n$$\\sin(0) - e^0 + C = 3$$\n$$0 - 1 + C = 3$$\n$$C = 4$$\n\nTherefore $F(x) = \\sin x - e^x + 4$."
+  },
+  {
+    "id": "s26547_gen_3",
+    "type": "multiple-choice",
+    "section": "§4.7. Antiderivatives",
+    "text": "Which of the following is the general antiderivative of $g(x) = \\dfrac{4}{x} + \\sec^2 x$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\dfrac{4}{x^2} + 2\\sec x \\tan x + C$"
+      },
+      {
+        "label": "B",
+        "text": "$4\\ln|x| + \\tan x + C$"
+      },
+      {
+        "label": "C",
+        "text": "$4\\ln|x| + \\sec^3 x + C$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{4}{x^2} + \\tan x + C$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Apply standard antiderivative rules:\n$$\\int \\frac{4}{x}\\,dx = 4\\ln|x|$$\n$$\\int \\sec^2 x\\,dx = \\tan x$$\n\nSo $G(x) = 4\\ln|x| + \\tan x + C$.\n\nChoice A is the derivative of $g(x)$. Choice C uses a wrong antiderivative for $\\sec^2 x$. Choice D uses $\\dfrac{4}{x^2}$ which is wrong for $\\dfrac{4}{x}$."
+  },
+  {
+    "id": "s26547_gen_4",
+    "type": "free-response",
+    "section": "§4.7. Antiderivatives",
+    "text": "A particle moves along a line with acceleration $a(t) = 6t - 2$. Given that $v(0) = 1$ and $s(0) = 4$, find the position function $s(t)$.",
+    "answer": "t^3-t^2+t+4",
+    "solution": "**Step 1: Find velocity from acceleration.**\n$$v(t) = \\int (6t - 2)\\,dt = 3t^2 - 2t + C_1$$\nApply $v(0) = 1$: $3(0)^2 - 2(0) + C_1 = 1 \\Rightarrow C_1 = 1$.\nSo $v(t) = 3t^2 - 2t + 1$.\n\n**Step 2: Find position from velocity.**\n$$s(t) = \\int (3t^2 - 2t + 1)\\,dt = t^3 - t^2 + t + C_2$$\nApply $s(0) = 4$: $0 - 0 + 0 + C_2 = 4 \\Rightarrow C_2 = 4$.\n\nTherefore $s(t) = t^3 - t^2 + t + 4$."
+  },
+  {
+    "id": "s26547_gen_5",
+    "type": "select-all",
+    "section": "§4.7. Antiderivatives",
+    "text": "Select **all** expressions that are valid antiderivatives of $h(x) = 2x^{-3}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-x^{-2} + 5$"
+      },
+      {
+        "label": "B",
+        "text": "$-x^{-2}$"
+      },
+      {
+        "label": "C",
+        "text": "$6x^{-4} + C$"
+      },
+      {
+        "label": "D",
+        "text": "$-x^{-2} - 7$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "Find the general antiderivative of $h(x) = 2x^{-3}$:\n$$\\int 2x^{-3}\\,dx = \\frac{2x^{-2}}{-2} + C = -x^{-2} + C$$\n\nSo any function of the form $-x^{-2} + C$ is a valid antiderivative.\n\n- **A:** $-x^{-2} + 5$ — Yes, $C = 5$. ✓\n- **B:** $-x^{-2}$ — Yes, $C = 0$. ✓\n- **C:** $6x^{-4} + C$ — No. Differentiating $6x^{-4}$ gives $-24x^{-5} \\neq 2x^{-3}$. ✗\n- **D:** $-x^{-2} - 7$ — Yes, $C = -7$. ✓"
+  },
+  {
+    "id": "s26547_gen_6",
+    "type": "multiple-choice",
+    "section": "§4.7. Antiderivatives",
+    "text": "Find the function $f$ such that $f''(x) = 12x$, $f'(0) = -1$, and $f(0) = 5$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f(x) = 2x^3 - x + 5$"
+      },
+      {
+        "label": "B",
+        "text": "$f(x) = 6x^2 - x + 5$"
+      },
+      {
+        "label": "C",
+        "text": "$f(x) = 2x^3 + x + 5$"
+      },
+      {
+        "label": "D",
+        "text": "$f(x) = 2x^3 - x - 5$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1:** Antidifferentiate $f''(x) = 12x$:\n$$f'(x) = \\int 12x\\,dx = 6x^2 + C_1$$\nApply $f'(0) = -1$: $6(0)^2 + C_1 = -1 \\Rightarrow C_1 = -1$.\nSo $f'(x) = 6x^2 - 1$.\n\n**Step 2:** Antidifferentiate $f'(x) = 6x^2 - 1$:\n$$f(x) = \\int (6x^2 - 1)\\,dx = 2x^3 - x + C_2$$\nApply $f(0) = 5$: $0 - 0 + C_2 = 5 \\Rightarrow C_2 = 5$.\n\nTherefore $f(x) = 2x^3 - x + 5$.\n\nChoice B forgot to continue integrating (stopped at $f'$). Choice C has the wrong sign on $x$. Choice D has the wrong constant."
+  },
+  {
+    "id": "s26547_gen_7",
+    "type": "free-response",
+    "section": "§4.7. Antiderivatives",
+    "text": "Find the general antiderivative of $f(x) = \\sqrt{x} + \\dfrac{1}{\\sqrt{x}}$.",
+    "answer": "(2/3)*x^(3/2)+2*sqrt(x)+C",
+    "solution": "Rewrite using exponents:\n$$f(x) = x^{1/2} + x^{-1/2}$$\n\nApply the power rule for antiderivatives to each term:\n$$\\int x^{1/2}\\,dx = \\frac{x^{3/2}}{3/2} = \\frac{2}{3}x^{3/2}$$\n$$\\int x^{-1/2}\\,dx = \\frac{x^{1/2}}{1/2} = 2x^{1/2} = 2\\sqrt{x}$$\n\nSo the general antiderivative is:\n$$F(x) = \\frac{2}{3}x^{3/2} + 2\\sqrt{x} + C$$"
+  },
+  {
+    "id": "s26547_gen_8",
+    "type": "multiple-choice",
+    "section": "§4.7. Antiderivatives",
+    "text": "A ball is thrown upward from ground level with an initial velocity of $20$ m/s. Using $a(t) = -10$ m/s² (gravity), find the maximum height reached by the ball.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$10$ m"
+      },
+      {
+        "label": "B",
+        "text": "$20$ m"
+      },
+      {
+        "label": "C",
+        "text": "$40$ m"
+      },
+      {
+        "label": "D",
+        "text": "$2$ m"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Step 1: Find velocity.**\n$$v(t) = \\int (-10)\\,dt = -10t + C_1$$\nWith $v(0) = 20$: $C_1 = 20$, so $v(t) = -10t + 20$.\n\n**Step 2: Find position.**\n$$s(t) = \\int (-10t + 20)\\,dt = -5t^2 + 20t + C_2$$\nWith $s(0) = 0$: $C_2 = 0$, so $s(t) = -5t^2 + 20t$.\n\n**Step 3: Maximum height occurs when $v(t) = 0$.**\n$$-10t + 20 = 0 \\Rightarrow t = 2 \\text{ s}$$\n$$s(2) = -5(2)^2 + 20(2) = -20 + 40 = 20 \\text{ m}$$\n\nThe maximum height is $\\boxed{20}$ m.\n\nChoice A ($10$ m) arises from computing $v(0)/a = 20/(-10) = -2$ and incorrectly using $t=1$. Choice C doubles the correct answer. Choice D divides by 10 carelessly."
+  },
+  {
+    "id": "s26547_gen_9",
+    "type": "free-response",
+    "section": "§4.7. Antiderivatives",
+    "text": "Find the particular antiderivative $F(x)$ of $f(x) = e^x + \\sin x$ satisfying $F(0) = 0$.",
+    "answer": "e^x-cos(x)-1",
+    "solution": "Find the general antiderivative:\n$$F(x) = \\int (e^x + \\sin x)\\,dx = e^x - \\cos x + C$$\n\nApply the initial condition $F(0) = 0$:\n$$e^0 - \\cos(0) + C = 0$$\n$$1 - 1 + C = 0$$\n$$C = -1$$\n\nTherefore $F(x) = e^x - \\cos x - 1$."
+  },
+  {
+    "id": "s26547_gen_10",
+    "type": "select-all",
+    "section": "§4.7. Antiderivatives",
+    "text": "Suppose $F'(x) = f(x)$. Select **all** true statements about antiderivatives.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $G(x) = F(x) + 7$, then $G'(x) = f(x)$, so $G$ is also an antiderivative of $f$."
+      },
+      {
+        "label": "B",
+        "text": "The function $f(x) = x^{-1}$ has antiderivative $F(x) = \\ln|x| + C$ on any interval not containing $0$."
+      },
+      {
+        "label": "C",
+        "text": "Every continuous function has an antiderivative."
+      },
+      {
+        "label": "D",
+        "text": "The antiderivative of $f(x) = 0$ is $F(x) = 0$ (no other options)."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "Evaluate each statement:\n\n**A: True.** If $G(x) = F(x) + 7$, then $G'(x) = F'(x) + 0 = f(x)$. Adding any constant to an antiderivative gives another antiderivative. ✓\n\n**B: True.** $\\dfrac{d}{dx}[\\ln|x|] = \\dfrac{1}{x}$ for $x \\neq 0$, so $\\ln|x| + C$ is the general antiderivative of $1/x$ on any interval not containing $0$. ✓\n\n**C: True.** This is guaranteed by the Fundamental Theorem of Calculus: if $f$ is continuous on $[a,b]$, then $F(x) = \\int_a^x f(t)\\,dt$ is an antiderivative of $f$. ✓\n\n**D: False.** The antiderivative of $f(x) = 0$ is $F(x) = C$ for any constant $C$, not just $C = 0$. ✗"
+  }
+]

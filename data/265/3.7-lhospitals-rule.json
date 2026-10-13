@@ -1,0 +1,195 @@
+[
+  {
+    "id": "s26537_gen_1",
+    "type": "multiple-choice",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to 0} \\frac{\\sin(5x)}{3x}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{5}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{3}{5}$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "$0$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Identify the form:** As $x \\to 0$, $\\sin(5x) \\to 0$ and $3x \\to 0$, so this is a $\\tfrac{0}{0}$ indeterminate form.\n\n**Apply L'Hospital's Rule:**\n$$\\lim_{x \\to 0} \\frac{\\sin(5x)}{3x} = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}[\\sin(5x)]}{\\frac{d}{dx}[3x]} = \\lim_{x \\to 0} \\frac{5\\cos(5x)}{3}$$\n\n**Evaluate:** Substituting $x = 0$:\n$$\\frac{5\\cos(0)}{3} = \\frac{5 \\cdot 1}{3} = \\frac{5}{3}$$\n\nThe answer is $\\boxed{\\dfrac{5}{3}}$.\n\n*Distractor B* ($\\tfrac{3}{5}$) comes from inverting the ratio of coefficients. *Distractor C* ($1$) ignores the coefficients entirely."
+  },
+  {
+    "id": "s26537_gen_2",
+    "type": "free-response",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to \\infty} \\frac{x^2}{e^x}$.",
+    "answer": "0",
+    "solution": "**Identify the form:** As $x \\to \\infty$, both $x^2 \\to \\infty$ and $e^x \\to \\infty$, so this is an $\\tfrac{\\infty}{\\infty}$ indeterminate form.\n\n**First application of L'Hospital's Rule:**\n$$\\lim_{x \\to \\infty} \\frac{x^2}{e^x} = \\lim_{x \\to \\infty} \\frac{2x}{e^x}$$\n\nThis is still $\\tfrac{\\infty}{\\infty}$, so we apply L'Hospital's Rule again.\n\n**Second application:**\n$$\\lim_{x \\to \\infty} \\frac{2x}{e^x} = \\lim_{x \\to \\infty} \\frac{2}{e^x}$$\n\n**Evaluate:** As $x \\to \\infty$, $e^x \\to \\infty$, so:\n$$\\frac{2}{e^x} \\to 0$$\n\nThe answer is $\\boxed{0}$."
+  },
+  {
+    "id": "s26537_gen_3",
+    "type": "multiple-choice",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to 0^+} x \\ln x$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1$"
+      },
+      {
+        "label": "B",
+        "text": "$-1$"
+      },
+      {
+        "label": "C",
+        "text": "$0$"
+      },
+      {
+        "label": "D",
+        "text": "$-\\infty$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Identify the form:** As $x \\to 0^+$, $x \\to 0$ and $\\ln x \\to -\\infty$, giving a $0 \\cdot (-\\infty)$ indeterminate form.\n\n**Rewrite as $\\tfrac{\\infty}{\\infty}$:** Write\n$$x \\ln x = \\frac{\\ln x}{1/x}$$\nAs $x \\to 0^+$, $\\ln x \\to -\\infty$ and $1/x \\to +\\infty$, so this is now $\\tfrac{-\\infty}{+\\infty}$.\n\n**Apply L'Hospital's Rule:**\n$$\\lim_{x \\to 0^+} \\frac{\\ln x}{1/x} = \\lim_{x \\to 0^+} \\frac{1/x}{-1/x^2} = \\lim_{x \\to 0^+} \\frac{x^2 \\cdot (1/x)}{-1} = \\lim_{x \\to 0^+} \\frac{x}{-1} \\cdot (-1)$$\n\nMore carefully: $\\dfrac{1/x}{-1/x^2} = \\dfrac{1}{x} \\cdot \\dfrac{x^2}{-1} = \\dfrac{x}{-1} = -x$.\n\n**Evaluate:**\n$$\\lim_{x \\to 0^+} (-x) = 0$$\n\nThe answer is $\\boxed{0}$.\n\n*Distractor D* ($-\\infty$) is the error of not applying L'Hospital and simply noting $\\ln x \\to -\\infty$."
+  },
+  {
+    "id": "s26537_gen_4",
+    "type": "free-response",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}$.",
+    "answer": "1/2",
+    "solution": "**Identify the form:** As $x \\to 0$: numerator $e^0 - 1 - 0 = 0$ and denominator $0^2 = 0$, so this is $\\tfrac{0}{0}$.\n\n**First application of L'Hospital's Rule:**\n$$\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2} = \\lim_{x \\to 0} \\frac{e^x - 1}{2x}$$\n\nStill $\\tfrac{0}{0}$, so apply L'Hospital again.\n\n**Second application:**\n$$\\lim_{x \\to 0} \\frac{e^x - 1}{2x} = \\lim_{x \\to 0} \\frac{e^x}{2}$$\n\n**Evaluate:**\n$$\\frac{e^0}{2} = \\frac{1}{2}$$\n\nThe answer is $\\boxed{\\dfrac{1}{2}}$."
+  },
+  {
+    "id": "s26537_gen_5",
+    "type": "multiple-choice",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to 0^+} x^x$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$e$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "$\\infty$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Identify the form:** As $x \\to 0^+$, $x^x$ is of the $0^0$ indeterminate form.\n\n**Take the natural logarithm:** Let $L = \\displaystyle\\lim_{x \\to 0^+} x^x$. Then\n$$\\ln L = \\lim_{x \\to 0^+} x \\ln x$$\n\nThis is $0 \\cdot (-\\infty)$. Rewrite:\n$$\\ln L = \\lim_{x \\to 0^+} \\frac{\\ln x}{1/x} \\quad \\left(\\frac{-\\infty}{+\\infty}\\right)$$\n\n**Apply L'Hospital's Rule:**\n$$= \\lim_{x \\to 0^+} \\frac{1/x}{-1/x^2} = \\lim_{x \\to 0^+} (-x) = 0$$\n\n**Recover $L$:**\n$$\\ln L = 0 \\implies L = e^0 = 1$$\n\nThe answer is $\\boxed{1}$.\n\n*Distractor A* ($0$) is the error of computing $0^0 = 0$ directly without recognizing the indeterminate form. *Distractor B* ($e$) is the error of concluding $L = e^1$ instead of $e^0$."
+  },
+  {
+    "id": "s26537_gen_6",
+    "type": "free-response",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to \\infty} \\left(1 + \\frac{3}{x}\\right)^x$.",
+    "answer": "e^3",
+    "solution": "**Identify the form:** As $x \\to \\infty$, the base $1 + 3/x \\to 1$ and the exponent $x \\to \\infty$, giving the $1^\\infty$ indeterminate form.\n\n**Take the natural logarithm:** Let $L = \\displaystyle\\lim_{x \\to \\infty}\\left(1+\\frac{3}{x}\\right)^x$. Then\n$$\\ln L = \\lim_{x \\to \\infty} x \\ln\\!\\left(1 + \\frac{3}{x}\\right)$$\n\nThis is $\\infty \\cdot 0$. Rewrite as $\\tfrac{0}{0}$ by letting the expression equal:\n$$\\ln L = \\lim_{x \\to \\infty} \\frac{\\ln\\!\\left(1+\\frac{3}{x}\\right)}{1/x}$$\n\nBoth numerator and denominator $\\to 0$ as $x \\to \\infty$.\n\n**Apply L'Hospital's Rule:** Differentiate numerator and denominator with respect to $x$:\n$$\\text{Numerator derivative: } \\frac{d}{dx}\\ln\\!\\left(1+\\frac{3}{x}\\right) = \\frac{1}{1+3/x} \\cdot \\left(-\\frac{3}{x^2}\\right)$$\n$$\\text{Denominator derivative: } \\frac{d}{dx}\\left(\\frac{1}{x}\\right) = -\\frac{1}{x^2}$$\n\n$$\\ln L = \\lim_{x \\to \\infty} \\frac{\\dfrac{-3/x^2}{1+3/x}}{-1/x^2} = \\lim_{x \\to \\infty} \\frac{3}{1+3/x} = \\frac{3}{1+0} = 3$$\n\n**Recover $L$:**\n$$\\ln L = 3 \\implies L = e^3$$\n\nThe answer is $\\boxed{e^3}$."
+  },
+  {
+    "id": "s26537_gen_7",
+    "type": "select-all",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Which of the following limits equal $0$? Select **all** that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\lim_{x\\to\\infty}\\frac{\\ln x}{x} = 0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\lim_{x\\to 0}\\frac{\\tan x - x}{x^2} = 0$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\lim_{x\\to\\infty}\\frac{x^{100}}{e^x} = 0$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\lim_{x\\to 0}\\frac{1-\\cos x}{x} = 0$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "**Choice A:** $\\dfrac{\\infty}{\\infty}$ form. L'Hospital: $\\dfrac{\\ln x}{x} \\to \\dfrac{1/x}{1} = \\dfrac{1}{x} \\to 0$. ✓\n\n**Choice B:** $\\dfrac{0}{0}$ form. Apply L'Hospital:\n$$\\frac{\\tan x - x}{x^2} \\to \\frac{\\sec^2 x - 1}{2x}$$\nStill $\\tfrac{0}{0}$; apply again:\n$$\\frac{2\\sec^2 x \\tan x}{2} \\to \\frac{2(1)(0)}{2} = 0 \\quad \\text{as }x\\to 0.$$\n✓\n\n**Choice C:** $\\dfrac{\\infty}{\\infty}$. Applying L'Hospital 100 times removes all powers of $x$, leaving $\\dfrac{100!}{e^x} \\to 0$. ✓\n\n**Choice D:** $\\dfrac{0}{0}$ form. L'Hospital:\n$$\\frac{1-\\cos x}{x} \\to \\frac{\\sin x}{1} \\to \\sin(0) = 0.$$\n✓\n\nAll four limits equal $0$. The answers are **A, B, C, D**."
+  },
+  {
+    "id": "s26537_gen_8",
+    "type": "multiple-choice",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to 0} \\left(\\frac{1}{\\sin x} - \\frac{1}{x}\\right)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{6}$"
+      },
+      {
+        "label": "C",
+        "text": "$0$"
+      },
+      {
+        "label": "D",
+        "text": "$\\infty$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Identify the form:** As $x \\to 0$, both $1/\\sin x$ and $1/x$ go to $\\infty$, giving an $\\infty - \\infty$ indeterminate form.\n\n**Combine the fractions:**\n$$\\frac{1}{\\sin x} - \\frac{1}{x} = \\frac{x - \\sin x}{x \\sin x}$$\n\nAs $x \\to 0$: numerator $\\to 0$, denominator $\\to 0$, so this is $\\tfrac{0}{0}$.\n\n**First application of L'Hospital's Rule:**\n$$\\lim_{x\\to 0} \\frac{x - \\sin x}{x\\sin x} = \\lim_{x\\to 0} \\frac{1 - \\cos x}{\\sin x + x\\cos x}$$\n\nStill $\\tfrac{0}{0}$.\n\n**Second application:**\n$$= \\lim_{x\\to 0} \\frac{\\sin x}{\\cos x + \\cos x - x\\sin x} = \\lim_{x\\to 0} \\frac{\\sin x}{2\\cos x - x\\sin x}$$\n\n**Evaluate at $x = 0$:**\n$$\\frac{\\sin 0}{2\\cos 0 - 0} = \\frac{0}{2} = 0$$\n\nThe answer is $\\boxed{0}$.\n\n*Distractor B* ($1/6$) would arise if one mistakenly applied L'Hospital only once or used incorrect derivatives."
+  },
+  {
+    "id": "s26537_gen_9",
+    "type": "free-response",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "Evaluate $\\displaystyle\\lim_{x \\to \\infty} x^{1/x}$.",
+    "answer": "1",
+    "solution": "**Identify the form:** As $x \\to \\infty$, $x^{1/x}$ has the form $\\infty^0$, which is indeterminate.\n\n**Take the natural logarithm:** Let $L = \\displaystyle\\lim_{x \\to \\infty} x^{1/x}$. Then\n$$\\ln L = \\lim_{x \\to \\infty} \\frac{1}{x} \\cdot \\ln x = \\lim_{x \\to \\infty} \\frac{\\ln x}{x}$$\n\nThis is $\\tfrac{\\infty}{\\infty}$.\n\n**Apply L'Hospital's Rule:**\n$$\\ln L = \\lim_{x \\to \\infty} \\frac{1/x}{1} = \\lim_{x \\to \\infty} \\frac{1}{x} = 0$$\n\n**Recover $L$:**\n$$\\ln L = 0 \\implies L = e^0 = 1$$\n\nThe answer is $\\boxed{1}$."
+  },
+  {
+    "id": "s26537_gen_10",
+    "type": "multiple-choice",
+    "section": "§3.7. L'Hospital's Rule",
+    "text": "A particle's position is $s(t)$ and its velocity approaches $0$ as $t \\to \\infty$. The ratio of acceleration to velocity is modeled by $\\displaystyle\\lim_{t \\to 0^+} \\frac{1 - e^{-t}}{t^2 + t}$. Evaluate this limit.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$2$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2}$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Identify the form:** As $t \\to 0^+$: numerator $1 - e^0 = 0$ and denominator $0 + 0 = 0$, so this is $\\tfrac{0}{0}$.\n\n**Apply L'Hospital's Rule:** Differentiate numerator and denominator with respect to $t$:\n$$\\lim_{t \\to 0^+} \\frac{1 - e^{-t}}{t^2 + t} = \\lim_{t \\to 0^+} \\frac{e^{-t}}{2t + 1}$$\n\n**Evaluate at $t = 0$:**\n$$\\frac{e^{0}}{2(0) + 1} = \\frac{1}{1} = 1$$\n\nThe answer is $\\boxed{1}$.\n\n*Distractor D* ($\\tfrac{1}{2}$) comes from differentiating the denominator as $2t$ (forgetting the $+1$ term from differentiating $t$). *Distractor B* ($2$) comes from incorrectly differentiating $e^{-t}$ as $e^{-t}$ and the denominator as $\\tfrac{1}{2}$."
+  }
+]

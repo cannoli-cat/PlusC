@@ -1,0 +1,194 @@
+[
+  {
+    "id": "s26553_gen_1",
+    "type": "multiple-choice",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Evaluate $$\\int_1^3 (2x^2 - 3x + 1)\\,dx.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{22}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{20}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{44}{3}$"
+      },
+      {
+        "label": "D",
+        "text": "$8$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Find the antiderivative term by term:\n$$F(x) = \\frac{2x^3}{3} - \\frac{3x^2}{2} + x.$$\nEvaluate at the bounds:\n$$F(3) = \\frac{2(27)}{3} - \\frac{3(9)}{2} + 3 = 18 - \\frac{27}{2} + 3 = 21 - \\frac{27}{2} = \\frac{15}{2}.$$\n$$F(1) = \\frac{2}{3} - \\frac{3}{2} + 1 = \\frac{4}{6} - \\frac{9}{6} + \\frac{6}{6} = \\frac{1}{6}.$$\n$$F(3)-F(1) = \\frac{15}{2} - \\frac{1}{6} = \\frac{45}{6} - \\frac{1}{6} = \\frac{44}{6} = \\boxed{\\frac{22}{3}}.$$\n\nDistractor B ($\\frac{20}{3}$): off-by-one error, using $x^3/3$ instead of $2x^3/3$. Distractor C ($\\frac{44}{3}$): forgot to subtract $F(1)$, doubling the result. Distractor D ($8$): forgot to divide by 3 in the cubic term."
+  },
+  {
+    "id": "s26553_gen_2",
+    "type": "free-response",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Evaluate $$\\int_0^{\\ln 3} e^x\\,dx.$$",
+    "answer": "2",
+    "solution": "The antiderivative of $e^x$ is $e^x$. Applying the Fundamental Theorem:\n$$\\int_0^{\\ln 3} e^x\\,dx = \\Big[e^x\\Big]_0^{\\ln 3} = e^{\\ln 3} - e^0 = 3 - 1 = \\boxed{2}.$$"
+  },
+  {
+    "id": "s26553_gen_3",
+    "type": "multiple-choice",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Evaluate $$\\int_0^{\\pi/3} \\sec^2 x\\,dx.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{\\sqrt{3}}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\sqrt{3}$"
+      },
+      {
+        "label": "D",
+        "text": "$-\\sqrt{3}$"
+      }
+    ],
+    "answer": "C",
+    "solution": "The antiderivative of $\\sec^2 x$ is $\\tan x$. Applying the Fundamental Theorem:\n$$\\int_0^{\\pi/3}\\sec^2 x\\,dx = \\Big[\\tan x\\Big]_0^{\\pi/3} = \\tan\\!\\left(\\frac{\\pi}{3}\\right) - \\tan(0) = \\sqrt{3} - 0 = \\boxed{\\sqrt{3}}.$$\n\nDistractor A ($1$): used $\\tan(\\pi/4)=1$ instead of $\\tan(\\pi/3)=\\sqrt{3}$. Distractor B ($\\frac{\\sqrt{3}}{2}$): confused $\\tan(\\pi/3)$ with $\\sin(\\pi/3)$. Distractor D ($-\\sqrt{3}$): sign error, subtracted in the wrong order."
+  },
+  {
+    "id": "s26553_gen_4",
+    "type": "free-response",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Evaluate $$\\int_2^6 \\frac{3}{x}\\,dx.$$",
+    "answer": "3*ln(3)",
+    "solution": "Recall $\\int \\frac{1}{x}\\,dx = \\ln|x| + C$. Thus:\n$$\\int_2^6 \\frac{3}{x}\\,dx = \\Big[3\\ln|x|\\Big]_2^6 = 3\\ln 6 - 3\\ln 2 = 3(\\ln 6 - \\ln 2) = 3\\ln\\!\\left(\\frac{6}{2}\\right) = \\boxed{3\\ln 3}.$$"
+  },
+  {
+    "id": "s26553_gen_5",
+    "type": "multiple-choice",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Evaluate $$\\int_1^4 \\frac{x^2 + \\sqrt{x}}{x}\\,dx.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{21}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{17}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$17$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{19}{2}$"
+      }
+    ],
+    "answer": "D",
+    "solution": "First, split the integrand:\n$$\\frac{x^2+\\sqrt{x}}{x} = x + x^{-1/2}.$$\nNow integrate:\n$$\\int_1^4\\left(x + x^{-1/2}\\right)dx = \\left[\\frac{x^2}{2} + 2x^{1/2}\\right]_1^4.$$\nEvaluate:\n$$F(4) = \\frac{16}{2} + 2(2) = 8 + 4 = 12.$$\n$$F(1) = \\frac{1}{2} + 2(1) = \\frac{5}{2}.$$\n$$12 - \\frac{5}{2} = \\frac{24}{2} - \\frac{5}{2} = \\boxed{\\frac{19}{2}}.$$\n\nDistractor A ($\\frac{21}{2}$): computed $F(1) = \\frac{1}{2}+1 = \\frac{3}{2}$, forgetting the coefficient of 2 in $2\\sqrt{1}$. Distractor B ($\\frac{17}{2}$): integrated $x^{-1/2}$ as $x^{1/2}$ (omitting the factor of 2). Distractor C ($17$): used $x^2$ instead of $x^2/2$ for the antiderivative of $x$."
+  },
+  {
+    "id": "s26553_gen_6",
+    "type": "free-response",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "A particle moves along a line with velocity $v(t) = t^2 - 4t + 3$ (in m/s) for $0 \\le t \\le 4$. Find the **total distance** traveled by the particle over this time interval.",
+    "answer": "4",
+    "solution": "**Step 1: Find zeros of $v(t)$ on $[0,4]$.**\n$$t^2 - 4t + 3 = (t-1)(t-3) = 0 \\implies t = 1,\\; 3.$$\nCheck signs: $v > 0$ on $(0,1)$, $v < 0$ on $(1,3)$, $v > 0$ on $(3,4)$.\n\n**Step 2: Compute $|v|$ on each subinterval using antiderivative $F(t) = \\dfrac{t^3}{3} - 2t^2 + 3t$.**\n$$\\int_0^1 v\\,dt = F(1)-F(0) = \\left(\\frac{1}{3}-2+3\\right)-0 = \\frac{4}{3}.$$\n$$\\int_1^3 v\\,dt = F(3)-F(1) = (9-18+9)-\\frac{4}{3} = 0 - \\frac{4}{3} = -\\frac{4}{3}.$$\n$$\\int_3^4 v\\,dt = F(4)-F(3) = \\left(\\frac{64}{3}-32+12\\right)-0 = \\frac{4}{3}.$$\n\n**Step 3: Total distance** $= \\left|\\frac{4}{3}\\right|+\\left|-\\frac{4}{3}\\right|+\\left|\\frac{4}{3}\\right| = \\frac{4}{3}+\\frac{4}{3}+\\frac{4}{3} = \\boxed{4}$ m."
+  },
+  {
+    "id": "s26553_gen_7",
+    "type": "multiple-choice",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Find the average value of $f(x) = \\sin x$ on $[0, \\pi]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{\\pi}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{2}{\\pi}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{2}{\\pi^2}$"
+      }
+    ],
+    "answer": "C",
+    "solution": "The average value formula gives:\n$$f_{\\text{avg}} = \\frac{1}{\\pi - 0}\\int_0^{\\pi}\\sin x\\,dx = \\frac{1}{\\pi}\\Big[-\\cos x\\Big]_0^{\\pi}.$$\n$$= \\frac{1}{\\pi}\\bigl(-\\cos\\pi + \\cos 0\\bigr) = \\frac{1}{\\pi}(1+1) = \\boxed{\\frac{2}{\\pi}}.$$\n\nDistractor A ($0$): confused with $\\int_{-\\pi}^{\\pi}\\sin x\\,dx = 0$ (odd function over symmetric interval). Distractor B ($\\frac{1}{\\pi}$): evaluated $[-\\cos x]_0^\\pi$ as 1 instead of 2. Distractor D ($\\frac{2}{\\pi^2}$): divided by $\\pi^2$ instead of $\\pi$."
+  },
+  {
+    "id": "s26553_gen_8",
+    "type": "free-response",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Evaluate $$\\int_0^1 (3e^x + 2x)\\,dx.$$",
+    "answer": "3e-2",
+    "solution": "Find the antiderivative term by term:\n$$\\int(3e^x + 2x)\\,dx = 3e^x + x^2 + C.$$\nApply the bounds:\n$$\\Big[3e^x + x^2\\Big]_0^1 = \\bigl(3e^1 + 1^2\\bigr) - \\bigl(3e^0 + 0^2\\bigr) = (3e + 1) - (3 + 0) = \\boxed{3e - 2}.$$"
+  },
+  {
+    "id": "s26553_gen_9",
+    "type": "select-all",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "**Select all** definite integrals whose value equals $0$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_{-1}^{1} x^3\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_{0}^{\\pi} \\cos x\\,dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_{-\\pi/2}^{\\pi/2} \\sin x\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_{0}^{1} x^2\\,dx$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**Choice A:** $x^3$ is an odd function and the interval $[-1,1]$ is symmetric about $0$, so $\\int_{-1}^{1}x^3\\,dx = 0$. ✓\n\n**Choice B:** $\\int_0^{\\pi}\\cos x\\,dx = [\\sin x]_0^{\\pi} = \\sin\\pi - \\sin 0 = 0 - 0 = 0$. ✓\n\n**Choice C:** $\\sin x$ is an odd function on the symmetric interval $[-\\pi/2,\\,\\pi/2]$, so $\\int_{-\\pi/2}^{\\pi/2}\\sin x\\,dx = 0$. ✓\n\n**Choice D:** $\\int_0^1 x^2\\,dx = \\left[\\dfrac{x^3}{3}\\right]_0^1 = \\dfrac{1}{3} \\neq 0$. ✗\n\nCorrect answers: **A, B, C**."
+  },
+  {
+    "id": "s26553_gen_10",
+    "type": "multiple-choice",
+    "section": "§5.3. Evaluating Definite Integrals",
+    "text": "Find the average value of $f(x) = \\sqrt{x}$ on $[0, 9]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2$"
+      },
+      {
+        "label": "B",
+        "text": "$6$"
+      },
+      {
+        "label": "C",
+        "text": "$3$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{2}{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Use the average value formula with $a=0$, $b=9$:\n$$f_{\\text{avg}} = \\frac{1}{9-0}\\int_0^9 x^{1/2}\\,dx = \\frac{1}{9}\\left[\\frac{2x^{3/2}}{3}\\right]_0^9.$$\n$$= \\frac{1}{9}\\cdot\\frac{2(9)^{3/2}}{3} = \\frac{1}{9}\\cdot\\frac{2(27)}{3} = \\frac{1}{9}\\cdot 18 = \\boxed{2}.$$\n\nDistractor B ($6$): forgot the $\\frac{1}{9}$ factor, reporting the integral itself divided by 3 (i.e., $18/3=6$). Distractor C ($3$): forgot the factor of $2$ in $\\frac{2x^{3/2}}{3}$, getting $\\frac{1}{9}\\cdot9=1$... or divided by 3 instead of 9. Distractor D ($\\frac{2}{3}$): correctly integrated but divided by $9^2=81$ instead of $9$."
+  }
+]

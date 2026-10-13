@@ -1,0 +1,203 @@
+[
+  {
+    "id": "s26686_gen_1",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the radius of convergence $R$ and interval of convergence of the power series for $f(x) = \\dfrac{1}{1+x}$ centered at $0$.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "1"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-1, 1)"
+      }
+    ],
+    "solution": "Start from the geometric series identity $\\dfrac{1}{1-r} = \\sum_{n=0}^{\\infty} r^n$ for $|r|<1$.\n\nRewrite $f(x)$ by setting $r = -x$:\n$$\\frac{1}{1+x} = \\frac{1}{1-(-x)} = \\sum_{n=0}^{\\infty}(-x)^n = \\sum_{n=0}^{\\infty}(-1)^n x^n.$$\n\nThe series converges when $|-x|<1$, i.e., $|x|<1$.\n\nChecking endpoints: at $x=1$, $\\sum (-1)^n$ diverges; at $x=-1$, $\\sum 1$ diverges.\n\nInterval of convergence: $(-1,\\,1)$."
+  },
+  {
+    "id": "s26686_gen_2",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Which of the following correctly represents $f(x) = \\dfrac{2}{1-3x}$ as a power series with its interval of convergence?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 2\\cdot 3^n x^n$, $\\quad |x|<\\dfrac{1}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 3^n x^n$, $\\quad |x|<\\dfrac{1}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 2\\cdot 3^n x^n$, $\\quad |x|<3$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} 2(-3)^n x^n$, $\\quad |x|<\\dfrac{1}{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Identify $a=2$ and $r=3x$:\n$$\\frac{2}{1-3x} = 2\\cdot\\frac{1}{1-3x} = 2\\sum_{n=0}^{\\infty}(3x)^n = \\sum_{n=0}^{\\infty} 2\\cdot 3^n x^n.$$\nConverges when $|3x|<1 \\Rightarrow |x|<\\tfrac{1}{3}$. This is choice **A**.\n\n- **B** omits the factor of $2$.\n- **C** has the correct series but wrong radius ($|x|<3$ would mean $r=x/3$).\n- **D** uses $r=-3x$ (wrong sign), which would represent $\\dfrac{2}{1+3x}$."
+  },
+  {
+    "id": "s26686_gen_3",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "By integrating the power series for $\\dfrac{1}{1+x}$ term-by-term, find the radius of convergence $R$ and interval of convergence of the power series for $\\ln(1+x)$ centered at $0$.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "1"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-1, 1]"
+      }
+    ],
+    "solution": "From the geometric series: $\\dfrac{1}{1+x} = \\sum_{n=0}^{\\infty}(-1)^n x^n$, $|x|<1$.\n\nIntegrate both sides from $0$ to $x$:\n$$\\ln(1+x) = \\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1} x^n}{n} = x - \\frac{x^2}{2}+\\frac{x^3}{3}-\\cdots$$\n\nRadius of convergence $R=1$. At $x=1$: alternating harmonic series, **converges**. At $x=-1$: $-\\sum 1/n$, **diverges**.\n\nInterval of convergence: $(-1,\\,1]$."
+  },
+  {
+    "id": "s26686_gen_4",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the first five nonzero terms of the power series for $f(x)=\\dfrac{x}{1+4x}$ and its radius of convergence.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x - 4x^2 + 16x^3 - 64x^4 + 256x^5$, $\\quad R=\\dfrac{1}{4}$"
+      },
+      {
+        "label": "B",
+        "text": "$x + 4x^2 + 16x^3 + 64x^4 + 256x^5$, $\\quad R=\\dfrac{1}{4}$"
+      },
+      {
+        "label": "C",
+        "text": "$x - 4x^2 + 16x^3 - 64x^4 + 256x^5$, $\\quad R=4$"
+      },
+      {
+        "label": "D",
+        "text": "$1 - 4x + 16x^2 - 64x^3 + 256x^4$, $\\quad R=\\dfrac{1}{4}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Write $\\dfrac{x}{1+4x} = x\\cdot\\dfrac{1}{1-(-4x)}$. Set $r=-4x$:\n$$\\frac{1}{1+4x}=\\sum_{n=0}^{\\infty}(-4x)^n=\\sum_{n=0}^{\\infty}(-1)^n 4^n x^n.$$\n\nMultiplying by $x$:\n$$\\frac{x}{1+4x}=\\sum_{n=0}^{\\infty}(-1)^n 4^n x^{n+1}.$$\n\nFirst five terms ($n=0,1,2,3,4$):\n$$x - 4x^2+16x^3-64x^4+256x^5.$$\n\nConverges when $|-4x|<1 \\Rightarrow |x|<\\tfrac{1}{4}$, so $R=\\tfrac{1}{4}$.\n\n- **B** uses $r=+4x$ (wrong sign).\n- **C** has the correct terms but $R=4$ is wrong.\n- **D** forgot to multiply by $x$."
+  },
+  {
+    "id": "s26686_gen_5",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the radius of convergence $R$ of the power series for $f(x)=\\arctan\\!\\left(\\dfrac{x}{7}\\right)$ centered at $0$.",
+    "answer": "7",
+    "solution": "Start from $\\arctan(u)=\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n u^{2n+1}}{2n+1}$, valid for $|u|\\leq 1$.\n\nSubstitute $u = x/7$:\n$$\\arctan\\!\\left(\\frac{x}{7}\\right) = \\sum_{n=0}^{\\infty}\\frac{(-1)^n\\, x^{2n+1}}{(2n+1)\\cdot 7^{2n+1}}.$$\n\nConverges when $|x/7|\\leq 1$, i.e., $|x|\\leq 7$, so $R=7$."
+  },
+  {
+    "id": "s26686_gen_6",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "By differentiating the power series for $\\dfrac{1}{1+x}$, find the power series for $\\dfrac{1}{(1+x)^2}$ centered at $0$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(-1)^n(n+1)x^n$, $\\quad |x|<1$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(-1)^{n+1}(n+1)x^n$, $\\quad |x|<1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(n+1)x^n$, $\\quad |x|<1$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty}(-1)^n x^n$, $\\quad |x|<1$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Note $\\dfrac{d}{dx}\\left[\\dfrac{1}{1+x}\\right] = -\\dfrac{1}{(1+x)^2}$, so $\\dfrac{1}{(1+x)^2} = -\\dfrac{d}{dx}\\left[\\dfrac{1}{1+x}\\right]$.\n\nDifferentiate $\\dfrac{1}{1+x}=\\sum_{n=0}^{\\infty}(-1)^n x^n$ term-by-term:\n$$\\frac{d}{dx}\\sum_{n=0}^{\\infty}(-1)^n x^n = \\sum_{n=1}^{\\infty}(-1)^n n\\, x^{n-1}.$$\n\nThus:\n$$\\frac{1}{(1+x)^2} = -\\sum_{n=1}^{\\infty}(-1)^n n\\,x^{n-1} = \\sum_{n=1}^{\\infty}(-1)^{n+1}n\\,x^{n-1}.$$\n\nRe-index $m = n-1$:\n$$= \\sum_{m=0}^{\\infty}(-1)^{m+2}(m+1)x^m = \\sum_{n=0}^{\\infty}(-1)^n(n+1)x^n, \\quad |x|<1.$$\n\n- **B** has the overall sign wrong (omitted the minus from $-d/dx$).\n- **C** omits the alternating signs.\n- **D** forgot to differentiate at all."
+  },
+  {
+    "id": "s26686_gen_7",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the radius of convergence $R$ of the power series for $f(x)=\\dfrac{1}{1-x^3}$ centered at $0$.",
+    "answer": "1",
+    "solution": "Set $r = x^3$ in the geometric series:\n$$\\frac{1}{1-x^3} = \\sum_{n=0}^{\\infty} x^{3n} = 1 + x^3 + x^6 + x^9 + \\cdots$$\n\nConverges when $|x^3|<1$, i.e., $|x|<1$, so $R=1$.\n\n(At $x=\\pm1$ both give $\\sum 1$, which diverges.)"
+  },
+  {
+    "id": "s26686_gen_8",
+    "type": "select-all",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Select **all** statements that are correct power series representations (valid on the stated interval).",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{1-2x} = \\displaystyle\\sum_{n=0}^{\\infty} 2^n x^n$ for $|x|<\\dfrac{1}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{1+x^2} = \\displaystyle\\sum_{n=0}^{\\infty} x^{2n}$ for $|x|<1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\ln(1+x) = \\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n-1}x^n}{n}$ for $|x|<1$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{(1-x)^2} = \\displaystyle\\sum_{n=0}^{\\infty}(n+1)x^n$ for $|x|<1$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A: Correct.** Set $r=2x$: $\\dfrac{1}{1-2x}=\\sum_{n=0}^{\\infty}(2x)^n=\\sum_{n=0}^{\\infty}2^n x^n$, $|x|<\\tfrac{1}{2}$. ✓\n\n**B: Incorrect.** The correct formula is $\\dfrac{1}{1+x^2}=\\dfrac{1}{1-(-x^2)}=\\sum_{n=0}^{\\infty}(-1)^n x^{2n}$. The choice omits the $(-1)^n$ factor. ✗\n\n**C: Correct.** Integrating $\\sum_{n=0}^{\\infty}(-1)^n x^n$ gives $\\ln(1+x)=\\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n-1}x^n}{n}$ for $|x|<1$. ✓\n\n**D: Correct.** Differentiate $\\dfrac{1}{1-x}=\\sum x^n$ to get $\\dfrac{1}{(1-x)^2}=\\sum_{n=1}^{\\infty}nx^{n-1}=\\sum_{n=0}^{\\infty}(n+1)x^n$, $|x|<1$. ✓"
+  },
+  {
+    "id": "s26686_gen_9",
+    "type": "free-response",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "Find the radius of convergence $R$ and interval of convergence of the power series for $f(x) = \\ln(6-x)$ centered at $0$.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "6"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-6, 6)"
+      }
+    ],
+    "solution": "Factor: $\\ln(6-x)=\\ln 6+\\ln\\!\\left(1-\\tfrac{x}{6}\\right)$.\n\nUse $\\ln(1-u)=-\\sum_{n=1}^{\\infty}\\dfrac{u^n}{n}$ with $u=x/6$:\n$$\\ln(6-x)=\\ln 6 - \\sum_{n=1}^{\\infty}\\frac{x^n}{n\\cdot 6^n}.$$\n\n$R=6$. At $x=6$: harmonic series, **diverges**. At $x=-6$: alternating harmonic series, **converges**.\n\nInterval of convergence: $[-6,\\,6)$."
+  },
+  {
+    "id": "s26686_gen_10",
+    "type": "multiple-choice",
+    "section": "§8.6. Representing Functions as Power Series",
+    "text": "If $f(x)=\\dfrac{1}{1+4x^2}=\\displaystyle\\sum_{n=0}^{\\infty}c_n x^n$, find the coefficients $c_0,\\,c_1,\\,c_2,\\,c_3,\\,c_4$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$c_0=1,\\; c_1=0,\\; c_2=-4,\\; c_3=0,\\; c_4=16$"
+      },
+      {
+        "label": "B",
+        "text": "$c_0=1,\\; c_1=-4,\\; c_2=16,\\; c_3=-64,\\; c_4=256$"
+      },
+      {
+        "label": "C",
+        "text": "$c_0=1,\\; c_1=0,\\; c_2=4,\\; c_3=0,\\; c_4=16$"
+      },
+      {
+        "label": "D",
+        "text": "$c_0=1,\\; c_1=0,\\; c_2=-4,\\; c_3=0,\\; c_4=-16$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Set $r=-4x^2$ in the geometric series:\n$$\\frac{1}{1+4x^2}=\\frac{1}{1-(-4x^2)}=\\sum_{n=0}^{\\infty}(-4x^2)^n=\\sum_{n=0}^{\\infty}(-1)^n 4^n x^{2n}.$$\n\nWriting out terms: $1 - 4x^2 + 16x^4 - 64x^6 + \\cdots$\n\nMatching $\\sum c_n x^n$:\n$$c_0=1,\\quad c_1=0,\\quad c_2=-4,\\quad c_3=0,\\quad c_4=16.$$\n\nThis is **A**.\n\n- **B** treats $4x^2$ as $4x$ (wrong variable power—ignores that only even powers appear).\n- **C** omits the alternating sign ($(-1)^n$), giving $+4$ instead of $-4$ for $c_2$.\n- **D** uses the wrong sign on $c_4$: $(-1)^2 4^2 = +16$, not $-16$."
+  }
+]

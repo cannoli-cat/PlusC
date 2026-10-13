@@ -1,0 +1,252 @@
+[
+  {
+    "id": "s26544_gen_1",
+    "type": "multiple-choice",
+    "section": "§4.4. Curve Sketching",
+    "text": "Let $f(x) = x^3 - 6x^2 + 9x + 1$. Which of the following correctly identifies the local maximum and local minimum?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Local max at $x=1$ with $f(1)=5$; local min at $x=3$ with $f(3)=1$"
+      },
+      {
+        "label": "B",
+        "text": "Local max at $x=3$ with $f(3)=1$; local min at $x=1$ with $f(1)=5$"
+      },
+      {
+        "label": "C",
+        "text": "Local max at $x=0$ with $f(0)=1$; local min at $x=2$ with $f(2)=3$"
+      },
+      {
+        "label": "D",
+        "text": "No local extrema exist"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1: Find $f'(x)$.**\n$$f'(x) = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x-1)(x-3)$$\n\n**Step 2: Critical points** are $x=1$ and $x=3$.\n\n**Step 3: Sign chart for $f'$.**\n- For $x<1$: $(x-1)<0$, $(x-3)<0$, so $f'>0$ (increasing).\n- For $1<x<3$: $(x-1)>0$, $(x-3)<0$, so $f'<0$ (decreasing).\n- For $x>3$: both factors positive, so $f'>0$ (increasing).\n\n**Step 4: Classify extrema.**\n- $x=1$: $f'$ goes from $+$ to $-$ → **local maximum**. $f(1)=1-6+9+1=5$.\n- $x=3$: $f'$ goes from $-$ to $+$ → **local minimum**. $f(3)=27-54+27+1=1$.\n\nThe answer is **A**."
+  },
+  {
+    "id": "s26544_gen_2",
+    "type": "multiple-choice",
+    "section": "§4.4. Curve Sketching",
+    "text": "For $f(x) = \\dfrac{x^2}{x^2 - 4}$, find all horizontal and vertical asymptotes.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vertical: $x=2, x=-2$; Horizontal: $y=1$"
+      },
+      {
+        "label": "B",
+        "text": "Vertical: $x=4$; Horizontal: $y=1$"
+      },
+      {
+        "label": "C",
+        "text": "Vertical: $x=2, x=-2$; Horizontal: $y=0$"
+      },
+      {
+        "label": "D",
+        "text": "Vertical: none; Horizontal: $y=1$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Domain:** $x^2 - 4 \\neq 0 \\Rightarrow x \\neq \\pm 2$.\n\n**Vertical Asymptotes:** The denominator is zero at $x = 2$ and $x = -2$, and the numerator $x^2$ is nonzero at these points ($4 \\neq 0$). So there are vertical asymptotes at $x = 2$ and $x = -2$.\n\n**Horizontal Asymptote:** Compare degrees of numerator and denominator — both degree 2.\n$$\\lim_{x\\to\\pm\\infty} \\frac{x^2}{x^2-4} = \\lim_{x\\to\\pm\\infty} \\frac{1}{1 - 4/x^2} = 1$$\nSo there is a horizontal asymptote at $y = 1$."
+  },
+  {
+    "id": "s26544_gen_3",
+    "type": "multiple-choice",
+    "section": "§4.4. Curve Sketching",
+    "text": "For $f(x) = x^4 - 4x^3$, what are the inflection points?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = 0$ only"
+      },
+      {
+        "label": "B",
+        "text": "$x = 2$ only"
+      },
+      {
+        "label": "C",
+        "text": "$x = 0$ and $x = 2$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 1$ and $x = 3$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Step 1:** $f'(x) = 4x^3 - 12x^2$.\n\n**Step 2:** $f''(x) = 12x^2 - 24x = 12x(x-2)$.\n\n**Step 3:** Set $f''(x)=0$: $x=0$ or $x=2$.\n\n**Step 4: Sign chart for $f''$.**\n- $x < 0$: $12x < 0$, $(x-2)<0$, so $f'' > 0$ (concave up).\n- $0 < x < 2$: $12x > 0$, $(x-2)<0$, so $f'' < 0$ (concave down).\n- $x > 2$: both positive, so $f'' > 0$ (concave up).\n\nConcavity changes at both $x=0$ and $x=2$, so both are **inflection points**.\n\n**Answer: C**"
+  },
+  {
+    "id": "s26544_gen_4",
+    "type": "free-response",
+    "section": "§4.4. Curve Sketching",
+    "text": "Determine the $x$-coordinates of all inflection points of $f(x) = x e^{-x}$.",
+    "answer": "x=2",
+    "solution": "**Step 1:** $f'(x) = e^{-x} + x(-e^{-x}) = e^{-x}(1-x)$.\n\n**Step 2:** $f''(x) = -e^{-x}(1-x) + e^{-x}(-1) = e^{-x}[-(1-x)-1] = e^{-x}(x-2)$.\n\n**Step 3:** Set $f''(x) = 0$: since $e^{-x} > 0$ always, we need $x - 2 = 0 \\Rightarrow x = 2$.\n\n**Step 4:** Check sign change:\n- For $x < 2$: $f''(x) = e^{-x}(x-2) < 0$ (concave down).\n- For $x > 2$: $f''(x) > 0$ (concave up).\n\nConcavity changes at $x=2$, so there is an inflection point at $x = 2$."
+  },
+  {
+    "id": "s26544_gen_5",
+    "type": "select-all",
+    "section": "§4.4. Curve Sketching",
+    "text": "Which of the following statements about $f(x) = \\dfrac{1}{1+x^2}$ are TRUE? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f$ is an even function (symmetric about the $y$-axis)."
+      },
+      {
+        "label": "B",
+        "text": "$f$ has a local maximum at $x = 0$."
+      },
+      {
+        "label": "C",
+        "text": "$f$ has vertical asymptotes at $x = \\pm 1$."
+      },
+      {
+        "label": "D",
+        "text": "$f$ has inflection points at $x = \\pm\\dfrac{1}{\\sqrt{3}}$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**Symmetry:** $f(-x) = \\frac{1}{1+(-x)^2} = \\frac{1}{1+x^2} = f(x)$, so $f$ is even. **A is TRUE.**\n\n**Vertical Asymptotes:** $1 + x^2 = 0$ has no real solutions, so there are no vertical asymptotes. **C is FALSE.**\n\n**Horizontal Asymptote:** $\\lim_{x\\to\\pm\\infty} f(x) = 0$, so $y=0$ is a horizontal asymptote.\n\n**Critical points:**\n$$f'(x) = \\frac{-2x}{(1+x^2)^2}$$\nSetting $f'=0$: $x=0$. For $x<0$: $f'>0$; for $x>0$: $f'<0$. So $x=0$ is a **local maximum** with $f(0)=1$. **B is TRUE.**\n\n**Inflection points:**\n$$f''(x) = \\frac{-2(1+x^2)^2 - (-2x)\\cdot 2(1+x^2)(2x)}{(1+x^2)^4} = \\frac{-2(1+x^2)+8x^2}{(1+x^2)^3} = \\frac{6x^2-2}{(1+x^2)^3}$$\nSet numerator to zero: $6x^2 - 2 = 0 \\Rightarrow x^2 = \\frac{1}{3} \\Rightarrow x = \\pm\\frac{1}{\\sqrt{3}}$.\nSign changes confirm these are inflection points. **D is TRUE.**\n\n**Correct answers: A, B, D.**"
+  },
+  {
+    "id": "s26544_gen_6",
+    "type": "multiple-choice",
+    "section": "§4.4. Curve Sketching",
+    "text": "Consider $f(x) = \\ln(x^2 + 1)$. On which interval(s) is $f$ concave down?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-\\infty, \\infty)$"
+      },
+      {
+        "label": "B",
+        "text": "$(-1, 1)$"
+      },
+      {
+        "label": "C",
+        "text": "$(-\\infty, -1) \\cup (1, \\infty)$"
+      },
+      {
+        "label": "D",
+        "text": "Never concave down"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Step 1:** $f'(x) = \\dfrac{2x}{x^2+1}$.\n\n**Step 2:**\n$$f''(x) = \\frac{2(x^2+1) - 2x(2x)}{(x^2+1)^2} = \\frac{2x^2+2-4x^2}{(x^2+1)^2} = \\frac{2-2x^2}{(x^2+1)^2} = \\frac{2(1-x^2)}{(x^2+1)^2}$$\n\n**Step 3:** Sign of $f''$ depends on $(1-x^2)$:\n- $f'' > 0$ (concave up) when $1-x^2 > 0$, i.e., $-1 < x < 1$.\n- $f'' < 0$ (concave down) when $1-x^2 < 0$, i.e., $x < -1$ or $x > 1$.\n\nTherefore $f$ is concave down on $(-\\infty,-1)\\cup(1,\\infty)$.\n\n**Answer: C**"
+  },
+  {
+    "id": "s26544_gen_7",
+    "type": "multiple-choice",
+    "section": "§4.4. Curve Sketching",
+    "text": "Find the intervals where $f(x) = 2x^3 - 3x^2 - 12x + 5$ is increasing.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-\\infty, -1) \\cup (2, \\infty)$"
+      },
+      {
+        "label": "B",
+        "text": "$(-1, 2)$"
+      },
+      {
+        "label": "C",
+        "text": "$(-\\infty, -2) \\cup (1, \\infty)$"
+      },
+      {
+        "label": "D",
+        "text": "$(-2, 1)$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1:** Compute $f'(x)$.\n$$f'(x) = 6x^2 - 6x - 12 = 6(x^2 - x - 2) = 6(x-2)(x+1)$$\n\n**Step 2:** Critical points: $x = -1$ and $x = 2$.\n\n**Step 3:** Sign chart.\n- $x < -1$: $(x-2)<0$ and $(x+1)<0$ → $f'(x) > 0$ (**increasing**).\n- $-1 < x < 2$: $(x-2)<0$ and $(x+1)>0$ → $f'(x) < 0$ (decreasing).\n- $x > 2$: both factors positive → $f'(x) > 0$ (**increasing**).\n\n**Conclusion:** $f$ is increasing on $(-\\infty, -1)$ and $(2, \\infty)$."
+  },
+  {
+    "id": "s26544_gen_8",
+    "type": "multiple-choice",
+    "section": "§4.4. Curve Sketching",
+    "text": "Which of the following best describes the end behavior of $f(x) = \\dfrac{3x^3 - x}{x^2 + 2}$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\lim_{x\\to\\infty} f(x) = 3$ and $\\lim_{x\\to-\\infty} f(x) = 3$"
+      },
+      {
+        "label": "B",
+        "text": "$\\lim_{x\\to\\infty} f(x) = \\infty$ and $\\lim_{x\\to-\\infty} f(x) = -\\infty$"
+      },
+      {
+        "label": "C",
+        "text": "$\\lim_{x\\to\\infty} f(x) = 0$ and $\\lim_{x\\to-\\infty} f(x) = 0$"
+      },
+      {
+        "label": "D",
+        "text": "$\\lim_{x\\to\\infty} f(x) = 3$ and $\\lim_{x\\to-\\infty} f(x) = -\\infty$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The degree of the numerator ($3x^3 - x$, degree 3) exceeds the degree of the denominator ($x^2+2$, degree 2), so the function behaves like $\\dfrac{3x^3}{x^2} = 3x$ as $x\\to\\pm\\infty$.\n\n$$\\lim_{x\\to\\infty} f(x) = \\lim_{x\\to\\infty} 3x = +\\infty$$\n$$\\lim_{x\\to-\\infty} f(x) = \\lim_{x\\to-\\infty} 3x = -\\infty$$\n\nThere is no horizontal asymptote (there is an oblique asymptote $y = 3x$).\n\n**Answer: B**"
+  },
+  {
+    "id": "s26544_gen_9",
+    "type": "select-all",
+    "section": "§4.4. Curve Sketching",
+    "text": "Let $f(x) = x^4 - 8x^2 + 3$. Select ALL true statements.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f$ is an even function."
+      },
+      {
+        "label": "B",
+        "text": "$f$ has a local minimum at $x = 0$."
+      },
+      {
+        "label": "C",
+        "text": "$f$ has local minima at $x = -2$ and $x = 2$."
+      },
+      {
+        "label": "D",
+        "text": "$f$ has inflection points at $x = \\pm\\dfrac{2}{\\sqrt{3}}$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**Symmetry:** $f(-x) = (-x)^4 - 8(-x)^2 + 3 = x^4 - 8x^2 + 3 = f(x)$. **Even function. A is TRUE.**\n\n**Critical points:** $f'(x) = 4x^3 - 16x = 4x(x^2 - 4) = 4x(x-2)(x+2)$.\nCritical points: $x = 0, \\pm 2$.\n\n**Second derivative test:** $f''(x) = 12x^2 - 16$.\n- $f''(0) = -16 < 0$ → local **maximum** at $x=0$. So **B is FALSE**.\n- $f''(2) = 48 - 16 = 32 > 0$ → local minimum at $x=2$.\n- $f''(-2) = 32 > 0$ → local minimum at $x=-2$.\n**C is TRUE.**\n\n**Inflection points:** $f''(x) = 12x^2 - 16 = 0 \\Rightarrow x^2 = \\dfrac{16}{12} = \\dfrac{4}{3} \\Rightarrow x = \\pm\\dfrac{2}{\\sqrt{3}}$.\nSign changes at both points, confirming inflection points. **D is TRUE.**\n\n**Correct: A, C, D.**"
+  },
+  {
+    "id": "s26544_gen_10",
+    "type": "multiple-choice",
+    "section": "§4.4. Curve Sketching",
+    "text": "For $f(x) = \\dfrac{x-1}{x+2}$, which of the following correctly describes its asymptotes and local extrema?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vertical asymptote $x = -2$, Horizontal asymptote $y = 1$, No local extrema."
+      },
+      {
+        "label": "B",
+        "text": "Vertical asymptote $x = -2$, Horizontal asymptote $y = 0$, Local min at $x = 1$."
+      },
+      {
+        "label": "C",
+        "text": "Vertical asymptote $x = 2$, Horizontal asymptote $y = 1$, No local extrema."
+      },
+      {
+        "label": "D",
+        "text": "Vertical asymptote $x = -2$, Horizontal asymptote $y = 1$, Local max at $x = -1$."
+      }
+    ],
+    "answer": "A",
+    "solution": "**Domain:** $x \\neq -2$.\n\n**Vertical Asymptote:** Denominator $= 0$ at $x = -2$; numerator $(-2-1) = -3 \\neq 0$. So **vertical asymptote at $x = -2$**.\n\n**Horizontal Asymptote:** Both numerator and denominator have degree 1; leading coefficients are both 1.\n$$\\lim_{x\\to\\pm\\infty} \\frac{x-1}{x+2} = \\frac{1}{1} = 1$$\nSo **horizontal asymptote at $y = 1$**.\n\n**First Derivative:**\n$$f'(x) = \\frac{(x+2)(1) - (x-1)(1)}{(x+2)^2} = \\frac{x+2-x+1}{(x+2)^2} = \\frac{3}{(x+2)^2}$$\n\nSince $f'(x) = \\dfrac{3}{(x+2)^2} > 0$ for all $x \\neq -2$, the function is **strictly increasing** on each interval of its domain. There are **no critical points**, hence **no local extrema**."
+  }
+]

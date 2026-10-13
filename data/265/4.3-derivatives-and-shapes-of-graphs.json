@@ -1,0 +1,238 @@
+[
+  {
+    "id": "s26543_gen_1",
+    "type": "multiple-choice",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Let $f(x) = x^3 - 6x^2 + 9x + 1$. On which interval is $f$ increasing?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(1, 3)$"
+      },
+      {
+        "label": "B",
+        "text": "$(-\\infty, 1) \\cup (3, \\infty)$"
+      },
+      {
+        "label": "C",
+        "text": "$(0, 2)$"
+      },
+      {
+        "label": "D",
+        "text": "$(-\\infty, 3)$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Step 1: Find $f'(x)$.**\n$$f'(x) = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x-1)(x-3)$$\n\n**Step 2: Find critical points.** $f'(x) = 0$ when $x = 1$ or $x = 3$.\n\n**Step 3: Sign chart for $f'$.**\n- For $x < 1$: test $x=0$: $f'(0) = 3(1)(3) = 9 > 0$ → increasing.\n- For $1 < x < 3$: test $x=2$: $f'(2) = 3(1)(-1) = -3 < 0$ → decreasing.\n- For $x > 3$: test $x=4$: $f'(4) = 3(3)(1) = 9 > 0$ → increasing.\n\n**Conclusion:** $f$ is increasing on $(-\\infty, 1) \\cup (3, \\infty)$."
+  },
+  {
+    "id": "s26543_gen_2",
+    "type": "select-all",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Select the $x$-coordinates for all inflection points of $f(x) = x^4 - 4x^3 + 6$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = -2$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 0$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 2$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 4$"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "solution": "**Step 1: Compute $f'(x)$ and $f''(x)$.**\n$$f'(x) = 4x^3 - 12x^2$$\n$$f''(x) = 12x^2 - 24x = 12x(x - 2)$$\n\n**Step 2: Set $f''(x) = 0$.**\n$$12x(x-2) = 0 \\implies x = 0 \\text{ or } x = 2$$\n\n**Step 3: Check sign changes of $f''$.**\n- For $x < 0$: test $x = -1$: $f''(-1) = 12(-1)(-3) = 36 > 0$ → concave up.\n- For $0 < x < 2$: test $x = 1$: $f''(1) = 12(1)(-1) = -12 < 0$ → concave down.\n- For $x > 2$: test $x = 3$: $f''(3) = 12(3)(1) = 36 > 0$ → concave up.\n\n$f''$ changes sign at both $x=0$ and $x=2$, so both are inflection points."
+  },
+  {
+    "id": "s26543_gen_3",
+    "type": "multiple-choice",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Use the Second Derivative Test to classify the critical points of $f(x) = x^3 - 3x^2 - 9x + 5$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Local max at $x = -1$, local min at $x = 3$"
+      },
+      {
+        "label": "B",
+        "text": "Local min at $x = -1$, local max at $x = 3$"
+      },
+      {
+        "label": "C",
+        "text": "Local max at $x = 3$, local min at $x = -1$ (same as A, but with reversed labels)"
+      },
+      {
+        "label": "D",
+        "text": "No local extrema"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Step 1: Find $f'(x)$.**\n$$f'(x) = 3x^2 - 6x - 9 = 3(x^2 - 2x - 3) = 3(x-3)(x+1)$$\nCritical points: $x = 3$ and $x = -1$.\n\n**Step 2: Find $f''(x)$.**\n$$f''(x) = 6x - 6$$\n\n**Step 3: Apply the Second Derivative Test.**\n- At $x = -1$: $f''(-1) = 6(-1) - 6 = -12 < 0$ → **local maximum**.\n- At $x = 3$: $f''(3) = 6(3) - 6 = 12 > 0$ → **local minimum**.\n\n**Conclusion:** Local max at $x = -1$, local min at $x = 3$."
+  },
+  {
+    "id": "s26543_gen_4",
+    "type": "free-response",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Find the intervals on which $f(x) = xe^{-x}$ is concave up.",
+    "answer": "(2,\\infty)",
+    "solution": "**Step 1: Find $f'(x)$ using the product rule.**\n$$f'(x) = e^{-x} + x \\cdot (-e^{-x}) = e^{-x}(1 - x)$$\n\n**Step 2: Find $f''(x)$.**\n$$f''(x) = -e^{-x}(1-x) + e^{-x}(-1) = e^{-x}[-(1-x) - 1] = e^{-x}(x - 2)$$\n\n**Step 3: Determine where $f''(x) > 0$.**\nSince $e^{-x} > 0$ for all $x$, the sign of $f''(x)$ is determined by $(x - 2)$:\n$$f''(x) > 0 \\iff x - 2 > 0 \\iff x > 2$$\n\n**Conclusion:** $f$ is concave up on $(2, \\infty)$, i.e., $x > 2$."
+  },
+  {
+    "id": "s26543_gen_5",
+    "type": "select-all",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Let $f$ be a differentiable function. Select **all** statements that must be true.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $f'(c) = 0$, then $f$ has a local extremum at $x = c$."
+      },
+      {
+        "label": "B",
+        "text": "If $f$ has a local minimum at $x = c$, then $f'(c) = 0$."
+      },
+      {
+        "label": "C",
+        "text": "If $f''(c) = 0$, then $x = c$ is an inflection point of $f$."
+      },
+      {
+        "label": "D",
+        "text": "If $f'(c) = 0$ and $f''(c) > 0$, then $f$ has a local minimum at $x = c$."
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "solution": "**Checking each statement:**\n\n**A:** FALSE. A counterexample is $f(x) = x^3$ at $x = 0$: $f'(0) = 0$ but there is no local extremum. Having $f'(c) = 0$ is necessary but not sufficient for a local extremum.\n\n**B:** TRUE. Since $f$ is differentiable and has a local minimum at $c$, by Fermat's Theorem $f'(c) = 0$.\n\n**C:** FALSE. $f''(c) = 0$ is necessary but not sufficient for an inflection point. For example, $f(x) = x^4$ has $f''(0) = 0$ but $x=0$ is not an inflection point (no sign change in $f''$).\n\n**D:** TRUE. This is precisely the Second Derivative Test: if $f'(c) = 0$ and $f''(c) > 0$, then $f$ has a local minimum at $c$.\n\n**Correct answers: B and D.**"
+  },
+  {
+    "id": "s26543_gen_6",
+    "type": "multiple-choice",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "For $f(x) = \\sin x - \\cos x$ on $(0, 2\\pi)$, which of the following correctly identifies a local maximum?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = \\dfrac{\\pi}{4}$"
+      },
+      {
+        "label": "B",
+        "text": "$x = \\dfrac{5\\pi}{4}$"
+      },
+      {
+        "label": "C",
+        "text": "$x = \\dfrac{3\\pi}{4}$"
+      },
+      {
+        "label": "D",
+        "text": "$x = \\dfrac{7\\pi}{4}$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Step 1: Find $f'(x)$.**\n$$f'(x) = \\cos x + \\sin x$$\n\n**Step 2: Set $f'(x) = 0$.**\n$$\\cos x + \\sin x = 0 \\implies \\tan x = -1$$\nOn $(0, 2\\pi)$: $x = \\dfrac{3\\pi}{4}$ or $x = \\dfrac{7\\pi}{4}$.\n\n**Step 3: Apply the Second Derivative Test.**\n$$f''(x) = -\\sin x + \\cos x$$\n- At $x = \\dfrac{3\\pi}{4}$: $f''\\!\\left(\\tfrac{3\\pi}{4}\\right) = -\\sin\\tfrac{3\\pi}{4} + \\cos\\tfrac{3\\pi}{4} = -\\dfrac{\\sqrt{2}}{2} - \\dfrac{\\sqrt{2}}{2} = -\\sqrt{2} < 0$ → **local maximum**.\n- At $x = \\dfrac{7\\pi}{4}$: $f''\\!\\left(\\tfrac{7\\pi}{4}\\right) = -\\sin\\tfrac{7\\pi}{4} + \\cos\\tfrac{7\\pi}{4} = \\dfrac{\\sqrt{2}}{2} + \\dfrac{\\sqrt{2}}{2} = \\sqrt{2} > 0$ → local minimum.\n\nThe local maximum occurs at $x = \\dfrac{3\\pi}{4}$.\n\n**Answer: C**"
+  },
+  {
+    "id": "s26543_gen_7",
+    "type": "select-all",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Select the $x$-values of all local minima of $f(x) = x^4 - 8x^2 + 3$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = -2$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 0$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 2$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 4$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**Step 1: Find $f'(x)$.**\n$$f'(x) = 4x^3 - 16x = 4x(x^2 - 4) = 4x(x-2)(x+2)$$\n\n**Step 2: Critical points.** $x = -2,\\, 0,\\, 2$.\n\n**Step 3: Sign chart for $f'(x)$.**\n- $x < -2$: $f'(-3) = -60 < 0$ (decreasing)\n- $-2 < x < 0$: $f'(-1) = 12 > 0$ (increasing)\n- $0 < x < 2$: $f'(1) = -12 < 0$ (decreasing)\n- $x > 2$: $f'(3) = 60 > 0$ (increasing)\n\n**Step 4: Classify.**\n- At $x = -2$: $f'$ changes from $-$ to $+$ → **local minimum**.\n- At $x = 0$: $f'$ changes from $+$ to $-$ → local maximum.\n- At $x = 2$: $f'$ changes from $-$ to $+$ → **local minimum**."
+  },
+  {
+    "id": "s26543_gen_8",
+    "type": "multiple-choice",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "The function $f$ has $f'(x) = (x+2)^2(x-1)$. On which interval is $f$ decreasing?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-\\infty, -2)$"
+      },
+      {
+        "label": "B",
+        "text": "$(-2, 1)$"
+      },
+      {
+        "label": "C",
+        "text": "$(1, \\infty)$"
+      },
+      {
+        "label": "D",
+        "text": "$(-\\infty, -2) \\cup (1, \\infty)$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Step 1: Find where $f'(x) = 0$.**\n$$f'(x) = (x+2)^2(x-1) = 0 \\implies x = -2 \\text{ (double root) or } x = 1$$\n\n**Step 2: Sign chart.**\n- For $x < -2$: test $x = -3$: $(1)^2(-4) = -4 < 0$ → decreasing.\n- For $-2 < x < 1$: test $x = 0$: $(4)(-1) = -4 < 0$ → decreasing.\n- For $x > 1$: test $x = 2$: $(16)(1) = 16 > 0$ → increasing.\n\n**Note:** $(x+2)^2 \\geq 0$ always, so the sign of $f'$ equals the sign of $(x-1)$ (except at $x=-2$).\n\n- $x < 1$ (and $x \\neq -2$): $f'(x) < 0$ → $f$ is decreasing on $(-\\infty, 1)$ excluding the point $x=-2$.\n- $x > 1$: $f'(x) > 0$ → $f$ is increasing.\n\nAmong the given choices, **$(-2, 1)$** is the best answer that is a subinterval where $f$ is decreasing without including the full extent. However, since $f$ is decreasing on all of $(-\\infty,1)$ (with $f'(-2)=0$ being just a single point), the interval $(-2,1)$ is indeed an interval of decrease.\n\n**Answer: B** — $(-2,1)$ is where $f$ is decreasing (as given among choices; the full decreasing region is $(-\\infty,1)$, but that is not an option)."
+  },
+  {
+    "id": "s26543_gen_9",
+    "type": "free-response",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Find the $x$-coordinate of the inflection point of $f(x) = x^3 - 3x^2 + 4$.",
+    "answer": "1",
+    "solution": "**Step 1: Compute $f''(x)$.**\n$$f'(x) = 3x^2 - 6x$$\n$$f''(x) = 6x - 6 = 6(x-1)$$\n\n**Step 2: Set $f''(x) = 0$.**\n$$6(x-1) = 0 \\implies x = 1$$\n\n**Step 3: Determine concavity to confirm.**\n- For $x < 1$: $f''(x) < 0$ → concave down.\n- For $x > 1$: $f''(x) > 0$ → concave up.\n\n$f''$ changes sign at $x = 1$, so $x = 1$ is an inflection point."
+  },
+  {
+    "id": "s26543_gen_10",
+    "type": "select-all",
+    "section": "§4.3. Derivatives and Shapes of Graphs",
+    "text": "Suppose $f''(x) = x^2(x-3)(x+1)$. Select **all** values of $x$ that are inflection points of $f$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = -1$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 0$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 1$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 3$"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "solution": "**Inflection points of $f$ occur where $f''(x) = 0$ AND $f''$ changes sign.**\n\n**Step 1: Find zeros of $f''$.**\n$$f''(x) = x^2(x-3)(x+1) = 0 \\implies x = 0,\\; x = 3,\\; x = -1$$\n\n**Step 2: Analyze sign changes of $f''(x)$ around each zero.**\n\nNote: $x^2 \\geq 0$ always, and $x^2 = 0$ only at $x=0$ (double root). The sign of $f''$ is determined by $x^2(x-3)(x+1)$.\n\nKey test intervals: $x < -1$, $-1 < x < 0$, $0 < x < 3$, $x > 3$.\n\n- $x = -2$: $f''(-2) = 4(-5)(-1) = 20 > 0$\n- $x = -0.5$: $f''(-0.5) = 0.25(-3.5)(0.5) = -0.4375 < 0$\n- $x = 1$: $f''(1) = 1(-2)(2) = -4 < 0$\n- $x = 4$: $f''(4) = 16(1)(5) = 80 > 0$\n\n**Sign pattern:** $+$ | $-$ | $-$ | $+$ (at $x=-1$, $0$, $3$)\n\n- At $x = -1$: sign changes from $+$ to $-$ → **inflection point** ✓\n- At $x = 0$: sign does NOT change (stays $-$ on both sides) → **NOT an inflection point** ✗\n- At $x = 3$: sign changes from $-$ to $+$ → **inflection point** ✓\n\n**Correct answers: A ($x=-1$) and D ($x=3$).**"
+  }
+]

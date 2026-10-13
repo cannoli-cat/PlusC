@@ -1,0 +1,221 @@
+[
+  {
+    "id": "s26685_gen_1",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=0}^{\\infty} \\frac{x^n}{7^n}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-7,\\, 7)$"
+      },
+      {
+        "label": "B",
+        "text": "$[-7,\\, 7]$"
+      },
+      {
+        "label": "C",
+        "text": "$\\left(-\\tfrac{1}{7},\\, \\tfrac{1}{7}\\right)$"
+      },
+      {
+        "label": "D",
+        "text": "$(-7,\\, 7]$"
+      }
+    ],
+    "answer": "A",
+    "solution": "**Ratio Test.** Let $a_n = x^n/7^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{x^{n+1}}{7^{n+1}}\\cdot\\frac{7^n}{x^n}\\right| = \\frac{|x|}{7}.$$ Setting $|x|/7 < 1$ gives $|x| < 7$, so $R = 7$.\n\n**Endpoint $x = 7$:** $\\sum_{n=0}^\\infty 1$ diverges (terms $\\to 1 \\neq 0$).\n\n**Endpoint $x = -7$:** $\\sum_{n=0}^\\infty (-1)^n$ diverges (terms do not $\\to 0$).\n\nBoth endpoints are excluded, so the interval of convergence is $(-7,\\,7)$. Choice **A**.\n\n"
+  },
+  {
+    "id": "s26685_gen_2",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(x-3)^n}{n \\cdot 4^n}.$$",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "4"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-1, 7)"
+      }
+    ],
+    "solution": "**Ratio Test.** Let $a_n = (x-3)^n/(n\\cdot 4^n)$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{(x-3)^{n+1}}{(n+1)4^{n+1}}\\cdot\\frac{n\\cdot 4^n}{(x-3)^n}\\right| = \\frac{|x-3|}{4}\\cdot\\frac{n}{n+1} \\xrightarrow{n\\to\\infty} \\frac{|x-3|}{4}.$$ Convergence requires $|x-3|/4 < 1$, i.e., $|x-3| < 4$. Hence $R = 4$ and the series converges on $(3-4, 3+4) = (-1, 7)$.\n\n**Endpoint $x = 7$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{4^n}{n\\cdot 4^n} = \\sum_{n=1}^\\infty \\frac{1}{n}$, the harmonic series. **Diverges.**\n\n**Endpoint $x = -1$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-4)^n}{n\\cdot 4^n} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$, the alternating harmonic series. By the Alternating Series Test it **converges.**\n\nThe interval of convergence is $\\boxed{[-1,\\,7)}$."
+  },
+  {
+    "id": "s26685_gen_3",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=1}^{\\infty} \\frac{(3x)^n}{n^2}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-1,\\,1)$"
+      },
+      {
+        "label": "B",
+        "text": "$\\left[-\\tfrac{1}{3},\\,\\tfrac{1}{3}\\right]$"
+      },
+      {
+        "label": "C",
+        "text": "$(-3,\\,3)$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left(-\\tfrac{1}{3},\\,\\tfrac{1}{3}\\right)$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Ratio Test.** Let $a_n = (3x)^n/n^2$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |3x|\\cdot\\frac{n^2}{(n+1)^2} \\to |3x| \\quad\\text{as } n\\to\\infty.$$ Convergence requires $|3x| < 1$, so $|x| < 1/3$. Thus $R = 1/3$ and the open interval is $(-1/3, 1/3)$.\n\n**Endpoint $x = 1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n^2}$, a $p$-series with $p = 2 > 1$. **Converges.**\n\n**Endpoint $x = -1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n^2}$, converges absolutely (same $p$-series). **Converges.**\n\nBoth endpoints included; interval of convergence is $\\left[-\\tfrac{1}{3},\\tfrac{1}{3}\\right]$. Choice **B**.\n\n"
+  },
+  {
+    "id": "s26685_gen_4",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=0}^{\\infty} \\frac{5^n x^n}{n!}.$$",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "\\infty"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-\\infty, \\infty)"
+      }
+    ],
+    "solution": "**Ratio Test.** Let $a_n = 5^n x^n / n!$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{5^{n+1}x^{n+1}}{(n+1)!}\\cdot\\frac{n!}{5^n x^n}\\right| = \\frac{5|x|}{n+1} \\xrightarrow{n\\to\\infty} 0 < 1$$ for every real $x$.\n\nSince the limit is $0$ for all $x$, the series converges for every $x\\in\\mathbb{R}$.\n\n$$R = \\infty, \\qquad \\text{interval of convergence: } (-\\infty,\\infty).$$"
+  },
+  {
+    "id": "s26685_gen_5",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=0}^{\\infty} n!\\,(x-2)^n.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(-\\infty, \\infty)$"
+      },
+      {
+        "label": "B",
+        "text": "$\\{2\\}$"
+      },
+      {
+        "label": "C",
+        "text": "$(1, 3)$"
+      },
+      {
+        "label": "D",
+        "text": "$(-2, 2)$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Ratio Test.** Let $a_n = n!(x-2)^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = (n+1)|x-2| \\xrightarrow{n\\to\\infty} \\infty \\quad \\text{whenever } x \\neq 2.$$ The ratio exceeds $1$ for all $x\\neq 2$, so the series **diverges** for every $x\\neq 2$. At $x=2$ every term is $0$, so it converges trivially.\n\nThus $R = 0$ and the interval of convergence is $\\{2\\}$. Choice **B**.\n\n"
+  },
+  {
+    "id": "s26685_gen_6",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(x+1)^n}{2^n \\sqrt{n}}.$$",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "2"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-3, 1)"
+      }
+    ],
+    "solution": "**Ratio Test.** Let $a_n = (x+1)^n/(2^n\\sqrt{n})$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{|x+1|}{2}\\cdot\\sqrt{\\frac{n}{n+1}} \\to \\frac{|x+1|}{2}.$$ Convergence requires $|x+1|/2 < 1$, i.e., $|x+1| < 2$. So $R = 2$ and the center is $a = -1$; open interval is $(-3, 1)$.\n\n**Endpoint $x = 1$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{2^n}{2^n\\sqrt{n}} = \\sum_{n=1}^\\infty \\frac{1}{\\sqrt{n}}$, a $p$-series with $p = 1/2 \\leq 1$. **Diverges.**\n\n**Endpoint $x = -3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-2)^n}{2^n\\sqrt{n}} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{\\sqrt{n}}$. By the Alternating Series Test (terms decrease to $0$), this **converges.**\n\nThe interval of convergence is $\\boxed{[-3,\\,1)}$."
+  },
+  {
+    "id": "s26685_gen_7",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{(-1)^n\\, x^{2n}}{n \\cdot 9^n}.$$",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "3"
+      },
+      {
+        "label": "Interval:",
+        "value": "[-3, 3]"
+      }
+    ],
+    "solution": "**Ratio Test.** Let $a_n = (-1)^n x^{2n}/(n\\cdot 9^n)$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{x^{2(n+1)}}{(n+1)\\,9^{n+1}}\\cdot\\frac{n\\cdot 9^n}{x^{2n}} = \\frac{x^2}{9}\\cdot\\frac{n}{n+1} \\to \\frac{x^2}{9}.$$ Convergence requires $x^2/9 < 1$, i.e., $|x| < 3$. So $R = 3$; open interval $(-3, 3)$.\n\n**Endpoint $x = 3$:** $$\\sum_{n=1}^\\infty \\frac{(-1)^n \\cdot 9^n}{n\\cdot 9^n} = \\sum_{n=1}^\\infty \\frac{(-1)^n}{n},$$ the alternating harmonic series. **Converges** (Alternating Series Test).\n\n**Endpoint $x = -3$:** $x^{2n} = 9^n$, so $$\\sum_{n=1}^\\infty \\frac{(-1)^n\\cdot 9^n}{n\\cdot 9^n} = \\sum_{n=1}^\\infty\\frac{(-1)^n}{n},$$ same series. **Converges.**\n\nBoth endpoints included; interval of convergence is $\\boxed{[-3,\\,3]}$."
+  },
+  {
+    "id": "s26685_gen_8",
+    "type": "multiple-choice",
+    "section": "§8.5. Power Series",
+    "text": "Find the interval of convergence of the power series $$\\sum_{n=1}^{\\infty} \\frac{(10x)^n}{n}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\left(-\\tfrac{1}{10},\\,\\tfrac{1}{10}\\right)$"
+      },
+      {
+        "label": "B",
+        "text": "$\\left[-\\tfrac{1}{10},\\,\\tfrac{1}{10}\\right)$"
+      },
+      {
+        "label": "C",
+        "text": "$[-10,\\,10)$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left(-\\tfrac{1}{10},\\,\\tfrac{1}{10}\\right]$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Ratio Test.** Let $a_n = (10x)^n/n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |10x|\\cdot\\frac{n}{n+1} \\to |10x|.$$ Convergence requires $|10x| < 1$, i.e., $|x| < 1/10$. So $R = 1/10$; open interval $(-1/10, 1/10)$.\n\n**Endpoint $x = 1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n}$ (harmonic series). **Diverges.**\n\n**Endpoint $x = -1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$ (alternating harmonic series). **Converges** by the Alternating Series Test.\n\nLeft endpoint included, right excluded: $\\left[-\\tfrac{1}{10},\\tfrac{1}{10}\\right)$. Choice **B**.\n\n"
+  },
+  {
+    "id": "s26685_gen_9",
+    "type": "select-all",
+    "section": "§8.5. Power Series",
+    "text": "The power series $\\displaystyle\\sum_{n=0}^{\\infty} c_n(x-4)^n$ is known to **converge** at $x = 10$. Select **all** values of $x$ at which the series **must** converge.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = 4$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 9$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 0$"
+      },
+      {
+        "label": "D",
+        "text": "$x = -2$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "The series converges at $x = 10$, which satisfies $|10 - 4| = 6$. By the theorem on power series, the radius of convergence satisfies $R \\geq 6$, so the series converges for **all** $x$ with $|x - 4| < 6$, i.e., $x \\in (-2, 10)$ (at minimum).\n\n**A: $x = 4$** — the center; every power series converges at its center. $|4-4|=0 < 6$. **Must converge. ✓**\n\n**B: $x = 9$** — $|9-4| = 5 < 6 \\leq R$, so this is strictly inside the interval of convergence. **Must converge. ✓**\n\n**C: $x = 0$** — $|0-4| = 4 < 6 \\leq R$, strictly inside. **Must converge. ✓**\n\n**D: $x = -2$** — $|-2-4| = 6$, exactly on the boundary of the minimum interval. The series may or may not converge at an endpoint (the Ratio Test is inconclusive there). **Cannot be guaranteed.**\n\nCorrect selections: **A, B, C**."
+  },
+  {
+    "id": "s26685_gen_10",
+    "type": "free-response",
+    "section": "§8.5. Power Series",
+    "text": "Find the radius of convergence $R$ and the interval of convergence of $$\\sum_{n=1}^{\\infty} \\frac{n^2(x+2)^n}{4^n}.$$",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "4"
+      },
+      {
+        "label": "Interval:",
+        "value": "(-6, 2)"
+      }
+    ],
+    "solution": "**Ratio Test.** Let $a_n = n^2(x+2)^n/4^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\frac{(n+1)^2}{n^2}\\cdot\\frac{|x+2|}{4} \\to \\frac{|x+2|}{4}.$$ Convergence requires $|x+2|/4 < 1$, i.e., $|x+2| < 4$. So $R = 4$ and the center is $a = -2$; open interval $(-6,\\,2)$.\n\n**Endpoint $x = 2$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{n^2\\cdot 4^n}{4^n} = \\sum_{n=1}^\\infty n^2$. Terms grow without bound. **Diverges.**\n\n**Endpoint $x = -6$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{n^2(-4)^n}{4^n} = \\sum_{n=1}^\\infty (-1)^n n^2$. The terms $n^2\\not\\to 0$, so the series **diverges** (fails the Divergence Test).\n\nBoth endpoints diverge; the interval of convergence is $\\boxed{(-6,\\,2)}$."
+  }
+]

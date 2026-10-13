@@ -1,0 +1,198 @@
+[
+  {
+    "id": "s26532_gen_1",
+    "type": "multiple-choice",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Let $f(x) = x^3 + 2x + 1$. Find $(f^{-1})'(4)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{5}$"
+      },
+      {
+        "label": "B",
+        "text": "$5$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{14}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We use the formula $(f^{-1})'(c) = \\dfrac{1}{f'(f^{-1}(c))}$.\n\n**Step 1:** Find $f^{-1}(4)$, i.e., solve $f(x) = 4$:\n$$x^3 + 2x + 1 = 4 \\implies x^3 + 2x - 3 = 0$$\nTest $x = 1$: $1 + 2 - 3 = 0$. ✓\n\nSo $f^{-1}(4) = 1$.\n\n**Step 2:** Compute $f'(x) = 3x^2 + 2$.\n\n**Step 3:** Evaluate $f'(1) = 3(1)^2 + 2 = 5$.\n\n**Step 4:** Apply the formula:\n$$(f^{-1})'(4) = \\frac{1}{f'(f^{-1}(4))} = \\frac{1}{f'(1)} = \\frac{1}{5}$$"
+  },
+  {
+    "id": "s26532_gen_2",
+    "type": "free-response",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Let $f(x) = \\sqrt{x} + \\ln x$ for $x > 0$. Find $(f^{-1})'(1)$.",
+    "answer": "2/3",
+    "solution": "We use $(f^{-1})'(c) = \\dfrac{1}{f'(f^{-1}(c))}$ with $c = 1$.\n\n**Step 1:** Find $f^{-1}(1)$, i.e., solve $\\sqrt{x} + \\ln x = 1$.\n\nTest $x = 1$: $\\sqrt{1} + \\ln 1 = 1 + 0 = 1$. ✓\n\nSo $f^{-1}(1) = 1$.\n\n**Step 2:** Compute $f'(x) = \\dfrac{1}{2\\sqrt{x}} + \\dfrac{1}{x}$.\n\n**Step 3:** Evaluate at $x = 1$:\n$$f'(1) = \\frac{1}{2(1)} + \\frac{1}{1} = \\frac{1}{2} + 1 = \\frac{3}{2}$$\n\n**Step 4:**\n$$(f^{-1})'(1) = \\frac{1}{f'(1)} = \\frac{1}{3/2} = \\frac{2}{3}$$"
+  },
+  {
+    "id": "s26532_gen_3",
+    "type": "multiple-choice",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Evaluate the limit: $\\displaystyle\\lim_{x \\to 0^+} x \\ln x$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1$"
+      },
+      {
+        "label": "B",
+        "text": "$-\\infty$"
+      },
+      {
+        "label": "C",
+        "text": "$0$"
+      },
+      {
+        "label": "D",
+        "text": "$-1$"
+      }
+    ],
+    "answer": "C",
+    "solution": "As $x \\to 0^+$, we have $x \\to 0$ and $\\ln x \\to -\\infty$, giving the indeterminate form $0 \\cdot (-\\infty)$.\n\nRewrite as:\n$$\\lim_{x \\to 0^+} x \\ln x = \\lim_{x \\to 0^+} \\frac{\\ln x}{1/x}$$\nThis is now $\\dfrac{-\\infty}{+\\infty}$, so we apply L'Hôpital's Rule:\n$$= \\lim_{x \\to 0^+} \\frac{1/x}{-1/x^2} = \\lim_{x \\to 0^+} \\frac{x^2 \\cdot (1/x)}{1 \\cdot (-1)} \\cdot (-1) = \\lim_{x \\to 0^+} \\frac{-x^2/x}{1} = \\lim_{x \\to 0^+} (-x) = 0$$\n\nMore directly: $\\dfrac{1/x}{-1/x^2} = \\dfrac{x^2}{-x} \\cdot \\dfrac{1}{1} = -x \\to 0$.\n\nThe limit is $\\boxed{0}$."
+  },
+  {
+    "id": "s26532_gen_4",
+    "type": "free-response",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Use properties of logarithms to simplify: $\\ln\\left(\\dfrac{e^3 \\sqrt{x}}{x^2+1}\\right)$. Write your answer in a simplified exact form (no decimals).",
+    "answer": "3 + (1/2)*ln(x) - ln(x^2+1)",
+    "solution": "Apply logarithm rules:\n$$\\ln\\left(\\frac{e^3 \\sqrt{x}}{x^2+1}\\right) = \\ln(e^3) + \\ln(\\sqrt{x}) - \\ln(x^2+1)$$\n$$= 3 + \\ln(x^{1/2}) - \\ln(x^2+1)$$\n$$= 3 + \\frac{1}{2}\\ln x - \\ln(x^2+1)$$"
+  },
+  {
+    "id": "s26532_gen_5",
+    "type": "select-all",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Which of the following statements about the function $f(x) = \\ln x$ are TRUE? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The domain of $f$ is $(0, \\infty)$ and the range is $(-\\infty, \\infty)$."
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\lim_{x \\to \\infty} \\ln x = \\infty$"
+      },
+      {
+        "label": "C",
+        "text": "$\\ln(ab) = \\ln a \\cdot \\ln b$ for all $a, b > 0$."
+      },
+      {
+        "label": "D",
+        "text": "$\\ln(e^x) = x$ for all real $x$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "solution": "**A. TRUE.** The natural logarithm is defined for $x > 0$ (domain $(0,\\infty)$) and takes all real values (range $(-\\infty,\\infty)$).\n\n**B. TRUE.** $\\ln x \\to \\infty$ as $x \\to \\infty$ (it grows without bound, just slowly).\n\n**C. FALSE.** The correct property is $\\ln(ab) = \\ln a + \\ln b$, not $\\ln a \\cdot \\ln b$. The multiplicative rule is an error.\n\n**D. TRUE.** Since $\\ln$ and $e^x$ are inverse functions, $\\ln(e^x) = x$ for all real $x$.\n\nCorrect answers: **A, B, D**."
+  },
+  {
+    "id": "s26532_gen_6",
+    "type": "multiple-choice",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Let $f(x) = x^5 + x$. Find $(f^{-1})'(2)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$6$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{6}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{2}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{26}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Use $(f^{-1})'(c) = \\dfrac{1}{f'(f^{-1}(c))}$ with $c = 2$.\n\n**Step 1:** Solve $x^5 + x = 2$.\n\nTest $x = 1$: $1 + 1 = 2$. ✓\n\nSo $f^{-1}(2) = 1$.\n\n**Step 2:** $f'(x) = 5x^4 + 1$.\n\n**Step 3:** $f'(1) = 5(1)^4 + 1 = 6$.\n\n**Step 4:**\n$$(f^{-1})'(2) = \\frac{1}{6}$$\n\n*Common error:* Distractor A ($6$) comes from forgetting to take the reciprocal. Distractor D ($1/26$) comes from incorrectly using $x = 2$ in $f'$ instead of $x = f^{-1}(2) = 1$."
+  },
+  {
+    "id": "s26532_gen_7",
+    "type": "free-response",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Evaluate: $\\displaystyle\\lim_{x \\to \\infty} \\frac{\\ln x}{x}$.",
+    "answer": "0",
+    "solution": "As $x \\to \\infty$, both $\\ln x \\to \\infty$ and $x \\to \\infty$, giving the indeterminate form $\\dfrac{\\infty}{\\infty}$.\n\nApply L'Hôpital's Rule:\n$$\\lim_{x \\to \\infty} \\frac{\\ln x}{x} = \\lim_{x \\to \\infty} \\frac{1/x}{1} = \\lim_{x \\to \\infty} \\frac{1}{x} = 0$$\n\nIntuitively, $x$ grows much faster than $\\ln x$, so the ratio goes to $0$."
+  },
+  {
+    "id": "s26532_gen_8",
+    "type": "multiple-choice",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "If $f(x) = e^{2x} + x$, find $(f^{-1})'(1)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$3$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{2}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2e^2 + 1}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Use $(f^{-1})'(c) = \\dfrac{1}{f'(f^{-1}(c))}$ with $c = 1$.\n\n**Step 1:** Solve $e^{2x} + x = 1$.\n\nTest $x = 0$: $e^0 + 0 = 1 + 0 = 1$. ✓\n\nSo $f^{-1}(1) = 0$.\n\n**Step 2:** $f'(x) = 2e^{2x} + 1$.\n\n**Step 3:** $f'(0) = 2e^0 + 1 = 2 + 1 = 3$.\n\n**Step 4:**\n$$(f^{-1})'(1) = \\frac{1}{f'(0)} = \\frac{1}{3}$$\n\n*Distractor B:* Forgot to take reciprocal. *Distractor D:* Used $f'(1) = 2e^2 + 1$ instead of $f'(f^{-1}(1)) = f'(0)$."
+  },
+  {
+    "id": "s26532_gen_9",
+    "type": "select-all",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "Which of the following expressions are equivalent to $\\log_a(x^2 y^{-3})$, where $a > 0$, $a \\neq 1$, $x, y > 0$? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2\\log_a x - 3\\log_a y$"
+      },
+      {
+        "label": "B",
+        "text": "$2\\log_a x + 3\\log_a y$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{\\ln(x^2 y^{-3})}{\\ln a}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\log_a(x^2) + \\log_a(y^{-3})$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "Starting with $\\log_a(x^2 y^{-3})$:\n\n**A.** Apply product and power rules:\n$$\\log_a(x^2 y^{-3}) = \\log_a(x^2) + \\log_a(y^{-3}) = 2\\log_a x + (-3)\\log_a y = 2\\log_a x - 3\\log_a y$$\n**TRUE.**\n\n**B.** This would equal $\\log_a(x^2 y^3)$, not $\\log_a(x^2 y^{-3})$. **FALSE** (sign error on the $y$ term).\n\n**C.** By the change-of-base formula: $\\log_a(M) = \\dfrac{\\ln M}{\\ln a}$, so $\\log_a(x^2 y^{-3}) = \\dfrac{\\ln(x^2 y^{-3})}{\\ln a}$. **TRUE.**\n\n**D.** By the product rule for logarithms: $\\log_a(x^2 y^{-3}) = \\log_a(x^2) + \\log_a(y^{-3})$. **TRUE.**\n\nCorrect answers: **A, C, D**."
+  },
+  {
+    "id": "s26532_gen_10",
+    "type": "free-response",
+    "section": "§3.2. Inverse Functions and Logarithms",
+    "text": "A function $f$ is one-to-one with $f(3) = 7$ and $f'(3) = -4$. Find $(f^{-1})'(7)$.",
+    "answer": "-1/4",
+    "solution": "We use the inverse function derivative formula:\n$$(f^{-1})'(c) = \\frac{1}{f'(f^{-1}(c))}$$\n\n**Step 1:** We need $f^{-1}(7)$. Since $f(3) = 7$, we have $f^{-1}(7) = 3$.\n\n**Step 2:** We need $f'(f^{-1}(7)) = f'(3) = -4$.\n\n**Step 3:**\n$$(f^{-1})'(7) = \\frac{1}{f'(3)} = \\frac{1}{-4} = -\\frac{1}{4}$$"
+  }
+]

@@ -1,0 +1,249 @@
+[
+  {
+    "id": "s9_2_gen_1",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Given the parametric equations\n$$x = t^2 + 3t, \\quad y = t^3 - 2t,$$\ncompute $\\dfrac{dy}{dx}$ as a function of $t$.",
+    "answer": "\\frac{3t^2 - 2}{2t + 3}",
+    "solution": "Differentiate both equations with respect to $t$:\n$$\\frac{dx}{dt} = 2t + 3, \\qquad \\frac{dy}{dt} = 3t^2 - 2.$$\nBy the parametric derivative formula:\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{3t^2 - 2}{2t + 3}.$$"
+  },
+  {
+    "id": "s9_2_gen_2",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Given the parametric equations $x = t^3$, $y = t^4$:\n\n(a) Find $\\dfrac{dy}{dx}$ expressed as a function of $t$.\n\n(b) Find $\\dfrac{d^2y}{dx^2}$ expressed as a function of $t$.",
+    "answer": [
+      {
+        "label": "dy/dx =",
+        "value": "\\frac{4t}{3}"
+      },
+      {
+        "label": "d^2y/dx^2 =",
+        "value": "\\frac{4}{9t^2}"
+      }
+    ],
+    "solution": "**(a)** Differentiate: $dx/dt = 3t^2$, $dy/dt = 4t^3$.\n$$\\frac{dy}{dx} = \\frac{4t^3}{3t^2} = \\frac{4t}{3}.$$\n\n**(b)** Differentiate $dy/dx$ with respect to $t$:\n$$\\frac{d}{dt}\\!\\left(\\frac{4t}{3}\\right) = \\frac{4}{3}.$$\nThen divide by $dx/dt = 3t^2$:\n$$\\frac{d^2y}{dx^2} = \\frac{4/3}{3t^2} = \\frac{4}{9t^2}.$$"
+  },
+  {
+    "id": "s9_2_gen_3",
+    "type": "multiple-choice",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Find $\\dfrac{dy}{dx}$ expressed as a function of $t$ for the Parametric Curves\n$$x = 2t + \\ln t, \\quad y = 5t - 3\\ln t.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{5t - 3}{2t + 1}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{5t + 3}{2t + 1}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{5t - 3}{2t - 1}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{2t + 1}{5t - 3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate with respect to $t$:\n$$\\frac{dx}{dt} = 2 + \\frac{1}{t} = \\frac{2t+1}{t}, \\qquad \\frac{dy}{dt} = 5 - \\frac{3}{t} = \\frac{5t-3}{t}.$$\nThen:\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{(5t-3)/t}{(2t+1)/t} = \\frac{5t-3}{2t+1}.$$\nChoice **A**.\n\n"
+  },
+  {
+    "id": "s9_2_gen_4",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Find the equation of the line tangent to the parametric curve\n$$x = \\cos t, \\quad y = \\sin t$$\nat $t = \\dfrac{\\pi}{4}$. Write your answer in the form $y = mx + b$.",
+    "answer": "y = -x + \\sqrt{2}",
+    "solution": "**Point:** At $t = \\pi/4$: $x = \\cos(\\pi/4) = \\dfrac{\\sqrt{2}}{2}$, $y = \\sin(\\pi/4) = \\dfrac{\\sqrt{2}}{2}$.\n\n**Slope:** $\\dfrac{dx}{dt} = -\\sin t$, $\\dfrac{dy}{dt} = \\cos t$, so\n$$\\frac{dy}{dx} = \\frac{\\cos t}{-\\sin t} = -\\cot t.$$\nAt $t = \\pi/4$: $\\dfrac{dy}{dx} = -\\cot(\\pi/4) = -1$.\n\n**Tangent line:**\n$$y - \\frac{\\sqrt{2}}{2} = -1\\!\\left(x - \\frac{\\sqrt{2}}{2}\\right) \\implies y = -x + \\sqrt{2}.$$"
+  },
+  {
+    "id": "s9_2_gen_5",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Find the equation for the line tangent to the parametric curve\n$$x = t^2 + t, \\quad y = t^3 + t^2$$\nat the points where $t = 1$ and $t = -1$.\n\nWrite your tangent lines in the form $y = mx + b$.",
+    "answer": [
+      {
+        "label": "t = 1:",
+        "value": "y = \\frac{5}{3}x - \\frac{4}{3}"
+      },
+      {
+        "label": "t = -1:",
+        "value": "y = -x"
+      }
+    ],
+    "solution": "**Derivatives:** $dx/dt = 2t+1$, $dy/dt = 3t^2+2t$, so $\\dfrac{dy}{dx} = \\dfrac{3t^2+2t}{2t+1}$.\n\n**At $t = 1$:** Point: $(1^2+1,\\, 1^3+1^2) = (2,\\,2)$.\n$dx/dt = 3$, $dy/dt = 5$, slope $= 5/3$.\n$$y - 2 = \\tfrac{5}{3}(x-2) \\implies y = \\tfrac{5}{3}x - \\tfrac{4}{3}.$$\n\n**At $t = -1$:** Point: $(1-1,\\, -1+1) = (0,\\,0)$.\n$dx/dt = -1$, $dy/dt = 3-2 = 1$, slope $= 1/(-1) = -1$.\n$$y - 0 = -1(x-0) \\implies y = -x.$$"
+  },
+  {
+    "id": "s9_2_gen_6",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = t^2 - 2t, \\quad y = t^3 - 12t.$$\n\nAt which $t$ value is the tangent vertical? Give the corresponding point $(x, y)$.\n\nAt which $t$ values is the tangent horizontal? (Enter the smaller $t$ value first, followed by its corresponding point).",
+    "answer": [
+      {
+        "label": "Vertical tangent at t =",
+        "value": "1"
+      },
+      {
+        "label": "Vertical tangent point:",
+        "value": "(-1, -11)"
+      },
+      {
+        "label": "Horizontal tangent (smaller t):",
+        "value": "-2"
+      },
+      {
+        "label": "Point:",
+        "value": "(8, 16)"
+      },
+      {
+        "label": "Horizontal tangent (larger t):",
+        "value": "2"
+      },
+      {
+        "label": "Point:",
+        "value": "(0, -16)"
+      }
+    ],
+    "solution": "**Derivatives:**\n$$\\frac{dx}{dt} = 2t - 2 = 2(t-1), \\qquad \\frac{dy}{dt} = 3t^2 - 12 = 3(t^2-4).$$\n\n**Vertical tangent** — set $dx/dt = 0$: $t = 1$. Check $dy/dt\\big|_{t=1} = 3(1-4) = -9 \\neq 0$ ✓.\nPoint: $(1-2,\\;1-12) = (-1,\\,-11)$.\n\n**Horizontal tangents** — set $dy/dt = 0$: $t = \\pm 2$.\n- $t=-2$: $dx/dt = 2(-3) = -6 \\neq 0$ ✓. Point: $(4+4,\\;-8+24) = (8,\\,16)$.\n- $t=2$: $dx/dt = 2(1) = 2 \\neq 0$ ✓. Point: $(4-4,\\;8-24) = (0,\\,-16)$."
+  },
+  {
+    "id": "s9_2_gen_7",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Find $\\dfrac{d^2y}{dx^2}$ as a function of $t$ for the Parametric Curves\n$$x = \\sin t, \\quad y = 1 + \\cos t.$$",
+    "answer": "-\\sec^3(t)",
+    "solution": "**First derivative:**\n$$\\frac{dx}{dt} = \\cos t, \\quad \\frac{dy}{dt} = -\\sin t \\implies \\frac{dy}{dx} = \\frac{-\\sin t}{\\cos t} = -\\tan t.$$\n\n**Differentiate $dy/dx$ with respect to $t$:**\n$$\\frac{d}{dt}(-\\tan t) = -\\sec^2 t.$$\n\n**Divide by $dx/dt = \\cos t$:**\n$$\\frac{d^2y}{dx^2} = \\frac{-\\sec^2 t}{\\cos t} = -\\sec^2 t \\cdot \\sec t = -\\sec^3 t.$$\n\nNote: this is defined for $\\cos t \\neq 0$, i.e., $t \\neq \\pi/2 + n\\pi$."
+  },
+  {
+    "id": "s9_2_gen_8",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = t^2 - 3, \\quad y = t^3 - 3t.$$\n\nAt which $t$ value is the tangent vertical? Give the corresponding point $(x, y)$.\n\nAt which $t$ values is the tangent horizontal? (Enter the smaller $t$ value first, followed by its corresponding point).",
+    "answer": [
+      {
+        "label": "Vertical tangent at t =",
+        "value": "0"
+      },
+      {
+        "label": "Vertical tangent point:",
+        "value": "(-3, 0)"
+      },
+      {
+        "label": "Horizontal tangent (smaller t):",
+        "value": "-1"
+      },
+      {
+        "label": "Point:",
+        "value": "(-2, 2)"
+      },
+      {
+        "label": "Horizontal tangent (larger t):",
+        "value": "1"
+      },
+      {
+        "label": "Point:",
+        "value": "(-2, -2)"
+      }
+    ],
+    "solution": "**Derivatives:**\n$$\\frac{dx}{dt} = 2t, \\qquad \\frac{dy}{dt} = 3t^2 - 3 = 3(t-1)(t+1).$$\n\n**Vertical tangent** — set $dx/dt = 0$: $t = 0$. Check $dy/dt\\big|_{t=0} = -3 \\neq 0$ ✓.\nPoint: $(0-3,\\;0-0) = (-3,\\,0)$.\n\n**Horizontal tangents** — set $dy/dt = 0$: $t = \\pm 1$.\n- $t=-1$: $dx/dt = -2 \\neq 0$ ✓. Point: $(1-3,\\;-1+3) = (-2,\\,2)$.\n- $t=1$: $dx/dt = 2 \\neq 0$ ✓. Point: $(1-3,\\;1-3) = (-2,\\,-2)$.\n\nObserve that both horizontal tangent points share $x = -2$ — the curve passes through this $x$-value twice."
+  },
+  {
+    "id": "s9_2_gen_9",
+    "type": "multiple-choice",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Which of the following integrals represents the arc length of the parametric curve\n$$x = t - \\sin t, \\quad y = 1 - \\cos t, \\quad 0 \\leq t \\leq 2\\pi\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\cos t}\\;dt$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{2 + 2\\cos t}\\;dt$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^{2\\pi} (1 - \\cos t)\\;dt$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\sin t}\\;dt$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate: $\\dfrac{dx}{dt} = 1 - \\cos t$ and $\\dfrac{dy}{dt} = \\sin t$.\n\nCompute the sum of squares:\n$$\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 = (1-\\cos t)^2 + \\sin^2 t$$\n$$= 1 - 2\\cos t + \\cos^2 t + \\sin^2 t = 2 - 2\\cos t.$$\n\nArc length $= \\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\cos t}\\;dt$. Choice **A**.\n\n"
+  },
+  {
+    "id": "s9_2_gen_10",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Find the exact arc length of the parametric curve\n$$x = t^2, \\quad y = \\tfrac{2}{3}t^3, \\quad 0 \\leq t \\leq 3.$$",
+    "answer": "\\frac{2(10\\sqrt{10} - 1)}{3}",
+    "solution": "Differentiate: $dx/dt = 2t$, $dy/dt = 2t^2$.\n$$\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 = 4t^2 + 4t^4 = 4t^2(1+t^2).$$\n$$L = \\int_0^3 \\sqrt{4t^2(1+t^2)}\\;dt = \\int_0^3 2t\\sqrt{1+t^2}\\;dt.$$\n**Substitute** $u = 1+t^2$, $du = 2t\\,dt$. When $t=0$, $u=1$; when $t=3$, $u=10$:\n$$L = \\int_1^{10} \\sqrt{u}\\;du = \\left[\\frac{2}{3}u^{3/2}\\right]_1^{10} = \\frac{2}{3}\\bigl(10^{3/2} - 1\\bigr) = \\frac{2(10\\sqrt{10}-1)}{3}.$$"
+  },
+  {
+    "id": "s9_2_gen_11",
+    "type": "multiple-choice",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Which of the following integrals represents the arc length of the parametric curve\n$$x = \\ln t, \\quad y = \\sqrt{t+1}, \\quad 1 \\leq t \\leq 5\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_1^5 \\frac{t+2}{2t\\sqrt{t+1}}\\;dt$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_1^5 \\frac{t^2+4}{2t\\sqrt{t+1}}\\;dt$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_1^5 \\frac{t+2}{t\\sqrt{t+1}}\\;dt$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_1^5 \\frac{1}{2t\\sqrt{t+1}}\\;dt$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate: $\\dfrac{dx}{dt} = \\dfrac{1}{t}$ and $\\dfrac{dy}{dt} = \\dfrac{1}{2\\sqrt{t+1}}$.\n\nSum of squares:\n$$\\frac{1}{t^2} + \\frac{1}{4(t+1)} = \\frac{4(t+1) + t^2}{4t^2(t+1)} = \\frac{t^2 + 4t + 4}{4t^2(t+1)} = \\frac{(t+2)^2}{4t^2(t+1)}.$$\n\nTaking the square root:\n$$\\sqrt{\\frac{(t+2)^2}{4t^2(t+1)}} = \\frac{t+2}{2t\\sqrt{t+1}}.$$\n\nArc length $= \\displaystyle\\int_1^5\\frac{t+2}{2t\\sqrt{t+1}}\\;dt$. Choice **A**.\n\n"
+  },
+  {
+    "id": "s9_2_gen_12",
+    "type": "free-response",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "Use the Parametric Curves of the ellipse\n$$x = 4\\cos\\theta, \\quad y = 7\\sin\\theta, \\quad 0 \\leq \\theta \\leq 2\\pi$$\nto find the area it encloses.",
+    "answer": "28\\pi",
+    "solution": "For a simple closed curve traced counterclockwise, the enclosed area is\n$$A = -\\int_0^{2\\pi} y\\,\\frac{dx}{d\\theta}\\,d\\theta.$$\nHere $\\dfrac{dx}{d\\theta} = -4\\sin\\theta$, so:\n$$A = -\\int_0^{2\\pi} (7\\sin\\theta)(-4\\sin\\theta)\\,d\\theta = 28\\int_0^{2\\pi} \\sin^2\\theta\\,d\\theta.$$\nUsing $\\sin^2\\theta = \\dfrac{1-\\cos(2\\theta)}{2}$:\n$$A = 28\\int_0^{2\\pi}\\frac{1-\\cos 2\\theta}{2}\\,d\\theta = 14\\left[\\theta - \\frac{\\sin 2\\theta}{2}\\right]_0^{2\\pi} = 14 \\cdot 2\\pi = 28\\pi.$$\n\n*Note:* This confirms the general formula $A = \\pi ab$ for an ellipse with semi-axes $a = 4$ and $b = 7$."
+  },
+  {
+    "id": "s9_2_gen_13",
+    "type": "select-all",
+    "section": "§9.2. Calculus with Parametric Curves",
+    "text": "For a parametric curve $x = f(t)$, $y = g(t)$, **select all** statements that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{dy}{dx} = \\dfrac{dy/dt}{dx/dt}$, provided $dx/dt \\neq 0$."
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{d^2y}{dx^2} = \\dfrac{d^2y/dt^2}{d^2x/dt^2}$."
+      },
+      {
+        "label": "C",
+        "text": "A horizontal tangent occurs at any $t$ where $dy/dt = 0$ and $dx/dt \\neq 0$."
+      },
+      {
+        "label": "D",
+        "text": "If $dx/dt = 0$ and $dy/dt = 0$ at the same $t$, the curve has a vertical tangent there."
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**A: TRUE. ✓** This is the defining formula for $dy/dx$ in parametric form, valid whenever $dx/dt \\neq 0$.\n\n**B: FALSE. ✗** This is a very common error. The correct formula is\n$$\\frac{d^2y}{dx^2} = \\frac{\\dfrac{d}{dt}\\!\\left(\\dfrac{dy}{dx}\\right)}{\\dfrac{dx}{dt}},$$\nwhich is generally different from $(d^2y/dt^2)/(d^2x/dt^2)$.\n\n**C: TRUE. ✓** When $dy/dt = 0$ and $dx/dt \\neq 0$, the slope $dy/dx = 0$, giving a horizontal tangent.\n\n**D: FALSE. ✗** When both $dx/dt = 0$ and $dy/dt = 0$, the point is a **singular point** (sometimes called a cusp or self-intersection). The tangent behavior there requires further analysis; there is no guarantee of a vertical tangent.\n\nCorrect selections: **A and C**."
+  }
+]

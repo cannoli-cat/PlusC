@@ -1,0 +1,194 @@
+[
+  {
+    "id": "s26531_gen_1",
+    "type": "multiple-choice",
+    "section": "§3.1. Exponential Functions",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to\\infty} 3^{-x}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\infty$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "$-\\infty$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Since the base $3 > 1$, we have $3^x \\to \\infty$ as $x\\to\\infty$. Therefore $3^{-x} = \\dfrac{1}{3^x} \\to 0$ as $x\\to\\infty$. The answer is $\\boxed{0}$."
+  },
+  {
+    "id": "s26531_gen_2",
+    "type": "free-response",
+    "section": "§3.1. Exponential Functions",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to -\\infty} e^{2x}$.",
+    "answer": "0",
+    "solution": "As $x \\to -\\infty$, the exponent $2x \\to -\\infty$. Since $e^t \\to 0$ as $t \\to -\\infty$, we have $e^{2x} \\to 0$. Therefore $\\displaystyle\\lim_{x\\to-\\infty} e^{2x} = 0$."
+  },
+  {
+    "id": "s26531_gen_3",
+    "type": "multiple-choice",
+    "section": "§3.1. Exponential Functions",
+    "text": "Find all horizontal asymptotes of $f(x) = \\dfrac{5e^x}{e^x + 3}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = 5$ only"
+      },
+      {
+        "label": "B",
+        "text": "$y = 0$ only"
+      },
+      {
+        "label": "C",
+        "text": "$y = 0$ and $y = 5$"
+      },
+      {
+        "label": "D",
+        "text": "$y = 5$ and $y = 1$"
+      }
+    ],
+    "answer": "C",
+    "solution": "We compute the limits at both infinities.\n\n**As $x\\to +\\infty$:** Divide numerator and denominator by $e^x$:\n$$\\lim_{x\\to\\infty}\\frac{5e^x}{e^x+3} = \\lim_{x\\to\\infty}\\frac{5}{1+3e^{-x}} = \\frac{5}{1+0} = 5.$$\nSo $y=5$ is a horizontal asymptote.\n\n**As $x\\to -\\infty$:** Here $e^x \\to 0$, so\n$$\\lim_{x\\to -\\infty}\\frac{5e^x}{e^x+3} = \\frac{0}{0+3} = 0.$$\nSo $y=0$ is also a horizontal asymptote.\n\nThe answer is $y=0$ and $y=5$."
+  },
+  {
+    "id": "s26531_gen_4",
+    "type": "free-response",
+    "section": "§3.1. Exponential Functions",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to\\infty}\\left(\\frac{1}{4}\\right)^x$.",
+    "answer": "0",
+    "solution": "The base is $\\tfrac{1}{4}$, which satisfies $0 < \\tfrac{1}{4} < 1$. For any base $a$ with $0 < a < 1$, we have $a^x \\to 0$ as $x\\to +\\infty$ (exponential decay). Therefore $\\displaystyle\\lim_{x\\to\\infty}\\left(\\frac{1}{4}\\right)^x = 0$."
+  },
+  {
+    "id": "s26531_gen_5",
+    "type": "multiple-choice",
+    "section": "§3.1. Exponential Functions",
+    "text": "A population starts at $P_0 = 500$ and grows according to $P(t) = 500\\cdot e^{0.04t}$, where $t$ is in years. Approximately how large is the population after $25$ years? (Use $e^1 \\approx 2.718$.)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\approx 1359$"
+      },
+      {
+        "label": "B",
+        "text": "$\\approx 1000$"
+      },
+      {
+        "label": "C",
+        "text": "$\\approx 2718$"
+      },
+      {
+        "label": "D",
+        "text": "$\\approx 550$"
+      }
+    ],
+    "answer": "A",
+    "solution": "At $t = 25$: $P(25) = 500\\cdot e^{0.04\\cdot 25} = 500\\cdot e^{1} \\approx 500\\times 2.718 = 1359$. The answer is approximately $1359$.\n\n**Distractor analysis:** $1000$ would be doubling without the correct formula; $2718$ forgets to multiply by $500$; $550$ is a linear approximation error."
+  },
+  {
+    "id": "s26531_gen_6",
+    "type": "select-all",
+    "section": "§3.1. Exponential Functions",
+    "text": "Which of the following statements about exponential functions are **true**? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "If $a > 1$, then $\\displaystyle\\lim_{x\\to -\\infty} a^x = 0$."
+      },
+      {
+        "label": "B",
+        "text": "If $0 < a < 1$, then $\\displaystyle\\lim_{x\\to\\infty} a^x = \\infty$."
+      },
+      {
+        "label": "C",
+        "text": "The function $e^x$ is always positive for all real $x$."
+      },
+      {
+        "label": "D",
+        "text": "For any $a > 0$, $a\\neq 1$, the graph of $y = a^x$ passes through $(0,1)$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**A. True.** When $a>1$, $a^x$ is a growing exponential for $x>0$ and decays to $0$ as $x\\to -\\infty$: $\\lim_{x\\to-\\infty}a^x = 0$.\n\n**B. False.** When $0 < a < 1$, $a^x$ is a decreasing function; $\\lim_{x\\to\\infty}a^x = 0$, not $\\infty$.\n\n**C. True.** $e^x > 0$ for all real $x$ since the exponential function is always positive.\n\n**D. True.** For any valid base $a$, $a^0 = 1$, so the graph always passes through $(0, 1)$."
+  },
+  {
+    "id": "s26531_gen_7",
+    "type": "free-response",
+    "section": "§3.1. Exponential Functions",
+    "text": "Find the horizontal asymptote(s) of $g(x) = \\dfrac{2^x - 1}{2^x + 1}$.",
+    "answer": "y=1 and y=-1",
+    "solution": "Compute limits at both infinities.\n\n**As $x\\to +\\infty$:** $2^x \\to \\infty$, so divide numerator and denominator by $2^x$:\n$$\\lim_{x\\to\\infty}\\frac{2^x-1}{2^x+1} = \\lim_{x\\to\\infty}\\frac{1 - 2^{-x}}{1+2^{-x}} = \\frac{1-0}{1+0} = 1.$$\nHorizontal asymptote: $y = 1$.\n\n**As $x\\to -\\infty$:** $2^x \\to 0$, so:\n$$\\lim_{x\\to -\\infty}\\frac{2^x-1}{2^x+1} = \\frac{0-1}{0+1} = -1.$$\nHorizontal asymptote: $y = -1$.\n\nThe horizontal asymptotes are $y = 1$ and $y = -1$."
+  },
+  {
+    "id": "s26531_gen_8",
+    "type": "multiple-choice",
+    "section": "§3.1. Exponential Functions",
+    "text": "You invest 1000 dollars at an annual interest rate of $6\\%$, compounded continuously. The amount after $t$ years is $A(t) = 1000e^{0.06t}$. What is $\\displaystyle\\lim_{t\\to\\infty} A(t)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1060$"
+      },
+      {
+        "label": "B",
+        "text": "$\\infty$"
+      },
+      {
+        "label": "C",
+        "text": "$0$"
+      },
+      {
+        "label": "D",
+        "text": "$e^{0.06}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "Since $0.06 > 0$, the exponent $0.06t \\to +\\infty$ as $t\\to +\\infty$. Therefore $e^{0.06t}\\to\\infty$ and $A(t) = 1000e^{0.06t}\\to\\infty$.\n\nThis makes intuitive sense: with continuous compounding, the investment grows without bound over infinite time. The answer is $\\infty$."
+  },
+  {
+    "id": "s26531_gen_9",
+    "type": "free-response",
+    "section": "§3.1. Exponential Functions",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to\\infty} \\frac{e^x}{e^x + e^{-x}}$.",
+    "answer": "1",
+    "solution": "Divide numerator and denominator by $e^x$:\n$$\\lim_{x\\to\\infty}\\frac{e^x}{e^x + e^{-x}} = \\lim_{x\\to\\infty}\\frac{1}{1 + e^{-2x}}.$$\nAs $x\\to\\infty$, $e^{-2x}\\to 0$, so the limit equals $\\dfrac{1}{1+0} = 1$."
+  },
+  {
+    "id": "s26531_gen_10",
+    "type": "multiple-choice",
+    "section": "§3.1. Exponential Functions",
+    "text": "Evaluate $\\displaystyle\\lim_{x\\to -\\infty} \\left(3^x - 5\\right)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-5$"
+      },
+      {
+        "label": "B",
+        "text": "$0$"
+      },
+      {
+        "label": "C",
+        "text": "$-\\infty$"
+      },
+      {
+        "label": "D",
+        "text": "$5$"
+      }
+    ],
+    "answer": "A",
+    "solution": "As $x \\to -\\infty$, since $3 > 1$, we have $3^x \\to 0$. Therefore:\n$$\\lim_{x\\to -\\infty}(3^x - 5) = 0 - 5 = -5.$$\n\n**Distractor analysis:** $0$ ignores the constant $-5$; $-\\infty$ would result if both terms went to $-\\infty$; $5$ has a sign error."
+  }
+]

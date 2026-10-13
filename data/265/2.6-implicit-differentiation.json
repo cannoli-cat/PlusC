@@ -1,0 +1,194 @@
+[
+  {
+    "id": "s26526_gen_1",
+    "type": "multiple-choice",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find $\\dfrac{dy}{dx}$ if $x^2 + y^2 = 25$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\dfrac{x}{y}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{x}{y}$"
+      },
+      {
+        "label": "C",
+        "text": "$-\\dfrac{y}{x}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{2x}{2y}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate both sides with respect to $x$:\n$$\\frac{d}{dx}(x^2) + \\frac{d}{dx}(y^2) = \\frac{d}{dx}(25)$$\n$$2x + 2y\\frac{dy}{dx} = 0$$\nSolve for $\\frac{dy}{dx}$:\n$$2y\\frac{dy}{dx} = -2x$$\n$$\\frac{dy}{dx} = -\\frac{x}{y}$$\nChoice B has the wrong sign. Choice C swaps $x$ and $y$. Choice D simplifies to the same as B, still wrong sign."
+  },
+  {
+    "id": "s26526_gen_2",
+    "type": "free-response",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find $\\dfrac{dy}{dx}$ if $x^3 + y^3 = 6xy$.",
+    "answer": "(2y - x^2)/(y^2 - 2x)",
+    "solution": "Differentiate both sides with respect to $x$:\n$$3x^2 + 3y^2\\frac{dy}{dx} = 6y + 6x\\frac{dy}{dx}$$\nCollect terms with $\\frac{dy}{dx}$:\n$$3y^2\\frac{dy}{dx} - 6x\\frac{dy}{dx} = 6y - 3x^2$$\n$$\\frac{dy}{dx}(3y^2 - 6x) = 6y - 3x^2$$\n$$\\frac{dy}{dx} = \\frac{6y - 3x^2}{3y^2 - 6x} = \\frac{3(2y - x^2)}{3(y^2 - 2x)} = \\frac{2y - x^2}{y^2 - 2x}$$"
+  },
+  {
+    "id": "s26526_gen_3",
+    "type": "multiple-choice",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find the slope of the tangent line to $x^2 + xy + y^2 = 7$ at the point $(1, 2)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\dfrac{4}{5}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{4}{5}$"
+      },
+      {
+        "label": "C",
+        "text": "$-\\dfrac{2}{5}$"
+      },
+      {
+        "label": "D",
+        "text": "$-\\dfrac{3}{4}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate both sides with respect to $x$:\n$$2x + y + x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = 0$$\nSolve for $\\frac{dy}{dx}$:\n$$(x + 2y)\\frac{dy}{dx} = -2x - y$$\n$$\\frac{dy}{dx} = \\frac{-2x - y}{x + 2y}$$\nAt $(1,2)$:\n$$\\frac{dy}{dx} = \\frac{-2(1) - 2}{1 + 2(2)} = \\frac{-4}{5}$$\nThe slope is $-\\dfrac{4}{5}$."
+  },
+  {
+    "id": "s26526_gen_4",
+    "type": "free-response",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find $\\dfrac{dy}{dx}$ if $\\sin(xy) = x$.",
+    "answer": "(1 - y*cos(xy))/(x*cos(xy))",
+    "solution": "Differentiate both sides with respect to $x$ using the chain rule on the left:\n$$\\cos(xy)\\cdot\\frac{d}{dx}(xy) = 1$$\n$$\\cos(xy)\\left(y + x\\frac{dy}{dx}\\right) = 1$$\n$$y\\cos(xy) + x\\cos(xy)\\frac{dy}{dx} = 1$$\nSolve for $\\frac{dy}{dx}$:\n$$x\\cos(xy)\\frac{dy}{dx} = 1 - y\\cos(xy)$$\n$$\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$$"
+  },
+  {
+    "id": "s26526_gen_5",
+    "type": "multiple-choice",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find $\\dfrac{d^2y}{dx^2}$ for the curve $x^2 + y^2 = r^2$ (where $r$ is a constant).",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-\\dfrac{r^2}{y^3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{r^2}{y^3}$"
+      },
+      {
+        "label": "C",
+        "text": "$-\\dfrac{1}{y}$"
+      },
+      {
+        "label": "D",
+        "text": "$-\\dfrac{x^2+y^2}{y^3}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "From implicit differentiation of $x^2+y^2=r^2$, we found $\\frac{dy}{dx} = -\\frac{x}{y}$.\n\nDifferentiate again:\n$$\\frac{d^2y}{dx^2} = -\\frac{y\\cdot 1 - x\\cdot\\frac{dy}{dx}}{y^2} = -\\frac{y - x\\left(-\\frac{x}{y}\\right)}{y^2}$$\n$$= -\\frac{y + \\frac{x^2}{y}}{y^2} = -\\frac{\\frac{y^2 + x^2}{y}}{y^2} = -\\frac{x^2+y^2}{y^3}$$\nSince $x^2 + y^2 = r^2$:\n$$\\frac{d^2y}{dx^2} = -\\frac{r^2}{y^3}$$\nChoice D is an intermediate step (unsimplified), choice B has the wrong sign, choice C is incomplete."
+  },
+  {
+    "id": "s26526_gen_6",
+    "type": "free-response",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find the slope of the tangent line to $e^y + xy = e$ at the point $(0, 1)$.",
+    "answer": "-1/e",
+    "solution": "Differentiate both sides with respect to $x$:\n$$e^y\\frac{dy}{dx} + y + x\\frac{dy}{dx} = 0$$\nSolve for $\\frac{dy}{dx}$:\n$$(e^y + x)\\frac{dy}{dx} = -y$$\n$$\\frac{dy}{dx} = \\frac{-y}{e^y + x}$$\nAt $(0,1)$:\n$$\\frac{dy}{dx} = \\frac{-1}{e^1 + 0} = \\frac{-1}{e}$$\nThe slope is $-\\dfrac{1}{e}$."
+  },
+  {
+    "id": "s26526_gen_7",
+    "type": "select-all",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Which of the following are correct steps when differentiating $y^3 + 2x^2y = 5$ implicitly with respect to $x$? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The derivative of $y^3$ with respect to $x$ is $3y^2\\dfrac{dy}{dx}$."
+      },
+      {
+        "label": "B",
+        "text": "The derivative of $2x^2y$ with respect to $x$ is $4xy$ (treating $y$ as a constant)."
+      },
+      {
+        "label": "C",
+        "text": "The derivative of $2x^2y$ with respect to $x$ is $4xy + 2x^2\\dfrac{dy}{dx}$ (using the product rule)."
+      },
+      {
+        "label": "D",
+        "text": "After differentiating, we can solve: $\\dfrac{dy}{dx} = \\dfrac{-4xy}{3y^2 + 2x^2}$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**Step 1:** Differentiate $y^3$: by the chain rule, $\\frac{d}{dx}(y^3) = 3y^2\\frac{dy}{dx}$. So **A is correct**.\n\n**Step 2:** Differentiate $2x^2y$: this is a product of $2x^2$ and $y$, so by the product rule:\n$$\\frac{d}{dx}(2x^2 y) = 4xy + 2x^2\\frac{dy}{dx}$$\nSo **B is incorrect** (it ignores the $y'$ term) and **C is correct**.\n\n**Step 3:** Full differentiated equation:\n$$3y^2\\frac{dy}{dx} + 4xy + 2x^2\\frac{dy}{dx} = 0$$\n$$(3y^2 + 2x^2)\\frac{dy}{dx} = -4xy$$\n$$\\frac{dy}{dx} = \\frac{-4xy}{3y^2 + 2x^2}$$\nSo **D is correct**."
+  },
+  {
+    "id": "s26526_gen_8",
+    "type": "multiple-choice",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find $\\dfrac{dy}{dx}$ if $\\ln(x+y) = x^2 + 1$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2x(x+y) - 1$"
+      },
+      {
+        "label": "B",
+        "text": "$2x(x+y) + 1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{1}{x+y} - 1$"
+      },
+      {
+        "label": "D",
+        "text": "$2x - \\dfrac{1}{x+y}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate both sides with respect to $x$:\n$$\\frac{1}{x+y}\\cdot\\left(1 + \\frac{dy}{dx}\\right) = 2x$$\nMultiply both sides by $(x+y)$:\n$$1 + \\frac{dy}{dx} = 2x(x+y)$$\n$$\\frac{dy}{dx} = 2x(x+y) - 1$$\nSo the answer is **A**. Choice B has a wrong sign from moving the $1$. Choices C and D result from not correctly applying the chain rule or the derivative of $\\ln$."
+  },
+  {
+    "id": "s26526_gen_9",
+    "type": "free-response",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "Find the equation of the tangent line to $x^2y + y^3 = 2$ at the point $(1, 1)$.",
+    "answer": "y = (-1/2)(x-1) + 1",
+    "solution": "Differentiate both sides with respect to $x$:\n$$\\frac{d}{dx}(x^2 y) + \\frac{d}{dx}(y^3) = 0$$\n$$2xy + x^2\\frac{dy}{dx} + 3y^2\\frac{dy}{dx} = 0$$\nSolve for $\\frac{dy}{dx}$:\n$$(x^2 + 3y^2)\\frac{dy}{dx} = -2xy$$\n$$\\frac{dy}{dx} = \\frac{-2xy}{x^2 + 3y^2}$$\nAt $(1,1)$:\n$$\\frac{dy}{dx} = \\frac{-2(1)(1)}{1 + 3} = \\frac{-2}{4} = -\\frac{1}{2}$$\\nequation of tangent line:\n$$y - 1 = -\\frac{1}{2}(x - 1)$$\n$$y = -\\frac{1}{2}(x-1) + 1$$"
+  },
+  {
+    "id": "s26526_gen_10",
+    "type": "multiple-choice",
+    "section": "§2.6. Implicit Differentiation",
+    "text": "For the curve $\\cos(y) + x^2 = 3$, what is $\\dfrac{dy}{dx}$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{2x}{\\sin(y)}$"
+      },
+      {
+        "label": "B",
+        "text": "$-\\dfrac{2x}{\\sin(y)}$"
+      },
+      {
+        "label": "C",
+        "text": "$2x\\sin(y)$"
+      },
+      {
+        "label": "D",
+        "text": "$-2x\\sin(y)$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate both sides with respect to $x$:\n$$-\\sin(y)\\frac{dy}{dx} + 2x = 0$$\nSolve for $\\frac{dy}{dx}$:\n$$-\\sin(y)\\frac{dy}{dx} = -2x$$\n$$\\frac{dy}{dx} = \\frac{-2x}{-\\sin(y)} = \\frac{2x}{\\sin(y)}$$\nThe answer is **A**. Choice B makes a sign error when dividing. Choices C and D arise from incorrectly moving $\\sin(y)$ to multiply rather than divide."
+  }
+]

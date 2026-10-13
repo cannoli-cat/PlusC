@@ -1,0 +1,211 @@
+[
+  {
+    "id": "s26687_gen_1",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Which of the following is the Maclaurin series for $\\sin(5x)$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n+1}\\, x^{2n+1}}{(2n+1)!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n}\\, x^{2n+1}}{(2n+1)!}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n+1}\\, x^{2n}}{(2n)!}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{5^{2n+1}\\, x^{2n+1}}{(2n+1)!}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Start with the known Maclaurin series:\n$$\\sin u = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, u^{2n+1}}{(2n+1)!}.$$\nSubstitute $u = 5x$:\n$$\\sin(5x) = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, (5x)^{2n+1}}{(2n+1)!} = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, 5^{2n+1}\\, x^{2n+1}}{(2n+1)!}.$$\nChoice B has $5^{2n}$ instead of $5^{2n+1}$ (forgot to raise 5 to the full power). Choice C uses cosine-type powers. Choice D is missing the alternating sign. The answer is **A**."
+  },
+  {
+    "id": "s26687_gen_2",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Evaluate the limit using Maclaurin series:\n$$\\lim_{x \\to 0} \\frac{\\cos x - 1 + \\dfrac{x^2}{2}}{x^4}.$$",
+    "answer": "\\frac{1}{24}",
+    "solution": "Write the Maclaurin series for $\\cos x$:\n$$\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\frac{x^6}{6!} + \\cdots$$\nSubtract $1$ and add $\\dfrac{x^2}{2}$:\n$$\\cos x - 1 + \\frac{x^2}{2} = \\left(1 - \\frac{x^2}{2} + \\frac{x^4}{24} - \\cdots\\right) - 1 + \\frac{x^2}{2} = \\frac{x^4}{24} - \\frac{x^6}{720} + \\cdots$$\nDivide by $x^4$:\n$$\\frac{\\cos x - 1 + \\frac{x^2}{2}}{x^4} = \\frac{1}{24} - \\frac{x^2}{720} + \\cdots$$\nTaking $x \\to 0$:\n$$\\lim_{x\\to 0}\\frac{\\cos x - 1 + \\frac{x^2}{2}}{x^4} = \\boxed{\\dfrac{1}{24}}.$$"
+  },
+  {
+    "id": "s26687_gen_3",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Find the Maclaurin series for $f(x) = 10x^2\\, e^{-9x^2}$ in sigma notation.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{10 \\cdot 9^n\\, x^{2n+2}}{n!}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n}}{n!}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{(-9)^n\\, x^{2n+2}}{n!}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Start with $e^u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{u^n}{n!}$. Substitute $u = -9x^2$:\n$$e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!}.$$\nMultiply by $10x^2$:\n$$10x^2 e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}.$$\n"
+  },
+  {
+    "id": "s26687_gen_4",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Which of the following correctly gives the Taylor series for $\\ln x$ centered at $a = 2$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\ln 2 + \\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n\\cdot 2^n}(x-2)^n$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n\\cdot 2^n}(x-2)^n$"
+      },
+      {
+        "label": "C",
+        "text": "$\\ln 2 + \\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n}}{n\\cdot 2^n}(x-2)^n$"
+      },
+      {
+        "label": "D",
+        "text": "$\\ln 2 + \\displaystyle\\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n!}(x-2)^n$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Compute derivatives of $f(x) = \\ln x$ and evaluate at $x = 2$:\n$$f(x) = \\ln x,\\quad f(2) = \\ln 2$$\n$$f'(x) = x^{-1},\\quad f'(2) = \\tfrac{1}{2}$$\n$$f''(x) = -x^{-2},\\quad f''(2) = -\\tfrac{1}{4}$$\n$$f'''(x) = 2x^{-3},\\quad f'''(2) = \\tfrac{1}{4}$$\nIn general, $f^{(n)}(x) = (-1)^{n+1}(n-1)!/x^n$ for $n \\ge 1$, so\n$$f^{(n)}(2) = \\frac{(-1)^{n+1}(n-1)!}{2^n}.$$\nThe Taylor coefficient is\n$$\\frac{f^{(n)}(2)}{n!} = \\frac{(-1)^{n+1}(n-1)!}{2^n \\cdot n!} = \\frac{(-1)^{n+1}}{n\\cdot 2^n}.$$\nSo the series is $\\ln 2 + \\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n+1}}{n\\cdot 2^n}(x-2)^n$, which is **A**. Choice B omits the constant $\\ln 2$. Choice C has the wrong sign pattern. Choice D is missing the $2^n$ factor."
+  },
+  {
+    "id": "s26687_gen_5",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Let $f(x) = \\cos(x^2)$. Use the Maclaurin series to find $f^{(8)}(0)$.",
+    "answer": "1680",
+    "solution": "Begin with $\\cos u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n u^{2n}}{(2n)!}$. Substitute $u = x^2$:\n$$\\cos(x^2) = \\sum_{n=0}^{\\infty} \\frac{(-1)^n x^{4n}}{(2n)!}.$$\nTo find the coefficient $c_8$ of $x^8$, set $4n = 8 \\Rightarrow n = 2$:\n$$c_8 = \\frac{(-1)^2}{(2\\cdot 2)!} = \\frac{1}{4!} = \\frac{1}{24}.$$\nBy the Taylor coefficient formula $c_8 = \\dfrac{f^{(8)}(0)}{8!}$, so:\n$$f^{(8)}(0) = 8! \\cdot c_8 = 40320 \\cdot \\frac{1}{24} = \\boxed{1680}.$$"
+  },
+  {
+    "id": "s26687_gen_6",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Using the first three nonzero terms of a Maclaurin series, which expression best approximates\n$$\\int_0^{1/2} e^{-x^2}\\,dx\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{1}{2} - \\dfrac{1}{24} + \\dfrac{1}{320}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{2} - \\dfrac{1}{24} + \\dfrac{1}{160}$"
+      },
+      {
+        "label": "C",
+        "text": "$1 - \\dfrac{1}{3} + \\dfrac{1}{10}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{1}{2} + \\dfrac{1}{24} + \\dfrac{1}{320}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Write the Maclaurin series for $e^{-x^2}$ by substituting $u = -x^2$ into $e^u$:\n$$e^{-x^2} = 1 - x^2 + \\frac{x^4}{2!} - \\frac{x^6}{3!} + \\cdots$$\nIntegrate term by term:\n$$\\int e^{-x^2}\\,dx = x - \\frac{x^3}{3} + \\frac{x^5}{10} - \\frac{x^7}{42} + \\cdots$$\nEvaluate from $0$ to $\\tfrac{1}{2}$:\n$$\\frac{1}{2} - \\frac{(1/2)^3}{3} + \\frac{(1/2)^5}{10} - \\cdots = \\frac{1}{2} - \\frac{1}{24} + \\frac{1}{320} - \\cdots$$\nSo the three-term approximation is $\\dfrac{1}{2} - \\dfrac{1}{24} + \\dfrac{1}{320}$, which is **A**. Choice B used $x^5/5$ instead of $x^5/10$ (forgot the $2!$ denominator). Choice C forgot to evaluate at $x=1/2$ and used $x=1$. Choice D has all positive signs."
+  },
+  {
+    "id": "s26687_gen_7",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Write the Taylor series for $f(x) = e^x$ centered at $a = 2$ in sigma notation.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{1}{n!}(x-2)^n$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{e^2}{n!}\\, x^n$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\sum_{n=0}^{\\infty} \\frac{e^n}{n!}(x-2)^n$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Since $f^{(n)}(x) = e^x$ for all $n$, evaluating at $a=2$ gives $f^{(n)}(2) = e^2$. The Taylor series formula gives:\n$$e^x = \\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n.$$\n"
+  },
+  {
+    "id": "s26687_gen_8",
+    "type": "multiple-choice",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Evaluate using Maclaurin series:\n$$\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{1}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$1$"
+      },
+      {
+        "label": "D",
+        "text": "The limit does not exist."
+      }
+    ],
+    "answer": "B",
+    "solution": "Write the Maclaurin series for $e^x$:\n$$e^x = 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\cdots$$\nSubtract $1$ and $x$:\n$$e^x - 1 - x = \\frac{x^2}{2} + \\frac{x^3}{6} + \\cdots$$\nDivide by $x^2$:\n$$\\frac{e^x - 1 - x}{x^2} = \\frac{1}{2} + \\frac{x}{6} + \\cdots$$\nAs $x \\to 0$, the right side approaches $\\dfrac{1}{2}$. The answer is **B**. Choice A confuses the result with the numerator going to $0$ without comparing rates. Choice C mistakes the $x^2/2$ term for the coefficient $1$."
+  },
+  {
+    "id": "s26687_gen_9",
+    "type": "select-all",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "**Select all** statements that give a correct Maclaurin series.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\cos x = \\displaystyle\\sum_{n=0}^{\\infty} \\dfrac{(-1)^n\\, x^{2n}}{(2n)!}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\sin x = \\displaystyle\\sum_{n=0}^{\\infty} \\dfrac{(-1)^n\\, x^{2n}}{(2n+1)!}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\ln(1+x) = \\displaystyle\\sum_{n=1}^{\\infty} \\dfrac{(-1)^{n+1}\\, x^n}{n}$"
+      },
+      {
+        "label": "D",
+        "text": "$e^x = \\displaystyle\\sum_{n=0}^{\\infty} \\dfrac{x^n}{(n+1)!}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "solution": "**A. TRUE.** The standard series $\\cos x = \\sum_{n=0}^{\\infty}\\dfrac{(-1)^n x^{2n}}{(2n)!}$ is correct: $1 - \\tfrac{x^2}{2!} + \\tfrac{x^4}{4!} - \\cdots$\n\n**B. FALSE.** The correct series is $\\sin x = \\sum_{n=0}^{\\infty}\\dfrac{(-1)^n x^{2n+1}}{(2n+1)!}$. Choice B has the power $x^{2n}$ (an even power) instead of $x^{2n+1}$ (odd power), which would be the series for $\\sin x$ evaluated incorrectly.\n\n**C. TRUE.** $\\ln(1+x) = \\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n+1} x^n}{n} = x - \\tfrac{x^2}{2} + \\tfrac{x^3}{3} - \\cdots$, valid for $-1 < x \\le 1$.\n\n**D. FALSE.** The correct series is $e^x = \\sum_{n=0}^{\\infty}\\dfrac{x^n}{n!}$. Choice D has $(n+1)!$ in the denominator instead of $n!$, giving a different (incorrect) series.\n\nCorrect answers: **A and C**."
+  },
+  {
+    "id": "s26687_gen_10",
+    "type": "free-response",
+    "section": "§8.7. Taylor and Maclaurin Series",
+    "text": "Let $f(x) = \\arctan(x)$. Use the Maclaurin series for $\\arctan x$ to find $f^{(5)}(0)$.",
+    "answer": "24",
+    "solution": "The Maclaurin series for $\\arctan x$ is:\n$$\\arctan x = \\sum_{n=0}^{\\infty} \\frac{(-1)^n\\, x^{2n+1}}{2n+1} = x - \\frac{x^3}{3} + \\frac{x^5}{5} - \\cdots$$\nTo find $f^{(5)}(0)$, identify the coefficient $c_5$ of $x^5$. Setting $2n+1 = 5$ gives $n = 2$, so:\n$$c_5 = \\frac{(-1)^2}{2(2)+1} = \\frac{1}{5}.$$\nBy the Taylor coefficient formula $c_5 = \\dfrac{f^{(5)}(0)}{5!}$:\n$$f^{(5)}(0) = 5!\\cdot c_5 = 120 \\cdot \\frac{1}{5} = \\boxed{24}.$$"
+  }
+]

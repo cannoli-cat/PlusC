@@ -1,0 +1,355 @@
+[
+  {
+    "id": "s9_1_gen_1",
+    "type": "free-response",
+    "section": "§9.1. Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find a Cartesian equation for the curve\n$$x = \\sqrt{t}, \\quad y = 3t - 1, \\quad t \\geq 0.$$\nExpress your answer in the form $y = f(x)$ and state any restriction on $x$.",
+    "answer": [
+      {
+        "label": "y =",
+        "value": "3x^2 - 1"
+      },
+      {
+        "label": "Restriction (x):",
+        "value": "x \\ge 0"
+      }
+    ],
+    "solution": "From $x = \\sqrt{t}$, square both sides to get $t = x^2$. Substitute into $y = 3t - 1$:\n$$y = 3x^2 - 1.$$\nSince $t \\geq 0$ we have $x = \\sqrt{t} \\geq 0$, so the restriction is $x \\geq 0$. The curve is the right branch of the parabola $y = 3x^2 - 1$, starting at the vertex $(0, -1)$ when $t = 0$."
+  },
+  {
+    "id": "s9_1_gen_2",
+    "type": "multiple-choice",
+    "section": "§9.1. Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find the Cartesian equation of the curve\n$$x = 2t + 1, \\quad y = 4t^2 + 4t + 5.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = x^2 + 4$"
+      },
+      {
+        "label": "B",
+        "text": "$y = (x-1)^2 + 5$"
+      },
+      {
+        "label": "C",
+        "text": "$y = 4x^2 + 4x + 5$"
+      },
+      {
+        "label": "D",
+        "text": "$y = x^2 - 2x + 5$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Solve for $t$ from the first equation: $t = \\dfrac{x-1}{2}$. Substitute into $y$:\n$$y = 4\\left(\\frac{x-1}{2}\\right)^2 + 4\\left(\\frac{x-1}{2}\\right) + 5 = (x-1)^2 + 2(x-1) + 5.$$\nExpanding: $(x^2 - 2x + 1) + (2x - 2) + 5 = x^2 + 4.$ Choice **A**.\n\n"
+  },
+  {
+    "id": "s9_1_gen_3",
+    "type": "free-response",
+    "section": "§9.1. Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = 4\\cos\\theta, \\quad y = 4\\sin\\theta, \\quad 0 \\leq \\theta \\leq 2\\pi.$$\nThe curve is a circle with Cartesian equation $x^2 + y^2 = R^2$. Find $R$, the initial point, and the terminal point.",
+    "answer": [
+      {
+        "label": "R =",
+        "value": "4"
+      },
+      {
+        "label": "Initial point:",
+        "value": "(4, 0)"
+      },
+      {
+        "label": "Terminal point:",
+        "value": "(4, 0)"
+      }
+    ],
+    "solution": "Squaring and adding: $x^2 + y^2 = 16\\cos^2\\theta + 16\\sin^2\\theta = 16$, so $R = 4$.\n\n**Initial point** ($\\theta = 0$): $(4\\cos 0,\\, 4\\sin 0) = (4, 0)$.\n\n**Terminal point** ($\\theta = 2\\pi$): $(4\\cos 2\\pi,\\, 4\\sin 2\\pi) = (4, 0)$. The curve is closed."
+  },
+  {
+    "id": "s9_1_gen_4",
+    "type": "free-response",
+    "section": "§9.1. Parametric Curves",
+    "text": "Consider the parametric curve\n$$x = 6\\cos\\theta, \\quad y = 2\\sin\\theta, \\quad 0 \\leq \\theta \\leq \\pi.$$\nThe curve is part of an ellipse with Cartesian equation $\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1$. Find $a$, $b$, the initial point, and the terminal point.",
+    "answer": [
+      {
+        "label": "a =",
+        "value": "6"
+      },
+      {
+        "label": "b =",
+        "value": "2"
+      },
+      {
+        "label": "Initial point:",
+        "value": "(6, 0)"
+      },
+      {
+        "label": "Terminal point:",
+        "value": "(-6, 0)"
+      }
+    ],
+    "solution": "Dividing: $\\dfrac{x^2}{36} + \\dfrac{y^2}{4} = \\cos^2\\theta + \\sin^2\\theta = 1$. So $a = 6$, $b = 2$.\n\n**Initial point** ($\\theta = 0$): $(6\\cos 0,\\, 2\\sin 0) = (6, 0)$.\n\n**Terminal point** ($\\theta = \\pi$): $(6\\cos\\pi,\\, 2\\sin\\pi) = (-6, 0)$."
+  },
+  {
+    "id": "s9_1_gen_5",
+    "type": "multiple-choice",
+    "section": "§9.1. Parametric Curves",
+    "text": "Eliminate the parameter to find the Cartesian equation of the curve\n$$x = 5\\sec\\theta, \\quad y = 3\\tan\\theta, \\quad -\\tfrac{\\pi}{2} < \\theta < \\tfrac{\\pi}{2}.$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{x^2}{25} - \\dfrac{y^2}{9} = 1$, $\\quad x \\geq 5$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{x^2}{9} - \\dfrac{y^2}{25} = 1$, $\\quad x \\geq 3$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{y^2}{9} - \\dfrac{x^2}{25} = 1$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Use the Pythagorean identity $\\sec^2\\theta - \\tan^2\\theta = 1$. Since $x/5 = \\sec\\theta$ and $y/3 = \\tan\\theta$:\n$$\\frac{x^2}{25} - \\frac{y^2}{9} = \\sec^2\\theta - \\tan^2\\theta = 1.$$\nFor $-\\pi/2 < \\theta < \\pi/2$, $\\sec\\theta > 0$, so $x = 5\\sec\\theta \\geq 5$. This is the **right branch** of the hyperbola. Choice **A**.\n\n"
+  },
+  {
+    "id": "s9_1_gen_6",
+    "type": "free-response",
+    "section": "§9.1. Parametric Curves",
+    "text": "Suppose Parametric Curves for the line segment between $(-3, 5)$ and $(4, 1)$ have the form\n$$x = a + bt, \\quad y = c + dt.$$\nIf the curve starts at $(-3, 5)$ when $t = 0$ and ends at $(4, 1)$ when $t = 1$, find $a$, $b$, $c$, and $d$.",
+    "answer": [
+      {
+        "label": "a =",
+        "value": "-3"
+      },
+      {
+        "label": "b =",
+        "value": "7"
+      },
+      {
+        "label": "c =",
+        "value": "5"
+      },
+      {
+        "label": "d =",
+        "value": "-4"
+      }
+    ],
+    "solution": "At $t = 0$: $x = a = -3$ and $y = c = 5$.\n\nAt $t = 1$: $x = a + b = 4 \\Rightarrow b = 4 - (-3) = 7$.\nAnd $y = c + d = 1 \\Rightarrow d = 1 - 5 = -4$.\n\nThe Parametric Curves are $x = -3 + 7t$ and $y = 5 - 4t$."
+  },
+  {
+    "id": "s9_1_gen_7",
+    "type": "multiple-choice",
+    "section": "§9.1. Parametric Curves",
+    "text": "The circle $(x - 2)^2 + (y + 1)^2 = 9$ is to be traced **clockwise** as $t$ increases. If $x = 2 + 3\\cos t$, which of the following gives $y$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = -1 + 3\\sin t$"
+      },
+      {
+        "label": "B",
+        "text": "$y = -1 - 3\\sin t$"
+      },
+      {
+        "label": "C",
+        "text": "$y = 1 + 3\\sin t$"
+      },
+      {
+        "label": "D",
+        "text": "$y = 1 - 3\\sin t$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The center is $(2, -1)$ and radius is $3$. The standard **counterclockwise** parametrization uses $y = -1 + 3\\sin t$. To reverse to **clockwise**, negate the sine term:\n$$y = -1 - 3\\sin t.$$\n**Verification:** At $t = 0$: $(5, -1)$ (rightmost point). As $t$ increases, $y$ decreases — the curve moves downward from the right, which is clockwise. ✓\n\n"
+  },
+  {
+    "id": "s9_1_gen_8",
+    "type": "select-all",
+    "section": "§9.1. Parametric Curves",
+    "text": "Consider the parametric curve $x = \\cos t$, $y = \\sin t$, $0 \\leq t \\leq 2\\pi$. **Select all** statements that are correct.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The Cartesian equation is $x^2 + y^2 = 1$."
+      },
+      {
+        "label": "B",
+        "text": "As $t$ increases from $0$ to $2\\pi$, the curve is traced counterclockwise."
+      },
+      {
+        "label": "C",
+        "text": "The initial and terminal points are both $(1, 0)$."
+      },
+      {
+        "label": "D",
+        "text": "The curve passes through the point $\\left(\\dfrac{1}{2},\\, \\dfrac{1}{2}\\right)$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**A: TRUE.** $x^2 + y^2 = \\cos^2 t + \\sin^2 t = 1$. ✓\n\n**B: TRUE.** At $t=0$: $(1,0)$. At $t=\\pi/2$: $(0,1)$. Motion goes from the positive $x$-axis into the first quadrant — **counterclockwise**. ✓\n\n**C: TRUE.** At both $t=0$ and $t=2\\pi$: $(\\cos 0, \\sin 0) = (1,0)$. The curve closes on itself. ✓\n\n**D: FALSE.** Check: $(1/2)^2 + (1/2)^2 = 1/4 + 1/4 = 1/2 \\neq 1$. The point $(1/2, 1/2)$ lies inside the unit circle, not on it. ✗\n\nCorrect selections: **A, B, C**."
+  },
+  {
+    "id": "s9_1_gen_9",
+    "type": "free-response",
+    "section": "§9.1. Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find a Cartesian equation for the curve\n$$x = t^2, \\quad y = t^3.$$",
+    "answer": "y^2 = x^3",
+    "solution": "From $x = t^2$: $x^3 = (t^2)^3 = t^6$. From $y = t^3$: $y^2 = (t^3)^2 = t^6$. Therefore:\n$$y^2 = x^3.$$\n*Alternatively:* For any $t$, $t^2 = x$ so $t = \\pm\\sqrt{x}$, giving $y = \\pm x^{3/2}$. Squaring both cases yields $y^2 = x^3$.\n\nThis curve (defined for $x \\geq 0$) is called a **semicubical parabola**."
+  },
+  {
+    "id": "s9_1_gen_10",
+    "type": "multiple-choice",
+    "section": "§9.1. Parametric Curves",
+    "text": "Which of the following Parametric Curves traces the **upper** semicircle of $x^2 + y^2 = 4$ (i.e., $y \\geq 0$) exactly once, going from left to right?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = -2\\cos t,\\quad y = 2\\sin t, \\quad 0 \\leq t \\leq \\pi$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 2\\cos t,\\quad y = 2\\sin t, \\quad 0 \\leq t \\leq \\pi$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 2\\cos t,\\quad y = 2\\sin t, \\quad 0 \\leq t \\leq 2\\pi$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 2\\cos t,\\quad y = -2\\sin t, \\quad 0 \\leq t \\leq \\pi$"
+      }
+    ],
+    "answer": "A",
+    "solution": "We need $y \\geq 0$ and the curve to go from $(-2, 0)$ to $(2, 0)$ (left to right).\n\n**A:** At $t=0$: $(-2, 0)$. At $t=\\pi/2$: $(0, 2)$. At $t=\\pi$: $(2, 0)$. Since $y = 2\\sin t \\geq 0$ for $0 \\leq t \\leq \\pi$, this traces the upper semicircle from left to right. ✓\n\n**B:** At $t=0$: $(2, 0)$; at $t=\\pi$: $(-2, 0)$. Correct half, but goes **right to left**. ✗\n\n**C:** Traces the full circle, not just the upper half. ✗\n\n**D:** $y = -2\\sin t \\leq 0$ for $0 \\leq t \\leq \\pi$ — this is the **lower** semicircle. ✗\n\nThe answer is **A**."
+  },
+  {
+    "id": "s9_1_gen_11",
+    "type": "free-response",
+    "section": "§9.1. Parametric Curves",
+    "text": "Eliminate the parameter $t$ to find a Cartesian equation for the curve\n$$x = e^t, \\quad y = e^{2t} + 3.$$\nState any restriction on $x$.",
+    "answer": [
+      {
+        "label": "y =",
+        "value": "x^2 + 3"
+      },
+      {
+        "label": "Restriction (x):",
+        "value": "x > 0"
+      }
+    ],
+    "solution": "Since $x = e^t$, we have $x^2 = e^{2t}$. Substituting:\n$$y = e^{2t} + 3 = x^2 + 3.$$\nSince $e^t > 0$ for all real $t$, the restriction is $x > 0$.\n\nThe curve is the portion of the upward-opening parabola $y = x^2 + 3$ with $x > 0$ (the vertex at $(0, 3)$ is not included)."
+  },
+  {
+    "id": "s9_1_gen_12",
+    "type": "multiple-choice",
+    "section": "§9.1. Parametric Curves",
+    "text": "Which of the following best describes the parametric curve\n$$x = -\\cos t, \\quad y = -\\sin t, \\quad 0 \\leq t \\leq 2\\pi\\,?$$",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Starts at $(1, 0)$ and moves counterclockwise once around the unit circle."
+      },
+      {
+        "label": "B",
+        "text": "Starts at $(-1, 0)$ and moves clockwise once around the unit circle."
+      },
+      {
+        "label": "C",
+        "text": "Starts at $(-1, 0)$ and moves counterclockwise once around the unit circle."
+      },
+      {
+        "label": "D",
+        "text": "Starts at $(1, 0)$ and moves clockwise once around the unit circle."
+      }
+    ],
+    "answer": "B",
+    "solution": "**Starting point** ($t = 0$): $(-\\cos 0,\\, -\\sin 0) = (-1, 0)$. This rules out A and D.\n\n**Direction:** At $t = \\pi/2$: $(-\\cos(\\pi/2),\\, -\\sin(\\pi/2)) = (0, -1)$. The curve moves from $(-1, 0)$ to $(0, -1)$ — downward from the leftmost point. This is **clockwise** motion.\n\nChoice **B**.\n\n*Contrast with* $x = \\cos t$, $y = \\sin t$, which starts at $(1, 0)$ and traces counterclockwise."
+  },
+  {
+    "id": "s9_1_gen_13",
+    "type": "free-response",
+    "section": "§9.1. Parametric Curves",
+    "text": "Suppose Parametric Curves for the line segment from $(0, 4)$ to $(6, 1)$ have the form\n$$x = a + bt, \\quad y = c + dt.$$\nIf the curve starts at $(0, 4)$ when $t = 0$ and ends at $(6, 1)$ when $t = 3$, find $a$, $b$, $c$, and $d$.",
+    "answer": [
+      {
+        "label": "a =",
+        "value": "0"
+      },
+      {
+        "label": "b =",
+        "value": "2"
+      },
+      {
+        "label": "c =",
+        "value": "4"
+      },
+      {
+        "label": "d =",
+        "value": "-1"
+      }
+    ],
+    "solution": "At $t = 0$: $x = a = 0$ and $y = c = 4$.\n\nAt $t = 3$: $x = 0 + 3b = 6 \\Rightarrow b = 2$. And $y = 4 + 3d = 1 \\Rightarrow d = -1$.\n\nThe Parametric Curves are $x = 2t$ and $y = 4 - t$, for $0 \\leq t \\leq 3$."
+  },
+  {
+    "id": "s9_1_gen_14",
+    "type": "select-all",
+    "section": "§9.1. Parametric Curves",
+    "text": "**Select all** pairs of Parametric Curves whose graphs are straight lines.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = t^2, \\quad y = 2t + 1$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 3t - 1, \\quad y = 6t + 2$"
+      },
+      {
+        "label": "C",
+        "text": "$x = \\cos t, \\quad y = \\sin t$"
+      },
+      {
+        "label": "D",
+        "text": "$x = t + 2, \\quad y = 2t - 5$"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "solution": "**A: NOT a line.** Solve for $t$: $t = (y-1)/2$, so $x = ((y-1)/2)^2$. This is a parabola. ✗\n\n**B: LINE. ✓** Solve for $t$: $t = (x+1)/3$, so $y = 6 \\cdot \\frac{x+1}{3} + 2 = 2(x+1)+2 = 2x+4$. Slope $2$, $y$-intercept $4$.\n\n**C: NOT a line.** $x^2 + y^2 = \\cos^2 t + \\sin^2 t = 1$. This is the unit circle. ✗\n\n**D: LINE. ✓** Solve for $t$: $t = x - 2$, so $y = 2(x-2) - 5 = 2x - 9$. Slope $2$, $y$-intercept $-9$.\n\nCorrect selections: **B and D**."
+  },
+  {
+    "id": "s9_1_gen_15",
+    "type": "multiple-choice",
+    "section": "§9.1. Parametric Curves",
+    "text": "The ellipse $\\dfrac{x^2}{49} + \\dfrac{y^2}{16} = 1$ can be drawn with Parametric Curves. Assume the curve is traced **clockwise** as $t$ increases. If $x = 7\\cos t$, which of the following gives $y$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$y = 4\\sin t$"
+      },
+      {
+        "label": "B",
+        "text": "$y = -4\\sin t$"
+      },
+      {
+        "label": "C",
+        "text": "$y = 16\\sin t$"
+      },
+      {
+        "label": "D",
+        "text": "$y = -16\\sin t$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The standard **counterclockwise** parametrization is $x = 7\\cos t$, $y = 4\\sin t$. To trace the ellipse **clockwise**, negate the sine component:\n$$y = -4\\sin t.$$\n**Verification:** $\\dfrac{(7\\cos t)^2}{49} + \\dfrac{(-4\\sin t)^2}{16} = \\cos^2 t + \\sin^2 t = 1$. ✓\n\nAt $t=0$: $(7, 0)$. At $t=\\pi/2$: $(0, -4)$ (bottom of ellipse). Moving from the rightmost point downward is **clockwise**. Choice **B**.\n\n"
+  }
+]

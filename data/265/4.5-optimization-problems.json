@@ -1,0 +1,176 @@
+[
+  {
+    "id": "s26545_gen_1",
+    "type": "free-response",
+    "section": "§4.5. Optimization Problems",
+    "text": "A farmer wants to fence a rectangular area of $800$ sq ft. One side of the rectangle lies along a barn wall and requires no fence. Find the minimum total length of fencing required (in feet).",
+    "answer": "80",
+    "solution": "Let $x$ = the length of each of the two sides perpendicular to the barn (ft), and $y$ = the length of the side parallel to the barn (ft).\n\n**Constraint:** $xy = 800 \\Rightarrow y = \\dfrac{800}{x}$\n\n**Objective:** Minimize $F = 2x + y$ (no fence along the barn side).\n\nSubstitute the constraint:\n$$F(x) = 2x + \\frac{800}{x}, \\quad x > 0$$\n\n**Find critical numbers:**\n$$F'(x) = 2 - \\frac{800}{x^2} = 0 \\implies x^2 = 400 \\implies x = 20 \\text{ ft}$$\n\n**Second derivative test:** $F''(x) = \\dfrac{1600}{x^3} > 0$, so $x = 20$ gives a minimum.\n\n$$y = \\frac{800}{20} = 40 \\text{ ft}$$\n\n**Minimum fencing:**\n$$F = 2(20) + 40 = \\boxed{80} \\text{ ft}$$"
+  },
+  {
+    "id": "s26545_gen_2",
+    "type": "multiple-choice",
+    "section": "§4.5. Optimization Problems",
+    "text": "An open-top box is made from a $12 \\times 12$ inch square sheet of cardboard by cutting equal squares of side $x$ from each corner and folding up the sides. What value of $x$ maximizes the volume, and what is that maximum volume?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = 2$ in, $V = 128\\text{ in}^3$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 3$ in, $V = 108\\text{ in}^3$"
+      },
+      {
+        "label": "C",
+        "text": "$x = 6$ in, $V = 0\\text{ in}^3$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 2$ in, $V = 64\\text{ in}^3$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $x$ = side length of each cut square (in), with domain $0 < x < 6$.\n\n**Volume:**\n$$V(x) = (12 - 2x)^2 \\cdot x = 4x^3 - 48x^2 + 144x$$\n\n**Derivative:**\n$$V'(x) = 12x^2 - 96x + 144 = 12(x^2 - 8x + 12) = 12(x-2)(x-6)$$\n\nCritical numbers: $x = 2$ and $x = 6$. Since $x = 6$ is at the boundary (gives $V = 0$), the interior critical number is $x = 2$.\n\n**Second derivative test:** $V''(x) = 24x - 96$; $V''(2) = 48 - 96 = -48 < 0$ → local maximum.\n\n$$V(2) = (12 - 4)^2 \\cdot 2 = 64 \\cdot 2 = \\boxed{128 \\text{ in}^3}$$\n\n- **B** errors: incorrect factoring gives $x=3$.\n- **C** errors: chose the boundary root $x=6$.\n- **D** errors: forgot to multiply by $x$ (computed $(8)^2 = 64$ only)."
+  },
+  {
+    "id": "s26545_gen_3",
+    "type": "free-response",
+    "section": "§4.5. Optimization Problems",
+    "text": "Find the **maximum area** (in square units) of a rectangle inscribed in a right triangle with legs of length $6$ and $8$, where the rectangle's sides lie along the two legs.",
+    "answer": "12",
+    "solution": "Let $x$ = the side of the rectangle along the leg of length $8$, and $y$ = the side along the leg of length $6$.\n\n**Constraint (similar triangles):** The upper-right corner of the rectangle lies on the hypotenuse.\n$$\\frac{y}{6} = \\frac{8 - x}{8} \\implies y = \\frac{6(8-x)}{8} = \\frac{3(8-x)}{4}$$\n\n**Objective:** Maximize $A = xy$.\n$$A(x) = x \\cdot \\frac{3(8-x)}{4} = \\frac{3}{4}(8x - x^2), \\quad 0 < x < 8$$\n\n**Derivative:**\n$$A'(x) = \\frac{3}{4}(8 - 2x) = 0 \\implies x = 4$$\n\n**Verify:** $A''(x) = -\\frac{3}{2} < 0$ → maximum.\n\n$$y = \\frac{3(8-4)}{4} = 3, \\quad A = 4 \\cdot 3 = \\boxed{12} \\text{ square units}$$"
+  },
+  {
+    "id": "s26545_gen_4",
+    "type": "multiple-choice",
+    "section": "§4.5. Optimization Problems",
+    "text": "Find the **maximum volume** of a right circular cylinder inscribed in a sphere of radius $R = 3$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$12\\pi\\sqrt{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$18\\pi$"
+      },
+      {
+        "label": "C",
+        "text": "$6\\pi\\sqrt{3}$"
+      },
+      {
+        "label": "D",
+        "text": "$12\\pi$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $r$ = radius of cylinder and $h$ = height. The cylinder fits inside the sphere, so:\n$$r^2 + \\left(\\frac{h}{2}\\right)^2 = 9 \\implies r^2 = 9 - \\frac{h^2}{4}$$\n\n**Volume:**\n$$V = \\pi r^2 h = \\pi\\left(9 - \\frac{h^2}{4}\\right)h = \\pi\\left(9h - \\frac{h^3}{4}\\right), \\quad 0 < h < 6$$\n\n**Derivative:**\n$$V'(h) = \\pi\\left(9 - \\frac{3h^2}{4}\\right) = 0 \\implies h^2 = 12 \\implies h = 2\\sqrt{3}$$\n\n$$r^2 = 9 - \\frac{12}{4} = 9 - 3 = 6$$\n\n**Maximum volume:**\n$$V = \\pi \\cdot 6 \\cdot 2\\sqrt{3} = \\boxed{12\\pi\\sqrt{3}}$$\n\n- **B**: replaced $\\sqrt{3}$ with $\\frac{3}{2}$ (arithmetic error).\n- **C**: forgot the factor of $2$ in $h = 2\\sqrt{3}$.\n- **D**: dropped $\\sqrt{3}$ from $h$."
+  },
+  {
+    "id": "s26545_gen_5",
+    "type": "free-response",
+    "section": "§4.5. Optimization Problems",
+    "text": "A cylindrical can must hold $500\\pi$ $\\text{cm}^3$ of liquid. The material for the top and bottom costs $0.02/\\text{cm}^2$ and the material for the lateral side costs $0.01/\\text{cm}^2$. Find the radius $r$ (in cm) that minimizes the total cost of the can.",
+    "answer": "5",
+    "solution": "Let $r$ = radius (cm) and $h$ = height (cm).\n\n**Constraint:** $\\pi r^2 h = 500\\pi \\implies h = \\dfrac{500}{r^2}$\n\n**Cost function:**\n$$C = 0.02 \\cdot 2\\pi r^2 + 0.01 \\cdot 2\\pi r h = 0.04\\pi r^2 + 0.02\\pi r \\cdot \\frac{500}{r^2}$$\n$$C(r) = 0.04\\pi r^2 + \\frac{10\\pi}{r}$$\n\n**Derivative:**\n$$C'(r) = 0.08\\pi r - \\frac{10\\pi}{r^2} = 0$$\n$$0.08r = \\frac{10}{r^2} \\implies r^3 = \\frac{10}{0.08} = 125 \\implies r = \\boxed{5} \\text{ cm}$$\n\n**Verify minimum:** $C''(r) = 0.08\\pi + \\dfrac{20\\pi}{r^3} > 0$ → minimum confirmed."
+  },
+  {
+    "id": "s26545_gen_6",
+    "type": "multiple-choice",
+    "section": "§4.5. Optimization Problems",
+    "text": "Find the point on the parabola $y = x^2$ that is **closest** to the point $(3, 0)$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(1,\\, 1)$"
+      },
+      {
+        "label": "B",
+        "text": "$(3,\\, 9)$"
+      },
+      {
+        "label": "C",
+        "text": "$(-1,\\, 1)$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left(\\dfrac{3}{2},\\, \\dfrac{9}{4}\\right)$"
+      }
+    ],
+    "answer": "A",
+    "solution": "A point on the parabola has the form $(x, x^2)$. The squared distance to $(3, 0)$ is:\n$$D(x) = (x-3)^2 + x^4$$\n\nMinimizing $D(x)$ (equivalent to minimizing distance):\n$$D'(x) = 2(x-3) + 4x^3 = 0 \\implies 4x^3 + 2x - 6 = 0 \\implies 2x^3 + x - 3 = 0$$\n\nTest $x = 1$: $2(1) + 1 - 3 = 0$ ✓\n\nFactor: $(x-1)(2x^2 + 2x + 3) = 0$. The quadratic $2x^2+2x+3$ has discriminant $4 - 24 < 0$, so $x = 1$ is the only real solution.\n\n$$y = 1^2 = 1 \\implies \\text{closest point is } \\boxed{(1,\\,1)}$$\n\n- **B**: Incorrectly used the $x$-coordinate of the target point.\n- **C**: Sign error; $x = -1$ gives $D'(-1) = -8 - 2 - 6 \\neq 0$.\n- **D**: Used only the linear part of $D'$, solving $2(x-3)=0 \\Rightarrow x=3$ then halved it."
+  },
+  {
+    "id": "s26545_gen_7",
+    "type": "select-all",
+    "section": "§4.5. Optimization Problems",
+    "text": "A $6 \\times 6$ inch square sheet of cardboard has equal squares of side $x$ cut from each corner to form an open-top box. Select **all** statements that are TRUE.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The domain of $x$ is $(0,\\, 3)$."
+      },
+      {
+        "label": "B",
+        "text": "The maximum volume of the box is $16$ cubic inches."
+      },
+      {
+        "label": "C",
+        "text": "The only interior critical number is $x = 1$."
+      },
+      {
+        "label": "D",
+        "text": "The maximum volume occurs at $x = 3$."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "solution": "**Setup:** $V(x) = (6-2x)^2 \\cdot x = 4x^3 - 24x^2 + 36x$, domain $0 < x < 3$.\n\n**A:** To keep positive side lengths, $6 - 2x > 0 \\Rightarrow x < 3$, and $x > 0$. So domain is $(0,3)$. \n\n**Derivative:**\n$$V'(x) = 12x^2 - 48x + 36 = 12(x^2 - 4x + 3) = 12(x-1)(x-3)$$\n\n**C:** Interior critical numbers from $V'(x)=0$: $x=1$ and $x=3$. Since $x=3$ is a boundary point, the only **interior** critical number is $x=1$. \n\n**B:** $V(1) = (6-2)^2 \\cdot 1 = 16\\text{ in}^3$. Checking endpoints: $V(0) = V(3) = 0$. So maximum is $16$. \n\n**D:** $x=3$ gives $V(3)=0$ (collapsed box) — this is a minimum, not maximum."
+  },
+  {
+    "id": "s26545_gen_8",
+    "type": "free-response",
+    "section": "§4.5. Optimization Problems",
+    "text": "A wire of length $40$ cm is cut into two pieces. One piece is bent into a square and the other into a circle. Find the length of wire used for the **square** (in cm) that **minimizes** the total enclosed area. Give your answer in exact form.",
+    "answer": "160/(pi+4)",
+    "solution": "Let $x$ = length of wire used for the square (cm), so $40 - x$ = length used for the circle.\n\n**Square:** side $= x/4$, area $= x^2/16$.\n\n**Circle:** circumference $= 40-x$, radius $= \\dfrac{40-x}{2\\pi}$, area $= \\dfrac{(40-x)^2}{4\\pi}$.\n\n**Total area:**\n$$A(x) = \\frac{x^2}{16} + \\frac{(40-x)^2}{4\\pi}, \\quad 0 \\le x \\le 40$$\n\n**Derivative:**\n$$A'(x) = \\frac{x}{8} - \\frac{(40-x)}{2\\pi} = 0$$\n$$\\frac{x}{8} = \\frac{40-x}{2\\pi}$$\n$$2\\pi x = 8(40-x) = 320 - 8x$$\n$$x(2\\pi + 8) = 320$$\n$$x = \\frac{320}{2\\pi + 8} = \\frac{160}{\\pi + 4}$$\n\n**Verify:** $A''(x) = \\dfrac{1}{8} + \\dfrac{1}{2\\pi} > 0$, so this is a minimum.\n\n$$x = \\boxed{\\dfrac{160}{\\pi+4}} \\text{ cm}$$"
+  },
+  {
+    "id": "s26545_gen_9",
+    "type": "multiple-choice",
+    "section": "§4.5. Optimization Problems",
+    "text": "A **Norman window** consists of a rectangle topped by a semicircle of diameter equal to the rectangle's width $x$. If the total perimeter of the window is $12$ ft, find the width $x$ that **maximizes** the total area.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = \\dfrac{24}{4+\\pi}$ ft"
+      },
+      {
+        "label": "B",
+        "text": "$x = \\dfrac{12}{4+\\pi}$ ft"
+      },
+      {
+        "label": "C",
+        "text": "$x = \\dfrac{24}{2+\\pi}$ ft"
+      },
+      {
+        "label": "D",
+        "text": "$x = \\dfrac{12}{2+\\pi}$ ft"
+      }
+    ],
+    "answer": "A",
+    "solution": "Let $x$ = width (ft) and $h$ = height of the rectangular portion (ft). The semicircle has radius $x/2$.\n\n**Perimeter constraint** (bottom + two sides + semicircle arc; no top bar):\n$$x + 2h + \\frac{\\pi x}{2} = 12 \\implies h = \\frac{12 - x - \\frac{\\pi x}{2}}{2} = 6 - \\frac{x}{2} - \\frac{\\pi x}{4}$$\n\n**Total area** (rectangle + semicircle):\n$$A = xh + \\frac{\\pi}{2}\\left(\\frac{x}{2}\\right)^2 = xh + \\frac{\\pi x^2}{8}$$\n\nSubstitute $h$:\n$$A(x) = x\\left(6 - \\frac{x}{2} - \\frac{\\pi x}{4}\\right) + \\frac{\\pi x^2}{8}$$\n$$= 6x - \\frac{x^2}{2} - \\frac{\\pi x^2}{4} + \\frac{\\pi x^2}{8} = 6x - \\frac{x^2}{2} - \\frac{\\pi x^2}{8}$$\n\n**Derivative:**\n$$A'(x) = 6 - x - \\frac{\\pi x}{4} = 0 \\implies 6 = x\\left(1 + \\frac{\\pi}{4}\\right) = x\\cdot\\frac{4+\\pi}{4}$$\n$$x = \\frac{24}{4+\\pi}$$\n\n$A''(x) = -1 - \\pi/4 < 0$ → maximum. ✓\n\n- **B**: dropped factor of 2 when solving for $x$.\n- **C**: set up perimeter incorrectly using full circle circumference.\n- **D**: combined both errors."
+  },
+  {
+    "id": "s26545_gen_10",
+    "type": "free-response",
+    "section": "§4.5. Optimization Problems",
+    "text": "Among all pairs of positive numbers $(x, y)$ satisfying $x + y = 50$, find the **maximum value of their product** $P = xy$.",
+    "answer": "625",
+    "solution": "Let $x$ and $y = 50 - x$ be two positive numbers, so $0 < x < 50$.\n\n**Objective:**\n$$P(x) = x(50 - x) = 50x - x^2$$\n\n**Derivative:**\n$$P'(x) = 50 - 2x = 0 \\implies x = 25$$\n\n**Verify:** $P''(x) = -2 < 0$ → maximum.\n\n$$y = 50 - 25 = 25$$\n\nThe maximum product is achieved when $x = y = 25$:\n$$P = 25 \\times 25 = \\boxed{625}$$\n\nNote: By the AM-GM inequality, $\\dfrac{x+y}{2} \\ge \\sqrt{xy}$, equality when $x = y$, which confirms our answer."
+  }
+]

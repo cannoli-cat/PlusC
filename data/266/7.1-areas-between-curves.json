@@ -1,0 +1,220 @@
+[
+  {
+    "id": "s71_gen_1",
+    "type": "multiple-choice",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Find the area of the region enclosed by $y = x^2$ and $y = 4x - x^2$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{8}{3}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{16}{3}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{4}{3}$"
+      },
+      {
+        "label": "D",
+        "text": "$8$"
+      }
+    ],
+    "answer": "A",
+    "solution": "First, find intersection points by setting $x^2 = 4x - x^2$:\n$$2x^2 - 4x = 0 \\implies 2x(x-2) = 0 \\implies x = 0 \\text{ or } x = 2$$\n\nOn $[0, 2]$, test $x = 1$: $y = 1$ for the first curve, $y = 3$ for the second. So $4x - x^2 \\geq x^2$.\n\nArea $= \\int_0^2 [(4x - x^2) - x^2]\\,dx = \\int_0^2 (4x - 2x^2)\\,dx$\n\n$= \\left[2x^2 - \\frac{2x^3}{3}\\right]_0^2 = \\left(8 - \\frac{16}{3}\\right) - 0 = \\frac{24 - 16}{3} = \\frac{8}{3}$"
+  },
+  {
+    "id": "s71_gen_2",
+    "type": "free-response",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Find the area of the region bounded by $y = \\sqrt{x}$, $y = 0$, and $x = 9$.",
+    "answer": "18",
+    "solution": "The region is bounded below by $y = 0$, above by $y = \\sqrt{x}$, from $x = 0$ to $x = 9$.\n\nArea $= \\int_0^9 \\sqrt{x}\\,dx = \\int_0^9 x^{1/2}\\,dx$\n\n$= \\left[\\frac{x^{3/2}}{3/2}\\right]_0^9 = \\frac{2}{3}x^{3/2}\\Big|_0^9$\n\n$= \\frac{2}{3}(9)^{3/2} - 0 = \\frac{2}{3}(27) = 18$"
+  },
+  {
+    "id": "s71_gen_3",
+    "type": "multiple-choice",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Find the area enclosed by the curves $x = y^2$ and $x = y + 2$ by integrating with respect to $y$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\dfrac{9}{2}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\dfrac{7}{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\dfrac{9}{4}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{27}{6}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Find intersections: $y^2 = y + 2 \\implies y^2 - y - 2 = 0 \\implies (y-2)(y+1) = 0$\n\nSo $y = -1$ or $y = 2$.\n\nFor $y$ in $[-1, 2]$, test $y = 0$: $x = 0$ (parabola) vs $x = 2$ (line). The line $x = y + 2$ is to the right.\n\nArea $= \\int_{-1}^{2} [(y + 2) - y^2]\\,dy$\n\n$= \\left[\\frac{y^2}{2} + 2y - \\frac{y^3}{3}\\right]_{-1}^{2}$\n\nAt $y = 2$: $\\frac{4}{2} + 4 - \\frac{8}{3} = 2 + 4 - \\frac{8}{3} = 6 - \\frac{8}{3} = \\frac{10}{3}$\n\nAt $y = -1$: $\\frac{1}{2} - 2 + \\frac{1}{3} = \\frac{3 + 2}{6} - 2 = \\frac{5}{6} - 2 = -\\frac{7}{6}$\n\nArea $= \\frac{10}{3} - \\left(-\\frac{7}{6}\\right) = \\frac{10}{3} + \\frac{7}{6} = \\frac{20}{6} + \\frac{7}{6} = \\frac{27}{6} = \\frac{9}{2}$"
+  },
+  {
+    "id": "s71_gen_4",
+    "type": "free-response",
+    "section": "§7.1. Areas Between Curves",
+    "text": "A population has a birth rate of $b(t) = 2000e^{0.02t}$ individuals per year and a death rate of $d(t) = 1400e^{0.02t}$ individuals per year. Find the net increase in population over the first 10 years.",
+    "answer": "6642",
+    "solution": "Net population growth $= \\int_0^{10} [b(t) - d(t)]\\,dt = \\int_0^{10} [2000e^{0.02t} - 1400e^{0.02t}]\\,dt$\n\n$= \\int_0^{10} 600e^{0.02t}\\,dt$\n\n$= 600 \\cdot \\frac{1}{0.02}e^{0.02t}\\Big|_0^{10} = 30000\\left[e^{0.2} - e^0\\right]$\n\n$= 30000(e^{0.2} - 1)$\n\nUsing $e^{0.2} \\approx 1.2214$:\n\n$= 30000(0.2214) \\approx 6642$\n\nExact answer: $30000(e^{0.2} - 1) \\approx 6642$ individuals."
+  },
+  {
+    "id": "s71_gen_5",
+    "type": "multiple-choice",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Find the area of the region bounded by $y = \\sin x$ and $y = \\cos x$ from $x = 0$ to $x = \\dfrac{\\pi}{2}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$2\\sqrt{2} - 2$"
+      },
+      {
+        "label": "B",
+        "text": "$\\sqrt{2} - 1$"
+      },
+      {
+        "label": "C",
+        "text": "$2$"
+      },
+      {
+        "label": "D",
+        "text": "$2 - \\sqrt{2}$"
+      }
+    ],
+    "answer": "A",
+    "solution": "The curves intersect when $\\sin x = \\cos x$, i.e., $\\tan x = 1$, so $x = \\frac{\\pi}{4}$ on $[0, \\frac{\\pi}{2}]$.\n\nOn $[0, \\frac{\\pi}{4}]$: $\\cos x \\geq \\sin x$\nOn $[\\frac{\\pi}{4}, \\frac{\\pi}{2}]$: $\\sin x \\geq \\cos x$\n\nArea $= \\int_0^{\\pi/4}(\\cos x - \\sin x)\\,dx + \\int_{\\pi/4}^{\\pi/2}(\\sin x - \\cos x)\\,dx$\n\n$= [\\sin x + \\cos x]_0^{\\pi/4} + [-\\cos x - \\sin x]_{\\pi/4}^{\\pi/2}$\n\nFirst integral: $(\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2}) - (0 + 1) = \\sqrt{2} - 1$\n\nSecond integral: $(0 - 1) - (-\\frac{\\sqrt{2}}{2} - \\frac{\\sqrt{2}}{2}) = -1 + \\sqrt{2} = \\sqrt{2} - 1$\n\nTotal Area $= (\\sqrt{2} - 1) + (\\sqrt{2} - 1) = 2\\sqrt{2} - 2$"
+  },
+  {
+    "id": "s71_gen_6",
+    "type": "select-all",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Consider the region bounded by $y = x^3 - x$ and $y = 0$. Select ALL correct statements.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The curves intersect at $x = -1$, $x = 0$, and $x = 1$."
+      },
+      {
+        "label": "B",
+        "text": "On $[-1, 0]$, the curve $y = x^3 - x$ is above $y = 0$."
+      },
+      {
+        "label": "C",
+        "text": "The total enclosed area equals $\\dfrac{1}{2}$."
+      },
+      {
+        "label": "D",
+        "text": "The region consists of two separate lobes of equal area."
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "solution": "**Check A:** $x^3 - x = 0 \\implies x(x^2 - 1) = 0 \\implies x = -1, 0, 1$. ✓\n\n**Check B:** Test $x = -0.5$: $(-0.5)^3 - (-0.5) = -0.125 + 0.5 = 0.375 > 0$. ✓\n\n**Check C:** Area $= \\int_{-1}^{0}(x^3-x)\\,dx + \\int_0^1 |x^3 - x|\\,dx$\n\nOn $[0,1]$, test $x=0.5$: $0.125 - 0.5 = -0.375 < 0$, so $|x^3-x| = x - x^3$.\n\n$\\int_{-1}^{0}(x^3-x)\\,dx = \\left[\\frac{x^4}{4} - \\frac{x^2}{2}\\right]_{-1}^0 = 0 - (\\frac{1}{4} - \\frac{1}{2}) = \\frac{1}{4}$\n\n$\\int_0^1(x-x^3)\\,dx = \\left[\\frac{x^2}{2} - \\frac{x^4}{4}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{4} = \\frac{1}{4}$\n\nTotal $= \\frac{1}{4} + \\frac{1}{4} = \\frac{1}{2}$. ✓\n\n**Check D:** Both lobes have area $\\frac{1}{4}$, so they're equal. ✓"
+  },
+  {
+    "id": "s71_gen_7",
+    "type": "free-response",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Find the area of the region enclosed by $y = e^x$, $y = e^{-x}$, and $x = \\ln 3$.",
+    "answer": "\\frac{4}{3}",
+    "solution": "The curves $y = e^x$ and $y = e^{-x}$ intersect when $e^x = e^{-x}$, so $e^{2x} = 1$, giving $x = 0$.\n\nOn $[0, \\ln 3]$, since $e^x > e^{-x}$ for $x > 0$:\n\nArea $= \\int_0^{\\ln 3}(e^x - e^{-x})\\,dx$\n\nThe antiderivative of $e^x - e^{-x}$ is $e^x + e^{-x}$.\n\n$= \\left[e^x + e^{-x}\\right]_0^{\\ln 3}$\n\n$= (e^{\\ln 3} + e^{-\\ln 3}) - (e^0 + e^0)$\n\n$= (3 + \\frac{1}{3}) - 2 = \\frac{10}{3} - 2 = \\frac{4}{3}$"
+  },
+  {
+    "id": "s71_gen_8",
+    "type": "multiple-choice",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Set up (but do not evaluate) the integral for the area between $y = \\ln x$ and $y = \\ln(2x)$ from $x = 1$ to $x = e$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_1^e \\ln 2\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_1^e [\\ln(2x) - \\ln x]\\,dx$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_1^e [\\ln x - \\ln(2x)]\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "Both A and B are correct representations"
+      }
+    ],
+    "answer": "D",
+    "solution": "First determine which is on top. Since $\\ln(2x) = \\ln 2 + \\ln x$, we have $\\ln(2x) > \\ln x$ for all $x > 0$.\n\nSo the area is:\n$$\\int_1^e [\\ln(2x) - \\ln x]\\,dx$$\n\nThis matches option B.\n\nSimplifying: $\\ln(2x) - \\ln x = \\ln\\left(\\frac{2x}{x}\\right) = \\ln 2$\n\nSo the integral becomes $\\int_1^e \\ln 2\\,dx$, which matches option A.\n\nBoth A and B are equivalent and correct representations."
+  },
+  {
+    "id": "s71_gen_9",
+    "type": "free-response",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Find the area of the region bounded by $x = y^2 - 4$ and $x = 4 - y^2$.",
+    "answer": "\\frac{64}{3}",
+    "solution": "Find intersections: $y^2 - 4 = 4 - y^2 \\implies 2y^2 = 8 \\implies y^2 = 4 \\implies y = \\pm 2$\n\nTest $y = 0$: Left curve gives $x = -4$, right curve gives $x = 4$.\n\nSo $x = 4 - y^2$ is to the right of $x = y^2 - 4$.\n\nArea $= \\int_{-2}^{2}[(4 - y^2) - (y^2 - 4)]\\,dy$\n\n$= \\int_{-2}^{2}(8 - 2y^2)\\,dy$\n\n$= \\left[8y - \\frac{2y^3}{3}\\right]_{-2}^{2}$\n\nAt $y = 2$: $16 - \\frac{16}{3} = \\frac{48 - 16}{3} = \\frac{32}{3}$\n\nAt $y = -2$: $-16 + \\frac{16}{3} = \\frac{-48 + 16}{3} = -\\frac{32}{3}$\n\nArea $= \\frac{32}{3} - (-\\frac{32}{3}) = \\frac{64}{3}$"
+  },
+  {
+    "id": "s71_gen_10",
+    "type": "select-all",
+    "section": "§7.1. Areas Between Curves",
+    "text": "The region $R$ is bounded by $y = x^2$, $y = 2x$, and $y = 4$. Select ALL correct integral expressions for the area of $R$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\displaystyle\\int_0^2 (2x - x^2)\\,dx + \\int_2^4 (4 - x^2)\\,dx$"
+      },
+      {
+        "label": "B",
+        "text": "$\\displaystyle\\int_0^4 \\left(\\sqrt{y} - \\frac{y}{2}\\right)\\,dy$"
+      },
+      {
+        "label": "C",
+        "text": "$\\displaystyle\\int_0^2 (2x - x^2)\\,dx + \\int_2^{4} (\\sqrt{x} - x^2)\\,dx$"
+      },
+      {
+        "label": "D",
+        "text": "$\\displaystyle\\int_0^4 (\\sqrt{y})\\,dy - \\int_0^4 \\frac{y}{2}\\,dy$"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "solution": "First, find key intersection points:\n- $y = x^2$ and $y = 2x$: $x^2 = 2x \\Rightarrow x = 0, 2$, so points $(0,0)$ and $(2,4)$\n- $y = 2x$ and $y = 4$: $x = 2$, point $(2,4)$\n- $y = x^2$ and $y = 4$: $x = 2$, point $(2,4)$\n\nThe region is bounded by $y = x^2$ on the right, $y = 2x$ on the left, from $y = 0$ to $y = 4$.\n\n**Integrating with respect to $y$:**\nFrom $y = x^2$: $x = \\sqrt{y}$ (right boundary)\nFrom $y = 2x$: $x = y/2$ (left boundary)\n\nArea $= \\int_0^4 \\left(\\sqrt{y} - \\frac{y}{2}\\right)dy$ ✓ (Option B)\n\nThis equals $\\int_0^4 \\sqrt{y}\\,dy - \\int_0^4 \\frac{y}{2}\\,dy$ ✓ (Option D)\n\n**Check Option A:** The second integral $\\int_2^4 (4-x^2)dx$ doesn't correctly represent any part of our region's $x$-bounds.\n\n**Check Option C:** $\\sqrt{x}$ doesn't make sense as a height function here.\n\nCorrect answers: B and D"
+  },
+  {
+    "id": "s71_concept_1",
+    "type": "multiple-choice",
+    "section": "§7.1. Areas Between Curves",
+    "text": "Region $R_1$ is bounded by $y = f(x)$ and $y = g(x)$. Region $R_2$ is bounded by $y = f(x)+1$ and $y = g(x)+1$. Then:",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The area of $R_1$ is greater than the area of $R_2$."
+      },
+      {
+        "label": "B",
+        "text": "The area of $R_1$ is less than the area of $R_2$."
+      },
+      {
+        "label": "C",
+        "text": "The area of $R_1$ equals the area of $R_2$."
+      }
+    ],
+    "answer": "C",
+    "solution": "Area = $\\int_a^b [\\text{top} - \\text{bottom}]\\,dx$.\n\nFor $R_2$: top $-$ bottom $= [f(x)+1] - [g(x)+1] = f(x) - g(x)$.\n\nThe $+1$ cancels. The vertical gap between the curves is identical in both regions — $R_2$ is just $R_1$ shifted up by 1 unit. Shifting does not change area.\n\nThe answer is $\\boxed{C}$."
+  }
+]

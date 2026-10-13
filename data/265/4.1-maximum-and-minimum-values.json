@@ -1,0 +1,197 @@
+[
+  {
+    "id": "s26541_gen_1",
+    "type": "multiple-choice",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Find all critical numbers of $f(x) = x^3 - 6x^2 + 9x + 2$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$x = 1$ and $x = 3$"
+      },
+      {
+        "label": "B",
+        "text": "$x = 2$ only"
+      },
+      {
+        "label": "C",
+        "text": "$x = -1$ and $x = -3$"
+      },
+      {
+        "label": "D",
+        "text": "$x = 0$, $x = 1$, and $x = 3$"
+      }
+    ],
+    "answer": "A",
+    "solution": "Differentiate: $$f'(x) = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x-1)(x-3).$$ Set $f'(x) = 0$: $$3(x-1)(x-3) = 0 \\implies x = 1 \\text{ or } x = 3.$$ Since $f'(x)$ exists for all $x$, there are no points where $f'$ is undefined. The critical numbers are $x = 1$ and $x = 3$.\n\n**Why the distractors fail:**\n- (B) $x=2$: comes from incorrectly solving $x^2-4x+3=0$ as $(x-2)^2=1$, getting only the midpoint.\n- (C): sign error, solving $-(x+1)(x+3)=0$ instead.\n- (D): $x=0$ is not a critical number; $f'(0)=9\\neq 0$."
+  },
+  {
+    "id": "s26541_gen_2",
+    "type": "free-response",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Use the Closed Interval Method to find the absolute maximum and absolute minimum values of $f(x) = x^3 - 3x + 1$ on $[-2,\\, 2]$.",
+    "answer": "Absolute max = 3; absolute min = -1",
+    "solution": "**Step 1 – Find critical numbers on $(-2, 2)$.**\n$$f'(x) = 3x^2 - 3 = 3(x^2-1) = 3(x-1)(x+1)$$\n$f'(x)=0 \\Rightarrow x=-1,\\; x=1.$ Both lie in $(-2,2)$.\n\n**Step 2 – Evaluate $f$ at the critical numbers and endpoints.**\n$$f(-2) = (-8) - 3(-2) + 1 = -8 + 6 + 1 = -1$$\n$$f(-1) = (-1) - 3(-1) + 1 = -1 + 3 + 1 = 3$$\n$$f(1) = (1) - 3(1) + 1 = 1 - 3 + 1 = -1$$\n$$f(2) = (8) - 3(2) + 1 = 8 - 6 + 1 = 3$$\n\n**Step 3 – Compare.**\n- Largest value: $3$ (attained at $x = -1$ and $x = 2$). **Absolute maximum = $3$.**\n- Smallest value: $-1$ (attained at $x = -2$ and $x = 1$). **Absolute minimum = $-1$.**"
+  },
+  {
+    "id": "s26541_gen_3",
+    "type": "multiple-choice",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Find the absolute minimum value of $f(x) = x^2 - 4x + 5$ on the closed interval $[0,\\, 3]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$5$"
+      },
+      {
+        "label": "B",
+        "text": "$2$"
+      },
+      {
+        "label": "C",
+        "text": "$0$"
+      },
+      {
+        "label": "D",
+        "text": "$1$"
+      }
+    ],
+    "answer": "D",
+    "solution": "**Step 1 – Critical numbers.**\n$$f'(x) = 2x - 4 = 0 \\implies x = 2.$$\n$x=2$ is in $(0,3)$.\n\n**Step 2 – Evaluate.**\n$$f(0) = 0 - 0 + 5 = 5$$\n$$f(2) = 4 - 8 + 5 = 1$$\n$$f(3) = 9 - 12 + 5 = 2$$\n\n**Step 3 – Identify minimum.**\nThe smallest value is $\\boxed{1}$ at $x = 2$.\n\n**Distractors explained:**\n- (A) $5 = f(0)$: the left endpoint value, which is actually the absolute maximum.\n- (B) $2 = f(3)$: the right endpoint — a common error of evaluating endpoints only and missing the interior critical point.\n- (C) $0$: incorrect; $f$ has no zero on $[0,3]$ (its vertex value is $1$)."
+  },
+  {
+    "id": "s26541_gen_4",
+    "type": "free-response",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Find all critical numbers of $f(x) = x^{2/3}(x - 4)$.",
+    "answer": "x = 0 and x = 8/5",
+    "solution": "**Step 1 – Rewrite and differentiate.**\n$$f(x) = x^{5/3} - 4x^{2/3}$$\n$$f'(x) = \\frac{5}{3}x^{2/3} - \\frac{8}{3}x^{-1/3}$$\n\n**Step 2 – Factor.**\nFactor out $\\dfrac{1}{3}x^{-1/3}$:\n$$f'(x) = \\frac{1}{3}x^{-1/3}\\bigl(5x - 8\\bigr) = \\frac{5x-8}{3x^{1/3}}$$\n\n**Step 3 – Set numerator to zero.**\n$$5x - 8 = 0 \\implies x = \\frac{8}{5}$$\n\n**Step 4 – Where is $f'$ undefined?**\nThe denominator $3x^{1/3} = 0$ when $x = 0$, and $f(0) = 0$ is defined, so $x = 0$ is a critical number.\n\n**Conclusion:** Critical numbers are $x = 0$ and $x = \\dfrac{8}{5}$."
+  },
+  {
+    "id": "s26541_gen_5",
+    "type": "select-all",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Let $f(x) = x^4 - 4x^3$ on the closed interval $[-1,\\, 4]$. Select **all** statements that are true.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The absolute maximum value of $f$ on $[-1,4]$ is $5$."
+      },
+      {
+        "label": "B",
+        "text": "$x = 0$ is a local minimum of $f$."
+      },
+      {
+        "label": "C",
+        "text": "$x = 3$ is a local minimum of $f$."
+      },
+      {
+        "label": "D",
+        "text": "The absolute minimum value of $f$ on $[-1,4]$ is $-27$."
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "solution": "**Find critical numbers.**\n$$f'(x) = 4x^3 - 12x^2 = 4x^2(x-3)$$\n$f'(x)=0 \\Rightarrow x=0$ or $x=3.$ Both are in $(-1,4)$.\n\n**Evaluate at critical numbers and endpoints.**\n$$f(-1) = 1 - 4(-1)^3 = 1 + 4 = 5$$\n$$f(0) = 0$$\n$$f(3) = 81 - 108 = -27$$\n$$f(4) = 256 - 256 = 0$$\n\n**Check (A):** Absolute maximum $= 5$ at $x=-1$. ✓\n\n**Check (B):** Sign of $f'$ near $x=0$: For $x<0$, $f'(x) = 4x^2(x-3)$; since $4x^2>0$ and $x-3<0$, we get $f'<0$. For $0<x<3$, still $f'<0$. So $f$ is decreasing on both sides of $x=0$ — **no sign change**. $x=0$ is neither a local max nor min. ✗\n\n**Check (C):** For $0<x<3$, $f'<0$ (decreasing). For $x>3$, $4x^2(x-3)>0$ (increasing). Sign changes from $-$ to $+$: local minimum at $x=3$. ✓\n\n**Check (D):** Absolute minimum $= -27$ at $x=3$. ✓\n\n**True statements: A, C, D.**"
+  },
+  {
+    "id": "s26541_gen_6",
+    "type": "multiple-choice",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Find the absolute maximum value of $f(x) = \\sin x + \\cos x$ on $\\left[0,\\, \\pi\\right]$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$1$"
+      },
+      {
+        "label": "B",
+        "text": "$\\sqrt{2}$"
+      },
+      {
+        "label": "C",
+        "text": "$2$"
+      },
+      {
+        "label": "D",
+        "text": "$\\dfrac{\\sqrt{2}}{2}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "**Step 1 – Critical numbers on $(0,\\pi)$.**\n$$f'(x) = \\cos x - \\sin x = 0 \\implies \\tan x = 1 \\implies x = \\frac{\\pi}{4}.$$\n(The next solution $x = \\frac{5\\pi}{4}$ is outside $[0,\\pi]$.)\n\n**Step 2 – Evaluate.**\n$$f(0) = \\sin 0 + \\cos 0 = 0 + 1 = 1$$\n$$f\\!\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2} = \\sqrt{2}$$\n$$f(\\pi) = \\sin\\pi + \\cos\\pi = 0 + (-1) = -1$$\n\n**Step 3 – Identify maximum.**\n$\\sqrt{2} \\approx 1.414 > 1 > -1.$ Absolute maximum $= \\sqrt{2}$.\n\n"
+  },
+  {
+    "id": "s26541_gen_7",
+    "type": "free-response",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Use the Closed Interval Method to find the absolute maximum and absolute minimum values of $$f(x) = 2x^3 - 3x^2 - 12x + 1$$ on $[-2,\\, 3]$.",
+    "answer": "Absolute max = 8; absolute min = -19",
+    "solution": "**Step 1 – Find critical numbers.**\n$$f'(x) = 6x^2 - 6x - 12 = 6(x^2 - x - 2) = 6(x-2)(x+1)$$\n$f'(x)=0 \\Rightarrow x = -1$ and $x = 2.$ Both lie in $(-2,3)$.\n\n**Step 2 – Evaluate at critical numbers and endpoints.**\n$$f(-2) = 2(-8) - 3(4) - 12(-2) + 1 = -16 - 12 + 24 + 1 = -3$$\n$$f(-1) = 2(-1) - 3(1) - 12(-1) + 1 = -2 - 3 + 12 + 1 = 8$$\n$$f(2) = 2(8) - 3(4) - 12(2) + 1 = 16 - 12 - 24 + 1 = -19$$\n$$f(3) = 2(27) - 3(9) - 12(3) + 1 = 54 - 27 - 36 + 1 = -8$$\n\n**Step 3 – Compare.**\n| $x$ | $f(x)$ |\n|-----|--------|\n| $-2$ | $-3$ |\n| $-1$ | $\\mathbf{8}$ |\n| $2$ | $\\mathbf{-19}$ |\n| $3$ | $-8$ |\n\n**Absolute maximum = $8$** (at $x=-1$). **Absolute minimum = $-19$** (at $x=2$)."
+  },
+  {
+    "id": "s26541_gen_8",
+    "type": "multiple-choice",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Let $f(x) = x^4 - 8x^2$. Using the First Derivative Test, what is the **local maximum value** of $f$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$-16$"
+      },
+      {
+        "label": "B",
+        "text": "$16$"
+      },
+      {
+        "label": "C",
+        "text": "$0$"
+      },
+      {
+        "label": "D",
+        "text": "$8$"
+      }
+    ],
+    "answer": "C",
+    "solution": "**Step 1 – Critical numbers.**\n$$f'(x) = 4x^3 - 16x = 4x(x^2 - 4) = 4x(x-2)(x+2)$$\n$f'(x)=0 \\Rightarrow x = -2,\\; 0,\\; 2.$\n\n**Step 2 – Sign chart for $f'$.**\n| Interval | Test point | $f'$ |\n|----------|------------|------|\n| $x<-2$ | $x=-3$ | $4(-3)(-5)(-1)=-60 < 0$ |\n| $-2<x<0$ | $x=-1$ | $4(-1)(-3)(1)=12 > 0$ |\n| $0<x<2$ | $x=1$ | $4(1)(-1)(3)=-12 < 0$ |\n| $x>2$ | $x=3$ | $4(3)(1)(5)=60 > 0$ |\n\n**Step 3 – Classify.**\n- $x=-2$: $f'$ goes $-\\to+$ → **local min**, $f(-2)=16-32=-16$.\n- $x=0$: $f'$ goes $+\\to-$ → **local max**, $f(0)=0$.\n- $x=2$: $f'$ goes $-\\to+$ → **local min**, $f(2)=16-32=-16$.\n\n**Local maximum value = $0$** at $x=0$.\n\n"
+  },
+  {
+    "id": "s26541_gen_9",
+    "type": "free-response",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Find all critical numbers of $$f(x) = \\frac{x}{x^2 + 1}.$$",
+    "answer": "x = -1 and x = 1",
+    "solution": "**Step 1 – Differentiate using the Quotient Rule.**\n$$f'(x) = \\frac{(x^2+1)(1) - x(2x)}{(x^2+1)^2} = \\frac{x^2 + 1 - 2x^2}{(x^2+1)^2} = \\frac{1 - x^2}{(x^2+1)^2}$$\n\n**Step 2 – Where is $f'(x) = 0$?**\nThe denominator $(x^2+1)^2 > 0$ for all $x$, so we set the numerator equal to zero:\n$$1 - x^2 = 0 \\implies x^2 = 1 \\implies x = \\pm 1.$$\n\n**Step 3 – Where is $f'$ undefined?**\nThe denominator is never $0$, so $f'$ exists for all $x$. No additional critical numbers.\n\n**Conclusion:** The critical numbers are $x = -1$ and $x = 1$."
+  },
+  {
+    "id": "s26541_gen_10",
+    "type": "select-all",
+    "section": "§4.1. Maximum and Minimum Values",
+    "text": "Select **all** functions that have a **local extremum** at $x = 0$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$f(x) = x^3$"
+      },
+      {
+        "label": "B",
+        "text": "$f(x) = x^2$"
+      },
+      {
+        "label": "C",
+        "text": "$f(x) = |x|$"
+      },
+      {
+        "label": "D",
+        "text": "$f(x) = x^{1/3}$"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "solution": "**Check each function at $x=0$:**\n\n**(A) $f(x)=x^3$:** $f'(x)=3x^2 \\geq 0$, and $f'>0$ on both sides of $0$. $f$ is increasing through $x=0$ — **no sign change** in $f'$. $x=0$ is an inflection point, not a local extremum. ✗\n\n**(B) $f(x)=x^2$:** $f'(x)=2x$. Sign chart: $f'<0$ for $x<0$ and $f'>0$ for $x>0$. Sign changes from $-$ to $+$ → **local minimum** at $x=0$. $f(0)=0$. ✓\n\n**(C) $f(x)=|x|$:** $f'(x) = -1$ for $x<0$ and $f'(x)=+1$ for $x>0$; $f'(0)$ does not exist. The derivative changes sign from $-$ to $+$ at $x=0$ → **local minimum** at $x=0$. $f(0)=0$. ✓\n\n**(D) $f(x)=x^{1/3}$:** $f'(x) = \\dfrac{1}{3}x^{-2/3} > 0$ for all $x \\neq 0$. Even though $f'(0)$ is undefined (vertical tangent), $f$ is strictly increasing through $x=0$ — **no extremum**. ✗\n\n**Functions with a local extremum at $x=0$: B and C.**"
+  }
+]
