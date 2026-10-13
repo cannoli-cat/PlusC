@@ -59,6 +59,13 @@ function normalizeAsciiMath(expr: string): string {
     return s
 }
 
+function normalizeLatex(s: string): string {
+    return s
+        .replace(/\\(?:text|operatorname)\{arc(sin|cos|tan|sec|csc|cot)\}/g, '\\operatorname{Arc$1}')
+        .replace(/\\arc(sin|cos|tan|sec|csc|cot)(?![a-z])/g, '\\operatorname{Arc$1}')
+        .replace(/\\(sin|cos|tan|sec|csc|cot)\^\{-1\}/g, '\\operatorname{Arc$1}')
+}
+
 function asciiMathToLatex(ascii: string): string {
     try {
         return mathjsParse(normalizeAsciiMath(ascii)).toTex()
@@ -68,54 +75,60 @@ function asciiMathToLatex(ascii: string): string {
 }
 
 export function checkSingle(input: string, expected: string): boolean {
-    const cleanInput = input.trim();
-    const cleanExpected = expected.trim();
-
-    if (normalizeInterval(cleanInput) === normalizeInterval(cleanExpected)) {
-        return true;
-    }
+    ce.pushScope()
 
     try {
-        const userExpr = ce.parse(cleanInput).subs({ c: "C" });
-        const expectedExpr = ce.parse(asciiMathToLatex(cleanExpected)).subs({ c: "C" });
+        const cleanInput = normalizeLatex(input.trim());
+        const cleanExpected = normalizeLatex(expected.trim());
 
-        if (userExpr.isEqual(expectedExpr)) return true;
-    } catch {
-        // ignore
-    }
+        if (normalizeInterval(cleanInput) === normalizeInterval(cleanExpected)) {
+            return true;
+        }
 
-    if (INTERVAL_PATTERN.test(cleanExpected)) {
-        const inputMatch = cleanInput.match(/^\\left[\[\(](.*)\\right[\]\)]$|^[\[\(](.*)[\]\)]$/);
-        const expectedMatch = cleanExpected.match(/^[\[\(](.*)[\]\)]$/);
+        try {
+            const userExpr = ce.parse(cleanInput).subs({ c: "C" });
+            const expectedExpr = ce.parse(asciiMathToLatex(cleanExpected)).subs({ c: "C" });
 
-        if (inputMatch && expectedMatch) {
-            const innerInput = inputMatch[1] || inputMatch[2];
-            const innerExpected = expectedMatch[1];
+            if (userExpr.isEqual(expectedExpr)) return true;
+        } catch {
+            // ignore
+        }
 
-            const inputParts = innerInput.split(',');
-            const expectedParts = innerExpected.split(',');
+        if (INTERVAL_PATTERN.test(cleanExpected)) {
+            const inputMatch = cleanInput.match(/^\\left[\[\(](.*)\\right[\]\)]$|^[\[\(](.*)[\]\)]$/);
+            const expectedMatch = cleanExpected.match(/^[\[\(](.*)[\]\)]$/);
 
-            if (inputParts.length === expectedParts.length && inputParts.length > 1) {
-                let allPartsEqual = true;
-                for (let i = 0; i < inputParts.length; i++) {
-                    try {
-                        const uPart = ce.parse(inputParts[i].trim()).subs({ c: "C" });
-                        const ePart = ce.parse(asciiMathToLatex(expectedParts[i].trim())).subs({ c: "C" });
-                        if (!uPart.isEqual(ePart)) {
+            if (inputMatch && expectedMatch) {
+                const innerInput = inputMatch[1] || inputMatch[2];
+                const innerExpected = expectedMatch[1];
+
+                const inputParts = innerInput.split(',');
+                const expectedParts = innerExpected.split(',');
+
+                if (inputParts.length === expectedParts.length && inputParts.length > 1) {
+                    let allPartsEqual = true;
+                    for (let i = 0; i < inputParts.length; i++) {
+                        try {
+                            const uPart = ce.parse(inputParts[i].trim()).subs({ c: "C" });
+                            const ePart = ce.parse(asciiMathToLatex(expectedParts[i].trim())).subs({ c: "C" });
+                            if (!uPart.isEqual(ePart)) {
+                                allPartsEqual = false;
+                                break;
+                            }
+                        } catch {
                             allPartsEqual = false;
                             break;
                         }
-                    } catch {
-                        allPartsEqual = false;
-                        break;
                     }
+                    if (allPartsEqual) return true;
                 }
-                if (allPartsEqual) return true;
             }
         }
-    }
 
-    return false;
+        return false;
+    } finally {
+        ce.popScope()
+    }
 }
 
 export function checkAnswer(input: string, expected: string | FreeResponseAnswer[], variables: string[]): { correct: boolean; credit: number } {

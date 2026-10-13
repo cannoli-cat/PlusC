@@ -1,8 +1,10 @@
 import { courses } from '@/data/questions'
+import { checkSingle } from '@/lib/checkAnswer'
 
 const errors: string[] = []
 const seenIds = new Set<string>()
 const SECTION_PATTERN = /^§\d+\.\d+\. .+/
+const BOXED_TAG = '\\boxed{'
 
 for (const course of courses) {
     for (const q of course.questions) {
@@ -13,6 +15,13 @@ for (const course of courses) {
 
         if (!SECTION_PATTERN.test(q.section)) {
             errors.push(`[${course.id}] ${q.id}: invalid section "${q.section}"`)
+        }
+
+        if (q.type === 'free-response' && typeof q.answer === 'string') {
+            const boxed = extractBoxed(q.solution)
+            if (boxed && !checkSingle(boxed, q.answer)) {
+                errors.push(`[${course.id}] ${q.id}: boxed solution "${boxed}" does not match answer "${q.answer}"`)
+            }
         }
 
         if (q.type === 'multiple-choice') {
@@ -46,4 +55,25 @@ if (errors.length > 0) {
     process.exit(1)
 } else {
     console.log(`All ${seenIds.size} questions OK`)
+}
+
+function extractBoxed(solution: string): string | null {
+    const start = solution.lastIndexOf(BOXED_TAG)
+    if (start === -1) return null
+
+    let depth = 1
+    const end = start + 7
+
+    for (let i = end; i < solution.length; i++) {
+        if (solution[i] === '{') {
+            depth++
+        } else if (solution[i] === '}') {
+            depth--
+            if (depth === 0) {
+                return solution.substring(start + 7, i)
+            }
+        }
+    }
+
+    return null
 }

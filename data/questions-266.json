@@ -3185,7 +3185,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Rewrite: $\\displaystyle\\sum_{n=0}^{\\infty} 7\\left(\\frac{1}{4}\\right)^n$.\n\nThis is a geometric series with first term $a = 7$ and common ratio $r = \\dfrac{1}{4}$.\n\nSince $|r| = \\dfrac{1}{4} < 1$, it converges:\n$$S = \\frac{a}{1-r} = \\frac{7}{1 - \\tfrac{1}{4}} = \\frac{7}{\\tfrac{3}{4}} = \\frac{28}{3}.$$\n\n**Distractor notes:**\n- $\\dfrac{7}{3}$: forgot to include $a$, used $\\dfrac{1}{1-r}$ only.\n- $28$: incorrectly used $a(1-r) = 7\\cdot\\tfrac{3}{4}$... (or other mis-application).\n- Diverges: incorrect; $|r|<1$ guarantees convergence."
+    "solution": "Rewrite: $\\displaystyle\\sum_{n=0}^{\\infty} 7\\left(\\frac{1}{4}\\right)^n$.\n\nThis is a geometric series with first term $a = 7$ and common ratio $r = \\dfrac{1}{4}$.\n\nSince $|r| = \\dfrac{1}{4} < 1$, it converges:\n$$S = \\frac{a}{1-r} = \\frac{7}{1 - \\tfrac{1}{4}} = \\frac{7}{\\tfrac{3}{4}} = \\frac{28}{3}.$$\n\n"
   },
   {
     "id": "s26682_gen_3",
@@ -3253,7 +3253,7 @@
       }
     ],
     "answer": "A",
-    "solution": "By the constant-multiple and sum rules for convergent series:\n$$\\sum_{n=1}^{\\infty}(2a_n + 4b_n) = 2\\sum_{n=1}^{\\infty} a_n + 4\\sum_{n=1}^{\\infty} b_n = 2(5) + 4(-3) = 10 - 12 = -2.$$\n\n**Distractor notes:**\n- $22$: sign error — treated $+4b_n$ as $-4b_n$, getting $2(5)-4(-3) = 10+12 = 22$.\n- $4$: factored out $2$ from the combined sum $\\sum a_n + \\sum b_n$: $2(5+(-3)) = 4$.\n- $-12$: ignored $\\sum a_n$ entirely, computed only $4(-3) = -12$."
+    "solution": "By the constant-multiple and sum rules for convergent series:\n$$\\sum_{n=1}^{\\infty}(2a_n + 4b_n) = 2\\sum_{n=1}^{\\infty} a_n + 4\\sum_{n=1}^{\\infty} b_n = 2(5) + 4(-3) = 10 - 12 = -2.$$\n\n"
   },
   {
     "id": "s26682_gen_7",
@@ -3279,7 +3279,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Rewrite: $\\displaystyle\\sum_{n=0}^{\\infty} 3\\left(-\\frac{1}{4}\\right)^n$.\n\nThis is geometric with $a = 3$ and $r = -\\dfrac{1}{4}$.\n\nSince $|r| = \\dfrac{1}{4} < 1$, the series converges:\n$$S = \\frac{a}{1-r} = \\frac{3}{1-\\left(-\\tfrac{1}{4}\\right)} = \\frac{3}{\\tfrac{5}{4}} = \\frac{12}{5}.$$\n\n**Distractor notes:**\n- $\\dfrac{3}{5}$: used $1+r$ in denominator instead of $1-r$ (i.e., computed $\\tfrac{3}{1+1/4}$).\n- $\\dfrac{4}{5}$: dropped the factor of $3$, computing $\\dfrac{1}{5/4}$.\n- Diverges: incorrect; $|{-1/4}|<1$ so it converges."
+    "solution": "Rewrite: $\\displaystyle\\sum_{n=0}^{\\infty} 3\\left(-\\frac{1}{4}\\right)^n$.\n\nThis is geometric with $a = 3$ and $r = -\\dfrac{1}{4}$.\n\nSince $|r| = \\dfrac{1}{4} < 1$, the series converges:\n$$S = \\frac{a}{1-r} = \\frac{3}{1-\\left(-\\tfrac{1}{4}\\right)} = \\frac{3}{\\tfrac{5}{4}} = \\frac{12}{5}.$$\n\n"
   },
   {
     "id": "s26682_gen_8",
@@ -3334,7 +3334,7 @@
       }
     ],
     "answer": "B",
-    "solution": "**Method 1 (subtract the missing term):**\n\nThe full series starting at $n=1$ is geometric with $a=3$, $r=\\tfrac{1}{2}$:\n$$\\sum_{n=1}^{\\infty} 3\\left(\\tfrac{1}{2}\\right)^{n-1} = \\frac{3}{1-1/2} = 6.$$\n\nSubtract the $n=1$ term ($a_1 = 3\\cdot(\\tfrac{1}{2})^0 = 3$):\n$$\\sum_{n=2}^{\\infty} 3\\left(\\tfrac{1}{2}\\right)^{n-1} = 6 - 3 = 3.$$\n\n**Method 2 (re-index):** When $n=2$, the first term is $3(\\tfrac{1}{2})^1 = \\tfrac{3}{2}$, ratio $r=\\tfrac{1}{2}$:\n$$S = \\frac{3/2}{1-1/2} = \\frac{3/2}{1/2} = 3.\\checkmark$$\n\n**Distractor notes:**\n- $6$: forgot to account for starting at $n=2$ (used full sum from $n=1$).\n- $\\tfrac{3}{2}$: reported only the first term of this series.\n- $\\tfrac{9}{2}$: partial sum $S_1+S_2$ error."
+    "solution": "**Method 1 (subtract the missing term):**\n\nThe full series starting at $n=1$ is geometric with $a=3$, $r=\\tfrac{1}{2}$:\n$$\\sum_{n=1}^{\\infty} 3\\left(\\tfrac{1}{2}\\right)^{n-1} = \\frac{3}{1-1/2} = 6.$$\n\nSubtract the $n=1$ term ($a_1 = 3\\cdot(\\tfrac{1}{2})^0 = 3$):\n$$\\sum_{n=2}^{\\infty} 3\\left(\\tfrac{1}{2}\\right)^{n-1} = 6 - 3 = 3.$$\n\n**Method 2 (re-index):** When $n=2$, the first term is $3(\\tfrac{1}{2})^1 = \\tfrac{3}{2}$, ratio $r=\\tfrac{1}{2}$:\n$$S = \\frac{3/2}{1-1/2} = \\frac{3/2}{1/2} = 3.\\checkmark$$\n\n"
   },
   {
     "id": "s26682_gen_10",
@@ -3559,7 +3559,7 @@
       }
     ],
     "answer": "A",
-    "solution": "**Ratio Test.** Let $a_n = x^n/7^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{x^{n+1}}{7^{n+1}}\\cdot\\frac{7^n}{x^n}\\right| = \\frac{|x|}{7}.$$ Setting $|x|/7 < 1$ gives $|x| < 7$, so $R = 7$.\n\n**Endpoint $x = 7$:** $\\sum_{n=0}^\\infty 1$ diverges (terms $\\to 1 \\neq 0$).\n\n**Endpoint $x = -7$:** $\\sum_{n=0}^\\infty (-1)^n$ diverges (terms do not $\\to 0$).\n\nBoth endpoints are excluded, so the interval of convergence is $(-7,\\,7)$. Choice **A**.\n\n*Distractor notes:* (B) incorrectly closes both endpoints; (C) inverts the ratio, getting $R = 1/7$; (D) incorrectly closes the right endpoint."
+    "solution": "**Ratio Test.** Let $a_n = x^n/7^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = \\left|\\frac{x^{n+1}}{7^{n+1}}\\cdot\\frac{7^n}{x^n}\\right| = \\frac{|x|}{7}.$$ Setting $|x|/7 < 1$ gives $|x| < 7$, so $R = 7$.\n\n**Endpoint $x = 7$:** $\\sum_{n=0}^\\infty 1$ diverges (terms $\\to 1 \\neq 0$).\n\n**Endpoint $x = -7$:** $\\sum_{n=0}^\\infty (-1)^n$ diverges (terms do not $\\to 0$).\n\nBoth endpoints are excluded, so the interval of convergence is $(-7,\\,7)$. Choice **A**.\n\n"
   },
   {
     "id": "s26685_gen_2",
@@ -3602,7 +3602,7 @@
       }
     ],
     "answer": "B",
-    "solution": "**Ratio Test.** Let $a_n = (3x)^n/n^2$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |3x|\\cdot\\frac{n^2}{(n+1)^2} \\to |3x| \\quad\\text{as } n\\to\\infty.$$ Convergence requires $|3x| < 1$, so $|x| < 1/3$. Thus $R = 1/3$ and the open interval is $(-1/3, 1/3)$.\n\n**Endpoint $x = 1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n^2}$, a $p$-series with $p = 2 > 1$. **Converges.**\n\n**Endpoint $x = -1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n^2}$, converges absolutely (same $p$-series). **Converges.**\n\nBoth endpoints included; interval of convergence is $\\left[-\\tfrac{1}{3},\\tfrac{1}{3}\\right]$. Choice **B**.\n\n*Distractor notes:* (A) forgets to divide by 3 (treats it as $x^n/n^2$); (C) inverts to $R = 3$; (D) gets the right $R$ but wrongly excludes endpoints."
+    "solution": "**Ratio Test.** Let $a_n = (3x)^n/n^2$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |3x|\\cdot\\frac{n^2}{(n+1)^2} \\to |3x| \\quad\\text{as } n\\to\\infty.$$ Convergence requires $|3x| < 1$, so $|x| < 1/3$. Thus $R = 1/3$ and the open interval is $(-1/3, 1/3)$.\n\n**Endpoint $x = 1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n^2}$, a $p$-series with $p = 2 > 1$. **Converges.**\n\n**Endpoint $x = -1/3$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n^2}$, converges absolutely (same $p$-series). **Converges.**\n\nBoth endpoints included; interval of convergence is $\\left[-\\tfrac{1}{3},\\tfrac{1}{3}\\right]$. Choice **B**.\n\n"
   },
   {
     "id": "s26685_gen_4",
@@ -3645,7 +3645,7 @@
       }
     ],
     "answer": "B",
-    "solution": "**Ratio Test.** Let $a_n = n!(x-2)^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = (n+1)|x-2| \\xrightarrow{n\\to\\infty} \\infty \\quad \\text{whenever } x \\neq 2.$$ The ratio exceeds $1$ for all $x\\neq 2$, so the series **diverges** for every $x\\neq 2$. At $x=2$ every term is $0$, so it converges trivially.\n\nThus $R = 0$ and the interval of convergence is $\\{2\\}$. Choice **B**.\n\n*Distractor notes:* (A) confuses with $e^x$-type series that have $1/n!$; (C) treats $n!$ as if it were a constant; (D) ignores the factorial growth entirely."
+    "solution": "**Ratio Test.** Let $a_n = n!(x-2)^n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = (n+1)|x-2| \\xrightarrow{n\\to\\infty} \\infty \\quad \\text{whenever } x \\neq 2.$$ The ratio exceeds $1$ for all $x\\neq 2$, so the series **diverges** for every $x\\neq 2$. At $x=2$ every term is $0$, so it converges trivially.\n\nThus $R = 0$ and the interval of convergence is $\\{2\\}$. Choice **B**.\n\n"
   },
   {
     "id": "s26685_gen_6",
@@ -3705,7 +3705,7 @@
       }
     ],
     "answer": "B",
-    "solution": "**Ratio Test.** Let $a_n = (10x)^n/n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |10x|\\cdot\\frac{n}{n+1} \\to |10x|.$$ Convergence requires $|10x| < 1$, i.e., $|x| < 1/10$. So $R = 1/10$; open interval $(-1/10, 1/10)$.\n\n**Endpoint $x = 1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n}$ (harmonic series). **Diverges.**\n\n**Endpoint $x = -1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$ (alternating harmonic series). **Converges** by the Alternating Series Test.\n\nLeft endpoint included, right excluded: $\\left[-\\tfrac{1}{10},\\tfrac{1}{10}\\right)$. Choice **B**.\n\n*Distractor notes:* (A) misidentifies both endpoints as excluded; (C) gets $R = 10$ by forgetting to invert; (D) swaps which endpoint converges."
+    "solution": "**Ratio Test.** Let $a_n = (10x)^n/n$. Then $$\\left|\\frac{a_{n+1}}{a_n}\\right| = |10x|\\cdot\\frac{n}{n+1} \\to |10x|.$$ Convergence requires $|10x| < 1$, i.e., $|x| < 1/10$. So $R = 1/10$; open interval $(-1/10, 1/10)$.\n\n**Endpoint $x = 1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{1}{n}$ (harmonic series). **Diverges.**\n\n**Endpoint $x = -1/10$:** $\\displaystyle\\sum_{n=1}^\\infty \\frac{(-1)^n}{n}$ (alternating harmonic series). **Converges** by the Alternating Series Test.\n\nLeft endpoint included, right excluded: $\\left[-\\tfrac{1}{10},\\tfrac{1}{10}\\right)$. Choice **B**.\n\n"
   },
   {
     "id": "s26685_gen_9",
@@ -3812,7 +3812,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Start with $e^u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{u^n}{n!}$. Substitute $u = -9x^2$:\n$$e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!}.$$\nMultiply by $10x^2$:\n$$10x^2 e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}.$$\n**Distractor notes:** B omits the $(-1)^n$ alternating sign. C forgets to multiply by $x^2$, leaving $x^{2n}$ instead of $x^{2n+2}$. D drops the factor of 10."
+    "solution": "Start with $e^u = \\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{u^n}{n!}$. Substitute $u = -9x^2$:\n$$e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{(-9)^n x^{2n}}{n!}.$$\nMultiply by $10x^2$:\n$$10x^2 e^{-9x^2} = \\sum_{n=0}^{\\infty} \\frac{10(-9)^n\\, x^{2n+2}}{n!}.$$\n"
   },
   {
     "id": "s26687_gen_4",
@@ -3898,7 +3898,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Since $f^{(n)}(x) = e^x$ for all $n$, evaluating at $a=2$ gives $f^{(n)}(2) = e^2$. The Taylor series formula gives:\n$$e^x = \\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n.$$\n**Distractor notes:** B forgets to evaluate $e^x$ at $x=2$, using $1/n!$ instead. C has the right coefficient but forgot the center shift, using $x^n$ instead of $(x-2)^n$. D incorrectly uses $e^n$ as if the coefficient grows with $n$."
+    "solution": "Since $f^{(n)}(x) = e^x$ for all $n$, evaluating at $a=2$ gives $f^{(n)}(2) = e^2$. The Taylor series formula gives:\n$$e^x = \\sum_{n=0}^{\\infty} \\frac{e^2}{n!}(x-2)^n.$$\n"
   },
   {
     "id": "s26687_gen_8",
@@ -4205,7 +4205,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Solve for $t$ from the first equation: $t = \\dfrac{x-1}{2}$. Substitute into $y$:\n$$y = 4\\left(\\frac{x-1}{2}\\right)^2 + 4\\left(\\frac{x-1}{2}\\right) + 5 = (x-1)^2 + 2(x-1) + 5.$$\nExpanding: $(x^2 - 2x + 1) + (2x - 2) + 5 = x^2 + 4.$ Choice **A**.\n\n*Distractor notes:* B computes $(x-1)^2 + 5$ but drops the cross term $2(x-1)$. C substitutes $t = x$ without eliminating. D has a sign error in expansion."
+    "solution": "Solve for $t$ from the first equation: $t = \\dfrac{x-1}{2}$. Substitute into $y$:\n$$y = 4\\left(\\frac{x-1}{2}\\right)^2 + 4\\left(\\frac{x-1}{2}\\right) + 5 = (x-1)^2 + 2(x-1) + 5.$$\nExpanding: $(x^2 - 2x + 1) + (2x - 2) + 5 = x^2 + 4.$ Choice **A**.\n\n"
   },
   {
     "id": "s9_1_gen_3",
@@ -4277,7 +4277,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Use the Pythagorean identity $\\sec^2\\theta - \\tan^2\\theta = 1$. Since $x/5 = \\sec\\theta$ and $y/3 = \\tan\\theta$:\n$$\\frac{x^2}{25} - \\frac{y^2}{9} = \\sec^2\\theta - \\tan^2\\theta = 1.$$\nFor $-\\pi/2 < \\theta < \\pi/2$, $\\sec\\theta > 0$, so $x = 5\\sec\\theta \\geq 5$. This is the **right branch** of the hyperbola. Choice **A**.\n\n*Distractor notes:* B uses a $+$ sign, giving an ellipse. C swaps the denominators. D inverts the subtraction order, giving a different hyperbola orientation."
+    "solution": "Use the Pythagorean identity $\\sec^2\\theta - \\tan^2\\theta = 1$. Since $x/5 = \\sec\\theta$ and $y/3 = \\tan\\theta$:\n$$\\frac{x^2}{25} - \\frac{y^2}{9} = \\sec^2\\theta - \\tan^2\\theta = 1.$$\nFor $-\\pi/2 < \\theta < \\pi/2$, $\\sec\\theta > 0$, so $x = 5\\sec\\theta \\geq 5$. This is the **right branch** of the hyperbola. Choice **A**.\n\n"
   },
   {
     "id": "s9_1_gen_6",
@@ -4328,7 +4328,7 @@
       }
     ],
     "answer": "B",
-    "solution": "The center is $(2, -1)$ and radius is $3$. The standard **counterclockwise** parametrization uses $y = -1 + 3\\sin t$. To reverse to **clockwise**, negate the sine term:\n$$y = -1 - 3\\sin t.$$\n**Verification:** At $t = 0$: $(5, -1)$ (rightmost point). As $t$ increases, $y$ decreases — the curve moves downward from the right, which is clockwise. ✓\n\n*Distractor notes:* A gives counterclockwise. C and D use the wrong center $y$-coordinate ($+1$ instead of $-1$)."
+    "solution": "The center is $(2, -1)$ and radius is $3$. The standard **counterclockwise** parametrization uses $y = -1 + 3\\sin t$. To reverse to **clockwise**, negate the sine term:\n$$y = -1 - 3\\sin t.$$\n**Verification:** At $t = 0$: $(5, -1)$ (rightmost point). As $t$ increases, $y$ decreases — the curve moves downward from the right, which is clockwise. ✓\n\n"
   },
   {
     "id": "s9_1_gen_8",
@@ -4515,7 +4515,7 @@
       }
     ],
     "answer": "B",
-    "solution": "The standard **counterclockwise** parametrization is $x = 7\\cos t$, $y = 4\\sin t$. To trace the ellipse **clockwise**, negate the sine component:\n$$y = -4\\sin t.$$\n**Verification:** $\\dfrac{(7\\cos t)^2}{49} + \\dfrac{(-4\\sin t)^2}{16} = \\cos^2 t + \\sin^2 t = 1$. ✓\n\nAt $t=0$: $(7, 0)$. At $t=\\pi/2$: $(0, -4)$ (bottom of ellipse). Moving from the rightmost point downward is **clockwise**. Choice **B**.\n\n*Distractor notes:* A gives counterclockwise. C and D use $16$ instead of $4$ (confusing $b^2$ with $b$)."
+    "solution": "The standard **counterclockwise** parametrization is $x = 7\\cos t$, $y = 4\\sin t$. To trace the ellipse **clockwise**, negate the sine component:\n$$y = -4\\sin t.$$\n**Verification:** $\\dfrac{(7\\cos t)^2}{49} + \\dfrac{(-4\\sin t)^2}{16} = \\cos^2 t + \\sin^2 t = 1$. ✓\n\nAt $t=0$: $(7, 0)$. At $t=\\pi/2$: $(0, -4)$ (bottom of ellipse). Moving from the rightmost point downward is **clockwise**. Choice **B**.\n\n"
   },
   {
     "id": "s9_2_gen_1",
@@ -4566,7 +4566,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Differentiate with respect to $t$:\n$$\\frac{dx}{dt} = 2 + \\frac{1}{t} = \\frac{2t+1}{t}, \\qquad \\frac{dy}{dt} = 5 - \\frac{3}{t} = \\frac{5t-3}{t}.$$\nThen:\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{(5t-3)/t}{(2t+1)/t} = \\frac{5t-3}{2t+1}.$$\nChoice **A**.\n\n*Distractor notes:* B uses the wrong sign on the $\\ln t$ derivative in the numerator. C gets the sign wrong on the $+1$ in the denominator. D inverts the fraction."
+    "solution": "Differentiate with respect to $t$:\n$$\\frac{dx}{dt} = 2 + \\frac{1}{t} = \\frac{2t+1}{t}, \\qquad \\frac{dy}{dt} = 5 - \\frac{3}{t} = \\frac{5t-3}{t}.$$\nThen:\n$$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{(5t-3)/t}{(2t+1)/t} = \\frac{5t-3}{2t+1}.$$\nChoice **A**.\n\n"
   },
   {
     "id": "s9_2_gen_4",
@@ -4691,7 +4691,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Differentiate: $\\dfrac{dx}{dt} = 1 - \\cos t$ and $\\dfrac{dy}{dt} = \\sin t$.\n\nCompute the sum of squares:\n$$\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 = (1-\\cos t)^2 + \\sin^2 t$$\n$$= 1 - 2\\cos t + \\cos^2 t + \\sin^2 t = 2 - 2\\cos t.$$\n\nArc length $= \\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\cos t}\\;dt$. Choice **A**.\n\n*Distractor notes:* B has a $+$ sign (would come from $(1+\\cos t)^2 + \\sin^2 t$). C forgot the square root. D uses $\\sin t$ instead of $\\cos t$ in the radicand."
+    "solution": "Differentiate: $\\dfrac{dx}{dt} = 1 - \\cos t$ and $\\dfrac{dy}{dt} = \\sin t$.\n\nCompute the sum of squares:\n$$\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 = (1-\\cos t)^2 + \\sin^2 t$$\n$$= 1 - 2\\cos t + \\cos^2 t + \\sin^2 t = 2 - 2\\cos t.$$\n\nArc length $= \\displaystyle\\int_0^{2\\pi} \\sqrt{2 - 2\\cos t}\\;dt$. Choice **A**.\n\n"
   },
   {
     "id": "s9_2_gen_10",
@@ -4725,7 +4725,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Differentiate: $\\dfrac{dx}{dt} = \\dfrac{1}{t}$ and $\\dfrac{dy}{dt} = \\dfrac{1}{2\\sqrt{t+1}}$.\n\nSum of squares:\n$$\\frac{1}{t^2} + \\frac{1}{4(t+1)} = \\frac{4(t+1) + t^2}{4t^2(t+1)} = \\frac{t^2 + 4t + 4}{4t^2(t+1)} = \\frac{(t+2)^2}{4t^2(t+1)}.$$\n\nTaking the square root:\n$$\\sqrt{\\frac{(t+2)^2}{4t^2(t+1)}} = \\frac{t+2}{2t\\sqrt{t+1}}.$$\n\nArc length $= \\displaystyle\\int_1^5\\frac{t+2}{2t\\sqrt{t+1}}\\;dt$. Choice **A**.\n\n*Distractor notes:* B squares the numerator instead of summing. C drops the factor of $2$ in the denominator. D omits the $(t+2)$ factor from the numerator entirely."
+    "solution": "Differentiate: $\\dfrac{dx}{dt} = \\dfrac{1}{t}$ and $\\dfrac{dy}{dt} = \\dfrac{1}{2\\sqrt{t+1}}$.\n\nSum of squares:\n$$\\frac{1}{t^2} + \\frac{1}{4(t+1)} = \\frac{4(t+1) + t^2}{4t^2(t+1)} = \\frac{t^2 + 4t + 4}{4t^2(t+1)} = \\frac{(t+2)^2}{4t^2(t+1)}.$$\n\nTaking the square root:\n$$\\sqrt{\\frac{(t+2)^2}{4t^2(t+1)}} = \\frac{t+2}{2t\\sqrt{t+1}}.$$\n\nArc length $= \\displaystyle\\int_1^5\\frac{t+2}{2t\\sqrt{t+1}}\\;dt$. Choice **A**.\n\n"
   },
   {
     "id": "s9_2_gen_12",
@@ -4872,7 +4872,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Multiply both sides by $r$:\n$$r^2 = 2r\\sin\\theta + 2r\\cos\\theta \\implies x^2+y^2 = 2y+2x.$$\nRearrange and complete the square:\n$$(x-1)^2+(y-1)^2 = 2.$$\nCenter $(1,1)$, radius $\\sqrt{2}$. Choice **A**.\n\n*Distractor notes:* B uses the wrong sign for the center. C loses the linear terms. D has the right center but uses $4$ instead of $2$ for the radius squared."
+    "solution": "Multiply both sides by $r$:\n$$r^2 = 2r\\sin\\theta + 2r\\cos\\theta \\implies x^2+y^2 = 2y+2x.$$\nRearrange and complete the square:\n$$(x-1)^2+(y-1)^2 = 2.$$\nCenter $(1,1)$, radius $\\sqrt{2}$. Choice **A**.\n\n"
   },
   {
     "id": "s9_3_gen_6",
@@ -4923,7 +4923,7 @@
       }
     ],
     "answer": "B",
-    "solution": "Write $r = \\dfrac{\\sin\\theta}{\\cos^2\\theta}$, so $r\\cos^2\\theta = \\sin\\theta$.\n\nMultiply both sides by $r$:\n$$r^2\\cos^2\\theta = r\\sin\\theta \\implies (r\\cos\\theta)^2 = r\\sin\\theta \\implies x^2 = y.$$\nChoice **B**.\n\n*Distractor notes:* A comes from $r = \\tan\\theta$. C swaps $x$ and $y$. D has a spurious negative sign."
+    "solution": "Write $r = \\dfrac{\\sin\\theta}{\\cos^2\\theta}$, so $r\\cos^2\\theta = \\sin\\theta$.\n\nMultiply both sides by $r$:\n$$r^2\\cos^2\\theta = r\\sin\\theta \\implies (r\\cos\\theta)^2 = r\\sin\\theta \\implies x^2 = y.$$\nChoice **B**.\n\n"
   },
   {
     "id": "s9_3_gen_9",
@@ -4991,7 +4991,7 @@
       }
     ],
     "answer": "B",
-    "solution": "Substitute $x^2+y^2 = r^2$ and $x = r\\cos\\theta$:\n$$r^2 = 2r\\cos\\theta \\implies r = 2\\cos\\theta.$$\nChoice **B**. This is a circle of radius $1$ centered at $(1,0)$.\n\n*Distractor notes:* A gives $x^2+y^2=2y$ (circle on the $y$-axis). C incorrectly leaves $r^2$ on the left without simplifying. D drops the factor of $2$."
+    "solution": "Substitute $x^2+y^2 = r^2$ and $x = r\\cos\\theta$:\n$$r^2 = 2r\\cos\\theta \\implies r = 2\\cos\\theta.$$\nChoice **B**. This is a circle of radius $1$ centered at $(1,0)$.\n\n"
   },
   {
     "id": "s9_3_gen_13",
@@ -5055,7 +5055,7 @@
       }
     ],
     "answer": "A",
-    "solution": "Distribute:\n$$3r\\sin\\theta + 4r\\cos\\theta = 12.$$\nSubstitute $r\\sin\\theta = y$ and $r\\cos\\theta = x$:\n$$3y + 4x = 12 \\implies 4x + 3y = 12.$$\nChoice **A**.\n\n*Distractor notes:* B swaps the coefficients of $x$ and $y$. C introduces a spurious sign change. D halves the right-hand side."
+    "solution": "Distribute:\n$$3r\\sin\\theta + 4r\\cos\\theta = 12.$$\nSubstitute $r\\sin\\theta = y$ and $r\\cos\\theta = x$:\n$$3y + 4x = 12 \\implies 4x + 3y = 12.$$\nChoice **A**.\n\n"
   },
   {
     "id": "s9_4_gen_1",
@@ -5121,7 +5121,7 @@
       }
     ],
     "answer": "A",
-    "solution": "The polar arc length formula is $L = \\displaystyle\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\tfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$.\n\nHere $r = 2+\\cos\\theta$, $dr/d\\theta = -\\sin\\theta$.\n$$r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2 = (2+\\cos\\theta)^2+\\sin^2\\theta = 4+4\\cos\\theta+\\cos^2\\theta+\\sin^2\\theta = 5+4\\cos\\theta.$$\nSo $L = \\displaystyle\\int_0^{2\\pi}\\sqrt{5+4\\cos\\theta}\\;d\\theta$. Choice **A**.\n\n*Distractor notes:* B uses $4+4\\cos\\theta$ (forgot the $1$ from $\\sin^2\\theta+\\cos^2\\theta$). C has the wrong sign. D uses $\\sin\\theta$ instead of $\\cos\\theta$."
+    "solution": "The polar arc length formula is $L = \\displaystyle\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\tfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$.\n\nHere $r = 2+\\cos\\theta$, $dr/d\\theta = -\\sin\\theta$.\n$$r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2 = (2+\\cos\\theta)^2+\\sin^2\\theta = 4+4\\cos\\theta+\\cos^2\\theta+\\sin^2\\theta = 5+4\\cos\\theta.$$\nSo $L = \\displaystyle\\int_0^{2\\pi}\\sqrt{5+4\\cos\\theta}\\;d\\theta$. Choice **A**.\n\n"
   },
   {
     "id": "s9_4_gen_7",
@@ -5187,7 +5187,7 @@
       }
     ],
     "answer": "A",
-    "solution": "One petal of $r=3\\sin(2\\theta)$ spans $0 \\leq \\theta \\leq \\pi/2$ (where $\\sin(2\\theta) \\geq 0$ and traces one complete lobe). Applying the formula $A = \\frac{1}{2}\\int r^2\\,d\\theta$:\n$$A = \\frac{1}{2}\\int_0^{\\pi/2}9\\sin^2(2\\theta)\\,d\\theta = \\frac{9}{8}\\pi.$$\nChoice **A**.\n\n*Distractor notes:* B integrates over $[0,\\pi]$, which covers two petals (since $r$ is negative for $\\pi/2 < \\theta < \\pi$, tracing a second petal). C is missing the $\\frac{1}{2}$ factor. D forgot to square $r$."
+    "solution": "One petal of $r=3\\sin(2\\theta)$ spans $0 \\leq \\theta \\leq \\pi/2$ (where $\\sin(2\\theta) \\geq 0$ and traces one complete lobe). Applying the formula $A = \\frac{1}{2}\\int r^2\\,d\\theta$:\n$$A = \\frac{1}{2}\\int_0^{\\pi/2}9\\sin^2(2\\theta)\\,d\\theta = \\frac{9}{8}\\pi.$$\nChoice **A**.\n\n"
   },
   {
     "id": "s9_4_gen_13",

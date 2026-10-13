@@ -1043,7 +1043,7 @@
       }
     ],
     "answer": "A",
-    "solution": "The instantaneous velocity is $v(1) = s'(1)$:\n$$s'(1) = \\lim_{h\\to 0}\\frac{s(1+h)-s(1)}{h}$$\n\nCompute $s(1+h)$:\n$$s(1+h) = -16(1+h)^2 + 64(1+h) = -16(1+2h+h^2)+64+64h$$\n$$= -16 - 32h - 16h^2 + 64 + 64h = 48 + 32h - 16h^2$$\n\nCompute $s(1)$:\n$$s(1) = -16 + 64 = 48$$\n\nSo:\n$$s'(1) = \\lim_{h\\to 0}\\frac{(48+32h-16h^2)-48}{h} = \\lim_{h\\to 0}\\frac{32h-16h^2}{h} = \\lim_{h\\to 0}(32-16h) = 32$$\n\nThe instantaneous velocity at $t=1$ is $32$ ft/s.\n\nDistractor notes: Choice B ($48$) is $s(1)$ (position, not velocity). Choice C ($64$) is the initial velocity coefficient. Choice D ($16$) is half the correct answer (forgetting the factor of 2 from the chain rule)."
+    "solution": "The instantaneous velocity is $v(1) = s'(1)$:\n$$s'(1) = \\lim_{h\\to 0}\\frac{s(1+h)-s(1)}{h}$$\n\nCompute $s(1+h)$:\n$$s(1+h) = -16(1+h)^2 + 64(1+h) = -16(1+2h+h^2)+64+64h$$\n$$= -16 - 32h - 16h^2 + 64 + 64h = 48 + 32h - 16h^2$$\n\nCompute $s(1)$:\n$$s(1) = -16 + 64 = 48$$\n\nSo:\n$$s'(1) = \\lim_{h\\to 0}\\frac{(48+32h-16h^2)-48}{h} = \\lim_{h\\to 0}\\frac{32h-16h^2}{h} = \\lim_{h\\to 0}(32-16h) = 32$$\n\nThe instantaneous velocity at $t=1$ is $32$ ft/s.\n\n"
   },
   {
     "id": "s26522_gen_1",
@@ -4747,7 +4747,7 @@
       }
     ],
     "answer": "B",
-    "solution": "**Step 1 – Critical numbers on $(0,\\pi)$.**\n$$f'(x) = \\cos x - \\sin x = 0 \\implies \\tan x = 1 \\implies x = \\frac{\\pi}{4}.$$\n(The next solution $x = \\frac{5\\pi}{4}$ is outside $[0,\\pi]$.)\n\n**Step 2 – Evaluate.**\n$$f(0) = \\sin 0 + \\cos 0 = 0 + 1 = 1$$\n$$f\\!\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2} = \\sqrt{2}$$\n$$f(\\pi) = \\sin\\pi + \\cos\\pi = 0 + (-1) = -1$$\n\n**Step 3 – Identify maximum.**\n$\\sqrt{2} \\approx 1.414 > 1 > -1.$ Absolute maximum $= \\sqrt{2}$.\n\n**Distractor notes:** (A) $1 = f(0)$, the left-endpoint value. (C) $2$ is the amplitude of $\\sqrt{2}\\sin(x+\\pi/4)$ incorrectly read. (D) is $\\frac{\\sqrt{2}}{2}$, a single term, not the sum."
+    "solution": "**Step 1 – Critical numbers on $(0,\\pi)$.**\n$$f'(x) = \\cos x - \\sin x = 0 \\implies \\tan x = 1 \\implies x = \\frac{\\pi}{4}.$$\n(The next solution $x = \\frac{5\\pi}{4}$ is outside $[0,\\pi]$.)\n\n**Step 2 – Evaluate.**\n$$f(0) = \\sin 0 + \\cos 0 = 0 + 1 = 1$$\n$$f\\!\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2} = \\sqrt{2}$$\n$$f(\\pi) = \\sin\\pi + \\cos\\pi = 0 + (-1) = -1$$\n\n**Step 3 – Identify maximum.**\n$\\sqrt{2} \\approx 1.414 > 1 > -1.$ Absolute maximum $= \\sqrt{2}$.\n\n"
   },
   {
     "id": "s26541_gen_7",
@@ -4781,7 +4781,7 @@
       }
     ],
     "answer": "C",
-    "solution": "**Step 1 – Critical numbers.**\n$$f'(x) = 4x^3 - 16x = 4x(x^2 - 4) = 4x(x-2)(x+2)$$\n$f'(x)=0 \\Rightarrow x = -2,\\; 0,\\; 2.$\n\n**Step 2 – Sign chart for $f'$.**\n| Interval | Test point | $f'$ |\n|----------|------------|------|\n| $x<-2$ | $x=-3$ | $4(-3)(-5)(-1)=-60 < 0$ |\n| $-2<x<0$ | $x=-1$ | $4(-1)(-3)(1)=12 > 0$ |\n| $0<x<2$ | $x=1$ | $4(1)(-1)(3)=-12 < 0$ |\n| $x>2$ | $x=3$ | $4(3)(1)(5)=60 > 0$ |\n\n**Step 3 – Classify.**\n- $x=-2$: $f'$ goes $-\\to+$ → **local min**, $f(-2)=16-32=-16$.\n- $x=0$: $f'$ goes $+\\to-$ → **local max**, $f(0)=0$.\n- $x=2$: $f'$ goes $-\\to+$ → **local min**, $f(2)=16-32=-16$.\n\n**Local maximum value = $0$** at $x=0$.\n\n**Distractor notes:** (A) $-16$ is the local *minimum* value. (B) $16=f(\\pm 2)$ with wrong sign. (D) $8$ is not a value of $f$ at any critical number."
+    "solution": "**Step 1 – Critical numbers.**\n$$f'(x) = 4x^3 - 16x = 4x(x^2 - 4) = 4x(x-2)(x+2)$$\n$f'(x)=0 \\Rightarrow x = -2,\\; 0,\\; 2.$\n\n**Step 2 – Sign chart for $f'$.**\n| Interval | Test point | $f'$ |\n|----------|------------|------|\n| $x<-2$ | $x=-3$ | $4(-3)(-5)(-1)=-60 < 0$ |\n| $-2<x<0$ | $x=-1$ | $4(-1)(-3)(1)=12 > 0$ |\n| $0<x<2$ | $x=1$ | $4(1)(-1)(3)=-12 < 0$ |\n| $x>2$ | $x=3$ | $4(3)(1)(5)=60 > 0$ |\n\n**Step 3 – Classify.**\n- $x=-2$: $f'$ goes $-\\to+$ → **local min**, $f(-2)=16-32=-16$.\n- $x=0$: $f'$ goes $+\\to-$ → **local max**, $f(0)=0$.\n- $x=2$: $f'$ goes $-\\to+$ → **local min**, $f(2)=16-32=-16$.\n\n**Local maximum value = $0$** at $x=0$.\n\n"
   },
   {
     "id": "s26541_gen_9",
@@ -4958,7 +4958,7 @@
     "section": "§4.5. Optimization Problems",
     "text": "A wire of length $40$ cm is cut into two pieces. One piece is bent into a square and the other into a circle. Find the length of wire used for the **square** (in cm) that **minimizes** the total enclosed area. Give your answer in exact form.",
     "answer": "160/(pi+4)",
-    "solution": "Let $x$ = length of wire used for the square (cm), so $40 - x$ = length used for the circle.\n\n**Square:** side $= x/4$, area $= x^2/16$.\n\n**Circle:** circumference $= 40-x$, radius $= \\dfrac{40-x}{2\\pi}$, area $= \\dfrac{(40-x)^2}{4\\pi}$.\n\n**Total area:**\n$$A(x) = \\frac{x^2}{16} + \\frac{(40-x)^2}{4\\pi}, \\quad 0 \\le x \\le 40$$\n\n**Derivative:**\n$$A'(x) = \\frac{x}{8} - \\frac{(40-x)}{2\\pi} = 0$$\n$$\\frac{x}{8} = \\frac{40-x}{2\\pi}$$\n$$2\\pi x = 8(40-x) = 320 - 8x$$\n$$x(2\\pi + 8) = 320$$\n$$x = \\frac{320}{2\\pi + 8} = \\frac{160}{\\pi + 4}$$\n\n**Verify:** $A''(x) = \\dfrac{1}{8} + \\dfrac{1}{2\\pi} > 0$, so this is a minimum.\n\n$$\\boxed{x = \\dfrac{160}{\\pi+4} \\text{ cm}}$$"
+    "solution": "Let $x$ = length of wire used for the square (cm), so $40 - x$ = length used for the circle.\n\n**Square:** side $= x/4$, area $= x^2/16$.\n\n**Circle:** circumference $= 40-x$, radius $= \\dfrac{40-x}{2\\pi}$, area $= \\dfrac{(40-x)^2}{4\\pi}$.\n\n**Total area:**\n$$A(x) = \\frac{x^2}{16} + \\frac{(40-x)^2}{4\\pi}, \\quad 0 \\le x \\le 40$$\n\n**Derivative:**\n$$A'(x) = \\frac{x}{8} - \\frac{(40-x)}{2\\pi} = 0$$\n$$\\frac{x}{8} = \\frac{40-x}{2\\pi}$$\n$$2\\pi x = 8(40-x) = 320 - 8x$$\n$$x(2\\pi + 8) = 320$$\n$$x = \\frac{320}{2\\pi + 8} = \\frac{160}{\\pi + 4}$$\n\n**Verify:** $A''(x) = \\dfrac{1}{8} + \\dfrac{1}{2\\pi} > 0$, so this is a minimum.\n\n$$x = \\boxed{\\dfrac{160}{\\pi+4}} \\text{ cm}$$"
   },
   {
     "id": "s26545_gen_9",
