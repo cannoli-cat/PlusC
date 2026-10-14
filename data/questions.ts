@@ -1,5 +1,6 @@
 import { questions265 } from './265'
 import { questions266 } from './266'
+import { questions267 } from './267'
 
 export interface Course {
     id: string
@@ -54,7 +55,7 @@ export type Question = MultipleChoiceQuestion | SelectAllQuestion | FreeResponse
 export const courses: Course[] = [
     { id: '265', name: 'MAT 265: Calculus for Engineers I', questions: questions265 },
     { id: '266', name: 'MAT 266: Calculus for Engineers II', questions: questions266 },
-    //{ id: '267', name: 'MAT 267: Calculus for Engineers III', questions: [] }
+    { id: '267', name: 'MAT 267: Calculus for Engineers III', questions: questions267 }
 ]
 
 export function getCourse(id: string | null): Course {

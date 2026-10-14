@@ -15,7 +15,6 @@ import { validateQuestion } from '@/lib/validateQuestion'
 import { checkSingle } from '@/lib/checkAnswer'
 import { findSection, type SectionSpec } from './generate/sections'
 
-const MODEL = 'claude-opus-5-5'
 const MAX_TOKENS = 16000
 
 const client = new Anthropic()
@@ -43,13 +42,22 @@ const GeneratedQuestion = z.discriminatedUnion('type', [
         answer: z.string(),
         solution: z.string(),
     }),
+    z.object({
+        type: z.literal('multi-part'),
+        text: z.string(),
+        parts: z.array(z.object({ label: z.string(), value: z.string() })),
+        solution: z.string(),
+    }),
 ])
+
+type Generated = z.infer<typeof GeneratedQuestion>
 
 const GeneratedBatch = z.object({ questions: z.array(GeneratedQuestion) })
 
 const VerifierAnswer = z.object({
     answer: z.string(),
     answers: z.array(z.string()),
+    parts: z.array(z.string()),
 })
 
 const GENERATOR_SYSTEM = `You write practice questions for a university calculus study tool. Students answer them under timed conditions, and their answers are graded automatically, so every question needs exactly one correct, checkable answer.
@@ -59,18 +67,27 @@ Write all math in LaTeX: inline $...$ and display $$...$$. Plain text only other
 Question types:
 - multiple-choice: 4 choices labeled A-D, exactly one correct. Each wrong choice should come from a specific, realistic mistake (sign error, forgetting to normalize, mixing up dot and cross product), not a random value.
 - select-all: 4 choices labeled A-D, one or more correct.
-- free-response: the answer is graded by a symbolic checker that only understands a single scalar expression. Put that expression in "answer" as LaTeX (for example "\\frac{3\\sqrt{2}}{2}" or "2\\pi"), with no units, no "x =", and no vectors, points, intervals, or equations. If the natural answer to a question is a vector, point, or equation, make it multiple-choice or ask for a scalar quantity instead (a magnitude, one component, a distance).
+- free-response: the answer is graded by a symbolic checker that only understands a single scalar expression. Put that expression in "answer" as LaTeX (for example "\\frac{3\\sqrt{2}}{2}" or "2\\pi"), with no units, no "x =", and no vectors, points, intervals, or equations.
+- multi-part: for answers made of several numbers, such as a point, a vector's components, or a sphere's center and radius. Give 2 to 4 parts, each with a short plain-text label (no LaTeX, no $), for example "x:", "y:", "z:", or "Center x:", "Center y:", "Center z:", "Radius:". Each part's "value" follows the same rules as a free-response answer: a single scalar LaTeX expression. Say in the question text what each blank is for.
 
-Every solution is a complete step-by-step worked solution in LaTeX. Free-response solutions must end with the final answer inside \\boxed{...}, and the boxed content must equal "answer".
+If the natural answer is an equation (a sphere, a plane), make it multiple-choice.
 
-Aim for roughly half multiple-choice, a third free-response, and the rest select-all. Vary the numbers, setups, and difficulty; include a few applied problems where the topic supports them.`
+Every solution is a complete step-by-step worked solution in LaTeX. Free-response solutions must end with the final answer inside \\boxed{...}, and the boxed content must equal "answer". Multi-part solutions end by stating every part's value.
 
-function generatorPrompt(section: SectionSpec, count: number, existingTexts: string[]): string {
+Aim for roughly 40% multiple-choice, 25% free-response, 20% multi-part, and 15% select-all. Vary which letter is correct in multiple-choice questions. Vary the numbers, setups, contexts, and difficulty; include a few applied problems where the topic supports them.`
+
+const QUESTION_TYPES = ['multiple-choice', 'select-all', 'free-response', 'multi-part'] as const
+type GeneratedType = (typeof QUESTION_TYPES)[number]
+
+function generatorPrompt(section: SectionSpec, count: number, existingTexts: string[], onlyType?: GeneratedType): string {
     const avoid = existingTexts.length > 0
         ? `\n\nThese questions already exist for this section. Do not repeat their setups:\n${existingTexts.map(t => `- ${t}`).join('\n')}`
         : ''
+    const typeRule = onlyType
+        ? ` Every question must be of type "${onlyType}"; ignore the usual mix of types.`
+        : ''
 
-    return `Write ${count} questions for ${section.label}.
+    return `Write ${count} questions for ${section.label}.${typeRule}
 
 Topics for this section:
 ${section.topics}${avoid}`
@@ -81,37 +98,54 @@ const VERIFIER_SYSTEM = `You are checking a calculus practice question by solvin
 - multiple-choice: put the single correct label in "answer" and leave "answers" empty.
 - select-all: put every correct label in "answers" and leave "answer" empty.
 - free-response: put the final answer as a single LaTeX expression in "answer" (no units, no "x =") and leave "answers" empty.
+- multi-part: put one LaTeX expression per blank in "parts", in the order the blanks are listed. Leave "answer" empty unless the question is invalid.
+
+Leave "parts" empty for every type except multi-part.
 
 If the question is ambiguous or has no correct answer among the choices, put "INVALID" in "answer".`
 
-function verifierPrompt(q: z.infer<typeof GeneratedQuestion>): string {
-    const choices = q.type === 'free-response'
-        ? ''
-        : '\n\nChoices:\n' + q.choices.map(c => `${c.label}. ${c.text}`).join('\n')
+function verifierPrompt(q: Generated): string {
+    let extra = ''
+    if (q.type === 'multiple-choice' || q.type === 'select-all') {
+        extra = '\n\nChoices:\n' + q.choices.map(c => `${c.label}. ${c.text}`).join('\n')
+    } else if (q.type === 'multi-part') {
+        extra = '\n\nBlanks:\n' + q.parts.map(p => `- ${p.label}`).join('\n')
+    }
 
-    return `Question type: ${q.type}\n\n${q.text}${choices}`
+    return `Question type: ${q.type}\n\n${q.text}${extra}`
 }
 
 
-async function askStructured<T extends z.ZodType>(system: string, prompt: string, schema: T): Promise<z.infer<T>> {
+interface CallSettings {
+    model: string
+    effort: 'low' | 'medium' | 'high'
+    timeoutMs: number
+    name: string
+}
+
+const GENERATOR_CALL: CallSettings = { model: 'claude-sonnet-5-5', effort: 'high', timeoutMs: 6 * 60_000, name: 'generator' }
+const VERIFIER_CALL: CallSettings = { model: 'claude-opus-5-5', effort: 'medium', timeoutMs: 3 * 60_000, name: 'verifier' }
+
+async function askStructured<T extends z.ZodType>(system: string, prompt: string, schema: T, settings: CallSettings): Promise<z.infer<T>> {
     const response = await client.beta.messages.parse({
-        model: MODEL,
+        model: settings.model,
         max_tokens: MAX_TOKENS,
         betas: ['server-side-fallback-2026-07-01'],
         fallbacks: 'default',
         output_config: {
-            effort: 'high',
+            effort: settings.effort,
             format: betaZodOutputFormat(schema),
         },
         system,
         messages: [{ role: 'user', content: prompt }],
-    })
+    }, { timeout: settings.timeoutMs })
 
     if (response.stop_reason === 'refusal') {
-        throw new Error(`model declined: ${response.stop_details?.explanation ?? 'no explanation'}`)
+        throw new Error(`${settings.name} declined: ${response.stop_details?.explanation ?? 'no explanation'}`)
     }
     if (response.stop_reason === 'max_tokens') {
-        throw new Error(`hit max_tokens (${MAX_TOKENS}); try a smaller --count`)
+        const hint = settings === GENERATOR_CALL ? '; try a smaller --count' : ''
+        throw new Error(`${settings.name} hit max_tokens (${MAX_TOKENS})${hint}`)
     }
     if (!response.parsed_output) {
         throw new Error('response did not match the schema')
@@ -119,8 +153,8 @@ async function askStructured<T extends z.ZodType>(system: string, prompt: string
     return response.parsed_output as z.infer<T>
 }
 
-async function verify(q: z.infer<typeof GeneratedQuestion>): Promise<string | null> {
-    const result = await askStructured(VERIFIER_SYSTEM, verifierPrompt(q), VerifierAnswer)
+async function verify(q: Generated): Promise<string | null> {
+    const result = await askStructured(VERIFIER_SYSTEM, verifierPrompt(q), VerifierAnswer, VERIFIER_CALL)
 
     if (result.answer.trim() === 'INVALID') {
         return 'verifier says the question is ambiguous or has no correct answer'
@@ -138,9 +172,41 @@ async function verify(q: z.infer<typeof GeneratedQuestion>): Promise<string | nu
         return mine === theirs ? null : `verifier chose [${theirs}], generator said [${mine}]`
     }
 
+    if (q.type === 'multi-part') {
+        if (result.parts.length !== q.parts.length) {
+            return `verifier gave ${result.parts.length} parts, question has ${q.parts.length}`
+        }
+        const mismatches = q.parts
+            .map((part, i) => checkSingle(result.parts[i], part.value)
+                ? null
+                : `${part.label} verifier got "${result.parts[i]}", generator said "${part.value}"`)
+            .filter(m => m !== null)
+        return mismatches.length === 0 ? null : mismatches.join('; ')
+    }
+
     return checkSingle(result.answer, q.answer)
         ? null
         : `verifier got "${result.answer}", generator said "${q.answer}"`
+}
+
+async function verifyWithRetry(q: Generated): Promise<string | null> {
+    let lastError = ''
+    for (let attempt = 1; attempt <= 2; attempt++) {
+        try {
+            return await verify(q)
+        } catch (e) {
+            lastError = (e as Error).message
+        }
+    }
+    return `verifier failed twice: ${lastError}`
+}
+
+function toQuestion(generated: Generated, id: string, section: string): Question {
+    if (generated.type === 'multi-part') {
+        const { parts, ...rest } = generated
+        return { id, section, ...rest, type: 'free-response', answer: parts }
+    }
+    return { id, section, ...generated }
 }
 
 function sectionFileName(label: string): string {
@@ -168,11 +234,18 @@ async function main() {
     const sectionId = getFlag('section')
     const count = Number(getFlag('count') ?? 5)
     const dryRun = process.argv.includes('--dry-run')
+    const typeFlag = getFlag('type')
 
     if (!courseId || !sectionId) {
-        console.error('Usage: npm run generate -- --course 267 --section 10.2 [--count 5] [--dry-run]')
+        console.error(`Usage: npm run generate -- --course 267 --section 10.2 [--count 5] [--type ${QUESTION_TYPES.join('|')}] [--dry-run]`)
         process.exit(1)
     }
+
+    if (typeFlag !== undefined && !(QUESTION_TYPES as readonly string[]).includes(typeFlag)) {
+        console.error(`Unknown --type "${typeFlag}". Use one of: ${QUESTION_TYPES.join(', ')}`)
+        process.exit(1)
+    }
+    const onlyType = typeFlag as GeneratedType | undefined
 
     const section = findSection(courseId, sectionId)
     if (!section) {
@@ -198,11 +271,13 @@ async function main() {
         return idPrefix + nextNumber
     }
 
-    console.log(`Generating ${count} questions for ${section.label} with ${MODEL}...`)
+    const typeNote = onlyType ? ` ${onlyType}` : ''
+    console.log(`Generating ${count}${typeNote} questions for ${section.label} (generator: ${GENERATOR_CALL.model}, verifier: ${VERIFIER_CALL.model})...`)
     const batch = await askStructured(
         GENERATOR_SYSTEM,
-        generatorPrompt(section, count, existing.map(q => q.text)),
+        generatorPrompt(section, count, existing.map(q => q.text), onlyType),
         GeneratedBatch,
+        GENERATOR_CALL,
     )
     console.log(`  got ${batch.questions.length}, verifying...`)
 
@@ -210,31 +285,30 @@ async function main() {
     const rejected: (Question & { reasons: string[] })[] = []
 
     await Promise.all(batch.questions.map(async (generated) => {
-        const question = { id: newId(), section: section.label, ...generated } as Question
+        const question = toQuestion(generated, newId(), section.label)
+        const kind = generated.type
 
         const reasons = validateQuestion(question)
+        if (onlyType && generated.type !== onlyType) {
+            reasons.push(`asked for ${onlyType}, got ${generated.type}`)
+        }
         if (reasons.length === 0) {
-            try {
-                const disagreement = await verify(generated)
-                if (disagreement) reasons.push(disagreement)
-            } catch (e) {
-                reasons.push(`verifier failed: ${(e as Error).message}`)
-            }
+            const disagreement = await verifyWithRetry(generated)
+            if (disagreement) reasons.push(disagreement)
         }
 
         if (reasons.length === 0) {
             accepted.push(question)
+            console.log(`  ✓ ${question.id} (${kind})`)
         } else {
             rejected.push({ ...question, reasons })
+            console.log(`  ✗ ${question.id} (${kind}): ${reasons.join('; ')}`)
         }
     }))
 
     const byId = (a: Question, b: Question) => a.id.localeCompare(b.id, undefined, { numeric: true })
     accepted.sort(byId)
     rejected.sort(byId)
-
-    for (const q of accepted) console.log(`  ✓ ${q.id} (${q.type})`)
-    for (const q of rejected) console.log(`  ✗ ${q.id} (${q.type}): ${q.reasons.join('; ')}`)
 
     if (dryRun) {
         console.log('\n--dry-run: nothing written.')

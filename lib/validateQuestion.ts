@@ -49,6 +49,26 @@ export function validateQuestion(q: Question): string[] {
         }
     }
 
+    if (q.type === 'free-response' && Array.isArray(q.answer)) {
+        const labels = q.answer.map(part => part.label.trim())
+
+        if (q.answer.length < 2) {
+            problems.push('multi-part answer has fewer than 2 parts')
+        }
+        if (labels.some(label => !label)) {
+            problems.push('a multi-part answer has an empty label')
+        }
+        if (new Set(labels).size !== labels.length) {
+            problems.push('two parts share the same label')
+        }
+        if (labels.some(label => label.includes('$') || label.includes('\\'))) {
+            problems.push('a part label contains LaTeX')
+        }
+        if (q.answer.some(part => !part.value.trim())) {
+            problems.push('a part has an empty answer')
+        }
+    }
+
     if (q.type === 'free-response' && typeof q.answer === 'string') {
         if (q.solution.includes(BOXED_TAG)) {
             const boxed = extractBoxed(q.solution)
