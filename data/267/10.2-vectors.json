@@ -1,0 +1,333 @@
+[
+  {
+    "id": "267-10.2-1",
+    "section": "§10.2. Vectors",
+    "type": "multiple-choice",
+    "text": "Let $\\mathbf{u}=\\langle 1,2\\rangle$, $\\mathbf{v}=\\langle 3,-1\\rangle$, and $\\mathbf{w}=\\langle 2,3\\rangle$. Find the vector $\\mathbf{x}$ that satisfies $3(\\mathbf{x}-\\mathbf{u})=\\mathbf{v}+2\\mathbf{w}$.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\left\\langle \\tfrac{8}{3},\\,\\tfrac{7}{3}\\right\\rangle$"
+      },
+      {
+        "label": "B",
+        "text": "$\\langle 10,\\,11\\rangle$"
+      },
+      {
+        "label": "C",
+        "text": "$\\left\\langle \\tfrac{4}{3},\\,-\\tfrac{1}{3}\\right\\rangle$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left\\langle \\tfrac{10}{3},\\,\\tfrac{11}{3}\\right\\rangle$"
+      }
+    ],
+    "answer": "D",
+    "solution": "Distribute the $3$ and move $3\\mathbf{u}$ to the right side: $$3\\mathbf{x}-3\\mathbf{u}=\\mathbf{v}+2\\mathbf{w}\\quad\\Longrightarrow\\quad 3\\mathbf{x}=3\\mathbf{u}+\\mathbf{v}+2\\mathbf{w}.$$ Compute $3\\mathbf{u}=\\langle 3,6\\rangle$ and $2\\mathbf{w}=\\langle 4,6\\rangle$, so $$3\\mathbf{x}=\\langle 3,6\\rangle+\\langle 3,-1\\rangle+\\langle 4,6\\rangle=\\langle 10,11\\rangle.$$ Dividing by $3$ gives $$\\mathbf{x}=\\left\\langle \\tfrac{10}{3},\\,\\tfrac{11}{3}\\right\\rangle.$$ Choice A forgets to distribute the $3$ onto $\\mathbf{u}$ (it solves $3\\mathbf{x}-\\mathbf{u}=\\mathbf{v}+2\\mathbf{w}$). Choice B forgets to divide by $3$. Choice C subtracts $\\mathbf{u}$ instead of adding it when isolating $\\mathbf{x}$. The answer is D."
+  },
+  {
+    "id": "267-10.2-2",
+    "section": "§10.2. Vectors",
+    "type": "free-response",
+    "text": "A $100$ N lamp hangs from two wires attached to a horizontal ceiling. The left wire makes an angle of $30^\\circ$ with the ceiling and the right wire makes an angle of $60^\\circ$ with the ceiling. The lamp is at rest. Find the magnitude of the tension in each wire, in newtons.",
+    "answer": [
+      {
+        "label": "Left wire (30 degrees):",
+        "value": "50"
+      },
+      {
+        "label": "Right wire (60 degrees):",
+        "value": "50\\sqrt{3}"
+      }
+    ],
+    "solution": "Let $T_1$ be the tension in the left wire and $T_2$ the tension in the right wire. With $x$ to the right and $y$ up, the forces are $$\\mathbf{T}_1=T_1\\langle -\\cos 30^\\circ,\\ \\sin 30^\\circ\\rangle,\\quad \\mathbf{T}_2=T_2\\langle \\cos 60^\\circ,\\ \\sin 60^\\circ\\rangle,\\quad \\mathbf{W}=\\langle 0,-100\\rangle.$$ At rest, the forces add to $\\mathbf{0}$.\n\nHorizontal components: $$T_1\\cdot\\frac{\\sqrt3}{2}=T_2\\cdot\\frac12\\quad\\Longrightarrow\\quad T_2=\\sqrt3\\,T_1.$$\n\nVertical components: $$T_1\\cdot\\frac12+T_2\\cdot\\frac{\\sqrt3}{2}=100\\quad\\Longrightarrow\\quad \\frac{T_1}{2}+\\frac{3T_1}{2}=100\\quad\\Longrightarrow\\quad T_1=50.$$\n\nThen $T_2=50\\sqrt3$. The steeper wire carries more of the load.\n\nLeft wire: $50$ N. Right wire: $50\\sqrt3$ N."
+  },
+  {
+    "id": "267-10.2-3",
+    "section": "§10.2. Vectors",
+    "type": "free-response",
+    "text": "A plane has an airspeed of $200$ km/h. The wind blows toward the east at $50$ km/h. The pilot wants the plane's actual path over the ground to be due north. Use the $x$-axis pointing east and the $y$-axis pointing north. Find the components of the plane's velocity relative to the air, that is, the velocity the pilot must aim for (the heading vector, with length $200$). Enter the east component and the north component in km/h.",
+    "solution": "Let the velocity of the plane relative to the air be $\\mathbf{a}=\\langle a_1,a_2\\rangle$ with $|\\mathbf{a}|=200$. The wind is $\\mathbf{w}=\\langle 50,0\\rangle$. The ground velocity is $\\mathbf{a}+\\mathbf{w}=\\langle a_1+50,\\,a_2\\rangle$. For the path to be due north, the east component must be zero: $a_1+50=0$, so $a_1=-50$. Since $|\\mathbf{a}|=200$, $$a_2^2=200^2-50^2=40000-2500=37500,$$ so $a_2=\\sqrt{37500}=50\\sqrt{15}$, taking the positive root because the plane must head north. Thus $\\mathbf{a}=\\langle -50,\\,50\\sqrt{15}\\rangle$. East component: $-50$. North component: $50\\sqrt{15}$.",
+    "answer": [
+      {
+        "label": "East component:",
+        "value": "-50"
+      },
+      {
+        "label": "North component:",
+        "value": "50\\sqrt{15}"
+      }
+    ]
+  },
+  {
+    "id": "267-10.2-4",
+    "section": "§10.2. Vectors",
+    "type": "select-all",
+    "text": "A rectangular box has a bottom face $ABCD$ (vertices in order around the rectangle) and a top face $EFGH$, where $E$ is directly above $A$, $F$ directly above $B$, $G$ directly above $C$, and $H$ directly above $D$. Select all true statements.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\overrightarrow{AB}=\\overrightarrow{HG}$"
+      },
+      {
+        "label": "B",
+        "text": "$\\overrightarrow{AE}+\\overrightarrow{AB}=\\overrightarrow{AF}$"
+      },
+      {
+        "label": "C",
+        "text": "$\\overrightarrow{AG}=\\overrightarrow{AB}+\\overrightarrow{AD}$"
+      },
+      {
+        "label": "D",
+        "text": "$\\overrightarrow{BC}=\\overrightarrow{HE}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "solution": "Place the box so that $\\overrightarrow{AB}$, $\\overrightarrow{AD}$, and $\\overrightarrow{AE}$ are the three edge vectors from $A$. A: $H$ is above $D$ and $G$ is above $C$, so $\\overrightarrow{HG}$ is parallel to and the same length as $\\overrightarrow{DC}$, and $\\overrightarrow{DC}=\\overrightarrow{AB}$ because $ABCD$ is a rectangle. True. B: Adding $\\overrightarrow{AE}$ and $\\overrightarrow{AB}$ by the parallelogram rule gives the diagonal of face $ABFE$ from $A$, which is $\\overrightarrow{AF}$. True. C: $\\overrightarrow{AB}+\\overrightarrow{AD}=\\overrightarrow{AC}$, which stays in the bottom face. The space diagonal is $\\overrightarrow{AG}=\\overrightarrow{AB}+\\overrightarrow{AD}+\\overrightarrow{AE}$. False. D: $\\overrightarrow{BC}=\\overrightarrow{AD}=\\overrightarrow{EH}$, so $\\overrightarrow{HE}=-\\overrightarrow{BC}$. False. The true statements are A and B."
+  },
+  {
+    "id": "267-10.2-5",
+    "section": "§10.2. Vectors",
+    "type": "multiple-choice",
+    "text": "The sides of a parallelogram are the vectors $\\mathbf{u}=\\langle 2,-1,2\\rangle$ and $\\mathbf{v}=\\langle 1,2,-2\\rangle$. Which pair gives the lengths of the two diagonals, $|\\mathbf{u}+\\mathbf{v}|$ and $|\\mathbf{u}-\\mathbf{v}|$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$6$ and $0$"
+      },
+      {
+        "label": "B",
+        "text": "$\\sqrt{10}$ and $\\sqrt{26}$"
+      },
+      {
+        "label": "C",
+        "text": "$10$ and $26$"
+      },
+      {
+        "label": "D",
+        "text": "$\\sqrt{10}$ and $\\sqrt{10}$"
+      }
+    ],
+    "answer": "B",
+    "solution": "The diagonals are $\\mathbf{u}+\\mathbf{v}=\\langle 3,1,0\\rangle$ and $\\mathbf{u}-\\mathbf{v}=\\langle 1,-3,4\\rangle$. Their lengths are $$|\\mathbf{u}+\\mathbf{v}|=\\sqrt{9+1+0}=\\sqrt{10},\\qquad |\\mathbf{u}-\\mathbf{v}|=\\sqrt{1+9+16}=\\sqrt{26}.$$ Choice A adds the magnitudes $|\\mathbf{u}|+|\\mathbf{v}|=3+3$ and subtracts them, which is not how vector lengths combine. Choice C forgets the square roots. Choice D makes a sign error in the $z$-component of $\\mathbf{u}-\\mathbf{v}$, getting $0$ instead of $4$. The answer is B."
+  },
+  {
+    "id": "267-10.2-6",
+    "section": "§10.2. Vectors",
+    "type": "multiple-choice",
+    "text": "Let $\\mathbf{a}=6\\mathbf{i}-2\\mathbf{j}+3\\mathbf{k}$. Which vector points in the direction opposite to $\\mathbf{a}$ and has length $4$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\left\\langle \\frac{24}{7},-\\frac{8}{7},\\frac{12}{7}\\right\\rangle$"
+      },
+      {
+        "label": "B",
+        "text": "$\\left\\langle -\\frac{24}{7},\\frac{8}{7},-\\frac{12}{7}\\right\\rangle$"
+      },
+      {
+        "label": "C",
+        "text": "$\\langle -24,8,-12\\rangle$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left\\langle -\\frac{24}{49},\\frac{8}{49},-\\frac{12}{49}\\right\\rangle$"
+      }
+    ],
+    "answer": "B",
+    "solution": "First find the magnitude: $$|\\mathbf{a}|=\\sqrt{6^2+(-2)^2+3^2}=\\sqrt{49}=7.$$ The unit vector in the direction of $\\mathbf{a}$ is $\\frac{1}{7}\\langle 6,-2,3\\rangle$, so the unit vector in the opposite direction is $-\\frac{1}{7}\\langle 6,-2,3\\rangle$. Multiplying by the length $4$ gives $$-\\frac{4}{7}\\langle 6,-2,3\\rangle=\\left\\langle -\\frac{24}{7},\\frac{8}{7},-\\frac{12}{7}\\right\\rangle.$$ Choice A has the correct length but points in the same direction as $\\mathbf{a}$ (the negative sign was forgotten). Choice C multiplies by $-4$ without dividing by $|\\mathbf{a}|$. Choice D divides by $|\\mathbf{a}|^2=49$ instead of $|\\mathbf{a}|=7$. The answer is B."
+  },
+  {
+    "id": "267-10.2-7",
+    "section": "§10.2. Vectors",
+    "type": "free-response",
+    "text": "A motorboat points due east across a river and moves at $6$ km/h relative to the water. The river's current flows due south at $2$ km/h. Find the angle between the boat's actual path over the riverbed and due east, measured from east toward south. Give the exact angle in radians.",
+    "answer": "\\arctan\\left(\\frac{1}{3}\\right)",
+    "solution": "Place the $x$-axis pointing east and the $y$-axis pointing north. The boat's velocity relative to the water is $\\langle 6,0\\rangle$ and the current is $\\langle 0,-2\\rangle$. The actual velocity is the sum $$\\langle 6,0\\rangle+\\langle 0,-2\\rangle=\\langle 6,-2\\rangle.$$ The angle $\\theta$ below due east satisfies $$\\tan\\theta=\\frac{\\text{south component}}{\\text{east component}}=\\frac{2}{6}=\\frac13.$$ Therefore $$\\boxed{\\arctan\\left(\\frac{1}{3}\\right)}$$"
+  },
+  {
+    "id": "267-10.2-8",
+    "section": "§10.2. Vectors",
+    "type": "free-response",
+    "text": "Let $\\mathbf{a}=\\langle 2,1\\rangle$, $\\mathbf{b}=\\langle -1,3\\rangle$, and $\\mathbf{c}=\\langle 1,5\\rangle$. Find the scalars $s$ and $t$ such that $s\\mathbf{a}+t\\mathbf{b}=\\mathbf{c}$.",
+    "solution": "Writing $s\\mathbf{a}+t\\mathbf{b}=\\mathbf{c}$ in components gives the system $$2s-t=1,\\qquad s+3t=5.$$ From the first equation, $t=2s-1$. Substituting into the second: $$s+3(2s-1)=5\\;\\Rightarrow\\;7s=8\\;\\Rightarrow\\;s=\\frac{8}{7}.$$ Then $t=2\\cdot\\frac{8}{7}-1=\\frac{9}{7}$. Check: $2\\cdot\\frac{8}{7}-\\frac{9}{7}=1$ and $\\frac{8}{7}+\\frac{27}{7}=5$. So $s=\\frac{8}{7}$ and $t=\\frac{9}{7}$.",
+    "answer": [
+      {
+        "label": "s:",
+        "value": "\\frac{8}{7}"
+      },
+      {
+        "label": "t:",
+        "value": "\\frac{9}{7}"
+      }
+    ]
+  },
+  {
+    "id": "267-10.2-9",
+    "section": "§10.2. Vectors",
+    "type": "select-all",
+    "text": "Let $A=(1,-2,3)$ and $B=(4,2,5)$. For which of the following pairs of points $P$, $Q$ is the vector $\\overrightarrow{PQ}$ equivalent to $\\overrightarrow{AB}$? Select all that apply.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$P=(-1,3,0)$, $Q=(2,7,1)$"
+      },
+      {
+        "label": "B",
+        "text": "$P=(2,-1,1)$, $Q=(5,3,3)$"
+      },
+      {
+        "label": "C",
+        "text": "$P=(1,1,1)$, $Q=(-2,-3,-1)$"
+      },
+      {
+        "label": "D",
+        "text": "$P=(0,0,0)$, $Q=(3,4,2)$"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "solution": "First, $$\\overrightarrow{AB}=\\langle 4-1,\\,2-(-2),\\,5-3\\rangle=\\langle 3,4,2\\rangle.$$ Two vectors are equivalent when they have the same components. A: $\\overrightarrow{PQ}=\\langle 3,4,1\\rangle$, which differs in the third component, so it does not match. B: $\\overrightarrow{PQ}=\\langle 5-2,\\,3-(-1),\\,3-1\\rangle=\\langle 3,4,2\\rangle$, which matches. C: $\\overrightarrow{PQ}=\\langle -3,-4,-2\\rangle=-\\overrightarrow{AB}$, which has the opposite direction, so it does not match. D: $\\overrightarrow{PQ}=\\langle 3,4,2\\rangle$, which matches. The correct choices are B and D."
+  },
+  {
+    "id": "267-10.2-10",
+    "section": "§10.2. Vectors",
+    "type": "multiple-choice",
+    "text": "The vector $\\mathbf{v}=2\\mathbf{i}-3\\mathbf{j}+4\\mathbf{k}$ is placed so that its terminal point is $(5,-1,2)$. What is its initial point?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$(7,-4,6)$"
+      },
+      {
+        "label": "B",
+        "text": "$(-3,-2,2)$"
+      },
+      {
+        "label": "C",
+        "text": "$(3,-4,-2)$"
+      },
+      {
+        "label": "D",
+        "text": "$(3,2,-2)$"
+      }
+    ],
+    "answer": "D",
+    "solution": "If the initial point is $(x,y,z)$, then the terminal point equals the initial point plus the components of $\\mathbf{v}$: $$(x+2,\\;y-3,\\;z+4)=(5,-1,2).$$ Solving gives $x=3$, $y=2$, $z=-2$. So the initial point is $(3,2,-2)$. Choice A adds the components to the terminal point instead of subtracting. Choice B subtracts the terminal point from the components. Choice C makes a sign error in the $y$-coordinate, computing $-1-3$ instead of $-1-(-3)$. The answer is D."
+  },
+  {
+    "id": "267-10.2-11",
+    "section": "§10.2. Vectors",
+    "type": "multiple-choice",
+    "text": "Let $\\mathbf{b}=\\langle -4,4,2\\rangle$. Which vector points in the direction opposite to $\\mathbf{b}$ and has half the length of $\\mathbf{b}$?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\langle -2,2,1\\rangle$"
+      },
+      {
+        "label": "B",
+        "text": "$\\langle -8,8,4\\rangle$"
+      },
+      {
+        "label": "C",
+        "text": "$\\langle 2,-2,-1\\rangle$"
+      },
+      {
+        "label": "D",
+        "text": "$\\left\\langle \\tfrac{2}{3},-\\tfrac{2}{3},-\\tfrac{1}{3}\\right\\rangle$"
+      }
+    ],
+    "answer": "C",
+    "solution": "Opposite direction means multiplying by a negative scalar, and half the length means the scalar has absolute value $\\tfrac12$. So the required vector is $-\\tfrac12\\mathbf{b}$.\n$$-\\tfrac12\\langle -4,4,2\\rangle=\\langle 2,-2,-1\\rangle.$$\nCheck: $|\\mathbf{b}|=\\sqrt{16+16+4}=6$ and $|\\langle 2,-2,-1\\rangle|=\\sqrt{4+4+1}=3$, which is half of $6$. Choice A has half the length but points in the same direction. Choice B has twice the length. Choice D is the opposite unit vector, which has length $1$, not $3$. The answer is C."
+  },
+  {
+    "id": "267-10.2-12",
+    "section": "§10.2. Vectors",
+    "type": "free-response",
+    "text": "A weather balloon floats $120$ m above a point that is $200$ m east and $100$ m north of a field station. A soil sensor is buried $30$ m underground, directly beneath a point $50$ m west of the station. Use coordinates $(x,y,z)$ in meters with the station at ground level as the origin, $x$ east, $y$ north, and $z$ up. Find the straight-line distance in meters between the balloon and the sensor.",
+    "answer": "50\\sqrt{38}",
+    "solution": "The balloon is at $B=(200,100,120)$. The sensor is at $S=(-50,0,-30)$, since it is $50$ m west of the station and $30$ m below ground.\nThe displacement vector from $S$ to $B$ is\n$$\\overrightarrow{SB}=\\langle 200-(-50),\\;100-0,\\;120-(-30)\\rangle=\\langle 250,100,150\\rangle.$$\nIts length is the distance:\n$$|\\overrightarrow{SB}|=\\sqrt{250^2+100^2+150^2}=\\sqrt{62500+10000+22500}=\\sqrt{95000}=50\\sqrt{38}.$$\n$$\\boxed{50\\sqrt{38}}$$"
+  },
+  {
+    "id": "267-10.2-13",
+    "section": "§10.2. Vectors",
+    "type": "free-response",
+    "text": "Let $\\mathbf{a}=\\langle 1,-2,4\\rangle$ and $\\mathbf{b}=\\langle 3,0,-1\\rangle$. The vector $\\mathbf{w}=2\\mathbf{a}-3\\mathbf{b}$ is placed with its initial point at $(2,1,-3)$. Find the coordinates of its terminal point.",
+    "solution": "First compute the vector:\n$$\\mathbf{w}=2\\langle 1,-2,4\\rangle-3\\langle 3,0,-1\\rangle=\\langle 2,-4,8\\rangle-\\langle 9,0,-3\\rangle=\\langle -7,-4,11\\rangle.$$\nThe terminal point is the initial point plus the components of $\\mathbf{w}$:\n$$(2-7,\\;1-4,\\;-3+11)=(-5,-3,8).$$\nSo $x=-5$, $y=-3$, $z=8$.",
+    "answer": [
+      {
+        "label": "x:",
+        "value": "-5"
+      },
+      {
+        "label": "y:",
+        "value": "-3"
+      },
+      {
+        "label": "z:",
+        "value": "8"
+      }
+    ]
+  },
+  {
+    "id": "267-10.2-14",
+    "section": "§10.2. Vectors",
+    "type": "multiple-choice",
+    "text": "A train travels due east at $10$ m/s relative to the ground. A passenger walks on the train with velocity $\\langle -3,4\\rangle$ m/s relative to the train, where the $x$-axis points east and the $y$-axis points north (so the passenger walks toward the rear and toward the north side). What is the passenger's speed relative to the ground?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$15$ m/s"
+      },
+      {
+        "label": "B",
+        "text": "$\\sqrt{185}$ m/s"
+      },
+      {
+        "label": "C",
+        "text": "$11$ m/s"
+      },
+      {
+        "label": "D",
+        "text": "$\\sqrt{65}$ m/s"
+      }
+    ],
+    "answer": "D",
+    "solution": "The velocity relative to the ground is the sum of the train's velocity and the passenger's velocity relative to the train:\n$$\\langle 10,0\\rangle+\\langle -3,4\\rangle=\\langle 7,4\\rangle.$$\nThe speed is the magnitude: $\\sqrt{7^2+4^2}=\\sqrt{65}$ m/s.\nChoice A adds the two speeds $10+5$. Choice B uses $\\langle 13,4\\rangle$, a sign error on the rearward component. Choice C adds the components $7+4$ instead of taking the magnitude. The answer is D."
+  },
+  {
+    "id": "267-10.2-15",
+    "section": "§10.2. Vectors",
+    "type": "select-all",
+    "text": "Let $\\mathbf{u}=\\langle 3,-1,2\\rangle$ and $\\mathbf{v}=\\langle -1,4,2\\rangle$. Select all true statements.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "$\\mathbf{u}+\\mathbf{v}=\\langle 2,3,4\\rangle$"
+      },
+      {
+        "label": "B",
+        "text": "$|\\mathbf{u}+\\mathbf{v}|=|\\mathbf{u}|+|\\mathbf{v}|$"
+      },
+      {
+        "label": "C",
+        "text": "$2\\mathbf{u}-\\mathbf{v}=\\langle 5,-6,2\\rangle$"
+      },
+      {
+        "label": "D",
+        "text": "$|\\mathbf{u}-\\mathbf{v}|=\\sqrt{41}$"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "solution": "A: $\\mathbf{u}+\\mathbf{v}=\\langle 3-1,\\,-1+4,\\,2+2\\rangle=\\langle 2,3,4\\rangle$. True.\nB: $|\\mathbf{u}+\\mathbf{v}|=\\sqrt{4+9+16}=\\sqrt{29}$, while $|\\mathbf{u}|+|\\mathbf{v}|=\\sqrt{14}+\\sqrt{21}\\neq\\sqrt{29}$. Equality would require the vectors to point in the same direction. False.\nC: $2\\mathbf{u}-\\mathbf{v}=\\langle 6,-2,4\\rangle-\\langle -1,4,2\\rangle=\\langle 7,-6,2\\rangle$, not $\\langle 5,-6,2\\rangle$. False (the first component was found by computing $6-1$ instead of $6+1$).\nD: $\\mathbf{u}-\\mathbf{v}=\\langle 4,-5,0\\rangle$, so $|\\mathbf{u}-\\mathbf{v}|=\\sqrt{16+25+0}=\\sqrt{41}$. True.\nThe true statements are A and D."
+  }
+]

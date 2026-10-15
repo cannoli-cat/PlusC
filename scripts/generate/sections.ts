@@ -23,6 +23,26 @@ export const sections: SectionSpec[] = [
 - Inequality describing a solid ball
 - Identifying a sphere's center and radius from an equation in expanded or standard form`,
     },
+    {
+        course: '267',
+        id: '10.2',
+        label: '§10.2. Vectors',
+        topics: `- Vector arithmetic in 2D and 3D: sums, differences, scalar multiples, and linear combinations like 3a + 4b
+- Magnitude of a vector; converting between i, j, k notation and component form
+- The vector PQ from two points; deciding whether two vectors AB and PQ are equivalent
+- Terminal point of a vector placed at a given initial point, and the reverse: initial point from the terminal point and the components
+- Unit vector in the same direction as a vector, and in the opposite direction
+- Vector with a given length in the same or opposite direction as a vector
+- Solving a vector equation for an unknown vector
+- Writing a vector as a linear combination of two given vectors (solve for the two scalars)
+- Lengths of the diagonals of a parallelogram spanned by two vectors
+- Displacement vectors and distances between two objects in 3D given their positions
+- Relative velocity and resultant velocity: combining two velocity vectors; resultant speed and direction angle
+- Navigation with wind or current: finding a heading or a required speed
+- Statics: tensions in ropes or wires holding an object at rest (forces summing to zero)
+- Vector relationships in a rectangular box described in words (which vector sums and differences are equal)
+For angles, ask for an exact expression such as \\arctan(3/2) rather than a decimal. When a vector is the answer, use multi-part with one blank per component.`,
+    },
 ]
 
 export function findSection(course: string, id: string): SectionSpec | undefined {

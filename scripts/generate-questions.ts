@@ -74,7 +74,7 @@ If the natural answer is an equation (a sphere, a plane), make it multiple-choic
 
 Every solution is a complete step-by-step worked solution in LaTeX. Free-response solutions must end with the final answer inside \\boxed{...}, and the boxed content must equal "answer". Multi-part solutions end by stating every part's value.
 
-Aim for roughly 40% multiple-choice, 25% free-response, 20% multi-part, and 15% select-all. Vary which letter is correct in multiple-choice questions. Vary the numbers, setups, contexts, and difficulty; include a few applied problems where the topic supports them.`
+Aim for roughly 40% multiple-choice, 25% free-response, 20% multi-part, and 15% select-all. Vary which letter is correct in multiple-choice questions, and vary which set of letters is correct in select-all questions (not always the first two). Vary the numbers, setups, contexts, and difficulty; include a few applied problems where the topic supports them.`
 
 const QUESTION_TYPES = ['multiple-choice', 'select-all', 'free-response', 'multi-part'] as const
 type GeneratedType = (typeof QUESTION_TYPES)[number]
